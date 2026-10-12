@@ -592,6 +592,15 @@
 	 * heads the page, the orbit figure follows the data, and the buttons sit under the thumb.
 	 */
 	@media (max-width: 760px) {
+		/*
+		 * Bits UI sets an inline `contain: layout style` on dialog content. Layout containment
+		 * makes the poster the box its fixed button bar is placed in, so the bar scrolled away
+		 * with the poster's content.
+		 */
+		.poster {
+			contain: none !important;
+		}
+
 		.layout {
 			grid-template-columns: minmax(0, 1fr);
 			grid-template-areas: 'top' 'data' 'figure' 'more';
