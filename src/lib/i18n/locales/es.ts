@@ -5,6 +5,7 @@ export const es: Dict = {
 	siteName: 'ChemTable',
 	title: 'Tabla periódica de los elementos químicos',
 	hint: 'Pasa el cursor sobre un elemento, o entra en la tabla con Tab y muévete con las flechas. Pulsa un elemento para abrir su ficha.',
+	hintTouch: 'Toca un elemento o desliza el dedo por la tabla',
 	colorBy: 'Colorear la tabla por',
 	categories: 'Categorías',
 	category: {
@@ -56,6 +57,7 @@ export const es: Dict = {
 	discoveredBy: 'Descubierto por',
 	namedAfter: 'Nombrado en honor a',
 	close: 'Cerrar',
+	open: 'Abrir',
 	sources: 'Fuentes de los datos',
 	sourcesNote:
 		'Masas atómicas: IUPAC CIAAW, valores estándar abreviados; entre corchetes, número másico del isótopo más estable. Energías de ionización: NIST. Afinidades electrónicas: valores medidos (tabla de Wikipedia con fuentes primarias). Radios covalentes: Cordero et al. (2008). Otras propiedades: PubChem (NIH), cotejadas con el CRC Handbook. Nombres de los elementos: Wikidata.',

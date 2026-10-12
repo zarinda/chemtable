@@ -138,6 +138,41 @@
 		}
 	}
 
+	/* Phones: the legend in two columns under the colour modes. */
+	@media (max-width: 760px) and (orientation: portrait) {
+		footer {
+			order: 4;
+			padding-top: 12px;
+		}
+
+		footer :global(.legend) {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 2px 8px;
+			overflow: visible;
+		}
+
+		footer :global(.item) {
+			gap: 0.55em;
+			min-height: 36px;
+			padding: 0.25em 0.4em 0.25em 0;
+			text-align: left;
+			white-space: normal;
+		}
+
+		.chip {
+			flex: none;
+			width: 16px;
+			height: 16px;
+			background: var(--texture-sm), var(--fill);
+		}
+
+		.bar {
+			flex: 1;
+			width: auto;
+		}
+	}
+
 	@keyframes fade {
 		from {
 			opacity: 0;

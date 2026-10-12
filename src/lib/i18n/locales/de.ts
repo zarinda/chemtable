@@ -5,6 +5,7 @@ export const de: Dict = {
 	siteName: 'ChemTable',
 	title: 'Periodensystem der chemischen Elemente',
 	hint: 'Fahren Sie über ein Element oder wechseln Sie mit Tab in die Tabelle und bewegen Sie sich mit den Pfeiltasten. Klicken Sie auf ein Element, um seine Karte zu öffnen.',
+	hintTouch: 'Tippen Sie auf ein Element oder fahren Sie mit dem Finger über die Tabelle',
 	colorBy: 'Tabelle einfärben nach',
 	categories: 'Kategorien',
 	category: {
@@ -56,6 +57,7 @@ export const de: Dict = {
 	discoveredBy: 'Entdeckt von',
 	namedAfter: 'Benannt nach',
 	close: 'Schließen',
+	open: 'Öffnen',
 	sources: 'Datenquellen',
 	sourcesNote:
 		'Atommassen: IUPAC CIAAW, gekürzte Standardwerte; in eckigen Klammern die Massenzahl des stabilsten Isotops. Ionisierungsenergien: NIST. Elektronenaffinitäten: Messwerte (Wikipedia-Tabelle mit Primärquellen). Kovalente Radien: Cordero et al. (2008). Übrige Eigenschaften: PubChem (NIH), abgeglichen mit dem CRC Handbook. Elementnamen: Wikidata.',

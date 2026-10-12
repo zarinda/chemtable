@@ -8,6 +8,7 @@ export const fr: Dict = {
 	siteName: 'ChemTable',
 	title: 'Tableau périodique des éléments chimiques',
 	hint: `Survolez un élément, ou entrez dans le tableau avec Tab et déplacez-vous avec les flèches. Cliquez sur un élément pour ouvrir sa fiche.`,
+	hintTouch: 'Touchez un élément ou faites glisser le doigt sur le tableau',
 	colorBy: 'Colorer le tableau par',
 	categories: 'Catégories',
 	category: {
@@ -59,6 +60,7 @@ export const fr: Dict = {
 	discoveredBy: 'Découvert par',
 	namedAfter: 'Nommé d’après',
 	close: 'Fermer',
+	open: 'Ouvrir',
 	sources: 'Sources des données',
 	sourcesNote: `Masses atomiques${_}: IUPAC CIAAW, valeurs standard abrégées${_}; entre crochets, nombre de masse de l’isotope le plus stable. Énergies d’ionisation${_}: NIST. Affinités électroniques${_}: valeurs mesurées (tableau de Wikipédia citant les sources primaires). Rayons covalents${_}: Cordero et al. (2008). Autres propriétés${_}: PubChem (NIH), vérifiées avec le CRC Handbook. Noms des éléments${_}: Wikidata.`,
 	theme: { light: 'Thème clair', dark: 'Thème sombre', system: 'Comme le système' },

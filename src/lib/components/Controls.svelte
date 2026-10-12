@@ -192,6 +192,30 @@
 		}
 	}
 
+	/* Phones: language and theme on top; the colour modes go under the map's card (see Home). */
+	@media (max-width: 760px) and (orientation: portrait) {
+		header {
+			display: contents;
+		}
+
+		.prefs {
+			order: 0;
+			justify-content: space-between;
+			padding: 12px var(--gutter) 14px;
+		}
+
+		header :global(.modes) {
+			order: 3;
+			flex: none;
+			gap: 8px;
+			padding: 26px var(--gutter) 2px;
+		}
+
+		header :global(.mode) {
+			padding: 0.45em 0.9em;
+		}
+	}
+
 	.theme {
 		display: grid;
 		place-items: center;

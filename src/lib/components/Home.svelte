@@ -8,6 +8,7 @@
 	import Controls from './Controls.svelte';
 	import Table from './Table.svelte';
 	import Legend from './Legend.svelte';
+	import PickCard from './PickCard.svelte';
 	import Poster from './Poster.svelte';
 	import ElementArticle from './ElementArticle.svelte';
 	import { dev } from '$app/env';
@@ -16,6 +17,11 @@
 	let opened = $derived(app.openedZ ? elements[app.openedZ - 1] : null);
 
 	let t = $derived(app.t);
+
+	// The map's card follows the poster, so closing it leaves the last element viewed picked.
+	$effect(() => {
+		if (app.openedZ) app.picked = app.openedZ;
+	});
 </script>
 
 <Seo element={opened} />
@@ -27,6 +33,7 @@
 			<div class="app">
 				<Controls />
 				<Table />
+				<PickCard />
 				<Legend />
 			</div>
 		</div>
@@ -145,10 +152,12 @@
 		height: 100dvh;
 	}
 
-	/* Portrait phones scroll the table sideways, so cells size from the height instead. */
-	@media (max-width: 600px) and (orientation: portrait) {
+	/* Portrait phones: the whole table across the width as a map, 18 cells and 17 gaps of 1.5 px. */
+	@media (max-width: 760px) and (orientation: portrait) {
 		.app {
-			--cell: clamp(44px, calc((100dvh - var(--chrome)) / 10.25), 58px);
+			--gutter: 12px;
+			--cell: calc((100cqw - 2 * var(--gutter) - 17 * 1.5px) / 18);
+			height: auto;
 		}
 	}
 

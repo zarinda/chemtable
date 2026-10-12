@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { page } from '$app/state';
 	import { app } from '#lib/state.svelte.ts';
 	import { formatMass, formatNumber, kelvinToCelsius } from '#lib/format.ts';
 	import { propertyValue } from '#lib/elements.ts';
@@ -42,44 +41,18 @@
 			</div>
 		{/key}
 	{/if}
-	<!-- The page heading stays in the document while an element is previewed. -->
-	<div class="intro" class:visually-hidden={!!e}>
-		<!-- On element pages the element name is the page heading, so the title is not an h1. -->
-		<svelte:element this={page.data.z ? 'p' : 'h1'} class="title">{t.title}</svelte:element>
-		<p class="hint">{t.hint}</p>
-	</div>
 </div>
 
 <style>
 	.spotlight {
 		grid-column: 4 / 14;
-		grid-row: 2 / 5;
+		grid-row: 3 / 6;
 		display: flex;
 		align-items: center;
 		gap: calc(var(--cell) * 0.4);
 		padding: 0 calc(var(--cell) * 0.3);
 		min-width: 0;
 		pointer-events: none;
-	}
-
-	.intro {
-		max-width: calc(var(--cell) * 8);
-	}
-
-	.title {
-		margin: 0 0 0.35em;
-		font-family: var(--font-display);
-		font-weight: 600;
-		font-size: calc(var(--cell) * 0.5);
-		line-height: 1;
-		letter-spacing: -0.01em;
-		text-wrap: balance;
-	}
-
-	.hint {
-		margin: 0;
-		font-size: clamp(var(--step--2), calc(var(--cell) * 0.2), var(--step-0));
-		max-width: 46ch;
 	}
 
 	.atom {
@@ -137,6 +110,13 @@
 		margin: 0;
 		font-size: clamp(var(--step--2), calc(var(--cell) * 0.19), var(--step-0));
 		font-variant-numeric: tabular-nums;
+	}
+
+	/* The phone map has a loupe and a card instead. */
+	@media (max-width: 760px) and (orientation: portrait) {
+		.spotlight {
+			display: none;
+		}
 	}
 
 	@keyframes pop {

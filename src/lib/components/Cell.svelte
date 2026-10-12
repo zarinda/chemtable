@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { app } from '#lib/state.svelte.ts';
+	import { app, isMap } from '#lib/state.svelte.ts';
 	import { propertyValue, type Element } from '#lib/elements.ts';
 	import { heatColor, heatInk } from '#lib/heat.ts';
 	import { formatMass, formatNumber, kelvinToCelsius } from '#lib/format.ts';
@@ -45,9 +45,10 @@
 	class:heat={heatMode}
 	class:unknown={heatMode && heat === null}
 	class:dimmed
+	class:picked={app.pickedZ === element.z}
 	data-z={element.z}
 	style:grid-column={element.col + 1}
-	style:grid-row={element.row + 1}
+	style:grid-row={element.row + 2}
 	style:--z={element.z}
 	style:--heat-fill={heatMode && heat != null ? heatColor(heat) : null}
 	style:--heat-ink={heatMode && heat != null ? heatInk(heat) : null}
@@ -57,12 +58,16 @@
 	onfocus={() => {
 		app.active = element;
 		app.tabStop = element.z;
+		if (isMap()) app.picked = element.z;
 	}}
 	onclickcapture={(e) => {
 		if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
 		e.preventDefault();
-		app.open(element, e.currentTarget);
+		// On the phone map a tap picks the element for the card; Enter still opens it.
+		if (isMap() && e.detail !== 0) app.picked = element.z;
+		else app.open(element, e.currentTarget);
 	}}
+	oncontextmenu={(e) => isMap() && e.preventDefault()}
 >
 	<span class="z">{element.z}</span>
 	<span class="symbol">{element.symbol}</span>
@@ -172,6 +177,47 @@
 		}
 		.symbol {
 			font-size: 46cqw;
+		}
+	}
+
+	/* Portrait phones: a map of symbols on colour, picked by touch (see Table). */
+	@media (max-width: 760px) and (orientation: portrait) {
+		.cell {
+			place-items: center;
+			grid-template-rows: none;
+			padding: 0;
+			touch-action: none;
+			-webkit-touch-callout: none;
+		}
+
+		.cell.swatch::before {
+			background: var(--texture-sm);
+			mask-image: none;
+		}
+
+		.z,
+		.caption {
+			display: none;
+		}
+
+		/* cqw, not var(--cell): inside the cell, --cell's own cqw would measure the cell. */
+		.symbol {
+			font-size: 56cqw;
+			line-height: 1;
+			letter-spacing: -0.02em;
+		}
+
+		.cell:hover,
+		.cell:focus-visible {
+			transform: none;
+			box-shadow: none;
+		}
+
+		.picked,
+		.cell:focus-visible {
+			z-index: 2;
+			outline: 2px solid var(--fg);
+			outline-offset: 1px;
 		}
 	}
 

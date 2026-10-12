@@ -5,6 +5,7 @@ export const zh: Dict = {
 	siteName: 'ChemTable',
 	title: '化学元素周期表',
 	hint: '将鼠标悬停在元素上，或按 Tab 键进入表格并用方向键移动。点击元素即可打开它的信息卡。',
+	hintTouch: '轻触元素，或用手指在表格上滑动',
 	colorBy: '表格着色方式',
 	categories: '分类',
 	category: {
@@ -56,6 +57,7 @@ export const zh: Dict = {
 	discoveredBy: '发现者',
 	namedAfter: '命名来源',
 	close: '关闭',
+	open: '打开',
 	sources: '数据来源',
 	sourcesNote:
 		'相对原子质量来自 IUPAC CIAAW 的简化标准值；方括号中为最稳定同位素的质量数。电离能来自 NIST。电子亲和能为实测值（维基百科汇总表，附原始文献）。共价半径来自 Cordero 等（2008）。其他性质来自 PubChem（美国国立卫生研究院），并已与 CRC 手册核对。元素名称来自 Wikidata。',

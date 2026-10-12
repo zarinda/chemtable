@@ -5,6 +5,7 @@ export const en: Dict = {
 	siteName: 'ChemTable',
 	title: 'Periodic table of the chemical elements',
 	hint: 'Hover an element, or Tab into the table and move with the arrow keys. Press an element to open its card.',
+	hintTouch: 'Tap an element or slide your finger across the table',
 	colorBy: 'Colour the table by',
 	categories: 'Categories',
 	category: {
@@ -56,6 +57,7 @@ export const en: Dict = {
 	discoveredBy: 'Discovered by',
 	namedAfter: 'Named after',
 	close: 'Close',
+	open: 'Open',
 	sources: 'Data sources',
 	sourcesNote:
 		'Atomic masses: IUPAC CIAAW, abridged standard values; in square brackets, the mass number of the most stable isotope. Ionization energies: NIST. Electron affinities: measured values (Wikipedia table citing primary sources). Covalent radii: Cordero et al. (2008). Other properties: PubChem (NIH), checked against the CRC Handbook. Element names: Wikidata.',

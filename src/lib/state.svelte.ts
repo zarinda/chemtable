@@ -29,7 +29,14 @@ function store(key: string, value: string) {
 const shallow = (url: string, state: App.PageState, replace = false) =>
 	goto(url, { state, shallow: true, replace });
 
-const cellOf = (z: number) => document.querySelector<HTMLElement>(`.cell[data-z="${z}"]`);
+/**
+ * Portrait phones show the whole table as a map: a tap picks an element for the card under it
+ * instead of opening the poster. Keep in step with the same media query in the components' CSS.
+ */
+export const MAP_QUERY = '(max-width: 760px) and (orientation: portrait)';
+export const isMap = () => matchMedia(MAP_QUERY).matches;
+
+export const cellOf = (z: number) => document.querySelector<HTMLElement>(`.cell[data-z="${z}"]`);
 
 class AppState {
 	theme = $state<Theme>('system');
@@ -38,6 +45,8 @@ class AppState {
 	focusCategory = $state<Category | null>(null);
 	/** Element under the pointer or keyboard focus. */
 	active = $state<Element | null>(null);
+	/** Element picked on the phone map; until then the card shows the open element, else hydrogen. */
+	picked = $state<number | null>(null);
 	/** The one cell reachable with Tab; arrow keys move it. */
 	tabStop = $state(1);
 	/** Screen rectangle of the cell the poster grows from. */
@@ -55,6 +64,10 @@ class AppState {
 	/** Element open in the poster: from shallow routing, else the element page itself. */
 	get openedZ(): number | null {
 		return page.state.z !== undefined ? page.state.z : page.data.z;
+	}
+
+	get pickedZ(): number {
+		return this.picked ?? this.openedZ ?? 1;
 	}
 
 	restore() {

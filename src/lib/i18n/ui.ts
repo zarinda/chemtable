@@ -57,6 +57,8 @@ export type Dict = {
 	siteName: string;
 	title: string;
 	hint: string;
+	/** The hint on phones, where the table is a map to slide a finger over. */
+	hintTouch: string;
 	colorBy: string;
 	categories: string;
 	category: Record<Category, string>;
@@ -86,6 +88,8 @@ export type Dict = {
 	discoveredBy: string;
 	namedAfter: string;
 	close: string;
+	/** Opens the element picked on the phone map. */
+	open: string;
 	sources: string;
 	sourcesNote: string;
 	theme: Record<'light' | 'dark' | 'system', string>;
