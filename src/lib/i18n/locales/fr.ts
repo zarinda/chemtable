@@ -104,12 +104,12 @@ export const fr: Dict = {
 	seo: {
 		homeTitle: 'Tableau périodique interactif des éléments | ChemTable',
 		homeDescription:
-			`Tableau périodique interactif des 118 éléments${_}: masse atomique, configuration électronique, électronégativité, masse volumique, avec des explications pour les élèves.`,
+			`Tableau périodique interactif des 118 éléments${_}: masse atomique, configuration électronique, électronégativité, masse volumique et explications pour les élèves.`,
 		elementTitle: (name, symbol) => `${name} (${symbol})${_}: propriétés et masse atomique | ChemTable`,
 		elementDescription: (f) =>
 			`${f.name} (${f.symbol}), numéro atomique ${f.z}${_}: ${f.category.toLowerCase()}` +
 			(f.mass ? `, ${f.massIsIsotope ? 'nombre de masse' : 'masse atomique'} ${f.mass}` : '') +
-			`. Configuration électronique, masse volumique, température de fusion, électronégativité et plus.`
+			`. Configuration électronique, masse volumique, électronégativité et plus.`
 	},
 	article: {
 		kicker: (z) => `Élément chimique n° ${z}`,

@@ -105,7 +105,7 @@
 		title={t.explainToggle}
 		onclick={() => (term = term === key ? null : key)}
 	>
-		{label}<span class="q" aria-hidden="true">?</span>
+		<span class="label">{label}</span><span class="q" aria-hidden="true">?</span>
 	</button>
 {/snippet}
 
@@ -121,7 +121,11 @@
 		if (!open) close();
 	}}
 >
-	<Dialog.Portal>
+	<!--
+		Rendered in place, not portalled: a portal mounts only in the browser, so an element page
+		opened by URL showed the table until JS loaded. The poster is a root-level fixed layer anyway.
+	-->
+	<Dialog.Portal disabled>
 		<Dialog.Content forceMount>
 			{#snippet child({ props, open })}
 				{#if open && e}
@@ -503,6 +507,7 @@
 		display: inline-flex;
 		align-items: center;
 		gap: 0.4em;
+		max-width: 100%;
 		padding: 0;
 		border: 0;
 		background: none;
@@ -511,6 +516,17 @@
 		text-align: left;
 		text-decoration: underline dotted;
 		text-underline-offset: 0.25em;
+	}
+
+	/*
+	 * Single long words (Elektronenkonfiguration) would run into the value on phones. Phones hyphenate
+	 * by <html lang>; a browser without the dictionary breaks the word anywhere instead.
+	 */
+	.label {
+		min-width: 0;
+		-webkit-hyphens: auto;
+		hyphens: auto;
+		overflow-wrap: anywhere;
 	}
 
 	.q {

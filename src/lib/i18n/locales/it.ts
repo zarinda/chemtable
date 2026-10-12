@@ -105,12 +105,12 @@ export const it: Dict = {
 	seo: {
 		homeTitle: 'Tavola periodica interattiva degli elementi | ChemTable',
 		homeDescription:
-			'Tavola periodica interattiva di tutti i 118 elementi: massa atomica, configurazione elettronica, elettronegatività, densità e altro, con spiegazioni per gli studenti.',
+			'Tavola periodica interattiva di tutti i 118 elementi: massa atomica, configurazione elettronica, elettronegatività, densità e spiegazioni per gli studenti.',
 		elementTitle: (name, symbol) => `${name} (${symbol}): proprietà e massa atomica | ChemTable`,
 		elementDescription: (f) =>
 			`${f.name} (${f.symbol}), numero atomico ${f.z}: ${f.category.toLowerCase()}` +
 			(f.mass ? `, ${f.massIsIsotope ? 'numero di massa' : 'massa atomica'} ${f.mass}` : '') +
-			`. Configurazione elettronica, densità, punto di fusione, elettronegatività e altro.`
+			`. Configurazione elettronica, densità, elettronegatività e altro.`
 	},
 	article: {
 		kicker: (z) => `Elemento chimico n. ${z}`,
