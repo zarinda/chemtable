@@ -148,7 +148,7 @@ export function printHtml(lang: Lang, paper: Paper, variant: Variant, site: stri
 	];
 
 	const host = new URL(site).host;
-	const sources = `${t.sources}: PubChem (NIH), IUPAC CIAAW, Wikidata · CC BY 4.0 · ${fetchedAt}`;
+	const sources = `${t.sources}: IUPAC CIAAW, NIST, PubChem (NIH), Wikidata · CC BY 4.0 · ${fetchedAt}`;
 
 	return `<!doctype html>
 <html lang="${LANG_INFO[lang].tag}">

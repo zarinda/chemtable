@@ -5,19 +5,25 @@
  *   https://pubchem.ncbi.nlm.nih.gov/periodic-table/
  * - IUPAC CIAAW abridged standard atomic weights (2021 report + 2024 revisions).
  *   https://www.ciaaw.org/abridged-atomic-weights.htm
- * - Wikidata: element names in every supported language and Wikipedia article links.
+ * - Wikidata: element names in every supported language and Wikipedia article links,
+ *   discoverers and what an element is named after.
  *   https://www.wikidata.org/
- * - Wikidata: element names in every supported language and Wikipedia article links.
- *   https://www.wikidata.org/
+ * - NIST Atomic Spectra Database: first ionization energies (PubChem's are outdated for
+ *   about fifteen elements). https://physics.nist.gov/PhysRefData/ASD/ionEnergy.html
+ * - scripts/corrections.ts: hand-checked fixes, electron affinities and covalent radii,
+ *   each with its source.
  *
  * Run: npm run data
  */
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { LANGS, LANG_INFO, type Lang } from '../src/lib/i18n/langs.ts';
+import * as fix from './corrections.ts';
 
 const PUBCHEM_URL = 'https://pubchem.ncbi.nlm.nih.gov/rest/pug/periodictable/JSON';
 const CIAAW_URL = 'https://www.ciaaw.org/abridged-atomic-weights.htm';
 const WIKIDATA_URL = 'https://query.wikidata.org/sparql';
+const NIST_URL =
+	'https://physics.nist.gov/cgi-bin/ASD/ie.pl?spectra=H-Og+I&units=1&format=2&order=0&at_num_out=on&e_out=0&unc_out=on';
 const OUT = new URL('../src/lib/data/elements.json', import.meta.url);
 
 const CATEGORY: Record<string, string> = {
@@ -102,6 +108,28 @@ async function ciaawWeights(): Promise<Map<number, { value: number; text: string
 	return map;
 }
 
+/**
+ * First ionization energy in eV by atomic number. NIST marks calculated values with ( )
+ * and semi-empirical ones with [ ]; those are kept only when their uncertainty is below
+ * 0.01 eV (hydrogen's exact calculation, praseodymium), so rough guesses for Pa, Fm, Md
+ * and the superheavy elements are left out.
+ */
+async function nistIonization(): Promise<Map<number, number>> {
+	const csv = await (await fetch(NIST_URL)).text();
+	const map = new Map<number, number>();
+	for (const line of csv.split('\n')) {
+		// Cells look like "=""26""": Excel-style quoting.
+		const cells = [...line.matchAll(/"=""([^"]*)"""/g)].map((m) => m[1]);
+		if (cells.length < 5) continue;
+		const [z, prefix, value, , uncertainty] = cells;
+		const energy = Number(value);
+		if (!Number.isFinite(energy)) continue;
+		if (prefix === '' || Number(uncertainty) < 0.01) map.set(Number(z), energy);
+	}
+	if (map.size < 100) throw new Error(`NIST returned ${map.size} ionization energies`);
+	return map;
+}
+
 type WikidataInfo = {
 	qid: string;
 	names: Partial<Record<Lang, string>>;
@@ -161,6 +189,114 @@ async function wikidata(): Promise<Map<number, WikidataInfo>> {
 	return map;
 }
 
+/** A person, place or other item with its label in every supported language. */
+type Named = { qid: string; name: Record<Lang, string> };
+
+const byEnglishName = (a: Named, b: Named) => a.name.en.localeCompare(b.name.en);
+
+/**
+ * "Named after" (P138) mixes true eponyms with word roots: argon is "named after"
+ * laziness, bromine after stink. Only people, places, sky objects and mythology read
+ * right as "named after X"; word roots need phrasing Wikidata doesn't give.
+ */
+const EPONYM = [
+	'?v wdt:P31 wd:Q5', // human
+	'?v wdt:P625 []', // has coordinates: city, country, region, mine, laboratory
+	'?v wdt:P31/wdt:P279* wd:Q6999', // astronomical object
+	'?v wdt:P31/wdt:P279* wd:Q178885', // deity
+	'?v wdt:P31/wdt:P279* wd:Q4271324' // mythical character
+];
+
+/** Since 2024 many names live only under the language-neutral "mul" label. */
+const RELATION_TAGS = [...LANGS.flatMap(labelTags), 'mul', 'en'].map((t) => `"${t}"`).join(',');
+
+/** An item's name in every language from its labels, falling back to "mul", then English. */
+function toNamed(qid: string, labels: Map<string, string>): Named {
+	const pick = (lang: Lang) => [...labelTags(lang), 'mul', 'en'].map((t) => labels.get(t)).find(Boolean) ?? '';
+	return { qid, name: Object.fromEntries(LANGS.map((l) => [l, pick(l)])) as Record<Lang, string> };
+}
+
+/** Labels for the Wikidata items named in corrections.ts. */
+async function labelled(qids: string[]): Promise<Map<string, Named>> {
+	const rows = await sparql(`SELECT ?v ?label WHERE {
+		VALUES ?v { ${qids.map((q) => `wd:${q}`).join(' ')} }
+		?v rdfs:label ?label. FILTER(LANG(?label) IN (${RELATION_TAGS}))
+	}`);
+	const labels = new Map<string, Map<string, string>>();
+	for (const b of rows as (Record<string, { value: string; 'xml:lang'?: string }>)[]) {
+		const qid = b.v.value.split('/').pop()!;
+		if (!labels.has(qid)) labels.set(qid, new Map());
+		labels.get(qid)!.set(b.label['xml:lang'] ?? '', b.label.value);
+	}
+	const missing = qids.filter((q) => !labels.has(q));
+	if (missing.length) throw new Error(`No Wikidata labels for ${missing.join(', ')}`);
+	return new Map([...labels].map(([qid, l]) => [qid, toNamed(qid, l)]));
+}
+
+/** Discoverers (P61) and eponyms (P138) per atomic number, labelled in every language. */
+async function relations(): Promise<Map<number, { discoveredBy: Named[]; namedAfter: Named[] }>> {
+	const query = (prop: string) =>
+		sparql(`SELECT ?z ?v ?label WHERE {
+			?el wdt:P31 wd:Q11344; wdt:P1086 ?z; wdt:${prop} ?v.
+			FILTER(isIRI(?v))
+			?v rdfs:label ?label. FILTER(LANG(?label) IN (${RELATION_TAGS}))
+		}`);
+	const [discoverers, named] = await Promise.all([query('P61'), query('P138')]);
+	// Type check only the ~100 candidates: walking the class tree for all elements times out.
+	const candidates = [...new Set(named.map((b) => b.v.value))].map((v) => `<${v}>`).join(' ');
+	// One query per test: a UNION, or a walk up a broad class like "geographic location", times out.
+	// Sequential: Wikidata's query service limits parallel requests.
+	const keep = new Set<string>();
+	for (const test of EPONYM)
+		for (const b of await sparql(`SELECT DISTINCT ?v WHERE { VALUES ?v { ${candidates} } ${test} }`))
+			keep.add(b.v.value);
+	const eponyms = named.filter(
+		(b) => keep.has(b.v.value) && !fix.NOT_EPONYMS[Number(b.z.value)]?.includes(b.v.value.split('/').pop()!)
+	);
+
+	const collect = (rows: Record<string, { value: string; 'xml:lang'?: string }>[]) => {
+		const byZ = new Map<number, Map<string, Map<string, string>>>();
+		for (const b of rows) {
+			const z = Number(b.z.value);
+			const qid = b.v.value.split('/').pop()!;
+			if (!byZ.has(z)) byZ.set(z, new Map());
+			const items = byZ.get(z)!;
+			if (!items.has(qid)) items.set(qid, new Map());
+			items.get(qid)!.set(b.label['xml:lang'] ?? '', b.label.value);
+		}
+		const result = new Map<number, Named[]>();
+		for (const [z, items] of byZ)
+			result.set(z, [...items].map(([qid, labels]) => toNamed(qid, labels)).sort(byEnglishName));
+		return result;
+	};
+
+	const found = collect(discoverers);
+	const eponymsByZ = collect(eponyms);
+	const overrides = Object.entries(fix.DISCOVERY).filter(([, d]) => d.by);
+	const people = await labelled([...new Set(overrides.flatMap(([, d]) => d.by!))]);
+	for (const [z, d] of overrides) found.set(Number(z), d.by!.map((q) => people.get(q)!).sort(byEnglishName));
+	const map = new Map<number, { discoveredBy: Named[]; namedAfter: Named[] }>();
+	for (const z of new Set([...found.keys(), ...eponymsByZ.keys()]))
+		map.set(z, { discoveredBy: found.get(z) ?? [], namedAfter: eponymsByZ.get(z) ?? [] });
+	return map;
+}
+
+/**
+ * PubChem's common oxidation states merged with the main ones it misses, always signed
+ * ("+7", not "7"). "0" stays only for elements with no compounds (He, Ne, Ar).
+ */
+function oxidationStates(z: number, pubchem: string): string[] {
+	if (z >= fix.OXIDATION_UNKNOWN_FROM) return [];
+	const states = new Set(
+		fix.OXIDATION_SUPERHEAVY[z] ?? [
+			...(pubchem ? pubchem.split(',').map((s) => Number(s.trim())) : []),
+			...(fix.OXIDATION_EXTRA[z] ?? [])
+		]
+	);
+	if (states.size > 1) states.delete(0);
+	return [...states].sort((a, b) => b - a).map((n) => (n > 0 ? `+${n}` : String(n)));
+}
+
 /** Wikidata labels are lower-case in most languages; names start with a capital in the UI. */
 const capitalize = (s: string, lang: Lang) =>
 	s.charAt(0).toLocaleUpperCase(LANG_INFO[lang].tag) + s.slice(1);
@@ -172,13 +308,17 @@ async function main() {
 		Object.fromEntries(cols.map((c, i) => [c, r.Cell[i] ?? '']))
 	);
 	const weights = await ciaawWeights();
+	const ionization = await nistIonization();
 	const wiki = await wikidata();
+	const related = await relations();
 
+	// PubChem marks some configurations "(predicted)" or "(calculated)".
+	const configOf = (r: Record<string, string>) =>
+		fix.CONFIG[Number(r.AtomicNumber)] ?? r.ElectronConfiguration.replace(/\s*\(.*\)$/, '');
 	const configs = new Map<string, string>();
 	for (const r of rows) {
-		const config = r.ElectronConfiguration.replace(/\s*\(.*\)$/, '');
-		configs.set(r.AtomicNumber, config);
-		configs.set(r.Symbol, config);
+		configs.set(r.AtomicNumber, configOf(r));
+		configs.set(r.Symbol, configOf(r));
 	}
 
 	const elements = rows.map((r) => {
@@ -187,6 +327,7 @@ async function main() {
 		const pubchemMass = num(r.AtomicMass);
 		const state = r.StandardState.toLowerCase();
 		const w = wiki.get(z);
+		const removed = fix.REMOVE[z] ?? {};
 		const name = Object.fromEntries(
 			LANGS.map((l) => [l, w?.names[l] ? capitalize(w.names[l], l) : l === 'en' ? r.Name : ''])
 		) as Record<Lang, string>;
@@ -208,20 +349,26 @@ async function main() {
 						text: pubchemMass === null ? null : `[${Math.round(pubchemMass)}]`,
 						source: 'pubchem-isotope'
 					},
-			config: r.ElectronConfiguration.replace(/\s*\(predicted\)$/, ''),
-			configPredicted: r.ElectronConfiguration.includes('predicted'),
+			config: configOf(r),
+			configPredicted: fix.configPredicted(z),
 			shells: shells(z, configs),
 			state: state.includes('solid') ? 'solid' : state.includes('liquid') ? 'liquid' : 'gas',
-			statePredicted: state.startsWith('expected'),
-			electronegativity: num(r.Electronegativity),
-			atomicRadius: num(r.AtomicRadius),
-			ionizationEnergy: num(r.IonizationEnergy),
-			electronAffinity: num(r.ElectronAffinity),
-			oxidationStates: r.OxidationStates ? r.OxidationStates.split(',').map((s) => s.trim()) : [],
-			meltingPoint: num(r.MeltingPoint),
-			boilingPoint: num(r.BoilingPoint),
-			density: num(r.Density),
-			yearDiscovered: r.YearDiscovered === 'Ancient' ? 'ancient' : num(r.YearDiscovered)
+			statePredicted: fix.statePredicted(z),
+			electronegativity: removed.electronegativity ? null : num(r.Electronegativity),
+			/** Single-bond covalent radius, Cordero 2008. */
+			atomicRadius: fix.COVALENT_RADIUS[z] ?? null,
+			ionizationEnergy: ionization.get(z) ?? null,
+			electronAffinity: fix.ELECTRON_AFFINITY[z] ?? null,
+			oxidationStates: oxidationStates(z, r.OxidationStates),
+			meltingPoint: removed.meltingPoint ? null : num(r.MeltingPoint),
+			meltsUnderPressure: fix.MELTS_UNDER_PRESSURE.has(z),
+			boilingPoint: removed.boilingPoint ? null : num(r.BoilingPoint),
+			sublimes: fix.SUBLIMES.has(z),
+			density: removed.density ? null : num(r.Density),
+			yearDiscovered:
+				fix.DISCOVERY[z]?.year ?? (r.YearDiscovered === 'Ancient' ? 'ancient' : num(r.YearDiscovered)),
+			discoveredBy: related.get(z)?.discoveredBy ?? [],
+			namedAfter: related.get(z)?.namedAfter ?? []
 		};
 	});
 
@@ -236,7 +383,15 @@ async function main() {
 		JSON.stringify(
 			{
 				fetchedAt: new Date().toISOString().slice(0, 10),
-				sources: { properties: PUBCHEM_URL, atomicWeights: CIAAW_URL, names: WIKIDATA_URL },
+				sources: {
+					properties: PUBCHEM_URL,
+					atomicWeights: CIAAW_URL,
+					ionizationEnergies: 'https://physics.nist.gov/PhysRefData/ASD/ionEnergy.html',
+					electronAffinities: 'https://en.wikipedia.org/wiki/Electron_affinity_(data_page)',
+					covalentRadii: 'https://doi.org/10.1039/b801115j',
+					names: WIKIDATA_URL,
+					corrections: 'scripts/corrections.ts'
+				},
 				elements
 			},
 			null,

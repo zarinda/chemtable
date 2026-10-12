@@ -55,6 +55,12 @@ export type Dict = {
 	block: string;
 	state: Record<'solid' | 'liquid' | 'gas', string>;
 	predicted: string;
+	/** After a melting point reached only under pressure (helium, carbon, arsenic). */
+	underPressure: string;
+	/** After a boiling point that is really a sublimation point (carbon, arsenic). */
+	sublimes: string;
+	/** In place of an electron affinity for atoms that form no stable negative ion. */
+	anionUnstable: string;
 	atomicMass: string;
 	massIsotope: string;
 	config: string;
@@ -64,6 +70,8 @@ export type Dict = {
 	electronAffinity: string;
 	discovered: string;
 	ancient: string;
+	discoveredBy: string;
+	namedAfter: string;
 	close: string;
 	sources: string;
 	sourcesNote: string;

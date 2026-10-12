@@ -22,7 +22,7 @@ export const zh: Dict = {
 	property: {
 		mass: '相对原子质量',
 		electronegativity: '电负性',
-		atomicRadius: '范德华半径',
+		atomicRadius: '共价半径',
 		density: '密度',
 		meltingPoint: '熔点',
 		ionizationEnergy: '电离能'
@@ -41,6 +41,9 @@ export const zh: Dict = {
 	block: '区',
 	state: { solid: '固态', liquid: '液态', gas: '气态' },
 	predicted: '预测值',
+	underPressure: '仅在加压下',
+	sublimes: '升华',
+	anionUnstable: '不形成稳定负离子',
 	atomicMass: '相对原子质量',
 	massIsotope: '最稳定同位素的质量数',
 	config: '电子排布',
@@ -50,10 +53,12 @@ export const zh: Dict = {
 	electronAffinity: '电子亲和能',
 	discovered: '发现年份',
 	ancient: '古代已知',
+	discoveredBy: '发现者',
+	namedAfter: '命名来源',
 	close: '关闭',
 	sources: '数据来源',
 	sourcesNote:
-		'性质数据来自 PubChem（美国国立卫生研究院）。相对原子质量来自 IUPAC CIAAW 的简化标准值。方括号中为最稳定同位素的质量数。元素名称来自 Wikidata。',
+		'相对原子质量来自 IUPAC CIAAW 的简化标准值；方括号中为最稳定同位素的质量数。电离能来自 NIST。电子亲和能为实测值（维基百科汇总表，附原始文献）。共价半径来自 Cordero 等（2008）。其他性质来自 PubChem（美国国立卫生研究院），并已与 CRC 手册核对。元素名称来自 Wikidata。',
 	theme: { light: '浅色主题', dark: '深色主题', system: '跟随系统' },
 	language: '语言',
 	madeBy: '出品：',
@@ -62,24 +67,27 @@ export const zh: Dict = {
 		mass: '原子的平均质量，以原子质量单位表示（1 u 等于一个碳-12 原子质量的 1/12）。已考虑该元素天然同位素的组成。',
 		group:
 			'竖列的编号，按 IUPAC 编号为 1 至 18。同一族元素的最外层电子结构相同，因此性质相似。部分中学教材仍使用以罗马数字表示的主族和副族编号。',
-		period: '横行的编号，等于原子的电子层数。',
+		period: '横行的编号，通常等于原子的电子层数；钯是例外，它只有四个电子层，却位于第 5 周期。',
 		block: '最后填入电子的亚层（s、p、d 或 f）。每个区在周期表中构成一个矩形区域。',
 		config: '电子在各亚层中的分布。方括号表示前一个稀有气体的电子排布，上标表示该亚层中的电子数。',
 		shells: '从原子核向外，每个电子层上的电子数。',
 		electronegativity:
 			'原子在化学键中吸引电子的能力。按鲍林标度，从钫的 0.7 到氟的 3.98。',
 		atomicRadius:
-			'两个相邻但不成键的原子相互靠近时距离的一半。它比教科书中的共价半径或金属半径大：铁为 194 pm，而金属半径约为 126 pm。',
+			'同种元素两个原子之间单键键长的一半，反映原子在分子或晶体中的大小：碳为 76 pm，铁为 132 pm。',
 		density: '1 立方厘米物质的质量。气体为 0 °C、标准大气压下的数值。',
-		meltingPoint: '在标准大气压下固体变为液体时的温度。',
-		boilingPoint: '在标准大气压下液体沸腾时的温度。',
+		meltingPoint:
+			'在标准大气压下固体变为液体时的温度。氦、碳和砷在常压下不会熔化：氦需要约 25 个大气压，碳和砷则直接变为气体。',
+		boilingPoint:
+			'在标准大气压下液体沸腾时的温度。对碳和砷而言，是固体直接变为气体（升华）的温度。',
 		ionizationEnergy:
 			'从原子中移去最外层、结合最弱的一个电子所需的能量。数值越小，元素越容易失去电子，这是金属的典型特征。',
-		electronAffinity: '中性原子获得一个电子时释放的能量。卤素的数值最大。',
-		oxidationStates: '原子在化合物中可能具有的形式电荷。'
+		electronAffinity:
+			'中性原子获得一个电子时释放的能量。卤素的数值最大。稀有气体、氮和部分金属不能形成稳定的负离子。',
+		oxidationStates: '原子在化合物中常见的形式电荷。'
 	},
 	trend: {
-		mass: '随原子序数增大：从左到右、从上到下逐渐增大。',
+		mass: '随原子序数增大而增大，但有少数例外：氩比钾重，钴比镍重，碲比碘重。',
 		electronegativity: '同一周期从左到右增大，同一族从上到下减小。氟的电负性最大。',
 		atomicRadius: '大体上同一周期从左到右减小，同一族从上到下增大。',
 		density: '密度最大的是第 6 周期中部的金属：锇和铱。采用对数刻度，因为气体比金属轻数千倍。',
@@ -132,7 +140,7 @@ export const zh: Dict = {
 		paragraphs: [
 			'这是一张面向学生的交互式元素周期表，收录全部 118 种化学元素。打开任意元素即可查看其相对原子质量、电子排布、熔点和沸点、密度、电负性、电离能和氧化态，每一项都附有简短说明。',
 			'可以按分类或按某项性质为表格着色，观察元素周期律：例如电负性如何向氟逐渐增大，原子半径如何沿族自上而下增大。',
-			'性质数据来自 PubChem（美国国立卫生研究院），标准相对原子质量来自 IUPAC CIAAW，八种语言的元素名称来自 Wikidata。'
+			'相对原子质量来自 IUPAC CIAAW，电离能来自 NIST，共价半径来自 Cordero 等（2008），其他性质来自 PubChem（美国国立卫生研究院）并已与 CRC 手册核对。八种语言的元素名称来自 Wikidata。'
 		]
 	},
 	data: {

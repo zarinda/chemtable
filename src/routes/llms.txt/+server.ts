@@ -12,12 +12,13 @@ export const GET: RequestHandler = () => {
 	const en = UI.en;
 	const body = `# ChemTable: Interactive Periodic Table of the Elements
 
-> ${en.seo.homeDescription} Data from PubChem (US National Institutes of Health), IUPAC CIAAW standard atomic weights and Wikidata. Available in ${LANGS.length} languages. Made by ${AUTHOR.name} (${AUTHOR.url}). Updated ${fetchedAt}.
+> ${en.seo.homeDescription} Data from IUPAC CIAAW (atomic weights), NIST (ionization energies), PubChem (US National Institutes of Health, other properties, checked against the CRC Handbook) and Wikidata. Available in ${LANGS.length} languages. Made by ${AUTHOR.name} (${AUTHOR.url}). Updated ${fetchedAt}.
 
 Notes for using this data:
 
-- Atomic masses are IUPAC CIAAW abridged standard atomic weights. A value in square brackets, such as [98], is the mass number of the most stable isotope of an element with no standard atomic weight.
-- The radius is the van der Waals radius from PubChem, larger than textbook covalent or metallic radii.
+- Atomic masses are IUPAC CIAAW abridged standard atomic weights. A value in square brackets, such as [97], is the mass number of the most stable isotope of an element with no standard atomic weight.
+- The radius is the single-bond covalent radius (Cordero et al., 2008).
+- Estimates and predictions are marked or left out: values for superheavy elements are mostly unknown.
 - Group numbers follow IUPAC (1–18). Lanthanum–ytterbium and actinium–nobelium form the f-block; lutetium and lawrencium close the d-block.
 - The data is published under ${DATA_LICENSE.name} (${DATA_LICENSE.url}): free to reuse with a link to ChemTable.
 - Every element page exists in each language: ${absolute('/iron')} (English), ${absolute('/ru/iron')} (Russian), and so on with the prefixes ${LANGS.filter((l) => l !== 'en').join(', ')}.

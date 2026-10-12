@@ -22,7 +22,7 @@ export const en: Dict = {
 	property: {
 		mass: 'Atomic mass',
 		electronegativity: 'Electronegativity',
-		atomicRadius: 'Van der Waals radius',
+		atomicRadius: 'Covalent radius',
 		density: 'Density',
 		meltingPoint: 'Melting point',
 		ionizationEnergy: 'Ionization energy'
@@ -41,6 +41,9 @@ export const en: Dict = {
 	block: 'Block',
 	state: { solid: 'Solid', liquid: 'Liquid', gas: 'Gas' },
 	predicted: 'predicted',
+	underPressure: 'only under pressure',
+	sublimes: 'sublimes',
+	anionUnstable: 'no stable negative ion',
 	atomicMass: 'Atomic mass',
 	massIsotope: 'mass number of the most stable isotope',
 	config: 'Electron configuration',
@@ -50,10 +53,12 @@ export const en: Dict = {
 	electronAffinity: 'Electron affinity',
 	discovered: 'Discovered',
 	ancient: 'known since antiquity',
+	discoveredBy: 'Discovered by',
+	namedAfter: 'Named after',
 	close: 'Close',
 	sources: 'Data sources',
 	sourcesNote:
-		'Properties from PubChem (NIH). Atomic masses from IUPAC CIAAW, abridged standard values. Values in square brackets are the mass number of the most stable isotope. Element names from Wikidata.',
+		'Atomic masses: IUPAC CIAAW, abridged standard values; in square brackets, the mass number of the most stable isotope. Ionization energies: NIST. Electron affinities: measured values (Wikipedia table citing primary sources). Covalent radii: Cordero et al. (2008). Other properties: PubChem (NIH), checked against the CRC Handbook. Element names: Wikidata.',
 	theme: { light: 'Light theme', dark: 'Dark theme', system: 'Match system' },
 	language: 'Language',
 	madeBy: 'Made by ',
@@ -62,7 +67,8 @@ export const en: Dict = {
 		mass: 'Average mass of an atom in unified atomic mass units (1 u is 1/12 of the mass of a carbon-12 atom). Accounts for the natural mix of the element’s isotopes.',
 		group:
 			'Number of the vertical column, 1 to 18 in IUPAC numbering. Elements in a group share the same outer-shell layout, so their properties are alike.',
-		period: 'Number of the horizontal row. Equal to the number of electron shells in the atom.',
+		period:
+			'Number of the horizontal row. Usually equal to the number of electron shells in the atom; palladium is the exception, with four shells in period 5.',
 		block:
 			'The subshell (s, p, d or f) that receives electrons last. Each block forms a rectangular area of the table.',
 		config:
@@ -71,17 +77,20 @@ export const en: Dict = {
 		electronegativity:
 			'How strongly an atom pulls electrons towards itself in a chemical bond. On the Pauling scale it runs from 0.7 for francium to 3.98 for fluorine.',
 		atomicRadius:
-			'Half the distance at which two neighbouring, non-bonded atoms approach each other. It is larger than the covalent or metallic radius in textbooks: 194 pm for iron versus about 126 pm.',
+			'Half the length of a single covalent bond between two atoms of the element. It shows the size of an atom inside a molecule or crystal: 76 pm for carbon, 132 pm for iron.',
 		density: 'Mass of one cubic centimetre of the substance. For gases, at 0 °C and standard pressure.',
-		meltingPoint: 'Temperature at which the solid turns liquid at standard pressure.',
-		boilingPoint: 'Temperature at which the liquid boils at standard pressure.',
+		meltingPoint:
+			'Temperature at which the solid turns liquid at standard pressure. Helium, carbon and arsenic do not melt at normal pressure: helium needs about 25 atm, carbon and arsenic turn straight into vapour.',
+		boilingPoint:
+			'Temperature at which the liquid boils at standard pressure. For carbon and arsenic, the temperature at which the solid turns straight into vapour (sublimation).',
 		ionizationEnergy:
 			'Energy needed to remove the most loosely bound electron from an atom. The lower it is, the more easily the element gives up an electron, which is typical of metals.',
-		electronAffinity: 'Energy released when a neutral atom gains an electron. Highest for the halogens.',
-		oxidationStates: 'Formal charges the atom can take in its compounds.'
+		electronAffinity:
+			'Energy released when a neutral atom gains an electron. Highest for the halogens. Noble gases, nitrogen and some metals form no stable negative ion.',
+		oxidationStates: 'Main formal charges the atom takes in its compounds.'
 	},
 	trend: {
-		mass: 'Grows with atomic number: left to right and top to bottom.',
+		mass: 'Grows with atomic number, with a few exceptions: argon is heavier than potassium, cobalt than nickel, tellurium than iodine.',
 		electronegativity:
 			'Rises left to right across a period and falls down a group. Fluorine has the highest value.',
 		atomicRadius: 'Generally shrinks left to right across a period and grows down a group.',
@@ -139,7 +148,7 @@ export const en: Dict = {
 		paragraphs: [
 			'An interactive periodic table of all 118 chemical elements, made for students. Open any element to see its atomic mass, electron configuration, melting and boiling points, density, electronegativity, ionization energy and oxidation states, each with a short explanation.',
 			'Colour the table by category or by a property to see the periodic trends: how electronegativity rises towards fluorine, or how atoms grow larger down each group.',
-			'Properties come from PubChem (US National Institutes of Health), standard atomic weights from IUPAC CIAAW, and element names in eight languages from Wikidata.'
+			'Atomic masses come from IUPAC CIAAW, ionization energies from NIST, covalent radii from Cordero et al. (2008) and other properties from PubChem (US National Institutes of Health), checked against the CRC Handbook. Element names in eight languages come from Wikidata.'
 		]
 	},
 	data: {

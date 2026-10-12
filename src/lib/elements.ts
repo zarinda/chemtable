@@ -35,15 +35,27 @@ export type Element = {
 	state: 'solid' | 'liquid' | 'gas';
 	statePredicted: boolean;
 	electronegativity: number | null;
+	/** Single-bond covalent radius, pm (Cordero 2008). */
 	atomicRadius: number | null;
 	ionizationEnergy: number | null;
-	electronAffinity: number | null;
+	/** eV; 'unstable' when the atom forms no stable negative ion. */
+	electronAffinity: number | 'unstable' | null;
 	oxidationStates: string[];
 	meltingPoint: number | null;
+	/** Melts only under pressure: helium, carbon, arsenic. */
+	meltsUnderPressure: boolean;
 	boilingPoint: number | null;
+	/** Turns straight into vapour at normal pressure; boilingPoint is the sublimation point. */
+	sublimes: boolean;
 	density: number | null;
 	yearDiscovered: number | 'ancient' | null;
+	/** People or institutions credited with the discovery (Wikidata P61). */
+	discoveredBy: Named[];
+	/** Person, place, sky object or mythical figure the name honours (Wikidata P138). */
+	namedAfter: Named[];
 };
+
+export type Named = { qid: string; name: Record<Lang, string> };
 
 export const elements = data.elements as Element[];
 export const sources = data.sources;

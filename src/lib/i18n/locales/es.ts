@@ -22,7 +22,7 @@ export const es: Dict = {
 	property: {
 		mass: 'Masa atómica',
 		electronegativity: 'Electronegatividad',
-		atomicRadius: 'Radio de van der Waals',
+		atomicRadius: 'Radio covalente',
 		density: 'Densidad',
 		meltingPoint: 'Punto de fusión',
 		ionizationEnergy: 'Energía de ionización'
@@ -41,6 +41,9 @@ export const es: Dict = {
 	block: 'Bloque',
 	state: { solid: 'Sólido', liquid: 'Líquido', gas: 'Gaseoso' },
 	predicted: 'previsto',
+	underPressure: 'solo bajo presión',
+	sublimes: 'sublimación',
+	anionUnstable: 'no forma iones negativos estables',
 	atomicMass: 'Masa atómica',
 	massIsotope: 'número másico del isótopo más estable',
 	config: 'Configuración electrónica',
@@ -50,10 +53,12 @@ export const es: Dict = {
 	electronAffinity: 'Afinidad electrónica',
 	discovered: 'Descubrimiento',
 	ancient: 'conocido desde la Antigüedad',
+	discoveredBy: 'Descubierto por',
+	namedAfter: 'Nombrado en honor a',
 	close: 'Cerrar',
 	sources: 'Fuentes de los datos',
 	sourcesNote:
-		'Propiedades: PubChem (NIH). Masas atómicas: IUPAC CIAAW, valores estándar abreviados. Entre corchetes: número másico del isótopo más estable. Nombres de los elementos: Wikidata.',
+		'Masas atómicas: IUPAC CIAAW, valores estándar abreviados; entre corchetes, número másico del isótopo más estable. Energías de ionización: NIST. Afinidades electrónicas: valores medidos (tabla de Wikipedia con fuentes primarias). Radios covalentes: Cordero et al. (2008). Otras propiedades: PubChem (NIH), cotejadas con el CRC Handbook. Nombres de los elementos: Wikidata.',
 	theme: { light: 'Tema claro', dark: 'Tema oscuro', system: 'Como el sistema' },
 	language: 'Idioma',
 	madeBy: 'Creado por ',
@@ -62,7 +67,8 @@ export const es: Dict = {
 		mass: 'Masa media de un átomo en unidades de masa atómica (1 u es 1/12 de la masa de un átomo de carbono-12). Tiene en cuenta la mezcla natural de isótopos del elemento.',
 		group:
 			'Número de la columna vertical, del 1 al 18 según la numeración de la IUPAC. Los elementos de un mismo grupo tienen la misma capa externa y, por eso, propiedades parecidas.',
-		period: 'Número de la fila horizontal. Coincide con el número de capas electrónicas del átomo.',
+		period:
+			'Número de la fila horizontal. Suele coincidir con el número de capas electrónicas del átomo; la excepción es el paladio, con cuatro capas en el periodo 5.',
 		block:
 			'El subnivel (s, p, d o f) que se llena de electrones en último lugar. Cada bloque forma una zona rectangular de la tabla.',
 		config:
@@ -71,18 +77,20 @@ export const es: Dict = {
 		electronegativity:
 			'Con qué fuerza atrae un átomo los electrones en un enlace químico. En la escala de Pauling va de 0,7 en el francio a 3,98 en el flúor.',
 		atomicRadius:
-			'Mitad de la distancia a la que se acercan dos átomos vecinos no enlazados. Es mayor que el radio covalente o metálico de los libros de texto: 194 pm en el hierro frente a unos 126 pm.',
+			'Mitad de la longitud de un enlace covalente simple entre dos átomos del elemento. Indica el tamaño del átomo en una molécula o un cristal: 76 pm en el carbono, 132 pm en el hierro.',
 		density: 'Masa de un centímetro cúbico de la sustancia. Para los gases, a 0 °C y presión normal.',
-		meltingPoint: 'Temperatura a la que el sólido pasa a líquido a presión normal.',
-		boilingPoint: 'Temperatura a la que el líquido hierve a presión normal.',
+		meltingPoint:
+			'Temperatura a la que el sólido pasa a líquido a presión normal. El helio, el carbono y el arsénico no se funden a presión normal: el helio necesita unas 25 atm, y el carbono y el arsénico pasan directamente a vapor.',
+		boilingPoint:
+			'Temperatura a la que el líquido hierve a presión normal. En el carbono y el arsénico, temperatura a la que el sólido se sublima.',
 		ionizationEnergy:
 			'Energía necesaria para arrancar al átomo su electrón menos ligado. Cuanto menor es, más fácilmente cede el elemento un electrón, algo típico de los metales.',
 		electronAffinity:
-			'Energía que se libera cuando un átomo neutro captura un electrón. Es máxima en los halógenos.',
-		oxidationStates: 'Cargas formales que el átomo puede tener en sus compuestos.'
+			'Energía que se libera cuando un átomo neutro captura un electrón. Es máxima en los halógenos. Los gases nobles, el nitrógeno y algunos metales no forman iones negativos estables.',
+		oxidationStates: 'Principales cargas formales que el átomo adopta en sus compuestos.'
 	},
 	trend: {
-		mass: 'Crece con el número atómico: de izquierda a derecha y de arriba abajo.',
+		mass: 'Crece con el número atómico, con pocas excepciones: el argón es más pesado que el potasio, el cobalto que el níquel y el telurio que el yodo.',
 		electronegativity:
 			'Aumenta de izquierda a derecha en un periodo y disminuye de arriba abajo en un grupo. El flúor tiene el valor más alto.',
 		atomicRadius:
@@ -139,7 +147,7 @@ export const es: Dict = {
 		paragraphs: [
 			'Una tabla periódica interactiva de los 118 elementos químicos, pensada para estudiantes. Abre cualquier elemento para ver su masa atómica, configuración electrónica, puntos de fusión y ebullición, densidad, electronegatividad, energía de ionización y estados de oxidación, cada uno con una breve explicación.',
 			'Colorea la tabla por categoría o por propiedad para ver las tendencias periódicas: cómo la electronegatividad aumenta hacia el flúor o cómo los átomos crecen al bajar por cada grupo.',
-			'Las propiedades proceden de PubChem (Institutos Nacionales de Salud de EE. UU.), las masas atómicas estándar de la IUPAC CIAAW y los nombres de los elementos en ocho idiomas de Wikidata.'
+			'Las masas atómicas proceden de la IUPAC CIAAW, las energías de ionización del NIST, los radios covalentes de Cordero et al. (2008) y las demás propiedades de PubChem (Institutos Nacionales de Salud de EE. UU.), cotejadas con el CRC Handbook. Los nombres de los elementos en ocho idiomas proceden de Wikidata.'
 		]
 	},
 	data: {

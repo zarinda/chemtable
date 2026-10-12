@@ -1,9 +1,13 @@
 {
-	"fetchedAt": "2026-10-10",
+	"fetchedAt": "2026-10-12",
 	"sources": {
 		"properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/periodictable/JSON",
 		"atomicWeights": "https://www.ciaaw.org/abridged-atomic-weights.htm",
-		"names": "https://query.wikidata.org/sparql"
+		"ionizationEnergies": "https://physics.nist.gov/PhysRefData/ASD/ionEnergy.html",
+		"electronAffinities": "https://en.wikipedia.org/wiki/Electron_affinity_(data_page)",
+		"covalentRadii": "https://doi.org/10.1039/b801115j",
+		"names": "https://query.wikidata.org/sparql",
+		"corrections": "scripts/corrections.ts"
 	},
 	"elements": [
 		{
@@ -22,14 +26,14 @@
 			},
 			"wikidata": "Q556",
 			"wikipedia": {
+				"it": "https://it.wikipedia.org/wiki/Idrogeno",
+				"zh": "https://zh.wikipedia.org/wiki/%E6%B0%A2",
 				"en": "https://en.wikipedia.org/wiki/Hydrogen",
+				"de": "https://de.wikipedia.org/wiki/Wasserstoff",
 				"es": "https://es.wikipedia.org/wiki/Hidr%C3%B3geno",
 				"fr": "https://fr.wikipedia.org/wiki/Hydrog%C3%A8ne",
-				"it": "https://it.wikipedia.org/wiki/Idrogeno",
-				"de": "https://de.wikipedia.org/wiki/Wasserstoff",
 				"pt": "https://pt.wikipedia.org/wiki/Hidrog%C3%A9nio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%92%D0%BE%D0%B4%D0%BE%D1%80%D0%BE%D0%B4",
-				"zh": "https://zh.wikipedia.org/wiki/%E6%B0%A2"
+				"ru": "https://ru.wikipedia.org/wiki/%D0%92%D0%BE%D0%B4%D0%BE%D1%80%D0%BE%D0%B4"
 			},
 			"category": "nonmetal",
 			"period": 1,
@@ -50,17 +54,35 @@
 			"state": "gas",
 			"statePredicted": false,
 			"electronegativity": 2.2,
-			"atomicRadius": 120,
-			"ionizationEnergy": 13.598,
-			"electronAffinity": 0.754,
+			"atomicRadius": 31,
+			"ionizationEnergy": 13.598434599702,
+			"electronAffinity": 0.754195,
 			"oxidationStates": [
 				"+1",
 				"-1"
 			],
 			"meltingPoint": 13.81,
+			"meltsUnderPressure": false,
 			"boilingPoint": 20.28,
+			"sublimes": false,
 			"density": 0.00008988,
-			"yearDiscovered": 1766
+			"yearDiscovered": 1766,
+			"discoveredBy": [
+				{
+					"qid": "Q131733",
+					"name": {
+						"en": "Henry Cavendish",
+						"ru": "Генри Кавендиш",
+						"fr": "Henry Cavendish",
+						"de": "Henry Cavendish",
+						"it": "Henry Cavendish",
+						"es": "Henry Cavendish",
+						"zh": "亨利·卡文迪什",
+						"pt": "Henry Cavendish"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 2,
@@ -78,14 +100,14 @@
 			},
 			"wikidata": "Q560",
 			"wikipedia": {
+				"pt": "https://pt.wikipedia.org/wiki/H%C3%A9lio",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D0%BB%D0%B8%D0%B9",
 				"it": "https://it.wikipedia.org/wiki/Elio",
+				"zh": "https://zh.wikipedia.org/wiki/%E6%B0%A6",
 				"de": "https://de.wikipedia.org/wiki/Helium",
 				"en": "https://en.wikipedia.org/wiki/Helium",
 				"es": "https://es.wikipedia.org/wiki/Helio",
-				"fr": "https://fr.wikipedia.org/wiki/H%C3%A9lium",
-				"pt": "https://pt.wikipedia.org/wiki/H%C3%A9lio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D0%BB%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E6%B0%A6"
+				"fr": "https://fr.wikipedia.org/wiki/H%C3%A9lium"
 			},
 			"category": "noble-gas",
 			"period": 1,
@@ -106,16 +128,74 @@
 			"state": "gas",
 			"statePredicted": false,
 			"electronegativity": null,
-			"atomicRadius": 140,
-			"ionizationEnergy": 24.587,
-			"electronAffinity": null,
+			"atomicRadius": 28,
+			"ionizationEnergy": 24.587389011,
+			"electronAffinity": "unstable",
 			"oxidationStates": [
 				"0"
 			],
 			"meltingPoint": 0.95,
+			"meltsUnderPressure": true,
 			"boilingPoint": 4.22,
+			"sublimes": false,
 			"density": 0.0001785,
-			"yearDiscovered": 1868
+			"yearDiscovered": 1868,
+			"discoveredBy": [
+				{
+					"qid": "Q127959",
+					"name": {
+						"en": "Norman Lockyer",
+						"ru": "Джозеф Норман Локьер",
+						"fr": "Joseph Norman Lockyer",
+						"de": "Joseph Norman Lockyer",
+						"it": "Norman Lockyer",
+						"es": "Joseph Norman Lockyer",
+						"zh": "约瑟夫·诺曼·洛克耶",
+						"pt": "Norman Lockyer"
+					}
+				},
+				{
+					"qid": "Q298581",
+					"name": {
+						"en": "Pierre Janssen",
+						"ru": "Пьер Жюль Сезар Жансен",
+						"fr": "Jules Janssen",
+						"de": "Jules Janssen",
+						"it": "Jules Janssen",
+						"es": "Pierre Janssen",
+						"zh": "皮埃尔·让森",
+						"pt": "Pierre Janssen"
+					}
+				},
+				{
+					"qid": "Q950726",
+					"name": {
+						"en": "William Ramsay",
+						"ru": "Уильям Рамзай",
+						"fr": "William Ramsay",
+						"de": "William Ramsay",
+						"it": "William Ramsay",
+						"es": "William Ramsay",
+						"zh": "威廉·拉姆齐",
+						"pt": "William Ramsay"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q134270",
+					"name": {
+						"en": "Helios",
+						"ru": "Гелиос",
+						"fr": "Hélios",
+						"de": "Helios",
+						"it": "Helios",
+						"es": "Helios",
+						"zh": "赫利俄斯",
+						"pt": "Helios"
+					}
+				}
+			]
 		},
 		{
 			"z": 3,
@@ -162,16 +242,34 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 0.98,
-			"atomicRadius": 182,
-			"ionizationEnergy": 5.392,
-			"electronAffinity": 0.618,
+			"atomicRadius": 128,
+			"ionizationEnergy": 5.391714996,
+			"electronAffinity": 0.618049,
 			"oxidationStates": [
 				"+1"
 			],
 			"meltingPoint": 453.65,
+			"meltsUnderPressure": false,
 			"boilingPoint": 1615,
+			"sublimes": false,
 			"density": 0.534,
-			"yearDiscovered": 1817
+			"yearDiscovered": 1817,
+			"discoveredBy": [
+				{
+					"qid": "Q313568",
+					"name": {
+						"en": "Johan August Arfwedson",
+						"ru": "Иоганн Арфведсон",
+						"fr": "Johan August Arfwedson",
+						"de": "Johan August Arfwedson",
+						"it": "Johan August Arfwedson",
+						"es": "Johann Arfvedson",
+						"zh": "约翰·奥古斯特·阿韦德松",
+						"pt": "Johan August Arfwedson"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 4,
@@ -218,16 +316,60 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.57,
-			"atomicRadius": 153,
-			"ionizationEnergy": 9.323,
-			"electronAffinity": null,
+			"atomicRadius": 96,
+			"ionizationEnergy": 9.322699,
+			"electronAffinity": "unstable",
 			"oxidationStates": [
 				"+2"
 			],
 			"meltingPoint": 1560,
+			"meltsUnderPressure": false,
 			"boilingPoint": 2744,
+			"sublimes": false,
 			"density": 1.85,
-			"yearDiscovered": 1798
+			"yearDiscovered": 1798,
+			"discoveredBy": [
+				{
+					"qid": "Q585780",
+					"name": {
+						"en": "Antoine Bussy",
+						"ru": "Антуан Александр Брутус Бюсси",
+						"fr": "Antoine Bussy",
+						"de": "Antoine Bussy",
+						"it": "Antoine Bussy",
+						"es": "Antoine Bussy",
+						"zh": "毕于西",
+						"pt": "Antoine Bussy"
+					}
+				},
+				{
+					"qid": "Q58575",
+					"name": {
+						"en": "Friedrich Wöhler",
+						"ru": "Фридрих Вёлер",
+						"fr": "Friedrich Wöhler",
+						"de": "Friedrich Wöhler",
+						"it": "Friedrich Wöhler",
+						"es": "Friedrich Wöhler",
+						"zh": "弗里德里希·维勒",
+						"pt": "Friedrich Wöhler"
+					}
+				},
+				{
+					"qid": "Q333438",
+					"name": {
+						"en": "Louis Nicolas Vauquelin",
+						"ru": "Луи Никола Воклен",
+						"fr": "Nicolas-Louis Vauquelin",
+						"de": "Louis-Nicolas Vauquelin",
+						"it": "Louis Nicolas Vauquelin",
+						"es": "Louis Nicolas Vauquelin",
+						"zh": "路易-尼古拉·沃克蘭",
+						"pt": "Louis Nicolas Vauquelin"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 5,
@@ -250,9 +392,9 @@
 				"es": "https://es.wikipedia.org/wiki/Boro",
 				"fr": "https://fr.wikipedia.org/wiki/Bore",
 				"it": "https://it.wikipedia.org/wiki/Boro",
+				"zh": "https://zh.wikipedia.org/wiki/%E7%A1%BC",
 				"pt": "https://pt.wikipedia.org/wiki/Boro",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%91%D0%BE%D1%80_(%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82)",
-				"zh": "https://zh.wikipedia.org/wiki/%E7%A1%BC"
+				"ru": "https://ru.wikipedia.org/wiki/%D0%91%D0%BE%D1%80_(%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82)"
 			},
 			"category": "metalloid",
 			"period": 2,
@@ -274,16 +416,34 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 2.04,
-			"atomicRadius": 192,
-			"ionizationEnergy": 8.298,
-			"electronAffinity": 0.277,
+			"atomicRadius": 84,
+			"ionizationEnergy": 8.298019,
+			"electronAffinity": 0.279723,
 			"oxidationStates": [
 				"+3"
 			],
 			"meltingPoint": 2348,
+			"meltsUnderPressure": false,
 			"boilingPoint": 4273,
+			"sublimes": false,
 			"density": 2.37,
-			"yearDiscovered": 1808
+			"yearDiscovered": 1808,
+			"discoveredBy": [
+				{
+					"qid": "Q131761",
+					"name": {
+						"en": "Humphry Davy",
+						"ru": "Гемфри Дэви",
+						"fr": "Humphry Davy",
+						"de": "Humphry Davy",
+						"it": "Humphry Davy",
+						"es": "Humphry Davy",
+						"zh": "汉弗里·戴维",
+						"pt": "Humphry Davy"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 6,
@@ -330,18 +490,22 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 2.55,
-			"atomicRadius": 170,
-			"ionizationEnergy": 11.26,
-			"electronAffinity": 1.263,
+			"atomicRadius": 76,
+			"ionizationEnergy": 11.260288,
+			"electronAffinity": 1.2621226,
 			"oxidationStates": [
 				"+4",
 				"+2",
 				"-4"
 			],
 			"meltingPoint": 3823,
+			"meltsUnderPressure": true,
 			"boilingPoint": 4098,
+			"sublimes": true,
 			"density": 2.267,
-			"yearDiscovered": "ancient"
+			"yearDiscovered": "ancient",
+			"discoveredBy": [],
+			"namedAfter": []
 		},
 		{
 			"z": 7,
@@ -364,9 +528,9 @@
 				"es": "https://es.wikipedia.org/wiki/Nitr%C3%B3geno",
 				"fr": "https://fr.wikipedia.org/wiki/Azote",
 				"it": "https://it.wikipedia.org/wiki/Azoto",
+				"zh": "https://zh.wikipedia.org/wiki/%E6%B0%AE",
 				"pt": "https://pt.wikipedia.org/wiki/Azoto",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%90%D0%B7%D0%BE%D1%82",
-				"zh": "https://zh.wikipedia.org/wiki/%E6%B0%AE"
+				"ru": "https://ru.wikipedia.org/wiki/%D0%90%D0%B7%D0%BE%D1%82"
 			},
 			"category": "nonmetal",
 			"period": 2,
@@ -388,9 +552,9 @@
 			"state": "gas",
 			"statePredicted": false,
 			"electronegativity": 3.04,
-			"atomicRadius": 155,
-			"ionizationEnergy": 14.534,
-			"electronAffinity": null,
+			"atomicRadius": 71,
+			"ionizationEnergy": 14.53413,
+			"electronAffinity": "unstable",
 			"oxidationStates": [
 				"+5",
 				"+4",
@@ -402,9 +566,27 @@
 				"-3"
 			],
 			"meltingPoint": 63.15,
+			"meltsUnderPressure": false,
 			"boilingPoint": 77.36,
+			"sublimes": false,
 			"density": 0.0012506,
-			"yearDiscovered": 1772
+			"yearDiscovered": 1772,
+			"discoveredBy": [
+				{
+					"qid": "Q313067",
+					"name": {
+						"en": "Daniel Rutherford",
+						"ru": "Даниель Рутерфорд",
+						"fr": "Daniel Rutherford",
+						"de": "Daniel Rutherford",
+						"it": "Daniel Rutherford",
+						"es": "Daniel Rutherford",
+						"zh": "丹尼尔·卢瑟福",
+						"pt": "Daniel Rutherford"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 8,
@@ -425,8 +607,8 @@
 				"de": "https://de.wikipedia.org/wiki/Sauerstoff",
 				"en": "https://en.wikipedia.org/wiki/Oxygen",
 				"es": "https://es.wikipedia.org/wiki/Ox%C3%ADgeno",
-				"it": "https://it.wikipedia.org/wiki/Ossigeno",
 				"fr": "https://fr.wikipedia.org/wiki/Oxyg%C3%A8ne",
+				"it": "https://it.wikipedia.org/wiki/Ossigeno",
 				"pt": "https://pt.wikipedia.org/wiki/Oxig%C3%A9nio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B8%D1%81%D0%BB%D0%BE%D1%80%D0%BE%D0%B4",
 				"zh": "https://zh.wikipedia.org/wiki/%E6%B0%A7"
@@ -451,16 +633,47 @@
 			"state": "gas",
 			"statePredicted": false,
 			"electronegativity": 3.44,
-			"atomicRadius": 152,
-			"ionizationEnergy": 13.618,
-			"electronAffinity": 1.461,
+			"atomicRadius": 66,
+			"ionizationEnergy": 13.618055,
+			"electronAffinity": 1.46111297,
 			"oxidationStates": [
 				"-2"
 			],
 			"meltingPoint": 54.36,
+			"meltsUnderPressure": false,
 			"boilingPoint": 90.2,
+			"sublimes": false,
 			"density": 0.001429,
-			"yearDiscovered": 1774
+			"yearDiscovered": 1774,
+			"discoveredBy": [
+				{
+					"qid": "Q70538",
+					"name": {
+						"en": "Carl Wilhelm Scheele",
+						"ru": "Карл Вильгельм Шееле",
+						"fr": "Carl Wilhelm Scheele",
+						"de": "Carl Wilhelm Scheele",
+						"it": "Carl Scheele",
+						"es": "Carl Wilhelm Scheele",
+						"zh": "卡尔·威廉·舍勒",
+						"pt": "Carl Wilhelm Scheele"
+					}
+				},
+				{
+					"qid": "Q159636",
+					"name": {
+						"en": "Joseph Priestley",
+						"ru": "Джозеф Пристли",
+						"fr": "Joseph Priestley",
+						"de": "Joseph Priestley",
+						"it": "Joseph Priestley",
+						"es": "Joseph Priestley",
+						"zh": "约瑟夫·普利斯特里",
+						"pt": "Joseph Priestley"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 9,
@@ -478,14 +691,14 @@
 			},
 			"wikidata": "Q650",
 			"wikipedia": {
+				"it": "https://it.wikipedia.org/wiki/Fluoro",
+				"pt": "https://pt.wikipedia.org/wiki/Fl%C3%BAor",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%A4%D1%82%D0%BE%D1%80",
+				"zh": "https://zh.wikipedia.org/wiki/%E6%B0%9F",
 				"de": "https://de.wikipedia.org/wiki/Fluor",
 				"en": "https://en.wikipedia.org/wiki/Fluorine",
 				"es": "https://es.wikipedia.org/wiki/Fl%C3%BAor",
-				"fr": "https://fr.wikipedia.org/wiki/Fluor",
-				"it": "https://it.wikipedia.org/wiki/Fluoro",
-				"zh": "https://zh.wikipedia.org/wiki/%E6%B0%9F",
-				"pt": "https://pt.wikipedia.org/wiki/Fl%C3%BAor",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%A4%D1%82%D0%BE%D1%80"
+				"fr": "https://fr.wikipedia.org/wiki/Fluor"
 			},
 			"category": "halogen",
 			"period": 2,
@@ -507,16 +720,34 @@
 			"state": "gas",
 			"statePredicted": false,
 			"electronegativity": 3.98,
-			"atomicRadius": 135,
-			"ionizationEnergy": 17.423,
-			"electronAffinity": 3.339,
+			"atomicRadius": 57,
+			"ionizationEnergy": 17.42282,
+			"electronAffinity": 3.4011898,
 			"oxidationStates": [
 				"-1"
 			],
 			"meltingPoint": 53.53,
+			"meltsUnderPressure": false,
 			"boilingPoint": 85.03,
+			"sublimes": false,
 			"density": 0.001696,
-			"yearDiscovered": 1670
+			"yearDiscovered": 1886,
+			"discoveredBy": [
+				{
+					"qid": "Q102804",
+					"name": {
+						"en": "Henri Moissan",
+						"ru": "Анри Муассан",
+						"fr": "Henri Moissan",
+						"de": "Henri Moissan",
+						"it": "Henri Moissan",
+						"es": "Henri Moissan",
+						"zh": "亨利·莫瓦桑",
+						"pt": "Henri Moissan"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 10,
@@ -534,14 +765,14 @@
 			},
 			"wikidata": "Q654",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Neon",
 				"en": "https://en.wikipedia.org/wiki/Neon",
 				"es": "https://es.wikipedia.org/wiki/Ne%C3%B3n",
 				"fr": "https://fr.wikipedia.org/wiki/N%C3%A9on",
+				"de": "https://de.wikipedia.org/wiki/Neon",
 				"it": "https://it.wikipedia.org/wiki/Neon",
+				"zh": "https://zh.wikipedia.org/wiki/%E6%B0%96",
 				"pt": "https://pt.wikipedia.org/wiki/N%C3%A9on",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%9D%D0%B5%D0%BE%D0%BD",
-				"zh": "https://zh.wikipedia.org/wiki/%E6%B0%96"
+				"ru": "https://ru.wikipedia.org/wiki/%D0%9D%D0%B5%D0%BE%D0%BD"
 			},
 			"category": "noble-gas",
 			"period": 2,
@@ -563,16 +794,47 @@
 			"state": "gas",
 			"statePredicted": false,
 			"electronegativity": null,
-			"atomicRadius": 154,
-			"ionizationEnergy": 21.565,
-			"electronAffinity": null,
+			"atomicRadius": 58,
+			"ionizationEnergy": 21.564541,
+			"electronAffinity": "unstable",
 			"oxidationStates": [
 				"0"
 			],
 			"meltingPoint": 24.56,
+			"meltsUnderPressure": false,
 			"boilingPoint": 27.07,
+			"sublimes": false,
 			"density": 0.0008999,
-			"yearDiscovered": 1898
+			"yearDiscovered": 1898,
+			"discoveredBy": [
+				{
+					"qid": "Q380209",
+					"name": {
+						"en": "Morris Travers",
+						"ru": "Морис Уильям Траверс",
+						"fr": "Morris William Travers",
+						"de": "Morris William Travers",
+						"it": "Morris Travers",
+						"es": "Morris Travers",
+						"zh": "莫里斯·威廉·特拉弗斯",
+						"pt": "Morris William Travers"
+					}
+				},
+				{
+					"qid": "Q950726",
+					"name": {
+						"en": "William Ramsay",
+						"ru": "Уильям Рамзай",
+						"fr": "William Ramsay",
+						"de": "William Ramsay",
+						"it": "William Ramsay",
+						"es": "William Ramsay",
+						"zh": "威廉·拉姆齐",
+						"pt": "William Ramsay"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 11,
@@ -620,16 +882,34 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 0.93,
-			"atomicRadius": 227,
-			"ionizationEnergy": 5.139,
-			"electronAffinity": 0.548,
+			"atomicRadius": 166,
+			"ionizationEnergy": 5.13907696,
+			"electronAffinity": 0.547926,
 			"oxidationStates": [
 				"+1"
 			],
 			"meltingPoint": 370.95,
+			"meltsUnderPressure": false,
 			"boilingPoint": 1156,
+			"sublimes": false,
 			"density": 0.97,
-			"yearDiscovered": 1807
+			"yearDiscovered": 1807,
+			"discoveredBy": [
+				{
+					"qid": "Q131761",
+					"name": {
+						"en": "Humphry Davy",
+						"ru": "Гемфри Дэви",
+						"fr": "Humphry Davy",
+						"de": "Humphry Davy",
+						"it": "Humphry Davy",
+						"es": "Humphry Davy",
+						"zh": "汉弗里·戴维",
+						"pt": "Humphry Davy"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 12,
@@ -652,9 +932,9 @@
 				"es": "https://es.wikipedia.org/wiki/Magnesio",
 				"fr": "https://fr.wikipedia.org/wiki/Magn%C3%A9sium",
 				"it": "https://it.wikipedia.org/wiki/Magnesio",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%95%81",
 				"pt": "https://pt.wikipedia.org/wiki/Magn%C3%A9sio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B3%D0%BD%D0%B8%D0%B9"
+				"ru": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B3%D0%BD%D0%B8%D0%B9",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%95%81"
 			},
 			"category": "alkaline-earth-metal",
 			"period": 3,
@@ -677,16 +957,34 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.31,
-			"atomicRadius": 173,
-			"ionizationEnergy": 7.646,
-			"electronAffinity": null,
+			"atomicRadius": 141,
+			"ionizationEnergy": 7.646236,
+			"electronAffinity": "unstable",
 			"oxidationStates": [
 				"+2"
 			],
 			"meltingPoint": 923,
+			"meltsUnderPressure": false,
 			"boilingPoint": 1363,
+			"sublimes": false,
 			"density": 1.74,
-			"yearDiscovered": 1808
+			"yearDiscovered": 1755,
+			"discoveredBy": [
+				{
+					"qid": "Q272512",
+					"name": {
+						"en": "Joseph Black",
+						"ru": "Джозеф Блэк",
+						"fr": "Joseph Black",
+						"de": "Joseph Black",
+						"it": "Joseph Black",
+						"es": "Joseph Black",
+						"zh": "约瑟夫·布拉克",
+						"pt": "Joseph Black"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 13,
@@ -706,12 +1004,12 @@
 			"wikipedia": {
 				"es": "https://es.wikipedia.org/wiki/Aluminio",
 				"it": "https://it.wikipedia.org/wiki/Alluminio",
-				"pt": "https://pt.wikipedia.org/wiki/Alum%C3%ADnio",
 				"zh": "https://zh.wikipedia.org/wiki/%E9%93%9D",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D1%8E%D0%BC%D0%B8%D0%BD%D0%B8%D0%B9",
+				"pt": "https://pt.wikipedia.org/wiki/Alum%C3%ADnio",
 				"de": "https://de.wikipedia.org/wiki/Aluminium",
 				"en": "https://en.wikipedia.org/wiki/Aluminium",
-				"fr": "https://fr.wikipedia.org/wiki/Aluminium"
+				"fr": "https://fr.wikipedia.org/wiki/Aluminium",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D1%8E%D0%BC%D0%B8%D0%BD%D0%B8%D0%B9"
 			},
 			"category": "post-transition-metal",
 			"period": 3,
@@ -734,16 +1032,34 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.61,
-			"atomicRadius": 184,
-			"ionizationEnergy": 5.986,
-			"electronAffinity": 0.441,
+			"atomicRadius": 121,
+			"ionizationEnergy": 5.985769,
+			"electronAffinity": 0.43283,
 			"oxidationStates": [
 				"+3"
 			],
 			"meltingPoint": 933.437,
+			"meltsUnderPressure": false,
 			"boilingPoint": 2792,
+			"sublimes": false,
 			"density": 2.7,
-			"yearDiscovered": "ancient"
+			"yearDiscovered": 1824,
+			"discoveredBy": [
+				{
+					"qid": "Q44412",
+					"name": {
+						"en": "Hans Christian Ørsted",
+						"ru": "Ханс Кристиан Эрстед",
+						"fr": "Hans Christian Ørsted",
+						"de": "Hans Christian Ørsted",
+						"it": "Hans Christian Ørsted",
+						"es": "Hans Christian Ørsted",
+						"zh": "汉斯·奥斯特",
+						"pt": "Hans Christian Ørsted"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 14,
@@ -791,18 +1107,36 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.9,
-			"atomicRadius": 210,
-			"ionizationEnergy": 8.152,
-			"electronAffinity": 1.385,
+			"atomicRadius": 111,
+			"ionizationEnergy": 8.15168,
+			"electronAffinity": 1.3895212,
 			"oxidationStates": [
 				"+4",
 				"+2",
 				"-4"
 			],
 			"meltingPoint": 1687,
+			"meltsUnderPressure": false,
 			"boilingPoint": 3538,
+			"sublimes": false,
 			"density": 2.3296,
-			"yearDiscovered": 1854
+			"yearDiscovered": 1823,
+			"discoveredBy": [
+				{
+					"qid": "Q151911",
+					"name": {
+						"en": "Jöns Jacob Berzelius",
+						"ru": "Йёнс Якоб Берцелиус",
+						"fr": "Jöns Jacob Berzelius",
+						"de": "Jöns Jakob Berzelius",
+						"it": "Jöns Jacob Berzelius",
+						"es": "Jöns Jacob Berzelius",
+						"zh": "永斯·贝采利乌斯",
+						"pt": "Jöns Jacob Berzelius"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 15,
@@ -850,18 +1184,36 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 2.19,
-			"atomicRadius": 180,
-			"ionizationEnergy": 10.487,
-			"electronAffinity": 0.746,
+			"atomicRadius": 107,
+			"ionizationEnergy": 10.486686,
+			"electronAffinity": 0.746609,
 			"oxidationStates": [
 				"+5",
 				"+3",
 				"-3"
 			],
 			"meltingPoint": 317.3,
+			"meltsUnderPressure": false,
 			"boilingPoint": 553.65,
+			"sublimes": false,
 			"density": 1.82,
-			"yearDiscovered": 1669
+			"yearDiscovered": 1669,
+			"discoveredBy": [
+				{
+					"qid": "Q77306",
+					"name": {
+						"en": "Hennig Brand",
+						"ru": "Хенниг Бранд",
+						"fr": "Hennig Brand",
+						"de": "Hennig Brand",
+						"it": "Hennig Brand",
+						"es": "Hennig Brand",
+						"zh": "亨尼格·布兰德",
+						"pt": "Henning Brand"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 16,
@@ -883,9 +1235,9 @@
 				"en": "https://en.wikipedia.org/wiki/Sulfur",
 				"es": "https://es.wikipedia.org/wiki/Azufre",
 				"fr": "https://fr.wikipedia.org/wiki/Soufre",
-				"it": "https://it.wikipedia.org/wiki/Zolfo",
 				"pt": "https://pt.wikipedia.org/wiki/Enxofre",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D1%80%D0%B0",
+				"it": "https://it.wikipedia.org/wiki/Zolfo",
 				"zh": "https://zh.wikipedia.org/wiki/%E7%A1%AB"
 			},
 			"category": "nonmetal",
@@ -909,18 +1261,23 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 2.58,
-			"atomicRadius": 180,
-			"ionizationEnergy": 10.36,
-			"electronAffinity": 2.077,
+			"atomicRadius": 105,
+			"ionizationEnergy": 10.3600167,
+			"electronAffinity": 2.0771042,
 			"oxidationStates": [
 				"+6",
 				"+4",
+				"+2",
 				"-2"
 			],
 			"meltingPoint": 388.36,
+			"meltsUnderPressure": false,
 			"boilingPoint": 717.75,
+			"sublimes": false,
 			"density": 2.067,
-			"yearDiscovered": "ancient"
+			"yearDiscovered": "ancient",
+			"discoveredBy": [],
+			"namedAfter": []
 		},
 		{
 			"z": 17,
@@ -938,11 +1295,11 @@
 			},
 			"wikidata": "Q688",
 			"wikipedia": {
+				"it": "https://it.wikipedia.org/wiki/Cloro",
 				"de": "https://de.wikipedia.org/wiki/Chlor",
 				"en": "https://en.wikipedia.org/wiki/Chlorine",
 				"es": "https://es.wikipedia.org/wiki/Cloro",
 				"fr": "https://fr.wikipedia.org/wiki/Chlore",
-				"it": "https://it.wikipedia.org/wiki/Cloro",
 				"pt": "https://pt.wikipedia.org/wiki/Cloro",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%A5%D0%BB%D0%BE%D1%80",
 				"zh": "https://zh.wikipedia.org/wiki/%E6%B0%AF"
@@ -968,19 +1325,38 @@
 			"state": "gas",
 			"statePredicted": false,
 			"electronegativity": 3.16,
-			"atomicRadius": 175,
-			"ionizationEnergy": 12.968,
-			"electronAffinity": 3.617,
+			"atomicRadius": 102,
+			"ionizationEnergy": 12.967633,
+			"electronAffinity": 3.612725,
 			"oxidationStates": [
 				"+7",
 				"+5",
+				"+3",
 				"+1",
 				"-1"
 			],
 			"meltingPoint": 171.65,
+			"meltsUnderPressure": false,
 			"boilingPoint": 239.11,
+			"sublimes": false,
 			"density": 0.003214,
-			"yearDiscovered": 1774
+			"yearDiscovered": 1774,
+			"discoveredBy": [
+				{
+					"qid": "Q70538",
+					"name": {
+						"en": "Carl Wilhelm Scheele",
+						"ru": "Карл Вильгельм Шееле",
+						"fr": "Carl Wilhelm Scheele",
+						"de": "Carl Wilhelm Scheele",
+						"it": "Carl Scheele",
+						"es": "Carl Wilhelm Scheele",
+						"zh": "卡尔·威廉·舍勒",
+						"pt": "Carl Wilhelm Scheele"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 18,
@@ -998,11 +1374,11 @@
 			},
 			"wikidata": "Q696",
 			"wikipedia": {
-				"it": "https://it.wikipedia.org/wiki/Argon",
 				"de": "https://de.wikipedia.org/wiki/Argon",
 				"en": "https://en.wikipedia.org/wiki/Argon",
 				"es": "https://es.wikipedia.org/wiki/Arg%C3%B3n",
 				"fr": "https://fr.wikipedia.org/wiki/Argon",
+				"it": "https://it.wikipedia.org/wiki/Argon",
 				"pt": "https://pt.wikipedia.org/wiki/%C3%81rgon",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%90%D1%80%D0%B3%D0%BE%D0%BD",
 				"zh": "https://zh.wikipedia.org/wiki/%E6%B0%A9"
@@ -1028,16 +1404,47 @@
 			"state": "gas",
 			"statePredicted": false,
 			"electronegativity": null,
-			"atomicRadius": 188,
-			"ionizationEnergy": 15.76,
-			"electronAffinity": null,
+			"atomicRadius": 106,
+			"ionizationEnergy": 15.7596119,
+			"electronAffinity": "unstable",
 			"oxidationStates": [
 				"0"
 			],
 			"meltingPoint": 83.8,
+			"meltsUnderPressure": false,
 			"boilingPoint": 87.3,
+			"sublimes": false,
 			"density": 0.0017837,
-			"yearDiscovered": 1894
+			"yearDiscovered": 1894,
+			"discoveredBy": [
+				{
+					"qid": "Q83297",
+					"name": {
+						"en": "John William Strutt",
+						"ru": "Джон Уильям Стретт Рэлей",
+						"fr": "John William Strutt Rayleigh",
+						"de": "John William Strutt, 3. Baron Rayleigh",
+						"it": "John William Strutt Rayleigh",
+						"es": "Lord Rayleigh",
+						"zh": "約翰·斯特拉特，第三代瑞利男爵",
+						"pt": "John William Strutt"
+					}
+				},
+				{
+					"qid": "Q950726",
+					"name": {
+						"en": "William Ramsay",
+						"ru": "Уильям Рамзай",
+						"fr": "William Ramsay",
+						"de": "William Ramsay",
+						"it": "William Ramsay",
+						"es": "William Ramsay",
+						"zh": "威廉·拉姆齐",
+						"pt": "William Ramsay"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 19,
@@ -1055,10 +1462,10 @@
 			},
 			"wikidata": "Q703",
 			"wikipedia": {
+				"en": "https://en.wikipedia.org/wiki/Potassium",
 				"de": "https://de.wikipedia.org/wiki/Kalium",
 				"es": "https://es.wikipedia.org/wiki/Potasio",
 				"fr": "https://fr.wikipedia.org/wiki/Potassium",
-				"en": "https://en.wikipedia.org/wiki/Potassium",
 				"it": "https://it.wikipedia.org/wiki/Potassio",
 				"zh": "https://zh.wikipedia.org/wiki/%E9%92%BE",
 				"pt": "https://pt.wikipedia.org/wiki/Pot%C3%A1ssio",
@@ -1086,16 +1493,34 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 0.82,
-			"atomicRadius": 275,
-			"ionizationEnergy": 4.341,
-			"electronAffinity": 0.501,
+			"atomicRadius": 203,
+			"ionizationEnergy": 4.34066373,
+			"electronAffinity": 0.501459,
 			"oxidationStates": [
 				"+1"
 			],
 			"meltingPoint": 336.53,
+			"meltsUnderPressure": false,
 			"boilingPoint": 1032,
+			"sublimes": false,
 			"density": 0.89,
-			"yearDiscovered": 1807
+			"yearDiscovered": 1807,
+			"discoveredBy": [
+				{
+					"qid": "Q131761",
+					"name": {
+						"en": "Humphry Davy",
+						"ru": "Гемфри Дэви",
+						"fr": "Humphry Davy",
+						"de": "Humphry Davy",
+						"it": "Humphry Davy",
+						"es": "Humphry Davy",
+						"zh": "汉弗里·戴维",
+						"pt": "Humphry Davy"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 20,
@@ -1113,13 +1538,13 @@
 			},
 			"wikidata": "Q706",
 			"wikipedia": {
-				"fr": "https://fr.wikipedia.org/wiki/Calcium",
-				"it": "https://it.wikipedia.org/wiki/Calcio_(elemento_chimico)",
+				"pt": "https://pt.wikipedia.org/wiki/C%C3%A1lcio",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BB%D1%8C%D1%86%D0%B8%D0%B9",
 				"de": "https://de.wikipedia.org/wiki/Calcium",
 				"en": "https://en.wikipedia.org/wiki/Calcium",
 				"es": "https://es.wikipedia.org/wiki/Calcio",
-				"pt": "https://pt.wikipedia.org/wiki/C%C3%A1lcio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BB%D1%8C%D1%86%D0%B8%D0%B9",
+				"fr": "https://fr.wikipedia.org/wiki/Calcium",
+				"it": "https://it.wikipedia.org/wiki/Calcio_(elemento_chimico)",
 				"zh": "https://zh.wikipedia.org/wiki/%E9%92%99"
 			},
 			"category": "alkaline-earth-metal",
@@ -1144,16 +1569,34 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1,
-			"atomicRadius": 231,
-			"ionizationEnergy": 6.113,
-			"electronAffinity": null,
+			"atomicRadius": 176,
+			"ionizationEnergy": 6.113154921,
+			"electronAffinity": 0.02455,
 			"oxidationStates": [
 				"+2"
 			],
 			"meltingPoint": 1115,
+			"meltsUnderPressure": false,
 			"boilingPoint": 1757,
+			"sublimes": false,
 			"density": 1.54,
-			"yearDiscovered": "ancient"
+			"yearDiscovered": 1808,
+			"discoveredBy": [
+				{
+					"qid": "Q131761",
+					"name": {
+						"en": "Humphry Davy",
+						"ru": "Гемфри Дэви",
+						"fr": "Humphry Davy",
+						"de": "Humphry Davy",
+						"it": "Humphry Davy",
+						"es": "Humphry Davy",
+						"zh": "汉弗里·戴维",
+						"pt": "Humphry Davy"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 21,
@@ -1171,13 +1614,13 @@
 			},
 			"wikidata": "Q713",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Scandium",
 				"en": "https://en.wikipedia.org/wiki/Scandium",
 				"es": "https://es.wikipedia.org/wiki/Escandio",
 				"fr": "https://fr.wikipedia.org/wiki/Scandium",
 				"it": "https://it.wikipedia.org/wiki/Scandio",
 				"pt": "https://pt.wikipedia.org/wiki/Esc%C3%A2ndio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%A1%D0%BA%D0%B0%D0%BD%D0%B4%D0%B8%D0%B9",
+				"de": "https://de.wikipedia.org/wiki/Scandium",
 				"zh": "https://zh.wikipedia.org/wiki/%E9%92%AA"
 			},
 			"category": "transition-metal",
@@ -1202,16 +1645,48 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.36,
-			"atomicRadius": 211,
-			"ionizationEnergy": 6.561,
-			"electronAffinity": 0.188,
+			"atomicRadius": 170,
+			"ionizationEnergy": 6.56149,
+			"electronAffinity": 0.17938,
 			"oxidationStates": [
 				"+3"
 			],
 			"meltingPoint": 1814,
+			"meltsUnderPressure": false,
 			"boilingPoint": 3109,
+			"sublimes": false,
 			"density": 2.99,
-			"yearDiscovered": 1879
+			"yearDiscovered": 1879,
+			"discoveredBy": [
+				{
+					"qid": "Q447875",
+					"name": {
+						"en": "Lars Fredrik Nilson",
+						"ru": "Ларс Фредерик Нильсон",
+						"fr": "Lars Fredrik Nilson",
+						"de": "Lars Fredrik Nilson",
+						"it": "Lars Fredrik Nilson",
+						"es": "Lars Fredrik Nilson",
+						"zh": "拉尔斯·弗雷德里克·尼尔松",
+						"pt": "Lars Fredrik Nilson"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q21195",
+					"name": {
+						"en": "Scandinavia",
+						"ru": "Скандинавия",
+						"fr": "Scandinavie",
+						"de": "Skandinavien",
+						"it": "Scandinavia",
+						"es": "Escandinavia",
+						"zh": "斯堪的纳维亚",
+						"pt": "Escandinávia"
+					}
+				}
+			]
 		},
 		{
 			"z": 22,
@@ -1229,13 +1704,13 @@
 			},
 			"wikidata": "Q716",
 			"wikipedia": {
+				"fr": "https://fr.wikipedia.org/wiki/Titane",
+				"it": "https://it.wikipedia.org/wiki/Titanio",
 				"de": "https://de.wikipedia.org/wiki/Titan_(Element)",
 				"en": "https://en.wikipedia.org/wiki/Titanium",
 				"es": "https://es.wikipedia.org/wiki/Titanio",
-				"fr": "https://fr.wikipedia.org/wiki/Titane",
 				"pt": "https://pt.wikipedia.org/wiki/Tit%C3%A2nio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%A2%D0%B8%D1%82%D0%B0%D0%BD_(%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82)",
-				"it": "https://it.wikipedia.org/wiki/Titanio",
 				"zh": "https://zh.wikipedia.org/wiki/%E9%92%9B"
 			},
 			"category": "transition-metal",
@@ -1260,18 +1735,36 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.54,
-			"atomicRadius": 187,
-			"ionizationEnergy": 6.828,
-			"electronAffinity": 0.079,
+			"atomicRadius": 160,
+			"ionizationEnergy": 6.82812,
+			"electronAffinity": 0.07554,
 			"oxidationStates": [
 				"+4",
 				"+3",
 				"+2"
 			],
 			"meltingPoint": 1941,
+			"meltsUnderPressure": false,
 			"boilingPoint": 3560,
+			"sublimes": false,
 			"density": 4.5,
-			"yearDiscovered": 1791
+			"yearDiscovered": 1791,
+			"discoveredBy": [
+				{
+					"qid": "Q498817",
+					"name": {
+						"en": "William Gregor",
+						"ru": "Уильям Грегор",
+						"fr": "William Gregor",
+						"de": "William Gregor",
+						"it": "William Gregor",
+						"es": "William Gregor",
+						"zh": "威廉·格雷戈尔",
+						"pt": "William Justin Gregor"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 23,
@@ -1289,14 +1782,14 @@
 			},
 			"wikidata": "Q722",
 			"wikipedia": {
-				"it": "https://it.wikipedia.org/wiki/Vanadio",
 				"de": "https://de.wikipedia.org/wiki/Vanadium",
 				"en": "https://en.wikipedia.org/wiki/Vanadium",
-				"es": "https://es.wikipedia.org/wiki/Vanadio",
-				"fr": "https://fr.wikipedia.org/wiki/Vanadium",
 				"pt": "https://pt.wikipedia.org/wiki/Van%C3%A1dio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%92%D0%B0%D0%BD%D0%B0%D0%B4%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%92%92"
+				"es": "https://es.wikipedia.org/wiki/Vanadio",
+				"fr": "https://fr.wikipedia.org/wiki/Vanadium",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%92%92",
+				"it": "https://it.wikipedia.org/wiki/Vanadio"
 			},
 			"category": "transition-metal",
 			"period": 4,
@@ -1320,9 +1813,9 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.63,
-			"atomicRadius": 179,
-			"ionizationEnergy": 6.746,
-			"electronAffinity": 0.525,
+			"atomicRadius": 153,
+			"ionizationEnergy": 6.746187,
+			"electronAffinity": 0.52766,
 			"oxidationStates": [
 				"+5",
 				"+4",
@@ -1330,9 +1823,41 @@
 				"+2"
 			],
 			"meltingPoint": 2183,
+			"meltsUnderPressure": false,
 			"boilingPoint": 3680,
+			"sublimes": false,
 			"density": 6,
-			"yearDiscovered": 1801
+			"yearDiscovered": 1801,
+			"discoveredBy": [
+				{
+					"qid": "Q524465",
+					"name": {
+						"en": "Andrés Manuel del Río",
+						"ru": "Андрес Мануэль дель Рио",
+						"fr": "Andrés Manuel del Río",
+						"de": "Andrés Manuel del Río",
+						"it": "Andrés Manuel del Río",
+						"es": "Andrés Manuel del Río Fernández",
+						"zh": "安德烈·曼努埃尔·德尔里奥",
+						"pt": "Andrés Manuel del Río"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q1647325",
+					"name": {
+						"en": "Freyja",
+						"ru": "Фрейя",
+						"fr": "Freyja",
+						"de": "Freya",
+						"it": "Freia",
+						"es": "Freyja",
+						"zh": "弗蕾亚",
+						"pt": "Freia"
+					}
+				}
+			]
 		},
 		{
 			"z": 24,
@@ -1350,11 +1875,11 @@
 			},
 			"wikidata": "Q725",
 			"wikipedia": {
-				"en": "https://en.wikipedia.org/wiki/Chromium",
-				"it": "https://it.wikipedia.org/wiki/Cromo",
 				"de": "https://de.wikipedia.org/wiki/Chrom",
 				"es": "https://es.wikipedia.org/wiki/Cromo",
 				"fr": "https://fr.wikipedia.org/wiki/Chrome",
+				"it": "https://it.wikipedia.org/wiki/Cromo",
+				"en": "https://en.wikipedia.org/wiki/Chromium",
 				"pt": "https://pt.wikipedia.org/wiki/Cromo",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%A5%D1%80%D0%BE%D0%BC",
 				"zh": "https://zh.wikipedia.org/wiki/%E9%93%AC"
@@ -1381,18 +1906,36 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.66,
-			"atomicRadius": 189,
-			"ionizationEnergy": 6.767,
-			"electronAffinity": 0.666,
+			"atomicRadius": 139,
+			"ionizationEnergy": 6.76651,
+			"electronAffinity": 0.675928,
 			"oxidationStates": [
 				"+6",
 				"+3",
 				"+2"
 			],
 			"meltingPoint": 2180,
+			"meltsUnderPressure": false,
 			"boilingPoint": 2944,
+			"sublimes": false,
 			"density": 7.15,
-			"yearDiscovered": 1797
+			"yearDiscovered": 1797,
+			"discoveredBy": [
+				{
+					"qid": "Q333438",
+					"name": {
+						"en": "Louis Nicolas Vauquelin",
+						"ru": "Луи Никола Воклен",
+						"fr": "Nicolas-Louis Vauquelin",
+						"de": "Louis-Nicolas Vauquelin",
+						"it": "Louis Nicolas Vauquelin",
+						"es": "Louis Nicolas Vauquelin",
+						"zh": "路易-尼古拉·沃克蘭",
+						"pt": "Louis Nicolas Vauquelin"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 25,
@@ -1410,10 +1953,10 @@
 			},
 			"wikidata": "Q731",
 			"wikipedia": {
+				"fr": "https://fr.wikipedia.org/wiki/Mangan%C3%A8se",
 				"de": "https://de.wikipedia.org/wiki/Mangan",
 				"en": "https://en.wikipedia.org/wiki/Manganese",
 				"es": "https://es.wikipedia.org/wiki/Manganeso",
-				"fr": "https://fr.wikipedia.org/wiki/Mangan%C3%A8se",
 				"it": "https://it.wikipedia.org/wiki/Manganese",
 				"pt": "https://pt.wikipedia.org/wiki/Mangan%C3%AAs",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%80%D0%B3%D0%B0%D0%BD%D0%B5%D1%86",
@@ -1441,9 +1984,9 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.55,
-			"atomicRadius": 197,
-			"ionizationEnergy": 7.434,
-			"electronAffinity": null,
+			"atomicRadius": 139,
+			"ionizationEnergy": 7.434038,
+			"electronAffinity": "unstable",
 			"oxidationStates": [
 				"+7",
 				"+4",
@@ -1451,9 +1994,27 @@
 				"+2"
 			],
 			"meltingPoint": 1519,
+			"meltsUnderPressure": false,
 			"boilingPoint": 2334,
+			"sublimes": false,
 			"density": 7.3,
-			"yearDiscovered": 1774
+			"yearDiscovered": 1774,
+			"discoveredBy": [
+				{
+					"qid": "Q353490",
+					"name": {
+						"en": "Johan Gottlieb Gahn",
+						"ru": "Юхан Готлиб Ган",
+						"fr": "Johan Gottlieb Gahn",
+						"de": "Johan Gottlieb Gahn",
+						"it": "Johan Gottlieb Gahn",
+						"es": "Johan Gottlieb Gahn",
+						"zh": "约翰·戈特利布·甘恩",
+						"pt": "Johan Gottlieb Gahn"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 26,
@@ -1476,9 +2037,9 @@
 				"es": "https://es.wikipedia.org/wiki/Hierro",
 				"fr": "https://fr.wikipedia.org/wiki/Fer",
 				"it": "https://it.wikipedia.org/wiki/Ferro",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%93%81",
 				"pt": "https://pt.wikipedia.org/wiki/Ferro",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%96%D0%B5%D0%BB%D0%B5%D0%B7%D0%BE",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%93%81"
+				"ru": "https://ru.wikipedia.org/wiki/%D0%96%D0%B5%D0%BB%D0%B5%D0%B7%D0%BE"
 			},
 			"category": "transition-metal",
 			"period": 4,
@@ -1502,17 +2063,21 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.83,
-			"atomicRadius": 194,
-			"ionizationEnergy": 7.902,
-			"electronAffinity": 0.163,
+			"atomicRadius": 132,
+			"ionizationEnergy": 7.9024681,
+			"electronAffinity": 0.153236,
 			"oxidationStates": [
 				"+3",
 				"+2"
 			],
 			"meltingPoint": 1811,
+			"meltsUnderPressure": false,
 			"boilingPoint": 3134,
+			"sublimes": false,
 			"density": 7.874,
-			"yearDiscovered": "ancient"
+			"yearDiscovered": "ancient",
+			"discoveredBy": [],
+			"namedAfter": []
 		},
 		{
 			"z": 27,
@@ -1530,13 +2095,13 @@
 			},
 			"wikidata": "Q740",
 			"wikipedia": {
+				"pt": "https://pt.wikipedia.org/wiki/Cobalto",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%B1%D0%B0%D0%BB%D1%8C%D1%82",
 				"de": "https://de.wikipedia.org/wiki/Cobalt",
 				"en": "https://en.wikipedia.org/wiki/Cobalt",
 				"es": "https://es.wikipedia.org/wiki/Cobalto",
 				"fr": "https://fr.wikipedia.org/wiki/Cobalt",
 				"it": "https://it.wikipedia.org/wiki/Cobalto",
-				"pt": "https://pt.wikipedia.org/wiki/Cobalto",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%B1%D0%B0%D0%BB%D1%8C%D1%82",
 				"zh": "https://zh.wikipedia.org/wiki/%E9%92%B4"
 			},
 			"category": "transition-metal",
@@ -1561,17 +2126,35 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.88,
-			"atomicRadius": 192,
-			"ionizationEnergy": 7.881,
-			"electronAffinity": 0.661,
+			"atomicRadius": 126,
+			"ionizationEnergy": 7.88101,
+			"electronAffinity": 0.662255,
 			"oxidationStates": [
 				"+3",
 				"+2"
 			],
 			"meltingPoint": 1768,
+			"meltsUnderPressure": false,
 			"boilingPoint": 3200,
+			"sublimes": false,
 			"density": 8.86,
-			"yearDiscovered": 1735
+			"yearDiscovered": 1735,
+			"discoveredBy": [
+				{
+					"qid": "Q473225",
+					"name": {
+						"en": "Georg Brandt",
+						"ru": "Георг Брандт",
+						"fr": "Georg Brandt",
+						"de": "Georg Brandt",
+						"it": "George Brandt",
+						"es": "Georg Brandt",
+						"zh": "乔格·勃兰特",
+						"pt": "George Brandt"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 28,
@@ -1620,17 +2203,35 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.91,
-			"atomicRadius": 163,
-			"ionizationEnergy": 7.64,
-			"electronAffinity": 1.156,
+			"atomicRadius": 124,
+			"ionizationEnergy": 7.639878,
+			"electronAffinity": 1.15716,
 			"oxidationStates": [
 				"+3",
 				"+2"
 			],
 			"meltingPoint": 1728,
+			"meltsUnderPressure": false,
 			"boilingPoint": 3186,
+			"sublimes": false,
 			"density": 8.912,
-			"yearDiscovered": 1751
+			"yearDiscovered": 1751,
+			"discoveredBy": [
+				{
+					"qid": "Q468351",
+					"name": {
+						"en": "Axel Fredrik Cronstedt",
+						"ru": "Аксель Кронштедт",
+						"fr": "Axel Frederik Cronstedt",
+						"de": "Axel Frederic Cronstedt",
+						"it": "Axel Fredrik Cronstedt",
+						"es": "Axel Fredrik Cronstedt",
+						"zh": "阿克塞尔·弗雷德里克·克龙斯泰特",
+						"pt": "Axel Fredrik Cronstedt"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 29,
@@ -1649,13 +2250,13 @@
 			"wikidata": "Q753",
 			"wikipedia": {
 				"en": "https://en.wikipedia.org/wiki/Copper",
-				"fr": "https://fr.wikipedia.org/wiki/Cuivre",
 				"de": "https://de.wikipedia.org/wiki/Kupfer",
 				"es": "https://es.wikipedia.org/wiki/Cobre",
+				"fr": "https://fr.wikipedia.org/wiki/Cuivre",
 				"it": "https://it.wikipedia.org/wiki/Rame",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%93%9C",
 				"pt": "https://pt.wikipedia.org/wiki/Cobre",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%B4%D1%8C"
+				"ru": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%B4%D1%8C",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%93%9C"
 			},
 			"category": "transition-metal",
 			"period": 4,
@@ -1679,17 +2280,35 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.9,
-			"atomicRadius": 140,
-			"ionizationEnergy": 7.726,
-			"electronAffinity": 1.228,
+			"atomicRadius": 132,
+			"ionizationEnergy": 7.72638,
+			"electronAffinity": 1.23578,
 			"oxidationStates": [
 				"+2",
 				"+1"
 			],
 			"meltingPoint": 1357.77,
+			"meltsUnderPressure": false,
 			"boilingPoint": 2835,
+			"sublimes": false,
 			"density": 8.933,
-			"yearDiscovered": "ancient"
+			"yearDiscovered": "ancient",
+			"discoveredBy": [],
+			"namedAfter": [
+				{
+					"qid": "Q644636",
+					"name": {
+						"en": "Cyprus",
+						"ru": "Кипр",
+						"fr": "Chypre",
+						"de": "Zypern",
+						"it": "Cipro",
+						"es": "Isla de Chipre",
+						"zh": "塞浦路斯島",
+						"pt": "Chipre"
+					}
+				}
+			]
 		},
 		{
 			"z": 30,
@@ -1707,14 +2326,14 @@
 			},
 			"wikidata": "Q758",
 			"wikipedia": {
+				"it": "https://it.wikipedia.org/wiki/Zinco",
 				"de": "https://de.wikipedia.org/wiki/Zink",
 				"en": "https://en.wikipedia.org/wiki/Zinc",
 				"es": "https://es.wikipedia.org/wiki/Zinc",
 				"fr": "https://fr.wikipedia.org/wiki/Zinc",
-				"it": "https://it.wikipedia.org/wiki/Zinco",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%94%8C",
 				"pt": "https://pt.wikipedia.org/wiki/Zinco",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%A6%D0%B8%D0%BD%D0%BA"
+				"ru": "https://ru.wikipedia.org/wiki/%D0%A6%D0%B8%D0%BD%D0%BA",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%94%8C"
 			},
 			"category": "transition-metal",
 			"period": 4,
@@ -1738,16 +2357,20 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.65,
-			"atomicRadius": 139,
-			"ionizationEnergy": 9.394,
-			"electronAffinity": null,
+			"atomicRadius": 122,
+			"ionizationEnergy": 9.394197,
+			"electronAffinity": "unstable",
 			"oxidationStates": [
 				"+2"
 			],
 			"meltingPoint": 692.68,
+			"meltsUnderPressure": false,
 			"boilingPoint": 1180,
+			"sublimes": false,
 			"density": 7.134,
-			"yearDiscovered": 1746
+			"yearDiscovered": 1746,
+			"discoveredBy": [],
+			"namedAfter": []
 		},
 		{
 			"z": 31,
@@ -1770,9 +2393,9 @@
 				"es": "https://es.wikipedia.org/wiki/Galio",
 				"fr": "https://fr.wikipedia.org/wiki/Gallium",
 				"it": "https://it.wikipedia.org/wiki/Gallio_(elemento_chimico)",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%95%93",
 				"pt": "https://pt.wikipedia.org/wiki/G%C3%A1lio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%93%D0%B0%D0%BB%D0%BB%D0%B8%D0%B9"
+				"ru": "https://ru.wikipedia.org/wiki/%D0%93%D0%B0%D0%BB%D0%BB%D0%B8%D0%B9",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%95%93"
 			},
 			"category": "post-transition-metal",
 			"period": 4,
@@ -1796,16 +2419,48 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.81,
-			"atomicRadius": 187,
-			"ionizationEnergy": 5.999,
-			"electronAffinity": 0.3,
+			"atomicRadius": 122,
+			"ionizationEnergy": 5.999302,
+			"electronAffinity": 0.301166,
 			"oxidationStates": [
 				"+3"
 			],
 			"meltingPoint": 302.91,
+			"meltsUnderPressure": false,
 			"boilingPoint": 2477,
+			"sublimes": false,
 			"density": 5.91,
-			"yearDiscovered": 1875
+			"yearDiscovered": 1875,
+			"discoveredBy": [
+				{
+					"qid": "Q366827",
+					"name": {
+						"en": "Paul-Émile Lecoq de Boisbaudran",
+						"ru": "Поль Эмиль Лекок де Буабодран",
+						"fr": "Paul-Émile Lecoq de Boisbaudran",
+						"de": "Paul Émile Lecoq de Boisbaudran",
+						"it": "Paul Émile Lecoq de Boisbaudran",
+						"es": "Paul Emile Lecoq de Boisbaudran",
+						"zh": "保罗·埃米尔·勒科克·德布瓦博德兰",
+						"pt": "Paul-Émile Lecoq de Boisbaudran"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q38060",
+					"name": {
+						"en": "Gaul",
+						"ru": "Галлия",
+						"fr": "Gaule",
+						"de": "Gallien",
+						"it": "Gallia",
+						"es": "Galia",
+						"zh": "高卢",
+						"pt": "Gaul"
+					}
+				}
+			]
 		},
 		{
 			"z": 32,
@@ -1823,14 +2478,14 @@
 			},
 			"wikidata": "Q867",
 			"wikipedia": {
+				"pt": "https://pt.wikipedia.org/wiki/Germ%C3%A2nio",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B8%D0%B9",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%94%97",
 				"de": "https://de.wikipedia.org/wiki/Germanium",
 				"en": "https://en.wikipedia.org/wiki/Germanium",
 				"es": "https://es.wikipedia.org/wiki/Germanio",
 				"fr": "https://fr.wikipedia.org/wiki/Germanium",
-				"it": "https://it.wikipedia.org/wiki/Germanio",
-				"pt": "https://pt.wikipedia.org/wiki/Germ%C3%A2nio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%94%97"
+				"it": "https://it.wikipedia.org/wiki/Germanio"
 			},
 			"category": "metalloid",
 			"period": 4,
@@ -1854,17 +2509,50 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 2.01,
-			"atomicRadius": 211,
-			"ionizationEnergy": 7.9,
-			"electronAffinity": 1.35,
+			"atomicRadius": 120,
+			"ionizationEnergy": 7.899435,
+			"electronAffinity": 1.2326764,
 			"oxidationStates": [
 				"+4",
-				"+2"
+				"+2",
+				"-4"
 			],
 			"meltingPoint": 1211.4,
+			"meltsUnderPressure": false,
 			"boilingPoint": 3106,
+			"sublimes": false,
 			"density": 5.323,
-			"yearDiscovered": 1886
+			"yearDiscovered": 1886,
+			"discoveredBy": [
+				{
+					"qid": "Q73523",
+					"name": {
+						"en": "Clemens Winkler",
+						"ru": "Клеменс Александр Винклер",
+						"fr": "Clemens Winkler",
+						"de": "Clemens Winkler",
+						"it": "Clemens Winkler",
+						"es": "Clemens Winkler",
+						"zh": "克萊門斯·溫克勒",
+						"pt": "Clemens Winkler"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q183",
+					"name": {
+						"en": "Germany",
+						"ru": "Германия",
+						"fr": "Allemagne",
+						"de": "Deutschland",
+						"it": "Germania",
+						"es": "Alemania",
+						"zh": "德国",
+						"pt": "Alemanha"
+					}
+				}
+			]
 		},
 		{
 			"z": 33,
@@ -1882,14 +2570,14 @@
 			},
 			"wikidata": "Q871",
 			"wikipedia": {
-				"zh": "https://zh.wikipedia.org/wiki/%E7%A0%B7",
-				"pt": "https://pt.wikipedia.org/wiki/Ars%C3%AAnio",
 				"es": "https://es.wikipedia.org/wiki/Ars%C3%A9nico",
 				"it": "https://it.wikipedia.org/wiki/Arsenico",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%9C%D1%8B%D1%88%D1%8C%D1%8F%D0%BA",
+				"pt": "https://pt.wikipedia.org/wiki/Ars%C3%AAnio",
+				"zh": "https://zh.wikipedia.org/wiki/%E7%A0%B7",
 				"de": "https://de.wikipedia.org/wiki/Arsen",
 				"en": "https://en.wikipedia.org/wiki/Arsenic",
-				"fr": "https://fr.wikipedia.org/wiki/Arsenic"
+				"fr": "https://fr.wikipedia.org/wiki/Arsenic",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%9C%D1%8B%D1%88%D1%8C%D1%8F%D0%BA"
 			},
 			"category": "metalloid",
 			"period": 4,
@@ -1913,18 +2601,36 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 2.18,
-			"atomicRadius": 185,
-			"ionizationEnergy": 9.815,
-			"electronAffinity": 0.81,
+			"atomicRadius": 119,
+			"ionizationEnergy": 9.78855,
+			"electronAffinity": 0.804486,
 			"oxidationStates": [
 				"+5",
 				"+3",
 				"-3"
 			],
 			"meltingPoint": 1090,
+			"meltsUnderPressure": true,
 			"boilingPoint": 887,
+			"sublimes": true,
 			"density": 5.776,
-			"yearDiscovered": "ancient"
+			"yearDiscovered": "ancient",
+			"discoveredBy": [
+				{
+					"qid": "Q60059",
+					"name": {
+						"en": "Albertus Magnus",
+						"ru": "Альберт Великий",
+						"fr": "Albert le Grand",
+						"de": "Albertus Magnus",
+						"it": "Alberto Magno",
+						"es": "Alberto Magno",
+						"zh": "艾爾伯圖斯·麥格努斯",
+						"pt": "Alberto Magno"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 34,
@@ -1943,12 +2649,12 @@
 			"wikidata": "Q876",
 			"wikipedia": {
 				"it": "https://it.wikipedia.org/wiki/Selenio",
+				"pt": "https://pt.wikipedia.org/wiki/Sel%C3%AAnio",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D0%BB%D0%B5%D0%BD",
 				"de": "https://de.wikipedia.org/wiki/Selen",
 				"en": "https://en.wikipedia.org/wiki/Selenium",
 				"es": "https://es.wikipedia.org/wiki/Selenio",
 				"fr": "https://fr.wikipedia.org/wiki/S%C3%A9l%C3%A9nium",
-				"pt": "https://pt.wikipedia.org/wiki/Sel%C3%AAnio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D0%BB%D0%B5%D0%BD",
 				"zh": "https://zh.wikipedia.org/wiki/%E7%A1%92"
 			},
 			"category": "nonmetal",
@@ -1973,18 +2679,64 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 2.55,
-			"atomicRadius": 190,
-			"ionizationEnergy": 9.752,
-			"electronAffinity": 2.021,
+			"atomicRadius": 120,
+			"ionizationEnergy": 9.752368,
+			"electronAffinity": 2.020667,
 			"oxidationStates": [
 				"+6",
 				"+4",
+				"+2",
 				"-2"
 			],
 			"meltingPoint": 493.65,
+			"meltsUnderPressure": false,
 			"boilingPoint": 958,
+			"sublimes": false,
 			"density": 4.809,
-			"yearDiscovered": 1817
+			"yearDiscovered": 1817,
+			"discoveredBy": [
+				{
+					"qid": "Q353490",
+					"name": {
+						"en": "Johan Gottlieb Gahn",
+						"ru": "Юхан Готлиб Ган",
+						"fr": "Johan Gottlieb Gahn",
+						"de": "Johan Gottlieb Gahn",
+						"it": "Johan Gottlieb Gahn",
+						"es": "Johan Gottlieb Gahn",
+						"zh": "约翰·戈特利布·甘恩",
+						"pt": "Johan Gottlieb Gahn"
+					}
+				},
+				{
+					"qid": "Q151911",
+					"name": {
+						"en": "Jöns Jacob Berzelius",
+						"ru": "Йёнс Якоб Берцелиус",
+						"fr": "Jöns Jacob Berzelius",
+						"de": "Jöns Jakob Berzelius",
+						"it": "Jöns Jacob Berzelius",
+						"es": "Jöns Jacob Berzelius",
+						"zh": "永斯·贝采利乌斯",
+						"pt": "Jöns Jacob Berzelius"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q405",
+					"name": {
+						"en": "Moon",
+						"ru": "Луна",
+						"fr": "Lune",
+						"de": "Mond",
+						"it": "Luna",
+						"es": "Luna",
+						"zh": "月球",
+						"pt": "Lua"
+					}
+				}
+			]
 		},
 		{
 			"z": 35,
@@ -2002,14 +2754,14 @@
 			},
 			"wikidata": "Q879",
 			"wikipedia": {
+				"fr": "https://fr.wikipedia.org/wiki/Brome",
+				"it": "https://it.wikipedia.org/wiki/Bromo",
 				"de": "https://de.wikipedia.org/wiki/Brom",
 				"en": "https://en.wikipedia.org/wiki/Bromine",
 				"es": "https://es.wikipedia.org/wiki/Bromo",
-				"fr": "https://fr.wikipedia.org/wiki/Brome",
-				"it": "https://it.wikipedia.org/wiki/Bromo",
+				"zh": "https://zh.wikipedia.org/wiki/%E6%BA%B4",
 				"pt": "https://pt.wikipedia.org/wiki/Bromo",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%91%D1%80%D0%BE%D0%BC",
-				"zh": "https://zh.wikipedia.org/wiki/%E6%BA%B4"
+				"ru": "https://ru.wikipedia.org/wiki/%D0%91%D1%80%D0%BE%D0%BC"
 			},
 			"category": "halogen",
 			"period": 4,
@@ -2033,18 +2785,50 @@
 			"state": "liquid",
 			"statePredicted": false,
 			"electronegativity": 2.96,
-			"atomicRadius": 183,
-			"ionizationEnergy": 11.814,
-			"electronAffinity": 3.365,
+			"atomicRadius": 120,
+			"ionizationEnergy": 11.81381,
+			"electronAffinity": 3.363588,
 			"oxidationStates": [
 				"+5",
+				"+3",
 				"+1",
 				"-1"
 			],
 			"meltingPoint": 265.95,
+			"meltsUnderPressure": false,
 			"boilingPoint": 331.95,
+			"sublimes": false,
 			"density": 3.11,
-			"yearDiscovered": 1826
+			"yearDiscovered": 1826,
+			"discoveredBy": [
+				{
+					"qid": "Q314306",
+					"name": {
+						"en": "Antoine-Jérôme Balard",
+						"ru": "Антуан Жером Балар",
+						"fr": "Antoine-Jérôme Balard",
+						"de": "Antoine-Jérôme Balard",
+						"it": "Antoine Jérôme Balard",
+						"es": "Antoine-Jérôme Balard",
+						"zh": "安托万-热罗姆·巴拉尔",
+						"pt": "Antoine Jérôme Balard"
+					}
+				},
+				{
+					"qid": "Q65517",
+					"name": {
+						"en": "Carl Jacob Löwig",
+						"ru": "Карл Якоб Лёвих",
+						"fr": "Carl Jacob Löwig",
+						"de": "Carl Löwig",
+						"it": "Carl Löwig",
+						"es": "Carl Jacob Löwig",
+						"zh": "卡爾·羅威",
+						"pt": "Carl Jacob Löwig"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 36,
@@ -2062,14 +2846,14 @@
 			},
 			"wikidata": "Q888",
 			"wikipedia": {
-				"it": "https://it.wikipedia.org/wiki/Kripton",
-				"de": "https://de.wikipedia.org/wiki/Krypton",
 				"en": "https://en.wikipedia.org/wiki/Krypton",
 				"es": "https://es.wikipedia.org/wiki/Kript%C3%B3n",
 				"fr": "https://fr.wikipedia.org/wiki/Krypton",
+				"de": "https://de.wikipedia.org/wiki/Krypton",
+				"it": "https://it.wikipedia.org/wiki/Kripton",
+				"zh": "https://zh.wikipedia.org/wiki/%E6%B0%AA",
 				"pt": "https://pt.wikipedia.org/wiki/Cr%C3%ADpton",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%9A%D1%80%D0%B8%D0%BF%D1%82%D0%BE%D0%BD",
-				"zh": "https://zh.wikipedia.org/wiki/%E6%B0%AA"
+				"ru": "https://ru.wikipedia.org/wiki/%D0%9A%D1%80%D0%B8%D0%BF%D1%82%D0%BE%D0%BD"
 			},
 			"category": "noble-gas",
 			"period": 4,
@@ -2093,16 +2877,47 @@
 			"state": "gas",
 			"statePredicted": false,
 			"electronegativity": 3,
-			"atomicRadius": 202,
-			"ionizationEnergy": 14,
-			"electronAffinity": null,
+			"atomicRadius": 116,
+			"ionizationEnergy": 13.9996055,
+			"electronAffinity": "unstable",
 			"oxidationStates": [
-				"0"
+				"+2"
 			],
 			"meltingPoint": 115.79,
+			"meltsUnderPressure": false,
 			"boilingPoint": 119.93,
+			"sublimes": false,
 			"density": 0.003733,
-			"yearDiscovered": 1898
+			"yearDiscovered": 1898,
+			"discoveredBy": [
+				{
+					"qid": "Q380209",
+					"name": {
+						"en": "Morris Travers",
+						"ru": "Морис Уильям Траверс",
+						"fr": "Morris William Travers",
+						"de": "Morris William Travers",
+						"it": "Morris Travers",
+						"es": "Morris Travers",
+						"zh": "莫里斯·威廉·特拉弗斯",
+						"pt": "Morris William Travers"
+					}
+				},
+				{
+					"qid": "Q950726",
+					"name": {
+						"en": "William Ramsay",
+						"ru": "Уильям Рамзай",
+						"fr": "William Ramsay",
+						"de": "William Ramsay",
+						"it": "William Ramsay",
+						"es": "William Ramsay",
+						"zh": "威廉·拉姆齐",
+						"pt": "William Ramsay"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 37,
@@ -2120,14 +2935,14 @@
 			},
 			"wikidata": "Q895",
 			"wikipedia": {
+				"pt": "https://pt.wikipedia.org/wiki/Rub%C3%ADdio",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%A0%D1%83%D0%B1%D0%B8%D0%B4%D0%B8%D0%B9",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%93%B7",
 				"de": "https://de.wikipedia.org/wiki/Rubidium",
 				"en": "https://en.wikipedia.org/wiki/Rubidium",
 				"es": "https://es.wikipedia.org/wiki/Rubidio",
 				"fr": "https://fr.wikipedia.org/wiki/Rubidium",
-				"it": "https://it.wikipedia.org/wiki/Rubidio",
-				"pt": "https://pt.wikipedia.org/wiki/Rub%C3%ADdio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%A0%D1%83%D0%B1%D0%B8%D0%B4%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%93%B7"
+				"it": "https://it.wikipedia.org/wiki/Rubidio"
 			},
 			"category": "alkali-metal",
 			"period": 5,
@@ -2152,16 +2967,47 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 0.82,
-			"atomicRadius": 303,
-			"ionizationEnergy": 4.177,
-			"electronAffinity": 0.468,
+			"atomicRadius": 220,
+			"ionizationEnergy": 4.1771281,
+			"electronAffinity": 0.485916,
 			"oxidationStates": [
 				"+1"
 			],
 			"meltingPoint": 312.46,
+			"meltsUnderPressure": false,
 			"boilingPoint": 961,
+			"sublimes": false,
 			"density": 1.53,
-			"yearDiscovered": 1861
+			"yearDiscovered": 1861,
+			"discoveredBy": [
+				{
+					"qid": "Q60052",
+					"name": {
+						"en": "Gustav Kirchhoff",
+						"ru": "Густав Роберт Кирхгоф",
+						"fr": "Gustav Kirchhoff",
+						"de": "Gustav Robert Kirchhoff",
+						"it": "Gustav Robert Kirchhoff",
+						"es": "Gustav Kirchhoff",
+						"zh": "古斯塔夫·基爾霍夫",
+						"pt": "Gustav Kirchhoff"
+					}
+				},
+				{
+					"qid": "Q71031",
+					"name": {
+						"en": "Robert Bunsen",
+						"ru": "Роберт Вильгельм Бунзен",
+						"fr": "Robert Wilhelm Bunsen",
+						"de": "Robert Wilhelm Bunsen",
+						"it": "Robert Wilhelm Bunsen",
+						"es": "Robert Bunsen",
+						"zh": "罗伯特·威廉·本生",
+						"pt": "Robert Bunsen"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 38,
@@ -2179,14 +3025,14 @@
 			},
 			"wikidata": "Q938",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Strontium",
-				"en": "https://en.wikipedia.org/wiki/Strontium",
 				"es": "https://es.wikipedia.org/wiki/Estroncio",
 				"fr": "https://fr.wikipedia.org/wiki/Strontium",
 				"it": "https://it.wikipedia.org/wiki/Stronzio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%94%B6",
 				"pt": "https://pt.wikipedia.org/wiki/Estr%C3%B4ncio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%A1%D1%82%D1%80%D0%BE%D0%BD%D1%86%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%94%B6"
+				"de": "https://de.wikipedia.org/wiki/Strontium",
+				"en": "https://en.wikipedia.org/wiki/Strontium"
 			},
 			"category": "alkaline-earth-metal",
 			"period": 5,
@@ -2211,16 +3057,48 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 0.95,
-			"atomicRadius": 249,
-			"ionizationEnergy": 5.695,
-			"electronAffinity": null,
+			"atomicRadius": 195,
+			"ionizationEnergy": 5.69486745,
+			"electronAffinity": 0.05206,
 			"oxidationStates": [
 				"+2"
 			],
 			"meltingPoint": 1050,
+			"meltsUnderPressure": false,
 			"boilingPoint": 1655,
+			"sublimes": false,
 			"density": 2.64,
-			"yearDiscovered": 1790
+			"yearDiscovered": 1790,
+			"discoveredBy": [
+				{
+					"qid": "Q902388",
+					"name": {
+						"en": "William Cruickshank",
+						"ru": "Уильям Крюйкшенк",
+						"fr": "William Cruickshank",
+						"de": "William Cruickshank",
+						"it": "William Cruickshank",
+						"es": "William Cruickshank",
+						"zh": "威廉·克鲁克香克",
+						"pt": "William Cruickshank"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q503042",
+					"name": {
+						"en": "Strontian",
+						"ru": "Strontian",
+						"fr": "Strontian",
+						"de": "Strontian",
+						"it": "Strontian",
+						"es": "Estroncia",
+						"zh": "斯托申",
+						"pt": "Strontian"
+					}
+				}
+			]
 		},
 		{
 			"z": 39,
@@ -2243,9 +3121,9 @@
 				"de": "https://de.wikipedia.org/wiki/Yttrium",
 				"es": "https://es.wikipedia.org/wiki/Itrio",
 				"fr": "https://fr.wikipedia.org/wiki/Yttrium",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%92%87",
 				"pt": "https://pt.wikipedia.org/wiki/%C3%8Dtrio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%98%D1%82%D1%82%D1%80%D0%B8%D0%B9"
+				"ru": "https://ru.wikipedia.org/wiki/%D0%98%D1%82%D1%82%D1%80%D0%B8%D0%B9",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%92%87"
 			},
 			"category": "transition-metal",
 			"period": 5,
@@ -2270,16 +3148,61 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.22,
-			"atomicRadius": 219,
-			"ionizationEnergy": 6.217,
-			"electronAffinity": 0.307,
+			"atomicRadius": 190,
+			"ionizationEnergy": 6.21726,
+			"electronAffinity": 0.31129,
 			"oxidationStates": [
 				"+3"
 			],
 			"meltingPoint": 1795,
+			"meltsUnderPressure": false,
 			"boilingPoint": 3618,
+			"sublimes": false,
 			"density": 4.47,
-			"yearDiscovered": 1794
+			"yearDiscovered": 1794,
+			"discoveredBy": [
+				{
+					"qid": "Q58575",
+					"name": {
+						"en": "Friedrich Wöhler",
+						"ru": "Фридрих Вёлер",
+						"fr": "Friedrich Wöhler",
+						"de": "Friedrich Wöhler",
+						"it": "Friedrich Wöhler",
+						"es": "Friedrich Wöhler",
+						"zh": "弗里德里希·维勒",
+						"pt": "Friedrich Wöhler"
+					}
+				},
+				{
+					"qid": "Q312571",
+					"name": {
+						"en": "Johan Gadolin",
+						"ru": "Юхан Гадолин",
+						"fr": "Johan Gadolin",
+						"de": "Johan Gadolin",
+						"it": "Johan Gadolin",
+						"es": "Johan Gadolin",
+						"zh": "约翰·加多林",
+						"pt": "Johan Gadolin"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q631733",
+					"name": {
+						"en": "Ytterby mine",
+						"ru": "Иттербю",
+						"fr": "Ytterby",
+						"de": "Grube Ytterby",
+						"it": "Ytterby",
+						"es": "Ytterby",
+						"zh": "伊特比",
+						"pt": "Ytterby"
+					}
+				}
+			]
 		},
 		{
 			"z": 40,
@@ -2297,13 +3220,13 @@
 			},
 			"wikidata": "Q1038",
 			"wikipedia": {
-				"en": "https://en.wikipedia.org/wiki/Zirconium",
-				"es": "https://es.wikipedia.org/wiki/Circonio",
-				"fr": "https://fr.wikipedia.org/wiki/Zirconium",
-				"de": "https://de.wikipedia.org/wiki/Zirconium",
 				"it": "https://it.wikipedia.org/wiki/Zirconio",
 				"pt": "https://pt.wikipedia.org/wiki/Zirc%C3%B4nio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%A6%D0%B8%D1%80%D0%BA%D0%BE%D0%BD%D0%B8%D0%B9",
+				"de": "https://de.wikipedia.org/wiki/Zirconium",
+				"en": "https://en.wikipedia.org/wiki/Zirconium",
+				"es": "https://es.wikipedia.org/wiki/Circonio",
+				"fr": "https://fr.wikipedia.org/wiki/Zirconium",
 				"zh": "https://zh.wikipedia.org/wiki/%E9%94%86"
 			},
 			"category": "transition-metal",
@@ -2329,16 +3252,34 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.33,
-			"atomicRadius": 186,
-			"ionizationEnergy": 6.634,
-			"electronAffinity": 0.426,
+			"atomicRadius": 175,
+			"ionizationEnergy": 6.634126,
+			"electronAffinity": 0.43328,
 			"oxidationStates": [
 				"+4"
 			],
 			"meltingPoint": 2128,
+			"meltsUnderPressure": false,
 			"boilingPoint": 4682,
+			"sublimes": false,
 			"density": 6.52,
-			"yearDiscovered": 1789
+			"yearDiscovered": 1789,
+			"discoveredBy": [
+				{
+					"qid": "Q160196",
+					"name": {
+						"en": "Martin Heinrich Klaproth",
+						"ru": "Мартин Генрих Клапрот",
+						"fr": "Martin Heinrich Klaproth",
+						"de": "Martin Heinrich Klaproth",
+						"it": "Martin Heinrich Klaproth",
+						"es": "Martin Heinrich Klaproth",
+						"zh": "马丁·海因里希·克拉普罗特",
+						"pt": "Martin Heinrich Klaproth"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 41,
@@ -2359,11 +3300,11 @@
 				"de": "https://de.wikipedia.org/wiki/Niob",
 				"en": "https://en.wikipedia.org/wiki/Niobium",
 				"es": "https://es.wikipedia.org/wiki/Niobio",
-				"pt": "https://pt.wikipedia.org/wiki/Ni%C3%B3bio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%9D%D0%B8%D0%BE%D0%B1%D0%B8%D0%B9",
 				"fr": "https://fr.wikipedia.org/wiki/Niobium",
 				"it": "https://it.wikipedia.org/wiki/Niobio",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%93%8C"
+				"zh": "https://zh.wikipedia.org/wiki/%E9%93%8C",
+				"pt": "https://pt.wikipedia.org/wiki/Ni%C3%B3bio",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%9D%D0%B8%D0%BE%D0%B1%D0%B8%D0%B9"
 			},
 			"category": "transition-metal",
 			"period": 5,
@@ -2388,17 +3329,49 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.6,
-			"atomicRadius": 207,
-			"ionizationEnergy": 6.759,
-			"electronAffinity": 0.893,
+			"atomicRadius": 164,
+			"ionizationEnergy": 6.75885,
+			"electronAffinity": 0.9174,
 			"oxidationStates": [
 				"+5",
 				"+3"
 			],
 			"meltingPoint": 2750,
+			"meltsUnderPressure": false,
 			"boilingPoint": 5017,
+			"sublimes": false,
 			"density": 8.57,
-			"yearDiscovered": 1801
+			"yearDiscovered": 1801,
+			"discoveredBy": [
+				{
+					"qid": "Q378065",
+					"name": {
+						"en": "Charles Hatchett",
+						"ru": "Чарльз Хэтчетт",
+						"fr": "Charles Hatchett",
+						"de": "Charles Hatchett",
+						"it": "Charles Hatchett",
+						"es": "Charles Hatchett",
+						"zh": "查理斯·哈契特",
+						"pt": "Charles Hatchett"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q213621",
+					"name": {
+						"en": "Niobe",
+						"ru": "Ниоба",
+						"fr": "Niobé",
+						"de": "Niobe",
+						"it": "Niobe",
+						"es": "Níobe",
+						"zh": "尼俄伯",
+						"pt": "Niobe"
+					}
+				}
+			]
 		},
 		{
 			"z": 42,
@@ -2416,13 +3389,13 @@
 			},
 			"wikidata": "Q1053",
 			"wikipedia": {
+				"it": "https://it.wikipedia.org/wiki/Molibdeno",
+				"pt": "https://pt.wikipedia.org/wiki/Molibd%C3%AAnio",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%9C%D0%BE%D0%BB%D0%B8%D0%B1%D0%B4%D0%B5%D0%BD",
 				"de": "https://de.wikipedia.org/wiki/Molybd%C3%A4n",
 				"en": "https://en.wikipedia.org/wiki/Molybdenum",
 				"es": "https://es.wikipedia.org/wiki/Molibdeno",
 				"fr": "https://fr.wikipedia.org/wiki/Molybd%C3%A8ne",
-				"it": "https://it.wikipedia.org/wiki/Molibdeno",
-				"pt": "https://pt.wikipedia.org/wiki/Molibd%C3%AAnio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%9C%D0%BE%D0%BB%D0%B8%D0%B1%D0%B4%D0%B5%D0%BD",
 				"zh": "https://zh.wikipedia.org/wiki/%E9%92%BC"
 			},
 			"category": "transition-metal",
@@ -2448,16 +3421,35 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 2.16,
-			"atomicRadius": 209,
-			"ionizationEnergy": 7.092,
-			"electronAffinity": 0.746,
+			"atomicRadius": 154,
+			"ionizationEnergy": 7.09243,
+			"electronAffinity": 0.74723,
 			"oxidationStates": [
-				"+6"
+				"+6",
+				"+4"
 			],
 			"meltingPoint": 2896,
+			"meltsUnderPressure": false,
 			"boilingPoint": 4912,
+			"sublimes": false,
 			"density": 10.2,
-			"yearDiscovered": 1778
+			"yearDiscovered": 1778,
+			"discoveredBy": [
+				{
+					"qid": "Q70538",
+					"name": {
+						"en": "Carl Wilhelm Scheele",
+						"ru": "Карл Вильгельм Шееле",
+						"fr": "Carl Wilhelm Scheele",
+						"de": "Carl Wilhelm Scheele",
+						"it": "Carl Scheele",
+						"es": "Carl Wilhelm Scheele",
+						"zh": "卡尔·威廉·舍勒",
+						"pt": "Carl Wilhelm Scheele"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 43,
@@ -2475,14 +3467,14 @@
 			},
 			"wikidata": "Q1054",
 			"wikipedia": {
+				"it": "https://it.wikipedia.org/wiki/Tecnezio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%94%9D",
 				"de": "https://de.wikipedia.org/wiki/Technetium",
 				"en": "https://en.wikipedia.org/wiki/Technetium",
 				"es": "https://es.wikipedia.org/wiki/Tecnecio",
 				"fr": "https://fr.wikipedia.org/wiki/Techn%C3%A9tium",
-				"it": "https://it.wikipedia.org/wiki/Tecnezio",
 				"pt": "https://pt.wikipedia.org/wiki/Tecn%C3%A9cio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D1%85%D0%BD%D0%B5%D1%86%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%94%9D"
+				"ru": "https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D1%85%D0%BD%D0%B5%D1%86%D0%B8%D0%B9"
 			},
 			"category": "transition-metal",
 			"period": 5,
@@ -2507,18 +3499,49 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.9,
-			"atomicRadius": 209,
-			"ionizationEnergy": 7.28,
-			"electronAffinity": 0.55,
+			"atomicRadius": 147,
+			"ionizationEnergy": 7.11938,
+			"electronAffinity": null,
 			"oxidationStates": [
 				"+7",
 				"+6",
 				"+4"
 			],
 			"meltingPoint": 2430,
+			"meltsUnderPressure": false,
 			"boilingPoint": 4538,
+			"sublimes": false,
 			"density": 11,
-			"yearDiscovered": 1937
+			"yearDiscovered": 1937,
+			"discoveredBy": [
+				{
+					"qid": "Q2939237",
+					"name": {
+						"en": "Carlo Perrier",
+						"ru": "Carlo Perrier",
+						"fr": "Carlo Perrier",
+						"de": "Carlo Perrier",
+						"it": "Carlo Perrier",
+						"es": "Carlo Perrier",
+						"zh": "卡羅·佩里爾",
+						"pt": "Carlo Perrier"
+					}
+				},
+				{
+					"qid": "Q173028",
+					"name": {
+						"en": "Emilio G. Segrè",
+						"ru": "Эмилио Джино Сегре",
+						"fr": "Emilio Segrè",
+						"de": "Emilio Segrè",
+						"it": "Emilio Segrè",
+						"es": "Emilio Gino Segrè",
+						"zh": "埃米利奥·塞格雷",
+						"pt": "Emilio Gino Segrè"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 44,
@@ -2536,14 +3559,14 @@
 			},
 			"wikidata": "Q1086",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Ruthenium",
-				"en": "https://en.wikipedia.org/wiki/Ruthenium",
-				"es": "https://es.wikipedia.org/wiki/Rutenio",
-				"fr": "https://fr.wikipedia.org/wiki/Ruth%C3%A9nium",
 				"it": "https://it.wikipedia.org/wiki/Rutenio",
 				"pt": "https://pt.wikipedia.org/wiki/Rut%C3%AAnio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%A0%D1%83%D1%82%D0%B5%D0%BD%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%92%8C"
+				"zh": "https://zh.wikipedia.org/wiki/%E9%92%8C",
+				"de": "https://de.wikipedia.org/wiki/Ruthenium",
+				"en": "https://en.wikipedia.org/wiki/Ruthenium",
+				"es": "https://es.wikipedia.org/wiki/Rutenio",
+				"fr": "https://fr.wikipedia.org/wiki/Ruth%C3%A9nium"
 			},
 			"category": "transition-metal",
 			"period": 5,
@@ -2568,16 +3591,35 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 2.2,
-			"atomicRadius": 207,
-			"ionizationEnergy": 7.361,
-			"electronAffinity": 1.05,
+			"atomicRadius": 146,
+			"ionizationEnergy": 7.3605,
+			"electronAffinity": 1.04627,
 			"oxidationStates": [
+				"+4",
 				"+3"
 			],
 			"meltingPoint": 2607,
+			"meltsUnderPressure": false,
 			"boilingPoint": 4423,
+			"sublimes": false,
 			"density": 12.1,
-			"yearDiscovered": 1827
+			"yearDiscovered": 1844,
+			"discoveredBy": [
+				{
+					"qid": "Q554178",
+					"name": {
+						"en": "Karl Ernst Claus",
+						"ru": "Клаус, Карл Карлович",
+						"fr": "Karl Klaus",
+						"de": "Karl Ernst Claus",
+						"it": "Karl Ernst Claus",
+						"es": "Karl Ernst Claus",
+						"zh": "卡爾·恩斯特·克勞斯",
+						"pt": "Karl Ernst Claus"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 45,
@@ -2600,9 +3642,9 @@
 				"es": "https://es.wikipedia.org/wiki/Rodio",
 				"fr": "https://fr.wikipedia.org/wiki/Rhodium",
 				"it": "https://it.wikipedia.org/wiki/Rodio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%A0%D0%BE%D0%B4%D0%B8%D0%B9",
 				"pt": "https://pt.wikipedia.org/wiki/R%C3%B3dio",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%93%91"
+				"zh": "https://zh.wikipedia.org/wiki/%E9%93%91",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%A0%D0%BE%D0%B4%D0%B8%D0%B9"
 			},
 			"category": "transition-metal",
 			"period": 5,
@@ -2627,16 +3669,34 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 2.28,
-			"atomicRadius": 195,
-			"ionizationEnergy": 7.459,
-			"electronAffinity": 1.137,
+			"atomicRadius": 142,
+			"ionizationEnergy": 7.4589,
+			"electronAffinity": 1.14289,
 			"oxidationStates": [
 				"+3"
 			],
 			"meltingPoint": 2237,
+			"meltsUnderPressure": false,
 			"boilingPoint": 3968,
+			"sublimes": false,
 			"density": 12.4,
-			"yearDiscovered": 1803
+			"yearDiscovered": 1803,
+			"discoveredBy": [
+				{
+					"qid": "Q312975",
+					"name": {
+						"en": "William Hyde Wollaston",
+						"ru": "Уильям Хайд Волластон",
+						"fr": "William Hyde Wollaston",
+						"de": "William Hyde Wollaston",
+						"it": "William Hyde Wollaston",
+						"es": "William Hyde Wollaston",
+						"zh": "威廉·海德·渥拉斯顿",
+						"pt": "William Hyde Wollaston"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 46,
@@ -2654,13 +3714,13 @@
 			},
 			"wikidata": "Q1089",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Palladium",
+				"it": "https://it.wikipedia.org/wiki/Palladio_(elemento_chimico)",
 				"en": "https://en.wikipedia.org/wiki/Palladium",
 				"es": "https://es.wikipedia.org/wiki/Paladio",
 				"fr": "https://fr.wikipedia.org/wiki/Palladium",
-				"it": "https://it.wikipedia.org/wiki/Palladio_(elemento_chimico)",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D0%BB%D0%BB%D0%B0%D0%B4%D0%B8%D0%B9",
+				"de": "https://de.wikipedia.org/wiki/Palladium",
 				"pt": "https://pt.wikipedia.org/wiki/Pal%C3%A1dio",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D0%BB%D0%BB%D0%B0%D0%B4%D0%B8%D0%B9",
 				"zh": "https://zh.wikipedia.org/wiki/%E9%92%AF"
 			},
 			"category": "transition-metal",
@@ -2685,17 +3745,50 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 2.2,
-			"atomicRadius": 202,
-			"ionizationEnergy": 8.337,
-			"electronAffinity": 0.557,
+			"atomicRadius": 139,
+			"ionizationEnergy": 8.336839,
+			"electronAffinity": 0.56214,
 			"oxidationStates": [
+				"+4",
 				"+3",
 				"+2"
 			],
 			"meltingPoint": 1828.05,
+			"meltsUnderPressure": false,
 			"boilingPoint": 3236,
+			"sublimes": false,
 			"density": 12,
-			"yearDiscovered": 1803
+			"yearDiscovered": 1803,
+			"discoveredBy": [
+				{
+					"qid": "Q312975",
+					"name": {
+						"en": "William Hyde Wollaston",
+						"ru": "Уильям Хайд Волластон",
+						"fr": "William Hyde Wollaston",
+						"de": "William Hyde Wollaston",
+						"it": "William Hyde Wollaston",
+						"es": "William Hyde Wollaston",
+						"zh": "威廉·海德·渥拉斯顿",
+						"pt": "William Hyde Wollaston"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q3002",
+					"name": {
+						"en": "2 Pallas",
+						"ru": "(2) Паллада",
+						"fr": "(2) Pallas",
+						"de": "(2) Pallas",
+						"it": "2 Pallas",
+						"es": "(2) Palas",
+						"zh": "智神星",
+						"pt": "2 Palas"
+					}
+				}
+			]
 		},
 		{
 			"z": 47,
@@ -2745,16 +3838,20 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.93,
-			"atomicRadius": 172,
-			"ionizationEnergy": 7.576,
-			"electronAffinity": 1.302,
+			"atomicRadius": 145,
+			"ionizationEnergy": 7.576234,
+			"electronAffinity": 1.30447,
 			"oxidationStates": [
 				"+1"
 			],
 			"meltingPoint": 1234.93,
+			"meltsUnderPressure": false,
 			"boilingPoint": 2435,
+			"sublimes": false,
 			"density": 10.501,
-			"yearDiscovered": "ancient"
+			"yearDiscovered": "ancient",
+			"discoveredBy": [],
+			"namedAfter": []
 		},
 		{
 			"z": 48,
@@ -2804,16 +3901,47 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.69,
-			"atomicRadius": 158,
-			"ionizationEnergy": 8.994,
-			"electronAffinity": null,
+			"atomicRadius": 144,
+			"ionizationEnergy": 8.99382,
+			"electronAffinity": "unstable",
 			"oxidationStates": [
 				"+2"
 			],
 			"meltingPoint": 594.22,
+			"meltsUnderPressure": false,
 			"boilingPoint": 1040,
+			"sublimes": false,
 			"density": 8.69,
-			"yearDiscovered": 1817
+			"yearDiscovered": 1817,
+			"discoveredBy": [
+				{
+					"qid": "Q77309",
+					"name": {
+						"en": "Friedrich Stromeyer",
+						"ru": "Фридрих Штромейер",
+						"fr": "Friedrich Stromeyer",
+						"de": "Friedrich Stromeyer",
+						"it": "Friedrich Stromeyer",
+						"es": "Friedrich Stromeyer",
+						"zh": "弗里德里希·斯特隆美尔",
+						"pt": "Friedrich Strohmeyer"
+					}
+				},
+				{
+					"qid": "Q69080",
+					"name": {
+						"en": "Karl Samuel Leberecht Hermann",
+						"ru": "Karl Samuel Leberecht Hermann",
+						"fr": "Karl Samuel Leberecht Hermann",
+						"de": "Carl Samuel Hermann",
+						"it": "Carl Samuel Hermann",
+						"es": "Karl Samuel Leberecht Hermann",
+						"zh": "卡尔·萨缪尔·勒伯莱希特·赫尔曼",
+						"pt": "Karl Samuel Leberecht Hermann"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 49,
@@ -2832,13 +3960,13 @@
 			"wikidata": "Q1094",
 			"wikipedia": {
 				"de": "https://de.wikipedia.org/wiki/Indium",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%93%9F",
 				"en": "https://en.wikipedia.org/wiki/Indium",
 				"es": "https://es.wikipedia.org/wiki/Indio_(elemento)",
 				"fr": "https://fr.wikipedia.org/wiki/Indium",
-				"pt": "https://pt.wikipedia.org/wiki/%C3%8Dndio_(elemento_qu%C3%ADmico)",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%98%D0%BD%D0%B4%D0%B8%D0%B9",
 				"it": "https://it.wikipedia.org/wiki/Indio",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%93%9F"
+				"pt": "https://pt.wikipedia.org/wiki/%C3%8Dndio_(elemento_qu%C3%ADmico)",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%98%D0%BD%D0%B4%D0%B8%D0%B9"
 			},
 			"category": "post-transition-metal",
 			"period": 5,
@@ -2863,16 +3991,47 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.78,
-			"atomicRadius": 193,
-			"ionizationEnergy": 5.786,
-			"electronAffinity": 0.3,
+			"atomicRadius": 142,
+			"ionizationEnergy": 5.7863558,
+			"electronAffinity": 0.38392,
 			"oxidationStates": [
 				"+3"
 			],
 			"meltingPoint": 429.75,
+			"meltsUnderPressure": false,
 			"boilingPoint": 2345,
+			"sublimes": false,
 			"density": 7.31,
-			"yearDiscovered": 1863
+			"yearDiscovered": 1863,
+			"discoveredBy": [
+				{
+					"qid": "Q77307",
+					"name": {
+						"en": "Ferdinand Reich",
+						"ru": "Фердинанд Райх",
+						"fr": "Ferdinand Reich",
+						"de": "Ferdinand Reich",
+						"it": "Ferdinand Reich",
+						"es": "Ferdinand Reich",
+						"zh": "斐迪南·赖希",
+						"pt": "Ferdinand Reich"
+					}
+				},
+				{
+					"qid": "Q77308",
+					"name": {
+						"en": "Hieronymous Theodor Richter",
+						"ru": "Теодор Рихтер",
+						"fr": "Hieronimus Theodor Richter",
+						"de": "Theodor Richter",
+						"it": "Hieronymus Theodor Richter",
+						"es": "Hieronymous Theodor Richter",
+						"zh": "希罗尼穆斯·特奥多尔·里赫特",
+						"pt": "Theodor Richter"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 50,
@@ -2894,9 +4053,9 @@
 				"en": "https://en.wikipedia.org/wiki/Tin",
 				"fr": "https://fr.wikipedia.org/wiki/%C3%89tain",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%9E%D0%BB%D0%BE%D0%B2%D0%BE",
+				"pt": "https://pt.wikipedia.org/wiki/Estanho",
 				"es": "https://es.wikipedia.org/wiki/Esta%C3%B1o",
 				"it": "https://it.wikipedia.org/wiki/Stagno_(elemento_chimico)",
-				"pt": "https://pt.wikipedia.org/wiki/Estanho",
 				"zh": "https://zh.wikipedia.org/wiki/%E9%94%A1"
 			},
 			"category": "post-transition-metal",
@@ -2922,17 +4081,22 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.96,
-			"atomicRadius": 217,
-			"ionizationEnergy": 7.344,
-			"electronAffinity": 1.2,
+			"atomicRadius": 139,
+			"ionizationEnergy": 7.343918,
+			"electronAffinity": 1.11207,
 			"oxidationStates": [
 				"+4",
-				"+2"
+				"+2",
+				"-4"
 			],
 			"meltingPoint": 505.08,
+			"meltsUnderPressure": false,
 			"boilingPoint": 2875,
+			"sublimes": false,
 			"density": 7.287,
-			"yearDiscovered": "ancient"
+			"yearDiscovered": "ancient",
+			"discoveredBy": [],
+			"namedAfter": []
 		},
 		{
 			"z": 51,
@@ -2950,13 +4114,13 @@
 			},
 			"wikidata": "Q1099",
 			"wikipedia": {
-				"pt": "https://pt.wikipedia.org/wiki/Antim%C3%B4nio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%A1%D1%83%D1%80%D1%8C%D0%BC%D0%B0",
 				"de": "https://de.wikipedia.org/wiki/Antimon",
 				"en": "https://en.wikipedia.org/wiki/Antimony",
 				"es": "https://es.wikipedia.org/wiki/Antimonio",
 				"fr": "https://fr.wikipedia.org/wiki/Antimoine",
 				"it": "https://it.wikipedia.org/wiki/Antimonio",
+				"pt": "https://pt.wikipedia.org/wiki/Antim%C3%B4nio",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%A1%D1%83%D1%80%D1%8C%D0%BC%D0%B0",
 				"zh": "https://zh.wikipedia.org/wiki/%E9%94%91"
 			},
 			"category": "metalloid",
@@ -2982,18 +4146,22 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 2.05,
-			"atomicRadius": 206,
-			"ionizationEnergy": 8.64,
-			"electronAffinity": 1.07,
+			"atomicRadius": 139,
+			"ionizationEnergy": 8.608389,
+			"electronAffinity": 1.047401,
 			"oxidationStates": [
 				"+5",
 				"+3",
 				"-3"
 			],
 			"meltingPoint": 903.78,
+			"meltsUnderPressure": false,
 			"boilingPoint": 1860,
+			"sublimes": false,
 			"density": 6.685,
-			"yearDiscovered": "ancient"
+			"yearDiscovered": "ancient",
+			"discoveredBy": [],
+			"namedAfter": []
 		},
 		{
 			"z": 52,
@@ -3011,14 +4179,14 @@
 			},
 			"wikidata": "Q1100",
 			"wikipedia": {
+				"pt": "https://pt.wikipedia.org/wiki/Tel%C3%BArio",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D0%BB%D0%BB%D1%83%D1%80",
+				"zh": "https://zh.wikipedia.org/wiki/%E7%A2%B2",
 				"de": "https://de.wikipedia.org/wiki/Tellur",
 				"en": "https://en.wikipedia.org/wiki/Tellurium",
 				"es": "https://es.wikipedia.org/wiki/Telurio",
 				"fr": "https://fr.wikipedia.org/wiki/Tellure",
-				"it": "https://it.wikipedia.org/wiki/Tellurio",
-				"pt": "https://pt.wikipedia.org/wiki/Tel%C3%BArio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D0%BB%D0%BB%D1%83%D1%80",
-				"zh": "https://zh.wikipedia.org/wiki/%E7%A2%B2"
+				"it": "https://it.wikipedia.org/wiki/Tellurio"
 			},
 			"category": "metalloid",
 			"period": 5,
@@ -3043,18 +4211,51 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 2.1,
-			"atomicRadius": 206,
-			"ionizationEnergy": 9.01,
-			"electronAffinity": 1.971,
+			"atomicRadius": 138,
+			"ionizationEnergy": 9.009808,
+			"electronAffinity": 1.970875,
 			"oxidationStates": [
 				"+6",
 				"+4",
+				"+2",
 				"-2"
 			],
 			"meltingPoint": 722.66,
+			"meltsUnderPressure": false,
 			"boilingPoint": 1261,
+			"sublimes": false,
 			"density": 6.232,
-			"yearDiscovered": 1782
+			"yearDiscovered": 1782,
+			"discoveredBy": [
+				{
+					"qid": "Q112012",
+					"name": {
+						"en": "Franz-Joseph Müller von Reichenstein",
+						"ru": "Франц Йозеф Мюллер",
+						"fr": "Franz-Joseph Müller von Reichenstein",
+						"de": "Franz Joseph Müller von Reichenstein",
+						"it": "Franz Joseph Müller von Reichenstein",
+						"es": "Franz-Joseph Müller von Reichenstein",
+						"zh": "弗朗茨·约瑟夫·穆勒·冯·莱赫斯坦",
+						"pt": "Franz Joseph Müller von Reichenstein"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q270867",
+					"name": {
+						"en": "Terra",
+						"ru": "Теллус",
+						"fr": "Tellus",
+						"de": "Tellus",
+						"it": "Tellus",
+						"es": "Tellus",
+						"zh": "特鲁斯",
+						"pt": "Terra"
+					}
+				}
+			]
 		},
 		{
 			"z": 53,
@@ -3072,14 +4273,14 @@
 			},
 			"wikidata": "Q1103",
 			"wikipedia": {
-				"zh": "https://zh.wikipedia.org/wiki/%E7%A2%98",
+				"fr": "https://fr.wikipedia.org/wiki/Iode",
+				"it": "https://it.wikipedia.org/wiki/Iodio",
 				"de": "https://de.wikipedia.org/wiki/Iod",
 				"en": "https://en.wikipedia.org/wiki/Iodine",
 				"es": "https://es.wikipedia.org/wiki/Yodo",
-				"fr": "https://fr.wikipedia.org/wiki/Iode",
-				"it": "https://it.wikipedia.org/wiki/Iodio",
 				"pt": "https://pt.wikipedia.org/wiki/Iodo",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%98%D0%BE%D0%B4"
+				"ru": "https://ru.wikipedia.org/wiki/%D0%98%D0%BE%D0%B4",
+				"zh": "https://zh.wikipedia.org/wiki/%E7%A2%98"
 			},
 			"category": "halogen",
 			"period": 5,
@@ -3104,19 +4305,38 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 2.66,
-			"atomicRadius": 198,
-			"ionizationEnergy": 10.451,
-			"electronAffinity": 3.059,
+			"atomicRadius": 139,
+			"ionizationEnergy": 10.451236,
+			"electronAffinity": 3.0590465,
 			"oxidationStates": [
 				"+7",
 				"+5",
+				"+3",
 				"+1",
 				"-1"
 			],
 			"meltingPoint": 386.85,
+			"meltsUnderPressure": false,
 			"boilingPoint": 457.55,
+			"sublimes": false,
 			"density": 4.93,
-			"yearDiscovered": 1811
+			"yearDiscovered": 1811,
+			"discoveredBy": [
+				{
+					"qid": "Q468330",
+					"name": {
+						"en": "Bernard Courtois",
+						"ru": "Бернар Куртуа",
+						"fr": "Bernard Courtois",
+						"de": "Bernard Courtois",
+						"it": "Bernard Courtois",
+						"es": "Bernard Courtois",
+						"zh": "贝尔纳·库尔图瓦",
+						"pt": "Bernard Courtois"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 54,
@@ -3134,14 +4354,14 @@
 			},
 			"wikidata": "Q1106",
 			"wikipedia": {
-				"zh": "https://zh.wikipedia.org/wiki/%E6%B0%99",
-				"it": "https://it.wikipedia.org/wiki/Xenon",
-				"de": "https://de.wikipedia.org/wiki/Xenon",
-				"es": "https://es.wikipedia.org/wiki/Xen%C3%B3n",
-				"fr": "https://fr.wikipedia.org/wiki/X%C3%A9non",
 				"pt": "https://pt.wikipedia.org/wiki/Xen%C3%B4nio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%9A%D1%81%D0%B5%D0%BD%D0%BE%D0%BD",
-				"en": "https://en.wikipedia.org/wiki/Xenon"
+				"zh": "https://zh.wikipedia.org/wiki/%E6%B0%99",
+				"it": "https://it.wikipedia.org/wiki/Xenon",
+				"en": "https://en.wikipedia.org/wiki/Xenon",
+				"de": "https://de.wikipedia.org/wiki/Xenon",
+				"es": "https://es.wikipedia.org/wiki/Xen%C3%B3n",
+				"fr": "https://fr.wikipedia.org/wiki/X%C3%A9non"
 			},
 			"category": "noble-gas",
 			"period": 5,
@@ -3166,16 +4386,50 @@
 			"state": "gas",
 			"statePredicted": false,
 			"electronegativity": 2.6,
-			"atomicRadius": 216,
-			"ionizationEnergy": 12.13,
-			"electronAffinity": null,
+			"atomicRadius": 140,
+			"ionizationEnergy": 12.1298437,
+			"electronAffinity": "unstable",
 			"oxidationStates": [
-				"0"
+				"+8",
+				"+6",
+				"+4",
+				"+2"
 			],
 			"meltingPoint": 161.36,
+			"meltsUnderPressure": false,
 			"boilingPoint": 165.03,
+			"sublimes": false,
 			"density": 0.005887,
-			"yearDiscovered": 1898
+			"yearDiscovered": 1898,
+			"discoveredBy": [
+				{
+					"qid": "Q380209",
+					"name": {
+						"en": "Morris Travers",
+						"ru": "Морис Уильям Траверс",
+						"fr": "Morris William Travers",
+						"de": "Morris William Travers",
+						"it": "Morris Travers",
+						"es": "Morris Travers",
+						"zh": "莫里斯·威廉·特拉弗斯",
+						"pt": "Morris William Travers"
+					}
+				},
+				{
+					"qid": "Q950726",
+					"name": {
+						"en": "William Ramsay",
+						"ru": "Уильям Рамзай",
+						"fr": "William Ramsay",
+						"de": "William Ramsay",
+						"it": "William Ramsay",
+						"es": "William Ramsay",
+						"zh": "威廉·拉姆齐",
+						"pt": "William Ramsay"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 55,
@@ -3193,14 +4447,14 @@
 			},
 			"wikidata": "Q1108",
 			"wikipedia": {
+				"pt": "https://pt.wikipedia.org/wiki/C%C3%A9sio",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%A6%D0%B5%D0%B7%D0%B8%D0%B9",
 				"zh": "https://zh.wikipedia.org/wiki/%E9%93%AF",
 				"de": "https://de.wikipedia.org/wiki/Caesium",
 				"en": "https://en.wikipedia.org/wiki/Caesium",
 				"es": "https://es.wikipedia.org/wiki/Cesio",
 				"fr": "https://fr.wikipedia.org/wiki/C%C3%A9sium",
-				"it": "https://it.wikipedia.org/wiki/Cesio",
-				"pt": "https://pt.wikipedia.org/wiki/C%C3%A9sio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%A6%D0%B5%D0%B7%D0%B8%D0%B9"
+				"it": "https://it.wikipedia.org/wiki/Cesio"
 			},
 			"category": "alkali-metal",
 			"period": 6,
@@ -3226,16 +4480,47 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 0.79,
-			"atomicRadius": 343,
-			"ionizationEnergy": 3.894,
-			"electronAffinity": 0.472,
+			"atomicRadius": 244,
+			"ionizationEnergy": 3.89390572743,
+			"electronAffinity": 0.4715983,
 			"oxidationStates": [
 				"+1"
 			],
 			"meltingPoint": 301.59,
+			"meltsUnderPressure": false,
 			"boilingPoint": 944,
+			"sublimes": false,
 			"density": 1.93,
-			"yearDiscovered": 1860
+			"yearDiscovered": 1860,
+			"discoveredBy": [
+				{
+					"qid": "Q60052",
+					"name": {
+						"en": "Gustav Kirchhoff",
+						"ru": "Густав Роберт Кирхгоф",
+						"fr": "Gustav Kirchhoff",
+						"de": "Gustav Robert Kirchhoff",
+						"it": "Gustav Robert Kirchhoff",
+						"es": "Gustav Kirchhoff",
+						"zh": "古斯塔夫·基爾霍夫",
+						"pt": "Gustav Kirchhoff"
+					}
+				},
+				{
+					"qid": "Q71031",
+					"name": {
+						"en": "Robert Bunsen",
+						"ru": "Роберт Вильгельм Бунзен",
+						"fr": "Robert Wilhelm Bunsen",
+						"de": "Robert Wilhelm Bunsen",
+						"it": "Robert Wilhelm Bunsen",
+						"es": "Robert Bunsen",
+						"zh": "罗伯特·威廉·本生",
+						"pt": "Robert Bunsen"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 56,
@@ -3253,13 +4538,13 @@
 			},
 			"wikidata": "Q1112",
 			"wikipedia": {
-				"pt": "https://pt.wikipedia.org/wiki/B%C3%A1rio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%91%D0%B0%D1%80%D0%B8%D0%B9",
 				"de": "https://de.wikipedia.org/wiki/Barium",
 				"en": "https://en.wikipedia.org/wiki/Barium",
 				"es": "https://es.wikipedia.org/wiki/Bario",
 				"fr": "https://fr.wikipedia.org/wiki/Baryum",
 				"it": "https://it.wikipedia.org/wiki/Bario",
+				"pt": "https://pt.wikipedia.org/wiki/B%C3%A1rio",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%91%D0%B0%D1%80%D0%B8%D0%B9",
 				"zh": "https://zh.wikipedia.org/wiki/%E9%92%A1"
 			},
 			"category": "alkaline-earth-metal",
@@ -3286,16 +4571,34 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 0.89,
-			"atomicRadius": 268,
-			"ionizationEnergy": 5.212,
-			"electronAffinity": null,
+			"atomicRadius": 215,
+			"ionizationEnergy": 5.2116646,
+			"electronAffinity": 0.14462,
 			"oxidationStates": [
 				"+2"
 			],
 			"meltingPoint": 1000,
+			"meltsUnderPressure": false,
 			"boilingPoint": 2170,
+			"sublimes": false,
 			"density": 3.62,
-			"yearDiscovered": 1808
+			"yearDiscovered": 1808,
+			"discoveredBy": [
+				{
+					"qid": "Q131761",
+					"name": {
+						"en": "Humphry Davy",
+						"ru": "Гемфри Дэви",
+						"fr": "Humphry Davy",
+						"de": "Humphry Davy",
+						"it": "Humphry Davy",
+						"es": "Humphry Davy",
+						"zh": "汉弗里·戴维",
+						"pt": "Humphry Davy"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 57,
@@ -3346,16 +4649,34 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.1,
-			"atomicRadius": 240,
-			"ionizationEnergy": 5.577,
-			"electronAffinity": 0.5,
+			"atomicRadius": 207,
+			"ionizationEnergy": 5.5769,
+			"electronAffinity": 0.557546,
 			"oxidationStates": [
 				"+3"
 			],
 			"meltingPoint": 1191,
+			"meltsUnderPressure": false,
 			"boilingPoint": 3737,
+			"sublimes": false,
 			"density": 6.15,
-			"yearDiscovered": 1839
+			"yearDiscovered": 1839,
+			"discoveredBy": [
+				{
+					"qid": "Q468316",
+					"name": {
+						"en": "Carl Gustaf Mosander",
+						"ru": "Карл Густав Мосандер",
+						"fr": "Carl Gustaf Mosander",
+						"de": "Carl Gustav Mosander",
+						"it": "Carl Gustav Mosander",
+						"es": "Carl Gustaf Mosander",
+						"zh": "卡尔·古斯塔夫·莫桑德",
+						"pt": "Carl Gustaf Mosander"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 58,
@@ -3406,17 +4727,62 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.12,
-			"atomicRadius": 235,
-			"ionizationEnergy": 5.539,
-			"electronAffinity": 0.5,
+			"atomicRadius": 204,
+			"ionizationEnergy": 5.5386,
+			"electronAffinity": 0.60016,
 			"oxidationStates": [
 				"+4",
 				"+3"
 			],
 			"meltingPoint": 1071,
+			"meltsUnderPressure": false,
 			"boilingPoint": 3697,
+			"sublimes": false,
 			"density": 6.77,
-			"yearDiscovered": 1803
+			"yearDiscovered": 1803,
+			"discoveredBy": [
+				{
+					"qid": "Q151911",
+					"name": {
+						"en": "Jöns Jacob Berzelius",
+						"ru": "Йёнс Якоб Берцелиус",
+						"fr": "Jöns Jacob Berzelius",
+						"de": "Jöns Jakob Berzelius",
+						"it": "Jöns Jacob Berzelius",
+						"es": "Jöns Jacob Berzelius",
+						"zh": "永斯·贝采利乌斯",
+						"pt": "Jöns Jacob Berzelius"
+					}
+				},
+				{
+					"qid": "Q160196",
+					"name": {
+						"en": "Martin Heinrich Klaproth",
+						"ru": "Мартин Генрих Клапрот",
+						"fr": "Martin Heinrich Klaproth",
+						"de": "Martin Heinrich Klaproth",
+						"it": "Martin Heinrich Klaproth",
+						"es": "Martin Heinrich Klaproth",
+						"zh": "马丁·海因里希·克拉普罗特",
+						"pt": "Martin Heinrich Klaproth"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q596",
+					"name": {
+						"en": "Ceres",
+						"ru": "Церера",
+						"fr": "(1) Cérès",
+						"de": "(1) Ceres",
+						"it": "Cerere",
+						"es": "Ceres",
+						"zh": "谷神星",
+						"pt": "Ceres"
+					}
+				}
+			]
 		},
 		{
 			"z": 59,
@@ -3434,14 +4800,14 @@
 			},
 			"wikidata": "Q1386",
 			"wikipedia": {
-				"pt": "https://pt.wikipedia.org/wiki/Praseod%C3%ADmio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%B0%D0%B7%D0%B5%D0%BE%D0%B4%D0%B8%D0%BC",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%95%A8",
 				"de": "https://de.wikipedia.org/wiki/Praseodym",
 				"en": "https://en.wikipedia.org/wiki/Praseodymium",
 				"es": "https://es.wikipedia.org/wiki/Praseodimio",
 				"fr": "https://fr.wikipedia.org/wiki/Pras%C3%A9odyme",
-				"it": "https://it.wikipedia.org/wiki/Praseodimio"
+				"it": "https://it.wikipedia.org/wiki/Praseodimio",
+				"pt": "https://pt.wikipedia.org/wiki/Praseod%C3%ADmio",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%B0%D0%B7%D0%B5%D0%BE%D0%B4%D0%B8%D0%BC",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%95%A8"
 			},
 			"category": "lanthanide",
 			"period": 6,
@@ -3467,16 +4833,34 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.13,
-			"atomicRadius": 239,
-			"ionizationEnergy": 5.464,
-			"electronAffinity": null,
+			"atomicRadius": 203,
+			"ionizationEnergy": 5.4702,
+			"electronAffinity": 0.10923,
 			"oxidationStates": [
 				"+3"
 			],
 			"meltingPoint": 1204,
+			"meltsUnderPressure": false,
 			"boilingPoint": 3793,
+			"sublimes": false,
 			"density": 6.77,
-			"yearDiscovered": 1885
+			"yearDiscovered": 1885,
+			"discoveredBy": [
+				{
+					"qid": "Q89390",
+					"name": {
+						"en": "Carl Auer von Welsbach",
+						"ru": "Карл Ауэр фон Вельсбах",
+						"fr": "Carl Auer von Welsbach",
+						"de": "Carl Auer von Welsbach",
+						"it": "Carl Auer von Welsbach",
+						"es": "Carl Auer von Welsbach",
+						"zh": "卡尔·奥尔·冯·威尔斯巴赫",
+						"pt": "Carl Auer von Welsbach"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 60,
@@ -3527,16 +4911,34 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.14,
-			"atomicRadius": 229,
-			"ionizationEnergy": 5.525,
-			"electronAffinity": null,
+			"atomicRadius": 201,
+			"ionizationEnergy": 5.52475,
+			"electronAffinity": 0.09749,
 			"oxidationStates": [
 				"+3"
 			],
 			"meltingPoint": 1294,
+			"meltsUnderPressure": false,
 			"boilingPoint": 3347,
+			"sublimes": false,
 			"density": 7.01,
-			"yearDiscovered": 1885
+			"yearDiscovered": 1885,
+			"discoveredBy": [
+				{
+					"qid": "Q89390",
+					"name": {
+						"en": "Carl Auer von Welsbach",
+						"ru": "Карл Ауэр фон Вельсбах",
+						"fr": "Carl Auer von Welsbach",
+						"de": "Carl Auer von Welsbach",
+						"it": "Carl Auer von Welsbach",
+						"es": "Carl Auer von Welsbach",
+						"zh": "卡尔·奥尔·冯·威尔斯巴赫",
+						"pt": "Carl Auer von Welsbach"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 61,
@@ -3555,13 +4957,13 @@
 			"wikidata": "Q1809",
 			"wikipedia": {
 				"zh": "https://zh.wikipedia.org/wiki/%E9%92%B7",
+				"pt": "https://pt.wikipedia.org/wiki/Prom%C3%A9cio",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D0%BC%D0%B5%D1%82%D0%B8%D0%B9",
 				"de": "https://de.wikipedia.org/wiki/Promethium",
 				"en": "https://en.wikipedia.org/wiki/Promethium",
 				"es": "https://es.wikipedia.org/wiki/Prometio",
 				"fr": "https://fr.wikipedia.org/wiki/Prom%C3%A9thium",
-				"it": "https://it.wikipedia.org/wiki/Promezio",
-				"pt": "https://pt.wikipedia.org/wiki/Prom%C3%A9cio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D0%BC%D0%B5%D1%82%D0%B8%D0%B9"
+				"it": "https://it.wikipedia.org/wiki/Promezio"
 			},
 			"category": "lanthanide",
 			"period": 6,
@@ -3587,16 +4989,74 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": null,
-			"atomicRadius": 236,
-			"ionizationEnergy": 5.55,
+			"atomicRadius": 199,
+			"ionizationEnergy": 5.58187,
 			"electronAffinity": null,
 			"oxidationStates": [
 				"+3"
 			],
 			"meltingPoint": 1315,
+			"meltsUnderPressure": false,
 			"boilingPoint": 3273,
+			"sublimes": false,
 			"density": 7.26,
-			"yearDiscovered": 1945
+			"yearDiscovered": 1945,
+			"discoveredBy": [
+				{
+					"qid": "Q260328",
+					"name": {
+						"en": "Charles D. Coryell",
+						"ru": "Charles D. Coryell",
+						"fr": "Charles Coryell",
+						"de": "Charles Coryell",
+						"it": "Charles D. Coryell",
+						"es": "Charles D. Coryell",
+						"zh": "查爾斯·D·科耶爾",
+						"pt": "Charles D. Coryell"
+					}
+				},
+				{
+					"qid": "Q904506",
+					"name": {
+						"en": "Jacob Akiba Marinsky",
+						"ru": "Джейкоб Маринский",
+						"fr": "Jacob A. Marinsky",
+						"de": "Jacob A. Marinsky",
+						"it": "Jacob A. Marinsky",
+						"es": "Jacob A. Marinsky",
+						"zh": "雅各布·A·馬林斯基",
+						"pt": "Jacob A. Marinsky"
+					}
+				},
+				{
+					"qid": "Q904562",
+					"name": {
+						"en": "Lawrence E. Glendenin",
+						"ru": "Lawrence Glendenin",
+						"fr": "Lawrence Glendenin",
+						"de": "Lawrence Glendenin",
+						"it": "Lawrence E. Glendenin",
+						"es": "Lawrence E. Glendenin",
+						"zh": "勞倫斯·E·格蘭丹寧",
+						"pt": "Lawrence E. Glendenin"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q83160",
+					"name": {
+						"en": "Prometheus",
+						"ru": "Прометей",
+						"fr": "Prométhée",
+						"de": "Prometheus",
+						"it": "Prometeo",
+						"es": "Prometeo",
+						"zh": "普罗米修斯",
+						"pt": "Prometeu"
+					}
+				}
+			]
 		},
 		{
 			"z": 62,
@@ -3614,13 +5074,13 @@
 			},
 			"wikidata": "Q1819",
 			"wikipedia": {
-				"pt": "https://pt.wikipedia.org/wiki/Sam%C3%A1rio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B0%D0%BC%D0%B0%D1%80%D0%B8%D0%B9",
 				"de": "https://de.wikipedia.org/wiki/Samarium",
 				"en": "https://en.wikipedia.org/wiki/Samarium",
 				"es": "https://es.wikipedia.org/wiki/Samario",
 				"fr": "https://fr.wikipedia.org/wiki/Samarium",
 				"it": "https://it.wikipedia.org/wiki/Samario",
+				"pt": "https://pt.wikipedia.org/wiki/Sam%C3%A1rio",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B0%D0%BC%D0%B0%D1%80%D0%B8%D0%B9",
 				"zh": "https://zh.wikipedia.org/wiki/%E9%92%90"
 			},
 			"category": "lanthanide",
@@ -3647,17 +5107,35 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.17,
-			"atomicRadius": 229,
-			"ionizationEnergy": 5.644,
+			"atomicRadius": 198,
+			"ionizationEnergy": 5.643722,
 			"electronAffinity": null,
 			"oxidationStates": [
 				"+3",
 				"+2"
 			],
 			"meltingPoint": 1347,
+			"meltsUnderPressure": false,
 			"boilingPoint": 2067,
+			"sublimes": false,
 			"density": 7.52,
-			"yearDiscovered": 1879
+			"yearDiscovered": 1879,
+			"discoveredBy": [
+				{
+					"qid": "Q366827",
+					"name": {
+						"en": "Paul-Émile Lecoq de Boisbaudran",
+						"ru": "Поль Эмиль Лекок де Буабодран",
+						"fr": "Paul-Émile Lecoq de Boisbaudran",
+						"de": "Paul Émile Lecoq de Boisbaudran",
+						"it": "Paul Émile Lecoq de Boisbaudran",
+						"es": "Paul Emile Lecoq de Boisbaudran",
+						"zh": "保罗·埃米尔·勒科克·德布瓦博德兰",
+						"pt": "Paul-Émile Lecoq de Boisbaudran"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 63,
@@ -3708,17 +5186,49 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": null,
-			"atomicRadius": 233,
-			"ionizationEnergy": 5.67,
-			"electronAffinity": null,
+			"atomicRadius": 198,
+			"ionizationEnergy": 5.670385,
+			"electronAffinity": 0.116,
 			"oxidationStates": [
 				"+3",
 				"+2"
 			],
 			"meltingPoint": 1095,
+			"meltsUnderPressure": false,
 			"boilingPoint": 1802,
+			"sublimes": false,
 			"density": 5.24,
-			"yearDiscovered": 1901
+			"yearDiscovered": 1901,
+			"discoveredBy": [
+				{
+					"qid": "Q725850",
+					"name": {
+						"en": "Eugène-Anatole Demarçay",
+						"ru": "Эжен Анатоль Демарсе",
+						"fr": "Eugène Demarçay",
+						"de": "Eugène-Anatole Demarçay",
+						"it": "Eugène-Anatole Demarçay",
+						"es": "Eugène Demarçay",
+						"zh": "尤金·德马塞",
+						"pt": "Eugène-Anatole Demarçay"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q46",
+					"name": {
+						"en": "Europe",
+						"ru": "Европа",
+						"fr": "Europe",
+						"de": "Europa",
+						"it": "Europa",
+						"es": "Europa",
+						"zh": "欧洲",
+						"pt": "Europa"
+					}
+				}
+			]
 		},
 		{
 			"z": 64,
@@ -3736,14 +5246,14 @@
 			},
 			"wikidata": "Q1832",
 			"wikipedia": {
+				"zh": "https://zh.wikipedia.org/wiki/%E9%92%86",
 				"de": "https://de.wikipedia.org/wiki/Gadolinium",
 				"en": "https://en.wikipedia.org/wiki/Gadolinium",
 				"es": "https://es.wikipedia.org/wiki/Gadolinio",
 				"fr": "https://fr.wikipedia.org/wiki/Gadolinium",
 				"it": "https://it.wikipedia.org/wiki/Gadolinio",
 				"pt": "https://pt.wikipedia.org/wiki/Gadol%C3%ADnio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%93%D0%B0%D0%B4%D0%BE%D0%BB%D0%B8%D0%BD%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%92%86"
+				"ru": "https://ru.wikipedia.org/wiki/%D0%93%D0%B0%D0%B4%D0%BE%D0%BB%D0%B8%D0%BD%D0%B8%D0%B9"
 			},
 			"category": "lanthanide",
 			"period": 6,
@@ -3769,16 +5279,48 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.2,
-			"atomicRadius": 237,
-			"ionizationEnergy": 6.15,
-			"electronAffinity": null,
+			"atomicRadius": 196,
+			"ionizationEnergy": 6.1498,
+			"electronAffinity": 0.212,
 			"oxidationStates": [
 				"+3"
 			],
 			"meltingPoint": 1586,
+			"meltsUnderPressure": false,
 			"boilingPoint": 3546,
+			"sublimes": false,
 			"density": 7.9,
-			"yearDiscovered": 1880
+			"yearDiscovered": 1880,
+			"discoveredBy": [
+				{
+					"qid": "Q124045",
+					"name": {
+						"en": "Jean Charles Galissard de Marignac",
+						"ru": "Жан Шарль Галиссард Мариньяк",
+						"fr": "Jean Charles Galissard de Marignac",
+						"de": "Jean Charles Galissard de Marignac",
+						"it": "Jean Charles Galissard de Marignac",
+						"es": "Jean Charles Galissard de Marignac",
+						"zh": "讓-夏爾·加利薩·德馬里尼亞",
+						"pt": "Jean Charles Galissard de Marignac"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q312571",
+					"name": {
+						"en": "Johan Gadolin",
+						"ru": "Юхан Гадолин",
+						"fr": "Johan Gadolin",
+						"de": "Johan Gadolin",
+						"it": "Johan Gadolin",
+						"es": "Johan Gadolin",
+						"zh": "约翰·加多林",
+						"pt": "Johan Gadolin"
+					}
+				}
+			]
 		},
 		{
 			"z": 65,
@@ -3829,16 +5371,48 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": null,
-			"atomicRadius": 221,
-			"ionizationEnergy": 5.864,
-			"electronAffinity": null,
+			"atomicRadius": 194,
+			"ionizationEnergy": 5.8638,
+			"electronAffinity": 0.13131,
 			"oxidationStates": [
 				"+3"
 			],
 			"meltingPoint": 1629,
+			"meltsUnderPressure": false,
 			"boilingPoint": 3503,
+			"sublimes": false,
 			"density": 8.23,
-			"yearDiscovered": 1843
+			"yearDiscovered": 1843,
+			"discoveredBy": [
+				{
+					"qid": "Q468316",
+					"name": {
+						"en": "Carl Gustaf Mosander",
+						"ru": "Карл Густав Мосандер",
+						"fr": "Carl Gustaf Mosander",
+						"de": "Carl Gustav Mosander",
+						"it": "Carl Gustav Mosander",
+						"es": "Carl Gustaf Mosander",
+						"zh": "卡尔·古斯塔夫·莫桑德",
+						"pt": "Carl Gustaf Mosander"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q631733",
+					"name": {
+						"en": "Ytterby mine",
+						"ru": "Иттербю",
+						"fr": "Ytterby",
+						"de": "Grube Ytterby",
+						"it": "Ytterby",
+						"es": "Ytterby",
+						"zh": "伊特比",
+						"pt": "Ytterby"
+					}
+				}
+			]
 		},
 		{
 			"z": 66,
@@ -3859,11 +5433,11 @@
 				"de": "https://de.wikipedia.org/wiki/Dysprosium",
 				"en": "https://en.wikipedia.org/wiki/Dysprosium",
 				"es": "https://es.wikipedia.org/wiki/Disprosio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%95%9D",
 				"fr": "https://fr.wikipedia.org/wiki/Dysprosium",
 				"it": "https://it.wikipedia.org/wiki/Disprosio",
 				"pt": "https://pt.wikipedia.org/wiki/Dispr%C3%B3sio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%94%D0%B8%D1%81%D0%BF%D1%80%D0%BE%D0%B7%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%95%9D"
+				"ru": "https://ru.wikipedia.org/wiki/%D0%94%D0%B8%D1%81%D0%BF%D1%80%D0%BE%D0%B7%D0%B8%D0%B9"
 			},
 			"category": "lanthanide",
 			"period": 6,
@@ -3889,16 +5463,34 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.22,
-			"atomicRadius": 229,
-			"ionizationEnergy": 5.939,
-			"electronAffinity": null,
+			"atomicRadius": 192,
+			"ionizationEnergy": 5.939061,
+			"electronAffinity": 0.015,
 			"oxidationStates": [
 				"+3"
 			],
 			"meltingPoint": 1685,
+			"meltsUnderPressure": false,
 			"boilingPoint": 2840,
+			"sublimes": false,
 			"density": 8.55,
-			"yearDiscovered": 1886
+			"yearDiscovered": 1886,
+			"discoveredBy": [
+				{
+					"qid": "Q366827",
+					"name": {
+						"en": "Paul-Émile Lecoq de Boisbaudran",
+						"ru": "Поль Эмиль Лекок де Буабодран",
+						"fr": "Paul-Émile Lecoq de Boisbaudran",
+						"de": "Paul Émile Lecoq de Boisbaudran",
+						"it": "Paul Émile Lecoq de Boisbaudran",
+						"es": "Paul Emile Lecoq de Boisbaudran",
+						"zh": "保罗·埃米尔·勒科克·德布瓦博德兰",
+						"pt": "Paul-Émile Lecoq de Boisbaudran"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 67,
@@ -3949,16 +5541,74 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.23,
-			"atomicRadius": 216,
-			"ionizationEnergy": 6.022,
+			"atomicRadius": 192,
+			"ionizationEnergy": 6.0215,
 			"electronAffinity": null,
 			"oxidationStates": [
 				"+3"
 			],
 			"meltingPoint": 1747,
+			"meltsUnderPressure": false,
 			"boilingPoint": 2973,
+			"sublimes": false,
 			"density": 8.8,
-			"yearDiscovered": 1878
+			"yearDiscovered": 1878,
+			"discoveredBy": [
+				{
+					"qid": "Q124083",
+					"name": {
+						"en": "Jacques-Louis Soret",
+						"ru": "Жак-Луи Соре",
+						"fr": "Jacques-Louis Soret",
+						"de": "Jacques-Louis Soret",
+						"it": "Jacques-Louis Soret",
+						"es": "Jacques-Louis Soret",
+						"zh": "雅克-路易·索雷",
+						"pt": "Jacques-Louis Soret"
+					}
+				},
+				{
+					"qid": "Q124122",
+					"name": {
+						"en": "Marc Delafontaine",
+						"ru": "Марк Делафонтен",
+						"fr": "Marc Delafontaine",
+						"de": "Marc Delafontaine",
+						"it": "Marc Delafontaine",
+						"es": "Marc Delafontaine",
+						"zh": "马克·德拉方丹",
+						"pt": "Marc Delafontaine"
+					}
+				},
+				{
+					"qid": "Q377822",
+					"name": {
+						"en": "Per Teodor Cleve",
+						"ru": "Пер Теодор Клеве",
+						"fr": "Per Teodor Cleve",
+						"de": "Per Teodor Cleve",
+						"it": "Per Teodor Cleve",
+						"es": "Per Teodor Cleve",
+						"zh": "佩尔·特奥多尔·克莱韦",
+						"pt": "Per Teodor Cleve"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q1754",
+					"name": {
+						"en": "Stockholm",
+						"ru": "Стокгольм",
+						"fr": "Stockholm",
+						"de": "Stockholm",
+						"it": "Stoccolma",
+						"es": "Estocolmo",
+						"zh": "斯德哥尔摩",
+						"pt": "Estocolmo"
+					}
+				}
+			]
 		},
 		{
 			"z": 68,
@@ -4009,16 +5659,48 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.24,
-			"atomicRadius": 235,
-			"ionizationEnergy": 6.108,
+			"atomicRadius": 189,
+			"ionizationEnergy": 6.1077,
 			"electronAffinity": null,
 			"oxidationStates": [
 				"+3"
 			],
 			"meltingPoint": 1802,
+			"meltsUnderPressure": false,
 			"boilingPoint": 3141,
+			"sublimes": false,
 			"density": 9.07,
-			"yearDiscovered": 1843
+			"yearDiscovered": 1843,
+			"discoveredBy": [
+				{
+					"qid": "Q468316",
+					"name": {
+						"en": "Carl Gustaf Mosander",
+						"ru": "Карл Густав Мосандер",
+						"fr": "Carl Gustaf Mosander",
+						"de": "Carl Gustav Mosander",
+						"it": "Carl Gustav Mosander",
+						"es": "Carl Gustaf Mosander",
+						"zh": "卡尔·古斯塔夫·莫桑德",
+						"pt": "Carl Gustaf Mosander"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q631733",
+					"name": {
+						"en": "Ytterby mine",
+						"ru": "Иттербю",
+						"fr": "Ytterby",
+						"de": "Grube Ytterby",
+						"it": "Ytterby",
+						"es": "Ytterby",
+						"zh": "伊特比",
+						"pt": "Ytterby"
+					}
+				}
+			]
 		},
 		{
 			"z": 69,
@@ -4036,14 +5718,14 @@
 			},
 			"wikidata": "Q1853",
 			"wikipedia": {
+				"pt": "https://pt.wikipedia.org/wiki/T%C3%BAlio",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%A2%D1%83%D0%BB%D0%B8%D0%B9",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%93%A5",
 				"de": "https://de.wikipedia.org/wiki/Thulium",
 				"en": "https://en.wikipedia.org/wiki/Thulium",
 				"es": "https://es.wikipedia.org/wiki/Tulio",
 				"fr": "https://fr.wikipedia.org/wiki/Thulium",
-				"it": "https://it.wikipedia.org/wiki/Tulio",
-				"pt": "https://pt.wikipedia.org/wiki/T%C3%BAlio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%A2%D1%83%D0%BB%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%93%A5"
+				"it": "https://it.wikipedia.org/wiki/Tulio"
 			},
 			"category": "lanthanide",
 			"period": 6,
@@ -4069,16 +5751,48 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.25,
-			"atomicRadius": 227,
-			"ionizationEnergy": 6.184,
-			"electronAffinity": null,
+			"atomicRadius": 190,
+			"ionizationEnergy": 6.184402,
+			"electronAffinity": 1.029,
 			"oxidationStates": [
 				"+3"
 			],
 			"meltingPoint": 1818,
+			"meltsUnderPressure": false,
 			"boilingPoint": 2223,
+			"sublimes": false,
 			"density": 9.32,
-			"yearDiscovered": 1879
+			"yearDiscovered": 1879,
+			"discoveredBy": [
+				{
+					"qid": "Q377822",
+					"name": {
+						"en": "Per Teodor Cleve",
+						"ru": "Пер Теодор Клеве",
+						"fr": "Per Teodor Cleve",
+						"de": "Per Teodor Cleve",
+						"it": "Per Teodor Cleve",
+						"es": "Per Teodor Cleve",
+						"zh": "佩尔·特奥多尔·克莱韦",
+						"pt": "Per Teodor Cleve"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q21195",
+					"name": {
+						"en": "Scandinavia",
+						"ru": "Скандинавия",
+						"fr": "Scandinavie",
+						"de": "Skandinavien",
+						"it": "Scandinavia",
+						"es": "Escandinavia",
+						"zh": "斯堪的纳维亚",
+						"pt": "Escandinávia"
+					}
+				}
+			]
 		},
 		{
 			"z": 70,
@@ -4129,17 +5843,49 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": null,
-			"atomicRadius": 242,
-			"ionizationEnergy": 6.254,
-			"electronAffinity": null,
+			"atomicRadius": 187,
+			"ionizationEnergy": 6.25416,
+			"electronAffinity": "unstable",
 			"oxidationStates": [
 				"+3",
 				"+2"
 			],
 			"meltingPoint": 1092,
+			"meltsUnderPressure": false,
 			"boilingPoint": 1469,
+			"sublimes": false,
 			"density": 6.9,
-			"yearDiscovered": 1878
+			"yearDiscovered": 1878,
+			"discoveredBy": [
+				{
+					"qid": "Q124045",
+					"name": {
+						"en": "Jean Charles Galissard de Marignac",
+						"ru": "Жан Шарль Галиссард Мариньяк",
+						"fr": "Jean Charles Galissard de Marignac",
+						"de": "Jean Charles Galissard de Marignac",
+						"it": "Jean Charles Galissard de Marignac",
+						"es": "Jean Charles Galissard de Marignac",
+						"zh": "讓-夏爾·加利薩·德馬里尼亞",
+						"pt": "Jean Charles Galissard de Marignac"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q631733",
+					"name": {
+						"en": "Ytterby mine",
+						"ru": "Иттербю",
+						"fr": "Ytterby",
+						"de": "Grube Ytterby",
+						"it": "Ytterby",
+						"es": "Ytterby",
+						"zh": "伊特比",
+						"pt": "Ytterby"
+					}
+				}
+			]
 		},
 		{
 			"z": 71,
@@ -4190,16 +5936,61 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.27,
-			"atomicRadius": 221,
-			"ionizationEnergy": 5.426,
-			"electronAffinity": null,
+			"atomicRadius": 187,
+			"ionizationEnergy": 5.425871,
+			"electronAffinity": 0.2388,
 			"oxidationStates": [
 				"+3"
 			],
 			"meltingPoint": 1936,
+			"meltsUnderPressure": false,
 			"boilingPoint": 3675,
+			"sublimes": false,
 			"density": 9.84,
-			"yearDiscovered": 1907
+			"yearDiscovered": 1907,
+			"discoveredBy": [
+				{
+					"qid": "Q89390",
+					"name": {
+						"en": "Carl Auer von Welsbach",
+						"ru": "Карл Ауэр фон Вельсбах",
+						"fr": "Carl Auer von Welsbach",
+						"de": "Carl Auer von Welsbach",
+						"it": "Carl Auer von Welsbach",
+						"es": "Carl Auer von Welsbach",
+						"zh": "卡尔·奥尔·冯·威尔斯巴赫",
+						"pt": "Carl Auer von Welsbach"
+					}
+				},
+				{
+					"qid": "Q560404",
+					"name": {
+						"en": "Georges Urbain",
+						"ru": "Жорж Урбэн",
+						"fr": "Georges Urbain",
+						"de": "Georges Urbain",
+						"it": "Georges Urbain",
+						"es": "Georges Urbain",
+						"zh": "乔治·于尔班",
+						"pt": "Georges Urbain"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q270273",
+					"name": {
+						"en": "Lutetia",
+						"ru": "Лютеция",
+						"fr": "Lutèce",
+						"de": "Lutetia",
+						"it": "Lutezia",
+						"es": "Lutecia",
+						"zh": "卢泰西亚",
+						"pt": "Lutécia"
+					}
+				}
+			]
 		},
 		{
 			"z": 72,
@@ -4217,14 +6008,14 @@
 			},
 			"wikidata": "Q1119",
 			"wikipedia": {
-				"pt": "https://pt.wikipedia.org/wiki/H%C3%A1fnio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%93%D0%B0%D1%84%D0%BD%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%93%AA",
 				"de": "https://de.wikipedia.org/wiki/Hafnium",
 				"en": "https://en.wikipedia.org/wiki/Hafnium",
 				"es": "https://es.wikipedia.org/wiki/Hafnio",
 				"fr": "https://fr.wikipedia.org/wiki/Hafnium",
-				"it": "https://it.wikipedia.org/wiki/Afnio"
+				"it": "https://it.wikipedia.org/wiki/Afnio",
+				"pt": "https://pt.wikipedia.org/wiki/H%C3%A1fnio",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%93%D0%B0%D1%84%D0%BD%D0%B8%D0%B9",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%93%AA"
 			},
 			"category": "transition-metal",
 			"period": 6,
@@ -4250,16 +6041,61 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.3,
-			"atomicRadius": 212,
-			"ionizationEnergy": 6.825,
-			"electronAffinity": null,
+			"atomicRadius": 175,
+			"ionizationEnergy": 6.82507,
+			"electronAffinity": 0.178,
 			"oxidationStates": [
 				"+4"
 			],
 			"meltingPoint": 2506,
+			"meltsUnderPressure": false,
 			"boilingPoint": 4876,
+			"sublimes": false,
 			"density": 13.3,
-			"yearDiscovered": 1923
+			"yearDiscovered": 1923,
+			"discoveredBy": [
+				{
+					"qid": "Q775969",
+					"name": {
+						"en": "Dirk Coster",
+						"ru": "Дирк Костер",
+						"fr": "Dirk Coster",
+						"de": "Dirk Coster",
+						"it": "Dirk Coster",
+						"es": "Dirk Coster",
+						"zh": "迪尔克·科斯特",
+						"pt": "Dirk Coster"
+					}
+				},
+				{
+					"qid": "Q76951",
+					"name": {
+						"en": "George de Hevesy",
+						"ru": "Дьёрдь де Хевеши",
+						"fr": "George de Hevesy",
+						"de": "George de Hevesy",
+						"it": "George Charles de Hevesy",
+						"es": "George Hevesy",
+						"zh": "乔治·德海韦西",
+						"pt": "George de Hevesy"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q1748",
+					"name": {
+						"en": "Copenhagen",
+						"ru": "Копенгаген",
+						"fr": "Copenhague",
+						"de": "Kopenhagen",
+						"it": "Copenaghen",
+						"es": "Copenhague",
+						"zh": "哥本哈根",
+						"pt": "Copenhague"
+					}
+				}
+			]
 		},
 		{
 			"z": 73,
@@ -4277,14 +6113,14 @@
 			},
 			"wikidata": "Q1123",
 			"wikipedia": {
-				"pt": "https://pt.wikipedia.org/wiki/T%C3%A2ntalo_(elemento_qu%C3%ADmico)",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%A2%D0%B0%D0%BD%D1%82%D0%B0%D0%BB_(%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82)",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%92%BD",
 				"de": "https://de.wikipedia.org/wiki/Tantal",
 				"en": "https://en.wikipedia.org/wiki/Tantalum",
 				"es": "https://es.wikipedia.org/wiki/T%C3%A1ntalo_(elemento)",
 				"fr": "https://fr.wikipedia.org/wiki/Tantale_(chimie)",
-				"it": "https://it.wikipedia.org/wiki/Tantalio"
+				"zh": "https://zh.wikipedia.org/wiki/%E9%92%BD",
+				"it": "https://it.wikipedia.org/wiki/Tantalio",
+				"pt": "https://pt.wikipedia.org/wiki/T%C3%A2ntalo_(elemento_qu%C3%ADmico)",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%A2%D0%B0%D0%BD%D1%82%D0%B0%D0%BB_(%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82)"
 			},
 			"category": "transition-metal",
 			"period": 6,
@@ -4310,16 +6146,48 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.5,
-			"atomicRadius": 217,
-			"ionizationEnergy": 7.89,
-			"electronAffinity": 0.322,
+			"atomicRadius": 170,
+			"ionizationEnergy": 7.549571,
+			"electronAffinity": 0.328859,
 			"oxidationStates": [
 				"+5"
 			],
 			"meltingPoint": 3290,
+			"meltsUnderPressure": false,
 			"boilingPoint": 5731,
+			"sublimes": false,
 			"density": 16.4,
-			"yearDiscovered": 1802
+			"yearDiscovered": 1802,
+			"discoveredBy": [
+				{
+					"qid": "Q468303",
+					"name": {
+						"en": "Anders Gustaf Ekeberg",
+						"ru": "Андерс Густав Экеберг",
+						"fr": "Anders Gustaf Ekeberg",
+						"de": "Anders Gustaf Ekeberg",
+						"it": "Anders Gustav Ekeberg",
+						"es": "Anders Gustaf Ekeberg",
+						"zh": "安德斯·古斯塔夫·埃克贝里",
+						"pt": "Anders Gustaf Ekeberg"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q182101",
+					"name": {
+						"en": "Tantalus",
+						"ru": "Тантал",
+						"fr": "Tantale",
+						"de": "Tantalos",
+						"it": "Tantalo",
+						"es": "Tántalo",
+						"zh": "坦塔洛斯",
+						"pt": "Tantalus"
+					}
+				}
+			]
 		},
 		{
 			"z": 74,
@@ -4370,16 +6238,48 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 2.36,
-			"atomicRadius": 210,
-			"ionizationEnergy": 7.98,
-			"electronAffinity": 0.815,
+			"atomicRadius": 162,
+			"ionizationEnergy": 7.86403,
+			"electronAffinity": 0.8165,
 			"oxidationStates": [
-				"+6"
+				"+6",
+				"+4"
 			],
 			"meltingPoint": 3695,
+			"meltsUnderPressure": false,
 			"boilingPoint": 5828,
+			"sublimes": false,
 			"density": 19.3,
-			"yearDiscovered": 1783
+			"yearDiscovered": 1783,
+			"discoveredBy": [
+				{
+					"qid": "Q182745",
+					"name": {
+						"en": "Fausto Elhuyar",
+						"ru": "Фаусто де Элюар",
+						"fr": "Fausto de Elhúyar",
+						"de": "Fausto Elhuyar",
+						"it": "Fausto Delhuyar",
+						"es": "Fausto Delhuyar",
+						"zh": "福斯托·德卢亚尔",
+						"pt": "Fausto Delhuyar"
+					}
+				},
+				{
+					"qid": "Q728386",
+					"name": {
+						"en": "Juan José Elhuyar",
+						"ru": "Хуан Хосе де Элюар",
+						"fr": "Juan José de Elhúyar",
+						"de": "Juan José Elhuyar",
+						"it": "Juan José Delhuyar",
+						"es": "Juan José Delhuyar",
+						"zh": "胡安·何塞·德卢亚尔",
+						"pt": "Juan José Delhuyar"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 75,
@@ -4397,14 +6297,14 @@
 			},
 			"wikidata": "Q737",
 			"wikipedia": {
+				"pt": "https://pt.wikipedia.org/wiki/R%C3%AAnio",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%A0%D0%B5%D0%BD%D0%B8%D0%B9",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%93%BC",
 				"de": "https://de.wikipedia.org/wiki/Rhenium",
 				"en": "https://en.wikipedia.org/wiki/Rhenium",
 				"es": "https://es.wikipedia.org/wiki/Renio",
 				"fr": "https://fr.wikipedia.org/wiki/Rh%C3%A9nium",
-				"it": "https://it.wikipedia.org/wiki/Renio",
-				"pt": "https://pt.wikipedia.org/wiki/R%C3%AAnio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%A0%D0%B5%D0%BD%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%93%BC"
+				"it": "https://it.wikipedia.org/wiki/Renio"
 			},
 			"category": "transition-metal",
 			"period": 6,
@@ -4430,18 +6330,76 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.9,
-			"atomicRadius": 217,
-			"ionizationEnergy": 7.88,
-			"electronAffinity": 0.15,
+			"atomicRadius": 151,
+			"ionizationEnergy": 7.83352,
+			"electronAffinity": 0.060396,
 			"oxidationStates": [
 				"+7",
 				"+6",
 				"+4"
 			],
 			"meltingPoint": 3459,
+			"meltsUnderPressure": false,
 			"boilingPoint": 5869,
+			"sublimes": false,
 			"density": 20.8,
-			"yearDiscovered": 1925
+			"yearDiscovered": 1925,
+			"discoveredBy": [
+				{
+					"qid": "Q77529",
+					"name": {
+						"en": "Ida Noddack",
+						"ru": "Ида Ноддак",
+						"fr": "Ida Tacke",
+						"de": "Ida Noddack",
+						"it": "Ida Noddack",
+						"es": "Ida Noderikash",
+						"zh": "伊达·诺达克",
+						"pt": "Ida Noddack"
+					}
+				},
+				{
+					"qid": "Q85727",
+					"name": {
+						"en": "Otto Berg",
+						"ru": "Otto Berg",
+						"fr": "Otto Berg",
+						"de": "Otto Berg",
+						"it": "Otto Berg",
+						"es": "Otto Berg",
+						"zh": "奥托·伯格",
+						"pt": "Otto Berg"
+					}
+				},
+				{
+					"qid": "Q62714",
+					"name": {
+						"en": "Walter Noddack",
+						"ru": "Вальтер Ноддак",
+						"fr": "Walter Noddack",
+						"de": "Walter Noddack",
+						"it": "Walter Noddack",
+						"es": "Walter Noddack",
+						"zh": "瓦尔特·诺达克",
+						"pt": "Walter Noddack"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q584",
+					"name": {
+						"en": "Rhine",
+						"ru": "Рейн",
+						"fr": "Rhin",
+						"de": "Rhein",
+						"it": "Reno",
+						"es": "Rin",
+						"zh": "莱茵河",
+						"pt": "Rio Reno"
+					}
+				}
+			]
 		},
 		{
 			"z": 76,
@@ -4459,13 +6417,13 @@
 			},
 			"wikidata": "Q751",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Osmium",
-				"en": "https://en.wikipedia.org/wiki/Osmium",
-				"es": "https://es.wikipedia.org/wiki/Osmio",
 				"fr": "https://fr.wikipedia.org/wiki/Osmium",
 				"it": "https://it.wikipedia.org/wiki/Osmio",
 				"pt": "https://pt.wikipedia.org/wiki/%C3%93smio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%9E%D1%81%D0%BC%D0%B8%D0%B9",
+				"de": "https://de.wikipedia.org/wiki/Osmium",
+				"en": "https://en.wikipedia.org/wiki/Osmium",
+				"es": "https://es.wikipedia.org/wiki/Osmio",
 				"zh": "https://zh.wikipedia.org/wiki/%E9%94%87"
 			},
 			"category": "transition-metal",
@@ -4492,17 +6450,35 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 2.2,
-			"atomicRadius": 216,
-			"ionizationEnergy": 8.7,
-			"electronAffinity": 1.1,
+			"atomicRadius": 144,
+			"ionizationEnergy": 8.43823,
+			"electronAffinity": 1.077661,
 			"oxidationStates": [
 				"+4",
 				"+3"
 			],
 			"meltingPoint": 3306,
+			"meltsUnderPressure": false,
 			"boilingPoint": 5285,
+			"sublimes": false,
 			"density": 22.57,
-			"yearDiscovered": 1803
+			"yearDiscovered": 1803,
+			"discoveredBy": [
+				{
+					"qid": "Q377800",
+					"name": {
+						"en": "Smithson Tennant",
+						"ru": "Смитсон Теннант",
+						"fr": "Smithson Tennant",
+						"de": "Smithson Tennant",
+						"it": "Smithson Tennant",
+						"es": "Smithson Tennant",
+						"zh": "史密森·特南特",
+						"pt": "Smithson Tennant"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 77,
@@ -4520,14 +6496,14 @@
 			},
 			"wikidata": "Q877",
 			"wikipedia": {
-				"fr": "https://fr.wikipedia.org/wiki/Iridium",
-				"it": "https://it.wikipedia.org/wiki/Iridio",
 				"de": "https://de.wikipedia.org/wiki/Iridium",
 				"en": "https://en.wikipedia.org/wiki/Iridium",
 				"es": "https://es.wikipedia.org/wiki/Iridio",
+				"fr": "https://fr.wikipedia.org/wiki/Iridium",
+				"it": "https://it.wikipedia.org/wiki/Iridio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%93%B1",
 				"pt": "https://pt.wikipedia.org/wiki/Ir%C3%ADdio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%98%D1%80%D0%B8%D0%B4%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%93%B1"
+				"ru": "https://ru.wikipedia.org/wiki/%D0%98%D1%80%D0%B8%D0%B4%D0%B8%D0%B9"
 			},
 			"category": "transition-metal",
 			"period": 6,
@@ -4553,17 +6529,49 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 2.2,
-			"atomicRadius": 202,
-			"ionizationEnergy": 9.1,
-			"electronAffinity": 1.565,
+			"atomicRadius": 141,
+			"ionizationEnergy": 8.96702,
+			"electronAffinity": 1.564057,
 			"oxidationStates": [
 				"+4",
 				"+3"
 			],
 			"meltingPoint": 2719,
+			"meltsUnderPressure": false,
 			"boilingPoint": 4701,
+			"sublimes": false,
 			"density": 22.42,
-			"yearDiscovered": 1803
+			"yearDiscovered": 1803,
+			"discoveredBy": [
+				{
+					"qid": "Q377800",
+					"name": {
+						"en": "Smithson Tennant",
+						"ru": "Смитсон Теннант",
+						"fr": "Smithson Tennant",
+						"de": "Smithson Tennant",
+						"it": "Smithson Tennant",
+						"es": "Smithson Tennant",
+						"zh": "史密森·特南特",
+						"pt": "Smithson Tennant"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q184570",
+					"name": {
+						"en": "Iris",
+						"ru": "Ирида",
+						"fr": "Iris",
+						"de": "Iris",
+						"it": "Iris",
+						"es": "Iris",
+						"zh": "伊里斯",
+						"pt": "Iris"
+					}
+				}
+			]
 		},
 		{
 			"z": 78,
@@ -4585,8 +6593,8 @@
 				"en": "https://en.wikipedia.org/wiki/Platinum",
 				"es": "https://es.wikipedia.org/wiki/Platino",
 				"fr": "https://fr.wikipedia.org/wiki/Platine",
-				"it": "https://it.wikipedia.org/wiki/Platino",
 				"zh": "https://zh.wikipedia.org/wiki/%E9%93%82",
+				"it": "https://it.wikipedia.org/wiki/Platino",
 				"pt": "https://pt.wikipedia.org/wiki/Platina",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%9F%D0%BB%D0%B0%D1%82%D0%B8%D0%BD%D0%B0"
 			},
@@ -4614,17 +6622,35 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 2.28,
-			"atomicRadius": 209,
-			"ionizationEnergy": 9,
-			"electronAffinity": 2.128,
+			"atomicRadius": 136,
+			"ionizationEnergy": 8.95883,
+			"electronAffinity": 2.1251,
 			"oxidationStates": [
 				"+4",
 				"+2"
 			],
 			"meltingPoint": 2041.55,
+			"meltsUnderPressure": false,
 			"boilingPoint": 4098,
+			"sublimes": false,
 			"density": 21.46,
-			"yearDiscovered": 1735
+			"yearDiscovered": 1735,
+			"discoveredBy": [
+				{
+					"qid": "Q470306",
+					"name": {
+						"en": "Antonio de Ulloa",
+						"ru": "Антонио де Ульоа",
+						"fr": "Antonio de Ulloa",
+						"de": "Antonio de Ulloa",
+						"it": "Antonio de Ulloa",
+						"es": "Antonio de Ulloa",
+						"zh": "安东尼奥·乌略亚",
+						"pt": "Antonio de Ulloa"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 79,
@@ -4642,11 +6668,11 @@
 			},
 			"wikidata": "Q897",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Gold",
-				"en": "https://en.wikipedia.org/wiki/Gold",
+				"it": "https://it.wikipedia.org/wiki/Oro",
 				"es": "https://es.wikipedia.org/wiki/Oro",
 				"fr": "https://fr.wikipedia.org/wiki/Or",
-				"it": "https://it.wikipedia.org/wiki/Oro",
+				"de": "https://de.wikipedia.org/wiki/Gold",
+				"en": "https://en.wikipedia.org/wiki/Gold",
 				"pt": "https://pt.wikipedia.org/wiki/Ouro",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%97%D0%BE%D0%BB%D0%BE%D1%82%D0%BE",
 				"zh": "https://zh.wikipedia.org/wiki/%E9%87%91"
@@ -4675,17 +6701,21 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 2.54,
-			"atomicRadius": 166,
-			"ionizationEnergy": 9.226,
-			"electronAffinity": 2.309,
+			"atomicRadius": 136,
+			"ionizationEnergy": 9.225554,
+			"electronAffinity": 2.30861,
 			"oxidationStates": [
 				"+3",
 				"+1"
 			],
 			"meltingPoint": 1337.33,
+			"meltsUnderPressure": false,
 			"boilingPoint": 3129,
+			"sublimes": false,
 			"density": 19.282,
-			"yearDiscovered": "ancient"
+			"yearDiscovered": "ancient",
+			"discoveredBy": [],
+			"namedAfter": []
 		},
 		{
 			"z": 80,
@@ -4736,17 +6766,35 @@
 			"state": "liquid",
 			"statePredicted": false,
 			"electronegativity": 2,
-			"atomicRadius": 209,
-			"ionizationEnergy": 10.438,
-			"electronAffinity": null,
+			"atomicRadius": 132,
+			"ionizationEnergy": 10.437504,
+			"electronAffinity": "unstable",
 			"oxidationStates": [
 				"+2",
 				"+1"
 			],
 			"meltingPoint": 234.32,
+			"meltsUnderPressure": false,
 			"boilingPoint": 629.88,
+			"sublimes": false,
 			"density": 13.5336,
-			"yearDiscovered": "ancient"
+			"yearDiscovered": "ancient",
+			"discoveredBy": [],
+			"namedAfter": [
+				{
+					"qid": "Q1150",
+					"name": {
+						"en": "Mercury",
+						"ru": "Меркурий",
+						"fr": "Mercure",
+						"de": "Mercurius",
+						"it": "Mercurio",
+						"es": "Mercurio",
+						"zh": "墨丘利",
+						"pt": "Mercúrio"
+					}
+				}
+			]
 		},
 		{
 			"z": 81,
@@ -4767,10 +6815,10 @@
 				"de": "https://de.wikipedia.org/wiki/Thallium",
 				"en": "https://en.wikipedia.org/wiki/Thallium",
 				"es": "https://es.wikipedia.org/wiki/Talio",
-				"pt": "https://pt.wikipedia.org/wiki/T%C3%A1lio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%A2%D0%B0%D0%BB%D0%BB%D0%B8%D0%B9",
 				"fr": "https://fr.wikipedia.org/wiki/Thallium",
 				"it": "https://it.wikipedia.org/wiki/Tallio",
+				"pt": "https://pt.wikipedia.org/wiki/T%C3%A1lio",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%A2%D0%B0%D0%BB%D0%BB%D0%B8%D0%B9",
 				"zh": "https://zh.wikipedia.org/wiki/%E9%93%8A"
 			},
 			"category": "post-transition-metal",
@@ -4797,17 +6845,35 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.62,
-			"atomicRadius": 196,
-			"ionizationEnergy": 6.108,
-			"electronAffinity": 0.2,
+			"atomicRadius": 145,
+			"ionizationEnergy": 6.1082873,
+			"electronAffinity": 0.320053,
 			"oxidationStates": [
 				"+3",
 				"+1"
 			],
 			"meltingPoint": 577,
+			"meltsUnderPressure": false,
 			"boilingPoint": 1746,
+			"sublimes": false,
 			"density": 11.8,
-			"yearDiscovered": 1861
+			"yearDiscovered": 1861,
+			"discoveredBy": [
+				{
+					"qid": "Q189552",
+					"name": {
+						"en": "William Crookes",
+						"ru": "Уильям Крукс",
+						"fr": "William Crookes",
+						"de": "William Crookes",
+						"it": "William Crookes",
+						"es": "William Crookes",
+						"zh": "威廉·克鲁克斯",
+						"pt": "William Crookes"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 82,
@@ -4829,9 +6895,9 @@
 				"en": "https://en.wikipedia.org/wiki/Lead",
 				"es": "https://es.wikipedia.org/wiki/Plomo",
 				"fr": "https://fr.wikipedia.org/wiki/Plomb",
+				"it": "https://it.wikipedia.org/wiki/Piombo",
 				"pt": "https://pt.wikipedia.org/wiki/Chumbo",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B2%D0%B8%D0%BD%D0%B5%D1%86",
-				"it": "https://it.wikipedia.org/wiki/Piombo",
 				"zh": "https://zh.wikipedia.org/wiki/%E9%93%85"
 			},
 			"category": "post-transition-metal",
@@ -4858,17 +6924,21 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 2.33,
-			"atomicRadius": 202,
-			"ionizationEnergy": 7.417,
-			"electronAffinity": 0.36,
+			"atomicRadius": 146,
+			"ionizationEnergy": 7.4166799,
+			"electronAffinity": 0.356721,
 			"oxidationStates": [
 				"+4",
 				"+2"
 			],
 			"meltingPoint": 600.61,
+			"meltsUnderPressure": false,
 			"boilingPoint": 2022,
+			"sublimes": false,
 			"density": 11.342,
-			"yearDiscovered": "ancient"
+			"yearDiscovered": "ancient",
+			"discoveredBy": [],
+			"namedAfter": []
 		},
 		{
 			"z": 83,
@@ -4891,9 +6961,9 @@
 				"es": "https://es.wikipedia.org/wiki/Bismuto",
 				"fr": "https://fr.wikipedia.org/wiki/Bismuth",
 				"it": "https://it.wikipedia.org/wiki/Bismuto",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%93%8B",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%92%D0%B8%D1%81%D0%BC%D1%83%D1%82",
 				"pt": "https://pt.wikipedia.org/wiki/Bismuto",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%92%D0%B8%D1%81%D0%BC%D1%83%D1%82"
+				"zh": "https://zh.wikipedia.org/wiki/%E9%93%8B"
 			},
 			"category": "post-transition-metal",
 			"period": 6,
@@ -4919,17 +6989,21 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 2.02,
-			"atomicRadius": 207,
-			"ionizationEnergy": 7.289,
-			"electronAffinity": 0.946,
+			"atomicRadius": 148,
+			"ionizationEnergy": 7.285516,
+			"electronAffinity": 0.942362,
 			"oxidationStates": [
 				"+5",
 				"+3"
 			],
 			"meltingPoint": 544.55,
+			"meltsUnderPressure": false,
 			"boilingPoint": 1837,
+			"sublimes": false,
 			"density": 9.807,
-			"yearDiscovered": 1753
+			"yearDiscovered": 1753,
+			"discoveredBy": [],
+			"namedAfter": []
 		},
 		{
 			"z": 84,
@@ -4947,14 +7021,14 @@
 			},
 			"wikidata": "Q979",
 			"wikipedia": {
-				"fr": "https://fr.wikipedia.org/wiki/Polonium",
 				"it": "https://it.wikipedia.org/wiki/Polonio",
+				"pt": "https://pt.wikipedia.org/wiki/Pol%C3%B4nio",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D0%BB%D0%BE%D0%BD%D0%B8%D0%B9",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%92%8B",
 				"de": "https://de.wikipedia.org/wiki/Polonium",
 				"en": "https://en.wikipedia.org/wiki/Polonium",
 				"es": "https://es.wikipedia.org/wiki/Polonio",
-				"pt": "https://pt.wikipedia.org/wiki/Pol%C3%B4nio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D0%BB%D0%BE%D0%BD%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%92%8B"
+				"fr": "https://fr.wikipedia.org/wiki/Polonium"
 			},
 			"category": "metalloid",
 			"period": 6,
@@ -4980,17 +7054,63 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 2,
-			"atomicRadius": 197,
-			"ionizationEnergy": 8.417,
-			"electronAffinity": 1.9,
+			"atomicRadius": 140,
+			"ionizationEnergy": 8.41807,
+			"electronAffinity": null,
 			"oxidationStates": [
 				"+4",
-				"+2"
+				"+2",
+				"-2"
 			],
 			"meltingPoint": 527,
+			"meltsUnderPressure": false,
 			"boilingPoint": 1235,
+			"sublimes": false,
 			"density": 9.32,
-			"yearDiscovered": 1898
+			"yearDiscovered": 1898,
+			"discoveredBy": [
+				{
+					"qid": "Q7186",
+					"name": {
+						"en": "Marie Curie",
+						"ru": "Мария Склодовская-Кюри",
+						"fr": "Marie Curie",
+						"de": "Marie Curie",
+						"it": "Marie Curie",
+						"es": "Marie Curie",
+						"zh": "玛丽·居里",
+						"pt": "Marie Curie"
+					}
+				},
+				{
+					"qid": "Q37463",
+					"name": {
+						"en": "Pierre Curie",
+						"ru": "Пьер Кюри",
+						"fr": "Pierre Curie",
+						"de": "Pierre Curie",
+						"it": "Pierre Curie",
+						"es": "Pierre Curie",
+						"zh": "皮埃尔·居里",
+						"pt": "Pierre Curie"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q36",
+					"name": {
+						"en": "Poland",
+						"ru": "Польша",
+						"fr": "Pologne",
+						"de": "Polen",
+						"it": "Polonia",
+						"es": "Polonia",
+						"zh": "波兰",
+						"pt": "Polônia"
+					}
+				}
+			]
 		},
 		{
 			"z": 85,
@@ -5013,9 +7133,9 @@
 				"es": "https://es.wikipedia.org/wiki/Astato",
 				"fr": "https://fr.wikipedia.org/wiki/Astate",
 				"it": "https://it.wikipedia.org/wiki/Astato",
-				"zh": "https://zh.wikipedia.org/wiki/%E7%A0%B9",
 				"pt": "https://pt.wikipedia.org/wiki/%C3%81stato",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%90%D1%81%D1%82%D0%B0%D1%82"
+				"ru": "https://ru.wikipedia.org/wiki/%D0%90%D1%81%D1%82%D0%B0%D1%82",
+				"zh": "https://zh.wikipedia.org/wiki/%E7%A0%B9"
 			},
 			"category": "halogen",
 			"period": 6,
@@ -5039,22 +7159,66 @@
 				7
 			],
 			"state": "solid",
-			"statePredicted": false,
+			"statePredicted": true,
 			"electronegativity": 2.2,
-			"atomicRadius": 202,
-			"ionizationEnergy": 9.5,
-			"electronAffinity": 2.8,
+			"atomicRadius": 150,
+			"ionizationEnergy": 9.31751,
+			"electronAffinity": 2.41578,
 			"oxidationStates": [
-				"7",
-				"5",
-				"3",
-				"1",
+				"+7",
+				"+5",
+				"+3",
+				"+1",
 				"-1"
 			],
-			"meltingPoint": 575,
+			"meltingPoint": null,
+			"meltsUnderPressure": false,
 			"boilingPoint": null,
-			"density": 7,
-			"yearDiscovered": 1940
+			"sublimes": false,
+			"density": null,
+			"yearDiscovered": 1940,
+			"discoveredBy": [
+				{
+					"qid": "Q3012319",
+					"name": {
+						"en": "Dale R. Corson",
+						"ru": "Дэйл Раймонд Корсон",
+						"fr": "Dale R. Corson",
+						"de": "Dale R. Corson",
+						"it": "Dale R. Corson",
+						"es": "Dale R. Corson",
+						"zh": "戴爾·R·科森",
+						"pt": "Dale R. Corson"
+					}
+				},
+				{
+					"qid": "Q173028",
+					"name": {
+						"en": "Emilio G. Segrè",
+						"ru": "Эмилио Джино Сегре",
+						"fr": "Emilio Segrè",
+						"de": "Emilio Segrè",
+						"it": "Emilio Segrè",
+						"es": "Emilio Gino Segrè",
+						"zh": "埃米利奥·塞格雷",
+						"pt": "Emilio Gino Segrè"
+					}
+				},
+				{
+					"qid": "Q963428",
+					"name": {
+						"en": "Kenneth Ross MacKenzie",
+						"ru": "Кеннет Росс Маккензи",
+						"fr": "Kenneth Ross MacKenzie",
+						"de": "Kenneth Ross MacKenzie",
+						"it": "Kenneth Ross MacKenzie",
+						"es": "Kenneth Ross Mackenzie",
+						"zh": "肯尼斯·羅斯·麥肯齊",
+						"pt": "Kenneth Ross MacKenzie"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 86,
@@ -5072,13 +7236,13 @@
 			},
 			"wikidata": "Q1133",
 			"wikipedia": {
+				"pt": "https://pt.wikipedia.org/wiki/R%C3%A1don",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%A0%D0%B0%D0%B4%D0%BE%D0%BD",
 				"de": "https://de.wikipedia.org/wiki/Radon",
 				"en": "https://en.wikipedia.org/wiki/Radon",
 				"es": "https://es.wikipedia.org/wiki/Rad%C3%B3n",
 				"fr": "https://fr.wikipedia.org/wiki/Radon",
 				"it": "https://it.wikipedia.org/wiki/Radon",
-				"pt": "https://pt.wikipedia.org/wiki/R%C3%A1don",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%A0%D0%B0%D0%B4%D0%BE%D0%BD",
 				"zh": "https://zh.wikipedia.org/wiki/%E6%B0%A1"
 			},
 			"category": "noble-gas",
@@ -5105,16 +7269,60 @@
 			"state": "gas",
 			"statePredicted": false,
 			"electronegativity": null,
-			"atomicRadius": 220,
-			"ionizationEnergy": 10.745,
-			"electronAffinity": null,
+			"atomicRadius": 150,
+			"ionizationEnergy": 10.7485,
+			"electronAffinity": "unstable",
 			"oxidationStates": [
-				"0"
+				"+2"
 			],
 			"meltingPoint": 202,
+			"meltsUnderPressure": false,
 			"boilingPoint": 211.45,
+			"sublimes": false,
 			"density": 0.00973,
-			"yearDiscovered": 1900
+			"yearDiscovered": 1900,
+			"discoveredBy": [
+				{
+					"qid": "Q9123",
+					"name": {
+						"en": "Ernest Rutherford",
+						"ru": "Эрнест Резерфорд",
+						"fr": "Ernest Rutherford",
+						"de": "Ernest Rutherford",
+						"it": "Ernest Rutherford",
+						"es": "Ernest Rutherford",
+						"zh": "欧内斯特·卢瑟福",
+						"pt": "Ernest Rutherford"
+					}
+				},
+				{
+					"qid": "Q65191",
+					"name": {
+						"en": "Friedrich Ernst Dorn",
+						"ru": "Фридрих Эрнст Дорн",
+						"fr": "Friedrich Ernst Dorn",
+						"de": "Friedrich Ernst Dorn",
+						"it": "Friedrich Ernst Dorn",
+						"es": "Friedrich Ernst Dorn",
+						"zh": "弗里德里希·道恩",
+						"pt": "Friedrich Ernst Dorn"
+					}
+				},
+				{
+					"qid": "Q7342248",
+					"name": {
+						"en": "Robert Bowie Owens",
+						"ru": "Robert Bowie Owens",
+						"fr": "Robert Bowie Owens",
+						"de": "Robert Bowie Owens",
+						"it": "Robert Bowie Owens",
+						"es": "Robert Bowie Owens",
+						"zh": "罗伯特·鲍伊·欧文斯",
+						"pt": "Robert Bowie Owens"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 87,
@@ -5133,10 +7341,10 @@
 			"wikidata": "Q671",
 			"wikipedia": {
 				"de": "https://de.wikipedia.org/wiki/Francium",
+				"it": "https://it.wikipedia.org/wiki/Francio",
 				"en": "https://en.wikipedia.org/wiki/Francium",
 				"es": "https://es.wikipedia.org/wiki/Francio",
 				"fr": "https://fr.wikipedia.org/wiki/Francium",
-				"it": "https://it.wikipedia.org/wiki/Francio",
 				"pt": "https://pt.wikipedia.org/wiki/Fr%C3%A2ncio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%A4%D1%80%D0%B0%D0%BD%D1%86%D0%B8%D0%B9",
 				"zh": "https://zh.wikipedia.org/wiki/%E9%92%AB"
@@ -5164,18 +7372,50 @@
 				1
 			],
 			"state": "solid",
-			"statePredicted": false,
+			"statePredicted": true,
 			"electronegativity": 0.7,
-			"atomicRadius": 348,
-			"ionizationEnergy": 3.9,
-			"electronAffinity": 0.47,
+			"atomicRadius": 260,
+			"ionizationEnergy": 4.0727411,
+			"electronAffinity": null,
 			"oxidationStates": [
 				"+1"
 			],
-			"meltingPoint": 300,
+			"meltingPoint": null,
+			"meltsUnderPressure": false,
 			"boilingPoint": null,
+			"sublimes": false,
 			"density": null,
-			"yearDiscovered": 1939
+			"yearDiscovered": 1939,
+			"discoveredBy": [
+				{
+					"qid": "Q241822",
+					"name": {
+						"en": "Marguerite Perey",
+						"ru": "Маргарита Перей",
+						"fr": "Marguerite Perey",
+						"de": "Marguerite Perey",
+						"it": "Marguerite Perey",
+						"es": "Marguerite Perey",
+						"zh": "玛格丽特·佩里",
+						"pt": "Marguerite Catherine Perey"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q142",
+					"name": {
+						"en": "France",
+						"ru": "Франция",
+						"fr": "France",
+						"de": "Frankreich",
+						"it": "Francia",
+						"es": "Francia",
+						"zh": "法国",
+						"pt": "França"
+					}
+				}
+			]
 		},
 		{
 			"z": 88,
@@ -5193,14 +7433,14 @@
 			},
 			"wikidata": "Q1128",
 			"wikipedia": {
+				"zh": "https://zh.wikipedia.org/wiki/%E9%95%AD",
 				"de": "https://de.wikipedia.org/wiki/Radium",
 				"en": "https://en.wikipedia.org/wiki/Radium",
 				"es": "https://es.wikipedia.org/wiki/Radio_(elemento)",
 				"fr": "https://fr.wikipedia.org/wiki/Radium",
 				"it": "https://it.wikipedia.org/wiki/Radio_(elemento_chimico)",
 				"pt": "https://pt.wikipedia.org/wiki/R%C3%A1dio_(elemento_qu%C3%ADmico)",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%A0%D0%B0%D0%B4%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%95%AD"
+				"ru": "https://ru.wikipedia.org/wiki/%D0%A0%D0%B0%D0%B4%D0%B8%D0%B9"
 			},
 			"category": "alkaline-earth-metal",
 			"period": 7,
@@ -5227,16 +7467,47 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 0.9,
-			"atomicRadius": 283,
-			"ionizationEnergy": 5.279,
+			"atomicRadius": 221,
+			"ionizationEnergy": 5.2784239,
 			"electronAffinity": null,
 			"oxidationStates": [
 				"+2"
 			],
 			"meltingPoint": 973,
-			"boilingPoint": 1413,
+			"meltsUnderPressure": false,
+			"boilingPoint": null,
+			"sublimes": false,
 			"density": 5,
-			"yearDiscovered": 1898
+			"yearDiscovered": 1898,
+			"discoveredBy": [
+				{
+					"qid": "Q7186",
+					"name": {
+						"en": "Marie Curie",
+						"ru": "Мария Склодовская-Кюри",
+						"fr": "Marie Curie",
+						"de": "Marie Curie",
+						"it": "Marie Curie",
+						"es": "Marie Curie",
+						"zh": "玛丽·居里",
+						"pt": "Marie Curie"
+					}
+				},
+				{
+					"qid": "Q37463",
+					"name": {
+						"en": "Pierre Curie",
+						"ru": "Пьер Кюри",
+						"fr": "Pierre Curie",
+						"de": "Pierre Curie",
+						"it": "Pierre Curie",
+						"es": "Pierre Curie",
+						"zh": "皮埃尔·居里",
+						"pt": "Pierre Curie"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 89,
@@ -5288,16 +7559,34 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.1,
-			"atomicRadius": 260,
-			"ionizationEnergy": 5.17,
+			"atomicRadius": 215,
+			"ionizationEnergy": 5.380235,
 			"electronAffinity": null,
 			"oxidationStates": [
 				"+3"
 			],
 			"meltingPoint": 1324,
+			"meltsUnderPressure": false,
 			"boilingPoint": 3471,
+			"sublimes": false,
 			"density": 10.07,
-			"yearDiscovered": 1899
+			"yearDiscovered": 1899,
+			"discoveredBy": [
+				{
+					"qid": "Q468371",
+					"name": {
+						"en": "André-Louis Debierne",
+						"ru": "Андре-Луи Дебьерн",
+						"fr": "André-Louis Debierne",
+						"de": "André-Louis Debierne",
+						"it": "André-Louis Debierne",
+						"es": "André-Louis Debierne",
+						"zh": "安德烈-路易·德比埃尔内",
+						"pt": "André-Louis Debierne"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 90,
@@ -5349,16 +7638,48 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.3,
-			"atomicRadius": 237,
-			"ionizationEnergy": 6.08,
-			"electronAffinity": null,
+			"atomicRadius": 206,
+			"ionizationEnergy": 6.3067,
+			"electronAffinity": 0.60769,
 			"oxidationStates": [
 				"+4"
 			],
 			"meltingPoint": 2023,
+			"meltsUnderPressure": false,
 			"boilingPoint": 5061,
+			"sublimes": false,
 			"density": 11.72,
-			"yearDiscovered": 1828
+			"yearDiscovered": 1828,
+			"discoveredBy": [
+				{
+					"qid": "Q151911",
+					"name": {
+						"en": "Jöns Jacob Berzelius",
+						"ru": "Йёнс Якоб Берцелиус",
+						"fr": "Jöns Jacob Berzelius",
+						"de": "Jöns Jakob Berzelius",
+						"it": "Jöns Jacob Berzelius",
+						"es": "Jöns Jacob Berzelius",
+						"zh": "永斯·贝采利乌斯",
+						"pt": "Jöns Jacob Berzelius"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q42952",
+					"name": {
+						"en": "Thor",
+						"ru": "Тор",
+						"fr": "Thor",
+						"de": "Thor",
+						"it": "Thor",
+						"es": "Thor",
+						"zh": "托尔",
+						"pt": "Thor"
+					}
+				}
+			]
 		},
 		{
 			"z": 91,
@@ -5410,17 +7731,61 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.5,
-			"atomicRadius": 243,
-			"ionizationEnergy": 5.89,
+			"atomicRadius": 200,
+			"ionizationEnergy": null,
 			"electronAffinity": null,
 			"oxidationStates": [
 				"+5",
 				"+4"
 			],
 			"meltingPoint": 1845,
+			"meltsUnderPressure": false,
 			"boilingPoint": null,
+			"sublimes": false,
 			"density": 15.37,
-			"yearDiscovered": 1913
+			"yearDiscovered": 1913,
+			"discoveredBy": [
+				{
+					"qid": "Q213667",
+					"name": {
+						"en": "Kazimierz Fajans",
+						"ru": "Казимир Фаянс",
+						"fr": "Kasimir Fajans",
+						"de": "Kasimir Fajans",
+						"it": "Kazimierz Fajans",
+						"es": "Kasimir Fajans",
+						"zh": "卡齐米日·法扬斯",
+						"pt": "Kasimir Fajans"
+					}
+				},
+				{
+					"qid": "Q56189",
+					"name": {
+						"en": "Lise Meitner",
+						"ru": "Лизе Майтнер",
+						"fr": "Lise Meitner",
+						"de": "Lise Meitner",
+						"it": "Lise Meitner",
+						"es": "Lise Meitner",
+						"zh": "莉泽·迈特纳",
+						"pt": "Lise Meitner"
+					}
+				},
+				{
+					"qid": "Q57065",
+					"name": {
+						"en": "Otto Hahn",
+						"ru": "Отто Ган",
+						"fr": "Otto Hahn",
+						"de": "Otto Hahn",
+						"it": "Otto Hahn",
+						"es": "Otto Hahn",
+						"zh": "奥托·哈恩",
+						"pt": "Otto Hahn"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 92,
@@ -5438,12 +7803,12 @@
 			},
 			"wikidata": "Q1098",
 			"wikipedia": {
-				"zh": "https://zh.wikipedia.org/wiki/%E9%88%BE",
-				"pt": "https://pt.wikipedia.org/wiki/Ur%C3%A2nio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%A3%D1%80%D0%B0%D0%BD_(%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82)",
 				"de": "https://de.wikipedia.org/wiki/Uran",
 				"en": "https://en.wikipedia.org/wiki/Uranium",
 				"es": "https://es.wikipedia.org/wiki/Uranio",
+				"pt": "https://pt.wikipedia.org/wiki/Ur%C3%A2nio",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%A3%D1%80%D0%B0%D0%BD_(%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82)",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%88%BE",
 				"fr": "https://fr.wikipedia.org/wiki/Uranium",
 				"it": "https://it.wikipedia.org/wiki/Uranio"
 			},
@@ -5472,9 +7837,9 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.38,
-			"atomicRadius": 240,
-			"ionizationEnergy": 6.194,
-			"electronAffinity": null,
+			"atomicRadius": 196,
+			"ionizationEnergy": 6.19405,
+			"electronAffinity": 0.31497,
 			"oxidationStates": [
 				"+6",
 				"+5",
@@ -5482,9 +7847,41 @@
 				"+3"
 			],
 			"meltingPoint": 1408,
+			"meltsUnderPressure": false,
 			"boilingPoint": 4404,
+			"sublimes": false,
 			"density": 18.95,
-			"yearDiscovered": 1789
+			"yearDiscovered": 1789,
+			"discoveredBy": [
+				{
+					"qid": "Q160196",
+					"name": {
+						"en": "Martin Heinrich Klaproth",
+						"ru": "Мартин Генрих Клапрот",
+						"fr": "Martin Heinrich Klaproth",
+						"de": "Martin Heinrich Klaproth",
+						"it": "Martin Heinrich Klaproth",
+						"es": "Martin Heinrich Klaproth",
+						"zh": "马丁·海因里希·克拉普罗特",
+						"pt": "Martin Heinrich Klaproth"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q324",
+					"name": {
+						"en": "Uranus",
+						"ru": "Уран",
+						"fr": "Uranus",
+						"de": "Uranus",
+						"it": "Urano",
+						"es": "Urano",
+						"zh": "天王星",
+						"pt": "Urano"
+					}
+				}
+			]
 		},
 		{
 			"z": 93,
@@ -5536,8 +7933,8 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.36,
-			"atomicRadius": 221,
-			"ionizationEnergy": 6.266,
+			"atomicRadius": 190,
+			"ionizationEnergy": 6.265608,
 			"electronAffinity": null,
 			"oxidationStates": [
 				"+6",
@@ -5546,9 +7943,54 @@
 				"+3"
 			],
 			"meltingPoint": 917,
+			"meltsUnderPressure": false,
 			"boilingPoint": 4175,
+			"sublimes": false,
 			"density": 20.25,
-			"yearDiscovered": 1940
+			"yearDiscovered": 1940,
+			"discoveredBy": [
+				{
+					"qid": "Q19009",
+					"name": {
+						"en": "Edwin McMillan",
+						"ru": "Эдвин Маттисон Макмиллан",
+						"fr": "Edwin McMillan",
+						"de": "Edwin Mattison McMillan",
+						"it": "Edwin McMillan",
+						"es": "Edwin Mattison McMillan",
+						"zh": "埃德温·麦克米伦",
+						"pt": "Edwin Mattison McMillan"
+					}
+				},
+				{
+					"qid": "Q377815",
+					"name": {
+						"en": "Philip Abelson",
+						"ru": "Филипп Хауге Абельсон",
+						"fr": "Philip Abelson",
+						"de": "Philip Hauge Abelson",
+						"it": "Philip Hauge Abelson",
+						"es": "Philip Hauge Abelson",
+						"zh": "菲利普·埃布尔森",
+						"pt": "Philip Abelson"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q332",
+					"name": {
+						"en": "Neptune",
+						"ru": "Нептун",
+						"fr": "Neptune",
+						"de": "Neptun",
+						"it": "Nettuno",
+						"es": "Neptuno",
+						"zh": "海王星",
+						"pt": "Netuno"
+					}
+				}
+			]
 		},
 		{
 			"z": 94,
@@ -5566,14 +8008,14 @@
 			},
 			"wikidata": "Q1102",
 			"wikipedia": {
-				"zh": "https://zh.wikipedia.org/wiki/%E9%92%9A",
 				"de": "https://de.wikipedia.org/wiki/Plutonium",
 				"en": "https://en.wikipedia.org/wiki/Plutonium",
 				"es": "https://es.wikipedia.org/wiki/Plutonio",
 				"fr": "https://fr.wikipedia.org/wiki/Plutonium",
 				"it": "https://it.wikipedia.org/wiki/Plutonio",
 				"pt": "https://pt.wikipedia.org/wiki/Plut%C3%B3nio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%9F%D0%BB%D1%83%D1%82%D0%BE%D0%BD%D0%B8%D0%B9"
+				"ru": "https://ru.wikipedia.org/wiki/%D0%9F%D0%BB%D1%83%D1%82%D0%BE%D0%BD%D0%B8%D0%B9",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%92%9A"
 			},
 			"category": "actinide",
 			"period": 7,
@@ -5600,8 +8042,8 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.28,
-			"atomicRadius": 243,
-			"ionizationEnergy": 6.06,
+			"atomicRadius": 187,
+			"ionizationEnergy": 6.02576,
 			"electronAffinity": null,
 			"oxidationStates": [
 				"+6",
@@ -5610,9 +8052,80 @@
 				"+3"
 			],
 			"meltingPoint": 913,
+			"meltsUnderPressure": false,
 			"boilingPoint": 3501,
+			"sublimes": false,
 			"density": 19.84,
-			"yearDiscovered": 1940
+			"yearDiscovered": 1940,
+			"discoveredBy": [
+				{
+					"qid": "Q472997",
+					"name": {
+						"en": "Arthur Wahl",
+						"ru": "Артур Валь",
+						"fr": "Arthur Wahl",
+						"de": "Arthur Wahl",
+						"it": "Arthur Wahl",
+						"es": "Arthur Wahl",
+						"zh": "阿瑟·华尔",
+						"pt": "Arthur Wahl"
+					}
+				},
+				{
+					"qid": "Q19009",
+					"name": {
+						"en": "Edwin McMillan",
+						"ru": "Эдвин Маттисон Макмиллан",
+						"fr": "Edwin McMillan",
+						"de": "Edwin Mattison McMillan",
+						"it": "Edwin McMillan",
+						"es": "Edwin Mattison McMillan",
+						"zh": "埃德温·麦克米伦",
+						"pt": "Edwin Mattison McMillan"
+					}
+				},
+				{
+					"qid": "Q48973",
+					"name": {
+						"en": "Glenn Theodore Seaborg",
+						"ru": "Гленн Теодор Сиборг",
+						"fr": "Glenn Seaborg",
+						"de": "Glenn T. Seaborg",
+						"it": "Glenn Theodore Seaborg",
+						"es": "Glenn T. Seaborg",
+						"zh": "格倫·西奧多·西博格",
+						"pt": "Glenn Theodore Seaborg"
+					}
+				},
+				{
+					"qid": "Q1708246",
+					"name": {
+						"en": "Joseph W. Kennedy",
+						"ru": "Джозеф У. Кеннеди",
+						"fr": "Joseph W. Kennedy",
+						"de": "Joseph William Kennedy",
+						"it": "Joseph Kennedy",
+						"es": "Joseph W. Kennedy",
+						"zh": "约瑟夫·W·肯尼迪",
+						"pt": "Joseph William Kennedy"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q152262",
+					"name": {
+						"en": "Pluto",
+						"ru": "Плутон",
+						"fr": "Pluton",
+						"de": "Pluton",
+						"it": "Plutone",
+						"es": "Plutón",
+						"zh": "普路托",
+						"pt": "Plutão"
+					}
+				}
+			]
 		},
 		{
 			"z": 95,
@@ -5630,14 +8143,14 @@
 			},
 			"wikidata": "Q1872",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Americium",
-				"en": "https://en.wikipedia.org/wiki/Americium",
-				"fr": "https://fr.wikipedia.org/wiki/Am%C3%A9ricium",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%90%D0%BC%D0%B5%D1%80%D0%B8%D1%86%D0%B8%D0%B9",
 				"es": "https://es.wikipedia.org/wiki/Americio",
 				"it": "https://it.wikipedia.org/wiki/Americio",
 				"pt": "https://pt.wikipedia.org/wiki/Amer%C3%ADcio",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%95%85"
+				"zh": "https://zh.wikipedia.org/wiki/%E9%95%85",
+				"de": "https://de.wikipedia.org/wiki/Americium",
+				"en": "https://en.wikipedia.org/wiki/Americium",
+				"fr": "https://fr.wikipedia.org/wiki/Am%C3%A9ricium",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%90%D0%BC%D0%B5%D1%80%D0%B8%D1%86%D0%B8%D0%B9"
 			},
 			"category": "actinide",
 			"period": 7,
@@ -5663,9 +8176,9 @@
 			],
 			"state": "solid",
 			"statePredicted": false,
-			"electronegativity": 1.3,
-			"atomicRadius": 244,
-			"ionizationEnergy": 5.993,
+			"electronegativity": null,
+			"atomicRadius": 180,
+			"ionizationEnergy": 5.97381,
 			"electronAffinity": null,
 			"oxidationStates": [
 				"+6",
@@ -5674,9 +8187,41 @@
 				"+3"
 			],
 			"meltingPoint": 1449,
-			"boilingPoint": 2284,
+			"meltsUnderPressure": false,
+			"boilingPoint": null,
+			"sublimes": false,
 			"density": 13.69,
-			"yearDiscovered": 1944
+			"yearDiscovered": 1944,
+			"discoveredBy": [
+				{
+					"qid": "Q48973",
+					"name": {
+						"en": "Glenn Theodore Seaborg",
+						"ru": "Гленн Теодор Сиборг",
+						"fr": "Glenn Seaborg",
+						"de": "Glenn T. Seaborg",
+						"it": "Glenn Theodore Seaborg",
+						"es": "Glenn T. Seaborg",
+						"zh": "格倫·西奧多·西博格",
+						"pt": "Glenn Theodore Seaborg"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q828",
+					"name": {
+						"en": "Americas",
+						"ru": "Америка",
+						"fr": "Amérique",
+						"de": "Amerika",
+						"it": "America",
+						"es": "América",
+						"zh": "美洲",
+						"pt": "América"
+					}
+				}
+			]
 		},
 		{
 			"z": 96,
@@ -5727,17 +8272,62 @@
 			],
 			"state": "solid",
 			"statePredicted": false,
-			"electronegativity": 1.3,
-			"atomicRadius": 245,
-			"ionizationEnergy": 6.02,
+			"electronegativity": null,
+			"atomicRadius": 169,
+			"ionizationEnergy": 5.992241,
 			"electronAffinity": null,
 			"oxidationStates": [
 				"+3"
 			],
 			"meltingPoint": 1618,
+			"meltsUnderPressure": false,
 			"boilingPoint": 3400,
+			"sublimes": false,
 			"density": 13.51,
-			"yearDiscovered": 1944
+			"yearDiscovered": 1944,
+			"discoveredBy": [
+				{
+					"qid": "Q48973",
+					"name": {
+						"en": "Glenn Theodore Seaborg",
+						"ru": "Гленн Теодор Сиборг",
+						"fr": "Glenn Seaborg",
+						"de": "Glenn T. Seaborg",
+						"it": "Glenn Theodore Seaborg",
+						"es": "Glenn T. Seaborg",
+						"zh": "格倫·西奧多·西博格",
+						"pt": "Glenn Theodore Seaborg"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q7186",
+					"name": {
+						"en": "Marie Curie",
+						"ru": "Мария Склодовская-Кюри",
+						"fr": "Marie Curie",
+						"de": "Marie Curie",
+						"it": "Marie Curie",
+						"es": "Marie Curie",
+						"zh": "玛丽·居里",
+						"pt": "Marie Curie"
+					}
+				},
+				{
+					"qid": "Q37463",
+					"name": {
+						"en": "Pierre Curie",
+						"ru": "Пьер Кюри",
+						"fr": "Pierre Curie",
+						"de": "Pierre Curie",
+						"it": "Pierre Curie",
+						"es": "Pierre Curie",
+						"zh": "皮埃尔·居里",
+						"pt": "Pierre Curie"
+					}
+				}
+			]
 		},
 		{
 			"z": 97,
@@ -5788,18 +8378,76 @@
 			],
 			"state": "solid",
 			"statePredicted": false,
-			"electronegativity": 1.3,
-			"atomicRadius": 244,
-			"ionizationEnergy": 6.23,
+			"electronegativity": null,
+			"atomicRadius": null,
+			"ionizationEnergy": 6.19785,
 			"electronAffinity": null,
 			"oxidationStates": [
 				"+4",
 				"+3"
 			],
 			"meltingPoint": 1323,
+			"meltsUnderPressure": false,
 			"boilingPoint": null,
+			"sublimes": false,
 			"density": 14,
-			"yearDiscovered": 1949
+			"yearDiscovered": 1949,
+			"discoveredBy": [
+				{
+					"qid": "Q468345",
+					"name": {
+						"en": "Albert Ghiorso",
+						"ru": "Альберт Гиорсо",
+						"fr": "Albert Ghiorso",
+						"de": "Albert Ghiorso",
+						"it": "Albert Ghiorso",
+						"es": "Albert Ghiorso",
+						"zh": "阿伯特·吉奥索",
+						"pt": "Albert Ghiorso"
+					}
+				},
+				{
+					"qid": "Q48973",
+					"name": {
+						"en": "Glenn Theodore Seaborg",
+						"ru": "Гленн Теодор Сиборг",
+						"fr": "Glenn Seaborg",
+						"de": "Glenn T. Seaborg",
+						"it": "Glenn Theodore Seaborg",
+						"es": "Glenn T. Seaborg",
+						"zh": "格倫·西奧多·西博格",
+						"pt": "Glenn Theodore Seaborg"
+					}
+				},
+				{
+					"qid": "Q3068373",
+					"name": {
+						"en": "Stanley Gerald Thompson",
+						"ru": "Стэнли Джеральд Томпсон",
+						"fr": "Stanley Gerald Thompson",
+						"de": "Stanley G. Thompson",
+						"it": "Stanley Gerald Thompson",
+						"es": "Stanley Gerald Thompson",
+						"zh": "斯坦利·G·湯普森",
+						"pt": "Stanley Gerald Thompson"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q484678",
+					"name": {
+						"en": "Berkeley",
+						"ru": "Беркли",
+						"fr": "Berkeley",
+						"de": "Berkeley",
+						"it": "Berkeley",
+						"es": "Berkeley",
+						"zh": "伯克利",
+						"pt": "Berkeley"
+					}
+				}
+			]
 		},
 		{
 			"z": 98,
@@ -5817,14 +8465,14 @@
 			},
 			"wikidata": "Q1888",
 			"wikipedia": {
+				"en": "https://en.wikipedia.org/wiki/Californium",
+				"es": "https://es.wikipedia.org/wiki/Californio",
 				"fr": "https://fr.wikipedia.org/wiki/Californium",
 				"it": "https://it.wikipedia.org/wiki/Californio",
 				"pt": "https://pt.wikipedia.org/wiki/Calif%C3%B3rnio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BB%D0%B8%D1%84%D0%BE%D1%80%D0%BD%D0%B8%D0%B9",
 				"zh": "https://zh.wikipedia.org/wiki/%E9%94%8E",
-				"de": "https://de.wikipedia.org/wiki/Californium",
-				"en": "https://en.wikipedia.org/wiki/Californium",
-				"es": "https://es.wikipedia.org/wiki/Californio"
+				"de": "https://de.wikipedia.org/wiki/Californium"
 			},
 			"category": "actinide",
 			"period": 7,
@@ -5850,17 +8498,88 @@
 			],
 			"state": "solid",
 			"statePredicted": false,
-			"electronegativity": 1.3,
-			"atomicRadius": 245,
-			"ionizationEnergy": 6.3,
+			"electronegativity": null,
+			"atomicRadius": null,
+			"ionizationEnergy": 6.281878,
 			"electronAffinity": null,
 			"oxidationStates": [
 				"+3"
 			],
 			"meltingPoint": 1173,
+			"meltsUnderPressure": false,
 			"boilingPoint": null,
+			"sublimes": false,
 			"density": null,
-			"yearDiscovered": 1950
+			"yearDiscovered": 1950,
+			"discoveredBy": [
+				{
+					"qid": "Q468345",
+					"name": {
+						"en": "Albert Ghiorso",
+						"ru": "Альберт Гиорсо",
+						"fr": "Albert Ghiorso",
+						"de": "Albert Ghiorso",
+						"it": "Albert Ghiorso",
+						"es": "Albert Ghiorso",
+						"zh": "阿伯特·吉奥索",
+						"pt": "Albert Ghiorso"
+					}
+				},
+				{
+					"qid": "Q48973",
+					"name": {
+						"en": "Glenn Theodore Seaborg",
+						"ru": "Гленн Теодор Сиборг",
+						"fr": "Glenn Seaborg",
+						"de": "Glenn T. Seaborg",
+						"it": "Glenn Theodore Seaborg",
+						"es": "Glenn T. Seaborg",
+						"zh": "格倫·西奧多·西博格",
+						"pt": "Glenn Theodore Seaborg"
+					}
+				},
+				{
+					"qid": "Q1989591",
+					"name": {
+						"en": "Kenneth Street Jr.",
+						"ru": "Kenneth Street Jr.",
+						"fr": "Kenneth Street",
+						"de": "Kenneth Street Jr.",
+						"it": "Kenneth Street Jr.",
+						"es": "Kenneth Street Jr.",
+						"zh": "小肯尼斯·史翠特",
+						"pt": "Kenneth Street Jr."
+					}
+				},
+				{
+					"qid": "Q3068373",
+					"name": {
+						"en": "Stanley Gerald Thompson",
+						"ru": "Стэнли Джеральд Томпсон",
+						"fr": "Stanley Gerald Thompson",
+						"de": "Stanley G. Thompson",
+						"it": "Stanley Gerald Thompson",
+						"es": "Stanley Gerald Thompson",
+						"zh": "斯坦利·G·湯普森",
+						"pt": "Stanley Gerald Thompson"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q99",
+					"name": {
+						"en": "California",
+						"ru": "Калифорния",
+						"fr": "Californie",
+						"de": "Kalifornien",
+						"it": "California",
+						"es": "California",
+						"zh": "加利福尼亚州",
+						"pt": "Califórnia"
+					}
+				}
+			]
 		},
 		{
 			"z": 99,
@@ -5911,17 +8630,62 @@
 			],
 			"state": "solid",
 			"statePredicted": false,
-			"electronegativity": 1.3,
-			"atomicRadius": 245,
-			"ionizationEnergy": 6.42,
+			"electronegativity": null,
+			"atomicRadius": null,
+			"ionizationEnergy": 6.3684,
 			"electronAffinity": null,
 			"oxidationStates": [
 				"+3"
 			],
 			"meltingPoint": 1133,
+			"meltsUnderPressure": false,
 			"boilingPoint": null,
+			"sublimes": false,
 			"density": null,
-			"yearDiscovered": 1952
+			"yearDiscovered": 1952,
+			"discoveredBy": [
+				{
+					"qid": "Q468345",
+					"name": {
+						"en": "Albert Ghiorso",
+						"ru": "Альберт Гиорсо",
+						"fr": "Albert Ghiorso",
+						"de": "Albert Ghiorso",
+						"it": "Albert Ghiorso",
+						"es": "Albert Ghiorso",
+						"zh": "阿伯特·吉奥索",
+						"pt": "Albert Ghiorso"
+					}
+				},
+				{
+					"qid": "Q48973",
+					"name": {
+						"en": "Glenn Theodore Seaborg",
+						"ru": "Гленн Теодор Сиборг",
+						"fr": "Glenn Seaborg",
+						"de": "Glenn T. Seaborg",
+						"it": "Glenn Theodore Seaborg",
+						"es": "Glenn T. Seaborg",
+						"zh": "格倫·西奧多·西博格",
+						"pt": "Glenn Theodore Seaborg"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q937",
+					"name": {
+						"en": "Albert Einstein",
+						"ru": "Альберт Эйнштейн",
+						"fr": "Albert Einstein",
+						"de": "Albert Einstein",
+						"it": "Albert Einstein",
+						"es": "Albert Einstein",
+						"zh": "阿尔伯特·爱因斯坦",
+						"pt": "Albert Einstein"
+					}
+				}
+			]
 		},
 		{
 			"z": 100,
@@ -5939,14 +8703,14 @@
 			},
 			"wikidata": "Q1896",
 			"wikipedia": {
+				"zh": "https://zh.wikipedia.org/wiki/%E9%95%84",
 				"de": "https://de.wikipedia.org/wiki/Fermium",
 				"en": "https://en.wikipedia.org/wiki/Fermium",
 				"es": "https://es.wikipedia.org/wiki/Fermio",
 				"fr": "https://fr.wikipedia.org/wiki/Fermium",
 				"it": "https://it.wikipedia.org/wiki/Fermio",
 				"pt": "https://pt.wikipedia.org/wiki/F%C3%A9rmio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%A4%D0%B5%D1%80%D0%BC%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%95%84"
+				"ru": "https://ru.wikipedia.org/wiki/%D0%A4%D0%B5%D1%80%D0%BC%D0%B8%D0%B9"
 			},
 			"category": "actinide",
 			"period": 7,
@@ -5971,18 +8735,50 @@
 				2
 			],
 			"state": "solid",
-			"statePredicted": false,
-			"electronegativity": 1.3,
+			"statePredicted": true,
+			"electronegativity": null,
 			"atomicRadius": null,
-			"ionizationEnergy": 6.5,
+			"ionizationEnergy": null,
 			"electronAffinity": null,
 			"oxidationStates": [
 				"+3"
 			],
-			"meltingPoint": 1800,
+			"meltingPoint": null,
+			"meltsUnderPressure": false,
 			"boilingPoint": null,
+			"sublimes": false,
 			"density": null,
-			"yearDiscovered": 1952
+			"yearDiscovered": 1952,
+			"discoveredBy": [
+				{
+					"qid": "Q48973",
+					"name": {
+						"en": "Glenn Theodore Seaborg",
+						"ru": "Гленн Теодор Сиборг",
+						"fr": "Glenn Seaborg",
+						"de": "Glenn T. Seaborg",
+						"it": "Glenn Theodore Seaborg",
+						"es": "Glenn T. Seaborg",
+						"zh": "格倫·西奧多·西博格",
+						"pt": "Glenn Theodore Seaborg"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q8753",
+					"name": {
+						"en": "Enrico Fermi",
+						"ru": "Энрико Ферми",
+						"fr": "Enrico Fermi",
+						"de": "Enrico Fermi",
+						"it": "Enrico Fermi",
+						"es": "Enrico Fermi",
+						"zh": "恩里科·费米",
+						"pt": "Enrico Fermi"
+					}
+				}
+			]
 		},
 		{
 			"z": 101,
@@ -6001,13 +8797,13 @@
 			"wikidata": "Q1898",
 			"wikipedia": {
 				"zh": "https://zh.wikipedia.org/wiki/%E9%92%94",
-				"pt": "https://pt.wikipedia.org/wiki/Mendel%C3%A9vio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%BD%D0%B4%D0%B5%D0%BB%D0%B5%D0%B2%D0%B8%D0%B9",
 				"de": "https://de.wikipedia.org/wiki/Mendelevium",
 				"en": "https://en.wikipedia.org/wiki/Mendelevium",
 				"es": "https://es.wikipedia.org/wiki/Mendelevio",
 				"fr": "https://fr.wikipedia.org/wiki/Mend%C3%A9l%C3%A9vium",
-				"it": "https://it.wikipedia.org/wiki/Mendelevio"
+				"it": "https://it.wikipedia.org/wiki/Mendelevio",
+				"pt": "https://pt.wikipedia.org/wiki/Mendel%C3%A9vio",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%BD%D0%B4%D0%B5%D0%BB%D0%B5%D0%B2%D0%B8%D0%B9"
 			},
 			"category": "actinide",
 			"period": 7,
@@ -6032,19 +8828,51 @@
 				2
 			],
 			"state": "solid",
-			"statePredicted": false,
-			"electronegativity": 1.3,
+			"statePredicted": true,
+			"electronegativity": null,
 			"atomicRadius": null,
-			"ionizationEnergy": 6.58,
+			"ionizationEnergy": null,
 			"electronAffinity": null,
 			"oxidationStates": [
 				"+3",
 				"+2"
 			],
-			"meltingPoint": 1100,
+			"meltingPoint": null,
+			"meltsUnderPressure": false,
 			"boilingPoint": null,
+			"sublimes": false,
 			"density": null,
-			"yearDiscovered": 1955
+			"yearDiscovered": 1955,
+			"discoveredBy": [
+				{
+					"qid": "Q48973",
+					"name": {
+						"en": "Glenn Theodore Seaborg",
+						"ru": "Гленн Теодор Сиборг",
+						"fr": "Glenn Seaborg",
+						"de": "Glenn T. Seaborg",
+						"it": "Glenn Theodore Seaborg",
+						"es": "Glenn T. Seaborg",
+						"zh": "格倫·西奧多·西博格",
+						"pt": "Glenn Theodore Seaborg"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q9106",
+					"name": {
+						"en": "Dmitri Mendeleev",
+						"ru": "Дмитрий Иванович Менделеев",
+						"fr": "Dmitri Mendeleïev",
+						"de": "Dmitri Iwanowitsch Mendelejew",
+						"it": "Dmitrij Ivanovič Mendeleev",
+						"es": "Dmitri Mendeléyev",
+						"zh": "德米特里·伊万诺维奇·门捷列夫",
+						"pt": "Dmitri Mendeleiev"
+					}
+				}
+			]
 		},
 		{
 			"z": 102,
@@ -6094,19 +8922,51 @@
 				2
 			],
 			"state": "solid",
-			"statePredicted": false,
-			"electronegativity": 1.3,
+			"statePredicted": true,
+			"electronegativity": null,
 			"atomicRadius": null,
-			"ionizationEnergy": 6.65,
+			"ionizationEnergy": 6.62621,
 			"electronAffinity": null,
 			"oxidationStates": [
 				"+3",
 				"+2"
 			],
-			"meltingPoint": 1100,
+			"meltingPoint": null,
+			"meltsUnderPressure": false,
 			"boilingPoint": null,
+			"sublimes": false,
 			"density": null,
-			"yearDiscovered": 1957
+			"yearDiscovered": 1965,
+			"discoveredBy": [
+				{
+					"qid": "Q259517",
+					"name": {
+						"en": "Joint Institute for Nuclear Research",
+						"ru": "Объединённый институт ядерных исследований",
+						"fr": "Institut unifié de recherches nucléaires",
+						"de": "Vereinigtes Institut für Kernforschung",
+						"it": "Istituto unito per la ricerca nucleare",
+						"es": "Instituto Central de Investigaciones Nucleares",
+						"zh": "杜布纳联合原子核研究所",
+						"pt": "Eenheetlecht Institut fir Nuklearfuerschung"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q23810",
+					"name": {
+						"en": "Alfred Nobel",
+						"ru": "Альфред Нобель",
+						"fr": "Alfred Nobel",
+						"de": "Alfred Nobel",
+						"it": "Alfred Nobel",
+						"es": "Alfred Nobel",
+						"zh": "阿尔弗雷德·诺贝尔",
+						"pt": "Alfred Nobel"
+					}
+				}
+			]
 		},
 		{
 			"z": 103,
@@ -6144,30 +9004,62 @@
 				"text": "[266]",
 				"source": "pubchem-isotope"
 			},
-			"config": "[Rn]7s2 5f14 6d1",
-			"configPredicted": false,
+			"config": "[Rn]7s2 5f14 7p1",
+			"configPredicted": true,
 			"shells": [
 				2,
 				8,
 				18,
 				32,
 				32,
-				9,
-				2
+				8,
+				3
 			],
 			"state": "solid",
-			"statePredicted": false,
-			"electronegativity": 1.3,
+			"statePredicted": true,
+			"electronegativity": null,
 			"atomicRadius": null,
-			"ionizationEnergy": null,
+			"ionizationEnergy": 4.96,
 			"electronAffinity": null,
 			"oxidationStates": [
 				"+3"
 			],
-			"meltingPoint": 1900,
+			"meltingPoint": null,
+			"meltsUnderPressure": false,
 			"boilingPoint": null,
+			"sublimes": false,
 			"density": null,
-			"yearDiscovered": 1961
+			"yearDiscovered": 1961,
+			"discoveredBy": [
+				{
+					"qid": "Q468345",
+					"name": {
+						"en": "Albert Ghiorso",
+						"ru": "Альберт Гиорсо",
+						"fr": "Albert Ghiorso",
+						"de": "Albert Ghiorso",
+						"it": "Albert Ghiorso",
+						"es": "Albert Ghiorso",
+						"zh": "阿伯特·吉奥索",
+						"pt": "Albert Ghiorso"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q169577",
+					"name": {
+						"en": "Ernest Lawrence",
+						"ru": "Эрнест Орландо Лоуренс",
+						"fr": "Ernest Orlando Lawrence",
+						"de": "Ernest Lawrence",
+						"it": "Ernest Orlando Lawrence",
+						"es": "Ernest Lawrence",
+						"zh": "欧内斯特·劳伦斯",
+						"pt": "Ernest Lawrence"
+					}
+				}
+			]
 		},
 		{
 			"z": 104,
@@ -6206,7 +9098,7 @@
 				"source": "pubchem-isotope"
 			},
 			"config": "[Rn]7s2 5f14 6d2",
-			"configPredicted": false,
+			"configPredicted": true,
 			"shells": [
 				2,
 				8,
@@ -6217,7 +9109,7 @@
 				2
 			],
 			"state": "solid",
-			"statePredicted": false,
+			"statePredicted": true,
 			"electronegativity": null,
 			"atomicRadius": null,
 			"ionizationEnergy": null,
@@ -6226,9 +9118,54 @@
 				"+4"
 			],
 			"meltingPoint": null,
+			"meltsUnderPressure": false,
 			"boilingPoint": null,
+			"sublimes": false,
 			"density": null,
-			"yearDiscovered": 1964
+			"yearDiscovered": 1969,
+			"discoveredBy": [
+				{
+					"qid": "Q259517",
+					"name": {
+						"en": "Joint Institute for Nuclear Research",
+						"ru": "Объединённый институт ядерных исследований",
+						"fr": "Institut unifié de recherches nucléaires",
+						"de": "Vereinigtes Institut für Kernforschung",
+						"it": "Istituto unito per la ricerca nucleare",
+						"es": "Instituto Central de Investigaciones Nucleares",
+						"zh": "杜布纳联合原子核研究所",
+						"pt": "Eenheetlecht Institut fir Nuklearfuerschung"
+					}
+				},
+				{
+					"qid": "Q1133630",
+					"name": {
+						"en": "Lawrence Berkeley National Laboratory",
+						"ru": "Национальная лаборатория имени Лоуренса в Беркли",
+						"fr": "Laboratoire national Lawrence-Berkeley",
+						"de": "Lawrence Berkeley National Laboratory",
+						"it": "Lawrence Berkeley National Laboratory",
+						"es": "Lawrence Berkeley National Laboratory",
+						"zh": "劳伦斯伯克利国家实验室",
+						"pt": "Laboratório Nacional de Lawrence Berkeley"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q9123",
+					"name": {
+						"en": "Ernest Rutherford",
+						"ru": "Эрнест Резерфорд",
+						"fr": "Ernest Rutherford",
+						"de": "Ernest Rutherford",
+						"it": "Ernest Rutherford",
+						"es": "Ernest Rutherford",
+						"zh": "欧内斯特·卢瑟福",
+						"pt": "Ernest Rutherford"
+					}
+				}
+			]
 		},
 		{
 			"z": 105,
@@ -6267,7 +9204,7 @@
 				"source": "pubchem-isotope"
 			},
 			"config": "[Rn]7s2 5f14 6d3",
-			"configPredicted": false,
+			"configPredicted": true,
 			"shells": [
 				2,
 				8,
@@ -6278,20 +9215,63 @@
 				2
 			],
 			"state": "solid",
-			"statePredicted": false,
+			"statePredicted": true,
 			"electronegativity": null,
 			"atomicRadius": null,
 			"ionizationEnergy": null,
 			"electronAffinity": null,
 			"oxidationStates": [
-				"5",
-				"4",
-				"3"
+				"+5"
 			],
 			"meltingPoint": null,
+			"meltsUnderPressure": false,
 			"boilingPoint": null,
+			"sublimes": false,
 			"density": null,
-			"yearDiscovered": 1967
+			"yearDiscovered": 1967,
+			"discoveredBy": [
+				{
+					"qid": "Q259517",
+					"name": {
+						"en": "Joint Institute for Nuclear Research",
+						"ru": "Объединённый институт ядерных исследований",
+						"fr": "Institut unifié de recherches nucléaires",
+						"de": "Vereinigtes Institut für Kernforschung",
+						"it": "Istituto unito per la ricerca nucleare",
+						"es": "Instituto Central de Investigaciones Nucleares",
+						"zh": "杜布纳联合原子核研究所",
+						"pt": "Eenheetlecht Institut fir Nuklearfuerschung"
+					}
+				},
+				{
+					"qid": "Q1133630",
+					"name": {
+						"en": "Lawrence Berkeley National Laboratory",
+						"ru": "Национальная лаборатория имени Лоуренса в Беркли",
+						"fr": "Laboratoire national Lawrence-Berkeley",
+						"de": "Lawrence Berkeley National Laboratory",
+						"it": "Lawrence Berkeley National Laboratory",
+						"es": "Lawrence Berkeley National Laboratory",
+						"zh": "劳伦斯伯克利国家实验室",
+						"pt": "Laboratório Nacional de Lawrence Berkeley"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q135466",
+					"name": {
+						"en": "Dubna",
+						"ru": "Дубна",
+						"fr": "Doubna",
+						"de": "Dubna",
+						"it": "Dubna",
+						"es": "Dubná",
+						"zh": "杜布纳",
+						"pt": "Dubna"
+					}
+				}
+			]
 		},
 		{
 			"z": 106,
@@ -6309,14 +9289,14 @@
 			},
 			"wikidata": "Q1234",
 			"wikipedia": {
+				"zh": "https://zh.wikipedia.org/wiki/%F0%A8%AD%8E",
 				"de": "https://de.wikipedia.org/wiki/Seaborgium",
 				"en": "https://en.wikipedia.org/wiki/Seaborgium",
 				"es": "https://es.wikipedia.org/wiki/Seaborgio",
 				"fr": "https://fr.wikipedia.org/wiki/Seaborgium",
 				"it": "https://it.wikipedia.org/wiki/Seaborgio",
 				"pt": "https://pt.wikipedia.org/wiki/Seab%C3%B3rgio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B8%D0%B1%D0%BE%D1%80%D0%B3%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%F0%A8%AD%8E"
+				"ru": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B8%D0%B1%D0%BE%D1%80%D0%B3%D0%B8%D0%B9"
 			},
 			"category": "transition-metal",
 			"period": 7,
@@ -6330,7 +9310,7 @@
 				"source": "pubchem-isotope"
 			},
 			"config": "[Rn]7s2 5f14 6d4",
-			"configPredicted": false,
+			"configPredicted": true,
 			"shells": [
 				2,
 				8,
@@ -6341,22 +9321,50 @@
 				2
 			],
 			"state": "solid",
-			"statePredicted": false,
+			"statePredicted": true,
 			"electronegativity": null,
 			"atomicRadius": null,
 			"ionizationEnergy": null,
 			"electronAffinity": null,
 			"oxidationStates": [
-				"6",
-				"5",
-				"4",
-				"3",
-				"0"
+				"+6"
 			],
 			"meltingPoint": null,
+			"meltsUnderPressure": false,
 			"boilingPoint": null,
+			"sublimes": false,
 			"density": null,
-			"yearDiscovered": 1974
+			"yearDiscovered": 1974,
+			"discoveredBy": [
+				{
+					"qid": "Q1133630",
+					"name": {
+						"en": "Lawrence Berkeley National Laboratory",
+						"ru": "Национальная лаборатория имени Лоуренса в Беркли",
+						"fr": "Laboratoire national Lawrence-Berkeley",
+						"de": "Lawrence Berkeley National Laboratory",
+						"it": "Lawrence Berkeley National Laboratory",
+						"es": "Lawrence Berkeley National Laboratory",
+						"zh": "劳伦斯伯克利国家实验室",
+						"pt": "Laboratório Nacional de Lawrence Berkeley"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q48973",
+					"name": {
+						"en": "Glenn Theodore Seaborg",
+						"ru": "Гленн Теодор Сиборг",
+						"fr": "Glenn Seaborg",
+						"de": "Glenn T. Seaborg",
+						"it": "Glenn Theodore Seaborg",
+						"es": "Glenn T. Seaborg",
+						"zh": "格倫·西奧多·西博格",
+						"pt": "Glenn Theodore Seaborg"
+					}
+				}
+			]
 		},
 		{
 			"z": 107,
@@ -6395,7 +9403,7 @@
 				"source": "pubchem-isotope"
 			},
 			"config": "[Rn]7s2 5f14 6d5",
-			"configPredicted": false,
+			"configPredicted": true,
 			"shells": [
 				2,
 				8,
@@ -6406,21 +9414,50 @@
 				2
 			],
 			"state": "solid",
-			"statePredicted": false,
+			"statePredicted": true,
 			"electronegativity": null,
 			"atomicRadius": null,
 			"ionizationEnergy": null,
 			"electronAffinity": null,
 			"oxidationStates": [
-				"7",
-				"5",
-				"4",
-				"3"
+				"+7"
 			],
 			"meltingPoint": null,
+			"meltsUnderPressure": false,
 			"boilingPoint": null,
+			"sublimes": false,
 			"density": null,
-			"yearDiscovered": 1976
+			"yearDiscovered": 1981,
+			"discoveredBy": [
+				{
+					"qid": "Q703993",
+					"name": {
+						"en": "GSI Helmholtz Centre for Heavy Ion Research",
+						"ru": "Институт тяжёлых ионов",
+						"fr": "centre de recherche sur les ions lourds",
+						"de": "GSI Helmholtzzentrum für Schwerionenforschung",
+						"it": "Gesellschaft für Schwerionenforschung",
+						"es": "GSI",
+						"zh": "亥姆霍兹重离子研究中心",
+						"pt": "Gesellschaft für Schwerionenforschung"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q7085",
+					"name": {
+						"en": "Niels Bohr",
+						"ru": "Нильс Бор",
+						"fr": "Niels Bohr",
+						"de": "Niels Bohr",
+						"it": "Niels Bohr",
+						"es": "Niels Bohr",
+						"zh": "尼尔斯·玻尔",
+						"pt": "Niels Bohr"
+					}
+				}
+			]
 		},
 		{
 			"z": 108,
@@ -6438,14 +9475,14 @@
 			},
 			"wikidata": "Q1252",
 			"wikipedia": {
+				"fr": "https://fr.wikipedia.org/wiki/Hassium",
+				"it": "https://it.wikipedia.org/wiki/Hassio",
 				"de": "https://de.wikipedia.org/wiki/Hassium",
 				"en": "https://en.wikipedia.org/wiki/Hassium",
 				"es": "https://es.wikipedia.org/wiki/Hasio",
-				"fr": "https://fr.wikipedia.org/wiki/Hassium",
-				"it": "https://it.wikipedia.org/wiki/Hassio",
+				"zh": "https://zh.wikipedia.org/wiki/%F0%A8%AD%86",
 				"pt": "https://pt.wikipedia.org/wiki/H%C3%A1ssio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%A5%D0%B0%D1%81%D1%81%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%F0%A8%AD%86"
+				"ru": "https://ru.wikipedia.org/wiki/%D0%A5%D0%B0%D1%81%D1%81%D0%B8%D0%B9"
 			},
 			"category": "transition-metal",
 			"period": 7,
@@ -6459,7 +9496,7 @@
 				"source": "pubchem-isotope"
 			},
 			"config": "[Rn]7s2 5f14 6d6",
-			"configPredicted": false,
+			"configPredicted": true,
 			"shells": [
 				2,
 				8,
@@ -6470,23 +9507,50 @@
 				2
 			],
 			"state": "solid",
-			"statePredicted": false,
+			"statePredicted": true,
 			"electronegativity": null,
 			"atomicRadius": null,
 			"ionizationEnergy": null,
 			"electronAffinity": null,
 			"oxidationStates": [
-				"8",
-				"6",
-				"5",
-				"4",
-				"3",
-				"2"
+				"+8"
 			],
 			"meltingPoint": null,
+			"meltsUnderPressure": false,
 			"boilingPoint": null,
+			"sublimes": false,
 			"density": null,
-			"yearDiscovered": 1984
+			"yearDiscovered": 1984,
+			"discoveredBy": [
+				{
+					"qid": "Q703993",
+					"name": {
+						"en": "GSI Helmholtz Centre for Heavy Ion Research",
+						"ru": "Институт тяжёлых ионов",
+						"fr": "centre de recherche sur les ions lourds",
+						"de": "GSI Helmholtzzentrum für Schwerionenforschung",
+						"it": "Gesellschaft für Schwerionenforschung",
+						"es": "GSI",
+						"zh": "亥姆霍兹重离子研究中心",
+						"pt": "Gesellschaft für Schwerionenforschung"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q1199",
+					"name": {
+						"en": "Hesse",
+						"ru": "Гессен",
+						"fr": "Hesse",
+						"de": "Hessen",
+						"it": "Assia",
+						"es": "Hesse",
+						"zh": "黑森州",
+						"pt": "Hesse"
+					}
+				}
+			]
 		},
 		{
 			"z": 109,
@@ -6504,13 +9568,13 @@
 			},
 			"wikidata": "Q1258",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Meitnerium",
-				"en": "https://en.wikipedia.org/wiki/Meitnerium",
-				"es": "https://es.wikipedia.org/wiki/Meitnerio",
 				"fr": "https://fr.wikipedia.org/wiki/Meitn%C3%A9rium",
 				"it": "https://it.wikipedia.org/wiki/Meitnerio",
 				"pt": "https://pt.wikipedia.org/wiki/Meitn%C3%A9rio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%B9%D1%82%D0%BD%D0%B5%D1%80%D0%B8%D0%B9",
+				"de": "https://de.wikipedia.org/wiki/Meitnerium",
+				"en": "https://en.wikipedia.org/wiki/Meitnerium",
+				"es": "https://es.wikipedia.org/wiki/Meitnerio",
 				"zh": "https://zh.wikipedia.org/wiki/%E4%A5%91"
 			},
 			"category": "transition-metal",
@@ -6524,8 +9588,8 @@
 				"text": "[277]",
 				"source": "pubchem-isotope"
 			},
-			"config": "[Rn]7s2 5f14 6d7 (calculated)",
-			"configPredicted": false,
+			"config": "[Rn]7s2 5f14 6d7",
+			"configPredicted": true,
 			"shells": [
 				2,
 				8,
@@ -6536,23 +9600,48 @@
 				2
 			],
 			"state": "solid",
-			"statePredicted": false,
+			"statePredicted": true,
 			"electronegativity": null,
 			"atomicRadius": null,
 			"ionizationEnergy": null,
 			"electronAffinity": null,
-			"oxidationStates": [
-				"9",
-				"8",
-				"6",
-				"4",
-				"3",
-				"1"
-			],
+			"oxidationStates": [],
 			"meltingPoint": null,
+			"meltsUnderPressure": false,
 			"boilingPoint": null,
+			"sublimes": false,
 			"density": null,
-			"yearDiscovered": 1982
+			"yearDiscovered": 1982,
+			"discoveredBy": [
+				{
+					"qid": "Q703993",
+					"name": {
+						"en": "GSI Helmholtz Centre for Heavy Ion Research",
+						"ru": "Институт тяжёлых ионов",
+						"fr": "centre de recherche sur les ions lourds",
+						"de": "GSI Helmholtzzentrum für Schwerionenforschung",
+						"it": "Gesellschaft für Schwerionenforschung",
+						"es": "GSI",
+						"zh": "亥姆霍兹重离子研究中心",
+						"pt": "Gesellschaft für Schwerionenforschung"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q56189",
+					"name": {
+						"en": "Lise Meitner",
+						"ru": "Лизе Майтнер",
+						"fr": "Lise Meitner",
+						"de": "Lise Meitner",
+						"it": "Lise Meitner",
+						"es": "Lise Meitner",
+						"zh": "莉泽·迈特纳",
+						"pt": "Lise Meitner"
+					}
+				}
+			]
 		},
 		{
 			"z": 110,
@@ -6607,17 +9696,43 @@
 			"atomicRadius": null,
 			"ionizationEnergy": null,
 			"electronAffinity": null,
-			"oxidationStates": [
-				"8",
-				"6",
-				"4",
-				"2",
-				"0"
-			],
+			"oxidationStates": [],
 			"meltingPoint": null,
+			"meltsUnderPressure": false,
 			"boilingPoint": null,
+			"sublimes": false,
 			"density": null,
-			"yearDiscovered": 1994
+			"yearDiscovered": 1994,
+			"discoveredBy": [
+				{
+					"qid": "Q703993",
+					"name": {
+						"en": "GSI Helmholtz Centre for Heavy Ion Research",
+						"ru": "Институт тяжёлых ионов",
+						"fr": "centre de recherche sur les ions lourds",
+						"de": "GSI Helmholtzzentrum für Schwerionenforschung",
+						"it": "Gesellschaft für Schwerionenforschung",
+						"es": "GSI",
+						"zh": "亥姆霍兹重离子研究中心",
+						"pt": "Gesellschaft für Schwerionenforschung"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q2973",
+					"name": {
+						"en": "Darmstadt",
+						"ru": "Дармштадт",
+						"fr": "Darmstadt",
+						"de": "Darmstadt",
+						"it": "Darmstadt",
+						"es": "Darmstadt",
+						"zh": "达姆施塔特",
+						"pt": "Darmstadt"
+					}
+				}
+			]
 		},
 		{
 			"z": 111,
@@ -6636,13 +9751,13 @@
 			"wikidata": "Q1272",
 			"wikipedia": {
 				"it": "https://it.wikipedia.org/wiki/Roentgenio",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%8C%80",
-				"pt": "https://pt.wikipedia.org/wiki/Roentg%C3%AAnio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%A0%D0%B5%D0%BD%D1%82%D0%B3%D0%B5%D0%BD%D0%B8%D0%B9",
 				"de": "https://de.wikipedia.org/wiki/Roentgenium",
 				"en": "https://en.wikipedia.org/wiki/Roentgenium",
 				"es": "https://es.wikipedia.org/wiki/Roentgenio",
-				"fr": "https://fr.wikipedia.org/wiki/Roentgenium"
+				"fr": "https://fr.wikipedia.org/wiki/Roentgenium",
+				"pt": "https://pt.wikipedia.org/wiki/Roentg%C3%AAnio",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%A0%D0%B5%D0%BD%D1%82%D0%B3%D0%B5%D0%BD%D0%B8%D0%B9",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%8C%80"
 			},
 			"category": "transition-metal",
 			"period": 7,
@@ -6672,16 +9787,43 @@
 			"atomicRadius": null,
 			"ionizationEnergy": null,
 			"electronAffinity": null,
-			"oxidationStates": [
-				"5",
-				"3",
-				"1",
-				"-1"
-			],
+			"oxidationStates": [],
 			"meltingPoint": null,
+			"meltsUnderPressure": false,
 			"boilingPoint": null,
+			"sublimes": false,
 			"density": null,
-			"yearDiscovered": 1994
+			"yearDiscovered": 1994,
+			"discoveredBy": [
+				{
+					"qid": "Q703993",
+					"name": {
+						"en": "GSI Helmholtz Centre for Heavy Ion Research",
+						"ru": "Институт тяжёлых ионов",
+						"fr": "centre de recherche sur les ions lourds",
+						"de": "GSI Helmholtzzentrum für Schwerionenforschung",
+						"it": "Gesellschaft für Schwerionenforschung",
+						"es": "GSI",
+						"zh": "亥姆霍兹重离子研究中心",
+						"pt": "Gesellschaft für Schwerionenforschung"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q35149",
+					"name": {
+						"en": "Wilhelm Röntgen",
+						"ru": "Вильгельм Рентген",
+						"fr": "Wilhelm Röntgen",
+						"de": "Wilhelm Conrad Röntgen",
+						"it": "Wilhelm Conrad Röntgen",
+						"es": "Wilhelm Röntgen",
+						"zh": "威廉·康拉德·伦琴",
+						"pt": "Wilhelm Conrad Röntgen"
+					}
+				}
+			]
 		},
 		{
 			"z": 112,
@@ -6736,15 +9878,43 @@
 			"atomicRadius": null,
 			"ionizationEnergy": null,
 			"electronAffinity": null,
-			"oxidationStates": [
-				"2",
-				"1",
-				"0"
-			],
+			"oxidationStates": [],
 			"meltingPoint": null,
+			"meltsUnderPressure": false,
 			"boilingPoint": null,
+			"sublimes": false,
 			"density": null,
-			"yearDiscovered": 1996
+			"yearDiscovered": 1996,
+			"discoveredBy": [
+				{
+					"qid": "Q703993",
+					"name": {
+						"en": "GSI Helmholtz Centre for Heavy Ion Research",
+						"ru": "Институт тяжёлых ионов",
+						"fr": "centre de recherche sur les ions lourds",
+						"de": "GSI Helmholtzzentrum für Schwerionenforschung",
+						"it": "Gesellschaft für Schwerionenforschung",
+						"es": "GSI",
+						"zh": "亥姆霍兹重离子研究中心",
+						"pt": "Gesellschaft für Schwerionenforschung"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q619",
+					"name": {
+						"en": "Nicolaus Copernicus",
+						"ru": "Николай Коперник",
+						"fr": "Nicolas Copernic",
+						"de": "Nikolaus Kopernikus",
+						"it": "Niccolò Copernico",
+						"es": "Nicolás Copérnico",
+						"zh": "尼古拉·哥白尼",
+						"pt": "Nicolaus Copernicus"
+					}
+				}
+			]
 		},
 		{
 			"z": 113,
@@ -6762,14 +9932,14 @@
 			},
 			"wikidata": "Q1301",
 			"wikipedia": {
-				"zh": "https://zh.wikipedia.org/wiki/%E9%89%A8",
 				"de": "https://de.wikipedia.org/wiki/Nihonium",
 				"en": "https://en.wikipedia.org/wiki/Nihonium",
 				"es": "https://es.wikipedia.org/wiki/Nihonio",
 				"fr": "https://fr.wikipedia.org/wiki/Nihonium",
 				"it": "https://it.wikipedia.org/wiki/Nihonio",
 				"pt": "https://pt.wikipedia.org/wiki/Nihonium",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%9D%D0%B8%D1%85%D0%BE%D0%BD%D0%B8%D0%B9"
+				"ru": "https://ru.wikipedia.org/wiki/%D0%9D%D0%B8%D1%85%D0%BE%D0%BD%D0%B8%D0%B9",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%89%A8"
 			},
 			"category": "post-transition-metal",
 			"period": 7,
@@ -6801,9 +9971,41 @@
 			"electronAffinity": null,
 			"oxidationStates": [],
 			"meltingPoint": null,
+			"meltsUnderPressure": false,
 			"boilingPoint": null,
+			"sublimes": false,
 			"density": null,
-			"yearDiscovered": 2004
+			"yearDiscovered": 2004,
+			"discoveredBy": [
+				{
+					"qid": "Q1153275",
+					"name": {
+						"en": "RIKEN",
+						"ru": "RIKEN",
+						"fr": "RIKEN",
+						"de": "RIKEN",
+						"it": "RIKEN",
+						"es": "RIKEN",
+						"zh": "理化学研究所",
+						"pt": "RIKEN"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q17",
+					"name": {
+						"en": "Japan",
+						"ru": "Япония",
+						"fr": "Japon",
+						"de": "Japan",
+						"it": "Giappone",
+						"es": "Japón",
+						"zh": "日本",
+						"pt": "Japão"
+					}
+				}
+			]
 		},
 		{
 			"z": 114,
@@ -6821,14 +10023,14 @@
 			},
 			"wikidata": "Q1302",
 			"wikipedia": {
+				"ru": "https://ru.wikipedia.org/wiki/%D0%A4%D0%BB%D0%B5%D1%80%D0%BE%D0%B2%D0%B8%D0%B9",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%88%87",
 				"de": "https://de.wikipedia.org/wiki/Flerovium",
 				"en": "https://en.wikipedia.org/wiki/Flerovium",
 				"es": "https://es.wikipedia.org/wiki/Flerovio",
 				"fr": "https://fr.wikipedia.org/wiki/Fl%C3%A9rovium",
 				"it": "https://it.wikipedia.org/wiki/Flerovio",
-				"pt": "https://pt.wikipedia.org/wiki/Fler%C3%B3vio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%A4%D0%BB%D0%B5%D1%80%D0%BE%D0%B2%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%88%87"
+				"pt": "https://pt.wikipedia.org/wiki/Fler%C3%B3vio"
 			},
 			"category": "post-transition-metal",
 			"period": 7,
@@ -6858,17 +10060,29 @@
 			"atomicRadius": null,
 			"ionizationEnergy": null,
 			"electronAffinity": null,
-			"oxidationStates": [
-				"6",
-				"4",
-				"2",
-				"1",
-				"0"
-			],
+			"oxidationStates": [],
 			"meltingPoint": null,
+			"meltsUnderPressure": false,
 			"boilingPoint": null,
+			"sublimes": false,
 			"density": null,
-			"yearDiscovered": 1998
+			"yearDiscovered": 1998,
+			"discoveredBy": [
+				{
+					"qid": "Q259517",
+					"name": {
+						"en": "Joint Institute for Nuclear Research",
+						"ru": "Объединённый институт ядерных исследований",
+						"fr": "Institut unifié de recherches nucléaires",
+						"de": "Vereinigtes Institut für Kernforschung",
+						"it": "Istituto unito per la ricerca nucleare",
+						"es": "Instituto Central de Investigaciones Nucleares",
+						"zh": "杜布纳联合原子核研究所",
+						"pt": "Eenheetlecht Institut fir Nuklearfuerschung"
+					}
+				}
+			],
+			"namedAfter": []
 		},
 		{
 			"z": 115,
@@ -6923,14 +10137,43 @@
 			"atomicRadius": null,
 			"ionizationEnergy": null,
 			"electronAffinity": null,
-			"oxidationStates": [
-				"3",
-				"1"
-			],
+			"oxidationStates": [],
 			"meltingPoint": null,
+			"meltsUnderPressure": false,
 			"boilingPoint": null,
+			"sublimes": false,
 			"density": null,
-			"yearDiscovered": 2003
+			"yearDiscovered": 2003,
+			"discoveredBy": [
+				{
+					"qid": "Q259517",
+					"name": {
+						"en": "Joint Institute for Nuclear Research",
+						"ru": "Объединённый институт ядерных исследований",
+						"fr": "Institut unifié de recherches nucléaires",
+						"de": "Vereinigtes Institut für Kernforschung",
+						"it": "Istituto unito per la ricerca nucleare",
+						"es": "Instituto Central de Investigaciones Nucleares",
+						"zh": "杜布纳联合原子核研究所",
+						"pt": "Eenheetlecht Institut fir Nuklearfuerschung"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q1697",
+					"name": {
+						"en": "Moscow Oblast",
+						"ru": "Московская область",
+						"fr": "oblast de Moscou",
+						"de": "Oblast Moskau",
+						"it": "oblast' di Mosca",
+						"es": "Óblast de Moscú",
+						"zh": "莫斯科州",
+						"pt": "Oblast de Moscou"
+					}
+				}
+			]
 		},
 		{
 			"z": 116,
@@ -6948,14 +10191,14 @@
 			},
 			"wikidata": "Q1304",
 			"wikipedia": {
-				"zh": "https://zh.wikipedia.org/wiki/%E9%89%9D",
 				"de": "https://de.wikipedia.org/wiki/Livermorium",
 				"en": "https://en.wikipedia.org/wiki/Livermorium",
 				"es": "https://es.wikipedia.org/wiki/Livermorio",
 				"fr": "https://fr.wikipedia.org/wiki/Livermorium",
 				"it": "https://it.wikipedia.org/wiki/Livermorio",
 				"pt": "https://pt.wikipedia.org/wiki/Liverm%C3%B3rio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%9B%D0%B8%D0%B2%D0%B5%D1%80%D0%BC%D0%BE%D1%80%D0%B8%D0%B9"
+				"ru": "https://ru.wikipedia.org/wiki/%D0%9B%D0%B8%D0%B2%D0%B5%D1%80%D0%BC%D0%BE%D1%80%D0%B8%D0%B9",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%89%9D"
 			},
 			"category": "post-transition-metal",
 			"period": 7,
@@ -6985,15 +10228,43 @@
 			"atomicRadius": null,
 			"ionizationEnergy": null,
 			"electronAffinity": null,
-			"oxidationStates": [
-				"+4",
-				"+2",
-				"-2"
-			],
+			"oxidationStates": [],
 			"meltingPoint": null,
+			"meltsUnderPressure": false,
 			"boilingPoint": null,
+			"sublimes": false,
 			"density": null,
-			"yearDiscovered": 2000
+			"yearDiscovered": 2000,
+			"discoveredBy": [
+				{
+					"qid": "Q259517",
+					"name": {
+						"en": "Joint Institute for Nuclear Research",
+						"ru": "Объединённый институт ядерных исследований",
+						"fr": "Institut unifié de recherches nucléaires",
+						"de": "Vereinigtes Institut für Kernforschung",
+						"it": "Istituto unito per la ricerca nucleare",
+						"es": "Instituto Central de Investigaciones Nucleares",
+						"zh": "杜布纳联合原子核研究所",
+						"pt": "Eenheetlecht Institut fir Nuklearfuerschung"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q519826",
+					"name": {
+						"en": "Lawrence Livermore National Laboratory",
+						"ru": "Ливерморская национальная лаборатория",
+						"fr": "Laboratoire national de Lawrence Livermore",
+						"de": "Lawrence Livermore National Laboratory",
+						"it": "Lawrence Livermore National Laboratory",
+						"es": "Laboratorio Nacional Lawrence Livermore",
+						"zh": "勞倫斯利福摩爾國家實驗室",
+						"pt": "Laboratório Nacional de Lawrence Livermore"
+					}
+				}
+			]
 		},
 		{
 			"z": 117,
@@ -7011,13 +10282,13 @@
 			},
 			"wikidata": "Q1306",
 			"wikipedia": {
-				"it": "https://it.wikipedia.org/wiki/Tennesso",
-				"pt": "https://pt.wikipedia.org/wiki/Tenesso",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D0%BD%D0%BD%D0%B5%D1%81%D1%81%D0%B8%D0%BD",
 				"de": "https://de.wikipedia.org/wiki/Tenness",
 				"en": "https://en.wikipedia.org/wiki/Tennessine",
 				"es": "https://es.wikipedia.org/wiki/Teneso",
 				"fr": "https://fr.wikipedia.org/wiki/Tennesse",
+				"it": "https://it.wikipedia.org/wiki/Tennesso",
+				"pt": "https://pt.wikipedia.org/wiki/Tenesso",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D0%BD%D0%BD%D0%B5%D1%81%D1%81%D0%B8%D0%BD",
 				"zh": "https://zh.wikipedia.org/wiki/%E9%BF%AC"
 			},
 			"category": "halogen",
@@ -7048,16 +10319,43 @@
 			"atomicRadius": null,
 			"ionizationEnergy": null,
 			"electronAffinity": null,
-			"oxidationStates": [
-				"+5",
-				"+3",
-				"+1",
-				"-1"
-			],
+			"oxidationStates": [],
 			"meltingPoint": null,
+			"meltsUnderPressure": false,
 			"boilingPoint": null,
+			"sublimes": false,
 			"density": null,
-			"yearDiscovered": 2010
+			"yearDiscovered": 2010,
+			"discoveredBy": [
+				{
+					"qid": "Q1144326",
+					"name": {
+						"en": "Yuri Oganessian",
+						"ru": "Юрий Оганесян",
+						"fr": "Iouri Oganessian",
+						"de": "Juri Zolakowitsch Oganessian",
+						"it": "Jurij Colakovič Oganesian",
+						"es": "Yuri Tsolakovich Oganessian",
+						"zh": "尤里·奥加涅相",
+						"pt": "Yuri Oganessian"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q1509",
+					"name": {
+						"en": "Tennessee",
+						"ru": "Теннесси",
+						"fr": "Tennessee",
+						"de": "Tennessee",
+						"it": "Tennessee",
+						"es": "Tennessee",
+						"zh": "田纳西州",
+						"pt": "Tennessee"
+					}
+				}
+			]
 		},
 		{
 			"z": 118,
@@ -7075,14 +10373,14 @@
 			},
 			"wikidata": "Q1307",
 			"wikipedia": {
+				"pt": "https://pt.wikipedia.org/wiki/Oganesson",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%9E%D0%B3%D0%B0%D0%BD%D0%B5%D1%81%D0%BE%D0%BD",
 				"zh": "https://zh.wikipedia.org/wiki/%E9%BF%AB",
 				"de": "https://de.wikipedia.org/wiki/Oganesson",
 				"en": "https://en.wikipedia.org/wiki/Oganesson",
 				"es": "https://es.wikipedia.org/wiki/Oganes%C3%B3n",
 				"fr": "https://fr.wikipedia.org/wiki/Oganesson",
-				"it": "https://it.wikipedia.org/wiki/Oganesson",
-				"pt": "https://pt.wikipedia.org/wiki/Oganesson",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%9E%D0%B3%D0%B0%D0%BD%D0%B5%D1%81%D0%BE%D0%BD"
+				"it": "https://it.wikipedia.org/wiki/Oganesson"
 			},
 			"category": "noble-gas",
 			"period": 7,
@@ -7112,18 +10410,43 @@
 			"atomicRadius": null,
 			"ionizationEnergy": null,
 			"electronAffinity": null,
-			"oxidationStates": [
-				"+6",
-				"+4",
-				"+2",
-				"+1",
-				"0",
-				"-1"
-			],
+			"oxidationStates": [],
 			"meltingPoint": null,
+			"meltsUnderPressure": false,
 			"boilingPoint": null,
+			"sublimes": false,
 			"density": null,
-			"yearDiscovered": 2006
+			"yearDiscovered": 2006,
+			"discoveredBy": [
+				{
+					"qid": "Q259517",
+					"name": {
+						"en": "Joint Institute for Nuclear Research",
+						"ru": "Объединённый институт ядерных исследований",
+						"fr": "Institut unifié de recherches nucléaires",
+						"de": "Vereinigtes Institut für Kernforschung",
+						"it": "Istituto unito per la ricerca nucleare",
+						"es": "Instituto Central de Investigaciones Nucleares",
+						"zh": "杜布纳联合原子核研究所",
+						"pt": "Eenheetlecht Institut fir Nuklearfuerschung"
+					}
+				}
+			],
+			"namedAfter": [
+				{
+					"qid": "Q1144326",
+					"name": {
+						"en": "Yuri Oganessian",
+						"ru": "Юрий Оганесян",
+						"fr": "Iouri Oganessian",
+						"de": "Juri Zolakowitsch Oganessian",
+						"it": "Jurij Colakovič Oganesian",
+						"es": "Yuri Tsolakovich Oganessian",
+						"zh": "尤里·奥加涅相",
+						"pt": "Yuri Oganessian"
+					}
+				}
+			]
 		}
 	]
 }

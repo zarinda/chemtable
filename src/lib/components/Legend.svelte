@@ -40,9 +40,6 @@
 			<p class="trend">{app.t.trend[app.mode]}</p>
 		</div>
 	{/if}
-	<p class="sources">
-		<a href="#sources">{app.t.sources}</a>
-	</p>
 </footer>
 
 <style>
@@ -139,12 +136,6 @@
 			overflow-x: auto;
 			scrollbar-width: none;
 		}
-	}
-
-	.sources {
-		flex: none;
-		margin: 0 0 0 auto;
-		font-size: var(--step--1);
 	}
 
 	@keyframes fade {

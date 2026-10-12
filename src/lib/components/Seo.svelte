@@ -59,7 +59,13 @@
 					license: DATA_LICENSE.url,
 					creator: { '@id': AUTHOR_ID },
 					publisher: { '@id': AUTHOR_ID },
-					isBasedOn: [sources.properties, sources.atomicWeights, 'https://www.wikidata.org/'],
+					isBasedOn: [
+						sources.properties,
+						sources.atomicWeights,
+						sources.ionizationEnergies,
+						sources.covalentRadii,
+						'https://www.wikidata.org/'
+					],
 					dateModified: fetchedAt,
 					variableMeasured: [
 						t.atomicMass,

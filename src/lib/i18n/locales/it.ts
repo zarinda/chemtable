@@ -22,7 +22,7 @@ export const it: Dict = {
 	property: {
 		mass: 'Massa atomica',
 		electronegativity: 'Elettronegatività',
-		atomicRadius: 'Raggio di van der Waals',
+		atomicRadius: 'Raggio covalente',
 		density: 'Densità',
 		meltingPoint: 'Punto di fusione',
 		ionizationEnergy: 'Energia di ionizzazione'
@@ -41,6 +41,9 @@ export const it: Dict = {
 	block: 'Blocco',
 	state: { solid: 'Solido', liquid: 'Liquido', gas: 'Gassoso' },
 	predicted: 'previsto',
+	underPressure: 'solo sotto pressione',
+	sublimes: 'sublimazione',
+	anionUnstable: 'nessuno ione negativo stabile',
 	atomicMass: 'Massa atomica',
 	massIsotope: 'numero di massa dell’isotopo più stabile',
 	config: 'Configurazione elettronica',
@@ -50,10 +53,12 @@ export const it: Dict = {
 	electronAffinity: 'Affinità elettronica',
 	discovered: 'Scoperta',
 	ancient: 'noto fin dall’antichità',
+	discoveredBy: 'Scoperto da',
+	namedAfter: 'Prende il nome da',
 	close: 'Chiudi',
 	sources: 'Fonti dei dati',
 	sourcesNote:
-		'Proprietà: PubChem (NIH). Masse atomiche: IUPAC CIAAW, valori standard abbreviati. Tra parentesi quadre: numero di massa dell’isotopo più stabile. Nomi degli elementi: Wikidata.',
+		'Masse atomiche: IUPAC CIAAW, valori standard abbreviati; tra parentesi quadre, numero di massa dell’isotopo più stabile. Energie di ionizzazione: NIST. Affinità elettroniche: valori misurati (tabella di Wikipedia con fonti primarie). Raggi covalenti: Cordero et al. (2008). Altre proprietà: PubChem (NIH), verificate con il CRC Handbook. Nomi degli elementi: Wikidata.',
 	theme: { light: 'Tema chiaro', dark: 'Tema scuro', system: 'Come il sistema' },
 	language: 'Lingua',
 	madeBy: 'Creato da ',
@@ -62,7 +67,8 @@ export const it: Dict = {
 		mass: 'Massa media di un atomo in unità di massa atomica (1 u è 1/12 della massa di un atomo di carbonio-12). Tiene conto della miscela naturale degli isotopi dell’elemento.',
 		group:
 			'Numero della colonna verticale, da 1 a 18 secondo la numerazione IUPAC. Gli elementi di uno stesso gruppo hanno lo stesso guscio esterno e quindi proprietà simili.',
-		period: 'Numero della riga orizzontale. È uguale al numero di gusci elettronici dell’atomo.',
+		period:
+			'Numero della riga orizzontale. Di solito è uguale al numero di gusci elettronici dell’atomo; fa eccezione il palladio, con quattro gusci nel periodo 5.',
 		block:
 			'Il sottolivello (s, p, d o f) riempito per ultimo dagli elettroni. Ogni blocco forma un’area rettangolare della tavola.',
 		config:
@@ -71,18 +77,20 @@ export const it: Dict = {
 		electronegativity:
 			'Quanto fortemente un atomo attira gli elettroni in un legame chimico. Nella scala di Pauling va da 0,7 del francio a 3,98 del fluoro.',
 		atomicRadius:
-			'Metà della distanza a cui si avvicinano due atomi vicini non legati. È maggiore del raggio covalente o metallico dei libri di testo: 194 pm per il ferro contro circa 126 pm.',
+			'Metà della lunghezza di un legame covalente semplice tra due atomi dell’elemento. Indica la dimensione dell’atomo in una molecola o in un cristallo: 76 pm per il carbonio, 132 pm per il ferro.',
 		density: 'Massa di un centimetro cubo della sostanza. Per i gas, a 0 °C e pressione normale.',
-		meltingPoint: 'Temperatura alla quale il solido diventa liquido a pressione normale.',
-		boilingPoint: 'Temperatura alla quale il liquido bolle a pressione normale.',
+		meltingPoint:
+			'Temperatura alla quale il solido diventa liquido a pressione normale. Elio, carbonio e arsenico non fondono a pressione normale: l’elio richiede circa 25 atm, carbonio e arsenico passano direttamente allo stato di vapore.',
+		boilingPoint:
+			'Temperatura alla quale il liquido bolle a pressione normale. Per carbonio e arsenico, temperatura alla quale il solido sublima.',
 		ionizationEnergy:
 			'Energia necessaria per strappare all’atomo l’elettrone meno legato. Più è bassa, più facilmente l’elemento cede un elettrone, come è tipico dei metalli.',
 		electronAffinity:
-			'Energia liberata quando un atomo neutro acquista un elettrone. È massima per gli alogeni.',
-		oxidationStates: 'Cariche formali che l’atomo può assumere nei suoi composti.'
+			'Energia liberata quando un atomo neutro acquista un elettrone. È massima per gli alogeni. I gas nobili, l’azoto e alcuni metalli non formano ioni negativi stabili.',
+		oxidationStates: 'Principali cariche formali che l’atomo assume nei suoi composti.'
 	},
 	trend: {
-		mass: 'Cresce con il numero atomico: da sinistra a destra e dall’alto in basso.',
+		mass: 'Cresce con il numero atomico, con poche eccezioni: l’argon è più pesante del potassio, il cobalto del nichel, il tellurio dello iodio.',
 		electronegativity:
 			'Aumenta da sinistra a destra lungo un periodo e diminuisce dall’alto in basso lungo un gruppo. Il fluoro ha il valore più alto.',
 		atomicRadius:
@@ -139,7 +147,7 @@ export const it: Dict = {
 		paragraphs: [
 			'Una tavola periodica interattiva di tutti i 118 elementi chimici, pensata per gli studenti. Apri un elemento per vedere massa atomica, configurazione elettronica, punti di fusione e di ebollizione, densità, elettronegatività, energia di ionizzazione e stati di ossidazione, ciascuno con una breve spiegazione.',
 			'Colora la tavola per categoria o per proprietà per vedere le tendenze periodiche: come l’elettronegatività cresce verso il fluoro, o come gli atomi diventano più grandi scendendo lungo ogni gruppo.',
-			'Le proprietà provengono da PubChem (National Institutes of Health degli Stati Uniti), le masse atomiche standard dalla IUPAC CIAAW e i nomi degli elementi in otto lingue da Wikidata.'
+			'Le masse atomiche provengono dalla IUPAC CIAAW, le energie di ionizzazione dal NIST, i raggi covalenti da Cordero et al. (2008) e le altre proprietà da PubChem (National Institutes of Health degli Stati Uniti), verificate con il CRC Handbook. I nomi degli elementi in otto lingue provengono da Wikidata.'
 		]
 	},
 	data: {

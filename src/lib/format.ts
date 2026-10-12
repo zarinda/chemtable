@@ -1,4 +1,5 @@
 import { LANG_INFO, type Lang } from './i18n/langs';
+import type { Named } from './elements';
 
 const locale = (lang: Lang) => LANG_INFO[lang].tag;
 
@@ -14,8 +15,20 @@ export function formatMass(text: string, lang: Lang): string {
 	return text.replace('.', decimalSeparator(lang));
 }
 
+/** "Lockyer, Janssen and Ramsay", joined the way the language joins lists. */
+export function formatNames(items: Named[], lang: Lang): string {
+	return new Intl.ListFormat(locale(lang), { type: 'conjunction' }).format(items.map((x) => x.name[lang]));
+}
+
+/**
+ * Keeps the precision of the source value: 1811 K → 1538 °C (not 1537.9), 0.95 K → −272.2 °C.
+ * Works in hundredths of a degree to avoid floating-point rounding (317.3 K → 44.2 °C).
+ */
 export function kelvinToCelsius(k: number): number {
-	return Math.round((k - 273.15) * 10) / 10;
+	const decimals = Math.min(String(k).split('.')[1]?.length ?? 0, 2);
+	const hundredths = Math.round(k * 100) - 27315;
+	const step = 10 ** (2 - decimals);
+	return (Math.round(hundredths / step) * step) / 100;
 }
 
 const SUPERSCRIPT: Record<string, string> = {

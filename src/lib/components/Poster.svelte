@@ -3,9 +3,12 @@
 	import { cubicInOut } from 'svelte/easing';
 	import { app } from '#lib/state.svelte.ts';
 	import { elements, sources, type Element } from '#lib/elements.ts';
-	import { formatConfig, formatMass, formatNumber, kelvinToCelsius } from '#lib/format.ts';
+	import { formatConfig, formatMass, formatNames, formatNumber, kelvinToCelsius } from '#lib/format.ts';
 	import type { Term } from '#lib/i18n/ui.ts';
 	import Shells from './Shells.svelte';
+	import { dev } from '$app/env';
+	import { showAds, adOnTop } from '#lib/ads.ts';
+	import Related from './Related.svelte';
 
 	let { element }: { element: Element | null } = $props();
 
@@ -45,18 +48,21 @@
 		if (event.key === 'ArrowLeft') app.step(e.z - 1);
 	}
 
-	const celsius = (k: number | null) =>
+	const celsius = (k: number | null, note = false, noteText = '') =>
 		k === null
 			? t.noData
-			: `${formatNumber(kelvinToCelsius(k), app.lang, 1)} °C (${formatNumber(k, app.lang, 2)} K)`;
+			: `${formatNumber(kelvinToCelsius(k), app.lang, 1)} °C (${formatNumber(k, app.lang, 2)} K)` +
+				(note ? `, ${noteText}` : '');
 	const num = (v: number | null, unit: string, digits = 3) =>
 		v === null ? t.noData : `${formatNumber(v, app.lang, digits)} ${unit}`;
+	const affinity = (v: number | 'unstable' | null) =>
+		v === 'unstable' ? t.anionUnstable : num(v, t.unit.ionizationEnergy);
 
 	let facts = $derived.by(() => {
 		if (!e) return [];
 		const rows: [Term | null, string, string][] = [
-			['meltingPoint', t.property.meltingPoint, celsius(e.meltingPoint)],
-			['boilingPoint', t.boilingPoint, celsius(e.boilingPoint)],
+			['meltingPoint', t.property.meltingPoint, celsius(e.meltingPoint, e.meltsUnderPressure, t.underPressure)],
+			['boilingPoint', t.boilingPoint, celsius(e.boilingPoint, e.sublimes, t.sublimes)],
 			[
 				'density',
 				t.property.density,
@@ -72,7 +78,7 @@
 				t.property.ionizationEnergy,
 				num(e.ionizationEnergy, t.unit.ionizationEnergy)
 			],
-			['electronAffinity', t.electronAffinity, num(e.electronAffinity, t.unit.ionizationEnergy)],
+			['electronAffinity', t.electronAffinity, affinity(e.electronAffinity)],
 			['atomicRadius', t.property.atomicRadius, num(e.atomicRadius, t.unit.atomicRadius, 0)],
 			[
 				'oxidationStates',
@@ -85,6 +91,8 @@
 				e.yearDiscovered === 'ancient' ? t.ancient : (e.yearDiscovered?.toString() ?? t.noData)
 			]
 		];
+		if (e.discoveredBy.length) rows.push([null, t.discoveredBy, formatNames(e.discoveredBy, app.lang)]);
+		if (e.namedAfter.length) rows.push([null, t.namedAfter, formatNames(e.namedAfter, app.lang)]);
 		return rows;
 	});
 </script>
@@ -124,7 +132,7 @@
 						{onkeydown}
 					>
 						{#key e.z}
-							<div class="layout">
+							<div class="layout" class:ad-bottom={showAds() && !adOnTop()} class:ad-top={showAds() && adOnTop()}>
 								<header class="top">
 									<Dialog.Title level={2} class="name">
 										{e.name[app.lang]}
@@ -229,9 +237,18 @@
 										<a href="https://pubchem.ncbi.nlm.nih.gov/element/{e.z}" target="_blank" rel="noreferrer">
 											PubChem
 										</a>,
-										<a href={sources.atomicWeights} target="_blank" rel="noreferrer">IUPAC CIAAW</a>
+										<a href={sources.atomicWeights} target="_blank" rel="noreferrer">IUPAC CIAAW</a>,
+										<a href={sources.ionizationEnergies} target="_blank" rel="noreferrer">NIST</a>
 									</p>
 								</div>
+
+								{#if dev && showAds()}
+									{#await import('./AdPreview.svelte') then { default: AdPreview }}
+										<div class="ad-slot"><AdPreview format="banner" /></div>
+									{/await}
+								{/if}
+
+								<div class="more"><Related element={e} /></div>
 							</div>
 						{/key}
 					</div>
@@ -257,11 +274,41 @@
 		grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
 		grid-template-areas:
 			'top top'
-			'figure data';
+			'figure data'
+			'more more';
 		gap: 24px clamp(24px, 5vw, 80px);
 		min-height: 100%;
 		padding: 20px clamp(16px, 4vw, 56px) 40px;
 		animation: content-in 0.4s ease 0.3s backwards;
+	}
+
+	.layout.ad-bottom {
+		grid-template-areas:
+			'top top'
+			'figure data'
+			'ad ad'
+			'more more';
+	}
+
+	.layout.ad-top {
+		grid-template-areas:
+			'top top'
+			'ad ad'
+			'figure data'
+			'more more';
+	}
+
+	.ad-slot {
+		grid-area: ad;
+		display: grid;
+		padding-top: 16px;
+	}
+
+	/* Clear space from the ad, so taps meant for the links don't land on it. */
+	.more {
+		grid-area: more;
+		min-width: 0;
+		margin-top: 32px;
 	}
 
 	.top {
@@ -507,7 +554,13 @@
 	@media (max-width: 760px) {
 		.layout {
 			grid-template-columns: minmax(0, 1fr);
-			grid-template-areas: 'top' 'figure' 'data';
+			grid-template-areas: 'top' 'figure' 'data' 'more';
+		}
+		.layout.ad-bottom {
+			grid-template-areas: 'top' 'figure' 'data' 'ad' 'more';
+		}
+		.layout.ad-top {
+			grid-template-areas: 'top' 'ad' 'figure' 'data' 'more';
 		}
 		.top {
 			flex-direction: column;

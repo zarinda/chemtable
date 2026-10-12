@@ -25,13 +25,13 @@ Generated data and assets only need regenerating when their inputs change:
 
 | Command | Output | When |
 |---|---|---|
-| `npm run data` | `src/lib/data/elements.json` from PubChem, IUPAC CIAAW and Wikidata | data refresh |
+| `npm run data` | `src/lib/data/elements.json` from PubChem, IUPAC CIAAW, NIST, Wikidata and the hand-checked `scripts/corrections.ts` | data refresh |
 | `npm run fonts` | Noto Sans SC subset in `static/fonts/` (needs internet) | after editing Chinese text |
 | `npm run og` | Open Graph images in `static/og/` (missing ones; `-- --force` for all, ~15 min) | after changing the domain, palette or texts |
 | `npm run pdf` | 32 printable PDFs in `static/print/` (needs Chrome, Edge or Chromium; set `CHROME_PATH` if not found) | after changing the domain, palette or data |
 | `npm run favicon` | icons in `static/` | after changing the icon |
 
-Product, design, data and SEO decisions are in [docs/SPEC.md](docs/SPEC.md).
+Product, data and SEO decisions are in [docs/SPEC.md](docs/SPEC.md), design in [DESIGN.md](DESIGN.md), working notes for contributors and AI assistants in [CLAUDE.md](CLAUDE.md).
 
 ## Translations
 

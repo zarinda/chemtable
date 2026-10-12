@@ -11,6 +11,8 @@
 	import Legend from './Legend.svelte';
 	import Poster from './Poster.svelte';
 	import ElementArticle from './ElementArticle.svelte';
+	import { dev } from '$app/env';
+	import { showAds } from '#lib/ads.ts';
 
 	let opened = $derived(app.openedZ ? elements[app.openedZ - 1] : null);
 
@@ -29,12 +31,19 @@
 
 <!-- Inside <main>, the header and the legend's footer stop being page-wide landmarks. -->
 <main>
-	<div class="frame">
-		<div class="app">
-			<Controls />
-			<Table />
-			<Legend />
+	<div class="stage">
+		<div class="frame">
+			<div class="app">
+				<Controls />
+				<Table />
+				<Legend />
+			</div>
 		</div>
+		{#if dev && showAds()}
+			{#await import('./AdPreview.svelte') then { default: AdPreview }}
+				<AdPreview />
+			{/await}
+		{/if}
 	</div>
 
 	{#if opened}
@@ -69,6 +78,9 @@
 		<ul>
 			<li><a href="https://pubchem.ncbi.nlm.nih.gov/periodic-table/">PubChem Periodic Table</a> (NIH)</li>
 			<li><a href={sources.atomicWeights}>IUPAC CIAAW, Abridged Standard Atomic Weights</a></li>
+			<li><a href={sources.ionizationEnergies}>NIST Atomic Spectra Database, Ionization Energies</a></li>
+			<li><a href={sources.electronAffinities}>Electron affinity (data page)</a>, Wikipedia</li>
+			<li><a href={sources.covalentRadii}>Cordero et al., Covalent radii revisited (2008)</a></li>
 			<li><a href="https://www.wikidata.org/">Wikidata</a></li>
 		</ul>
 
@@ -106,8 +118,14 @@
 <Poster element={opened} />
 
 <style>
-	/* The table sizes itself from this width, which excludes the page scrollbar. */
+	.stage {
+		display: flex;
+	}
+
+	/* The table sizes itself from this width, which excludes the page scrollbar and any side column. */
 	.frame {
+		flex: 1;
+		min-width: 0;
 		container-type: inline-size;
 	}
 

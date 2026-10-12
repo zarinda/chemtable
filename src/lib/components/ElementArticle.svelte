@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { app } from '#lib/state.svelte.ts';
 	import { elements, type Element } from '#lib/elements.ts';
-	import { formatConfig, formatMass, formatNumber, kelvinToCelsius } from '#lib/format.ts';
+	import { formatConfig, formatMass, formatNames, formatNumber, kelvinToCelsius } from '#lib/format.ts';
 	import { elementPath, homePath, summaryFacts } from '#lib/seo.ts';
 
 	/**
@@ -13,12 +13,15 @@
 	let lang = $derived(app.lang);
 	let t = $derived(app.t);
 
-	const celsius = (k: number | null) =>
+	const celsius = (k: number | null, note = false, noteText = '') =>
 		k === null
 			? t.noData
-			: `${formatNumber(kelvinToCelsius(k), lang, 1)} °C (${formatNumber(k, lang, 2)} K)`;
+			: `${formatNumber(kelvinToCelsius(k), lang, 1)} °C (${formatNumber(k, lang, 2)} K)` +
+				(note ? `, ${noteText}` : '');
 	const num = (v: number | null, unit: string, digits = 3) =>
 		v === null ? t.noData : `${formatNumber(v, lang, digits)} ${unit}`;
+	const affinity = (v: number | 'unstable' | null) =>
+		v === 'unstable' ? t.anionUnstable : num(v, t.unit.ionizationEnergy);
 
 	let rows = $derived([
 		[t.atomicMass, e.mass.text ? `${formatMass(e.mass.text, lang)}${e.mass.source !== 'ciaaw' ? ` (${t.massIsotope})` : ''}` : t.noData],
@@ -27,15 +30,17 @@
 		[t.block, e.block],
 		[t.config, formatConfig(e.config) + (e.configPredicted ? ` (${t.predicted})` : '')],
 		[t.shells, e.shells.join(', ')],
-		[t.property.meltingPoint, celsius(e.meltingPoint)],
-		[t.boilingPoint, celsius(e.boilingPoint)],
+		[t.property.meltingPoint, celsius(e.meltingPoint, e.meltsUnderPressure, t.underPressure)],
+		[t.boilingPoint, celsius(e.boilingPoint, e.sublimes, t.sublimes)],
 		[t.property.density, num(e.density, t.unit.density, e.density !== null && e.density < 0.1 ? 6 : 3)],
 		[t.property.electronegativity, num(e.electronegativity, t.unit.electronegativity, 2)],
 		[t.property.ionizationEnergy, num(e.ionizationEnergy, t.unit.ionizationEnergy)],
-		[t.electronAffinity, num(e.electronAffinity, t.unit.ionizationEnergy)],
+		[t.electronAffinity, affinity(e.electronAffinity)],
 		[t.property.atomicRadius, num(e.atomicRadius, t.unit.atomicRadius, 0)],
 		[t.oxidationStates, e.oxidationStates.length ? e.oxidationStates.join(', ') : t.noData],
-		[t.discovered, e.yearDiscovered === 'ancient' ? t.ancient : (e.yearDiscovered?.toString() ?? t.noData)]
+		[t.discovered, e.yearDiscovered === 'ancient' ? t.ancient : (e.yearDiscovered?.toString() ?? t.noData)],
+		...(e.discoveredBy.length ? [[t.discoveredBy, formatNames(e.discoveredBy, lang)]] : []),
+		...(e.namedAfter.length ? [[t.namedAfter, formatNames(e.namedAfter, lang)]] : [])
 	]);
 
 	let prev = $derived(elements[e.z - 2]);

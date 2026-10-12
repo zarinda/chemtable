@@ -22,7 +22,7 @@ export const de: Dict = {
 	property: {
 		mass: 'Atommasse',
 		electronegativity: 'Elektronegativität',
-		atomicRadius: 'Van-der-Waals-Radius',
+		atomicRadius: 'Kovalenter Radius',
 		density: 'Dichte',
 		meltingPoint: 'Schmelzpunkt',
 		ionizationEnergy: 'Ionisierungsenergie'
@@ -41,6 +41,9 @@ export const de: Dict = {
 	block: 'Block',
 	state: { solid: 'Fest', liquid: 'Flüssig', gas: 'Gasförmig' },
 	predicted: 'vorhergesagt',
+	underPressure: 'nur unter Druck',
+	sublimes: 'Sublimation',
+	anionUnstable: 'kein stabiles negatives Ion',
 	atomicMass: 'Atommasse',
 	massIsotope: 'Massenzahl des stabilsten Isotops',
 	config: 'Elektronenkonfiguration',
@@ -50,10 +53,12 @@ export const de: Dict = {
 	electronAffinity: 'Elektronenaffinität',
 	discovered: 'Entdeckt',
 	ancient: 'seit der Antike bekannt',
+	discoveredBy: 'Entdeckt von',
+	namedAfter: 'Benannt nach',
 	close: 'Schließen',
 	sources: 'Datenquellen',
 	sourcesNote:
-		'Eigenschaften: PubChem (NIH). Atommassen: IUPAC CIAAW, gekürzte Standardwerte. In eckigen Klammern: Massenzahl des stabilsten Isotops. Elementnamen: Wikidata.',
+		'Atommassen: IUPAC CIAAW, gekürzte Standardwerte; in eckigen Klammern die Massenzahl des stabilsten Isotops. Ionisierungsenergien: NIST. Elektronenaffinitäten: Messwerte (Wikipedia-Tabelle mit Primärquellen). Kovalente Radien: Cordero et al. (2008). Übrige Eigenschaften: PubChem (NIH), abgeglichen mit dem CRC Handbook. Elementnamen: Wikidata.',
 	theme: { light: 'Helles Design', dark: 'Dunkles Design', system: 'Wie im System' },
 	language: 'Sprache',
 	madeBy: 'Erstellt von ',
@@ -62,7 +67,8 @@ export const de: Dict = {
 		mass: 'Durchschnittliche Masse eines Atoms in atomaren Masseneinheiten (1 u ist 1/12 der Masse eines Kohlenstoff-12-Atoms). Berücksichtigt die natürliche Isotopenmischung des Elements.',
 		group:
 			'Nummer der senkrechten Spalte, 1 bis 18 nach IUPAC-Zählung. Elemente einer Gruppe haben den gleichen Aufbau der äußeren Schale und daher ähnliche Eigenschaften. In Schulbüchern findet man auch die ältere Zählung in Haupt- und Nebengruppen.',
-		period: 'Nummer der waagerechten Zeile. Entspricht der Zahl der Elektronenschalen des Atoms.',
+		period:
+			'Nummer der waagerechten Zeile. Entspricht meist der Zahl der Elektronenschalen des Atoms; Ausnahme ist Palladium mit vier Schalen in Periode 5.',
 		block:
 			'Das Unterniveau (s, p, d oder f), das zuletzt mit Elektronen besetzt wird. Jeder Block bildet einen rechteckigen Bereich der Tabelle.',
 		config:
@@ -71,18 +77,20 @@ export const de: Dict = {
 		electronegativity:
 			'Wie stark ein Atom in einer chemischen Bindung Elektronen an sich zieht. Auf der Pauling-Skala reicht sie von 0,7 bei Francium bis 3,98 bei Fluor.',
 		atomicRadius:
-			'Halber Abstand, bis zu dem sich zwei benachbarte, nicht gebundene Atome nähern. Er ist größer als der kovalente oder metallische Radius aus dem Schulbuch: bei Eisen 194 pm statt etwa 126 pm.',
+			'Halbe Länge einer kovalenten Einfachbindung zwischen zwei Atomen des Elements. Er gibt die Größe des Atoms in einem Molekül oder Kristall an: 76 pm bei Kohlenstoff, 132 pm bei Eisen.',
 		density: 'Masse eines Kubikzentimeters des Stoffes. Bei Gasen bei 0 °C und Normaldruck.',
-		meltingPoint: 'Temperatur, bei der der Feststoff bei Normaldruck flüssig wird.',
-		boilingPoint: 'Temperatur, bei der die Flüssigkeit bei Normaldruck siedet.',
+		meltingPoint:
+			'Temperatur, bei der der Feststoff bei Normaldruck flüssig wird. Helium, Kohlenstoff und Arsen schmelzen bei Normaldruck nicht: Helium braucht etwa 25 atm, Kohlenstoff und Arsen gehen direkt in Dampf über.',
+		boilingPoint:
+			'Temperatur, bei der die Flüssigkeit bei Normaldruck siedet. Bei Kohlenstoff und Arsen die Temperatur, bei der der Feststoff direkt verdampft (Sublimation).',
 		ionizationEnergy:
 			'Energie, die nötig ist, um das am schwächsten gebundene Elektron vom Atom zu entfernen. Je kleiner sie ist, desto leichter gibt das Element ein Elektron ab, was typisch für Metalle ist.',
 		electronAffinity:
-			'Energie, die frei wird, wenn ein neutrales Atom ein Elektron aufnimmt. Am größten bei den Halogenen.',
-		oxidationStates: 'Formale Ladungen, die das Atom in seinen Verbindungen annehmen kann.'
+			'Energie, die frei wird, wenn ein neutrales Atom ein Elektron aufnimmt. Am größten bei den Halogenen. Edelgase, Stickstoff und einige Metalle bilden kein stabiles negatives Ion.',
+		oxidationStates: 'Wichtigste formale Ladungen, die das Atom in seinen Verbindungen annimmt.'
 	},
 	trend: {
-		mass: 'Steigt mit der Ordnungszahl: von links nach rechts und von oben nach unten.',
+		mass: 'Steigt mit der Ordnungszahl, mit wenigen Ausnahmen: Argon ist schwerer als Kalium, Cobalt schwerer als Nickel, Tellur schwerer als Iod.',
 		electronegativity:
 			'Steigt innerhalb einer Periode von links nach rechts und sinkt innerhalb einer Gruppe von oben nach unten. Fluor hat den höchsten Wert.',
 		atomicRadius:
@@ -139,7 +147,7 @@ export const de: Dict = {
 		paragraphs: [
 			'Ein interaktives Periodensystem aller 118 chemischen Elemente für Schüler und Studierende. Öffnen Sie ein Element, um Atommasse, Elektronenkonfiguration, Schmelz- und Siedepunkt, Dichte, Elektronegativität, Ionisierungsenergie und Oxidationsstufen zu sehen, jeweils mit einer kurzen Erklärung.',
 			'Färben Sie die Tabelle nach Kategorie oder Eigenschaft ein, um die Trends im Periodensystem zu sehen: wie die Elektronegativität zum Fluor hin steigt oder wie die Atome in jeder Gruppe nach unten größer werden.',
-			'Die Eigenschaften stammen von PubChem (National Institutes of Health der USA), die Standard-Atommassen von der IUPAC CIAAW und die Elementnamen in acht Sprachen von Wikidata.'
+			'Die Atommassen stammen von der IUPAC CIAAW, die Ionisierungsenergien vom NIST, die kovalenten Radien von Cordero et al. (2008) und die übrigen Eigenschaften von PubChem (National Institutes of Health der USA), abgeglichen mit dem CRC Handbook. Die Elementnamen in acht Sprachen stammen von Wikidata.'
 		]
 	},
 	data: {
