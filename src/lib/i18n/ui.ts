@@ -1,0 +1,122 @@
+import type { Category, PropertyKey } from '../elements';
+import type { Lang } from './langs';
+import { en } from './locales/en';
+import { ru } from './locales/ru';
+import { fr } from './locales/fr';
+import { de } from './locales/de';
+import { it } from './locales/it';
+import { es } from './locales/es';
+import { zh } from './locales/zh';
+import { pt } from './locales/pt';
+
+export type { Lang } from './langs';
+
+export type Term =
+	| PropertyKey
+	| 'group'
+	| 'period'
+	| 'block'
+	| 'config'
+	| 'shells'
+	| 'boilingPoint'
+	| 'electronAffinity'
+	| 'oxidationStates';
+
+/** Facts an element summary sentence is built from, already formatted for the language. */
+export type SummaryFacts = {
+	name: string;
+	symbol: string;
+	z: number;
+	group: number | null;
+	period: number;
+	block: string;
+	category: string;
+	state: string;
+	statePredicted: boolean;
+	/** Formatted mass; for unstable elements the bare mass number of the most stable isotope. */
+	mass: string | null;
+	massIsIsotope: boolean;
+};
+
+export type Dict = {
+	/** False until a native speaker has reviewed this translation. */
+	reviewed: boolean;
+	siteName: string;
+	title: string;
+	hint: string;
+	colorBy: string;
+	categories: string;
+	category: Record<Category, string>;
+	property: Record<PropertyKey, string>;
+	unit: Record<PropertyKey, string>;
+	noData: string;
+	period: string;
+	group: string;
+	block: string;
+	state: Record<'solid' | 'liquid' | 'gas', string>;
+	predicted: string;
+	atomicMass: string;
+	massIsotope: string;
+	config: string;
+	shells: string;
+	boilingPoint: string;
+	oxidationStates: string;
+	electronAffinity: string;
+	discovered: string;
+	ancient: string;
+	close: string;
+	sources: string;
+	sourcesNote: string;
+	theme: Record<'light' | 'dark' | 'system', string>;
+	language: string;
+	/** Credit before the author name in the footer, with its trailing space: "Made by " Zarinda. */
+	madeBy: string;
+	explainToggle: string;
+	/** One-paragraph explanations of each term, for students. */
+	explain: Record<Term, string>;
+	/** How each property changes across the table. */
+	trend: Record<PropertyKey, string>;
+
+	seo: {
+		homeTitle: string;
+		homeDescription: string;
+		elementTitle: (name: string, symbol: string) => string;
+		elementDescription: (f: SummaryFacts) => string;
+	};
+	article: {
+		/** Line under the element name, e.g. "Chemical element 26". */
+		kicker: (z: number) => string;
+		summary: (f: SummaryFacts) => string;
+		properties: string;
+		property: string;
+		value: string;
+		related: string;
+		sameGroup: (group: number) => string;
+		samePeriod: (period: number) => string;
+		previous: string;
+		next: string;
+		readMore: string;
+		wikipedia: string;
+		backToTable: string;
+	};
+	about: {
+		heading: string;
+		paragraphs: string[];
+	};
+	data: {
+		heading: string;
+		text: string;
+	};
+	/** Printable PDF table: the download section and the labels printed on the sheet. */
+	print: {
+		heading: string;
+		text: string;
+		color: string;
+		bw: string;
+		atomicNumber: string;
+		symbol: string;
+		name: string;
+	};
+};
+
+export const UI: Record<Lang, Dict> = { en, ru, fr, de, it, es, zh, pt };

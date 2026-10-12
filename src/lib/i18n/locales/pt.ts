@@ -1,0 +1,159 @@
+import type { Dict } from '../ui';
+
+/** Brazilian Portuguese. */
+export const pt: Dict = {
+	reviewed: false,
+	siteName: 'ChemTable',
+	title: 'Tabela periódica dos elementos químicos',
+	hint: 'Passe o cursor sobre um elemento, ou entre na tabela com Tab e mova-se com as setas. Clique em um elemento para abrir a ficha dele.',
+	colorBy: 'Colorir a tabela por',
+	categories: 'Categorias',
+	category: {
+		'alkali-metal': 'Metais alcalinos',
+		'alkaline-earth-metal': 'Metais alcalinoterrosos',
+		'transition-metal': 'Metais de transição',
+		'post-transition-metal': 'Metais pós-transição',
+		metalloid: 'Semimetais',
+		nonmetal: 'Não metais',
+		halogen: 'Halogênios',
+		'noble-gas': 'Gases nobres',
+		lanthanide: 'Lantanídeos',
+		actinide: 'Actinídeos'
+	},
+	property: {
+		mass: 'Massa atômica',
+		electronegativity: 'Eletronegatividade',
+		atomicRadius: 'Raio de van der Waals',
+		density: 'Densidade',
+		meltingPoint: 'Ponto de fusão',
+		ionizationEnergy: 'Energia de ionização'
+	},
+	unit: {
+		mass: 'u',
+		electronegativity: 'Pauling',
+		atomicRadius: 'pm',
+		density: 'g/cm³',
+		meltingPoint: '°C',
+		ionizationEnergy: 'eV'
+	},
+	noData: 'sem dados',
+	period: 'Período',
+	group: 'Grupo',
+	block: 'Bloco',
+	state: { solid: 'Sólido', liquid: 'Líquido', gas: 'Gasoso' },
+	predicted: 'previsto',
+	atomicMass: 'Massa atômica',
+	massIsotope: 'número de massa do isótopo mais estável',
+	config: 'Configuração eletrônica',
+	shells: 'Elétrons por camada',
+	boilingPoint: 'Ponto de ebulição',
+	oxidationStates: 'Estados de oxidação',
+	electronAffinity: 'Afinidade eletrônica',
+	discovered: 'Descoberta',
+	ancient: 'conhecido desde a Antiguidade',
+	close: 'Fechar',
+	sources: 'Fontes dos dados',
+	sourcesNote:
+		'Propriedades: PubChem (NIH). Massas atômicas: IUPAC CIAAW, valores padrão abreviados. Entre colchetes: número de massa do isótopo mais estável. Nomes dos elementos: Wikidata.',
+	theme: { light: 'Tema claro', dark: 'Tema escuro', system: 'Igual ao sistema' },
+	language: 'Idioma',
+	madeBy: 'Criado por ',
+	explainToggle: 'O que isso significa',
+	explain: {
+		mass: 'Massa média de um átomo em unidades de massa atômica (1 u é 1/12 da massa de um átomo de carbono-12). Leva em conta a mistura natural de isótopos do elemento.',
+		group:
+			'Número da coluna vertical, de 1 a 18 na numeração da IUPAC. Elementos do mesmo grupo têm a mesma camada externa e, por isso, propriedades parecidas. Alguns livros didáticos ainda usam a numeração antiga com famílias A e B.',
+		period: 'Número da linha horizontal. É igual ao número de camadas eletrônicas do átomo.',
+		block:
+			'O subnível (s, p, d ou f) preenchido por último pelos elétrons. Cada bloco forma uma área retangular da tabela.',
+		config:
+			'Como os elétrons se distribuem nos subníveis. Os colchetes representam o gás nobre anterior; o expoente, o número de elétrons no subnível.',
+		shells: 'Número de elétrons em cada camada, do núcleo para fora.',
+		electronegativity:
+			'Com que força um átomo atrai elétrons em uma ligação química. Na escala de Pauling, vai de 0,7 no frâncio a 3,98 no flúor.',
+		atomicRadius:
+			'Metade da distância a que dois átomos vizinhos não ligados se aproximam. É maior que o raio covalente ou metálico dos livros didáticos: 194 pm no ferro contra cerca de 126 pm.',
+		density: 'Massa de um centímetro cúbico da substância. Para gases, a 0 °C e pressão normal.',
+		meltingPoint: 'Temperatura em que o sólido se torna líquido sob pressão normal.',
+		boilingPoint: 'Temperatura em que o líquido ferve sob pressão normal.',
+		ionizationEnergy:
+			'Energia necessária para retirar do átomo o elétron menos preso. Quanto menor, mais facilmente o elemento perde um elétron, o que é típico dos metais.',
+		electronAffinity:
+			'Energia liberada quando um átomo neutro recebe um elétron. É maior nos halogênios.',
+		oxidationStates: 'Cargas formais que o átomo pode ter em seus compostos.'
+	},
+	trend: {
+		mass: 'Cresce com o número atômico: da esquerda para a direita e de cima para baixo.',
+		electronegativity:
+			'Aumenta da esquerda para a direita em um período e diminui de cima para baixo em um grupo. O flúor tem o maior valor.',
+		atomicRadius:
+			'Em geral diminui da esquerda para a direita em um período e aumenta de cima para baixo em um grupo.',
+		density:
+			'Os mais densos são os metais no meio do 6º período: ósmio e irídio. A escala é logarítmica porque os gases são milhares de vezes mais leves que os metais.',
+		meltingPoint: 'É mais alto no carbono e nos metais de transição e mais baixo nos gases nobres.',
+		ionizationEnergy:
+			'Aumenta da esquerda para a direita em um período, com o máximo nos gases nobres. Diminui de cima para baixo em um grupo.'
+	},
+
+	seo: {
+		homeTitle: 'Tabela periódica interativa dos elementos | ChemTable',
+		homeDescription:
+			'Tabela periódica interativa dos 118 elementos: massa atômica, configuração eletrônica, eletronegatividade, densidade e mais, com explicações para estudantes.',
+		elementTitle: (name, symbol) => `${name} (${symbol}): propriedades e massa atômica | ChemTable`,
+		elementDescription: (f) =>
+			`${f.name} (${f.symbol}), número atômico ${f.z}: ${f.category.toLowerCase()}` +
+			(f.mass ? `, ${f.massIsIsotope ? 'número de massa' : 'massa atômica'} ${f.mass}` : '') +
+			`. Configuração eletrônica, densidade, ponto de fusão, eletronegatividade e mais.`
+	},
+	article: {
+		kicker: (z) => `Elemento químico nº ${z}`,
+		summary: (f) =>
+			[
+				`${f.name} (${f.symbol}) é um elemento químico de número atômico ${f.z}.`,
+				f.group
+					? `Fica no grupo ${f.group} e no ${f.period}º período da tabela periódica, no bloco ${f.block}.`
+					: `Fica no ${f.period}º período da tabela periódica, no bloco ${f.block}.`,
+				`Categoria: ${f.category.toLowerCase()}.`,
+				`Estado à temperatura ambiente: ${f.state.toLowerCase()}${f.statePredicted ? ' (previsto)' : ''}.`,
+				f.mass
+					? f.massIsIsotope
+						? `Não tem massa atômica padrão; o número de massa do seu isótopo mais estável é ${f.mass}.`
+						: `Sua massa atômica padrão é ${f.mass}.`
+					: ''
+			]
+				.filter(Boolean)
+				.join(' '),
+		properties: 'Propriedades',
+		property: 'Propriedade',
+		value: 'Valor',
+		related: 'Elementos vizinhos',
+		sameGroup: (g) => `Grupo ${g}`,
+		samePeriod: (p) => `${p}º período`,
+		previous: 'Elemento anterior',
+		next: 'Próximo elemento',
+		readMore: 'Saiba mais',
+		wikipedia: 'Wikipédia',
+		backToTable: 'Voltar à tabela'
+	},
+	about: {
+		heading: 'Sobre esta tabela periódica',
+		paragraphs: [
+			'Uma tabela periódica interativa dos 118 elementos químicos, feita para estudantes. Abra qualquer elemento para ver massa atômica, configuração eletrônica, pontos de fusão e de ebulição, densidade, eletronegatividade, energia de ionização e estados de oxidação, cada um com uma explicação curta.',
+			'Pinte a tabela por categoria ou por propriedade para ver as tendências periódicas: como a eletronegatividade aumenta em direção ao flúor ou como os átomos ficam maiores ao descer cada grupo.',
+			'As propriedades vêm do PubChem (Institutos Nacionais de Saúde dos EUA), as massas atômicas padrão da IUPAC CIAAW e os nomes dos elementos em oito idiomas do Wikidata.'
+		]
+	},
+	data: {
+		heading: 'Dados abertos',
+		text: 'O conjunto completo de dados dos 118 elementos pode ser baixado livremente. Há um resumo em texto simples para assistentes de IA em llms.txt.'
+	},
+	print: {
+		heading: 'Tabela periódica para imprimir',
+		text: 'Um PDF gratuito para baixar e imprimir, em paisagem. A versão em preto e branco economiza tinta: as categorias se distinguem pela textura.',
+		color: 'Colorida',
+		bw: 'Preto e branco',
+		atomicNumber: 'Número atômico',
+		symbol: 'Símbolo',
+		name: 'Nome'
+	}
+};

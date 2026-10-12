@@ -1,0 +1,43 @@
+{
+	"name": "chemtable",
+	"private": true,
+	"version": "0.0.1",
+	"type": "module",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"prepare": "svelte-kit sync || echo ''",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"data": "tsx scripts/fetch-elements.ts",
+		"fonts": "tsx scripts/fetch-fonts.ts",
+		"og": "tsx scripts/og.ts",
+		"favicon": "tsx scripts/favicon.ts",
+		"pdf": "tsx scripts/pdf.ts"
+	},
+	"devDependencies": {
+		"@resvg/resvg-js": "^2.6.2",
+		"@sveltejs/adapter-static": "^4.0.0",
+		"@sveltejs/kit": "^3.0.0",
+		"@sveltejs/vite-plugin-svelte": "^7.2.0",
+		"@types/node": "^26.6.5",
+		"puppeteer-core": "^25.13.0",
+		"satori": "^0.47.1",
+		"svelte": "^5.57.1",
+		"svelte-check": "^4.6.0",
+		"tsx": "^4.23.15",
+		"typescript": "^6.0.3",
+		"vite": "^8.3.0"
+	},
+	"imports": {
+		"#lib": "./src/lib/index.js",
+		"#lib/*": "./src/lib/*"
+	},
+	"dependencies": {
+		"@fontsource-variable/golos-text": "^5.3.0",
+		"@fontsource/bebas-neue": "^5.3.0",
+		"@fontsource/oswald": "^5.3.0",
+		"bits-ui": "^2.19.5"
+	}
+}
