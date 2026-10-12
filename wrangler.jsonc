@@ -7,6 +7,8 @@
 	"assets": {
 		"directory": "./build",
 		// /iron → iron.html, /ru → ru.html
-		"html_handling": "auto-trailing-slash"
+		"html_handling": "auto-trailing-slash",
+		// Missing addresses get the nearest 404.html with status 404: /ru/typo → /ru/404.html
+		"not_found_handling": "404-page"
 	}
 }

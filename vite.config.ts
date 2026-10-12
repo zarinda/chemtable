@@ -13,6 +13,10 @@ export default defineConfig({
 
 			adapter: adapter({ fallback: undefined }),
 
+			// Absolute /_app/… asset URLs: the 404 page is served at any depth (/ru/a/b/c),
+			// where the default relative ../_app/… would point to a missing folder.
+			paths: { relative: false },
+
 			// Most visitors land on one page from search: inline the ~23 KB of CSS
 			// rather than block the first paint on two stylesheet requests.
 			inlineStyleThreshold: 20_000,

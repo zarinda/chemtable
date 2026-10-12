@@ -220,6 +220,14 @@ export const es: Dict = {
 		contact: 'Preguntas sobre esta política:',
 		back: 'Volver a la tabla periódica'
 	},
+	notFound: {
+		title: 'Página no encontrada',
+		text: 'No hay ninguna página en esta dirección. Puede que el enlace tenga una errata o que la página se haya movido.',
+		suggest: 'Quizá buscabas:',
+		back: 'Ir a la tabla periódica',
+		beyond: (name, z) =>
+			`Tampoco existe el elemento 404: el más pesado conocido es el ${name.toLowerCase()}, número ${z}.`
+	},
 	print: {
 		heading: 'Tabla periódica para imprimir',
 		text: 'Un PDF gratuito para descargar e imprimir, en horizontal. La versión en blanco y negro ahorra tinta: las categorías se distinguen por la trama.',

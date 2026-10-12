@@ -220,6 +220,14 @@ export const it: Dict = {
 		contact: 'Domande su questa informativa:',
 		back: 'Torna alla tavola periodica'
 	},
+	notFound: {
+		title: 'Pagina non trovata',
+		text: 'A questo indirizzo non c’è nessuna pagina. Forse il link contiene un errore di battitura, oppure la pagina è stata spostata.',
+		suggest: 'Forse cercavi:',
+		back: 'Apri la tavola periodica',
+		beyond: (name, z) =>
+			`Non esiste nemmeno l’elemento 404: il più pesante conosciuto è l’${name.toLowerCase()}, numero ${z}.`
+	},
 	print: {
 		heading: 'Tavola periodica da stampare',
 		text: 'Un PDF gratuito da scaricare e stampare, in orizzontale. La versione in bianco e nero risparmia inchiostro: le categorie si distinguono dalla trama.',

@@ -213,6 +213,13 @@ export const zh: Dict = {
 		contact: '有关本政策的问题：',
 		back: '返回元素周期表'
 	},
+	notFound: {
+		title: '页面未找到',
+		text: '此地址没有页面。链接可能有拼写错误，或页面已被移动。',
+		suggest: '你可能在找：',
+		back: '打开元素周期表',
+		beyond: (name, z) => `也不存在 404 号元素：已知最重的元素是${name}，原子序数 ${z}。`
+	},
 	print: {
 		heading: '打印版元素周期表',
 		text: '免费 PDF，可下载打印，横向版式。黑白版更省墨，各类元素以不同纹理区分。',

@@ -221,6 +221,14 @@ export const en: Dict = {
 		contact: 'Questions about this policy:',
 		back: 'Back to the periodic table'
 	},
+	notFound: {
+		title: 'Page not found',
+		text: 'There is no page at this address. The link may have a typo, or the page may have moved.',
+		suggest: 'Perhaps you were looking for:',
+		back: 'Go to the periodic table',
+		beyond: (name, z) =>
+			`There is no element 404 either: the heaviest known element is ${name.toLowerCase()}, number ${z}.`
+	},
 	print: {
 		heading: 'Printable periodic table',
 		text: 'A free PDF to download and print, in landscape. The black-and-white version saves ink: categories are told apart by texture.',

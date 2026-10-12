@@ -14,7 +14,7 @@
 
 ## Что дальше (по порядку)
 
-1. **Деплой работает** (проверено 12.10): https://chemtable.zarindallc.workers.dev — главная, элементы на en/ru/zh, `/privacy`, `/sitemap.xml`, `/llms.txt`, PDF отдают 200. Статус сборки виден в GitHub: `gh api repos/zarinda/chemtable/commits/<sha>/check-runs`. Своей страницы 404 нет — несуществующий адрес отдаёт пустой 404 (нужна `404.html` в `build/` и `"not_found_handling": "404-page"` в `wrangler.jsonc`). Canonical и sitemap ведут на chemtable.org — до подключения домена сайт не отправлять в Search Console.
+1. **Деплой работает** (проверено 12.10): https://chemtable.zarindallc.workers.dev — главная, элементы на en/ru/zh, `/privacy`, `/sitemap.xml`, `/llms.txt`, PDF отдают 200. Статус сборки виден в GitHub: `gh api repos/zarinda/chemtable/commits/<sha>/check-runs`. Canonical и sitemap ведут на chemtable.org — до подключения домена сайт не отправлять в Search Console.
 2. **Домен**: купить chemtable.org в Cloudflare, подключить к Worker (Settings → Domains & Routes). Если домен другой — сменить `PUBLIC_SITE_URL` (по умолчанию в `src/env.ts`), затем `npm run pdf` и `npm run build`.
 3. **Открыть один PDF глазами** (`static/print/ru/…a4-color.pdf`): после аудита данных PDF перегенерированы, но визуально не проверены (здесь нет poppler).
 4. После запуска: Search Console + sitemap, Rich Results Test, Lighthouse на хостинге, заявка в AdSense (на армянскую компанию). Для настоящей рекламы: `ads.txt`, CMP Google для ЕЭЗ/UK/CH, весь сайт как ориентированный на детей, заменить `AdPreview` настоящими блоками, `ADS_LIVE = true` и новая дата `PRIVACY_UPDATED`.
@@ -60,4 +60,5 @@ npm run og        # OG-картинки (только недостающие; --
 - Ключ свойства `atomicRadius` теперь означает ковалентный радиус (Cordero 2008); ключ не переименован, чтобы не ломать URL и код.
 - Реклама: `#lib/ads.ts` (`showAds`, `adOnTop`, `ADS_LIVE` — переключает раздел «Реклама» в политике конфиденциальности); `AdPreview.svelte` импортируется динамически внутри `{#if dev && showAds()}` и в проде не загружается.
 - Скриншоты для проверки: `puppeteer-core` из node_modules + системный Chrome `C:/Program Files/Google/Chrome/Application/chrome.exe`. На странице элемента ждать `[role="dialog"] dl` — плакат открывается после загрузки JS. Playwright MCP не подключался.
+- Страница 404: маршрут `[[lang]]/404` пререндерится в `build/404.html`, `build/ru/404.html`…; Cloudflare (`not_found_handling: "404-page"`) отдаёт ближайшую по пути со статусом 404. Поэтому `paths.relative: false` в `vite.config.ts` (иначе `../_app` ломается на `/ru/a/b`), а язык в `load` берётся из `url`, не из `params` (в браузере маршрут не совпадает). Подсказки элементов по адресу — `#lib/guess.ts`. Проверять локально: `npx wrangler dev` (перед `npm run build` остановить — держит `build/`).
 - Lighthouse TBT на этой машине шумит ±40% — сравнивать медианы 3+ прогонов.

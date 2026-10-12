@@ -145,6 +145,16 @@ export type Dict = {
 		contact: string;
 		back: string;
 	};
+	/** Page for addresses that do not exist. */
+	notFound: {
+		title: string;
+		text: string;
+		/** Before links to the elements a mistyped address resembles. */
+		suggest: string;
+		back: string;
+		/** Receives the heaviest known element: "There is no element 404 either…". */
+		beyond: (name: string, z: number) => string;
+	};
 	/** Printable PDF table: the download section and the labels printed on the sheet. */
 	print: {
 		heading: string;

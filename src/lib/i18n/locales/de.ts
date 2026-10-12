@@ -220,6 +220,14 @@ export const de: Dict = {
 		contact: 'Fragen zu dieser Erklärung:',
 		back: 'Zurück zum Periodensystem'
 	},
+	notFound: {
+		title: 'Seite nicht gefunden',
+		text: 'Unter dieser Adresse gibt es keine Seite. Vielleicht enthält der Link einen Tippfehler, oder die Seite ist umgezogen.',
+		suggest: 'Vielleicht suchen Sie:',
+		back: 'Zum Periodensystem',
+		beyond: (name, z) =>
+			`Ein Element 404 gibt es auch nicht: Das schwerste bekannte Element ist ${name}, Ordnungszahl ${z}.`
+	},
 	print: {
 		heading: 'Periodensystem zum Ausdrucken',
 		text: 'Ein kostenloses PDF zum Herunterladen und Drucken, im Querformat. Die Schwarz-Weiß-Version spart Tinte: Die Kategorien unterscheiden sich am Muster.',

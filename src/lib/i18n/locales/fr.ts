@@ -219,6 +219,14 @@ export const fr: Dict = {
 		contact: `Questions sur cette politique${_}:`,
 		back: 'Retour au tableau périodique'
 	},
+	notFound: {
+		title: 'Page introuvable',
+		text: 'Il n’y a aucune page à cette adresse. Le lien contient peut-être une faute de frappe, ou la page a été déplacée.',
+		suggest: `Vous cherchiez peut-être${_}:`,
+		back: 'Ouvrir le tableau périodique',
+		beyond: (name, z) =>
+			`L’élément 404 n’existe pas non plus${_}: le plus lourd connu est l’${name.toLowerCase()}, numéro ${z}.`
+	},
 	print: {
 		heading: 'Tableau périodique à imprimer',
 		text: 'Un PDF gratuit à télécharger et à imprimer, au format paysage. La version noir et blanc économise l’encre : les familles se distinguent par leur trame.',
