@@ -14,7 +14,7 @@
 
 ## Что дальше (по порядку)
 
-1. **Проверить деплой**: спросить у пользователя адрес `*.workers.dev`, открыть главную, страницу элемента на 2–3 языках, `/sitemap.xml`, `/llms.txt`, один PDF. Успешный деплой после добавления wrangler.jsonc ещё не подтверждён.
+1. **Деплой работает** (проверено 12.10): https://chemtable.zarindallc.workers.dev — главная, элементы на en/ru/zh, `/privacy`, `/sitemap.xml`, `/llms.txt`, PDF отдают 200. Статус сборки виден в GitHub: `gh api repos/zarinda/chemtable/commits/<sha>/check-runs`. Своей страницы 404 нет — несуществующий адрес отдаёт пустой 404 (нужна `404.html` в `build/` и `"not_found_handling": "404-page"` в `wrangler.jsonc`). Canonical и sitemap ведут на chemtable.org — до подключения домена сайт не отправлять в Search Console.
 2. **Домен**: купить chemtable.org в Cloudflare, подключить к Worker (Settings → Domains & Routes). Если домен другой — сменить `PUBLIC_SITE_URL` (по умолчанию в `src/env.ts`), затем `npm run pdf` и `npm run build`.
 3. **Открыть один PDF глазами** (`static/print/ru/…a4-color.pdf`): после аудита данных PDF перегенерированы, но визуально не проверены (здесь нет poppler).
 4. После запуска: Search Console + sitemap, Rich Results Test, Lighthouse на хостинге, заявка в AdSense (на армянскую компанию). Для настоящей рекламы: `ads.txt`, CMP Google для ЕЭЗ/UK/CH, весь сайт как ориентированный на детей, заменить `AdPreview` настоящими блоками, `ADS_LIVE = true` и новая дата `PRIVACY_UPDATED`.
