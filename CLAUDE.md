@@ -9,13 +9,13 @@
 
 - Репозиторий: https://github.com/zarinda/chemtable (публичный, MIT, ветка main). Git локально: `Zarinda <25303421+zarinda@users.noreply.github.com>`. `gh` залогинен как zarinda — пушить можно самому.
 - Хостинг: Cloudflare Workers Builds, проект `chemtable`, деплой на каждый push в main (`npx wrangler deploy`). `wrangler.jsonc` раздаёт `build/` как статику; без него wrangler пытается перевести проект на adapter-cloudflare и падает.
-- Домен chemtable.org 12.10 не резолвился — вероятно, не куплен.
+- Домен https://chemtable.org подключён 12.10 и отдаёт сайт (главная, элементы, sitemap, PDF, OG, 404 проверены). Осталось в панели Cloudflare: «Always Use HTTPS» (http:// пока отдаёт 200 без редиректа), www.chemtable.org с редиректом на корень (пока не отвечает), выключить workers.dev-адрес.
 - Сделано и закоммичено 12.10: аудит честности данных (см. «Данные»), блок «Соседние элементы», «Кто открыл» / «Название дано в честь», макет рекламы только в dev, этот файл и DESIGN.md. Затем: плакат пререндерится в HTML страницы элемента (`Dialog.Portal disabled`), перенос длинных подписей на телефонах, все meta description ≤ 160 символов. Юридическая проверка перед рекламой: атрибуция данных (`DATA_CREDITS`), `/third-party-licenses.txt`, политика конфиденциальности `/privacy` на 8 языках (см. SPEC → «Данные», «Реклама»).
 
 ## Что дальше (по порядку)
 
 1. **Деплой работает** (проверено 12.10): https://chemtable.zarindallc.workers.dev — главная, элементы на en/ru/zh, `/privacy`, `/sitemap.xml`, `/llms.txt`, PDF отдают 200. Статус сборки виден в GitHub: `gh api repos/zarinda/chemtable/commits/<sha>/check-runs`. Canonical и sitemap ведут на chemtable.org — до подключения домена сайт не отправлять в Search Console.
-2. **Домен**: купить chemtable.org в Cloudflare, подключить к Worker (Settings → Domains & Routes). Если домен другой — сменить `PUBLIC_SITE_URL` (по умолчанию в `src/env.ts`), затем `npm run pdf` и `npm run build`.
+2. **Домен** подключён (см. «Состояние»); доделать HTTPS-редирект, www и выключить workers.dev.
 3. **Открыть один PDF глазами** (`static/print/ru/…a4-color.pdf`): после аудита данных PDF перегенерированы, но визуально не проверены (здесь нет poppler).
 4. После запуска: Search Console + sitemap, Rich Results Test, Lighthouse на хостинге, заявка в AdSense (на армянскую компанию). Для настоящей рекламы: `ads.txt`, CMP Google для ЕЭЗ/UK/CH, весь сайт как ориентированный на детей, заменить `AdPreview` настоящими блоками, `ADS_LIVE = true` и новая дата `PRIVACY_UPDATED`.
 5. В политике конфиденциальности контакт — ссылка на zarinda.com. Спросить у пользователя полное юридическое название компании и почту для вопросов о данных; добавить в `intro`/`contact` всех 8 локалей.
