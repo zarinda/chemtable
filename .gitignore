@@ -24,3 +24,4 @@ vite.config.ts.timestamp-*
 
 # Browser check screenshots
 .playwright-mcp
+docs/mockups/*.html
