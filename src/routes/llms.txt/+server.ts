@@ -1,7 +1,7 @@
 import { elements, fetchedAt } from '#lib/elements.ts';
 import { LANGS, LANG_INFO } from '#lib/i18n/langs.ts';
 import { UI } from '#lib/i18n/ui.ts';
-import { absolute, elementPath, homePath, AUTHOR, DATA_LICENSE } from '#lib/seo.ts';
+import { absolute, elementPath, homePath, AUTHOR, DATA_CREDITS, DATA_LICENSE } from '#lib/seo.ts';
 import { printPath } from '#lib/print.ts';
 import type { RequestHandler } from './$types';
 
@@ -20,7 +20,8 @@ Notes for using this data:
 - The radius is the single-bond covalent radius (Cordero et al., 2008).
 - Estimates and predictions are marked or left out: values for superheavy elements are mostly unknown.
 - Group numbers follow IUPAC (1–18). Lanthanum–ytterbium and actinium–nobelium form the f-block; lutetium and lawrencium close the d-block.
-- The data is published under ${DATA_LICENSE.name} (${DATA_LICENSE.url}): free to reuse with a link to ChemTable.
+- ChemTable's compilation, corrections and texts are published under ${DATA_LICENSE.name} (${DATA_LICENSE.url}): free to reuse with a link to ChemTable. Values from other sources keep their terms; credit them when you reuse the values:
+${DATA_CREDITS.map((c) => `  - ${c.data}: ${c.source}, ${c.url} (${c.terms})`).join('\n')}
 - Every element page exists in each language: ${absolute('/iron')} (English), ${absolute('/ru/iron')} (Russian), and so on with the prefixes ${LANGS.filter((l) => l !== 'en').join(', ')}.
 
 ## Data

@@ -147,6 +147,72 @@ export const zh: Dict = {
 		heading: '开放数据',
 		text: '全部 118 种元素的完整数据集可免费下载。供 AI 助手使用的纯文本摘要见 llms.txt。'
 	},
+	licenses: '许可证',
+	privacy: {
+		title: '隐私政策',
+		description:
+			'ChemTable 如何处理数据：无需注册，不做统计，不做跟踪。浏览器保存什么、托管服务能看到什么，以及广告如何使用 Cookie。',
+		updated: '最后更新：',
+		intro: (author) =>
+			`ChemTable 由在亚美尼亚共和国注册的公司 ${author} 制作。本页说明你使用本网站时数据的处理方式。`,
+		sections: {
+			collect: {
+				heading: '我们收集什么',
+				paragraphs: [
+					'不收集任何能识别你身份的信息。ChemTable 没有账号、表单或评论功能，也不使用统计分析或跟踪工具。'
+				]
+			},
+			storage: {
+				heading: '浏览器中的设置',
+				paragraphs: [
+					'如果你选择浅色或深色主题，该选择会保存在浏览器的本地存储中，以便网站记住它。它不会离开你的设备；在浏览器中清除本网站的数据即可将其删除。'
+				]
+			},
+			hosting: {
+				heading: '托管',
+				paragraphs: [
+					'本网站由 Cloudflare 提供服务。与任何网络服务器一样，Cloudflare 会处理你的 IP 地址和每次请求的技术信息（如浏览器和页面），用于传送页面并保护网站免受攻击。我们不会用这些信息识别访问者。'
+				]
+			},
+			external: {
+				heading: '其他网站',
+				paragraphs: [
+					'元素页面链接到维基百科、PubChem 和 Wikidata，这些网站有各自的隐私政策。字体由本网站提供，而非来自第三方。'
+				]
+			},
+			children: {
+				heading: '儿童',
+				paragraphs: [
+					'ChemTable 面向中学生和大学生。我们不会有意收集任何人的个人数据，包括儿童。'
+				]
+			},
+			ads: {
+				heading: '广告',
+				paragraphs: [
+					'ChemTable 上的广告由 Google AdSense 投放。Google 及其合作伙伴使用 Cookie 和类似技术来展示广告、限制同一广告的重复次数、衡量广告效果并防止欺诈。',
+					'由于许多访问者是儿童，我们要求 Google 将所有页面视为面向儿童的内容。因此 Google 只展示非个性化广告：广告根据你正在阅读的页面而非浏览记录来选择，也不进行再营销。',
+					'包括 Google 在内的第三方供应商可以使用 Cookie，根据你以前访问本网站和其他网站的情况投放广告。如上所述，ChemTable 已关闭此类个性化广告。你还可以在 Google 的广告设置中为你的 Google 账号关闭个性化广告，并在 aboutads.info 或 youronlinechoices.eu 拒绝其他供应商的 Cookie。',
+					'在欧洲经济区、英国和瑞士，网站会在使用广告 Cookie 之前征求你的同意。你可以随时通过页面上的隐私和 Cookie 设置链接更改选择。'
+				]
+			},
+			rights: {
+				heading: '你的权利',
+				paragraphs: [
+					'根据你所在的地区，欧盟《通用数据保护条例》（GDPR）和亚美尼亚共和国《个人数据保护法》等法律赋予你以下权利：了解保存了哪些与你有关的数据，要求更正或删除这些数据，以及反对其使用。ChemTable 本身不保存访问者的个人数据。'
+				]
+			},
+			changes: {
+				heading: '变更',
+				paragraphs: [
+					'如果本政策发生变化，页面顶部的日期也会随之更新。'
+				]
+			}
+		},
+		adsOff:
+			'ChemTable 目前不展示广告。如果将来添加广告，本节会在第一条广告出现之前说明其使用的 Cookie。',
+		contact: '有关本政策的问题：',
+		back: '返回元素周期表'
+	},
 	print: {
 		heading: '打印版元素周期表',
 		text: '免费 PDF，可下载打印，横向版式。黑白版更省墨，各类元素以不同纹理区分。',

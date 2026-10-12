@@ -1,9 +1,8 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import { app } from '#lib/state.svelte.ts';
 	import { elements, fetchedAt, sources } from '#lib/elements.ts';
 	import { LANGS, LANG_INFO } from '#lib/i18n/langs.ts';
-	import { elementPath, homePath, AUTHOR, DATA_LICENSE } from '#lib/seo.ts';
+	import { elementPath, homePath, privacyPath, AUTHOR, DATA_LICENSE } from '#lib/seo.ts';
 	import { PAPERS, PAPER_LABEL, printPath } from '#lib/print.ts';
 	import Seo from './Seo.svelte';
 	import Controls from './Controls.svelte';
@@ -17,14 +16,6 @@
 	let opened = $derived(app.openedZ ? elements[app.openedZ - 1] : null);
 
 	let t = $derived(app.t);
-
-	onMount(() => app.restore());
-
-	$effect(() => {
-		document.documentElement.lang = LANG_INFO[app.lang].tag;
-		if (app.theme === 'system') delete document.documentElement.dataset.theme;
-		else document.documentElement.dataset.theme = app.theme;
-	});
 </script>
 
 <Seo element={opened} />
@@ -78,8 +69,11 @@
 		<ul>
 			<li><a href="https://pubchem.ncbi.nlm.nih.gov/periodic-table/">PubChem Periodic Table</a> (NIH)</li>
 			<li><a href={sources.atomicWeights}>IUPAC CIAAW, Abridged Standard Atomic Weights</a></li>
-			<li><a href={sources.ionizationEnergies}>NIST Atomic Spectra Database, Ionization Energies</a></li>
-			<li><a href={sources.electronAffinities}>Electron affinity (data page)</a>, Wikipedia</li>
+			<li>
+				<a href={sources.ionizationEnergies}>NIST Atomic Spectra Database, Ionization Energies</a>
+				(NIST Standard Reference Database 78, © U.S. Secretary of Commerce)
+			</li>
+			<li><a href={sources.electronAffinities}>Electron affinity (data page)</a>, Wikipedia (CC BY-SA 4.0)</li>
 			<li><a href={sources.covalentRadii}>Cordero et al., Covalent radii revisited (2008)</a></li>
 			<li><a href="https://www.wikidata.org/">Wikidata</a></li>
 		</ul>
@@ -113,6 +107,10 @@
 		{/each}
 	</ul>
 	<p class="credit">{t.madeBy}<a href={AUTHOR.url} rel="author" target="_blank">{AUTHOR.name}</a></p>
+	<p class="legal">
+		<a href={privacyPath(app.lang)}>{t.privacy.title}</a> ·
+		<a href="/third-party-licenses.txt" type="text/plain">{t.licenses}</a>
+	</p>
 </footer>
 
 <Poster element={opened} />
@@ -201,6 +199,10 @@
 
 	.credit {
 		margin-top: 12px;
+	}
+
+	.legal {
+		margin-top: 4px;
 	}
 
 	.format {

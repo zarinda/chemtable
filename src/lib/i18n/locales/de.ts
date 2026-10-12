@@ -154,6 +154,72 @@ export const de: Dict = {
 		heading: 'Offene Daten',
 		text: 'Der vollständige Datensatz zu allen 118 Elementen steht frei zum Download. Eine Textzusammenfassung für KI-Assistenten steht in llms.txt.'
 	},
+	licenses: 'Lizenzen',
+	privacy: {
+		title: 'Datenschutzerklärung',
+		description:
+			'Wie ChemTable mit Daten umgeht: keine Konten, keine Statistik, kein Tracking. Was der Browser speichert, was der Hoster sieht und wie Werbung Cookies nutzt.',
+		updated: 'Stand:',
+		intro: (author) =>
+			`ChemTable wird von ${author} betrieben, einem in der Republik Armenien eingetragenen Unternehmen. Diese Seite erklärt, was mit Daten geschieht, wenn Sie die Website nutzen.`,
+		sections: {
+			collect: {
+				heading: 'Was wir erheben',
+				paragraphs: [
+					'Nichts, was Sie identifiziert. ChemTable hat keine Konten, Formulare oder Kommentare und nutzt weder Statistik- noch Tracking-Dienste.'
+				]
+			},
+			storage: {
+				heading: 'Einstellungen im Browser',
+				paragraphs: [
+					'Wenn Sie ein helles oder dunkles Design wählen, wird die Wahl im lokalen Speicher Ihres Browsers abgelegt, damit die Website sie sich merkt. Sie verlässt Ihr Gerät nie; wenn Sie die Websitedaten im Browser löschen, wird sie entfernt.'
+				]
+			},
+			hosting: {
+				heading: 'Hosting',
+				paragraphs: [
+					'Die Website wird über Cloudflare ausgeliefert. Wie jeder Webserver verarbeitet Cloudflare Ihre IP-Adresse und technische Angaben zu jeder Anfrage, etwa Browser und Seite, um die Seiten auszuliefern und die Website vor Angriffen zu schützen. Wir nutzen diese Angaben nicht, um Besucher zu identifizieren.'
+				]
+			},
+			external: {
+				heading: 'Andere Websites',
+				paragraphs: [
+					'Die Elementseiten verlinken auf Wikipedia, PubChem und Wikidata, für die eigene Datenschutzerklärungen gelten. Schriften werden von dieser Website geladen, nicht von Dritten.'
+				]
+			},
+			children: {
+				heading: 'Kinder',
+				paragraphs: [
+					'ChemTable richtet sich an Schülerinnen, Schüler und Studierende. Wir erheben wissentlich von niemandem personenbezogene Daten, auch nicht von Kindern.'
+				]
+			},
+			ads: {
+				heading: 'Werbung',
+				paragraphs: [
+					'Die Werbung auf ChemTable liefert Google AdSense aus. Google und seine Partner verwenden Cookies und ähnliche Technologien, um Anzeigen auszuliefern, die Wiederholung derselben Anzeige zu begrenzen, Anzeigen zu messen und Betrug zu verhindern.',
+					'Da viele Besucher Kinder sind, bitten wir Google, alle Seiten als an Kinder gerichtet zu behandeln. Google zeigt dann nur nicht personalisierte Anzeigen, die nach der gelesenen Seite und nicht nach Ihrem Surfverlauf ausgewählt werden, und kein Remarketing.',
+					'Drittanbieter, darunter Google, können mit Cookies Anzeigen auf Grundlage Ihrer früheren Besuche dieser und anderer Websites ausliefern. Auf ChemTable sind solche personalisierten Anzeigen, wie oben beschrieben, abgeschaltet. Zusätzlich können Sie personalisierte Werbung für Ihr Google-Konto in den Werbeeinstellungen deaktivieren und Cookies anderer Anbieter unter aboutads.info oder youronlinechoices.eu ablehnen.',
+					'Im Europäischen Wirtschaftsraum, im Vereinigten Königreich und in der Schweiz bittet die Website um Ihre Einwilligung, bevor Werbe-Cookies verwendet werden. Ihre Wahl können Sie jederzeit über den Link zu den Datenschutz- und Cookie-Einstellungen auf der Seite ändern.'
+				]
+			},
+			rights: {
+				heading: 'Ihre Rechte',
+				paragraphs: [
+					'Je nach Wohnort geben Ihnen Gesetze wie die Datenschutz-Grundverordnung (DSGVO) der EU und das Gesetz der Republik Armenien über den Schutz personenbezogener Daten das Recht, zu erfahren, welche Daten über Sie gespeichert sind, sie berichtigen oder löschen zu lassen und ihrer Nutzung zu widersprechen. ChemTable selbst speichert keine personenbezogenen Daten von Besuchern.'
+				]
+			},
+			changes: {
+				heading: 'Änderungen',
+				paragraphs: [
+					'Wenn sich diese Erklärung ändert, ändert sich auch das Datum oben auf der Seite.'
+				]
+			}
+		},
+		adsOff:
+			'ChemTable zeigt derzeit keine Werbung. Falls wir Werbung einführen, beschreibt dieser Abschnitt ihre Cookies, bevor die erste Anzeige erscheint.',
+		contact: 'Fragen zu dieser Erklärung:',
+		back: 'Zurück zum Periodensystem'
+	},
 	print: {
 		heading: 'Periodensystem zum Ausdrucken',
 		text: 'Ein kostenloses PDF zum Herunterladen und Drucken, im Querformat. Die Schwarz-Weiß-Version spart Tinte: Die Kategorien unterscheiden sich am Muster.',

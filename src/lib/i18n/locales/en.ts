@@ -155,6 +155,72 @@ export const en: Dict = {
 		heading: 'Open data',
 		text: 'The full dataset for all 118 elements is free to download. A plain-text summary for AI assistants is in llms.txt.'
 	},
+	licenses: 'Licences',
+	privacy: {
+		title: 'Privacy policy',
+		description:
+			'How ChemTable handles your data: no accounts, no analytics, no tracking. What the browser stores, what the host sees and how ads use cookies.',
+		updated: 'Last updated:',
+		intro: (author) =>
+			`ChemTable is made by ${author}, a company registered in the Republic of Armenia. This page explains what happens to data when you use the site.`,
+		sections: {
+			collect: {
+				heading: 'What we collect',
+				paragraphs: [
+					'Nothing that identifies you. ChemTable has no accounts, forms or comments, and uses no analytics or tracking.'
+				]
+			},
+			storage: {
+				heading: 'Settings in your browser',
+				paragraphs: [
+					'If you pick a light or dark theme, the choice is saved in your browser’s local storage so the site remembers it. It never leaves your device; clearing the site data in your browser deletes it.'
+				]
+			},
+			hosting: {
+				heading: 'Hosting',
+				paragraphs: [
+					'The site is served by Cloudflare. Like any web server, Cloudflare processes your IP address and technical details of each request, such as the browser and the page, to deliver the pages and protect the site from attacks. We do not use this information to identify visitors.'
+				]
+			},
+			external: {
+				heading: 'Other sites',
+				paragraphs: [
+					'Element pages link to Wikipedia, PubChem and Wikidata, which have their own privacy policies. Fonts are served from this site, not by third parties.'
+				]
+			},
+			children: {
+				heading: 'Children',
+				paragraphs: [
+					'ChemTable is made for school and university students. We do not knowingly collect personal data from anyone, children included.'
+				]
+			},
+			ads: {
+				heading: 'Advertising',
+				paragraphs: [
+					'Ads on ChemTable are served by Google AdSense. Google and its partners use cookies and similar technologies to show ads, limit how often the same ad appears, measure ads and prevent fraud.',
+					'Because many visitors are children, we ask Google to treat every page as directed at children. Google then shows only non-personalised ads, chosen by the page you are reading rather than by your browsing history, and no remarketing.',
+					'Third-party vendors, including Google, can use cookies to show ads based on your earlier visits to this and other websites. On ChemTable such personalised ads are switched off, as described above. You can also turn off personalised ads for your Google account in Ads Settings, and opt out of other vendors’ cookies at aboutads.info or youronlinechoices.eu.',
+					'In the European Economic Area, the United Kingdom and Switzerland the site asks for your consent before ad cookies are used. You can change your choice at any time with the privacy and cookie settings link on the page.'
+				]
+			},
+			rights: {
+				heading: 'Your rights',
+				paragraphs: [
+					'Depending on where you live, laws such as the EU General Data Protection Regulation and the Law of the Republic of Armenia on Protection of Personal Data give you the right to know what data about you is held, to have it corrected or deleted, and to object to its use. ChemTable itself keeps no personal data about visitors.'
+				]
+			},
+			changes: {
+				heading: 'Changes',
+				paragraphs: [
+					'When this policy changes, the date at the top of the page changes with it.'
+				]
+			}
+		},
+		adsOff:
+			'ChemTable shows no ads at the moment. If we add them, this section will describe their cookies before the first ad appears.',
+		contact: 'Questions about this policy:',
+		back: 'Back to the periodic table'
+	},
 	print: {
 		heading: 'Printable periodic table',
 		text: 'A free PDF to download and print, in landscape. The black-and-white version saves ink: categories are told apart by texture.',

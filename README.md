@@ -30,6 +30,7 @@ Generated data and assets only need regenerating when their inputs change:
 | `npm run og` | Open Graph images in `static/og/` (missing ones; `-- --force` for all, ~15 min) | after changing the domain, palette or texts |
 | `npm run pdf` | 32 printable PDFs in `static/print/` (needs Chrome, Edge or Chromium; set `CHROME_PATH` if not found) | after changing the domain, palette or data |
 | `npm run favicon` | icons in `static/` | after changing the icon |
+| `npm run licenses` | `static/third-party-licenses.txt`: licences of the bundled packages and fonts | after adding or updating dependencies |
 
 Product, data and SEO decisions are in [docs/SPEC.md](docs/SPEC.md), design in [DESIGN.md](DESIGN.md), working notes for contributors and AI assistants in [CLAUDE.md](CLAUDE.md).
 
@@ -40,6 +41,6 @@ Only English and Russian have been checked by native speakers. The other languag
 ## Licences
 
 - **Code:** [MIT](LICENSE), © 2026 Zarinda.
-- **Data** (`elements.json`, `elements.csv` and the element texts): [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), with a link to ChemTable. Built from PubChem (public domain), IUPAC CIAAW and Wikidata (CC0).
+- **Data** (`elements.json`, `elements.csv` and the element texts): ChemTable's compilation, corrections and texts are [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), with a link to ChemTable. Values taken from other sources keep their terms, so credit those sources when you reuse the values: ionization energies from the NIST Atomic Spectra Database (NIST Standard Reference Database 78, © U.S. Secretary of Commerce), covalent radii from Cordero et al. (2008), electron affinities from Wikipedia's data page (CC BY-SA 4.0) and the literature it cites, atomic weights from IUPAC CIAAW, other properties from PubChem (US National Library of Medicine) and names from Wikidata (CC0). The full list with links is in `credits` of `/data/elements.json` and in `/llms.txt`.
 - **Name and icon:** the ChemTable name and the “Ct” icon are not covered by the MIT licence. Please use your own name and icon for forks you publish.
-- **Fonts** in `static/fonts/` keep their own licences (SIL Open Font License).
+- **Third-party software and fonts** bundled into the site keep their own licences (MIT, Apache 2.0, SIL Open Font License); their texts are collected in `static/third-party-licenses.txt`, linked from the site footer.

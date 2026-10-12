@@ -12,14 +12,62 @@ export const AUTHOR = {
 	url: 'https://zarinda.com'
 };
 
-/** Licence of the published dataset (the sources are public domain or CC0). */
+/**
+ * Licence of ChemTable's own work: the compilation, the corrections and the texts. Values taken
+ * from other sources keep those sources' terms (DATA_CREDITS); facts themselves are free to use.
+ */
 export const DATA_LICENSE = {
 	name: 'CC BY 4.0',
 	url: 'https://creativecommons.org/licenses/by/4.0/'
 };
 
+/** Who each column comes from and on what terms; repeated in elements.json, llms.txt and the README. */
+export const DATA_CREDITS = [
+	{
+		data: 'Ionization energies',
+		source:
+			'Kramida, A., Ralchenko, Yu., Reader, J. and NIST ASD Team, NIST Atomic Spectra Database (NIST Standard Reference Database 78)',
+		url: 'https://doi.org/10.18434/T4W30F',
+		terms: 'NIST Standard Reference Data, © U.S. Secretary of Commerce on behalf of the United States'
+	},
+	{
+		data: 'Covalent radii',
+		source: 'Cordero, B. et al., Covalent radii revisited, Dalton Transactions, 2008, 2832–2838',
+		url: 'https://doi.org/10.1039/b801115j',
+		terms: 'values cited from the article'
+	},
+	{
+		data: 'Electron affinities',
+		source: 'Electron affinity (data page), Wikipedia, and the primary literature it cites',
+		url: 'https://en.wikipedia.org/wiki/Electron_affinity_(data_page)',
+		terms: 'Wikipedia text under CC BY-SA 4.0'
+	},
+	{
+		data: 'Standard atomic weights',
+		source: 'IUPAC Commission on Isotopic Abundances and Atomic Weights (CIAAW)',
+		url: 'https://www.ciaaw.org/abridged-atomic-weights.htm',
+		terms: 'values cited from IUPAC'
+	},
+	{
+		data: 'Other properties',
+		source: 'PubChem Periodic Table, National Library of Medicine (NIH)',
+		url: 'https://pubchem.ncbi.nlm.nih.gov/periodic-table/',
+		terms: 'US government work; PubChem may include third-party material'
+	},
+	{
+		data: 'Names, discoverers, Wikipedia links',
+		source: 'Wikidata',
+		url: 'https://www.wikidata.org/',
+		terms: 'CC0'
+	}
+];
+
 export const homePath = (lang: Lang) => localize('/', lang);
 export const elementPath = (e: Element, lang: Lang) => localize(`/${e.slug}`, lang);
+export const privacyPath = (lang: Lang) => localize('/privacy', lang);
+
+/** Shown on the privacy policy and used as its sitemap date: change it with the policy. */
+export const PRIVACY_UPDATED = '2026-10-12';
 
 /** Pre-rendered Open Graph image for a page; `null` element means the home page. */
 export const ogImagePath = (lang: Lang, e: Element | null) =>

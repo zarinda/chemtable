@@ -153,6 +153,72 @@ export const fr: Dict = {
 		heading: 'Données ouvertes',
 		text: 'L’ensemble des données sur les 118 éléments est téléchargeable librement. Un résumé en texte brut pour les assistants IA se trouve dans llms.txt.'
 	},
+	licenses: 'Licences',
+	privacy: {
+		title: 'Politique de confidentialité',
+		description:
+			`Comment ChemTable traite les données${_}: ni compte, ni statistiques, ni pistage. Ce que garde le navigateur, ce que voit l’hébergeur, les cookies publicitaires.`,
+		updated: `Dernière mise à jour${_}:`,
+		intro: (author) =>
+			`ChemTable est réalisé par ${author}, une société immatriculée en République d’Arménie. Cette page explique ce qu’il advient des données lorsque vous utilisez le site.`,
+		sections: {
+			collect: {
+				heading: 'Ce que nous collectons',
+				paragraphs: [
+					'Rien qui permette de vous identifier. ChemTable n’a ni compte, ni formulaire, ni commentaires, et n’utilise ni statistiques de visite ni pistage.'
+				]
+			},
+			storage: {
+				heading: 'Réglages dans votre navigateur',
+				paragraphs: [
+					`Si vous choisissez un thème clair ou sombre, ce choix est enregistré dans le stockage local de votre navigateur pour que le site s’en souvienne. Il ne quitte jamais votre appareil${_}; effacer les données du site dans le navigateur le supprime.`
+				]
+			},
+			hosting: {
+				heading: 'Hébergement',
+				paragraphs: [
+					'Le site est servi par Cloudflare. Comme tout serveur web, Cloudflare traite votre adresse IP et des informations techniques sur chaque requête, comme le navigateur et la page, pour livrer les pages et protéger le site contre les attaques. Nous n’utilisons pas ces informations pour identifier les visiteurs.'
+				]
+			},
+			external: {
+				heading: 'Autres sites',
+				paragraphs: [
+					'Les pages des éléments renvoient vers Wikipédia, PubChem et Wikidata, qui ont leurs propres politiques de confidentialité. Les polices sont servies par ce site, pas par des tiers.'
+				]
+			},
+			children: {
+				heading: 'Enfants',
+				paragraphs: [
+					'ChemTable s’adresse aux élèves et aux étudiants. Nous ne collectons sciemment de données personnelles auprès de personne, y compris les enfants.'
+				]
+			},
+			ads: {
+				heading: 'Publicité',
+				paragraphs: [
+					'Les publicités de ChemTable sont diffusées par Google AdSense. Google et ses partenaires utilisent des cookies et des technologies similaires pour afficher les annonces, limiter la répétition d’une même annonce, mesurer les publicités et prévenir la fraude.',
+					'Comme beaucoup de visiteurs sont des enfants, nous demandons à Google de traiter toutes les pages comme destinées aux enfants. Google n’affiche alors que des annonces non personnalisées, choisies d’après la page consultée et non d’après votre historique de navigation, sans remarketing.',
+					'Des fournisseurs tiers, dont Google, peuvent utiliser des cookies pour diffuser des annonces en fonction de vos visites précédentes sur ce site ou d’autres. Sur ChemTable, ces annonces personnalisées sont désactivées, comme indiqué ci-dessus. Vous pouvez aussi désactiver la publicité personnalisée pour votre compte Google dans les Paramètres des annonces, et refuser les cookies d’autres fournisseurs sur aboutads.info ou youronlinechoices.eu.',
+					'Dans l’Espace économique européen, au Royaume-Uni et en Suisse, le site demande votre consentement avant d’utiliser des cookies publicitaires. Vous pouvez modifier votre choix à tout moment grâce au lien des paramètres de confidentialité et des cookies sur la page.'
+				]
+			},
+			rights: {
+				heading: 'Vos droits',
+				paragraphs: [
+					'Selon votre lieu de résidence, des lois comme le Règlement général sur la protection des données (RGPD) de l’UE et la loi de la République d’Arménie sur la protection des données personnelles vous donnent le droit de savoir quelles données vous concernant sont conservées, de les faire rectifier ou effacer et de vous opposer à leur utilisation. ChemTable ne conserve lui-même aucune donnée personnelle sur ses visiteurs.'
+				]
+			},
+			changes: {
+				heading: 'Modifications',
+				paragraphs: [
+					'Si cette politique change, la date en haut de la page change aussi.'
+				]
+			}
+		},
+		adsOff:
+			'ChemTable n’affiche aucune publicité pour le moment. Si nous en ajoutons, cette section décrira leurs cookies avant l’apparition de la première annonce.',
+		contact: `Questions sur cette politique${_}:`,
+		back: 'Retour au tableau périodique'
+	},
 	print: {
 		heading: 'Tableau périodique à imprimer',
 		text: 'Un PDF gratuit à télécharger et à imprimer, au format paysage. La version noir et blanc économise l’encre : les familles se distinguent par leur trame.',

@@ -27,7 +27,7 @@ ${rows}
 
 	const body = `# ChemTable: properties of all 118 chemical elements
 
-> Standard atomic weights from IUPAC CIAAW, ionization energies from NIST, electron affinities from measured values compiled on Wikipedia, covalent radii from Cordero et al. (2008), other properties from PubChem (US National Institutes of Health) checked against the CRC Handbook, names from Wikidata. Updated ${fetchedAt}. Site: ${absolute('/')}
+> Standard atomic weights from IUPAC CIAAW, ionization energies from NIST, electron affinities from measured values compiled on Wikipedia, covalent radii from Cordero et al. (2008), other properties from PubChem (US National Institutes of Health) checked against the CRC Handbook, names from Wikidata. Updated ${fetchedAt}. Site: ${absolute('/')}. Licence and how to credit the sources: ${absolute('/llms.txt')}
 
 ${sections.join('\n\n')}
 `;

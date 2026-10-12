@@ -22,6 +22,19 @@ export type Term =
 	| 'electronAffinity'
 	| 'oxidationStates';
 
+/** Sections of the privacy policy, in page order. */
+export const PRIVACY_SECTIONS = [
+	'collect',
+	'storage',
+	'hosting',
+	'external',
+	'children',
+	'ads',
+	'rights',
+	'changes'
+] as const;
+export type PrivacySection = (typeof PRIVACY_SECTIONS)[number];
+
 /** Facts an element summary sentence is built from, already formatted for the language. */
 export type SummaryFacts = {
 	name: string;
@@ -114,6 +127,23 @@ export type Dict = {
 	data: {
 		heading: string;
 		text: string;
+	};
+	/** Footer link to the licences of the bundled software and fonts. */
+	licenses: string;
+	privacy: {
+		/** Page heading and footer link. */
+		title: string;
+		description: string;
+		/** Before the date, e.g. "Last updated:". */
+		updated: string;
+		/** Who runs the site; receives the author name. */
+		intro: (author: string) => string;
+		sections: Record<PrivacySection, { heading: string; paragraphs: string[] }>;
+		/** The advertising section while ADS_LIVE is false. */
+		adsOff: string;
+		/** Before the link to the author's site in the "Your rights" section. */
+		contact: string;
+		back: string;
 	};
 	/** Printable PDF table: the download section and the labels printed on the sheet. */
 	print: {

@@ -14,7 +14,8 @@
 		"fonts": "tsx scripts/fetch-fonts.ts",
 		"og": "tsx scripts/og.ts",
 		"favicon": "tsx scripts/favicon.ts",
-		"pdf": "tsx scripts/pdf.ts"
+		"pdf": "tsx scripts/pdf.ts",
+		"licenses": "tsx scripts/licenses.ts"
 	},
 	"devDependencies": {
 		"@resvg/resvg-js": "^2.6.2",

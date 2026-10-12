@@ -154,6 +154,72 @@ export const es: Dict = {
 		heading: 'Datos abiertos',
 		text: 'El conjunto completo de datos de los 118 elementos se puede descargar libremente. Hay un resumen en texto plano para asistentes de IA en llms.txt.'
 	},
+	licenses: 'Licencias',
+	privacy: {
+		title: 'Política de privacidad',
+		description:
+			'Cómo trata ChemTable los datos: sin cuentas, sin analítica, sin rastreo. Qué guarda el navegador, qué ve el alojamiento y cómo usa cookies la publicidad.',
+		updated: 'Última actualización:',
+		intro: (author) =>
+			`ChemTable es obra de ${author}, una empresa registrada en la República de Armenia. Esta página explica qué ocurre con los datos cuando usas el sitio.`,
+		sections: {
+			collect: {
+				heading: 'Qué recopilamos',
+				paragraphs: [
+					'Nada que te identifique. ChemTable no tiene cuentas, formularios ni comentarios, y no usa analítica ni rastreo.'
+				]
+			},
+			storage: {
+				heading: 'Ajustes en tu navegador',
+				paragraphs: [
+					'Si eliges el tema claro u oscuro, la elección se guarda en el almacenamiento local del navegador para que el sitio la recuerde. Nunca sale de tu dispositivo; al borrar los datos del sitio en el navegador se elimina.'
+				]
+			},
+			hosting: {
+				heading: 'Alojamiento',
+				paragraphs: [
+					'El sitio lo sirve Cloudflare. Como cualquier servidor web, Cloudflare trata tu dirección IP y datos técnicos de cada solicitud, como el navegador y la página, para entregar las páginas y proteger el sitio de ataques. No usamos esta información para identificar a los visitantes.'
+				]
+			},
+			external: {
+				heading: 'Otros sitios',
+				paragraphs: [
+					'Las páginas de los elementos enlazan a Wikipedia, PubChem y Wikidata, que tienen sus propias políticas de privacidad. Las fuentes tipográficas se sirven desde este sitio, no desde terceros.'
+				]
+			},
+			children: {
+				heading: 'Menores',
+				paragraphs: [
+					'ChemTable está hecho para estudiantes de escuela y universidad. No recopilamos a sabiendas datos personales de nadie, tampoco de menores.'
+				]
+			},
+			ads: {
+				heading: 'Publicidad',
+				paragraphs: [
+					'Los anuncios de ChemTable los sirve Google AdSense. Google y sus socios usan cookies y tecnologías similares para mostrar anuncios, limitar cuántas veces aparece el mismo anuncio, medirlos y prevenir el fraude.',
+					'Como muchos visitantes son menores, pedimos a Google que trate todas las páginas como dirigidas a menores. Así Google solo muestra anuncios no personalizados, elegidos según la página que lees y no según tu historial de navegación, y sin remarketing.',
+					'Los proveedores externos, incluido Google, pueden usar cookies para mostrar anuncios basados en tus visitas anteriores a este y otros sitios. En ChemTable estos anuncios personalizados están desactivados, como se explica arriba. Además, puedes desactivar los anuncios personalizados de tu cuenta de Google en la Configuración de anuncios y rechazar las cookies de otros proveedores en aboutads.info o youronlinechoices.eu.',
+					'En el Espacio Económico Europeo, el Reino Unido y Suiza, el sitio pide tu consentimiento antes de usar cookies publicitarias. Puedes cambiar tu elección en cualquier momento con el enlace de ajustes de privacidad y cookies de la página.'
+				]
+			},
+			rights: {
+				heading: 'Tus derechos',
+				paragraphs: [
+					'Según dónde vivas, leyes como el Reglamento General de Protección de Datos (RGPD) de la UE y la Ley de la República de Armenia sobre Protección de Datos Personales te dan derecho a saber qué datos tuyos se conservan, a que se corrijan o borren y a oponerte a su uso. ChemTable no guarda datos personales de sus visitantes.'
+				]
+			},
+			changes: {
+				heading: 'Cambios',
+				paragraphs: [
+					'Si esta política cambia, también cambiará la fecha al principio de la página.'
+				]
+			}
+		},
+		adsOff:
+			'Por ahora ChemTable no muestra anuncios. Si los añadimos, esta sección describirá sus cookies antes de que aparezca el primer anuncio.',
+		contact: 'Preguntas sobre esta política:',
+		back: 'Volver a la tabla periódica'
+	},
 	print: {
 		heading: 'Tabla periódica para imprimir',
 		text: 'Un PDF gratuito para descargar e imprimir, en horizontal. La versión en blanco y negro ahorra tinta: las categorías se distinguen por la trama.',
