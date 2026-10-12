@@ -42,13 +42,27 @@
 		app.close();
 	}
 
+	/**
+	 * Focus the poster itself, not its first button: a page opened from search would otherwise
+	 * greet the visitor with a focus ring on "←". Arrow keys and Escape work from the poster.
+	 * Done on mount: on a page opened by URL the poster mounts after Bits UI's autofocus event.
+	 */
+	function focusOnMount(node: HTMLElement) {
+		requestAnimationFrame(() => {
+			if (!node.contains(document.activeElement)) node.focus({ preventScroll: true });
+		});
+	}
+
 	function onkeydown(event: KeyboardEvent) {
 		if (!e) return;
 		if (event.key === 'ArrowRight') app.step(e.z + 1);
 		if (event.key === 'ArrowLeft') app.step(e.z - 1);
 	}
 
-	const celsius = (k: number | null, note = false, noteText = '') =>
+	/** Phones size the heading by name length, so Rutherfordium fits beside the cell unbroken. */
+	const nameSize = (name: string) => (name.length > 10 ? 'long' : name.length > 7 ? 'mid' : '');
+
+	const celsius =(k: number | null, note = false, noteText = '') =>
 		k === null
 			? t.noData
 			: `${formatNumber(kelvinToCelsius(k), app.lang, 1)} °C (${formatNumber(k, app.lang, 2)} K)` +
@@ -126,21 +140,28 @@
 		opened by URL showed the table until JS loaded. The poster is a root-level fixed layer anyway.
 	-->
 	<Dialog.Portal disabled>
-		<Dialog.Content forceMount>
+		<Dialog.Content forceMount onOpenAutoFocus={(event) => event.preventDefault()}>
 			{#snippet child({ props, open })}
 				{#if open && e}
 					<div
 						{...props}
 						class="poster cat-{e.category}"
+						tabindex="-1"
+						{@attach focusOnMount}
 						transition:expand={{ rect: app.origin }}
 						{onkeydown}
 					>
 						{#key e.z}
 							<div class="layout" class:ad-bottom={showAds() && !adOnTop()} class:ad-top={showAds() && adOnTop()}>
 								<header class="top">
-									<Dialog.Title level={2} class="name">
+									<!-- Phones: the element's cell heads the page; the orbit figure moves below the data. -->
+									<div class="tile swatch" aria-hidden="true">
+										<span class="tile-z">{e.z}</span>
+										<span class="tile-symbol">{e.symbol}</span>
+									</div>
+									<Dialog.Title level={2} class="name {nameSize(e.name[app.lang])}">
 										{e.name[app.lang]}
-										{#if app.lang !== 'en'}<span class="alt" lang="en">{e.name.en}</span>{/if}
+										{#if e.name[app.lang] !== e.name.en}<span class="alt" lang="en">{e.name.en}</span>{/if}
 									</Dialog.Title>
 									<nav class="nav">
 										<button
@@ -149,7 +170,7 @@
 											disabled={e.z === 1}
 											aria-label={elements[e.z - 2]?.name[app.lang]}
 										>
-											←
+											←<span class="neighbour">{elements[e.z - 2]?.symbol}</span>
 										</button>
 										<button
 											type="button"
@@ -157,7 +178,7 @@
 											disabled={e.z === elements.length}
 											aria-label={elements[e.z]?.name[app.lang]}
 										>
-											→
+											<span class="neighbour">{elements[e.z]?.symbol}</span>→
 										</button>
 										<Dialog.Close class="close">{t.close}</Dialog.Close>
 									</nav>
@@ -489,12 +510,6 @@
 		line-height: 1.15;
 	}
 
-	.key .letter {
-		font-family: var(--font-display);
-		font-size: var(--step-2);
-		line-height: 1.15;
-	}
-
 	.key div:first-child dd small {
 		font-family: var(--font-text);
 	}
@@ -567,30 +582,167 @@
 		}
 	}
 
+	.tile,
+	.neighbour {
+		display: none;
+	}
+
+	/*
+	 * Phones: visitors from search come for a number, so the data comes first. The element's cell
+	 * heads the page, the orbit figure follows the data, and the buttons sit under the thumb.
+	 */
 	@media (max-width: 760px) {
 		.layout {
 			grid-template-columns: minmax(0, 1fr);
-			grid-template-areas: 'top' 'figure' 'data' 'more';
+			grid-template-areas: 'top' 'data' 'figure' 'more';
+			row-gap: 16px;
+			padding-top: 16px;
+			/* Room for the button bar. */
+			padding-bottom: calc(96px + env(safe-area-inset-bottom));
 		}
 		.layout.ad-bottom {
-			grid-template-areas: 'top' 'figure' 'data' 'ad' 'more';
+			grid-template-areas: 'top' 'data' 'ad' 'figure' 'more';
 		}
 		.layout.ad-top {
-			grid-template-areas: 'top' 'ad' 'figure' 'data' 'more';
+			grid-template-areas: 'top' 'ad' 'data' 'figure' 'more';
 		}
+
 		.top {
-			flex-direction: column;
-			align-items: stretch;
+			display: grid;
+			grid-template-columns: auto minmax(0, 1fr);
+			align-items: center;
+			gap: 16px;
+			padding-bottom: 16px;
 		}
+
+		.tile {
+			display: grid;
+			grid-template-rows: auto 1fr;
+			width: 96px;
+			height: 96px;
+			padding: 6px 8px;
+			box-shadow: 5px 5px 0 var(--rule);
+		}
+
+		.tile-z {
+			font-family: var(--font-numeral);
+			font-size: var(--step-1);
+			line-height: 1;
+			color: var(--raspberry);
+		}
+
+		.tile-symbol {
+			align-self: center;
+			font-family: var(--font-display);
+			font-weight: 600;
+			font-size: 3rem;
+			line-height: 1;
+		}
+
+		.poster :global(.name) {
+			font-size: 2.75rem;
+			-webkit-hyphens: auto;
+			hyphens: auto;
+			overflow-wrap: anywhere;
+		}
+
+		.poster :global(.name.mid) {
+			font-size: 2.25rem;
+		}
+
+		.poster :global(.name.long) {
+			font-size: 1.875rem;
+		}
+
+		.alt {
+			margin-top: 0.4em;
+			font-size: var(--step--1);
+		}
+
 		.nav {
-			justify-content: flex-end;
+			position: fixed;
+			z-index: 1;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			display: grid;
+			grid-template-columns: 1fr auto 1fr;
+			grid-template-areas: 'prev close next';
+			gap: 8px;
+			padding: 10px var(--gutter) calc(14px + env(safe-area-inset-bottom));
+			border-top: 2px solid var(--rule);
+			background: var(--bg);
 		}
-		.figure {
-			max-width: 360px;
-			justify-self: center;
+
+		.nav button,
+		.nav :global(.close) {
+			height: 48px;
+			font-size: var(--step-0);
 		}
+
+		.nav button:first-child {
+			grid-area: prev;
+			justify-self: start;
+		}
+
+		.nav button:nth-child(2) {
+			grid-area: next;
+			justify-self: end;
+		}
+
+		.nav :global(.close) {
+			grid-area: close;
+			padding: 0 1.4em;
+			font-weight: 600;
+		}
+
+		.neighbour {
+			display: inline;
+			margin: 0 0.35em;
+			font-family: var(--font-display);
+			font-weight: 600;
+		}
+
+		.poster :global(.lead) {
+			margin-bottom: 12px;
+			font-size: var(--step-0);
+		}
+
 		.key {
 			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 0 18px;
+		}
+
+		.key > div {
+			padding: 10px 0 12px;
+		}
+
+		.key dd {
+			margin-top: 4px;
+		}
+
+		/* Label above the value: long labels no longer wrap into a narrow column. */
+		.config > div,
+		.facts > div {
+			grid-template-columns: minmax(0, 1fr);
+			gap: 4px;
+			padding: 11px 0;
+		}
+
+		.config dd,
+		.facts dd {
+			font-size: 1.0625rem;
+		}
+
+		.figure {
+			max-width: 300px;
+			justify-self: center;
+		}
+
+		/* The cell at the top already shows the number. */
+		.number,
+		.bar {
+			display: none;
 		}
 	}
 </style>

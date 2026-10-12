@@ -43,6 +43,7 @@ npm run dev       # dev-сервер; только здесь виден мак�
 npm run check     # svelte-check, должен быть 0 ошибок
 npm run build     # статика в build/
 npm run preview   # после каждой пересборки перезапускать — иначе отдаёт 404 на новые ассеты
+                  # (процесс называется «vite.js preview»; без JS плакат не реагирует на клавиши)
 npm run data      # пересобрать elements.json (сеть: PubChem, CIAAW, NIST, Wikidata)
 npm run pdf       # 32 PDF для печати (~1 мин), после смены данных, палитры или домена
 npm run licenses  # static/third-party-licenses.txt после смены зависимостей
