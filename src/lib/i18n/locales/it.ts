@@ -1,19 +1,5 @@
 import type { Dict } from '../ui';
 
-/** Every element name is masculine: «il ferro», «lo zolfo», «lo iodio», «l’ossigeno». */
-const article = (name: string) => {
-	const w = name.toLowerCase();
-	if (/^(s[^aeiou]|z|x|gn|ps|i[aeiou])/.test(w)) return 'lo ';
-	return /^[aeiou]/.test(w) ? 'l’' : 'il ';
-};
-const The = (name: string) => {
-	const a = article(name);
-	return a[0].toUpperCase() + a.slice(1) + name.toLowerCase();
-};
-/** «del ferro», «dello zolfo», «dell’ossigeno». */
-const ofThe = (name: string) =>
-	({ 'il ': 'del ', 'lo ': 'dello ', 'l’': 'dell’' })[article(name)] + name.toLowerCase();
-
 export const it: Dict = {
 	reviewed: false,
 	siteName: 'ChemTable',
@@ -366,16 +352,5 @@ export const it: Dict = {
 			wikidata: 'nomi in 8 lingue'
 		},
 		updated: (date) => `Dati aggiornati il ${date}`
-	},
-	quick: {
-		heading: (name) => `${The(name)} in breve`,
-		protons: (name) => `Quanti protoni ha un atomo di ${name.toLowerCase()}?`,
-		electrons: (name) => `Quanti elettroni ha un atomo di ${name.toLowerCase()}?`,
-		neutral: 'nell’atomo neutro',
-		molarMass: (name) => `Qual è la massa molare ${ofThe(name)}?`,
-		metal: (name) => `${The(name)} è un metallo o un non metallo?`,
-		kind: { metal: 'Metallo', nonmetal: 'Non metallo', metalloid: 'Semimetallo' },
-		state: 'Stato fisico',
-		roomTemperature: 'a temperatura ambiente'
 	}
 };

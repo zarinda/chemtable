@@ -1,12 +1,5 @@
 import type { Dict } from '../ui';
 
-/** Every element name is masculine except «la plata». */
-const feminine = (name: string) => name === 'Plata';
-/** «El hierro», «La plata». */
-const The = (name: string) => (feminine(name) ? 'La ' : 'El ') + name.toLowerCase();
-/** «del hierro», «de la plata». */
-const ofThe = (name: string) => (feminine(name) ? 'de la ' : 'del ') + name.toLowerCase();
-
 export const es: Dict = {
 	reviewed: false,
 	siteName: 'ChemTable',
@@ -359,16 +352,5 @@ export const es: Dict = {
 			wikidata: 'nombres en 8 idiomas'
 		},
 		updated: (date) => `Datos actualizados el ${date}`
-	},
-	quick: {
-		heading: (name) => `${The(name)} en resumen`,
-		protons: (name) => `¿Cuántos protones tiene un átomo de ${name.toLowerCase()}?`,
-		electrons: (name) => `¿Cuántos electrones tiene un átomo de ${name.toLowerCase()}?`,
-		neutral: 'en el átomo neutro',
-		molarMass: (name) => `¿Cuál es la masa molar ${ofThe(name)}?`,
-		metal: (name) => `¿${The(name)} es un metal o un no metal?`,
-		kind: { metal: 'Metal', nonmetal: 'No metal', metalloid: 'Metaloide' },
-		state: 'Estado de agregación',
-		roomTemperature: 'a temperatura ambiente'
 	}
 };

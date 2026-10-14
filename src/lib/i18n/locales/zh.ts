@@ -342,16 +342,5 @@ export const zh: Dict = {
 			wikidata: '8 种语言的名称'
 		},
 		updated: (date) => `数据更新于 ${date}`
-	},
-	quick: {
-		heading: (name) => `${name}：快速了解`,
-		protons: (name) => `${name}原子有多少个质子？`,
-		electrons: (name) => `${name}原子有多少个电子？`,
-		neutral: '中性原子',
-		molarMass: (name) => `${name}的摩尔质量是多少？`,
-		metal: (name) => `${name}是金属还是非金属？`,
-		kind: { metal: '金属', nonmetal: '非金属', metalloid: '类金属' },
-		state: '物态',
-		roomTemperature: '室温下'
 	}
 };

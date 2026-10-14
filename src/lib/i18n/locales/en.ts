@@ -353,16 +353,5 @@ export const en: Dict = {
 			wikidata: 'names in 8 languages'
 		},
 		updated: (date) => `Data updated ${date}`
-	},
-	quick: {
-		heading: (name) => `${name} at a glance`,
-		protons: (name) => `How many protons does ${name.toLowerCase()} have?`,
-		electrons: (name) => `How many electrons does ${name.toLowerCase()} have?`,
-		neutral: 'in a neutral atom',
-		molarMass: (name) => `What is the molar mass of ${name.toLowerCase()}?`,
-		metal: (name) => `Is ${name.toLowerCase()} a metal or a nonmetal?`,
-		kind: { metal: 'Metal', nonmetal: 'Nonmetal', metalloid: 'Metalloid' },
-		state: 'State of matter',
-		roomTemperature: 'at room temperature'
 	}
 };

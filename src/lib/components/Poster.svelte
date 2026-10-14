@@ -2,44 +2,18 @@
 	import { Dialog } from 'bits-ui';
 	import { cubicInOut } from 'svelte/easing';
 	import { app } from '#lib/state.svelte.ts';
-	import { elements, sources, type Category, type Element } from '#lib/elements.ts';
+	import { elements, sources, type Element } from '#lib/elements.ts';
 	import { formatConfig, formatMass, formatNames, formatNumber, kelvinToCelsius } from '#lib/format.ts';
 	import type { Term } from '#lib/i18n/ui.ts';
 	import Shells from './Shells.svelte';
 	import { dev } from '$app/env';
 	import { showAds, adOnTop } from '#lib/ads.ts';
 	import Related from './Related.svelte';
-	import { molarPath } from '#lib/seo.ts';
 
 	let { element }: { element: Element | null } = $props();
 
-	const KIND: Record<Category, 'metal' | 'nonmetal' | 'metalloid'> = {
-		'alkali-metal': 'metal',
-		'alkaline-earth-metal': 'metal',
-		'transition-metal': 'metal',
-		'post-transition-metal': 'metal',
-		lanthanide: 'metal',
-		actinide: 'metal',
-		metalloid: 'metalloid',
-		nonmetal: 'nonmetal',
-		halogen: 'nonmetal',
-		'noble-gas': 'nonmetal'
-	};
-
 	let e = $derived(element);
 	let t = $derived(app.t);
-
-	/**
-	 * Metal or not, by category. Unobserved in bulk (state predicted), the heavy metals stay metals,
-	 * marked as predicted; astatine, tennessine and oganesson get no answer, because predictions
-	 * for them disagree with their group.
-	 */
-	let kind = $derived(
-		e && !(e.statePredicted && KIND[e.category] !== 'metal') ? KIND[e.category] : null
-	);
-	let molarMass = $derived(
-		e?.mass.text ? `${formatMass(e.mass.text, app.lang)} ${t.molar.unit}` : null
-	);
 
 	/** Term whose explanation is open; it stays open while stepping between elements. */
 	let term = $state<Term | null>(null);
@@ -251,50 +225,6 @@
 									{#if term && KEY_TERMS.includes(term)}
 										<p class="explain wide">{t.explain[term]}</p>
 									{/if}
-
-									<section class="quick" aria-labelledby="quick-heading">
-										<h3 id="quick-heading">{t.quick.heading(e.name[app.lang])}</h3>
-										<dl>
-											<div>
-												<dt>{t.quick.protons(e.name[app.lang])}</dt>
-												<dd><b>{e.z}</b></dd>
-											</div>
-											<div>
-												<dt>{t.quick.electrons(e.name[app.lang])}</dt>
-												<dd><b>{e.z}</b><small>{t.quick.neutral}</small></dd>
-											</div>
-											<div>
-												<dt>{t.quick.molarMass(e.name[app.lang])}</dt>
-												<dd>
-													{#if !molarMass}
-														{t.noData}
-													{:else if e.mass.source === 'ciaaw'}
-														<!-- The calculator refuses elements without a standard atomic weight. -->
-														<a href="{molarPath(app.lang)}?f={e.symbol}"><b>{molarMass}</b></a>
-													{:else}
-														<b>{molarMass}</b>
-														<small>{t.massIsotope}</small>
-													{/if}
-												</dd>
-											</div>
-											{#if kind}
-												<div>
-													<dt>{t.quick.metal(e.name[app.lang])}</dt>
-													<dd>
-														<b>{t.quick.kind[kind]}</b>
-														{#if e.statePredicted}<small>{t.predicted}</small>{/if}
-													</dd>
-												</div>
-											{/if}
-											<div>
-												<dt>{t.quick.state}</dt>
-												<dd>
-													<b>{t.state[e.state]}</b>
-													<small>{e.statePredicted ? t.predicted : t.quick.roomTemperature}</small>
-												</dd>
-											</div>
-										</dl>
-									</section>
 
 									<dl class="config">
 										<div>
@@ -586,68 +516,6 @@
 
 	.cite {
 		font-size: var(--step--1);
-	}
-
-	.quick {
-		margin: 0 6px 28px 0;
-		padding: 16px 20px 6px;
-		background: var(--surface);
-		color: var(--on-surface);
-		box-shadow: 6px 6px 0 var(--rule);
-	}
-
-	.quick h3 {
-		margin: 0 0 4px;
-		font-family: var(--font-display);
-		font-weight: 600;
-		font-size: var(--step-2);
-		line-height: 1.1;
-	}
-
-	.quick dl {
-		margin: 0;
-	}
-
-	.quick dl > div {
-		grid-template-columns: minmax(0, 1fr) auto;
-		align-items: baseline;
-		gap: 16px;
-		padding: 10px 0;
-		border-top: 0;
-		border-bottom: 1px solid color-mix(in srgb, var(--on-surface) 35%, transparent);
-	}
-
-	.quick dl > div:last-child {
-		border-bottom: 0;
-	}
-
-	.quick dt {
-		font-size: var(--step-0);
-		line-height: 1.35;
-	}
-
-	.quick dd {
-		text-align: right;
-	}
-
-	/* Long notes wrap instead of squeezing the question (Massenzahl des stabilsten Isotops). */
-	.quick dd small {
-		max-width: 12em;
-		margin-left: auto;
-	}
-
-	.quick b {
-		font-family: var(--font-display);
-		font-weight: 600;
-		font-size: var(--step-1);
-		line-height: 1.1;
-		white-space: nowrap;
-	}
-
-	.quick a {
-		color: inherit;
-		text-decoration-thickness: 1px;
-		text-underline-offset: 0.2em;
 	}
 
 	.term {

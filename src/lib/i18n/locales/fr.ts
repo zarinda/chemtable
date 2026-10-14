@@ -3,15 +3,6 @@ import type { Dict } from '../ui';
 /** Narrow no-break space before French high punctuation (: ; ? !). */
 const _ = ' ';
 
-/** Every element name is masculine; elision before a vowel or a mute h (le hassium). */
-const elides = (name: string) => /^[aeiouyéè]|^h(?!assium)/.test(name.toLowerCase());
-/** « de fer », « d’oxygène ». */
-const of = (name: string) => (elides(name) ? 'd’' : 'de ') + name.toLowerCase();
-/** « du fer », « de l’oxygène ». */
-const ofThe = (name: string) => (elides(name) ? 'de l’' : 'du ') + name.toLowerCase();
-/** « Le fer », « L’oxygène ». */
-const The = (name: string) => (elides(name) ? 'L’' : 'Le ') + name.toLowerCase();
-
 export const fr: Dict = {
 	reviewed: false,
 	siteName: 'ChemTable',
@@ -360,16 +351,5 @@ export const fr: Dict = {
 			wikidata: 'noms en 8 langues'
 		},
 		updated: (date) => `Données mises à jour le ${date}`
-	},
-	quick: {
-		heading: (name) => `${The(name)} en bref`,
-		protons: (name) => `Combien de protons a un atome ${of(name)}${_}?`,
-		electrons: (name) => `Combien d’électrons a un atome ${of(name)}${_}?`,
-		neutral: 'dans l’atome neutre',
-		molarMass: (name) => `Quelle est la masse molaire ${ofThe(name)}${_}?`,
-		metal: (name) => `${The(name)} est-il un métal ou un non-métal${_}?`,
-		kind: { metal: 'Métal', nonmetal: 'Non-métal', metalloid: 'Métalloïde' },
-		state: 'État physique',
-		roomTemperature: 'à température ambiante'
 	}
 };
