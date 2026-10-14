@@ -77,17 +77,16 @@ function fontFaces(): string {
 					`url(data:font/woff2;base64,${readFileSync(join(dir, 'files', file)).toString('base64')})`
 			);
 	};
-	const noto = (weight: 400 | 700) => `@font-face {
-	font-family: 'Noto Sans SC Subset';
-	font-weight: ${weight === 400 ? '400' : '600 700'};
-	src: url(data:font/woff2;base64,${readFileSync(join(root, 'static/fonts', `noto-sans-sc-${weight}.woff2`)).toString('base64')}) format('woff2');
-	unicode-range: U+2E80-9FFF, U+F900-FAFF, U+FF00-FFEF, U+20000-3FFFF;
-}`;
+	// The site's own rules for the Chinese subset, its files inlined.
+	const noto = readFileSync(join(root, 'src/lib/fonts/noto-sans-sc.css'), 'utf8').replace(
+		/url\('\/fonts\/([^']+\.woff2)'\)/g,
+		(_, file: string) =>
+			`url(data:font/woff2;base64,${readFileSync(join(root, 'static/fonts', file)).toString('base64')})`
+	);
 	return [
 		inline('@fontsource/oswald/600.css'),
 		inline('@fontsource-variable/golos-text/index.css'),
-		noto(400),
-		noto(700)
+		noto
 	].join('\n');
 }
 

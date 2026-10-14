@@ -26,6 +26,7 @@
 - Сборка в Workers Builds однажды упала без причины; «Retry build» в панели помог. Журналы сборок отсюда не видны (wrangler не залогинен) — при сбое просить пользователя прислать журнал или перезапустить.
 - В SvelteKit 3 `data-sveltekit-noscroll`/`keepfocus` молча не работают — вместо них `data-sveltekit-reset="false"`.
 - Перед `npm run build` останавливать `wrangler dev` (держит `build/`): `Get-CimInstance Win32_Process | ? { $_.CommandLine -match 'wrangler|workerd' } | % { Stop-Process -Id $_.ProcessId -Force }`.
+- Google Fonts собирает подмножество (`text=`) не больше чем из ~800 знаков, сверх лимита молча отдаёт целый шрифт. Поэтому `npm run fonts` качает китайский шрифт частями по 500 знаков: `static/fonts/noto-sans-sc-{400,700}-{n}.woff2`, правила `@font-face` с `unicode-range` — в сгенерированном `src/lib/fonts/noto-sans-sc.css`, для OG — `noto-sans-sc-700-{n}.ttf` (у каждой части своё имя семейства в Satori). Скрипт падает, если вместо подмножества пришёл целый шрифт.
 - Новые языки — не раньше, чем через 3–4 недели данных GSC и проверки переводов. Кандидаты: tr, id, vi, pl; ja/ko — дорогая реклама, для ja нужен свой шрифт; ar/fa (RTL) — отложить.
 
 ## Состояние на 2026-10-12

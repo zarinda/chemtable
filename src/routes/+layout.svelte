@@ -3,6 +3,7 @@
 	import '@fontsource/oswald/latin-600.css';
 	import '@fontsource/bebas-neue/latin-400.css';
 	import '@fontsource-variable/golos-text/index.css';
+	import '../lib/fonts/noto-sans-sc.css';
 	import '../app.css';
 	import { onMount } from 'svelte';
 	import { app } from '#lib/state.svelte.ts';

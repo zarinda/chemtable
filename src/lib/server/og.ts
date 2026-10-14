@@ -1,4 +1,4 @@
-import { readFileSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import satori from 'satori';
 import { Resvg } from '@resvg/resvg-js';
@@ -7,6 +7,10 @@ import { UI } from '../i18n/ui';
 import type { Lang } from '../i18n/langs';
 import { summaryFacts } from '../facts';
 import { C, FILL } from './palette';
+
+const NOTO_PARTS = readdirSync(join(process.cwd(), 'src/lib/server/fonts'))
+	.filter((f) => /^noto-sans-sc-700-\d+\.ttf$/.test(f))
+	.sort();
 
 /** Fonts are read once per build; Satori needs TTF/OTF/WOFF, not WOFF2. */
 let fonts: Parameters<typeof satori>[1]['fonts'] | undefined;
@@ -28,23 +32,23 @@ function loadFonts() {
 			weight: 400,
 			style: 'normal'
 		},
-		{
-			name: 'Noto SC',
-			data: file('src/lib/server/fonts/noto-sans-sc-700.ttf'),
-			weight: 600,
-			style: 'normal'
-		},
-		{
-			name: 'Noto SC',
-			data: file('src/lib/server/fonts/noto-sans-sc-700.ttf'),
-			weight: 400,
-			style: 'normal'
-		}
+		// The Chinese subset comes in parts (npm run fonts), each its own family, as above.
+		...NOTO_PARTS.flatMap((part, i) =>
+			([400, 600] as const).map((weight) => ({
+				name: `Noto SC ${i + 1}`,
+				data: file('src/lib/server/fonts', part),
+				weight,
+				style: 'normal' as const
+			}))
+		)
 	];
 	return fonts;
 }
 
-const FAMILY = '"Oswald latin", "Oswald latin-ext", "Oswald cyrillic", "Noto SC"';
+const FAMILY = [
+	'"Oswald latin", "Oswald latin-ext", "Oswald cyrillic"',
+	...NOTO_PARTS.map((_, i) => `"Noto SC ${i + 1}"`)
+].join(', ');
 
 /** Minimal JSX-free element factory for Satori. */
 type Node = { type: string; props: Record<string, unknown> };
