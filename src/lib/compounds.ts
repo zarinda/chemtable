@@ -22,6 +22,8 @@ export type Compound = {
 	of: Record<Lang, string>;
 	/** Another common name: table salt, caustic soda. */
 	aka?: Record<Lang, string>;
+	/** A sentence under the title where the name and the formula are not quite the same thing. */
+	note?: Record<Lang, string>;
 };
 
 export const COMPOUNDS: Compound[] = [
@@ -160,15 +162,16 @@ export const COMPOUNDS: Compound[] = [
 			zh: '盐酸',
 			pt: 'do ácido clorídrico'
 		},
-		aka: {
-			en: 'hydrogen chloride',
-			ru: 'хлороводород',
-			fr: 'chlorure d’hydrogène',
-			de: 'Chlorwasserstoff',
-			it: 'cloruro di idrogeno',
-			es: 'cloruro de hidrógeno',
-			zh: '氯化氢',
-			pt: 'cloreto de hidrogênio'
+		// Not "also called hydrogen chloride": the acid is that gas dissolved in water.
+		note: {
+			en: 'Hydrochloric acid is a solution of hydrogen chloride (HCl) in water; the molar mass is that of HCl.',
+			ru: 'Соляная кислота — раствор хлороводорода HCl в воде; молярная масса — это масса моля HCl.',
+			fr: 'L’acide chlorhydrique est une solution de chlorure d’hydrogène (HCl) dans l’eau ; la masse molaire est celle de HCl.',
+			de: 'Salzsäure ist eine Lösung von Chlorwasserstoff (HCl) in Wasser; die molare Masse ist die von HCl.',
+			it: 'L’acido cloridrico è una soluzione di cloruro di idrogeno (HCl) in acqua; la massa molare è quella di HCl.',
+			es: 'El ácido clorhídrico es una disolución de cloruro de hidrógeno (HCl) en agua; la masa molar es la del HCl.',
+			zh: '盐酸是氯化氢（HCl）的水溶液，摩尔质量指的是 HCl 的摩尔质量。',
+			pt: 'O ácido clorídrico é uma solução de cloreto de hidrogênio (HCl) em água; a massa molar é a do HCl.'
 		}
 	},
 	{

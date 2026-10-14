@@ -210,9 +210,17 @@ const EPONYM = [
 /** Since 2024 many names live only under the language-neutral "mul" label. */
 const RELATION_TAGS = [...LANGS.flatMap(labelTags), 'mul', 'en'].map((t) => `"${t}"`).join(',');
 
-/** An item's name in every language from its labels, falling back to "mul", then English. */
+/**
+ * An item's name in every language from its labels, falling back to "mul", then English.
+ * Hand-checked labels in corrections.ts win; a minor planet's number is dropped ("(2) Pallas").
+ */
 function toNamed(qid: string, labels: Map<string, string>): Named {
-	const pick = (lang: Lang) => [...labelTags(lang), 'mul', 'en'].map((t) => labels.get(t)).find(Boolean) ?? '';
+	const pick = (lang: Lang) =>
+		fix.LABELS[qid]?.[lang] ??
+		([...labelTags(lang), 'mul', 'en'].map((t) => labels.get(t)).find(Boolean) ?? '').replace(
+			/^\(?\d+\)? (?=\p{L})/u,
+			''
+		);
 	return { qid, name: Object.fromEntries(LANGS.map((l) => [l, pick(l)])) as Record<Lang, string> };
 }
 
@@ -273,8 +281,12 @@ async function relations(): Promise<Map<number, { discoveredBy: Named[]; namedAf
 	const found = collect(discoverers);
 	const eponymsByZ = collect(eponyms);
 	const overrides = Object.entries(fix.DISCOVERY).filter(([, d]) => d.by);
-	const people = await labelled([...new Set(overrides.flatMap(([, d]) => d.by!))]);
+	const eponymOverrides = Object.entries(fix.EPONYMS);
+	const people = await labelled([
+		...new Set([...overrides.flatMap(([, d]) => d.by!), ...eponymOverrides.flatMap(([, d]) => d.qids)])
+	]);
 	for (const [z, d] of overrides) found.set(Number(z), d.by!.map((q) => people.get(q)!).sort(byEnglishName));
+	for (const [z, d] of eponymOverrides) eponymsByZ.set(Number(z), d.qids.map((q) => people.get(q)!));
 	const map = new Map<number, { discoveredBy: Named[]; namedAfter: Named[] }>();
 	for (const z of new Set([...found.keys(), ...eponymsByZ.keys()]))
 		map.set(z, { discoveredBy: found.get(z) ?? [], namedAfter: eponymsByZ.get(z) ?? [] });
@@ -328,9 +340,16 @@ async function main() {
 		const state = r.StandardState.toLowerCase();
 		const w = wiki.get(z);
 		const removed = fix.REMOVE[z] ?? {};
+		const value = (field: 'meltingPoint' | 'boilingPoint' | 'density', pubchemValue: string) =>
+			removed[field] ? null : (fix.VALUE[z]?.[field]?.value ?? num(pubchemValue));
 		const name = Object.fromEntries(
-			LANGS.map((l) => [l, w?.names[l] ? capitalize(w.names[l], l) : l === 'en' ? r.Name : ''])
+			LANGS.map((l) => [
+				l,
+				fix.NAMES[z]?.name[l] ?? (w?.names[l] ? capitalize(w.names[l], l) : l === 'en' ? r.Name : '')
+			])
 		) as Record<Lang, string>;
+		const massNumber = fix.MASS_NUMBER[z]?.value;
+		const electronegativity = removed.electronegativity ? null : num(r.Electronegativity);
 
 		return {
 			z,
@@ -339,32 +358,42 @@ async function main() {
 			slug: name.en.toLowerCase(),
 			name,
 			wikidata: w?.qid ?? null,
-			wikipedia: w?.wikipedia ?? {},
+			// In LANGS order: Wikidata returns rows in any order, which made every rebuild a diff.
+			wikipedia: Object.fromEntries(LANGS.filter((l) => w?.wikipedia[l]).map((l) => [l, w!.wikipedia[l]])),
 			category: CATEGORY[r.GroupBlock],
 			...placement(z),
 			mass: standard
 				? { value: standard.value, text: standard.text, source: 'ciaaw' }
-				: {
-						value: pubchemMass,
-						text: pubchemMass === null ? null : `[${Math.round(pubchemMass)}]`,
-						source: 'pubchem-isotope'
-					},
+				: massNumber
+					? { value: massNumber, text: `[${massNumber}]`, source: 'pubchem-isotope' }
+					: {
+							value: pubchemMass,
+							text: pubchemMass === null ? null : `[${Math.round(pubchemMass)}]`,
+							source: 'pubchem-isotope'
+						},
 			config: configOf(r),
 			configPredicted: fix.configPredicted(z),
 			shells: shells(z, configs),
-			state: state.includes('solid') ? 'solid' : state.includes('liquid') ? 'liquid' : 'gas',
+			state:
+				fix.STATE[z]?.state ??
+				(state.includes('solid') ? 'solid' : state.includes('liquid') ? 'liquid' : 'gas'),
 			statePredicted: fix.statePredicted(z),
-			electronegativity: removed.electronegativity ? null : num(r.Electronegativity),
+			electronegativity,
+			/** As published: two decimals (2.20), or one for Pauling's unrevised values (0.9). */
+			electronegativityText:
+				electronegativity === null
+					? null
+					: electronegativity.toFixed(fix.ELECTRONEGATIVITY_ONE_DECIMAL.has(z) ? 1 : 2),
 			/** Single-bond covalent radius, Cordero 2008. */
 			atomicRadius: fix.COVALENT_RADIUS[z] ?? null,
 			ionizationEnergy: ionization.get(z) ?? null,
 			electronAffinity: fix.ELECTRON_AFFINITY[z] ?? null,
 			oxidationStates: oxidationStates(z, r.OxidationStates),
-			meltingPoint: removed.meltingPoint ? null : num(r.MeltingPoint),
+			meltingPoint: value('meltingPoint', r.MeltingPoint),
 			meltsUnderPressure: fix.MELTS_UNDER_PRESSURE.has(z),
-			boilingPoint: removed.boilingPoint ? null : num(r.BoilingPoint),
+			boilingPoint: value('boilingPoint', r.BoilingPoint),
 			sublimes: fix.SUBLIMES.has(z),
-			density: removed.density ? null : num(r.Density),
+			density: value('density', r.Density),
 			yearDiscovered:
 				fix.DISCOVERY[z]?.year ?? (r.YearDiscovered === 'Ancient' ? 'ancient' : num(r.YearDiscovered)),
 			discoveredBy: related.get(z)?.discoveredBy ?? [],

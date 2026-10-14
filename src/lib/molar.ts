@@ -15,6 +15,8 @@ export type FormulaError =
 	| { kind: 'symbol'; symbol: string }
 	/** Symbols typed in lower case; `suggestion` is the formula in capitals when that parses. */
 	| { kind: 'case'; suggestion: string | null }
+	/** A reaction coefficient before a whole formula (2H2O): `suggestion` is the formula without it. */
+	| { kind: 'coefficient'; suggestion: string | null }
 	/** An element with no standard atomic weight: only the mass number of an isotope is known. */
 	| { kind: 'weight'; element: Element };
 
@@ -96,9 +98,19 @@ export function parse(input: string): Map<string, number> | FormulaError {
 		return empty ? { kind: 'syntax' } : counts;
 	};
 
+	// "2H2O" is two moles of water, not a substance: its molar mass is that of H2O.
+	const coefficient = /^\d+/.exec(text);
+	if (coefficient && !text.includes('·')) {
+		const rest = text.slice(coefficient[0].length);
+		if (!rest) return { kind: 'syntax' };
+		const inner = parse(rest);
+		// A mistake in the formula itself says more than the coefficient does.
+		return inner instanceof Map ? { kind: 'coefficient', suggestion: rest } : inner;
+	}
+
 	const total = new Map<string, number>();
 	for (;;) {
-		// A leading coefficient multiplies one hydrate part: the 5 in CuSO4·5H2O.
+		// A leading coefficient multiplies one hydrate part: the 5 in CuSO4·5H2O, the 2 in 2CaSO4·H2O.
 		const k = number() ?? 1;
 		if (k < 1 || k > MAX_COUNT) return { kind: 'syntax' };
 		const result = group(null);

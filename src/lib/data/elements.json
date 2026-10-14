@@ -1,5 +1,5 @@
 {
-	"fetchedAt": "2026-10-12",
+	"fetchedAt": "2026-10-14",
 	"sources": {
 		"properties": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/periodictable/JSON",
 		"atomicWeights": "https://www.ciaaw.org/abridged-atomic-weights.htm",
@@ -26,14 +26,14 @@
 			},
 			"wikidata": "Q556",
 			"wikipedia": {
-				"it": "https://it.wikipedia.org/wiki/Idrogeno",
-				"zh": "https://zh.wikipedia.org/wiki/%E6%B0%A2",
 				"en": "https://en.wikipedia.org/wiki/Hydrogen",
-				"de": "https://de.wikipedia.org/wiki/Wasserstoff",
-				"es": "https://es.wikipedia.org/wiki/Hidr%C3%B3geno",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%92%D0%BE%D0%B4%D0%BE%D1%80%D0%BE%D0%B4",
 				"fr": "https://fr.wikipedia.org/wiki/Hydrog%C3%A8ne",
-				"pt": "https://pt.wikipedia.org/wiki/Hidrog%C3%A9nio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%92%D0%BE%D0%B4%D0%BE%D1%80%D0%BE%D0%B4"
+				"de": "https://de.wikipedia.org/wiki/Wasserstoff",
+				"it": "https://it.wikipedia.org/wiki/Idrogeno",
+				"es": "https://es.wikipedia.org/wiki/Hidr%C3%B3geno",
+				"zh": "https://zh.wikipedia.org/wiki/%E6%B0%A2",
+				"pt": "https://pt.wikipedia.org/wiki/Hidrog%C3%A9nio"
 			},
 			"category": "nonmetal",
 			"period": 1,
@@ -54,6 +54,7 @@
 			"state": "gas",
 			"statePredicted": false,
 			"electronegativity": 2.2,
+			"electronegativityText": "2.20",
 			"atomicRadius": 31,
 			"ionizationEnergy": 13.598434599702,
 			"electronAffinity": 0.754195,
@@ -61,7 +62,7 @@
 				"+1",
 				"-1"
 			],
-			"meltingPoint": 13.81,
+			"meltingPoint": 13.99,
 			"meltsUnderPressure": false,
 			"boilingPoint": 20.28,
 			"sublimes": false,
@@ -100,14 +101,14 @@
 			},
 			"wikidata": "Q560",
 			"wikipedia": {
-				"pt": "https://pt.wikipedia.org/wiki/H%C3%A9lio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D0%BB%D0%B8%D0%B9",
-				"it": "https://it.wikipedia.org/wiki/Elio",
-				"zh": "https://zh.wikipedia.org/wiki/%E6%B0%A6",
-				"de": "https://de.wikipedia.org/wiki/Helium",
 				"en": "https://en.wikipedia.org/wiki/Helium",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D0%BB%D0%B8%D0%B9",
+				"fr": "https://fr.wikipedia.org/wiki/H%C3%A9lium",
+				"de": "https://de.wikipedia.org/wiki/Helium",
+				"it": "https://it.wikipedia.org/wiki/Elio",
 				"es": "https://es.wikipedia.org/wiki/Helio",
-				"fr": "https://fr.wikipedia.org/wiki/H%C3%A9lium"
+				"zh": "https://zh.wikipedia.org/wiki/%E6%B0%A6",
+				"pt": "https://pt.wikipedia.org/wiki/H%C3%A9lio"
 			},
 			"category": "noble-gas",
 			"period": 1,
@@ -128,7 +129,8 @@
 			"state": "gas",
 			"statePredicted": false,
 			"electronegativity": null,
-			"atomicRadius": 28,
+			"electronegativityText": null,
+			"atomicRadius": null,
 			"ionizationEnergy": 24.587389011,
 			"electronAffinity": "unstable",
 			"oxidationStates": [
@@ -213,14 +215,14 @@
 			},
 			"wikidata": "Q568",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Lithium",
 				"en": "https://en.wikipedia.org/wiki/Lithium",
-				"es": "https://es.wikipedia.org/wiki/Litio",
-				"fr": "https://fr.wikipedia.org/wiki/Lithium",
-				"it": "https://it.wikipedia.org/wiki/Litio",
-				"pt": "https://pt.wikipedia.org/wiki/L%C3%ADtio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%9B%D0%B8%D1%82%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%94%82"
+				"fr": "https://fr.wikipedia.org/wiki/Lithium",
+				"de": "https://de.wikipedia.org/wiki/Lithium",
+				"it": "https://it.wikipedia.org/wiki/Litio",
+				"es": "https://es.wikipedia.org/wiki/Litio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%94%82",
+				"pt": "https://pt.wikipedia.org/wiki/L%C3%ADtio"
 			},
 			"category": "alkali-metal",
 			"period": 2,
@@ -242,6 +244,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 0.98,
+			"electronegativityText": "0.98",
 			"atomicRadius": 128,
 			"ionizationEnergy": 5.391714996,
 			"electronAffinity": 0.618049,
@@ -287,14 +290,14 @@
 			},
 			"wikidata": "Q569",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Beryllium",
 				"en": "https://en.wikipedia.org/wiki/Beryllium",
-				"es": "https://es.wikipedia.org/wiki/Berilio",
-				"fr": "https://fr.wikipedia.org/wiki/B%C3%A9ryllium",
-				"it": "https://it.wikipedia.org/wiki/Berillio",
-				"pt": "https://pt.wikipedia.org/wiki/Ber%C3%ADlio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%91%D0%B5%D1%80%D0%B8%D0%BB%D0%BB%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%93%8D"
+				"fr": "https://fr.wikipedia.org/wiki/B%C3%A9ryllium",
+				"de": "https://de.wikipedia.org/wiki/Beryllium",
+				"it": "https://it.wikipedia.org/wiki/Berillio",
+				"es": "https://es.wikipedia.org/wiki/Berilio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%93%8D",
+				"pt": "https://pt.wikipedia.org/wiki/Ber%C3%ADlio"
 			},
 			"category": "alkaline-earth-metal",
 			"period": 2,
@@ -316,6 +319,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.57,
+			"electronegativityText": "1.57",
 			"atomicRadius": 96,
 			"ionizationEnergy": 9.322699,
 			"electronAffinity": "unstable",
@@ -329,32 +333,6 @@
 			"density": 1.85,
 			"yearDiscovered": 1798,
 			"discoveredBy": [
-				{
-					"qid": "Q585780",
-					"name": {
-						"en": "Antoine Bussy",
-						"ru": "Антуан Александр Брутус Бюсси",
-						"fr": "Antoine Bussy",
-						"de": "Antoine Bussy",
-						"it": "Antoine Bussy",
-						"es": "Antoine Bussy",
-						"zh": "毕于西",
-						"pt": "Antoine Bussy"
-					}
-				},
-				{
-					"qid": "Q58575",
-					"name": {
-						"en": "Friedrich Wöhler",
-						"ru": "Фридрих Вёлер",
-						"fr": "Friedrich Wöhler",
-						"de": "Friedrich Wöhler",
-						"it": "Friedrich Wöhler",
-						"es": "Friedrich Wöhler",
-						"zh": "弗里德里希·维勒",
-						"pt": "Friedrich Wöhler"
-					}
-				},
 				{
 					"qid": "Q333438",
 					"name": {
@@ -387,14 +365,14 @@
 			},
 			"wikidata": "Q618",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Bor",
 				"en": "https://en.wikipedia.org/wiki/Boron",
-				"es": "https://es.wikipedia.org/wiki/Boro",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%91%D0%BE%D1%80_(%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82)",
 				"fr": "https://fr.wikipedia.org/wiki/Bore",
+				"de": "https://de.wikipedia.org/wiki/Bor",
 				"it": "https://it.wikipedia.org/wiki/Boro",
+				"es": "https://es.wikipedia.org/wiki/Boro",
 				"zh": "https://zh.wikipedia.org/wiki/%E7%A1%BC",
-				"pt": "https://pt.wikipedia.org/wiki/Boro",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%91%D0%BE%D1%80_(%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82)"
+				"pt": "https://pt.wikipedia.org/wiki/Boro"
 			},
 			"category": "metalloid",
 			"period": 2,
@@ -416,6 +394,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 2.04,
+			"electronegativityText": "2.04",
 			"atomicRadius": 84,
 			"ionizationEnergy": 8.298019,
 			"electronAffinity": 0.279723,
@@ -441,6 +420,32 @@
 						"zh": "汉弗里·戴维",
 						"pt": "Humphry Davy"
 					}
+				},
+				{
+					"qid": "Q153185",
+					"name": {
+						"en": "Joseph Louis Gay-Lussac",
+						"ru": "Жозеф Луи Гей-Люссак",
+						"fr": "Joseph-Louis Gay-Lussac",
+						"de": "Joseph Louis Gay-Lussac",
+						"it": "Joseph Louis Gay-Lussac",
+						"es": "Joseph Louis Gay-Lussac",
+						"zh": "约瑟夫·路易·盖-吕萨克",
+						"pt": "Joseph Louis Gay-Lussac"
+					}
+				},
+				{
+					"qid": "Q327722",
+					"name": {
+						"en": "Louis Jacques Thénard",
+						"ru": "Луи Жак Тенар",
+						"fr": "Louis Jacques Thénard",
+						"de": "Louis Jacques Thénard",
+						"it": "Louis Jacques Thénard",
+						"es": "Louis Jacques Thénard",
+						"zh": "泰纳",
+						"pt": "Louis Jacques Thénard"
+					}
 				}
 			],
 			"namedAfter": []
@@ -461,14 +466,14 @@
 			},
 			"wikidata": "Q623",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Kohlenstoff",
 				"en": "https://en.wikipedia.org/wiki/Carbon",
-				"es": "https://es.wikipedia.org/wiki/Carbono",
-				"fr": "https://fr.wikipedia.org/wiki/Carbone",
-				"it": "https://it.wikipedia.org/wiki/Carbonio",
-				"pt": "https://pt.wikipedia.org/wiki/Carbono",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%A3%D0%B3%D0%BB%D0%B5%D1%80%D0%BE%D0%B4",
-				"zh": "https://zh.wikipedia.org/wiki/%E7%A2%B3"
+				"fr": "https://fr.wikipedia.org/wiki/Carbone",
+				"de": "https://de.wikipedia.org/wiki/Kohlenstoff",
+				"it": "https://it.wikipedia.org/wiki/Carbonio",
+				"es": "https://es.wikipedia.org/wiki/Carbono",
+				"zh": "https://zh.wikipedia.org/wiki/%E7%A2%B3",
+				"pt": "https://pt.wikipedia.org/wiki/Carbono"
 			},
 			"category": "nonmetal",
 			"period": 2,
@@ -490,6 +495,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 2.55,
+			"electronegativityText": "2.55",
 			"atomicRadius": 76,
 			"ionizationEnergy": 11.260288,
 			"electronAffinity": 1.2621226,
@@ -498,7 +504,7 @@
 				"+2",
 				"-4"
 			],
-			"meltingPoint": 3823,
+			"meltingPoint": 4762,
 			"meltsUnderPressure": true,
 			"boilingPoint": 4098,
 			"sublimes": true,
@@ -523,14 +529,14 @@
 			},
 			"wikidata": "Q627",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Stickstoff",
 				"en": "https://en.wikipedia.org/wiki/Nitrogen",
-				"es": "https://es.wikipedia.org/wiki/Nitr%C3%B3geno",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%90%D0%B7%D0%BE%D1%82",
 				"fr": "https://fr.wikipedia.org/wiki/Azote",
+				"de": "https://de.wikipedia.org/wiki/Stickstoff",
 				"it": "https://it.wikipedia.org/wiki/Azoto",
+				"es": "https://es.wikipedia.org/wiki/Nitr%C3%B3geno",
 				"zh": "https://zh.wikipedia.org/wiki/%E6%B0%AE",
-				"pt": "https://pt.wikipedia.org/wiki/Azoto",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%90%D0%B7%D0%BE%D1%82"
+				"pt": "https://pt.wikipedia.org/wiki/Azoto"
 			},
 			"category": "nonmetal",
 			"period": 2,
@@ -552,6 +558,7 @@
 			"state": "gas",
 			"statePredicted": false,
 			"electronegativity": 3.04,
+			"electronegativityText": "3.04",
 			"atomicRadius": 71,
 			"ionizationEnergy": 14.53413,
 			"electronAffinity": "unstable",
@@ -604,14 +611,14 @@
 			},
 			"wikidata": "Q629",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Sauerstoff",
 				"en": "https://en.wikipedia.org/wiki/Oxygen",
-				"es": "https://es.wikipedia.org/wiki/Ox%C3%ADgeno",
-				"fr": "https://fr.wikipedia.org/wiki/Oxyg%C3%A8ne",
-				"it": "https://it.wikipedia.org/wiki/Ossigeno",
-				"pt": "https://pt.wikipedia.org/wiki/Oxig%C3%A9nio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B8%D1%81%D0%BB%D0%BE%D1%80%D0%BE%D0%B4",
-				"zh": "https://zh.wikipedia.org/wiki/%E6%B0%A7"
+				"fr": "https://fr.wikipedia.org/wiki/Oxyg%C3%A8ne",
+				"de": "https://de.wikipedia.org/wiki/Sauerstoff",
+				"it": "https://it.wikipedia.org/wiki/Ossigeno",
+				"es": "https://es.wikipedia.org/wiki/Ox%C3%ADgeno",
+				"zh": "https://zh.wikipedia.org/wiki/%E6%B0%A7",
+				"pt": "https://pt.wikipedia.org/wiki/Oxig%C3%A9nio"
 			},
 			"category": "nonmetal",
 			"period": 2,
@@ -633,6 +640,7 @@
 			"state": "gas",
 			"statePredicted": false,
 			"electronegativity": 3.44,
+			"electronegativityText": "3.44",
 			"atomicRadius": 66,
 			"ionizationEnergy": 13.618055,
 			"electronAffinity": 1.46111297,
@@ -691,14 +699,14 @@
 			},
 			"wikidata": "Q650",
 			"wikipedia": {
-				"it": "https://it.wikipedia.org/wiki/Fluoro",
-				"pt": "https://pt.wikipedia.org/wiki/Fl%C3%BAor",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%A4%D1%82%D0%BE%D1%80",
-				"zh": "https://zh.wikipedia.org/wiki/%E6%B0%9F",
-				"de": "https://de.wikipedia.org/wiki/Fluor",
 				"en": "https://en.wikipedia.org/wiki/Fluorine",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%A4%D1%82%D0%BE%D1%80",
+				"fr": "https://fr.wikipedia.org/wiki/Fluor",
+				"de": "https://de.wikipedia.org/wiki/Fluor",
+				"it": "https://it.wikipedia.org/wiki/Fluoro",
 				"es": "https://es.wikipedia.org/wiki/Fl%C3%BAor",
-				"fr": "https://fr.wikipedia.org/wiki/Fluor"
+				"zh": "https://zh.wikipedia.org/wiki/%E6%B0%9F",
+				"pt": "https://pt.wikipedia.org/wiki/Fl%C3%BAor"
 			},
 			"category": "halogen",
 			"period": 2,
@@ -720,6 +728,7 @@
 			"state": "gas",
 			"statePredicted": false,
 			"electronegativity": 3.98,
+			"electronegativityText": "3.98",
 			"atomicRadius": 57,
 			"ionizationEnergy": 17.42282,
 			"electronAffinity": 3.4011898,
@@ -766,13 +775,13 @@
 			"wikidata": "Q654",
 			"wikipedia": {
 				"en": "https://en.wikipedia.org/wiki/Neon",
-				"es": "https://es.wikipedia.org/wiki/Ne%C3%B3n",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%9D%D0%B5%D0%BE%D0%BD",
 				"fr": "https://fr.wikipedia.org/wiki/N%C3%A9on",
 				"de": "https://de.wikipedia.org/wiki/Neon",
 				"it": "https://it.wikipedia.org/wiki/Neon",
+				"es": "https://es.wikipedia.org/wiki/Ne%C3%B3n",
 				"zh": "https://zh.wikipedia.org/wiki/%E6%B0%96",
-				"pt": "https://pt.wikipedia.org/wiki/N%C3%A9on",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%9D%D0%B5%D0%BE%D0%BD"
+				"pt": "https://pt.wikipedia.org/wiki/N%C3%A9on"
 			},
 			"category": "noble-gas",
 			"period": 2,
@@ -794,7 +803,8 @@
 			"state": "gas",
 			"statePredicted": false,
 			"electronegativity": null,
-			"atomicRadius": 58,
+			"electronegativityText": null,
+			"atomicRadius": null,
 			"ionizationEnergy": 21.564541,
 			"electronAffinity": "unstable",
 			"oxidationStates": [
@@ -852,14 +862,14 @@
 			},
 			"wikidata": "Q658",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Natrium",
 				"en": "https://en.wikipedia.org/wiki/Sodium",
-				"es": "https://es.wikipedia.org/wiki/Sodio",
-				"fr": "https://fr.wikipedia.org/wiki/Sodium",
-				"it": "https://it.wikipedia.org/wiki/Sodio",
-				"pt": "https://pt.wikipedia.org/wiki/S%C3%B3dio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%9D%D0%B0%D1%82%D1%80%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%92%A0"
+				"fr": "https://fr.wikipedia.org/wiki/Sodium",
+				"de": "https://de.wikipedia.org/wiki/Natrium",
+				"it": "https://it.wikipedia.org/wiki/Sodio",
+				"es": "https://es.wikipedia.org/wiki/Sodio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%92%A0",
+				"pt": "https://pt.wikipedia.org/wiki/S%C3%B3dio"
 			},
 			"category": "alkali-metal",
 			"period": 3,
@@ -882,6 +892,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 0.93,
+			"electronegativityText": "0.93",
 			"atomicRadius": 166,
 			"ionizationEnergy": 5.13907696,
 			"electronAffinity": 0.547926,
@@ -927,14 +938,14 @@
 			},
 			"wikidata": "Q660",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Magnesium",
 				"en": "https://en.wikipedia.org/wiki/Magnesium",
-				"es": "https://es.wikipedia.org/wiki/Magnesio",
-				"fr": "https://fr.wikipedia.org/wiki/Magn%C3%A9sium",
-				"it": "https://it.wikipedia.org/wiki/Magnesio",
-				"pt": "https://pt.wikipedia.org/wiki/Magn%C3%A9sio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B3%D0%BD%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%95%81"
+				"fr": "https://fr.wikipedia.org/wiki/Magn%C3%A9sium",
+				"de": "https://de.wikipedia.org/wiki/Magnesium",
+				"it": "https://it.wikipedia.org/wiki/Magnesio",
+				"es": "https://es.wikipedia.org/wiki/Magnesio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%95%81",
+				"pt": "https://pt.wikipedia.org/wiki/Magn%C3%A9sio"
 			},
 			"category": "alkaline-earth-metal",
 			"period": 3,
@@ -957,6 +968,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.31,
+			"electronegativityText": "1.31",
 			"atomicRadius": 141,
 			"ionizationEnergy": 7.646236,
 			"electronAffinity": "unstable",
@@ -1002,14 +1014,14 @@
 			},
 			"wikidata": "Q663",
 			"wikipedia": {
-				"es": "https://es.wikipedia.org/wiki/Aluminio",
-				"it": "https://it.wikipedia.org/wiki/Alluminio",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%93%9D",
-				"pt": "https://pt.wikipedia.org/wiki/Alum%C3%ADnio",
-				"de": "https://de.wikipedia.org/wiki/Aluminium",
 				"en": "https://en.wikipedia.org/wiki/Aluminium",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D1%8E%D0%BC%D0%B8%D0%BD%D0%B8%D0%B9",
 				"fr": "https://fr.wikipedia.org/wiki/Aluminium",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D1%8E%D0%BC%D0%B8%D0%BD%D0%B8%D0%B9"
+				"de": "https://de.wikipedia.org/wiki/Aluminium",
+				"it": "https://it.wikipedia.org/wiki/Alluminio",
+				"es": "https://es.wikipedia.org/wiki/Aluminio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%93%9D",
+				"pt": "https://pt.wikipedia.org/wiki/Alum%C3%ADnio"
 			},
 			"category": "post-transition-metal",
 			"period": 3,
@@ -1032,6 +1044,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.61,
+			"electronegativityText": "1.61",
 			"atomicRadius": 121,
 			"ionizationEnergy": 5.985769,
 			"electronAffinity": 0.43283,
@@ -1077,14 +1090,14 @@
 			},
 			"wikidata": "Q670",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Silicium",
 				"en": "https://en.wikipedia.org/wiki/Silicon",
-				"es": "https://es.wikipedia.org/wiki/Silicio",
-				"fr": "https://fr.wikipedia.org/wiki/Silicium",
-				"it": "https://it.wikipedia.org/wiki/Silicio",
-				"pt": "https://pt.wikipedia.org/wiki/Sil%C3%ADcio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%9A%D1%80%D0%B5%D0%BC%D0%BD%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E7%A1%85"
+				"fr": "https://fr.wikipedia.org/wiki/Silicium",
+				"de": "https://de.wikipedia.org/wiki/Silicium",
+				"it": "https://it.wikipedia.org/wiki/Silicio",
+				"es": "https://es.wikipedia.org/wiki/Silicio",
+				"zh": "https://zh.wikipedia.org/wiki/%E7%A1%85",
+				"pt": "https://pt.wikipedia.org/wiki/Sil%C3%ADcio"
 			},
 			"category": "metalloid",
 			"period": 3,
@@ -1107,6 +1120,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.9,
+			"electronegativityText": "1.90",
 			"atomicRadius": 111,
 			"ionizationEnergy": 8.15168,
 			"electronAffinity": 1.3895212,
@@ -1154,14 +1168,14 @@
 			},
 			"wikidata": "Q674",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Phosphor",
 				"en": "https://en.wikipedia.org/wiki/Phosphorus",
-				"es": "https://es.wikipedia.org/wiki/F%C3%B3sforo",
-				"fr": "https://fr.wikipedia.org/wiki/Phosphore",
-				"it": "https://it.wikipedia.org/wiki/Fosforo",
-				"pt": "https://pt.wikipedia.org/wiki/F%C3%B3sforo",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%A4%D0%BE%D1%81%D1%84%D0%BE%D1%80",
-				"zh": "https://zh.wikipedia.org/wiki/%E7%A3%B7"
+				"fr": "https://fr.wikipedia.org/wiki/Phosphore",
+				"de": "https://de.wikipedia.org/wiki/Phosphor",
+				"it": "https://it.wikipedia.org/wiki/Fosforo",
+				"es": "https://es.wikipedia.org/wiki/F%C3%B3sforo",
+				"zh": "https://zh.wikipedia.org/wiki/%E7%A3%B7",
+				"pt": "https://pt.wikipedia.org/wiki/F%C3%B3sforo"
 			},
 			"category": "nonmetal",
 			"period": 3,
@@ -1184,6 +1198,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 2.19,
+			"electronegativityText": "2.19",
 			"atomicRadius": 107,
 			"ionizationEnergy": 10.486686,
 			"electronAffinity": 0.746609,
@@ -1231,14 +1246,14 @@
 			},
 			"wikidata": "Q682",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Schwefel",
 				"en": "https://en.wikipedia.org/wiki/Sulfur",
-				"es": "https://es.wikipedia.org/wiki/Azufre",
-				"fr": "https://fr.wikipedia.org/wiki/Soufre",
-				"pt": "https://pt.wikipedia.org/wiki/Enxofre",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D1%80%D0%B0",
+				"fr": "https://fr.wikipedia.org/wiki/Soufre",
+				"de": "https://de.wikipedia.org/wiki/Schwefel",
 				"it": "https://it.wikipedia.org/wiki/Zolfo",
-				"zh": "https://zh.wikipedia.org/wiki/%E7%A1%AB"
+				"es": "https://es.wikipedia.org/wiki/Azufre",
+				"zh": "https://zh.wikipedia.org/wiki/%E7%A1%AB",
+				"pt": "https://pt.wikipedia.org/wiki/Enxofre"
 			},
 			"category": "nonmetal",
 			"period": 3,
@@ -1261,6 +1276,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 2.58,
+			"electronegativityText": "2.58",
 			"atomicRadius": 105,
 			"ionizationEnergy": 10.3600167,
 			"electronAffinity": 2.0771042,
@@ -1295,14 +1311,14 @@
 			},
 			"wikidata": "Q688",
 			"wikipedia": {
-				"it": "https://it.wikipedia.org/wiki/Cloro",
-				"de": "https://de.wikipedia.org/wiki/Chlor",
 				"en": "https://en.wikipedia.org/wiki/Chlorine",
-				"es": "https://es.wikipedia.org/wiki/Cloro",
-				"fr": "https://fr.wikipedia.org/wiki/Chlore",
-				"pt": "https://pt.wikipedia.org/wiki/Cloro",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%A5%D0%BB%D0%BE%D1%80",
-				"zh": "https://zh.wikipedia.org/wiki/%E6%B0%AF"
+				"fr": "https://fr.wikipedia.org/wiki/Chlore",
+				"de": "https://de.wikipedia.org/wiki/Chlor",
+				"it": "https://it.wikipedia.org/wiki/Cloro",
+				"es": "https://es.wikipedia.org/wiki/Cloro",
+				"zh": "https://zh.wikipedia.org/wiki/%E6%B0%AF",
+				"pt": "https://pt.wikipedia.org/wiki/Cloro"
 			},
 			"category": "halogen",
 			"period": 3,
@@ -1325,6 +1341,7 @@
 			"state": "gas",
 			"statePredicted": false,
 			"electronegativity": 3.16,
+			"electronegativityText": "3.16",
 			"atomicRadius": 102,
 			"ionizationEnergy": 12.967633,
 			"electronAffinity": 3.612725,
@@ -1374,14 +1391,14 @@
 			},
 			"wikidata": "Q696",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Argon",
 				"en": "https://en.wikipedia.org/wiki/Argon",
-				"es": "https://es.wikipedia.org/wiki/Arg%C3%B3n",
-				"fr": "https://fr.wikipedia.org/wiki/Argon",
-				"it": "https://it.wikipedia.org/wiki/Argon",
-				"pt": "https://pt.wikipedia.org/wiki/%C3%81rgon",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%90%D1%80%D0%B3%D0%BE%D0%BD",
-				"zh": "https://zh.wikipedia.org/wiki/%E6%B0%A9"
+				"fr": "https://fr.wikipedia.org/wiki/Argon",
+				"de": "https://de.wikipedia.org/wiki/Argon",
+				"it": "https://it.wikipedia.org/wiki/Argon",
+				"es": "https://es.wikipedia.org/wiki/Arg%C3%B3n",
+				"zh": "https://zh.wikipedia.org/wiki/%E6%B0%A9",
+				"pt": "https://pt.wikipedia.org/wiki/%C3%81rgon"
 			},
 			"category": "noble-gas",
 			"period": 3,
@@ -1404,6 +1421,7 @@
 			"state": "gas",
 			"statePredicted": false,
 			"electronegativity": null,
+			"electronegativityText": null,
 			"atomicRadius": 106,
 			"ionizationEnergy": 15.7596119,
 			"electronAffinity": "unstable",
@@ -1463,13 +1481,13 @@
 			"wikidata": "Q703",
 			"wikipedia": {
 				"en": "https://en.wikipedia.org/wiki/Potassium",
-				"de": "https://de.wikipedia.org/wiki/Kalium",
-				"es": "https://es.wikipedia.org/wiki/Potasio",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BB%D0%B8%D0%B9",
 				"fr": "https://fr.wikipedia.org/wiki/Potassium",
+				"de": "https://de.wikipedia.org/wiki/Kalium",
 				"it": "https://it.wikipedia.org/wiki/Potassio",
+				"es": "https://es.wikipedia.org/wiki/Potasio",
 				"zh": "https://zh.wikipedia.org/wiki/%E9%92%BE",
-				"pt": "https://pt.wikipedia.org/wiki/Pot%C3%A1ssio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BB%D0%B8%D0%B9"
+				"pt": "https://pt.wikipedia.org/wiki/Pot%C3%A1ssio"
 			},
 			"category": "alkali-metal",
 			"period": 4,
@@ -1493,6 +1511,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 0.82,
+			"electronegativityText": "0.82",
 			"atomicRadius": 203,
 			"ionizationEnergy": 4.34066373,
 			"electronAffinity": 0.501459,
@@ -1538,14 +1557,14 @@
 			},
 			"wikidata": "Q706",
 			"wikipedia": {
-				"pt": "https://pt.wikipedia.org/wiki/C%C3%A1lcio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BB%D1%8C%D1%86%D0%B8%D0%B9",
-				"de": "https://de.wikipedia.org/wiki/Calcium",
 				"en": "https://en.wikipedia.org/wiki/Calcium",
-				"es": "https://es.wikipedia.org/wiki/Calcio",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BB%D1%8C%D1%86%D0%B8%D0%B9",
 				"fr": "https://fr.wikipedia.org/wiki/Calcium",
+				"de": "https://de.wikipedia.org/wiki/Calcium",
 				"it": "https://it.wikipedia.org/wiki/Calcio_(elemento_chimico)",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%92%99"
+				"es": "https://es.wikipedia.org/wiki/Calcio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%92%99",
+				"pt": "https://pt.wikipedia.org/wiki/C%C3%A1lcio"
 			},
 			"category": "alkaline-earth-metal",
 			"period": 4,
@@ -1569,6 +1588,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1,
+			"electronegativityText": "1.00",
 			"atomicRadius": 176,
 			"ionizationEnergy": 6.113154921,
 			"electronAffinity": 0.02455,
@@ -1615,13 +1635,13 @@
 			"wikidata": "Q713",
 			"wikipedia": {
 				"en": "https://en.wikipedia.org/wiki/Scandium",
-				"es": "https://es.wikipedia.org/wiki/Escandio",
-				"fr": "https://fr.wikipedia.org/wiki/Scandium",
-				"it": "https://it.wikipedia.org/wiki/Scandio",
-				"pt": "https://pt.wikipedia.org/wiki/Esc%C3%A2ndio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%A1%D0%BA%D0%B0%D0%BD%D0%B4%D0%B8%D0%B9",
+				"fr": "https://fr.wikipedia.org/wiki/Scandium",
 				"de": "https://de.wikipedia.org/wiki/Scandium",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%92%AA"
+				"it": "https://it.wikipedia.org/wiki/Scandio",
+				"es": "https://es.wikipedia.org/wiki/Escandio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%92%AA",
+				"pt": "https://pt.wikipedia.org/wiki/Esc%C3%A2ndio"
 			},
 			"category": "transition-metal",
 			"period": 4,
@@ -1645,6 +1665,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.36,
+			"electronegativityText": "1.36",
 			"atomicRadius": 170,
 			"ionizationEnergy": 6.56149,
 			"electronAffinity": 0.17938,
@@ -1704,14 +1725,14 @@
 			},
 			"wikidata": "Q716",
 			"wikipedia": {
-				"fr": "https://fr.wikipedia.org/wiki/Titane",
-				"it": "https://it.wikipedia.org/wiki/Titanio",
-				"de": "https://de.wikipedia.org/wiki/Titan_(Element)",
 				"en": "https://en.wikipedia.org/wiki/Titanium",
-				"es": "https://es.wikipedia.org/wiki/Titanio",
-				"pt": "https://pt.wikipedia.org/wiki/Tit%C3%A2nio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%A2%D0%B8%D1%82%D0%B0%D0%BD_(%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82)",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%92%9B"
+				"fr": "https://fr.wikipedia.org/wiki/Titane",
+				"de": "https://de.wikipedia.org/wiki/Titan_(Element)",
+				"it": "https://it.wikipedia.org/wiki/Titanio",
+				"es": "https://es.wikipedia.org/wiki/Titanio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%92%9B",
+				"pt": "https://pt.wikipedia.org/wiki/Tit%C3%A2nio"
 			},
 			"category": "transition-metal",
 			"period": 4,
@@ -1735,6 +1756,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.54,
+			"electronegativityText": "1.54",
 			"atomicRadius": 160,
 			"ionizationEnergy": 6.82812,
 			"electronAffinity": 0.07554,
@@ -1782,14 +1804,14 @@
 			},
 			"wikidata": "Q722",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Vanadium",
 				"en": "https://en.wikipedia.org/wiki/Vanadium",
-				"pt": "https://pt.wikipedia.org/wiki/Van%C3%A1dio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%92%D0%B0%D0%BD%D0%B0%D0%B4%D0%B8%D0%B9",
-				"es": "https://es.wikipedia.org/wiki/Vanadio",
 				"fr": "https://fr.wikipedia.org/wiki/Vanadium",
+				"de": "https://de.wikipedia.org/wiki/Vanadium",
+				"it": "https://it.wikipedia.org/wiki/Vanadio",
+				"es": "https://es.wikipedia.org/wiki/Vanadio",
 				"zh": "https://zh.wikipedia.org/wiki/%E9%92%92",
-				"it": "https://it.wikipedia.org/wiki/Vanadio"
+				"pt": "https://pt.wikipedia.org/wiki/Van%C3%A1dio"
 			},
 			"category": "transition-metal",
 			"period": 4,
@@ -1813,6 +1835,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.63,
+			"electronegativityText": "1.63",
 			"atomicRadius": 153,
 			"ionizationEnergy": 6.746187,
 			"electronAffinity": 0.52766,
@@ -1875,14 +1898,14 @@
 			},
 			"wikidata": "Q725",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Chrom",
-				"es": "https://es.wikipedia.org/wiki/Cromo",
-				"fr": "https://fr.wikipedia.org/wiki/Chrome",
-				"it": "https://it.wikipedia.org/wiki/Cromo",
 				"en": "https://en.wikipedia.org/wiki/Chromium",
-				"pt": "https://pt.wikipedia.org/wiki/Cromo",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%A5%D1%80%D0%BE%D0%BC",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%93%AC"
+				"fr": "https://fr.wikipedia.org/wiki/Chrome",
+				"de": "https://de.wikipedia.org/wiki/Chrom",
+				"it": "https://it.wikipedia.org/wiki/Cromo",
+				"es": "https://es.wikipedia.org/wiki/Cromo",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%93%AC",
+				"pt": "https://pt.wikipedia.org/wiki/Cromo"
 			},
 			"category": "transition-metal",
 			"period": 4,
@@ -1906,6 +1929,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.66,
+			"electronegativityText": "1.66",
 			"atomicRadius": 139,
 			"ionizationEnergy": 6.76651,
 			"electronAffinity": 0.675928,
@@ -1953,14 +1977,14 @@
 			},
 			"wikidata": "Q731",
 			"wikipedia": {
+				"en": "https://en.wikipedia.org/wiki/Manganese",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%80%D0%B3%D0%B0%D0%BD%D0%B5%D1%86",
 				"fr": "https://fr.wikipedia.org/wiki/Mangan%C3%A8se",
 				"de": "https://de.wikipedia.org/wiki/Mangan",
-				"en": "https://en.wikipedia.org/wiki/Manganese",
-				"es": "https://es.wikipedia.org/wiki/Manganeso",
 				"it": "https://it.wikipedia.org/wiki/Manganese",
-				"pt": "https://pt.wikipedia.org/wiki/Mangan%C3%AAs",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%80%D0%B3%D0%B0%D0%BD%D0%B5%D1%86",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%94%B0"
+				"es": "https://es.wikipedia.org/wiki/Manganeso",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%94%B0",
+				"pt": "https://pt.wikipedia.org/wiki/Mangan%C3%AAs"
 			},
 			"category": "transition-metal",
 			"period": 4,
@@ -1984,6 +2008,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.55,
+			"electronegativityText": "1.55",
 			"atomicRadius": 139,
 			"ionizationEnergy": 7.434038,
 			"electronAffinity": "unstable",
@@ -2000,6 +2025,19 @@
 			"density": 7.3,
 			"yearDiscovered": 1774,
 			"discoveredBy": [
+				{
+					"qid": "Q70538",
+					"name": {
+						"en": "Carl Wilhelm Scheele",
+						"ru": "Карл Вильгельм Шееле",
+						"fr": "Carl Wilhelm Scheele",
+						"de": "Carl Wilhelm Scheele",
+						"it": "Carl Scheele",
+						"es": "Carl Wilhelm Scheele",
+						"zh": "卡尔·威廉·舍勒",
+						"pt": "Carl Wilhelm Scheele"
+					}
+				},
 				{
 					"qid": "Q353490",
 					"name": {
@@ -2032,14 +2070,14 @@
 			},
 			"wikidata": "Q677",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Eisen",
 				"en": "https://en.wikipedia.org/wiki/Iron",
-				"es": "https://es.wikipedia.org/wiki/Hierro",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%96%D0%B5%D0%BB%D0%B5%D0%B7%D0%BE",
 				"fr": "https://fr.wikipedia.org/wiki/Fer",
+				"de": "https://de.wikipedia.org/wiki/Eisen",
 				"it": "https://it.wikipedia.org/wiki/Ferro",
+				"es": "https://es.wikipedia.org/wiki/Hierro",
 				"zh": "https://zh.wikipedia.org/wiki/%E9%93%81",
-				"pt": "https://pt.wikipedia.org/wiki/Ferro",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%96%D0%B5%D0%BB%D0%B5%D0%B7%D0%BE"
+				"pt": "https://pt.wikipedia.org/wiki/Ferro"
 			},
 			"category": "transition-metal",
 			"period": 4,
@@ -2063,6 +2101,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.83,
+			"electronegativityText": "1.83",
 			"atomicRadius": 132,
 			"ionizationEnergy": 7.9024681,
 			"electronAffinity": 0.153236,
@@ -2095,14 +2134,14 @@
 			},
 			"wikidata": "Q740",
 			"wikipedia": {
-				"pt": "https://pt.wikipedia.org/wiki/Cobalto",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%B1%D0%B0%D0%BB%D1%8C%D1%82",
-				"de": "https://de.wikipedia.org/wiki/Cobalt",
 				"en": "https://en.wikipedia.org/wiki/Cobalt",
-				"es": "https://es.wikipedia.org/wiki/Cobalto",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%B1%D0%B0%D0%BB%D1%8C%D1%82",
 				"fr": "https://fr.wikipedia.org/wiki/Cobalt",
+				"de": "https://de.wikipedia.org/wiki/Cobalt",
 				"it": "https://it.wikipedia.org/wiki/Cobalto",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%92%B4"
+				"es": "https://es.wikipedia.org/wiki/Cobalto",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%92%B4",
+				"pt": "https://pt.wikipedia.org/wiki/Cobalto"
 			},
 			"category": "transition-metal",
 			"period": 4,
@@ -2126,6 +2165,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.88,
+			"electronegativityText": "1.88",
 			"atomicRadius": 126,
 			"ionizationEnergy": 7.88101,
 			"electronAffinity": 0.662255,
@@ -2172,14 +2212,14 @@
 			},
 			"wikidata": "Q744",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Nickel",
 				"en": "https://en.wikipedia.org/wiki/Nickel",
-				"es": "https://es.wikipedia.org/wiki/N%C3%ADquel",
-				"fr": "https://fr.wikipedia.org/wiki/Nickel",
-				"it": "https://it.wikipedia.org/wiki/Nichel",
-				"pt": "https://pt.wikipedia.org/wiki/N%C3%ADquel",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%9D%D0%B8%D0%BA%D0%B5%D0%BB%D1%8C",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%95%8D"
+				"fr": "https://fr.wikipedia.org/wiki/Nickel",
+				"de": "https://de.wikipedia.org/wiki/Nickel",
+				"it": "https://it.wikipedia.org/wiki/Nichel",
+				"es": "https://es.wikipedia.org/wiki/N%C3%ADquel",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%95%8D",
+				"pt": "https://pt.wikipedia.org/wiki/N%C3%ADquel"
 			},
 			"category": "transition-metal",
 			"period": 4,
@@ -2203,6 +2243,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.91,
+			"electronegativityText": "1.91",
 			"atomicRadius": 124,
 			"ionizationEnergy": 7.639878,
 			"electronAffinity": 1.15716,
@@ -2250,13 +2291,13 @@
 			"wikidata": "Q753",
 			"wikipedia": {
 				"en": "https://en.wikipedia.org/wiki/Copper",
-				"de": "https://de.wikipedia.org/wiki/Kupfer",
-				"es": "https://es.wikipedia.org/wiki/Cobre",
-				"fr": "https://fr.wikipedia.org/wiki/Cuivre",
-				"it": "https://it.wikipedia.org/wiki/Rame",
-				"pt": "https://pt.wikipedia.org/wiki/Cobre",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%B4%D1%8C",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%93%9C"
+				"fr": "https://fr.wikipedia.org/wiki/Cuivre",
+				"de": "https://de.wikipedia.org/wiki/Kupfer",
+				"it": "https://it.wikipedia.org/wiki/Rame",
+				"es": "https://es.wikipedia.org/wiki/Cobre",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%93%9C",
+				"pt": "https://pt.wikipedia.org/wiki/Cobre"
 			},
 			"category": "transition-metal",
 			"period": 4,
@@ -2280,6 +2321,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.9,
+			"electronegativityText": "1.90",
 			"atomicRadius": 132,
 			"ionizationEnergy": 7.72638,
 			"electronAffinity": 1.23578,
@@ -2326,14 +2368,14 @@
 			},
 			"wikidata": "Q758",
 			"wikipedia": {
-				"it": "https://it.wikipedia.org/wiki/Zinco",
-				"de": "https://de.wikipedia.org/wiki/Zink",
 				"en": "https://en.wikipedia.org/wiki/Zinc",
-				"es": "https://es.wikipedia.org/wiki/Zinc",
-				"fr": "https://fr.wikipedia.org/wiki/Zinc",
-				"pt": "https://pt.wikipedia.org/wiki/Zinco",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%A6%D0%B8%D0%BD%D0%BA",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%94%8C"
+				"fr": "https://fr.wikipedia.org/wiki/Zinc",
+				"de": "https://de.wikipedia.org/wiki/Zink",
+				"it": "https://it.wikipedia.org/wiki/Zinco",
+				"es": "https://es.wikipedia.org/wiki/Zinc",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%94%8C",
+				"pt": "https://pt.wikipedia.org/wiki/Zinco"
 			},
 			"category": "transition-metal",
 			"period": 4,
@@ -2357,6 +2399,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.65,
+			"electronegativityText": "1.65",
 			"atomicRadius": 122,
 			"ionizationEnergy": 9.394197,
 			"electronAffinity": "unstable",
@@ -2368,7 +2411,7 @@
 			"boilingPoint": 1180,
 			"sublimes": false,
 			"density": 7.134,
-			"yearDiscovered": 1746,
+			"yearDiscovered": "ancient",
 			"discoveredBy": [],
 			"namedAfter": []
 		},
@@ -2388,14 +2431,14 @@
 			},
 			"wikidata": "Q861",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Gallium",
 				"en": "https://en.wikipedia.org/wiki/Gallium",
-				"es": "https://es.wikipedia.org/wiki/Galio",
-				"fr": "https://fr.wikipedia.org/wiki/Gallium",
-				"it": "https://it.wikipedia.org/wiki/Gallio_(elemento_chimico)",
-				"pt": "https://pt.wikipedia.org/wiki/G%C3%A1lio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%93%D0%B0%D0%BB%D0%BB%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%95%93"
+				"fr": "https://fr.wikipedia.org/wiki/Gallium",
+				"de": "https://de.wikipedia.org/wiki/Gallium",
+				"it": "https://it.wikipedia.org/wiki/Gallio_(elemento_chimico)",
+				"es": "https://es.wikipedia.org/wiki/Galio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%95%93",
+				"pt": "https://pt.wikipedia.org/wiki/G%C3%A1lio"
 			},
 			"category": "post-transition-metal",
 			"period": 4,
@@ -2419,6 +2462,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.81,
+			"electronegativityText": "1.81",
 			"atomicRadius": 122,
 			"ionizationEnergy": 5.999302,
 			"electronAffinity": 0.301166,
@@ -2457,7 +2501,7 @@
 						"it": "Gallia",
 						"es": "Galia",
 						"zh": "高卢",
-						"pt": "Gaul"
+						"pt": "Gália"
 					}
 				}
 			]
@@ -2478,14 +2522,14 @@
 			},
 			"wikidata": "Q867",
 			"wikipedia": {
-				"pt": "https://pt.wikipedia.org/wiki/Germ%C3%A2nio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%94%97",
-				"de": "https://de.wikipedia.org/wiki/Germanium",
 				"en": "https://en.wikipedia.org/wiki/Germanium",
-				"es": "https://es.wikipedia.org/wiki/Germanio",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B8%D0%B9",
 				"fr": "https://fr.wikipedia.org/wiki/Germanium",
-				"it": "https://it.wikipedia.org/wiki/Germanio"
+				"de": "https://de.wikipedia.org/wiki/Germanium",
+				"it": "https://it.wikipedia.org/wiki/Germanio",
+				"es": "https://es.wikipedia.org/wiki/Germanio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%94%97",
+				"pt": "https://pt.wikipedia.org/wiki/Germ%C3%A2nio"
 			},
 			"category": "metalloid",
 			"period": 4,
@@ -2509,6 +2553,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 2.01,
+			"electronegativityText": "2.01",
 			"atomicRadius": 120,
 			"ionizationEnergy": 7.899435,
 			"electronAffinity": 1.2326764,
@@ -2570,14 +2615,14 @@
 			},
 			"wikidata": "Q871",
 			"wikipedia": {
-				"es": "https://es.wikipedia.org/wiki/Ars%C3%A9nico",
-				"it": "https://it.wikipedia.org/wiki/Arsenico",
-				"pt": "https://pt.wikipedia.org/wiki/Ars%C3%AAnio",
-				"zh": "https://zh.wikipedia.org/wiki/%E7%A0%B7",
-				"de": "https://de.wikipedia.org/wiki/Arsen",
 				"en": "https://en.wikipedia.org/wiki/Arsenic",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%9C%D1%8B%D1%88%D1%8C%D1%8F%D0%BA",
 				"fr": "https://fr.wikipedia.org/wiki/Arsenic",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%9C%D1%8B%D1%88%D1%8C%D1%8F%D0%BA"
+				"de": "https://de.wikipedia.org/wiki/Arsen",
+				"it": "https://it.wikipedia.org/wiki/Arsenico",
+				"es": "https://es.wikipedia.org/wiki/Ars%C3%A9nico",
+				"zh": "https://zh.wikipedia.org/wiki/%E7%A0%B7",
+				"pt": "https://pt.wikipedia.org/wiki/Ars%C3%AAnio"
 			},
 			"category": "metalloid",
 			"period": 4,
@@ -2601,6 +2646,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 2.18,
+			"electronegativityText": "2.18",
 			"atomicRadius": 119,
 			"ionizationEnergy": 9.78855,
 			"electronAffinity": 0.804486,
@@ -2615,21 +2661,7 @@
 			"sublimes": true,
 			"density": 5.776,
 			"yearDiscovered": "ancient",
-			"discoveredBy": [
-				{
-					"qid": "Q60059",
-					"name": {
-						"en": "Albertus Magnus",
-						"ru": "Альберт Великий",
-						"fr": "Albert le Grand",
-						"de": "Albertus Magnus",
-						"it": "Alberto Magno",
-						"es": "Alberto Magno",
-						"zh": "艾爾伯圖斯·麥格努斯",
-						"pt": "Alberto Magno"
-					}
-				}
-			],
+			"discoveredBy": [],
 			"namedAfter": []
 		},
 		{
@@ -2648,14 +2680,14 @@
 			},
 			"wikidata": "Q876",
 			"wikipedia": {
-				"it": "https://it.wikipedia.org/wiki/Selenio",
-				"pt": "https://pt.wikipedia.org/wiki/Sel%C3%AAnio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D0%BB%D0%B5%D0%BD",
-				"de": "https://de.wikipedia.org/wiki/Selen",
 				"en": "https://en.wikipedia.org/wiki/Selenium",
-				"es": "https://es.wikipedia.org/wiki/Selenio",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D0%BB%D0%B5%D0%BD",
 				"fr": "https://fr.wikipedia.org/wiki/S%C3%A9l%C3%A9nium",
-				"zh": "https://zh.wikipedia.org/wiki/%E7%A1%92"
+				"de": "https://de.wikipedia.org/wiki/Selen",
+				"it": "https://it.wikipedia.org/wiki/Selenio",
+				"es": "https://es.wikipedia.org/wiki/Selenio",
+				"zh": "https://zh.wikipedia.org/wiki/%E7%A1%92",
+				"pt": "https://pt.wikipedia.org/wiki/Sel%C3%AAnio"
 			},
 			"category": "nonmetal",
 			"period": 4,
@@ -2679,6 +2711,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 2.55,
+			"electronegativityText": "2.55",
 			"atomicRadius": 120,
 			"ionizationEnergy": 9.752368,
 			"electronAffinity": 2.020667,
@@ -2754,14 +2787,14 @@
 			},
 			"wikidata": "Q879",
 			"wikipedia": {
-				"fr": "https://fr.wikipedia.org/wiki/Brome",
-				"it": "https://it.wikipedia.org/wiki/Bromo",
-				"de": "https://de.wikipedia.org/wiki/Brom",
 				"en": "https://en.wikipedia.org/wiki/Bromine",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%91%D1%80%D0%BE%D0%BC",
+				"fr": "https://fr.wikipedia.org/wiki/Brome",
+				"de": "https://de.wikipedia.org/wiki/Brom",
+				"it": "https://it.wikipedia.org/wiki/Bromo",
 				"es": "https://es.wikipedia.org/wiki/Bromo",
 				"zh": "https://zh.wikipedia.org/wiki/%E6%BA%B4",
-				"pt": "https://pt.wikipedia.org/wiki/Bromo",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%91%D1%80%D0%BE%D0%BC"
+				"pt": "https://pt.wikipedia.org/wiki/Bromo"
 			},
 			"category": "halogen",
 			"period": 4,
@@ -2785,6 +2818,7 @@
 			"state": "liquid",
 			"statePredicted": false,
 			"electronegativity": 2.96,
+			"electronegativityText": "2.96",
 			"atomicRadius": 120,
 			"ionizationEnergy": 11.81381,
 			"electronAffinity": 3.363588,
@@ -2847,13 +2881,13 @@
 			"wikidata": "Q888",
 			"wikipedia": {
 				"en": "https://en.wikipedia.org/wiki/Krypton",
-				"es": "https://es.wikipedia.org/wiki/Kript%C3%B3n",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%9A%D1%80%D0%B8%D0%BF%D1%82%D0%BE%D0%BD",
 				"fr": "https://fr.wikipedia.org/wiki/Krypton",
 				"de": "https://de.wikipedia.org/wiki/Krypton",
 				"it": "https://it.wikipedia.org/wiki/Kripton",
+				"es": "https://es.wikipedia.org/wiki/Kript%C3%B3n",
 				"zh": "https://zh.wikipedia.org/wiki/%E6%B0%AA",
-				"pt": "https://pt.wikipedia.org/wiki/Cr%C3%ADpton",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%9A%D1%80%D0%B8%D0%BF%D1%82%D0%BE%D0%BD"
+				"pt": "https://pt.wikipedia.org/wiki/Cr%C3%ADpton"
 			},
 			"category": "noble-gas",
 			"period": 4,
@@ -2877,6 +2911,7 @@
 			"state": "gas",
 			"statePredicted": false,
 			"electronegativity": 3,
+			"electronegativityText": "3.00",
 			"atomicRadius": 116,
 			"ionizationEnergy": 13.9996055,
 			"electronAffinity": "unstable",
@@ -2887,7 +2922,7 @@
 			"meltsUnderPressure": false,
 			"boilingPoint": 119.93,
 			"sublimes": false,
-			"density": 0.003733,
+			"density": 0.003749,
 			"yearDiscovered": 1898,
 			"discoveredBy": [
 				{
@@ -2935,14 +2970,14 @@
 			},
 			"wikidata": "Q895",
 			"wikipedia": {
-				"pt": "https://pt.wikipedia.org/wiki/Rub%C3%ADdio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%A0%D1%83%D0%B1%D0%B8%D0%B4%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%93%B7",
-				"de": "https://de.wikipedia.org/wiki/Rubidium",
 				"en": "https://en.wikipedia.org/wiki/Rubidium",
-				"es": "https://es.wikipedia.org/wiki/Rubidio",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%A0%D1%83%D0%B1%D0%B8%D0%B4%D0%B8%D0%B9",
 				"fr": "https://fr.wikipedia.org/wiki/Rubidium",
-				"it": "https://it.wikipedia.org/wiki/Rubidio"
+				"de": "https://de.wikipedia.org/wiki/Rubidium",
+				"it": "https://it.wikipedia.org/wiki/Rubidio",
+				"es": "https://es.wikipedia.org/wiki/Rubidio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%93%B7",
+				"pt": "https://pt.wikipedia.org/wiki/Rub%C3%ADdio"
 			},
 			"category": "alkali-metal",
 			"period": 5,
@@ -2967,6 +3002,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 0.82,
+			"electronegativityText": "0.82",
 			"atomicRadius": 220,
 			"ionizationEnergy": 4.1771281,
 			"electronAffinity": 0.485916,
@@ -3025,14 +3061,14 @@
 			},
 			"wikidata": "Q938",
 			"wikipedia": {
-				"es": "https://es.wikipedia.org/wiki/Estroncio",
-				"fr": "https://fr.wikipedia.org/wiki/Strontium",
-				"it": "https://it.wikipedia.org/wiki/Stronzio",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%94%B6",
-				"pt": "https://pt.wikipedia.org/wiki/Estr%C3%B4ncio",
+				"en": "https://en.wikipedia.org/wiki/Strontium",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%A1%D1%82%D1%80%D0%BE%D0%BD%D1%86%D0%B8%D0%B9",
+				"fr": "https://fr.wikipedia.org/wiki/Strontium",
 				"de": "https://de.wikipedia.org/wiki/Strontium",
-				"en": "https://en.wikipedia.org/wiki/Strontium"
+				"it": "https://it.wikipedia.org/wiki/Stronzio",
+				"es": "https://es.wikipedia.org/wiki/Estroncio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%94%B6",
+				"pt": "https://pt.wikipedia.org/wiki/Estr%C3%B4ncio"
 			},
 			"category": "alkaline-earth-metal",
 			"period": 5,
@@ -3057,6 +3093,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 0.95,
+			"electronegativityText": "0.95",
 			"atomicRadius": 195,
 			"ionizationEnergy": 5.69486745,
 			"electronAffinity": 0.05206,
@@ -3117,13 +3154,13 @@
 			"wikidata": "Q941",
 			"wikipedia": {
 				"en": "https://en.wikipedia.org/wiki/Yttrium",
-				"it": "https://it.wikipedia.org/wiki/Ittrio",
-				"de": "https://de.wikipedia.org/wiki/Yttrium",
-				"es": "https://es.wikipedia.org/wiki/Itrio",
-				"fr": "https://fr.wikipedia.org/wiki/Yttrium",
-				"pt": "https://pt.wikipedia.org/wiki/%C3%8Dtrio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%98%D1%82%D1%82%D1%80%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%92%87"
+				"fr": "https://fr.wikipedia.org/wiki/Yttrium",
+				"de": "https://de.wikipedia.org/wiki/Yttrium",
+				"it": "https://it.wikipedia.org/wiki/Ittrio",
+				"es": "https://es.wikipedia.org/wiki/Itrio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%92%87",
+				"pt": "https://pt.wikipedia.org/wiki/%C3%8Dtrio"
 			},
 			"category": "transition-metal",
 			"period": 5,
@@ -3148,6 +3185,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.22,
+			"electronegativityText": "1.22",
 			"atomicRadius": 190,
 			"ionizationEnergy": 6.21726,
 			"electronAffinity": 0.31129,
@@ -3161,19 +3199,6 @@
 			"density": 4.47,
 			"yearDiscovered": 1794,
 			"discoveredBy": [
-				{
-					"qid": "Q58575",
-					"name": {
-						"en": "Friedrich Wöhler",
-						"ru": "Фридрих Вёлер",
-						"fr": "Friedrich Wöhler",
-						"de": "Friedrich Wöhler",
-						"it": "Friedrich Wöhler",
-						"es": "Friedrich Wöhler",
-						"zh": "弗里德里希·维勒",
-						"pt": "Friedrich Wöhler"
-					}
-				},
 				{
 					"qid": "Q312571",
 					"name": {
@@ -3220,14 +3245,14 @@
 			},
 			"wikidata": "Q1038",
 			"wikipedia": {
-				"it": "https://it.wikipedia.org/wiki/Zirconio",
-				"pt": "https://pt.wikipedia.org/wiki/Zirc%C3%B4nio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%A6%D0%B8%D1%80%D0%BA%D0%BE%D0%BD%D0%B8%D0%B9",
-				"de": "https://de.wikipedia.org/wiki/Zirconium",
 				"en": "https://en.wikipedia.org/wiki/Zirconium",
-				"es": "https://es.wikipedia.org/wiki/Circonio",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%A6%D0%B8%D1%80%D0%BA%D0%BE%D0%BD%D0%B8%D0%B9",
 				"fr": "https://fr.wikipedia.org/wiki/Zirconium",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%94%86"
+				"de": "https://de.wikipedia.org/wiki/Zirconium",
+				"it": "https://it.wikipedia.org/wiki/Zirconio",
+				"es": "https://es.wikipedia.org/wiki/Circonio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%94%86",
+				"pt": "https://pt.wikipedia.org/wiki/Zirc%C3%B4nio"
 			},
 			"category": "transition-metal",
 			"period": 5,
@@ -3252,6 +3277,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.33,
+			"electronegativityText": "1.33",
 			"atomicRadius": 175,
 			"ionizationEnergy": 6.634126,
 			"electronAffinity": 0.43328,
@@ -3297,14 +3323,14 @@
 			},
 			"wikidata": "Q1046",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Niob",
 				"en": "https://en.wikipedia.org/wiki/Niobium",
-				"es": "https://es.wikipedia.org/wiki/Niobio",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%9D%D0%B8%D0%BE%D0%B1%D0%B8%D0%B9",
 				"fr": "https://fr.wikipedia.org/wiki/Niobium",
+				"de": "https://de.wikipedia.org/wiki/Niob",
 				"it": "https://it.wikipedia.org/wiki/Niobio",
+				"es": "https://es.wikipedia.org/wiki/Niobio",
 				"zh": "https://zh.wikipedia.org/wiki/%E9%93%8C",
-				"pt": "https://pt.wikipedia.org/wiki/Ni%C3%B3bio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%9D%D0%B8%D0%BE%D0%B1%D0%B8%D0%B9"
+				"pt": "https://pt.wikipedia.org/wiki/Ni%C3%B3bio"
 			},
 			"category": "transition-metal",
 			"period": 5,
@@ -3329,6 +3355,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.6,
+			"electronegativityText": "1.6",
 			"atomicRadius": 164,
 			"ionizationEnergy": 6.75885,
 			"electronAffinity": 0.9174,
@@ -3389,14 +3416,14 @@
 			},
 			"wikidata": "Q1053",
 			"wikipedia": {
-				"it": "https://it.wikipedia.org/wiki/Molibdeno",
-				"pt": "https://pt.wikipedia.org/wiki/Molibd%C3%AAnio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%9C%D0%BE%D0%BB%D0%B8%D0%B1%D0%B4%D0%B5%D0%BD",
-				"de": "https://de.wikipedia.org/wiki/Molybd%C3%A4n",
 				"en": "https://en.wikipedia.org/wiki/Molybdenum",
-				"es": "https://es.wikipedia.org/wiki/Molibdeno",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%9C%D0%BE%D0%BB%D0%B8%D0%B1%D0%B4%D0%B5%D0%BD",
 				"fr": "https://fr.wikipedia.org/wiki/Molybd%C3%A8ne",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%92%BC"
+				"de": "https://de.wikipedia.org/wiki/Molybd%C3%A4n",
+				"it": "https://it.wikipedia.org/wiki/Molibdeno",
+				"es": "https://es.wikipedia.org/wiki/Molibdeno",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%92%BC",
+				"pt": "https://pt.wikipedia.org/wiki/Molibd%C3%AAnio"
 			},
 			"category": "transition-metal",
 			"period": 5,
@@ -3421,6 +3448,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 2.16,
+			"electronegativityText": "2.16",
 			"atomicRadius": 154,
 			"ionizationEnergy": 7.09243,
 			"electronAffinity": 0.74723,
@@ -3467,14 +3495,14 @@
 			},
 			"wikidata": "Q1054",
 			"wikipedia": {
-				"it": "https://it.wikipedia.org/wiki/Tecnezio",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%94%9D",
-				"de": "https://de.wikipedia.org/wiki/Technetium",
 				"en": "https://en.wikipedia.org/wiki/Technetium",
-				"es": "https://es.wikipedia.org/wiki/Tecnecio",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D1%85%D0%BD%D0%B5%D1%86%D0%B8%D0%B9",
 				"fr": "https://fr.wikipedia.org/wiki/Techn%C3%A9tium",
-				"pt": "https://pt.wikipedia.org/wiki/Tecn%C3%A9cio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D1%85%D0%BD%D0%B5%D1%86%D0%B8%D0%B9"
+				"de": "https://de.wikipedia.org/wiki/Technetium",
+				"it": "https://it.wikipedia.org/wiki/Tecnezio",
+				"es": "https://es.wikipedia.org/wiki/Tecnecio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%94%9D",
+				"pt": "https://pt.wikipedia.org/wiki/Tecn%C3%A9cio"
 			},
 			"category": "transition-metal",
 			"period": 5,
@@ -3499,6 +3527,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.9,
+			"electronegativityText": "1.9",
 			"atomicRadius": 147,
 			"ionizationEnergy": 7.11938,
 			"electronAffinity": null,
@@ -3518,7 +3547,7 @@
 					"qid": "Q2939237",
 					"name": {
 						"en": "Carlo Perrier",
-						"ru": "Carlo Perrier",
+						"ru": "Карло Перрье",
 						"fr": "Carlo Perrier",
 						"de": "Carlo Perrier",
 						"it": "Carlo Perrier",
@@ -3559,14 +3588,14 @@
 			},
 			"wikidata": "Q1086",
 			"wikipedia": {
-				"it": "https://it.wikipedia.org/wiki/Rutenio",
-				"pt": "https://pt.wikipedia.org/wiki/Rut%C3%AAnio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%A0%D1%83%D1%82%D0%B5%D0%BD%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%92%8C",
-				"de": "https://de.wikipedia.org/wiki/Ruthenium",
 				"en": "https://en.wikipedia.org/wiki/Ruthenium",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%A0%D1%83%D1%82%D0%B5%D0%BD%D0%B8%D0%B9",
+				"fr": "https://fr.wikipedia.org/wiki/Ruth%C3%A9nium",
+				"de": "https://de.wikipedia.org/wiki/Ruthenium",
+				"it": "https://it.wikipedia.org/wiki/Rutenio",
 				"es": "https://es.wikipedia.org/wiki/Rutenio",
-				"fr": "https://fr.wikipedia.org/wiki/Ruth%C3%A9nium"
+				"zh": "https://zh.wikipedia.org/wiki/%E9%92%8C",
+				"pt": "https://pt.wikipedia.org/wiki/Rut%C3%AAnio"
 			},
 			"category": "transition-metal",
 			"period": 5,
@@ -3591,6 +3620,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 2.2,
+			"electronegativityText": "2.2",
 			"atomicRadius": 146,
 			"ionizationEnergy": 7.3605,
 			"electronAffinity": 1.04627,
@@ -3609,7 +3639,7 @@
 					"qid": "Q554178",
 					"name": {
 						"en": "Karl Ernst Claus",
-						"ru": "Клаус, Карл Карлович",
+						"ru": "Карл Клаус",
 						"fr": "Karl Klaus",
 						"de": "Karl Ernst Claus",
 						"it": "Karl Ernst Claus",
@@ -3637,14 +3667,14 @@
 			},
 			"wikidata": "Q1087",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Rhodium",
 				"en": "https://en.wikipedia.org/wiki/Rhodium",
-				"es": "https://es.wikipedia.org/wiki/Rodio",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%A0%D0%BE%D0%B4%D0%B8%D0%B9",
 				"fr": "https://fr.wikipedia.org/wiki/Rhodium",
+				"de": "https://de.wikipedia.org/wiki/Rhodium",
 				"it": "https://it.wikipedia.org/wiki/Rodio",
-				"pt": "https://pt.wikipedia.org/wiki/R%C3%B3dio",
+				"es": "https://es.wikipedia.org/wiki/Rodio",
 				"zh": "https://zh.wikipedia.org/wiki/%E9%93%91",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%A0%D0%BE%D0%B4%D0%B8%D0%B9"
+				"pt": "https://pt.wikipedia.org/wiki/R%C3%B3dio"
 			},
 			"category": "transition-metal",
 			"period": 5,
@@ -3669,6 +3699,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 2.28,
+			"electronegativityText": "2.28",
 			"atomicRadius": 142,
 			"ionizationEnergy": 7.4589,
 			"electronAffinity": 1.14289,
@@ -3714,14 +3745,14 @@
 			},
 			"wikidata": "Q1089",
 			"wikipedia": {
-				"it": "https://it.wikipedia.org/wiki/Palladio_(elemento_chimico)",
 				"en": "https://en.wikipedia.org/wiki/Palladium",
-				"es": "https://es.wikipedia.org/wiki/Paladio",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D0%BB%D0%BB%D0%B0%D0%B4%D0%B8%D0%B9",
 				"fr": "https://fr.wikipedia.org/wiki/Palladium",
 				"de": "https://de.wikipedia.org/wiki/Palladium",
-				"pt": "https://pt.wikipedia.org/wiki/Pal%C3%A1dio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D0%BB%D0%BB%D0%B0%D0%B4%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%92%AF"
+				"it": "https://it.wikipedia.org/wiki/Palladio_(elemento_chimico)",
+				"es": "https://es.wikipedia.org/wiki/Paladio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%92%AF",
+				"pt": "https://pt.wikipedia.org/wiki/Pal%C3%A1dio"
 			},
 			"category": "transition-metal",
 			"period": 5,
@@ -3745,6 +3776,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 2.2,
+			"electronegativityText": "2.20",
 			"atomicRadius": 139,
 			"ionizationEnergy": 8.336839,
 			"electronAffinity": 0.56214,
@@ -3778,14 +3810,14 @@
 				{
 					"qid": "Q3002",
 					"name": {
-						"en": "2 Pallas",
-						"ru": "(2) Паллада",
-						"fr": "(2) Pallas",
-						"de": "(2) Pallas",
-						"it": "2 Pallas",
-						"es": "(2) Palas",
+						"en": "Pallas",
+						"ru": "Паллада",
+						"fr": "Pallas",
+						"de": "Pallas",
+						"it": "Pallas",
+						"es": "Palas",
 						"zh": "智神星",
-						"pt": "2 Palas"
+						"pt": "Palas"
 					}
 				}
 			]
@@ -3806,14 +3838,14 @@
 			},
 			"wikidata": "Q1090",
 			"wikipedia": {
+				"en": "https://en.wikipedia.org/wiki/Silver",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D1%80%D0%B5%D0%B1%D1%80%D0%BE",
 				"fr": "https://fr.wikipedia.org/wiki/Argent",
 				"de": "https://de.wikipedia.org/wiki/Silber",
-				"en": "https://en.wikipedia.org/wiki/Silver",
-				"es": "https://es.wikipedia.org/wiki/Plata",
 				"it": "https://it.wikipedia.org/wiki/Argento",
-				"pt": "https://pt.wikipedia.org/wiki/Prata",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D1%80%D0%B5%D0%B1%D1%80%D0%BE",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%8A%80"
+				"es": "https://es.wikipedia.org/wiki/Plata",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%8A%80",
+				"pt": "https://pt.wikipedia.org/wiki/Prata"
 			},
 			"category": "transition-metal",
 			"period": 5,
@@ -3838,6 +3870,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.93,
+			"electronegativityText": "1.93",
 			"atomicRadius": 145,
 			"ionizationEnergy": 7.576234,
 			"electronAffinity": 1.30447,
@@ -3869,14 +3902,14 @@
 			},
 			"wikidata": "Q1091",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Cadmium",
 				"en": "https://en.wikipedia.org/wiki/Cadmium",
-				"es": "https://es.wikipedia.org/wiki/Cadmio",
-				"fr": "https://fr.wikipedia.org/wiki/Cadmium",
-				"it": "https://it.wikipedia.org/wiki/Cadmio",
-				"pt": "https://pt.wikipedia.org/wiki/C%C3%A1dmio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%B4%D0%BC%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%95%89"
+				"fr": "https://fr.wikipedia.org/wiki/Cadmium",
+				"de": "https://de.wikipedia.org/wiki/Cadmium",
+				"it": "https://it.wikipedia.org/wiki/Cadmio",
+				"es": "https://es.wikipedia.org/wiki/Cadmio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%95%89",
+				"pt": "https://pt.wikipedia.org/wiki/C%C3%A1dmio"
 			},
 			"category": "transition-metal",
 			"period": 5,
@@ -3901,6 +3934,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.69,
+			"electronegativityText": "1.69",
 			"atomicRadius": 144,
 			"ionizationEnergy": 8.99382,
 			"electronAffinity": "unstable",
@@ -3931,7 +3965,7 @@
 					"qid": "Q69080",
 					"name": {
 						"en": "Karl Samuel Leberecht Hermann",
-						"ru": "Karl Samuel Leberecht Hermann",
+						"ru": "Карл Герман",
 						"fr": "Karl Samuel Leberecht Hermann",
 						"de": "Carl Samuel Hermann",
 						"it": "Carl Samuel Hermann",
@@ -3959,14 +3993,14 @@
 			},
 			"wikidata": "Q1094",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Indium",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%93%9F",
 				"en": "https://en.wikipedia.org/wiki/Indium",
-				"es": "https://es.wikipedia.org/wiki/Indio_(elemento)",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%98%D0%BD%D0%B4%D0%B8%D0%B9",
 				"fr": "https://fr.wikipedia.org/wiki/Indium",
+				"de": "https://de.wikipedia.org/wiki/Indium",
 				"it": "https://it.wikipedia.org/wiki/Indio",
-				"pt": "https://pt.wikipedia.org/wiki/%C3%8Dndio_(elemento_qu%C3%ADmico)",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%98%D0%BD%D0%B4%D0%B8%D0%B9"
+				"es": "https://es.wikipedia.org/wiki/Indio_(elemento)",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%93%9F",
+				"pt": "https://pt.wikipedia.org/wiki/%C3%8Dndio_(elemento_qu%C3%ADmico)"
 			},
 			"category": "post-transition-metal",
 			"period": 5,
@@ -3991,6 +4025,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.78,
+			"electronegativityText": "1.78",
 			"atomicRadius": 142,
 			"ionizationEnergy": 5.7863558,
 			"electronAffinity": 0.38392,
@@ -4049,14 +4084,14 @@
 			},
 			"wikidata": "Q1096",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Zinn",
 				"en": "https://en.wikipedia.org/wiki/Tin",
-				"fr": "https://fr.wikipedia.org/wiki/%C3%89tain",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%9E%D0%BB%D0%BE%D0%B2%D0%BE",
-				"pt": "https://pt.wikipedia.org/wiki/Estanho",
-				"es": "https://es.wikipedia.org/wiki/Esta%C3%B1o",
+				"fr": "https://fr.wikipedia.org/wiki/%C3%89tain",
+				"de": "https://de.wikipedia.org/wiki/Zinn",
 				"it": "https://it.wikipedia.org/wiki/Stagno_(elemento_chimico)",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%94%A1"
+				"es": "https://es.wikipedia.org/wiki/Esta%C3%B1o",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%94%A1",
+				"pt": "https://pt.wikipedia.org/wiki/Estanho"
 			},
 			"category": "post-transition-metal",
 			"period": 5,
@@ -4081,6 +4116,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.96,
+			"electronegativityText": "1.96",
 			"atomicRadius": 139,
 			"ionizationEnergy": 7.343918,
 			"electronAffinity": 1.11207,
@@ -4114,14 +4150,14 @@
 			},
 			"wikidata": "Q1099",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Antimon",
 				"en": "https://en.wikipedia.org/wiki/Antimony",
-				"es": "https://es.wikipedia.org/wiki/Antimonio",
-				"fr": "https://fr.wikipedia.org/wiki/Antimoine",
-				"it": "https://it.wikipedia.org/wiki/Antimonio",
-				"pt": "https://pt.wikipedia.org/wiki/Antim%C3%B4nio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%A1%D1%83%D1%80%D1%8C%D0%BC%D0%B0",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%94%91"
+				"fr": "https://fr.wikipedia.org/wiki/Antimoine",
+				"de": "https://de.wikipedia.org/wiki/Antimon",
+				"it": "https://it.wikipedia.org/wiki/Antimonio",
+				"es": "https://es.wikipedia.org/wiki/Antimonio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%94%91",
+				"pt": "https://pt.wikipedia.org/wiki/Antim%C3%B4nio"
 			},
 			"category": "metalloid",
 			"period": 5,
@@ -4146,6 +4182,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 2.05,
+			"electronegativityText": "2.05",
 			"atomicRadius": 139,
 			"ionizationEnergy": 8.608389,
 			"electronAffinity": 1.047401,
@@ -4179,14 +4216,14 @@
 			},
 			"wikidata": "Q1100",
 			"wikipedia": {
-				"pt": "https://pt.wikipedia.org/wiki/Tel%C3%BArio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D0%BB%D0%BB%D1%83%D1%80",
-				"zh": "https://zh.wikipedia.org/wiki/%E7%A2%B2",
-				"de": "https://de.wikipedia.org/wiki/Tellur",
 				"en": "https://en.wikipedia.org/wiki/Tellurium",
-				"es": "https://es.wikipedia.org/wiki/Telurio",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D0%BB%D0%BB%D1%83%D1%80",
 				"fr": "https://fr.wikipedia.org/wiki/Tellure",
-				"it": "https://it.wikipedia.org/wiki/Tellurio"
+				"de": "https://de.wikipedia.org/wiki/Tellur",
+				"it": "https://it.wikipedia.org/wiki/Tellurio",
+				"es": "https://es.wikipedia.org/wiki/Telurio",
+				"zh": "https://zh.wikipedia.org/wiki/%E7%A2%B2",
+				"pt": "https://pt.wikipedia.org/wiki/Tel%C3%BArio"
 			},
 			"category": "metalloid",
 			"period": 5,
@@ -4211,6 +4248,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 2.1,
+			"electronegativityText": "2.1",
 			"atomicRadius": 138,
 			"ionizationEnergy": 9.009808,
 			"electronAffinity": 1.970875,
@@ -4273,14 +4311,14 @@
 			},
 			"wikidata": "Q1103",
 			"wikipedia": {
-				"fr": "https://fr.wikipedia.org/wiki/Iode",
-				"it": "https://it.wikipedia.org/wiki/Iodio",
-				"de": "https://de.wikipedia.org/wiki/Iod",
 				"en": "https://en.wikipedia.org/wiki/Iodine",
-				"es": "https://es.wikipedia.org/wiki/Yodo",
-				"pt": "https://pt.wikipedia.org/wiki/Iodo",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%98%D0%BE%D0%B4",
-				"zh": "https://zh.wikipedia.org/wiki/%E7%A2%98"
+				"fr": "https://fr.wikipedia.org/wiki/Iode",
+				"de": "https://de.wikipedia.org/wiki/Iod",
+				"it": "https://it.wikipedia.org/wiki/Iodio",
+				"es": "https://es.wikipedia.org/wiki/Yodo",
+				"zh": "https://zh.wikipedia.org/wiki/%E7%A2%98",
+				"pt": "https://pt.wikipedia.org/wiki/Iodo"
 			},
 			"category": "halogen",
 			"period": 5,
@@ -4305,6 +4343,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 2.66,
+			"electronegativityText": "2.66",
 			"atomicRadius": 139,
 			"ionizationEnergy": 10.451236,
 			"electronAffinity": 3.0590465,
@@ -4354,14 +4393,14 @@
 			},
 			"wikidata": "Q1106",
 			"wikipedia": {
-				"pt": "https://pt.wikipedia.org/wiki/Xen%C3%B4nio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%9A%D1%81%D0%B5%D0%BD%D0%BE%D0%BD",
-				"zh": "https://zh.wikipedia.org/wiki/%E6%B0%99",
-				"it": "https://it.wikipedia.org/wiki/Xenon",
 				"en": "https://en.wikipedia.org/wiki/Xenon",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%9A%D1%81%D0%B5%D0%BD%D0%BE%D0%BD",
+				"fr": "https://fr.wikipedia.org/wiki/X%C3%A9non",
 				"de": "https://de.wikipedia.org/wiki/Xenon",
+				"it": "https://it.wikipedia.org/wiki/Xenon",
 				"es": "https://es.wikipedia.org/wiki/Xen%C3%B3n",
-				"fr": "https://fr.wikipedia.org/wiki/X%C3%A9non"
+				"zh": "https://zh.wikipedia.org/wiki/%E6%B0%99",
+				"pt": "https://pt.wikipedia.org/wiki/Xen%C3%B4nio"
 			},
 			"category": "noble-gas",
 			"period": 5,
@@ -4386,6 +4425,7 @@
 			"state": "gas",
 			"statePredicted": false,
 			"electronegativity": 2.6,
+			"electronegativityText": "2.6",
 			"atomicRadius": 140,
 			"ionizationEnergy": 12.1298437,
 			"electronAffinity": "unstable",
@@ -4399,7 +4439,7 @@
 			"meltsUnderPressure": false,
 			"boilingPoint": 165.03,
 			"sublimes": false,
-			"density": 0.005887,
+			"density": 0.005894,
 			"yearDiscovered": 1898,
 			"discoveredBy": [
 				{
@@ -4447,14 +4487,14 @@
 			},
 			"wikidata": "Q1108",
 			"wikipedia": {
-				"pt": "https://pt.wikipedia.org/wiki/C%C3%A9sio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%A6%D0%B5%D0%B7%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%93%AF",
-				"de": "https://de.wikipedia.org/wiki/Caesium",
 				"en": "https://en.wikipedia.org/wiki/Caesium",
-				"es": "https://es.wikipedia.org/wiki/Cesio",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%A6%D0%B5%D0%B7%D0%B8%D0%B9",
 				"fr": "https://fr.wikipedia.org/wiki/C%C3%A9sium",
-				"it": "https://it.wikipedia.org/wiki/Cesio"
+				"de": "https://de.wikipedia.org/wiki/Caesium",
+				"it": "https://it.wikipedia.org/wiki/Cesio",
+				"es": "https://es.wikipedia.org/wiki/Cesio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%93%AF",
+				"pt": "https://pt.wikipedia.org/wiki/C%C3%A9sio"
 			},
 			"category": "alkali-metal",
 			"period": 6,
@@ -4480,6 +4520,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 0.79,
+			"electronegativityText": "0.79",
 			"atomicRadius": 244,
 			"ionizationEnergy": 3.89390572743,
 			"electronAffinity": 0.4715983,
@@ -4538,14 +4579,14 @@
 			},
 			"wikidata": "Q1112",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Barium",
 				"en": "https://en.wikipedia.org/wiki/Barium",
-				"es": "https://es.wikipedia.org/wiki/Bario",
-				"fr": "https://fr.wikipedia.org/wiki/Baryum",
-				"it": "https://it.wikipedia.org/wiki/Bario",
-				"pt": "https://pt.wikipedia.org/wiki/B%C3%A1rio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%91%D0%B0%D1%80%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%92%A1"
+				"fr": "https://fr.wikipedia.org/wiki/Baryum",
+				"de": "https://de.wikipedia.org/wiki/Barium",
+				"it": "https://it.wikipedia.org/wiki/Bario",
+				"es": "https://es.wikipedia.org/wiki/Bario",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%92%A1",
+				"pt": "https://pt.wikipedia.org/wiki/B%C3%A1rio"
 			},
 			"category": "alkaline-earth-metal",
 			"period": 6,
@@ -4571,6 +4612,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 0.89,
+			"electronegativityText": "0.89",
 			"atomicRadius": 215,
 			"ionizationEnergy": 5.2116646,
 			"electronAffinity": 0.14462,
@@ -4579,22 +4621,22 @@
 			],
 			"meltingPoint": 1000,
 			"meltsUnderPressure": false,
-			"boilingPoint": 2170,
+			"boilingPoint": 2118,
 			"sublimes": false,
 			"density": 3.62,
-			"yearDiscovered": 1808,
+			"yearDiscovered": 1772,
 			"discoveredBy": [
 				{
-					"qid": "Q131761",
+					"qid": "Q70538",
 					"name": {
-						"en": "Humphry Davy",
-						"ru": "Гемфри Дэви",
-						"fr": "Humphry Davy",
-						"de": "Humphry Davy",
-						"it": "Humphry Davy",
-						"es": "Humphry Davy",
-						"zh": "汉弗里·戴维",
-						"pt": "Humphry Davy"
+						"en": "Carl Wilhelm Scheele",
+						"ru": "Карл Вильгельм Шееле",
+						"fr": "Carl Wilhelm Scheele",
+						"de": "Carl Wilhelm Scheele",
+						"it": "Carl Scheele",
+						"es": "Carl Wilhelm Scheele",
+						"zh": "卡尔·威廉·舍勒",
+						"pt": "Carl Wilhelm Scheele"
 					}
 				}
 			],
@@ -4616,14 +4658,14 @@
 			},
 			"wikidata": "Q1801",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Lanthan",
 				"en": "https://en.wikipedia.org/wiki/Lanthanum",
-				"es": "https://es.wikipedia.org/wiki/Lantano",
-				"fr": "https://fr.wikipedia.org/wiki/Lanthane",
-				"it": "https://it.wikipedia.org/wiki/Lantanio",
-				"pt": "https://pt.wikipedia.org/wiki/Lant%C3%A2nio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D0%BD%D1%82%D0%B0%D0%BD",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%95%A7"
+				"fr": "https://fr.wikipedia.org/wiki/Lanthane",
+				"de": "https://de.wikipedia.org/wiki/Lanthan",
+				"it": "https://it.wikipedia.org/wiki/Lantanio",
+				"es": "https://es.wikipedia.org/wiki/Lantano",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%95%A7",
+				"pt": "https://pt.wikipedia.org/wiki/Lant%C3%A2nio"
 			},
 			"category": "lanthanide",
 			"period": 6,
@@ -4649,6 +4691,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.1,
+			"electronegativityText": "1.10",
 			"atomicRadius": 207,
 			"ionizationEnergy": 5.5769,
 			"electronAffinity": 0.557546,
@@ -4694,14 +4737,14 @@
 			},
 			"wikidata": "Q1385",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Cer",
 				"en": "https://en.wikipedia.org/wiki/Cerium",
-				"es": "https://es.wikipedia.org/wiki/Cerio",
-				"fr": "https://fr.wikipedia.org/wiki/C%C3%A9rium",
-				"it": "https://it.wikipedia.org/wiki/Cerio",
-				"pt": "https://pt.wikipedia.org/wiki/C%C3%A9rio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%A6%D0%B5%D1%80%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%93%88"
+				"fr": "https://fr.wikipedia.org/wiki/C%C3%A9rium",
+				"de": "https://de.wikipedia.org/wiki/Cer",
+				"it": "https://it.wikipedia.org/wiki/Cerio",
+				"es": "https://es.wikipedia.org/wiki/Cerio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%93%88",
+				"pt": "https://pt.wikipedia.org/wiki/C%C3%A9rio"
 			},
 			"category": "lanthanide",
 			"period": 6,
@@ -4727,6 +4770,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.12,
+			"electronegativityText": "1.12",
 			"atomicRadius": 204,
 			"ionizationEnergy": 5.5386,
 			"electronAffinity": 0.60016,
@@ -4766,6 +4810,19 @@
 						"zh": "马丁·海因里希·克拉普罗特",
 						"pt": "Martin Heinrich Klaproth"
 					}
+				},
+				{
+					"qid": "Q900478",
+					"name": {
+						"en": "Wilhelm Hisinger",
+						"ru": "Вильгельм фон Хизингер",
+						"fr": "Wilhelm Hisinger",
+						"de": "Wilhelm von Hisinger",
+						"it": "Wilhelm Hisinger",
+						"es": "Wilhelm Hisinger",
+						"zh": "威廉·希辛盖尔",
+						"pt": "Wilhelm Hisinger"
+					}
 				}
 			],
 			"namedAfter": [
@@ -4774,8 +4831,8 @@
 					"name": {
 						"en": "Ceres",
 						"ru": "Церера",
-						"fr": "(1) Cérès",
-						"de": "(1) Ceres",
+						"fr": "Cérès",
+						"de": "Ceres",
 						"it": "Cerere",
 						"es": "Ceres",
 						"zh": "谷神星",
@@ -4800,14 +4857,14 @@
 			},
 			"wikidata": "Q1386",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Praseodym",
 				"en": "https://en.wikipedia.org/wiki/Praseodymium",
-				"es": "https://es.wikipedia.org/wiki/Praseodimio",
-				"fr": "https://fr.wikipedia.org/wiki/Pras%C3%A9odyme",
-				"it": "https://it.wikipedia.org/wiki/Praseodimio",
-				"pt": "https://pt.wikipedia.org/wiki/Praseod%C3%ADmio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%B0%D0%B7%D0%B5%D0%BE%D0%B4%D0%B8%D0%BC",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%95%A8"
+				"fr": "https://fr.wikipedia.org/wiki/Pras%C3%A9odyme",
+				"de": "https://de.wikipedia.org/wiki/Praseodym",
+				"it": "https://it.wikipedia.org/wiki/Praseodimio",
+				"es": "https://es.wikipedia.org/wiki/Praseodimio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%95%A8",
+				"pt": "https://pt.wikipedia.org/wiki/Praseod%C3%ADmio"
 			},
 			"category": "lanthanide",
 			"period": 6,
@@ -4833,6 +4890,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.13,
+			"electronegativityText": "1.13",
 			"atomicRadius": 203,
 			"ionizationEnergy": 5.4702,
 			"electronAffinity": 0.10923,
@@ -4878,14 +4936,14 @@
 			},
 			"wikidata": "Q1388",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Neodym",
 				"en": "https://en.wikipedia.org/wiki/Neodymium",
-				"es": "https://es.wikipedia.org/wiki/Neodimio",
-				"fr": "https://fr.wikipedia.org/wiki/N%C3%A9odyme",
-				"it": "https://it.wikipedia.org/wiki/Neodimio",
-				"pt": "https://pt.wikipedia.org/wiki/Neod%C3%ADmio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%9D%D0%B5%D0%BE%D0%B4%D0%B8%D0%BC",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%92%95"
+				"fr": "https://fr.wikipedia.org/wiki/N%C3%A9odyme",
+				"de": "https://de.wikipedia.org/wiki/Neodym",
+				"it": "https://it.wikipedia.org/wiki/Neodimio",
+				"es": "https://es.wikipedia.org/wiki/Neodimio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%92%95",
+				"pt": "https://pt.wikipedia.org/wiki/Neod%C3%ADmio"
 			},
 			"category": "lanthanide",
 			"period": 6,
@@ -4911,6 +4969,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.14,
+			"electronegativityText": "1.14",
 			"atomicRadius": 201,
 			"ionizationEnergy": 5.52475,
 			"electronAffinity": 0.09749,
@@ -4956,14 +5015,14 @@
 			},
 			"wikidata": "Q1809",
 			"wikipedia": {
-				"zh": "https://zh.wikipedia.org/wiki/%E9%92%B7",
-				"pt": "https://pt.wikipedia.org/wiki/Prom%C3%A9cio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D0%BC%D0%B5%D1%82%D0%B8%D0%B9",
-				"de": "https://de.wikipedia.org/wiki/Promethium",
 				"en": "https://en.wikipedia.org/wiki/Promethium",
-				"es": "https://es.wikipedia.org/wiki/Prometio",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D0%BC%D0%B5%D1%82%D0%B8%D0%B9",
 				"fr": "https://fr.wikipedia.org/wiki/Prom%C3%A9thium",
-				"it": "https://it.wikipedia.org/wiki/Promezio"
+				"de": "https://de.wikipedia.org/wiki/Promethium",
+				"it": "https://it.wikipedia.org/wiki/Promezio",
+				"es": "https://es.wikipedia.org/wiki/Prometio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%92%B7",
+				"pt": "https://pt.wikipedia.org/wiki/Prom%C3%A9cio"
 			},
 			"category": "lanthanide",
 			"period": 6,
@@ -4989,7 +5048,8 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": null,
-			"atomicRadius": 199,
+			"electronegativityText": null,
+			"atomicRadius": null,
 			"ionizationEnergy": 5.58187,
 			"electronAffinity": null,
 			"oxidationStates": [
@@ -4997,7 +5057,7 @@
 			],
 			"meltingPoint": 1315,
 			"meltsUnderPressure": false,
-			"boilingPoint": 3273,
+			"boilingPoint": null,
 			"sublimes": false,
 			"density": 7.26,
 			"yearDiscovered": 1945,
@@ -5006,7 +5066,7 @@
 					"qid": "Q260328",
 					"name": {
 						"en": "Charles D. Coryell",
-						"ru": "Charles D. Coryell",
+						"ru": "Чарльз Кориелл",
 						"fr": "Charles Coryell",
 						"de": "Charles Coryell",
 						"it": "Charles D. Coryell",
@@ -5032,7 +5092,7 @@
 					"qid": "Q904562",
 					"name": {
 						"en": "Lawrence E. Glendenin",
-						"ru": "Lawrence Glendenin",
+						"ru": "Лоуренс Гленденин",
 						"fr": "Lawrence Glendenin",
 						"de": "Lawrence Glendenin",
 						"it": "Lawrence E. Glendenin",
@@ -5074,14 +5134,14 @@
 			},
 			"wikidata": "Q1819",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Samarium",
 				"en": "https://en.wikipedia.org/wiki/Samarium",
-				"es": "https://es.wikipedia.org/wiki/Samario",
-				"fr": "https://fr.wikipedia.org/wiki/Samarium",
-				"it": "https://it.wikipedia.org/wiki/Samario",
-				"pt": "https://pt.wikipedia.org/wiki/Sam%C3%A1rio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B0%D0%BC%D0%B0%D1%80%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%92%90"
+				"fr": "https://fr.wikipedia.org/wiki/Samarium",
+				"de": "https://de.wikipedia.org/wiki/Samarium",
+				"it": "https://it.wikipedia.org/wiki/Samario",
+				"es": "https://es.wikipedia.org/wiki/Samario",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%92%90",
+				"pt": "https://pt.wikipedia.org/wiki/Sam%C3%A1rio"
 			},
 			"category": "lanthanide",
 			"period": 6,
@@ -5107,6 +5167,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.17,
+			"electronegativityText": "1.17",
 			"atomicRadius": 198,
 			"ionizationEnergy": 5.643722,
 			"electronAffinity": null,
@@ -5153,14 +5214,14 @@
 			},
 			"wikidata": "Q1396",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Europium",
 				"en": "https://en.wikipedia.org/wiki/Europium",
-				"es": "https://es.wikipedia.org/wiki/Europio",
-				"fr": "https://fr.wikipedia.org/wiki/Europium",
-				"it": "https://it.wikipedia.org/wiki/Europio",
-				"pt": "https://pt.wikipedia.org/wiki/Eur%C3%B3pio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%95%D0%B2%D1%80%D0%BE%D0%BF%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%93%95"
+				"fr": "https://fr.wikipedia.org/wiki/Europium",
+				"de": "https://de.wikipedia.org/wiki/Europium",
+				"it": "https://it.wikipedia.org/wiki/Europio",
+				"es": "https://es.wikipedia.org/wiki/Europio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%93%95",
+				"pt": "https://pt.wikipedia.org/wiki/Eur%C3%B3pio"
 			},
 			"category": "lanthanide",
 			"period": 6,
@@ -5186,6 +5247,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": null,
+			"electronegativityText": null,
 			"atomicRadius": 198,
 			"ionizationEnergy": 5.670385,
 			"electronAffinity": 0.116,
@@ -5246,14 +5308,14 @@
 			},
 			"wikidata": "Q1832",
 			"wikipedia": {
-				"zh": "https://zh.wikipedia.org/wiki/%E9%92%86",
-				"de": "https://de.wikipedia.org/wiki/Gadolinium",
 				"en": "https://en.wikipedia.org/wiki/Gadolinium",
-				"es": "https://es.wikipedia.org/wiki/Gadolinio",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%93%D0%B0%D0%B4%D0%BE%D0%BB%D0%B8%D0%BD%D0%B8%D0%B9",
 				"fr": "https://fr.wikipedia.org/wiki/Gadolinium",
+				"de": "https://de.wikipedia.org/wiki/Gadolinium",
 				"it": "https://it.wikipedia.org/wiki/Gadolinio",
-				"pt": "https://pt.wikipedia.org/wiki/Gadol%C3%ADnio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%93%D0%B0%D0%B4%D0%BE%D0%BB%D0%B8%D0%BD%D0%B8%D0%B9"
+				"es": "https://es.wikipedia.org/wiki/Gadolinio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%92%86",
+				"pt": "https://pt.wikipedia.org/wiki/Gadol%C3%ADnio"
 			},
 			"category": "lanthanide",
 			"period": 6,
@@ -5279,6 +5341,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.2,
+			"electronegativityText": "1.20",
 			"atomicRadius": 196,
 			"ionizationEnergy": 6.1498,
 			"electronAffinity": 0.212,
@@ -5338,14 +5401,14 @@
 			},
 			"wikidata": "Q1838",
 			"wikipedia": {
-				"zh": "https://zh.wikipedia.org/wiki/%E9%93%BD",
-				"de": "https://de.wikipedia.org/wiki/Terbium",
 				"en": "https://en.wikipedia.org/wiki/Terbium",
-				"es": "https://es.wikipedia.org/wiki/Terbio",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D1%80%D0%B1%D0%B8%D0%B9",
 				"fr": "https://fr.wikipedia.org/wiki/Terbium",
+				"de": "https://de.wikipedia.org/wiki/Terbium",
 				"it": "https://it.wikipedia.org/wiki/Terbio",
-				"pt": "https://pt.wikipedia.org/wiki/T%C3%A9rbio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D1%80%D0%B1%D0%B8%D0%B9"
+				"es": "https://es.wikipedia.org/wiki/Terbio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%93%BD",
+				"pt": "https://pt.wikipedia.org/wiki/T%C3%A9rbio"
 			},
 			"category": "lanthanide",
 			"period": 6,
@@ -5371,6 +5434,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": null,
+			"electronegativityText": null,
 			"atomicRadius": 194,
 			"ionizationEnergy": 5.8638,
 			"electronAffinity": 0.13131,
@@ -5430,14 +5494,14 @@
 			},
 			"wikidata": "Q1843",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Dysprosium",
 				"en": "https://en.wikipedia.org/wiki/Dysprosium",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%94%D0%B8%D1%81%D0%BF%D1%80%D0%BE%D0%B7%D0%B8%D0%B9",
+				"fr": "https://fr.wikipedia.org/wiki/Dysprosium",
+				"de": "https://de.wikipedia.org/wiki/Dysprosium",
+				"it": "https://it.wikipedia.org/wiki/Disprosio",
 				"es": "https://es.wikipedia.org/wiki/Disprosio",
 				"zh": "https://zh.wikipedia.org/wiki/%E9%95%9D",
-				"fr": "https://fr.wikipedia.org/wiki/Dysprosium",
-				"it": "https://it.wikipedia.org/wiki/Disprosio",
-				"pt": "https://pt.wikipedia.org/wiki/Dispr%C3%B3sio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%94%D0%B8%D1%81%D0%BF%D1%80%D0%BE%D0%B7%D0%B8%D0%B9"
+				"pt": "https://pt.wikipedia.org/wiki/Dispr%C3%B3sio"
 			},
 			"category": "lanthanide",
 			"period": 6,
@@ -5463,6 +5527,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.22,
+			"electronegativityText": "1.22",
 			"atomicRadius": 192,
 			"ionizationEnergy": 5.939061,
 			"electronAffinity": 0.015,
@@ -5504,18 +5569,18 @@
 				"it": "Olmio",
 				"es": "Holmio",
 				"zh": "钬",
-				"pt": "Hôlmio"
+				"pt": "Hólmio"
 			},
 			"wikidata": "Q1846",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Holmium",
 				"en": "https://en.wikipedia.org/wiki/Holmium",
-				"es": "https://es.wikipedia.org/wiki/Holmio",
-				"fr": "https://fr.wikipedia.org/wiki/Holmium",
-				"it": "https://it.wikipedia.org/wiki/Olmio",
-				"pt": "https://pt.wikipedia.org/wiki/H%C3%B3lmio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%93%D0%BE%D0%BB%D1%8C%D0%BC%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%92%AC"
+				"fr": "https://fr.wikipedia.org/wiki/Holmium",
+				"de": "https://de.wikipedia.org/wiki/Holmium",
+				"it": "https://it.wikipedia.org/wiki/Olmio",
+				"es": "https://es.wikipedia.org/wiki/Holmio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%92%AC",
+				"pt": "https://pt.wikipedia.org/wiki/H%C3%B3lmio"
 			},
 			"category": "lanthanide",
 			"period": 6,
@@ -5541,6 +5606,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.23,
+			"electronegativityText": "1.23",
 			"atomicRadius": 192,
 			"ionizationEnergy": 6.0215,
 			"electronAffinity": null,
@@ -5626,14 +5692,14 @@
 			},
 			"wikidata": "Q1849",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Erbium",
 				"en": "https://en.wikipedia.org/wiki/Erbium",
-				"es": "https://es.wikipedia.org/wiki/Erbio",
-				"fr": "https://fr.wikipedia.org/wiki/Erbium",
-				"it": "https://it.wikipedia.org/wiki/Erbio",
-				"pt": "https://pt.wikipedia.org/wiki/%C3%89rbio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%AD%D1%80%D0%B1%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%93%92"
+				"fr": "https://fr.wikipedia.org/wiki/Erbium",
+				"de": "https://de.wikipedia.org/wiki/Erbium",
+				"it": "https://it.wikipedia.org/wiki/Erbio",
+				"es": "https://es.wikipedia.org/wiki/Erbio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%93%92",
+				"pt": "https://pt.wikipedia.org/wiki/%C3%89rbio"
 			},
 			"category": "lanthanide",
 			"period": 6,
@@ -5659,6 +5725,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.24,
+			"electronegativityText": "1.24",
 			"atomicRadius": 189,
 			"ionizationEnergy": 6.1077,
 			"electronAffinity": null,
@@ -5718,14 +5785,14 @@
 			},
 			"wikidata": "Q1853",
 			"wikipedia": {
-				"pt": "https://pt.wikipedia.org/wiki/T%C3%BAlio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%A2%D1%83%D0%BB%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%93%A5",
-				"de": "https://de.wikipedia.org/wiki/Thulium",
 				"en": "https://en.wikipedia.org/wiki/Thulium",
-				"es": "https://es.wikipedia.org/wiki/Tulio",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%A2%D1%83%D0%BB%D0%B8%D0%B9",
 				"fr": "https://fr.wikipedia.org/wiki/Thulium",
-				"it": "https://it.wikipedia.org/wiki/Tulio"
+				"de": "https://de.wikipedia.org/wiki/Thulium",
+				"it": "https://it.wikipedia.org/wiki/Tulio",
+				"es": "https://es.wikipedia.org/wiki/Tulio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%93%A5",
+				"pt": "https://pt.wikipedia.org/wiki/T%C3%BAlio"
 			},
 			"category": "lanthanide",
 			"period": 6,
@@ -5751,6 +5818,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.25,
+			"electronegativityText": "1.25",
 			"atomicRadius": 190,
 			"ionizationEnergy": 6.184402,
 			"electronAffinity": 1.029,
@@ -5810,14 +5878,14 @@
 			},
 			"wikidata": "Q1855",
 			"wikipedia": {
-				"pt": "https://pt.wikipedia.org/wiki/It%C3%A9rbio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%98%D1%82%D1%82%D0%B5%D1%80%D0%B1%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%95%B1",
-				"de": "https://de.wikipedia.org/wiki/Ytterbium",
 				"en": "https://en.wikipedia.org/wiki/Ytterbium",
-				"es": "https://es.wikipedia.org/wiki/Iterbio",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%98%D1%82%D1%82%D0%B5%D1%80%D0%B1%D0%B8%D0%B9",
 				"fr": "https://fr.wikipedia.org/wiki/Ytterbium",
-				"it": "https://it.wikipedia.org/wiki/Itterbio"
+				"de": "https://de.wikipedia.org/wiki/Ytterbium",
+				"it": "https://it.wikipedia.org/wiki/Itterbio",
+				"es": "https://es.wikipedia.org/wiki/Iterbio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%95%B1",
+				"pt": "https://pt.wikipedia.org/wiki/It%C3%A9rbio"
 			},
 			"category": "lanthanide",
 			"period": 6,
@@ -5843,6 +5911,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": null,
+			"electronegativityText": null,
 			"atomicRadius": 187,
 			"ionizationEnergy": 6.25416,
 			"electronAffinity": "unstable",
@@ -5903,14 +5972,14 @@
 			},
 			"wikidata": "Q1857",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Lutetium",
 				"en": "https://en.wikipedia.org/wiki/Lutetium",
-				"es": "https://es.wikipedia.org/wiki/Lutecio",
-				"fr": "https://fr.wikipedia.org/wiki/Lut%C3%A9cium",
-				"it": "https://it.wikipedia.org/wiki/Lutezio",
-				"pt": "https://pt.wikipedia.org/wiki/Lut%C3%A9cio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%9B%D1%8E%D1%82%D0%B5%D1%86%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%95%A5"
+				"fr": "https://fr.wikipedia.org/wiki/Lut%C3%A9cium",
+				"de": "https://de.wikipedia.org/wiki/Lutetium",
+				"it": "https://it.wikipedia.org/wiki/Lutezio",
+				"es": "https://es.wikipedia.org/wiki/Lutecio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%95%A5",
+				"pt": "https://pt.wikipedia.org/wiki/Lut%C3%A9cio"
 			},
 			"category": "lanthanide",
 			"period": 6,
@@ -5936,6 +6005,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.27,
+			"electronegativityText": "1.27",
 			"atomicRadius": 187,
 			"ionizationEnergy": 5.425871,
 			"electronAffinity": 0.2388,
@@ -6008,14 +6078,14 @@
 			},
 			"wikidata": "Q1119",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Hafnium",
 				"en": "https://en.wikipedia.org/wiki/Hafnium",
-				"es": "https://es.wikipedia.org/wiki/Hafnio",
-				"fr": "https://fr.wikipedia.org/wiki/Hafnium",
-				"it": "https://it.wikipedia.org/wiki/Afnio",
-				"pt": "https://pt.wikipedia.org/wiki/H%C3%A1fnio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%93%D0%B0%D1%84%D0%BD%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%93%AA"
+				"fr": "https://fr.wikipedia.org/wiki/Hafnium",
+				"de": "https://de.wikipedia.org/wiki/Hafnium",
+				"it": "https://it.wikipedia.org/wiki/Afnio",
+				"es": "https://es.wikipedia.org/wiki/Hafnio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%93%AA",
+				"pt": "https://pt.wikipedia.org/wiki/H%C3%A1fnio"
 			},
 			"category": "transition-metal",
 			"period": 6,
@@ -6041,6 +6111,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.3,
+			"electronegativityText": "1.3",
 			"atomicRadius": 175,
 			"ionizationEnergy": 6.82507,
 			"electronAffinity": 0.178,
@@ -6113,14 +6184,14 @@
 			},
 			"wikidata": "Q1123",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Tantal",
 				"en": "https://en.wikipedia.org/wiki/Tantalum",
-				"es": "https://es.wikipedia.org/wiki/T%C3%A1ntalo_(elemento)",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%A2%D0%B0%D0%BD%D1%82%D0%B0%D0%BB_(%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82)",
 				"fr": "https://fr.wikipedia.org/wiki/Tantale_(chimie)",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%92%BD",
+				"de": "https://de.wikipedia.org/wiki/Tantal",
 				"it": "https://it.wikipedia.org/wiki/Tantalio",
-				"pt": "https://pt.wikipedia.org/wiki/T%C3%A2ntalo_(elemento_qu%C3%ADmico)",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%A2%D0%B0%D0%BD%D1%82%D0%B0%D0%BB_(%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82)"
+				"es": "https://es.wikipedia.org/wiki/T%C3%A1ntalo_(elemento)",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%92%BD",
+				"pt": "https://pt.wikipedia.org/wiki/T%C3%A2ntalo_(elemento_qu%C3%ADmico)"
 			},
 			"category": "transition-metal",
 			"period": 6,
@@ -6146,6 +6217,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.5,
+			"electronegativityText": "1.5",
 			"atomicRadius": 170,
 			"ionizationEnergy": 7.549571,
 			"electronAffinity": 0.328859,
@@ -6184,7 +6256,7 @@
 						"it": "Tantalo",
 						"es": "Tántalo",
 						"zh": "坦塔洛斯",
-						"pt": "Tantalus"
+						"pt": "Tântalo"
 					}
 				}
 			]
@@ -6205,14 +6277,14 @@
 			},
 			"wikidata": "Q743",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Wolfram",
 				"en": "https://en.wikipedia.org/wiki/Tungsten",
-				"es": "https://es.wikipedia.org/wiki/Wolframio",
-				"fr": "https://fr.wikipedia.org/wiki/Tungst%C3%A8ne",
-				"it": "https://it.wikipedia.org/wiki/Tungsteno",
-				"pt": "https://pt.wikipedia.org/wiki/Tungst%C3%AAnio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%92%D0%BE%D0%BB%D1%8C%D1%84%D1%80%D0%B0%D0%BC",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%92%A8"
+				"fr": "https://fr.wikipedia.org/wiki/Tungst%C3%A8ne",
+				"de": "https://de.wikipedia.org/wiki/Wolfram",
+				"it": "https://it.wikipedia.org/wiki/Tungsteno",
+				"es": "https://es.wikipedia.org/wiki/Wolframio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%92%A8",
+				"pt": "https://pt.wikipedia.org/wiki/Tungst%C3%AAnio"
 			},
 			"category": "transition-metal",
 			"period": 6,
@@ -6238,6 +6310,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 2.36,
+			"electronegativityText": "2.36",
 			"atomicRadius": 162,
 			"ionizationEnergy": 7.86403,
 			"electronAffinity": 0.8165,
@@ -6297,14 +6370,14 @@
 			},
 			"wikidata": "Q737",
 			"wikipedia": {
-				"pt": "https://pt.wikipedia.org/wiki/R%C3%AAnio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%A0%D0%B5%D0%BD%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%93%BC",
-				"de": "https://de.wikipedia.org/wiki/Rhenium",
 				"en": "https://en.wikipedia.org/wiki/Rhenium",
-				"es": "https://es.wikipedia.org/wiki/Renio",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%A0%D0%B5%D0%BD%D0%B8%D0%B9",
 				"fr": "https://fr.wikipedia.org/wiki/Rh%C3%A9nium",
-				"it": "https://it.wikipedia.org/wiki/Renio"
+				"de": "https://de.wikipedia.org/wiki/Rhenium",
+				"it": "https://it.wikipedia.org/wiki/Renio",
+				"es": "https://es.wikipedia.org/wiki/Renio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%93%BC",
+				"pt": "https://pt.wikipedia.org/wiki/R%C3%AAnio"
 			},
 			"category": "transition-metal",
 			"period": 6,
@@ -6330,6 +6403,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.9,
+			"electronegativityText": "1.9",
 			"atomicRadius": 151,
 			"ionizationEnergy": 7.83352,
 			"electronAffinity": 0.060396,
@@ -6362,7 +6436,7 @@
 					"qid": "Q85727",
 					"name": {
 						"en": "Otto Berg",
-						"ru": "Otto Berg",
+						"ru": "Отто Берг",
 						"fr": "Otto Berg",
 						"de": "Otto Berg",
 						"it": "Otto Berg",
@@ -6417,14 +6491,14 @@
 			},
 			"wikidata": "Q751",
 			"wikipedia": {
-				"fr": "https://fr.wikipedia.org/wiki/Osmium",
-				"it": "https://it.wikipedia.org/wiki/Osmio",
-				"pt": "https://pt.wikipedia.org/wiki/%C3%93smio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%9E%D1%81%D0%BC%D0%B8%D0%B9",
-				"de": "https://de.wikipedia.org/wiki/Osmium",
 				"en": "https://en.wikipedia.org/wiki/Osmium",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%9E%D1%81%D0%BC%D0%B8%D0%B9",
+				"fr": "https://fr.wikipedia.org/wiki/Osmium",
+				"de": "https://de.wikipedia.org/wiki/Osmium",
+				"it": "https://it.wikipedia.org/wiki/Osmio",
 				"es": "https://es.wikipedia.org/wiki/Osmio",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%94%87"
+				"zh": "https://zh.wikipedia.org/wiki/%E9%94%87",
+				"pt": "https://pt.wikipedia.org/wiki/%C3%93smio"
 			},
 			"category": "transition-metal",
 			"period": 6,
@@ -6450,6 +6524,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 2.2,
+			"electronegativityText": "2.2",
 			"atomicRadius": 144,
 			"ionizationEnergy": 8.43823,
 			"electronAffinity": 1.077661,
@@ -6496,14 +6571,14 @@
 			},
 			"wikidata": "Q877",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Iridium",
 				"en": "https://en.wikipedia.org/wiki/Iridium",
-				"es": "https://es.wikipedia.org/wiki/Iridio",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%98%D1%80%D0%B8%D0%B4%D0%B8%D0%B9",
 				"fr": "https://fr.wikipedia.org/wiki/Iridium",
+				"de": "https://de.wikipedia.org/wiki/Iridium",
 				"it": "https://it.wikipedia.org/wiki/Iridio",
+				"es": "https://es.wikipedia.org/wiki/Iridio",
 				"zh": "https://zh.wikipedia.org/wiki/%E9%93%B1",
-				"pt": "https://pt.wikipedia.org/wiki/Ir%C3%ADdio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%98%D1%80%D0%B8%D0%B4%D0%B8%D0%B9"
+				"pt": "https://pt.wikipedia.org/wiki/Ir%C3%ADdio"
 			},
 			"category": "transition-metal",
 			"period": 6,
@@ -6529,6 +6604,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 2.2,
+			"electronegativityText": "2.20",
 			"atomicRadius": 141,
 			"ionizationEnergy": 8.96702,
 			"electronAffinity": 1.564057,
@@ -6589,14 +6665,14 @@
 			},
 			"wikidata": "Q880",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Platin",
 				"en": "https://en.wikipedia.org/wiki/Platinum",
-				"es": "https://es.wikipedia.org/wiki/Platino",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%9F%D0%BB%D0%B0%D1%82%D0%B8%D0%BD%D0%B0",
 				"fr": "https://fr.wikipedia.org/wiki/Platine",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%93%82",
+				"de": "https://de.wikipedia.org/wiki/Platin",
 				"it": "https://it.wikipedia.org/wiki/Platino",
-				"pt": "https://pt.wikipedia.org/wiki/Platina",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%9F%D0%BB%D0%B0%D1%82%D0%B8%D0%BD%D0%B0"
+				"es": "https://es.wikipedia.org/wiki/Platino",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%93%82",
+				"pt": "https://pt.wikipedia.org/wiki/Platina"
 			},
 			"category": "transition-metal",
 			"period": 6,
@@ -6622,6 +6698,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 2.28,
+			"electronegativityText": "2.28",
 			"atomicRadius": 136,
 			"ionizationEnergy": 8.95883,
 			"electronAffinity": 2.1251,
@@ -6668,14 +6745,14 @@
 			},
 			"wikidata": "Q897",
 			"wikipedia": {
-				"it": "https://it.wikipedia.org/wiki/Oro",
-				"es": "https://es.wikipedia.org/wiki/Oro",
+				"en": "https://en.wikipedia.org/wiki/Gold",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%97%D0%BE%D0%BB%D0%BE%D1%82%D0%BE",
 				"fr": "https://fr.wikipedia.org/wiki/Or",
 				"de": "https://de.wikipedia.org/wiki/Gold",
-				"en": "https://en.wikipedia.org/wiki/Gold",
-				"pt": "https://pt.wikipedia.org/wiki/Ouro",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%97%D0%BE%D0%BB%D0%BE%D1%82%D0%BE",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%87%91"
+				"it": "https://it.wikipedia.org/wiki/Oro",
+				"es": "https://es.wikipedia.org/wiki/Oro",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%87%91",
+				"pt": "https://pt.wikipedia.org/wiki/Ouro"
 			},
 			"category": "transition-metal",
 			"period": 6,
@@ -6701,6 +6778,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 2.54,
+			"electronegativityText": "2.54",
 			"atomicRadius": 136,
 			"ionizationEnergy": 9.225554,
 			"electronAffinity": 2.30861,
@@ -6733,14 +6811,14 @@
 			},
 			"wikidata": "Q925",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Quecksilber",
 				"en": "https://en.wikipedia.org/wiki/Mercury_(element)",
-				"es": "https://es.wikipedia.org/wiki/Mercurio_(elemento)",
-				"fr": "https://fr.wikipedia.org/wiki/Mercure_(chimie)",
-				"it": "https://it.wikipedia.org/wiki/Mercurio_(elemento_chimico)",
-				"pt": "https://pt.wikipedia.org/wiki/Merc%C3%BArio_(elemento_qu%C3%ADmico)",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%A0%D1%82%D1%83%D1%82%D1%8C",
-				"zh": "https://zh.wikipedia.org/wiki/%E6%B1%9E"
+				"fr": "https://fr.wikipedia.org/wiki/Mercure_(chimie)",
+				"de": "https://de.wikipedia.org/wiki/Quecksilber",
+				"it": "https://it.wikipedia.org/wiki/Mercurio_(elemento_chimico)",
+				"es": "https://es.wikipedia.org/wiki/Mercurio_(elemento)",
+				"zh": "https://zh.wikipedia.org/wiki/%E6%B1%9E",
+				"pt": "https://pt.wikipedia.org/wiki/Merc%C3%BArio_(elemento_qu%C3%ADmico)"
 			},
 			"category": "transition-metal",
 			"period": 6,
@@ -6766,6 +6844,7 @@
 			"state": "liquid",
 			"statePredicted": false,
 			"electronegativity": 2,
+			"electronegativityText": "2.00",
 			"atomicRadius": 132,
 			"ionizationEnergy": 10.437504,
 			"electronAffinity": "unstable",
@@ -6812,14 +6891,14 @@
 			},
 			"wikidata": "Q932",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Thallium",
 				"en": "https://en.wikipedia.org/wiki/Thallium",
-				"es": "https://es.wikipedia.org/wiki/Talio",
-				"fr": "https://fr.wikipedia.org/wiki/Thallium",
-				"it": "https://it.wikipedia.org/wiki/Tallio",
-				"pt": "https://pt.wikipedia.org/wiki/T%C3%A1lio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%A2%D0%B0%D0%BB%D0%BB%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%93%8A"
+				"fr": "https://fr.wikipedia.org/wiki/Thallium",
+				"de": "https://de.wikipedia.org/wiki/Thallium",
+				"it": "https://it.wikipedia.org/wiki/Tallio",
+				"es": "https://es.wikipedia.org/wiki/Talio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%93%8A",
+				"pt": "https://pt.wikipedia.org/wiki/T%C3%A1lio"
 			},
 			"category": "post-transition-metal",
 			"period": 6,
@@ -6845,6 +6924,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.62,
+			"electronegativityText": "1.62",
 			"atomicRadius": 145,
 			"ionizationEnergy": 6.1082873,
 			"electronAffinity": 0.320053,
@@ -6891,14 +6971,14 @@
 			},
 			"wikidata": "Q708",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Blei",
 				"en": "https://en.wikipedia.org/wiki/Lead",
-				"es": "https://es.wikipedia.org/wiki/Plomo",
-				"fr": "https://fr.wikipedia.org/wiki/Plomb",
-				"it": "https://it.wikipedia.org/wiki/Piombo",
-				"pt": "https://pt.wikipedia.org/wiki/Chumbo",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B2%D0%B8%D0%BD%D0%B5%D1%86",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%93%85"
+				"fr": "https://fr.wikipedia.org/wiki/Plomb",
+				"de": "https://de.wikipedia.org/wiki/Blei",
+				"it": "https://it.wikipedia.org/wiki/Piombo",
+				"es": "https://es.wikipedia.org/wiki/Plomo",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%93%85",
+				"pt": "https://pt.wikipedia.org/wiki/Chumbo"
 			},
 			"category": "post-transition-metal",
 			"period": 6,
@@ -6924,6 +7004,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 2.33,
+			"electronegativityText": "2.33",
 			"atomicRadius": 146,
 			"ionizationEnergy": 7.4166799,
 			"electronAffinity": 0.356721,
@@ -6956,14 +7037,14 @@
 			},
 			"wikidata": "Q942",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Bismut",
 				"en": "https://en.wikipedia.org/wiki/Bismuth",
-				"es": "https://es.wikipedia.org/wiki/Bismuto",
-				"fr": "https://fr.wikipedia.org/wiki/Bismuth",
-				"it": "https://it.wikipedia.org/wiki/Bismuto",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%92%D0%B8%D1%81%D0%BC%D1%83%D1%82",
-				"pt": "https://pt.wikipedia.org/wiki/Bismuto",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%93%8B"
+				"fr": "https://fr.wikipedia.org/wiki/Bismuth",
+				"de": "https://de.wikipedia.org/wiki/Bismut",
+				"it": "https://it.wikipedia.org/wiki/Bismuto",
+				"es": "https://es.wikipedia.org/wiki/Bismuto",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%93%8B",
+				"pt": "https://pt.wikipedia.org/wiki/Bismuto"
 			},
 			"category": "post-transition-metal",
 			"period": 6,
@@ -6989,6 +7070,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 2.02,
+			"electronegativityText": "2.02",
 			"atomicRadius": 148,
 			"ionizationEnergy": 7.285516,
 			"electronAffinity": 0.942362,
@@ -7001,7 +7083,7 @@
 			"boilingPoint": 1837,
 			"sublimes": false,
 			"density": 9.807,
-			"yearDiscovered": 1753,
+			"yearDiscovered": "ancient",
 			"discoveredBy": [],
 			"namedAfter": []
 		},
@@ -7021,14 +7103,14 @@
 			},
 			"wikidata": "Q979",
 			"wikipedia": {
-				"it": "https://it.wikipedia.org/wiki/Polonio",
-				"pt": "https://pt.wikipedia.org/wiki/Pol%C3%B4nio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D0%BB%D0%BE%D0%BD%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%92%8B",
-				"de": "https://de.wikipedia.org/wiki/Polonium",
 				"en": "https://en.wikipedia.org/wiki/Polonium",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D0%BB%D0%BE%D0%BD%D0%B8%D0%B9",
+				"fr": "https://fr.wikipedia.org/wiki/Polonium",
+				"de": "https://de.wikipedia.org/wiki/Polonium",
+				"it": "https://it.wikipedia.org/wiki/Polonio",
 				"es": "https://es.wikipedia.org/wiki/Polonio",
-				"fr": "https://fr.wikipedia.org/wiki/Polonium"
+				"zh": "https://zh.wikipedia.org/wiki/%E9%92%8B",
+				"pt": "https://pt.wikipedia.org/wiki/Pol%C3%B4nio"
 			},
 			"category": "metalloid",
 			"period": 6,
@@ -7054,6 +7136,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 2,
+			"electronegativityText": "2.0",
 			"atomicRadius": 140,
 			"ionizationEnergy": 8.41807,
 			"electronAffinity": null,
@@ -7128,14 +7211,14 @@
 			},
 			"wikidata": "Q999",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Astat",
 				"en": "https://en.wikipedia.org/wiki/Astatine",
-				"es": "https://es.wikipedia.org/wiki/Astato",
-				"fr": "https://fr.wikipedia.org/wiki/Astate",
-				"it": "https://it.wikipedia.org/wiki/Astato",
-				"pt": "https://pt.wikipedia.org/wiki/%C3%81stato",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%90%D1%81%D1%82%D0%B0%D1%82",
-				"zh": "https://zh.wikipedia.org/wiki/%E7%A0%B9"
+				"fr": "https://fr.wikipedia.org/wiki/Astate",
+				"de": "https://de.wikipedia.org/wiki/Astat",
+				"it": "https://it.wikipedia.org/wiki/Astato",
+				"es": "https://es.wikipedia.org/wiki/Astato",
+				"zh": "https://zh.wikipedia.org/wiki/%E7%A0%B9",
+				"pt": "https://pt.wikipedia.org/wiki/%C3%81stato"
 			},
 			"category": "halogen",
 			"period": 6,
@@ -7160,8 +7243,9 @@
 			],
 			"state": "solid",
 			"statePredicted": true,
-			"electronegativity": 2.2,
-			"atomicRadius": 150,
+			"electronegativity": null,
+			"electronegativityText": null,
+			"atomicRadius": null,
 			"ionizationEnergy": 9.31751,
 			"electronAffinity": 2.41578,
 			"oxidationStates": [
@@ -7236,14 +7320,14 @@
 			},
 			"wikidata": "Q1133",
 			"wikipedia": {
-				"pt": "https://pt.wikipedia.org/wiki/R%C3%A1don",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%A0%D0%B0%D0%B4%D0%BE%D0%BD",
-				"de": "https://de.wikipedia.org/wiki/Radon",
 				"en": "https://en.wikipedia.org/wiki/Radon",
-				"es": "https://es.wikipedia.org/wiki/Rad%C3%B3n",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%A0%D0%B0%D0%B4%D0%BE%D0%BD",
 				"fr": "https://fr.wikipedia.org/wiki/Radon",
+				"de": "https://de.wikipedia.org/wiki/Radon",
 				"it": "https://it.wikipedia.org/wiki/Radon",
-				"zh": "https://zh.wikipedia.org/wiki/%E6%B0%A1"
+				"es": "https://es.wikipedia.org/wiki/Rad%C3%B3n",
+				"zh": "https://zh.wikipedia.org/wiki/%E6%B0%A1",
+				"pt": "https://pt.wikipedia.org/wiki/R%C3%A1don"
 			},
 			"category": "noble-gas",
 			"period": 6,
@@ -7269,7 +7353,8 @@
 			"state": "gas",
 			"statePredicted": false,
 			"electronegativity": null,
-			"atomicRadius": 150,
+			"electronegativityText": null,
+			"atomicRadius": null,
 			"ionizationEnergy": 10.7485,
 			"electronAffinity": "unstable",
 			"oxidationStates": [
@@ -7312,7 +7397,7 @@
 					"qid": "Q7342248",
 					"name": {
 						"en": "Robert Bowie Owens",
-						"ru": "Robert Bowie Owens",
+						"ru": "Роберт Оуэнс",
 						"fr": "Robert Bowie Owens",
 						"de": "Robert Bowie Owens",
 						"it": "Robert Bowie Owens",
@@ -7340,14 +7425,14 @@
 			},
 			"wikidata": "Q671",
 			"wikipedia": {
+				"en": "https://en.wikipedia.org/wiki/Francium",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%A4%D1%80%D0%B0%D0%BD%D1%86%D0%B8%D0%B9",
+				"fr": "https://fr.wikipedia.org/wiki/Francium",
 				"de": "https://de.wikipedia.org/wiki/Francium",
 				"it": "https://it.wikipedia.org/wiki/Francio",
-				"en": "https://en.wikipedia.org/wiki/Francium",
 				"es": "https://es.wikipedia.org/wiki/Francio",
-				"fr": "https://fr.wikipedia.org/wiki/Francium",
-				"pt": "https://pt.wikipedia.org/wiki/Fr%C3%A2ncio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%A4%D1%80%D0%B0%D0%BD%D1%86%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%92%AB"
+				"zh": "https://zh.wikipedia.org/wiki/%E9%92%AB",
+				"pt": "https://pt.wikipedia.org/wiki/Fr%C3%A2ncio"
 			},
 			"category": "alkali-metal",
 			"period": 7,
@@ -7373,8 +7458,9 @@
 			],
 			"state": "solid",
 			"statePredicted": true,
-			"electronegativity": 0.7,
-			"atomicRadius": 260,
+			"electronegativity": null,
+			"electronegativityText": null,
+			"atomicRadius": null,
 			"ionizationEnergy": 4.0727411,
 			"electronAffinity": null,
 			"oxidationStates": [
@@ -7433,14 +7519,14 @@
 			},
 			"wikidata": "Q1128",
 			"wikipedia": {
-				"zh": "https://zh.wikipedia.org/wiki/%E9%95%AD",
-				"de": "https://de.wikipedia.org/wiki/Radium",
 				"en": "https://en.wikipedia.org/wiki/Radium",
-				"es": "https://es.wikipedia.org/wiki/Radio_(elemento)",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%A0%D0%B0%D0%B4%D0%B8%D0%B9",
 				"fr": "https://fr.wikipedia.org/wiki/Radium",
+				"de": "https://de.wikipedia.org/wiki/Radium",
 				"it": "https://it.wikipedia.org/wiki/Radio_(elemento_chimico)",
-				"pt": "https://pt.wikipedia.org/wiki/R%C3%A1dio_(elemento_qu%C3%ADmico)",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%A0%D0%B0%D0%B4%D0%B8%D0%B9"
+				"es": "https://es.wikipedia.org/wiki/Radio_(elemento)",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%95%AD",
+				"pt": "https://pt.wikipedia.org/wiki/R%C3%A1dio_(elemento_qu%C3%ADmico)"
 			},
 			"category": "alkaline-earth-metal",
 			"period": 7,
@@ -7467,6 +7553,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 0.9,
+			"electronegativityText": "0.9",
 			"atomicRadius": 221,
 			"ionizationEnergy": 5.2784239,
 			"electronAffinity": null,
@@ -7525,14 +7612,14 @@
 			},
 			"wikidata": "Q1121",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Actinium",
 				"en": "https://en.wikipedia.org/wiki/Actinium",
-				"es": "https://es.wikipedia.org/wiki/Actinio",
-				"fr": "https://fr.wikipedia.org/wiki/Actinium",
-				"it": "https://it.wikipedia.org/wiki/Attinio",
-				"pt": "https://pt.wikipedia.org/wiki/Act%C3%ADnio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%90%D0%BA%D1%82%D0%B8%D0%BD%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%94%95"
+				"fr": "https://fr.wikipedia.org/wiki/Actinium",
+				"de": "https://de.wikipedia.org/wiki/Actinium",
+				"it": "https://it.wikipedia.org/wiki/Attinio",
+				"es": "https://es.wikipedia.org/wiki/Actinio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%94%95",
+				"pt": "https://pt.wikipedia.org/wiki/Act%C3%ADnio"
 			},
 			"category": "actinide",
 			"period": 7,
@@ -7559,7 +7646,8 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.1,
-			"atomicRadius": 215,
+			"electronegativityText": "1.1",
+			"atomicRadius": null,
 			"ionizationEnergy": 5.380235,
 			"electronAffinity": null,
 			"oxidationStates": [
@@ -7584,6 +7672,19 @@
 						"zh": "安德烈-路易·德比埃尔内",
 						"pt": "André-Louis Debierne"
 					}
+				},
+				{
+					"qid": "Q76033",
+					"name": {
+						"en": "Friedrich Oskar Giesel",
+						"ru": "Фридрих Гизель",
+						"fr": "Friedrich Giesel",
+						"de": "Friedrich Giesel",
+						"it": "Friedrich Giesel",
+						"es": "Friedrich Giesel",
+						"zh": "弗里德里希·奥斯卡·吉塞尔",
+						"pt": "Friedrich Giesel"
+					}
 				}
 			],
 			"namedAfter": []
@@ -7604,14 +7705,14 @@
 			},
 			"wikidata": "Q1115",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Thorium",
 				"en": "https://en.wikipedia.org/wiki/Thorium",
-				"es": "https://es.wikipedia.org/wiki/Torio",
-				"fr": "https://fr.wikipedia.org/wiki/Thorium",
-				"it": "https://it.wikipedia.org/wiki/Torio",
-				"pt": "https://pt.wikipedia.org/wiki/T%C3%B3rio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%A2%D0%BE%D1%80%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%92%8D"
+				"fr": "https://fr.wikipedia.org/wiki/Thorium",
+				"de": "https://de.wikipedia.org/wiki/Thorium",
+				"it": "https://it.wikipedia.org/wiki/Torio",
+				"es": "https://es.wikipedia.org/wiki/Torio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%92%8D",
+				"pt": "https://pt.wikipedia.org/wiki/T%C3%B3rio"
 			},
 			"category": "actinide",
 			"period": 7,
@@ -7638,6 +7739,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.3,
+			"electronegativityText": "1.3",
 			"atomicRadius": 206,
 			"ionizationEnergy": 6.3067,
 			"electronAffinity": 0.60769,
@@ -7697,14 +7799,14 @@
 			},
 			"wikidata": "Q1109",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Protactinium",
 				"en": "https://en.wikipedia.org/wiki/Protactinium",
-				"es": "https://es.wikipedia.org/wiki/Protactinio",
-				"fr": "https://fr.wikipedia.org/wiki/Protactinium",
-				"it": "https://it.wikipedia.org/wiki/Protoattinio",
-				"pt": "https://pt.wikipedia.org/wiki/Protact%C3%ADnio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D1%82%D0%B0%D0%BA%D1%82%D0%B8%D0%BD%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%95%A4"
+				"fr": "https://fr.wikipedia.org/wiki/Protactinium",
+				"de": "https://de.wikipedia.org/wiki/Protactinium",
+				"it": "https://it.wikipedia.org/wiki/Protoattinio",
+				"es": "https://es.wikipedia.org/wiki/Protactinio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%95%A4",
+				"pt": "https://pt.wikipedia.org/wiki/Protact%C3%ADnio"
 			},
 			"category": "actinide",
 			"period": 7,
@@ -7731,7 +7833,8 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.5,
-			"atomicRadius": 200,
+			"electronegativityText": "1.5",
+			"atomicRadius": null,
 			"ionizationEnergy": null,
 			"electronAffinity": null,
 			"oxidationStates": [
@@ -7772,6 +7875,19 @@
 					}
 				},
 				{
+					"qid": "Q4402060",
+					"name": {
+						"en": "Oswald Helmuth Göhring",
+						"ru": "Освальд Гёринг",
+						"fr": "Oswald Helmuth Göhring",
+						"de": "Oswald Helmuth Göhring",
+						"it": "Oswald Helmuth Göhring",
+						"es": "Oswald Helmuth Göhring",
+						"zh": "奥斯瓦尔德·格林",
+						"pt": "Oswald Helmuth Göhring"
+					}
+				},
+				{
 					"qid": "Q57065",
 					"name": {
 						"en": "Otto Hahn",
@@ -7803,14 +7919,14 @@
 			},
 			"wikidata": "Q1098",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Uran",
 				"en": "https://en.wikipedia.org/wiki/Uranium",
-				"es": "https://es.wikipedia.org/wiki/Uranio",
-				"pt": "https://pt.wikipedia.org/wiki/Ur%C3%A2nio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%A3%D1%80%D0%B0%D0%BD_(%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82)",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%88%BE",
 				"fr": "https://fr.wikipedia.org/wiki/Uranium",
-				"it": "https://it.wikipedia.org/wiki/Uranio"
+				"de": "https://de.wikipedia.org/wiki/Uran",
+				"it": "https://it.wikipedia.org/wiki/Uranio",
+				"es": "https://es.wikipedia.org/wiki/Uranio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%88%BE",
+				"pt": "https://pt.wikipedia.org/wiki/Ur%C3%A2nio"
 			},
 			"category": "actinide",
 			"period": 7,
@@ -7837,6 +7953,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.38,
+			"electronegativityText": "1.38",
 			"atomicRadius": 196,
 			"ionizationEnergy": 6.19405,
 			"electronAffinity": 0.31497,
@@ -7899,14 +8016,14 @@
 			},
 			"wikidata": "Q1105",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Neptunium",
 				"en": "https://en.wikipedia.org/wiki/Neptunium",
-				"es": "https://es.wikipedia.org/wiki/Neptunio",
-				"fr": "https://fr.wikipedia.org/wiki/Neptunium",
-				"it": "https://it.wikipedia.org/wiki/Nettunio",
-				"pt": "https://pt.wikipedia.org/wiki/Nept%C3%BAnio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%9D%D0%B5%D0%BF%D1%82%D1%83%D0%BD%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%95%8E"
+				"fr": "https://fr.wikipedia.org/wiki/Neptunium",
+				"de": "https://de.wikipedia.org/wiki/Neptunium",
+				"it": "https://it.wikipedia.org/wiki/Nettunio",
+				"es": "https://es.wikipedia.org/wiki/Neptunio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%95%8E",
+				"pt": "https://pt.wikipedia.org/wiki/Nept%C3%BAnio"
 			},
 			"category": "actinide",
 			"period": 7,
@@ -7933,6 +8050,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.36,
+			"electronegativityText": "1.36",
 			"atomicRadius": 190,
 			"ionizationEnergy": 6.265608,
 			"electronAffinity": null,
@@ -8008,14 +8126,14 @@
 			},
 			"wikidata": "Q1102",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Plutonium",
 				"en": "https://en.wikipedia.org/wiki/Plutonium",
-				"es": "https://es.wikipedia.org/wiki/Plutonio",
-				"fr": "https://fr.wikipedia.org/wiki/Plutonium",
-				"it": "https://it.wikipedia.org/wiki/Plutonio",
-				"pt": "https://pt.wikipedia.org/wiki/Plut%C3%B3nio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%9F%D0%BB%D1%83%D1%82%D0%BE%D0%BD%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%92%9A"
+				"fr": "https://fr.wikipedia.org/wiki/Plutonium",
+				"de": "https://de.wikipedia.org/wiki/Plutonium",
+				"it": "https://it.wikipedia.org/wiki/Plutonio",
+				"es": "https://es.wikipedia.org/wiki/Plutonio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%92%9A",
+				"pt": "https://pt.wikipedia.org/wiki/Plut%C3%B3nio"
 			},
 			"category": "actinide",
 			"period": 7,
@@ -8042,6 +8160,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": 1.28,
+			"electronegativityText": "1.28",
 			"atomicRadius": 187,
 			"ionizationEnergy": 6.02576,
 			"electronAffinity": null,
@@ -8113,15 +8232,15 @@
 			],
 			"namedAfter": [
 				{
-					"qid": "Q152262",
+					"qid": "Q339",
 					"name": {
 						"en": "Pluto",
 						"ru": "Плутон",
 						"fr": "Pluton",
-						"de": "Pluton",
+						"de": "Pluto",
 						"it": "Plutone",
 						"es": "Plutón",
-						"zh": "普路托",
+						"zh": "冥王星",
 						"pt": "Plutão"
 					}
 				}
@@ -8143,14 +8262,14 @@
 			},
 			"wikidata": "Q1872",
 			"wikipedia": {
-				"es": "https://es.wikipedia.org/wiki/Americio",
-				"it": "https://it.wikipedia.org/wiki/Americio",
-				"pt": "https://pt.wikipedia.org/wiki/Amer%C3%ADcio",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%95%85",
-				"de": "https://de.wikipedia.org/wiki/Americium",
 				"en": "https://en.wikipedia.org/wiki/Americium",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%90%D0%BC%D0%B5%D1%80%D0%B8%D1%86%D0%B8%D0%B9",
 				"fr": "https://fr.wikipedia.org/wiki/Am%C3%A9ricium",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%90%D0%BC%D0%B5%D1%80%D0%B8%D1%86%D0%B8%D0%B9"
+				"de": "https://de.wikipedia.org/wiki/Americium",
+				"it": "https://it.wikipedia.org/wiki/Americio",
+				"es": "https://es.wikipedia.org/wiki/Americio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%95%85",
+				"pt": "https://pt.wikipedia.org/wiki/Amer%C3%ADcio"
 			},
 			"category": "actinide",
 			"period": 7,
@@ -8177,6 +8296,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": null,
+			"electronegativityText": null,
 			"atomicRadius": 180,
 			"ionizationEnergy": 5.97381,
 			"electronAffinity": null,
@@ -8190,9 +8310,22 @@
 			"meltsUnderPressure": false,
 			"boilingPoint": null,
 			"sublimes": false,
-			"density": 13.69,
+			"density": null,
 			"yearDiscovered": 1944,
 			"discoveredBy": [
+				{
+					"qid": "Q468345",
+					"name": {
+						"en": "Albert Ghiorso",
+						"ru": "Альберт Гиорсо",
+						"fr": "Albert Ghiorso",
+						"de": "Albert Ghiorso",
+						"it": "Albert Ghiorso",
+						"es": "Albert Ghiorso",
+						"zh": "阿伯特·吉奥索",
+						"pt": "Albert Ghiorso"
+					}
+				},
 				{
 					"qid": "Q48973",
 					"name": {
@@ -8204,6 +8337,32 @@
 						"es": "Glenn T. Seaborg",
 						"zh": "格倫·西奧多·西博格",
 						"pt": "Glenn Theodore Seaborg"
+					}
+				},
+				{
+					"qid": "Q5973096",
+					"name": {
+						"en": "Leon O. Morgan",
+						"ru": "Леон Морган",
+						"fr": "Leon O. Morgan",
+						"de": "Leon O. Morgan",
+						"it": "Leon O. Morgan",
+						"es": "Leon O. Morgan",
+						"zh": "莱昂·摩根",
+						"pt": "Leon O. Morgan"
+					}
+				},
+				{
+					"qid": "Q2023093",
+					"name": {
+						"en": "Ralph A. James",
+						"ru": "Ральф Джеймс",
+						"fr": "Ralph Arthur James",
+						"de": "Ralph A. James",
+						"it": "Ralph Arthur James",
+						"es": "Ralph A. James",
+						"zh": "拉尔夫·詹姆斯",
+						"pt": "Ralph A. James"
 					}
 				}
 			],
@@ -8239,14 +8398,14 @@
 			},
 			"wikidata": "Q1876",
 			"wikipedia": {
-				"it": "https://it.wikipedia.org/wiki/Curio",
-				"pt": "https://pt.wikipedia.org/wiki/C%C3%BArio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%9A%D1%8E%D1%80%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%94%94",
-				"de": "https://de.wikipedia.org/wiki/Curium",
 				"en": "https://en.wikipedia.org/wiki/Curium",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%9A%D1%8E%D1%80%D0%B8%D0%B9",
+				"fr": "https://fr.wikipedia.org/wiki/Curium",
+				"de": "https://de.wikipedia.org/wiki/Curium",
+				"it": "https://it.wikipedia.org/wiki/Curio",
 				"es": "https://es.wikipedia.org/wiki/Curio",
-				"fr": "https://fr.wikipedia.org/wiki/Curium"
+				"zh": "https://zh.wikipedia.org/wiki/%E9%94%94",
+				"pt": "https://pt.wikipedia.org/wiki/C%C3%BArio"
 			},
 			"category": "actinide",
 			"period": 7,
@@ -8273,6 +8432,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": null,
+			"electronegativityText": null,
 			"atomicRadius": 169,
 			"ionizationEnergy": 5.992241,
 			"electronAffinity": null,
@@ -8281,11 +8441,24 @@
 			],
 			"meltingPoint": 1618,
 			"meltsUnderPressure": false,
-			"boilingPoint": 3400,
+			"boilingPoint": 3383,
 			"sublimes": false,
 			"density": 13.51,
 			"yearDiscovered": 1944,
 			"discoveredBy": [
+				{
+					"qid": "Q468345",
+					"name": {
+						"en": "Albert Ghiorso",
+						"ru": "Альберт Гиорсо",
+						"fr": "Albert Ghiorso",
+						"de": "Albert Ghiorso",
+						"it": "Albert Ghiorso",
+						"es": "Albert Ghiorso",
+						"zh": "阿伯特·吉奥索",
+						"pt": "Albert Ghiorso"
+					}
+				},
 				{
 					"qid": "Q48973",
 					"name": {
@@ -8297,6 +8470,19 @@
 						"es": "Glenn T. Seaborg",
 						"zh": "格倫·西奧多·西博格",
 						"pt": "Glenn Theodore Seaborg"
+					}
+				},
+				{
+					"qid": "Q2023093",
+					"name": {
+						"en": "Ralph A. James",
+						"ru": "Ральф Джеймс",
+						"fr": "Ralph Arthur James",
+						"de": "Ralph A. James",
+						"it": "Ralph Arthur James",
+						"es": "Ralph A. James",
+						"zh": "拉尔夫·詹姆斯",
+						"pt": "Ralph A. James"
 					}
 				}
 			],
@@ -8345,14 +8531,14 @@
 			},
 			"wikidata": "Q1882",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Berkelium",
 				"en": "https://en.wikipedia.org/wiki/Berkelium",
-				"es": "https://es.wikipedia.org/wiki/Berkelio",
-				"fr": "https://fr.wikipedia.org/wiki/Berk%C3%A9lium",
-				"it": "https://it.wikipedia.org/wiki/Berkelio",
-				"pt": "https://pt.wikipedia.org/wiki/Berqu%C3%A9lio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%91%D0%B5%D1%80%D0%BA%D0%BB%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%94%AB"
+				"fr": "https://fr.wikipedia.org/wiki/Berk%C3%A9lium",
+				"de": "https://de.wikipedia.org/wiki/Berkelium",
+				"it": "https://it.wikipedia.org/wiki/Berkelio",
+				"es": "https://es.wikipedia.org/wiki/Berkelio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%94%AB",
+				"pt": "https://pt.wikipedia.org/wiki/Berqu%C3%A9lio"
 			},
 			"category": "actinide",
 			"period": 7,
@@ -8379,6 +8565,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": null,
+			"electronegativityText": null,
 			"atomicRadius": null,
 			"ionizationEnergy": 6.19785,
 			"electronAffinity": null,
@@ -8386,11 +8573,11 @@
 				"+4",
 				"+3"
 			],
-			"meltingPoint": 1323,
+			"meltingPoint": 1259,
 			"meltsUnderPressure": false,
 			"boilingPoint": null,
 			"sublimes": false,
-			"density": 14,
+			"density": 14.78,
 			"yearDiscovered": 1949,
 			"discoveredBy": [
 				{
@@ -8466,13 +8653,13 @@
 			"wikidata": "Q1888",
 			"wikipedia": {
 				"en": "https://en.wikipedia.org/wiki/Californium",
-				"es": "https://es.wikipedia.org/wiki/Californio",
-				"fr": "https://fr.wikipedia.org/wiki/Californium",
-				"it": "https://it.wikipedia.org/wiki/Californio",
-				"pt": "https://pt.wikipedia.org/wiki/Calif%C3%B3rnio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BB%D0%B8%D1%84%D0%BE%D1%80%D0%BD%D0%B8%D0%B9",
+				"fr": "https://fr.wikipedia.org/wiki/Californium",
+				"de": "https://de.wikipedia.org/wiki/Californium",
+				"it": "https://it.wikipedia.org/wiki/Californio",
+				"es": "https://es.wikipedia.org/wiki/Californio",
 				"zh": "https://zh.wikipedia.org/wiki/%E9%94%8E",
-				"de": "https://de.wikipedia.org/wiki/Californium"
+				"pt": "https://pt.wikipedia.org/wiki/Calif%C3%B3rnio"
 			},
 			"category": "actinide",
 			"period": 7,
@@ -8499,6 +8686,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": null,
+			"electronegativityText": null,
 			"atomicRadius": null,
 			"ionizationEnergy": 6.281878,
 			"electronAffinity": null,
@@ -8542,7 +8730,7 @@
 					"qid": "Q1989591",
 					"name": {
 						"en": "Kenneth Street Jr.",
-						"ru": "Kenneth Street Jr.",
+						"ru": "Кеннет Стрит-младший",
 						"fr": "Kenneth Street",
 						"de": "Kenneth Street Jr.",
 						"it": "Kenneth Street Jr.",
@@ -8597,14 +8785,14 @@
 			},
 			"wikidata": "Q1892",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Einsteinium",
 				"en": "https://en.wikipedia.org/wiki/Einsteinium",
-				"es": "https://es.wikipedia.org/wiki/Einstenio",
-				"fr": "https://fr.wikipedia.org/wiki/Einsteinium",
-				"it": "https://it.wikipedia.org/wiki/Einsteinio",
-				"pt": "https://pt.wikipedia.org/wiki/Einst%C3%AAnio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%AD%D0%B9%D0%BD%D1%88%D1%82%D0%B5%D0%B9%D0%BD%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%94%BF"
+				"fr": "https://fr.wikipedia.org/wiki/Einsteinium",
+				"de": "https://de.wikipedia.org/wiki/Einsteinium",
+				"it": "https://it.wikipedia.org/wiki/Einsteinio",
+				"es": "https://es.wikipedia.org/wiki/Einstenio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%94%BF",
+				"pt": "https://pt.wikipedia.org/wiki/Einst%C3%AAnio"
 			},
 			"category": "actinide",
 			"period": 7,
@@ -8631,6 +8819,7 @@
 			"state": "solid",
 			"statePredicted": false,
 			"electronegativity": null,
+			"electronegativityText": null,
 			"atomicRadius": null,
 			"ionizationEnergy": 6.3684,
 			"electronAffinity": null,
@@ -8645,29 +8834,16 @@
 			"yearDiscovered": 1952,
 			"discoveredBy": [
 				{
-					"qid": "Q468345",
+					"qid": "Q1133630",
 					"name": {
-						"en": "Albert Ghiorso",
-						"ru": "Альберт Гиорсо",
-						"fr": "Albert Ghiorso",
-						"de": "Albert Ghiorso",
-						"it": "Albert Ghiorso",
-						"es": "Albert Ghiorso",
-						"zh": "阿伯特·吉奥索",
-						"pt": "Albert Ghiorso"
-					}
-				},
-				{
-					"qid": "Q48973",
-					"name": {
-						"en": "Glenn Theodore Seaborg",
-						"ru": "Гленн Теодор Сиборг",
-						"fr": "Glenn Seaborg",
-						"de": "Glenn T. Seaborg",
-						"it": "Glenn Theodore Seaborg",
-						"es": "Glenn T. Seaborg",
-						"zh": "格倫·西奧多·西博格",
-						"pt": "Glenn Theodore Seaborg"
+						"en": "Lawrence Berkeley National Laboratory",
+						"ru": "Национальная лаборатория имени Лоуренса в Беркли",
+						"fr": "Laboratoire national Lawrence-Berkeley",
+						"de": "Lawrence Berkeley National Laboratory",
+						"it": "Lawrence Berkeley National Laboratory",
+						"es": "Lawrence Berkeley National Laboratory",
+						"zh": "劳伦斯伯克利国家实验室",
+						"pt": "Laboratório Nacional de Lawrence Berkeley"
 					}
 				}
 			],
@@ -8703,14 +8879,14 @@
 			},
 			"wikidata": "Q1896",
 			"wikipedia": {
-				"zh": "https://zh.wikipedia.org/wiki/%E9%95%84",
-				"de": "https://de.wikipedia.org/wiki/Fermium",
 				"en": "https://en.wikipedia.org/wiki/Fermium",
-				"es": "https://es.wikipedia.org/wiki/Fermio",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%A4%D0%B5%D1%80%D0%BC%D0%B8%D0%B9",
 				"fr": "https://fr.wikipedia.org/wiki/Fermium",
+				"de": "https://de.wikipedia.org/wiki/Fermium",
 				"it": "https://it.wikipedia.org/wiki/Fermio",
-				"pt": "https://pt.wikipedia.org/wiki/F%C3%A9rmio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%A4%D0%B5%D1%80%D0%BC%D0%B8%D0%B9"
+				"es": "https://es.wikipedia.org/wiki/Fermio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%95%84",
+				"pt": "https://pt.wikipedia.org/wiki/F%C3%A9rmio"
 			},
 			"category": "actinide",
 			"period": 7,
@@ -8737,6 +8913,7 @@
 			"state": "solid",
 			"statePredicted": true,
 			"electronegativity": null,
+			"electronegativityText": null,
 			"atomicRadius": null,
 			"ionizationEnergy": null,
 			"electronAffinity": null,
@@ -8751,16 +8928,16 @@
 			"yearDiscovered": 1952,
 			"discoveredBy": [
 				{
-					"qid": "Q48973",
+					"qid": "Q1133630",
 					"name": {
-						"en": "Glenn Theodore Seaborg",
-						"ru": "Гленн Теодор Сиборг",
-						"fr": "Glenn Seaborg",
-						"de": "Glenn T. Seaborg",
-						"it": "Glenn Theodore Seaborg",
-						"es": "Glenn T. Seaborg",
-						"zh": "格倫·西奧多·西博格",
-						"pt": "Glenn Theodore Seaborg"
+						"en": "Lawrence Berkeley National Laboratory",
+						"ru": "Национальная лаборатория имени Лоуренса в Беркли",
+						"fr": "Laboratoire national Lawrence-Berkeley",
+						"de": "Lawrence Berkeley National Laboratory",
+						"it": "Lawrence Berkeley National Laboratory",
+						"es": "Lawrence Berkeley National Laboratory",
+						"zh": "劳伦斯伯克利国家实验室",
+						"pt": "Laboratório Nacional de Lawrence Berkeley"
 					}
 				}
 			],
@@ -8796,14 +8973,14 @@
 			},
 			"wikidata": "Q1898",
 			"wikipedia": {
-				"zh": "https://zh.wikipedia.org/wiki/%E9%92%94",
-				"de": "https://de.wikipedia.org/wiki/Mendelevium",
 				"en": "https://en.wikipedia.org/wiki/Mendelevium",
-				"es": "https://es.wikipedia.org/wiki/Mendelevio",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%BD%D0%B4%D0%B5%D0%BB%D0%B5%D0%B2%D0%B8%D0%B9",
 				"fr": "https://fr.wikipedia.org/wiki/Mend%C3%A9l%C3%A9vium",
+				"de": "https://de.wikipedia.org/wiki/Mendelevium",
 				"it": "https://it.wikipedia.org/wiki/Mendelevio",
-				"pt": "https://pt.wikipedia.org/wiki/Mendel%C3%A9vio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%BD%D0%B4%D0%B5%D0%BB%D0%B5%D0%B2%D0%B8%D0%B9"
+				"es": "https://es.wikipedia.org/wiki/Mendelevio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%92%94",
+				"pt": "https://pt.wikipedia.org/wiki/Mendel%C3%A9vio"
 			},
 			"category": "actinide",
 			"period": 7,
@@ -8830,6 +9007,7 @@
 			"state": "solid",
 			"statePredicted": true,
 			"electronegativity": null,
+			"electronegativityText": null,
 			"atomicRadius": null,
 			"ionizationEnergy": null,
 			"electronAffinity": null,
@@ -8845,16 +9023,16 @@
 			"yearDiscovered": 1955,
 			"discoveredBy": [
 				{
-					"qid": "Q48973",
+					"qid": "Q1133630",
 					"name": {
-						"en": "Glenn Theodore Seaborg",
-						"ru": "Гленн Теодор Сиборг",
-						"fr": "Glenn Seaborg",
-						"de": "Glenn T. Seaborg",
-						"it": "Glenn Theodore Seaborg",
-						"es": "Glenn T. Seaborg",
-						"zh": "格倫·西奧多·西博格",
-						"pt": "Glenn Theodore Seaborg"
+						"en": "Lawrence Berkeley National Laboratory",
+						"ru": "Национальная лаборатория имени Лоуренса в Беркли",
+						"fr": "Laboratoire national Lawrence-Berkeley",
+						"de": "Lawrence Berkeley National Laboratory",
+						"it": "Lawrence Berkeley National Laboratory",
+						"es": "Lawrence Berkeley National Laboratory",
+						"zh": "劳伦斯伯克利国家实验室",
+						"pt": "Laboratório Nacional de Lawrence Berkeley"
 					}
 				}
 			],
@@ -8890,14 +9068,14 @@
 			},
 			"wikidata": "Q1901",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Nobelium",
 				"en": "https://en.wikipedia.org/wiki/Nobelium",
-				"es": "https://es.wikipedia.org/wiki/Nobelio",
-				"fr": "https://fr.wikipedia.org/wiki/Nob%C3%A9lium",
-				"it": "https://it.wikipedia.org/wiki/Nobelio",
-				"pt": "https://pt.wikipedia.org/wiki/Nob%C3%A9lio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%9D%D0%BE%D0%B1%D0%B5%D0%BB%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%94%98"
+				"fr": "https://fr.wikipedia.org/wiki/Nob%C3%A9lium",
+				"de": "https://de.wikipedia.org/wiki/Nobelium",
+				"it": "https://it.wikipedia.org/wiki/Nobelio",
+				"es": "https://es.wikipedia.org/wiki/Nobelio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%94%98",
+				"pt": "https://pt.wikipedia.org/wiki/Nob%C3%A9lio"
 			},
 			"category": "actinide",
 			"period": 7,
@@ -8924,6 +9102,7 @@
 			"state": "solid",
 			"statePredicted": true,
 			"electronegativity": null,
+			"electronegativityText": null,
 			"atomicRadius": null,
 			"ionizationEnergy": 6.62621,
 			"electronAffinity": null,
@@ -8984,14 +9163,14 @@
 			},
 			"wikidata": "Q1905",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Lawrencium",
 				"en": "https://en.wikipedia.org/wiki/Lawrencium",
-				"es": "https://es.wikipedia.org/wiki/Lawrencio",
-				"fr": "https://fr.wikipedia.org/wiki/Lawrencium",
-				"it": "https://it.wikipedia.org/wiki/Laurenzio",
-				"pt": "https://pt.wikipedia.org/wiki/Laur%C3%AAncio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%9B%D0%BE%D1%83%D1%80%D0%B5%D0%BD%D1%81%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%90%92"
+				"fr": "https://fr.wikipedia.org/wiki/Lawrencium",
+				"de": "https://de.wikipedia.org/wiki/Lawrencium",
+				"it": "https://it.wikipedia.org/wiki/Laurenzio",
+				"es": "https://es.wikipedia.org/wiki/Lawrencio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%90%92",
+				"pt": "https://pt.wikipedia.org/wiki/Laur%C3%AAncio"
 			},
 			"category": "actinide",
 			"period": 7,
@@ -9018,6 +9197,7 @@
 			"state": "solid",
 			"statePredicted": true,
 			"electronegativity": null,
+			"electronegativityText": null,
 			"atomicRadius": null,
 			"ionizationEnergy": 4.96,
 			"electronAffinity": null,
@@ -9032,16 +9212,29 @@
 			"yearDiscovered": 1961,
 			"discoveredBy": [
 				{
-					"qid": "Q468345",
+					"qid": "Q259517",
 					"name": {
-						"en": "Albert Ghiorso",
-						"ru": "Альберт Гиорсо",
-						"fr": "Albert Ghiorso",
-						"de": "Albert Ghiorso",
-						"it": "Albert Ghiorso",
-						"es": "Albert Ghiorso",
-						"zh": "阿伯特·吉奥索",
-						"pt": "Albert Ghiorso"
+						"en": "Joint Institute for Nuclear Research",
+						"ru": "Объединённый институт ядерных исследований",
+						"fr": "Institut unifié de recherches nucléaires",
+						"de": "Vereinigtes Institut für Kernforschung",
+						"it": "Istituto unito per la ricerca nucleare",
+						"es": "Instituto Central de Investigaciones Nucleares",
+						"zh": "杜布纳联合原子核研究所",
+						"pt": "Eenheetlecht Institut fir Nuklearfuerschung"
+					}
+				},
+				{
+					"qid": "Q1133630",
+					"name": {
+						"en": "Lawrence Berkeley National Laboratory",
+						"ru": "Национальная лаборатория имени Лоуренса в Беркли",
+						"fr": "Laboratoire national Lawrence-Berkeley",
+						"de": "Lawrence Berkeley National Laboratory",
+						"it": "Lawrence Berkeley National Laboratory",
+						"es": "Lawrence Berkeley National Laboratory",
+						"zh": "劳伦斯伯克利国家实验室",
+						"pt": "Laboratório Nacional de Lawrence Berkeley"
 					}
 				}
 			],
@@ -9077,14 +9270,14 @@
 			},
 			"wikidata": "Q1226",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Rutherfordium",
 				"en": "https://en.wikipedia.org/wiki/Rutherfordium",
-				"es": "https://es.wikipedia.org/wiki/Rutherfordio",
-				"fr": "https://fr.wikipedia.org/wiki/Rutherfordium",
-				"it": "https://it.wikipedia.org/wiki/Rutherfordio",
-				"pt": "https://pt.wikipedia.org/wiki/Rutherf%C3%B3rdio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%A0%D0%B5%D0%B7%D0%B5%D1%80%D1%84%D0%BE%D1%80%D0%B4%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%91%AA"
+				"fr": "https://fr.wikipedia.org/wiki/Rutherfordium",
+				"de": "https://de.wikipedia.org/wiki/Rutherfordium",
+				"it": "https://it.wikipedia.org/wiki/Rutherfordio",
+				"es": "https://es.wikipedia.org/wiki/Rutherfordio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%91%AA",
+				"pt": "https://pt.wikipedia.org/wiki/Rutherf%C3%B3rdio"
 			},
 			"category": "transition-metal",
 			"period": 7,
@@ -9111,6 +9304,7 @@
 			"state": "solid",
 			"statePredicted": true,
 			"electronegativity": null,
+			"electronegativityText": null,
 			"atomicRadius": null,
 			"ionizationEnergy": null,
 			"electronAffinity": null,
@@ -9183,14 +9377,14 @@
 			},
 			"wikidata": "Q1232",
 			"wikipedia": {
-				"zh": "https://zh.wikipedia.org/wiki/%F0%A8%A7%80",
-				"pt": "https://pt.wikipedia.org/wiki/D%C3%BAbnio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%94%D1%83%D0%B1%D0%BD%D0%B8%D0%B9",
-				"de": "https://de.wikipedia.org/wiki/Dubnium",
 				"en": "https://en.wikipedia.org/wiki/Dubnium",
-				"es": "https://es.wikipedia.org/wiki/Dubnio",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%94%D1%83%D0%B1%D0%BD%D0%B8%D0%B9",
 				"fr": "https://fr.wikipedia.org/wiki/Dubnium",
-				"it": "https://it.wikipedia.org/wiki/Dubnio"
+				"de": "https://de.wikipedia.org/wiki/Dubnium",
+				"it": "https://it.wikipedia.org/wiki/Dubnio",
+				"es": "https://es.wikipedia.org/wiki/Dubnio",
+				"zh": "https://zh.wikipedia.org/wiki/%F0%A8%A7%80",
+				"pt": "https://pt.wikipedia.org/wiki/D%C3%BAbnio"
 			},
 			"category": "transition-metal",
 			"period": 7,
@@ -9217,6 +9411,7 @@
 			"state": "solid",
 			"statePredicted": true,
 			"electronegativity": null,
+			"electronegativityText": null,
 			"atomicRadius": null,
 			"ionizationEnergy": null,
 			"electronAffinity": null,
@@ -9228,7 +9423,7 @@
 			"boilingPoint": null,
 			"sublimes": false,
 			"density": null,
-			"yearDiscovered": 1967,
+			"yearDiscovered": 1970,
 			"discoveredBy": [
 				{
 					"qid": "Q259517",
@@ -9289,14 +9484,14 @@
 			},
 			"wikidata": "Q1234",
 			"wikipedia": {
-				"zh": "https://zh.wikipedia.org/wiki/%F0%A8%AD%8E",
-				"de": "https://de.wikipedia.org/wiki/Seaborgium",
 				"en": "https://en.wikipedia.org/wiki/Seaborgium",
-				"es": "https://es.wikipedia.org/wiki/Seaborgio",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B8%D0%B1%D0%BE%D1%80%D0%B3%D0%B8%D0%B9",
 				"fr": "https://fr.wikipedia.org/wiki/Seaborgium",
+				"de": "https://de.wikipedia.org/wiki/Seaborgium",
 				"it": "https://it.wikipedia.org/wiki/Seaborgio",
-				"pt": "https://pt.wikipedia.org/wiki/Seab%C3%B3rgio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B8%D0%B1%D0%BE%D1%80%D0%B3%D0%B8%D0%B9"
+				"es": "https://es.wikipedia.org/wiki/Seaborgio",
+				"zh": "https://zh.wikipedia.org/wiki/%F0%A8%AD%8E",
+				"pt": "https://pt.wikipedia.org/wiki/Seab%C3%B3rgio"
 			},
 			"category": "transition-metal",
 			"period": 7,
@@ -9323,6 +9518,7 @@
 			"state": "solid",
 			"statePredicted": true,
 			"electronegativity": null,
+			"electronegativityText": null,
 			"atomicRadius": null,
 			"ionizationEnergy": null,
 			"electronAffinity": null,
@@ -9382,14 +9578,14 @@
 			},
 			"wikidata": "Q1249",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Bohrium",
 				"en": "https://en.wikipedia.org/wiki/Bohrium",
-				"es": "https://es.wikipedia.org/wiki/Bohrio",
-				"fr": "https://fr.wikipedia.org/wiki/Bohrium",
-				"it": "https://it.wikipedia.org/wiki/Bohrio",
-				"pt": "https://pt.wikipedia.org/wiki/B%C3%B3hrio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%91%D0%BE%D1%80%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%F0%A8%A8%8F"
+				"fr": "https://fr.wikipedia.org/wiki/Bohrium",
+				"de": "https://de.wikipedia.org/wiki/Bohrium",
+				"it": "https://it.wikipedia.org/wiki/Bohrio",
+				"es": "https://es.wikipedia.org/wiki/Bohrio",
+				"zh": "https://zh.wikipedia.org/wiki/%F0%A8%A8%8F",
+				"pt": "https://pt.wikipedia.org/wiki/B%C3%B3hrio"
 			},
 			"category": "transition-metal",
 			"period": 7,
@@ -9416,6 +9612,7 @@
 			"state": "solid",
 			"statePredicted": true,
 			"electronegativity": null,
+			"electronegativityText": null,
 			"atomicRadius": null,
 			"ionizationEnergy": null,
 			"electronAffinity": null,
@@ -9475,14 +9672,14 @@
 			},
 			"wikidata": "Q1252",
 			"wikipedia": {
-				"fr": "https://fr.wikipedia.org/wiki/Hassium",
-				"it": "https://it.wikipedia.org/wiki/Hassio",
-				"de": "https://de.wikipedia.org/wiki/Hassium",
 				"en": "https://en.wikipedia.org/wiki/Hassium",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%A5%D0%B0%D1%81%D1%81%D0%B8%D0%B9",
+				"fr": "https://fr.wikipedia.org/wiki/Hassium",
+				"de": "https://de.wikipedia.org/wiki/Hassium",
+				"it": "https://it.wikipedia.org/wiki/Hassio",
 				"es": "https://es.wikipedia.org/wiki/Hasio",
 				"zh": "https://zh.wikipedia.org/wiki/%F0%A8%AD%86",
-				"pt": "https://pt.wikipedia.org/wiki/H%C3%A1ssio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%A5%D0%B0%D1%81%D1%81%D0%B8%D0%B9"
+				"pt": "https://pt.wikipedia.org/wiki/H%C3%A1ssio"
 			},
 			"category": "transition-metal",
 			"period": 7,
@@ -9509,6 +9706,7 @@
 			"state": "solid",
 			"statePredicted": true,
 			"electronegativity": null,
+			"electronegativityText": null,
 			"atomicRadius": null,
 			"ionizationEnergy": null,
 			"electronAffinity": null,
@@ -9568,14 +9766,14 @@
 			},
 			"wikidata": "Q1258",
 			"wikipedia": {
-				"fr": "https://fr.wikipedia.org/wiki/Meitn%C3%A9rium",
-				"it": "https://it.wikipedia.org/wiki/Meitnerio",
-				"pt": "https://pt.wikipedia.org/wiki/Meitn%C3%A9rio",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%B9%D1%82%D0%BD%D0%B5%D1%80%D0%B8%D0%B9",
-				"de": "https://de.wikipedia.org/wiki/Meitnerium",
 				"en": "https://en.wikipedia.org/wiki/Meitnerium",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%B9%D1%82%D0%BD%D0%B5%D1%80%D0%B8%D0%B9",
+				"fr": "https://fr.wikipedia.org/wiki/Meitn%C3%A9rium",
+				"de": "https://de.wikipedia.org/wiki/Meitnerium",
+				"it": "https://it.wikipedia.org/wiki/Meitnerio",
 				"es": "https://es.wikipedia.org/wiki/Meitnerio",
-				"zh": "https://zh.wikipedia.org/wiki/%E4%A5%91"
+				"zh": "https://zh.wikipedia.org/wiki/%E4%A5%91",
+				"pt": "https://pt.wikipedia.org/wiki/Meitn%C3%A9rio"
 			},
 			"category": "transition-metal",
 			"period": 7,
@@ -9584,8 +9782,8 @@
 			"col": 9,
 			"row": 7,
 			"mass": {
-				"value": 277.154,
-				"text": "[277]",
+				"value": 278,
+				"text": "[278]",
 				"source": "pubchem-isotope"
 			},
 			"config": "[Rn]7s2 5f14 6d7",
@@ -9602,6 +9800,7 @@
 			"state": "solid",
 			"statePredicted": true,
 			"electronegativity": null,
+			"electronegativityText": null,
 			"atomicRadius": null,
 			"ionizationEnergy": null,
 			"electronAffinity": null,
@@ -9659,14 +9858,14 @@
 			},
 			"wikidata": "Q1266",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Darmstadtium",
 				"en": "https://en.wikipedia.org/wiki/Darmstadtium",
-				"fr": "https://fr.wikipedia.org/wiki/Darmstadtium",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%94%D0%B0%D1%80%D0%BC%D1%88%D1%82%D0%B0%D0%B4%D1%82%D0%B8%D0%B9",
-				"es": "https://es.wikipedia.org/wiki/Darmstatio",
+				"fr": "https://fr.wikipedia.org/wiki/Darmstadtium",
+				"de": "https://de.wikipedia.org/wiki/Darmstadtium",
 				"it": "https://it.wikipedia.org/wiki/Darmstadtio",
-				"pt": "https://pt.wikipedia.org/wiki/Darmst%C3%A1dtio",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%90%BD"
+				"es": "https://es.wikipedia.org/wiki/Darmstatio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%90%BD",
+				"pt": "https://pt.wikipedia.org/wiki/Darmst%C3%A1dtio"
 			},
 			"category": "transition-metal",
 			"period": 7,
@@ -9675,8 +9874,8 @@
 			"col": 10,
 			"row": 7,
 			"mass": {
-				"value": 282.166,
-				"text": "[282]",
+				"value": 281,
+				"text": "[281]",
 				"source": "pubchem-isotope"
 			},
 			"config": "[Rn]7s2 5f14 6d8",
@@ -9693,6 +9892,7 @@
 			"state": "solid",
 			"statePredicted": true,
 			"electronegativity": null,
+			"electronegativityText": null,
 			"atomicRadius": null,
 			"ionizationEnergy": null,
 			"electronAffinity": null,
@@ -9750,14 +9950,14 @@
 			},
 			"wikidata": "Q1272",
 			"wikipedia": {
-				"it": "https://it.wikipedia.org/wiki/Roentgenio",
-				"de": "https://de.wikipedia.org/wiki/Roentgenium",
 				"en": "https://en.wikipedia.org/wiki/Roentgenium",
-				"es": "https://es.wikipedia.org/wiki/Roentgenio",
-				"fr": "https://fr.wikipedia.org/wiki/Roentgenium",
-				"pt": "https://pt.wikipedia.org/wiki/Roentg%C3%AAnio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%A0%D0%B5%D0%BD%D1%82%D0%B3%D0%B5%D0%BD%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%8C%80"
+				"fr": "https://fr.wikipedia.org/wiki/Roentgenium",
+				"de": "https://de.wikipedia.org/wiki/Roentgenium",
+				"it": "https://it.wikipedia.org/wiki/Roentgenio",
+				"es": "https://es.wikipedia.org/wiki/Roentgenio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%8C%80",
+				"pt": "https://pt.wikipedia.org/wiki/Roentg%C3%AAnio"
 			},
 			"category": "transition-metal",
 			"period": 7,
@@ -9784,6 +9984,7 @@
 			"state": "solid",
 			"statePredicted": true,
 			"electronegativity": null,
+			"electronegativityText": null,
 			"atomicRadius": null,
 			"ionizationEnergy": null,
 			"electronAffinity": null,
@@ -9841,14 +10042,14 @@
 			},
 			"wikidata": "Q1278",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Copernicium",
 				"en": "https://en.wikipedia.org/wiki/Copernicium",
-				"es": "https://es.wikipedia.org/wiki/Copernicio",
-				"fr": "https://fr.wikipedia.org/wiki/Copernicium",
-				"it": "https://it.wikipedia.org/wiki/Copernicio",
-				"pt": "https://pt.wikipedia.org/wiki/Copern%C3%ADcio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BF%D0%B5%D1%80%D0%BD%D0%B8%D1%86%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%8E%B6"
+				"fr": "https://fr.wikipedia.org/wiki/Copernicium",
+				"de": "https://de.wikipedia.org/wiki/Copernicium",
+				"it": "https://it.wikipedia.org/wiki/Copernicio",
+				"es": "https://es.wikipedia.org/wiki/Copernicio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%8E%B6",
+				"pt": "https://pt.wikipedia.org/wiki/Copern%C3%ADcio"
 			},
 			"category": "transition-metal",
 			"period": 7,
@@ -9857,8 +10058,8 @@
 			"col": 12,
 			"row": 7,
 			"mass": {
-				"value": 286.179,
-				"text": "[286]",
+				"value": 285,
+				"text": "[285]",
 				"source": "pubchem-isotope"
 			},
 			"config": "[Rn]7s2 5f14 6d10",
@@ -9872,9 +10073,10 @@
 				18,
 				2
 			],
-			"state": "solid",
+			"state": "liquid",
 			"statePredicted": true,
 			"electronegativity": null,
+			"electronegativityText": null,
 			"atomicRadius": null,
 			"ionizationEnergy": null,
 			"electronAffinity": null,
@@ -9928,18 +10130,18 @@
 				"it": "Nihonio",
 				"es": "Nihonio",
 				"zh": "鿭",
-				"pt": "Niônio"
+				"pt": "Nihônio"
 			},
 			"wikidata": "Q1301",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Nihonium",
 				"en": "https://en.wikipedia.org/wiki/Nihonium",
-				"es": "https://es.wikipedia.org/wiki/Nihonio",
-				"fr": "https://fr.wikipedia.org/wiki/Nihonium",
-				"it": "https://it.wikipedia.org/wiki/Nihonio",
-				"pt": "https://pt.wikipedia.org/wiki/Nihonium",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%9D%D0%B8%D1%85%D0%BE%D0%BD%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%89%A8"
+				"fr": "https://fr.wikipedia.org/wiki/Nihonium",
+				"de": "https://de.wikipedia.org/wiki/Nihonium",
+				"it": "https://it.wikipedia.org/wiki/Nihonio",
+				"es": "https://es.wikipedia.org/wiki/Nihonio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%89%A8",
+				"pt": "https://pt.wikipedia.org/wiki/Nihonium"
 			},
 			"category": "post-transition-metal",
 			"period": 7,
@@ -9966,6 +10168,7 @@
 			"state": "solid",
 			"statePredicted": true,
 			"electronegativity": null,
+			"electronegativityText": null,
 			"atomicRadius": null,
 			"ionizationEnergy": null,
 			"electronAffinity": null,
@@ -10023,13 +10226,13 @@
 			},
 			"wikidata": "Q1302",
 			"wikipedia": {
-				"ru": "https://ru.wikipedia.org/wiki/%D0%A4%D0%BB%D0%B5%D1%80%D0%BE%D0%B2%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%88%87",
-				"de": "https://de.wikipedia.org/wiki/Flerovium",
 				"en": "https://en.wikipedia.org/wiki/Flerovium",
-				"es": "https://es.wikipedia.org/wiki/Flerovio",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%A4%D0%BB%D0%B5%D1%80%D0%BE%D0%B2%D0%B8%D0%B9",
 				"fr": "https://fr.wikipedia.org/wiki/Fl%C3%A9rovium",
+				"de": "https://de.wikipedia.org/wiki/Flerovium",
 				"it": "https://it.wikipedia.org/wiki/Flerovio",
+				"es": "https://es.wikipedia.org/wiki/Flerovio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%88%87",
 				"pt": "https://pt.wikipedia.org/wiki/Fler%C3%B3vio"
 			},
 			"category": "post-transition-metal",
@@ -10039,8 +10242,8 @@
 			"col": 14,
 			"row": 7,
 			"mass": {
-				"value": 290.192,
-				"text": "[290]",
+				"value": 289,
+				"text": "[289]",
 				"source": "pubchem-isotope"
 			},
 			"config": "[Rn]7s2 7p2 5f14 6d10",
@@ -10054,9 +10257,10 @@
 				18,
 				4
 			],
-			"state": "solid",
+			"state": "liquid",
 			"statePredicted": true,
 			"electronegativity": null,
+			"electronegativityText": null,
 			"atomicRadius": null,
 			"ionizationEnergy": null,
 			"electronAffinity": null,
@@ -10080,6 +10284,19 @@
 						"zh": "杜布纳联合原子核研究所",
 						"pt": "Eenheetlecht Institut fir Nuklearfuerschung"
 					}
+				},
+				{
+					"qid": "Q519826",
+					"name": {
+						"en": "Lawrence Livermore National Laboratory",
+						"ru": "Ливерморская национальная лаборатория",
+						"fr": "Laboratoire national de Lawrence Livermore",
+						"de": "Lawrence Livermore National Laboratory",
+						"it": "Lawrence Livermore National Laboratory",
+						"es": "Laboratorio Nacional Lawrence Livermore",
+						"zh": "劳伦斯利弗莫尔国家实验室",
+						"pt": "Laboratório Nacional de Lawrence Livermore"
+					}
 				}
 			],
 			"namedAfter": []
@@ -10100,14 +10317,14 @@
 			},
 			"wikidata": "Q1303",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Moscovium",
 				"en": "https://en.wikipedia.org/wiki/Moscovium",
-				"es": "https://es.wikipedia.org/wiki/Moscovio",
-				"fr": "https://fr.wikipedia.org/wiki/Moscovium",
-				"it": "https://it.wikipedia.org/wiki/Moscovio",
-				"pt": "https://pt.wikipedia.org/wiki/Mosc%C3%B3vio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%9C%D0%BE%D1%81%D0%BA%D0%BE%D0%B2%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%95%86"
+				"fr": "https://fr.wikipedia.org/wiki/Moscovium",
+				"de": "https://de.wikipedia.org/wiki/Moscovium",
+				"it": "https://it.wikipedia.org/wiki/Moscovio",
+				"es": "https://es.wikipedia.org/wiki/Moscovio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%95%86",
+				"pt": "https://pt.wikipedia.org/wiki/Mosc%C3%B3vio"
 			},
 			"category": "post-transition-metal",
 			"period": 7,
@@ -10134,6 +10351,7 @@
 			"state": "solid",
 			"statePredicted": true,
 			"electronegativity": null,
+			"electronegativityText": null,
 			"atomicRadius": null,
 			"ionizationEnergy": null,
 			"electronAffinity": null,
@@ -10156,6 +10374,19 @@
 						"es": "Instituto Central de Investigaciones Nucleares",
 						"zh": "杜布纳联合原子核研究所",
 						"pt": "Eenheetlecht Institut fir Nuklearfuerschung"
+					}
+				},
+				{
+					"qid": "Q519826",
+					"name": {
+						"en": "Lawrence Livermore National Laboratory",
+						"ru": "Ливерморская национальная лаборатория",
+						"fr": "Laboratoire national de Lawrence Livermore",
+						"de": "Lawrence Livermore National Laboratory",
+						"it": "Lawrence Livermore National Laboratory",
+						"es": "Laboratorio Nacional Lawrence Livermore",
+						"zh": "劳伦斯利弗莫尔国家实验室",
+						"pt": "Laboratório Nacional de Lawrence Livermore"
 					}
 				}
 			],
@@ -10191,14 +10422,14 @@
 			},
 			"wikidata": "Q1304",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Livermorium",
 				"en": "https://en.wikipedia.org/wiki/Livermorium",
-				"es": "https://es.wikipedia.org/wiki/Livermorio",
-				"fr": "https://fr.wikipedia.org/wiki/Livermorium",
-				"it": "https://it.wikipedia.org/wiki/Livermorio",
-				"pt": "https://pt.wikipedia.org/wiki/Liverm%C3%B3rio",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%9B%D0%B8%D0%B2%D0%B5%D1%80%D0%BC%D0%BE%D1%80%D0%B8%D0%B9",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%89%9D"
+				"fr": "https://fr.wikipedia.org/wiki/Livermorium",
+				"de": "https://de.wikipedia.org/wiki/Livermorium",
+				"it": "https://it.wikipedia.org/wiki/Livermorio",
+				"es": "https://es.wikipedia.org/wiki/Livermorio",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%89%9D",
+				"pt": "https://pt.wikipedia.org/wiki/Liverm%C3%B3rio"
 			},
 			"category": "post-transition-metal",
 			"period": 7,
@@ -10225,6 +10456,7 @@
 			"state": "solid",
 			"statePredicted": true,
 			"electronegativity": null,
+			"electronegativityText": null,
 			"atomicRadius": null,
 			"ionizationEnergy": null,
 			"electronAffinity": null,
@@ -10248,6 +10480,19 @@
 						"zh": "杜布纳联合原子核研究所",
 						"pt": "Eenheetlecht Institut fir Nuklearfuerschung"
 					}
+				},
+				{
+					"qid": "Q519826",
+					"name": {
+						"en": "Lawrence Livermore National Laboratory",
+						"ru": "Ливерморская национальная лаборатория",
+						"fr": "Laboratoire national de Lawrence Livermore",
+						"de": "Lawrence Livermore National Laboratory",
+						"it": "Lawrence Livermore National Laboratory",
+						"es": "Laboratorio Nacional Lawrence Livermore",
+						"zh": "劳伦斯利弗莫尔国家实验室",
+						"pt": "Laboratório Nacional de Lawrence Livermore"
+					}
 				}
 			],
 			"namedAfter": [
@@ -10260,7 +10505,7 @@
 						"de": "Lawrence Livermore National Laboratory",
 						"it": "Lawrence Livermore National Laboratory",
 						"es": "Laboratorio Nacional Lawrence Livermore",
-						"zh": "勞倫斯利福摩爾國家實驗室",
+						"zh": "劳伦斯利弗莫尔国家实验室",
 						"pt": "Laboratório Nacional de Lawrence Livermore"
 					}
 				}
@@ -10282,14 +10527,14 @@
 			},
 			"wikidata": "Q1306",
 			"wikipedia": {
-				"de": "https://de.wikipedia.org/wiki/Tenness",
 				"en": "https://en.wikipedia.org/wiki/Tennessine",
-				"es": "https://es.wikipedia.org/wiki/Teneso",
-				"fr": "https://fr.wikipedia.org/wiki/Tennesse",
-				"it": "https://it.wikipedia.org/wiki/Tennesso",
-				"pt": "https://pt.wikipedia.org/wiki/Tenesso",
 				"ru": "https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D0%BD%D0%BD%D0%B5%D1%81%D1%81%D0%B8%D0%BD",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%BF%AC"
+				"fr": "https://fr.wikipedia.org/wiki/Tennesse",
+				"de": "https://de.wikipedia.org/wiki/Tenness",
+				"it": "https://it.wikipedia.org/wiki/Tennesso",
+				"es": "https://es.wikipedia.org/wiki/Teneso",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%BF%AC",
+				"pt": "https://pt.wikipedia.org/wiki/Tenesso"
 			},
 			"category": "halogen",
 			"period": 7,
@@ -10316,6 +10561,7 @@
 			"state": "solid",
 			"statePredicted": true,
 			"electronegativity": null,
+			"electronegativityText": null,
 			"atomicRadius": null,
 			"ionizationEnergy": null,
 			"electronAffinity": null,
@@ -10328,16 +10574,55 @@
 			"yearDiscovered": 2010,
 			"discoveredBy": [
 				{
-					"qid": "Q1144326",
+					"qid": "Q259517",
 					"name": {
-						"en": "Yuri Oganessian",
-						"ru": "Юрий Оганесян",
-						"fr": "Iouri Oganessian",
-						"de": "Juri Zolakowitsch Oganessian",
-						"it": "Jurij Colakovič Oganesian",
-						"es": "Yuri Tsolakovich Oganessian",
-						"zh": "尤里·奥加涅相",
-						"pt": "Yuri Oganessian"
+						"en": "Joint Institute for Nuclear Research",
+						"ru": "Объединённый институт ядерных исследований",
+						"fr": "Institut unifié de recherches nucléaires",
+						"de": "Vereinigtes Institut für Kernforschung",
+						"it": "Istituto unito per la ricerca nucleare",
+						"es": "Instituto Central de Investigaciones Nucleares",
+						"zh": "杜布纳联合原子核研究所",
+						"pt": "Eenheetlecht Institut fir Nuklearfuerschung"
+					}
+				},
+				{
+					"qid": "Q519826",
+					"name": {
+						"en": "Lawrence Livermore National Laboratory",
+						"ru": "Ливерморская национальная лаборатория",
+						"fr": "Laboratoire national de Lawrence Livermore",
+						"de": "Lawrence Livermore National Laboratory",
+						"it": "Lawrence Livermore National Laboratory",
+						"es": "Laboratorio Nacional Lawrence Livermore",
+						"zh": "劳伦斯利弗莫尔国家实验室",
+						"pt": "Laboratório Nacional de Lawrence Livermore"
+					}
+				},
+				{
+					"qid": "Q714439",
+					"name": {
+						"en": "Oak Ridge National Laboratory",
+						"ru": "Ок-Риджская национальная лаборатория",
+						"fr": "Laboratoire national d'Oak Ridge",
+						"de": "Oak Ridge National Laboratory",
+						"it": "Oak Ridge National Laboratory",
+						"es": "Laboratorio Nacional Oak Ridge",
+						"zh": "橡树岭国家实验室",
+						"pt": "Oak Ridge National Laboratory"
+					}
+				},
+				{
+					"qid": "Q29052",
+					"name": {
+						"en": "Vanderbilt University",
+						"ru": "Университет Вандербильта",
+						"fr": "Université Vanderbilt",
+						"de": "Universität Vanderbilt",
+						"it": "Università Vanderbilt",
+						"es": "Universidad Vanderbilt",
+						"zh": "范德比尔特大学",
+						"pt": "Vanderbilt University"
 					}
 				}
 			],
@@ -10373,14 +10658,14 @@
 			},
 			"wikidata": "Q1307",
 			"wikipedia": {
-				"pt": "https://pt.wikipedia.org/wiki/Oganesson",
-				"ru": "https://ru.wikipedia.org/wiki/%D0%9E%D0%B3%D0%B0%D0%BD%D0%B5%D1%81%D0%BE%D0%BD",
-				"zh": "https://zh.wikipedia.org/wiki/%E9%BF%AB",
-				"de": "https://de.wikipedia.org/wiki/Oganesson",
 				"en": "https://en.wikipedia.org/wiki/Oganesson",
-				"es": "https://es.wikipedia.org/wiki/Oganes%C3%B3n",
+				"ru": "https://ru.wikipedia.org/wiki/%D0%9E%D0%B3%D0%B0%D0%BD%D0%B5%D1%81%D0%BE%D0%BD",
 				"fr": "https://fr.wikipedia.org/wiki/Oganesson",
-				"it": "https://it.wikipedia.org/wiki/Oganesson"
+				"de": "https://de.wikipedia.org/wiki/Oganesson",
+				"it": "https://it.wikipedia.org/wiki/Oganesson",
+				"es": "https://es.wikipedia.org/wiki/Oganes%C3%B3n",
+				"zh": "https://zh.wikipedia.org/wiki/%E9%BF%AB",
+				"pt": "https://pt.wikipedia.org/wiki/Oganesson"
 			},
 			"category": "noble-gas",
 			"period": 7,
@@ -10389,8 +10674,8 @@
 			"col": 18,
 			"row": 7,
 			"mass": {
-				"value": 295.216,
-				"text": "[295]",
+				"value": 294,
+				"text": "[294]",
 				"source": "pubchem-isotope"
 			},
 			"config": "[Rn]7s2 7p6 5f14 6d10",
@@ -10404,9 +10689,10 @@
 				18,
 				8
 			],
-			"state": "gas",
+			"state": "solid",
 			"statePredicted": true,
 			"electronegativity": null,
+			"electronegativityText": null,
 			"atomicRadius": null,
 			"ionizationEnergy": null,
 			"electronAffinity": null,
@@ -10416,7 +10702,7 @@
 			"boilingPoint": null,
 			"sublimes": false,
 			"density": null,
-			"yearDiscovered": 2006,
+			"yearDiscovered": 2002,
 			"discoveredBy": [
 				{
 					"qid": "Q259517",
@@ -10429,6 +10715,19 @@
 						"es": "Instituto Central de Investigaciones Nucleares",
 						"zh": "杜布纳联合原子核研究所",
 						"pt": "Eenheetlecht Institut fir Nuklearfuerschung"
+					}
+				},
+				{
+					"qid": "Q519826",
+					"name": {
+						"en": "Lawrence Livermore National Laboratory",
+						"ru": "Ливерморская национальная лаборатория",
+						"fr": "Laboratoire national de Lawrence Livermore",
+						"de": "Lawrence Livermore National Laboratory",
+						"it": "Lawrence Livermore National Laboratory",
+						"es": "Laboratorio Nacional Lawrence Livermore",
+						"zh": "劳伦斯利弗莫尔国家实验室",
+						"pt": "Laboratório Nacional de Lawrence Livermore"
 					}
 				}
 			],

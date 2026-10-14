@@ -72,12 +72,12 @@ export const de: Dict = {
 		period:
 			'Nummer der waagerechten Zeile. Entspricht meist der Zahl der Elektronenschalen des Atoms; Ausnahme ist Palladium mit vier Schalen in Periode 5.',
 		block:
-			'Das Unterniveau (s, p, d oder f), das zuletzt mit Elektronen besetzt wird. Jeder Block bildet einen rechteckigen Bereich der Tabelle.',
+			'Das Unterniveau (s, p, d oder f), das in der üblichen Reihenfolge zuletzt Elektronen erhält; danach teilt sich das Periodensystem in vier Blöcke. Einzelne Atome weichen ab: Lanthan steht am Anfang des f-Blocks, hat aber kein f-Elektron.',
 		config:
 			'Wie die Elektronen auf die Unterniveaus verteilt sind. Die eckige Klammer steht für das vorherige Edelgas, die Hochzahl für die Zahl der Elektronen im Unterniveau.',
 		shells: 'Zahl der Elektronen auf jeder Schale, vom Kern nach außen.',
 		electronegativity:
-			'Wie stark ein Atom in einer chemischen Bindung Elektronen an sich zieht. Auf der Pauling-Skala reicht sie von 0,7 bei Francium bis 3,98 bei Fluor.',
+			'Wie stark ein Atom in einer chemischen Bindung Elektronen an sich zieht. Auf der Pauling-Skala reicht sie von 0,79 bei Caesium bis 3,98 bei Fluor.',
 		atomicRadius:
 			'Halbe Länge einer kovalenten Einfachbindung zwischen zwei Atomen des Elements. Er gibt die Größe des Atoms in einem Molekül oder Kristall an: 76 pm bei Kohlenstoff, 132 pm bei Eisen.',
 		density: 'Masse eines Kubikzentimeters des Stoffes. Bei Gasen bei 0 °C und Normaldruck.',
@@ -92,14 +92,14 @@ export const de: Dict = {
 		oxidationStates: 'Wichtigste formale Ladungen, die das Atom in seinen Verbindungen annimmt.'
 	},
 	trend: {
-		mass: 'Steigt mit der Ordnungszahl, mit wenigen Ausnahmen: Argon ist schwerer als Kalium, Cobalt schwerer als Nickel, Tellur schwerer als Iod.',
+		mass: 'Steigt mit der Ordnungszahl, mit wenigen Ausnahmen: Argon ist schwerer als Kalium, Cobalt schwerer als Nickel, Tellur schwerer als Iod, Thorium schwerer als Protactinium.',
 		electronegativity:
 			'Steigt innerhalb einer Periode von links nach rechts und sinkt innerhalb einer Gruppe von oben nach unten. Fluor hat den höchsten Wert.',
 		atomicRadius:
 			'Nimmt innerhalb einer Periode meist von links nach rechts ab und innerhalb einer Gruppe von oben nach unten zu.',
 		density:
 			'Am dichtesten sind die Metalle in der Mitte der 6. Periode: Osmium und Iridium. Die Skala ist logarithmisch, weil Gase tausendfach leichter sind als Metalle.',
-		meltingPoint: 'Am höchsten bei Kohlenstoff und den Übergangsmetallen, am niedrigsten bei den Edelgasen.',
+		meltingPoint: 'Am höchsten bei Kohlenstoff und den Übergangsmetallen, am niedrigsten bei Helium und Wasserstoff.',
 		ionizationEnergy:
 			'Steigt innerhalb einer Periode von links nach rechts, mit dem Maximum bei den Edelgasen. Sinkt innerhalb einer Gruppe von oben nach unten.'
 	},
@@ -268,7 +268,7 @@ export const de: Dict = {
 		},
 		seoTitle: (title) => `${title}: Tabelle aller Werte | ChemTable`,
 		description: {
-			mass: 'Atommassen aller 118 Elemente nach IUPAC: Liste vom schwersten bis zum leichtesten Element und ein nach Atommasse eingefärbtes Periodensystem.',
+			mass: 'Standard-Atommassen der IUPAC für 84 Elemente, für die übrigen die Massenzahl des stabilsten Isotops: Liste nach Masse und farbiges Periodensystem.',
 			electronegativity: 'Elektronegativität nach Pauling für alle Elemente: sortierte Liste und farbiges Periodensystem. Den höchsten Wert hat Fluor, 3,98.',
 			atomicRadius: 'Kovalente Radien der Elemente in Pikometern (Cordero 2008): Liste nach Atomgröße und ein nach Radius eingefärbtes Periodensystem.',
 			density: 'Dichte der Elemente in g/cm³: Liste von den dichtesten, Osmium und Iridium, bis zu den leichtesten und ein farbiges Periodensystem.',
@@ -320,6 +320,8 @@ export const de: Dict = {
 			symbol: (symbol) =>
 				`Es gibt kein Element „${symbol}“. Ein Symbol beginnt mit einem Großbuchstaben, der zweite Buchstabe ist klein: Na, Cl.`,
 			case: 'Elementsymbole beginnen mit einem Großbuchstaben.',
+			coefficient:
+				'Eine Zahl vor der ganzen Formel ist ein Koeffizient aus einer Reaktionsgleichung: Sie zählt Mol, die molare Masse hängt nicht von ihr ab.',
 			suggest: ['Meinten Sie', '?'],
 			weight: (name, symbol) =>
 				`${name} (${symbol}) hat keine stabilen Isotope und keine feste natürliche Zusammensetzung, daher gibt die IUPAC keine Standard-Atommasse an.`

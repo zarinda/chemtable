@@ -93,6 +93,7 @@
 	function errorText(e: FormulaError): string {
 		if (e.kind === 'symbol') return m.errors.symbol(e.symbol);
 		if (e.kind === 'case') return m.errors.case;
+		if (e.kind === 'coefficient') return m.errors.coefficient;
 		if (e.kind === 'weight') return m.errors.weight(e.element.name[lang], e.element.symbol);
 		return m.errors.syntax;
 	}
@@ -188,7 +189,7 @@
 			{#if showError && error}
 				<p class="error" id="formula-error" role="alert">
 					{errorText(error)}
-					{#if error.kind === 'case' && error.suggestion}
+					{#if (error.kind === 'case' || error.kind === 'coefficient') && error.suggestion}
 						{@const suggestion = error.suggestion}
 						{m.errors.suggest[0]}
 						<button type="button" class="suggestion" onclick={() => (input = suggestion)}

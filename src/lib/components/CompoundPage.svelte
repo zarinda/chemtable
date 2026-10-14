@@ -78,6 +78,9 @@
 	{#if compound.aka}
 		<p class="aka">{m.compound.aka} {compound.aka[lang]}</p>
 	{/if}
+	{#if compound.note}
+		<p class="aka">{compound.note[lang]}</p>
+	{/if}
 
 	<div class="grid">
 		<div class="card">

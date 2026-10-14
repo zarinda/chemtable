@@ -10,9 +10,8 @@
 		type PropertyKey
 	} from '#lib/elements.ts';
 	import { heatColor, heatInk } from '#lib/heat.ts';
-	import { formatMass, formatNumber, kelvinToCelsius } from '#lib/format.ts';
+	import { formatElectronegativity, formatMass, formatNumber, kelvinToCelsius } from '#lib/format.ts';
 	import { elementPath } from '#lib/seo.ts';
-	import { LANG_INFO } from '#lib/i18n/langs.ts';
 
 	/**
 	 * Every value of one property, server-rendered from the highest down: the list a search for
@@ -63,12 +62,8 @@
 			case 'density':
 				return { value: formatNumber(v, lang, v < 0.1 ? 6 : 3), unit: t.unit.density, note: '' };
 			case 'electronegativity':
-				// Pauling values are quoted to two decimals; a list of 2.2, 2 and 2.96 reads as uneven.
-				return {
-					value: v.toLocaleString(LANG_INFO[lang].tag, { minimumFractionDigits: 2 }),
-					unit: '',
-					note: ''
-				};
+				// As published: 2.20 for hydrogen, but 0.9 for radium, whose value is known to one decimal.
+				return { value: formatElectronegativity(e.electronegativityText ?? '', lang), unit: '', note: '' };
 			case 'atomicRadius':
 				return { value: formatNumber(v, lang, 0), unit: t.unit.atomicRadius, note: '' };
 			case 'ionizationEnergy':

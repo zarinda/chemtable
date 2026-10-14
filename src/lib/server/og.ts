@@ -4,7 +4,7 @@ import satori from 'satori';
 import { Resvg } from '@resvg/resvg-js';
 import { elements, type Element } from '../elements';
 import { UI } from '../i18n/ui';
-import type { Lang } from '../i18n/langs';
+import { LANG_INFO, type Lang } from '../i18n/langs';
 import { summaryFacts } from '../facts';
 import { C, FILL } from './palette';
 
@@ -151,12 +151,18 @@ function elementCard(e: Element, lang: Lang): Node {
 				name
 			),
 			h('div', { fontSize: 30, fontWeight: 400, marginTop: 20 }, t.category[e.category]),
-			h('div', { fontSize: 30, fontWeight: 400, marginTop: 6 }, `${t.atomicMass}${sep}${f.mass ?? t.noData}`),
+			h(
+				'div',
+				{ fontSize: 30, fontWeight: 400, marginTop: 6 },
+				// No standard atomic weight: say it is a mass number, not "atomic mass: 285".
+				`${f.massIsIsotope ? t.massIsotope.charAt(0).toLocaleUpperCase(LANG_INFO[lang].tag) + t.massIsotope.slice(1) : t.atomicMass}${sep}${f.mass ?? t.noData}`
+			),
 			h(
 				'div',
 				{ fontSize: 30, fontWeight: 400, marginTop: 6 },
 				e.group
-					? `${t.group}${sep}${e.group}${lang === 'zh' ? '，' : ', '}${t.period.toLowerCase()}${sep}${e.period}`
+					? // German nouns keep their capital: "Gruppe: 4, Periode: 7".
+						`${t.group}${sep}${e.group}${lang === 'zh' ? '，' : ', '}${lang === 'de' ? t.period : t.period.toLowerCase()}${sep}${e.period}`
 					: `${t.period}${sep}${e.period}`
 			)
 		),

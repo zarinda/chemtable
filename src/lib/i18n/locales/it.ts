@@ -72,12 +72,12 @@ export const it: Dict = {
 		period:
 			'Numero della riga orizzontale. Di solito è uguale al numero di gusci elettronici dell’atomo; fa eccezione il palladio, con quattro gusci nel periodo 5.',
 		block:
-			'Il sottolivello (s, p, d o f) riempito per ultimo dagli elettroni. Ogni blocco forma un’area rettangolare della tavola.',
+			'Il sottolivello (s, p, d o f) che, nell’ordine abituale di riempimento, riceve gli ultimi elettroni; divide la tavola in quattro blocchi. Alcuni atomi fanno eccezione: il lantanio apre il blocco f ma non ha elettroni f.',
 		config:
 			'Come gli elettroni sono distribuiti nei sottolivelli. La parentesi quadra indica il gas nobile precedente, l’esponente il numero di elettroni nel sottolivello.',
 		shells: 'Numero di elettroni in ciascun guscio, dal nucleo verso l’esterno.',
 		electronegativity:
-			'Quanto fortemente un atomo attira gli elettroni in un legame chimico. Nella scala di Pauling va da 0,7 del francio a 3,98 del fluoro.',
+			'Quanto fortemente un atomo attira gli elettroni in un legame chimico. Nella scala di Pauling va da 0,79 del cesio a 3,98 del fluoro.',
 		atomicRadius:
 			'Metà della lunghezza di un legame covalente semplice tra due atomi dell’elemento. Indica la dimensione dell’atomo in una molecola o in un cristallo: 76 pm per il carbonio, 132 pm per il ferro.',
 		density: 'Massa di un centimetro cubo della sostanza. Per i gas, a 0 °C e pressione normale.',
@@ -92,14 +92,14 @@ export const it: Dict = {
 		oxidationStates: 'Principali cariche formali che l’atomo assume nei suoi composti.'
 	},
 	trend: {
-		mass: 'Cresce con il numero atomico, con poche eccezioni: l’argon è più pesante del potassio, il cobalto del nichel, il tellurio dello iodio.',
+		mass: 'Cresce con il numero atomico, con poche eccezioni: l’argon è più pesante del potassio, il cobalto del nichel, il tellurio dello iodio, il torio del protoattinio.',
 		electronegativity:
 			'Aumenta da sinistra a destra lungo un periodo e diminuisce dall’alto in basso lungo un gruppo. Il fluoro ha il valore più alto.',
 		atomicRadius:
 			'In generale diminuisce da sinistra a destra lungo un periodo e aumenta dall’alto in basso lungo un gruppo.',
 		density:
 			'I più densi sono i metalli al centro del periodo 6: osmio e iridio. La scala è logaritmica perché i gas sono migliaia di volte più leggeri dei metalli.',
-		meltingPoint: 'Più alto per il carbonio e i metalli di transizione, più basso per i gas nobili.',
+		meltingPoint: 'Più alto per il carbonio e i metalli di transizione, più basso per l’elio e l’idrogeno.',
 		ionizationEnergy:
 			'Aumenta da sinistra a destra lungo un periodo, con il massimo nei gas nobili. Diminuisce dall’alto in basso lungo un gruppo.'
 	},
@@ -268,7 +268,7 @@ export const it: Dict = {
 		},
 		seoTitle: (title) => `${title}: tabella dei valori | ChemTable`,
 		description: {
-			mass: 'Masse atomiche di tutti i 118 elementi secondo la IUPAC: elenco dal più pesante al più leggero e tavola periodica colorata per massa atomica.',
+			mass: 'Masse atomiche standard IUPAC di 84 elementi e, per gli altri, numero di massa dell’isotopo più stabile: elenco per massa e tavola colorata.',
 			electronegativity: 'Elettronegatività di Pauling di tutti gli elementi: elenco ordinato e tavola periodica a colori. Il valore più alto è del fluoro, 3,98.',
 			atomicRadius: 'Raggi covalenti degli elementi in picometri (Cordero, 2008): elenco per dimensione dell’atomo e tavola periodica colorata per raggio.',
 			density: 'Densità degli elementi in g/cm³: elenco dai più densi, osmio e iridio, ai più leggeri e tavola periodica colorata per densità.',
@@ -320,6 +320,8 @@ export const it: Dict = {
 			symbol: (symbol) =>
 				`Non esiste l’elemento «${symbol}». Un simbolo inizia con la maiuscola e la seconda lettera è minuscola: Na, Cl.`,
 			case: 'I simboli degli elementi iniziano con la maiuscola.',
+			coefficient:
+				'Un numero davanti a tutta la formula è un coefficiente di un’equazione: conta le moli, e la massa molare non dipende da esso.',
 			suggest: ['Forse intendevi', '?'],
 			weight: (name, symbol) =>
 				`${name} (${symbol}) non ha isotopi stabili né una composizione naturale costante, quindi la IUPAC non gli assegna un peso atomico standard.`

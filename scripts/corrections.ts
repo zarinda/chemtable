@@ -10,7 +10,9 @@
 /**
  * Discovery credits were checked against the element's English Wikipedia infobox
  * ("discovered by", "first isolation"), which cites a source for each, and for elements
- * from 101 on, the IUPAC/IUPAP Joint Working Party decisions it reports.
+ * from 101 on, the IUPAC/IUPAP Joint Working Party decisions it reports. The rule: the
+ * discoverer is who first recognised the element (Black for magnesia, Scheele for baryta),
+ * not who later isolated the metal. Second audit 2026-10-14: infoboxes of all 118 elements.
  */
 const WIKI = (title: string) => `https://en.wikipedia.org/wiki/${title}`;
 
@@ -24,6 +26,16 @@ type Discovery = {
 
 /** Discovery year and discoverers where PubChem or Wikidata disagree with the standard credit. */
 export const DISCOVERY: Record<number, Discovery> = {
+	4: {
+		by: ['Q333438'],
+		why: 'Vauquelin discovered beryllium in 1798; Wöhler and Bussy only isolated the metal in 1828.',
+		source: WIKI('Beryllium')
+	},
+	5: {
+		by: ['Q153185', 'Q327722', 'Q131761'],
+		why: 'Gay-Lussac and Thénard (30 June 1808) and Davy (9 July 1808) found boron independently.',
+		source: WIKI('Boron')
+	},
 	6: {
 		by: [],
 		why: 'Known since antiquity; Lavoisier only classed it as an element.',
@@ -71,6 +83,27 @@ export const DISCOVERY: Record<number, Discovery> = {
 		why: 'Discovered by William Gregor in 1791, not Wöhler.',
 		source: WIKI('Titanium')
 	},
+	25: {
+		by: ['Q70538', 'Q353490'],
+		why: 'Scheele recognised manganese in 1774 and Gahn isolated it the same year.',
+		source: WIKI('Manganese')
+	},
+	30: {
+		year: 'ancient',
+		by: [],
+		why: 'Zinc was made in India before 1000 BC and used in brass since antiquity; 1746 is Marggraf’s isolation in Europe.',
+		source: WIKI('Zinc')
+	},
+	33: {
+		by: [],
+		why: 'Known since antiquity (Arabic alchemists before AD 815); Albertus Magnus is one early account, not the discoverer.',
+		source: WIKI('Arsenic')
+	},
+	39: {
+		by: ['Q312571'],
+		why: 'Gadolin discovered yttria in 1794; Wöhler only isolated the metal in 1838.',
+		source: WIKI('Yttrium')
+	},
 	40: {
 		by: ['Q160196'],
 		why: 'Klaproth discovered zirconium in 1789; others later purified the metal.',
@@ -80,6 +113,17 @@ export const DISCOVERY: Record<number, Discovery> = {
 		year: 1844,
 		why: 'Klaus discovered ruthenium in 1844; Osann’s 1827 claim was not confirmed.',
 		source: WIKI('Ruthenium')
+	},
+	56: {
+		year: 1772,
+		by: ['Q70538'],
+		why: 'Scheele distinguished baryta in 1772; Davy isolated the metal in 1808 (as with magnesium and strontium, the earlier recognition counts).',
+		source: WIKI('Barium')
+	},
+	58: {
+		by: ['Q160196', 'Q900478', 'Q151911'],
+		why: 'Klaproth and, independently, Hisinger with Berzelius found ceria in 1803; Hisinger was missing.',
+		source: WIKI('Cerium')
 	},
 	59: {
 		by: ['Q89390'],
@@ -96,15 +140,56 @@ export const DISCOVERY: Record<number, Discovery> = {
 		why: 'Credited to Antonio de Ulloa, 1735.',
 		source: WIKI('Platinum')
 	},
+	83: {
+		year: 'ancient',
+		by: [],
+		why: 'Known before AD 1000 (Arabic alchemists); 1753 is when Geoffroy showed it differs from lead and tin. CRC: known to the ancients.',
+		source: WIKI('Bismuth')
+	},
 	85: {
 		by: ['Q3012319', 'Q963428', 'Q173028'],
 		why: 'Corson, MacKenzie and Segrè made astatine together.',
 		source: WIKI('Astatine')
 	},
+	89: {
+		by: ['Q468371', 'Q76033'],
+		why: 'Debierne reported actinium in 1899, Giesel independently in 1902; whether Debierne’s sample was actinium is disputed.',
+		source: WIKI('Actinium')
+	},
+	91: {
+		by: ['Q213667', 'Q4402060', 'Q57065', 'Q56189'],
+		why: 'Fajans and Göhring found protactinium-234m in 1913; Hahn and Meitner found protactinium-231 in 1917–18. Göhring was missing.',
+		source: WIKI('Protactinium')
+	},
 	92: {
 		by: ['Q160196'],
 		why: 'Klaproth discovered uranium in 1789; Péligot isolated the metal in 1841.',
 		source: WIKI('Uranium')
+	},
+	95: {
+		by: ['Q48973', 'Q2023093', 'Q5973096', 'Q468345'],
+		why: 'Seaborg, James, Morgan and Ghiorso; Wikidata named Seaborg alone.',
+		source: WIKI('Americium')
+	},
+	96: {
+		by: ['Q48973', 'Q2023093', 'Q468345'],
+		why: 'Seaborg, James and Ghiorso; Wikidata named Seaborg alone.',
+		source: WIKI('Curium')
+	},
+	99: {
+		by: ['Q1133630'],
+		why: 'Found by a large Berkeley team (with Argonne and Los Alamos) in the debris of the 1952 hydrogen bomb test.',
+		source: WIKI('Einsteinium')
+	},
+	100: {
+		by: ['Q1133630'],
+		why: 'Found by the Berkeley team led by Ghiorso in the 1952 bomb debris; Wikidata named Seaborg alone.',
+		source: WIKI('Fermium')
+	},
+	101: {
+		by: ['Q1133630'],
+		why: 'Ghiorso, Harvey, Choppin, Thompson and Seaborg at Berkeley; Wikidata named Seaborg alone.',
+		source: WIKI('Mendelevium')
 	},
 	102: {
 		year: 1965,
@@ -112,11 +197,21 @@ export const DISCOVERY: Record<number, Discovery> = {
 		why: 'IUPAC credits Dubna (1965–66); the 1957 Stockholm claim was wrong.',
 		source: WIKI('Nobelium')
 	},
+	103: {
+		by: ['Q1133630', 'Q259517'],
+		why: 'IUPAC credits Berkeley (1961) and Dubna jointly; Wikidata named Ghiorso alone.',
+		source: WIKI('Lawrencium')
+	},
 	104: {
 		year: 1969,
 		by: ['Q259517', 'Q1133630'],
 		why: 'IUPAC shares the credit between Dubna (claims from 1964) and Berkeley (1969).',
 		source: WIKI('Rutherfordium')
+	},
+	105: {
+		year: 1970,
+		why: 'IUPAC shares the credit between Dubna (claims from 1968) and Berkeley (1970); as for rutherfordium, the year both had it.',
+		source: WIKI('Dubnium')
 	},
 	106: {
 		by: ['Q1133630'],
@@ -133,6 +228,32 @@ export const DISCOVERY: Record<number, Discovery> = {
 		by: ['Q1153275'],
 		why: 'IUPAC credits RIKEN (Japan), not Dubna.',
 		source: WIKI('Nihonium')
+	},
+	114: {
+		by: ['Q259517', 'Q519826'],
+		why: 'IUPAC credits the Dubna–Livermore collaboration; Livermore was missing.',
+		source: WIKI('Flerovium')
+	},
+	115: {
+		by: ['Q259517', 'Q519826'],
+		why: 'IUPAC credits the Dubna–Livermore collaboration; Livermore was missing.',
+		source: WIKI('Moscovium')
+	},
+	116: {
+		by: ['Q259517', 'Q519826'],
+		why: 'IUPAC credits the Dubna–Livermore collaboration; Livermore was missing.',
+		source: WIKI('Livermorium')
+	},
+	117: {
+		by: ['Q259517', 'Q519826', 'Q714439', 'Q29052'],
+		why: 'IUPAC credits the Dubna, Livermore, Oak Ridge and Vanderbilt collaboration; Wikidata named Oganessian alone.',
+		source: WIKI('Tennessine')
+	},
+	118: {
+		year: 2002,
+		by: ['Q259517', 'Q519826'],
+		why: 'First atom made at Dubna in 2002 (reported 2006) by the Dubna–Livermore collaboration; same rule as nihonium (first event).',
+		source: WIKI('Oganesson')
 	}
 };
 
@@ -147,6 +268,57 @@ export const NOT_EPONYMS: Record<number, string[]> = {
 	48: ['Q27613']
 };
 
+/** "Named after" items that replace Wikidata's, where Wikidata points at the wrong item. */
+export const EPONYMS: Record<number, { qids: string[]; why: string; source: string }> = {
+	94: {
+		qids: ['Q339'],
+		why: 'Named after the dwarf planet Pluto, following uranium and neptunium; Wikidata points at the Roman god.',
+		source: WIKI('Plutonium')
+	}
+};
+
+type Lang = 'en' | 'ru' | 'fr' | 'de' | 'it' | 'es' | 'zh' | 'pt';
+
+/**
+ * Element names that override Wikidata's label. Brazilian Portuguese: "hólmio" (Houaiss,
+ * Dicio, InfoEscola), "nihônio" (the Portuguese form IUPAC/IUPAP's recommendation
+ * suggested, Revista Pesquisa FAPESP 2016).
+ */
+export const NAMES: Record<number, { name: Partial<Record<Lang, string>>; why: string; source: string }> = {
+	67: {
+		name: { pt: 'Hólmio' },
+		why: 'Wikidata’s pt-br label "Hôlmio" has the wrong accent.',
+		source: 'https://www.dicio.com.br/holmio/'
+	},
+	113: {
+		name: { pt: 'Nihônio' },
+		why: 'Wikidata’s pt-br label "Niônio" drops the h of Nihon.',
+		source: 'https://revistapesquisa.fapesp.br/escolhidos-os-nomes-dos-novos-elementos-da-tabela-periodica-2/'
+	}
+};
+
+/**
+ * Labels of people and places where Wikidata has none in a language (the English one would
+ * show in Russian text) or a form that reads wrongly in a list ("Клаус, Карл Карлович").
+ */
+export const LABELS: Record<string, Partial<Record<Lang, string>>> = {
+	Q554178: { ru: 'Карл Клаус' },
+	Q2939237: { ru: 'Карло Перрье' },
+	Q69080: { ru: 'Карл Герман' },
+	Q260328: { ru: 'Чарльз Кориелл' },
+	Q904562: { ru: 'Лоуренс Гленденин' },
+	Q85727: { ru: 'Отто Берг' },
+	Q7342248: { ru: 'Роберт Оуэнс' },
+	Q1989591: { ru: 'Кеннет Стрит-младший' },
+	Q76033: { ru: 'Фридрих Гизель', zh: '弗里德里希·奥斯卡·吉塞尔' },
+	Q4402060: { ru: 'Освальд Гёринг' },
+	Q2023093: { ru: 'Ральф Джеймс', zh: '拉尔夫·詹姆斯' },
+	Q5973096: { ru: 'Леон Морган', zh: '莱昂·摩根' },
+	Q519826: { zh: '劳伦斯利弗莫尔国家实验室' },
+	Q38060: { pt: 'Gália' },
+	Q182101: { pt: 'Tântalo' }
+};
+
 /** Lawrencium's ground state is 7s² 7p¹, not 6d¹ (NIST ASD; ionization energy measured in 2015). */
 export const CONFIG: Record<number, string> = {
 	103: '[Rn]7s2 5f14 7p1'
@@ -159,21 +331,68 @@ export const CONFIG: Record<number, string> = {
 export const statePredicted = (z: number) => z === 85 || z === 87 || z >= 100;
 export const configPredicted = (z: number) => z >= 103;
 
+/**
+ * Predicted states newer than PubChem's: relativistic calculations make copernicium and
+ * flerovium liquids and oganesson a solid at room temperature ("Copernicium: a relativistic
+ * noble liquid", Mewes et al., Angew. Chem. 2019; "Oganesson: a noble gas element that is
+ * neither noble nor a gas", Smits et al., Angew. Chem. 2020; flerovium as in the Wikipedia
+ * infobox and the calculations it cites). Still shown as predictions.
+ */
+export const STATE: Record<number, { state: 'solid' | 'liquid' | 'gas'; why: string; source: string }> = {
+	112: {
+		state: 'liquid',
+		why: 'Predicted melting point 283 ± 11 K, boiling point 340 ± 10 K; PubChem says solid.',
+		source: WIKI('Copernicium')
+	},
+	114: {
+		state: 'liquid',
+		why: 'Predicted melting point 284 ± 50 K; PubChem says solid.',
+		source: WIKI('Flerovium')
+	},
+	118: {
+		state: 'solid',
+		why: 'Predicted melting point 325 ± 15 K; PubChem says gas.',
+		source: WIKI('Oganesson')
+	}
+};
+
+/**
+ * Mass numbers of the most stable isotope where PubChem picks one that is unconfirmed
+ * (a single decay chain): the longest-lived confirmed isotope instead, as Wikipedia's
+ * isotope lists give it from NUBASE2020.
+ */
+export const MASS_NUMBER: Record<number, { value: number; why: string; source: string }> = {
+	109: { value: 278, why: 'PubChem [277]; ²⁷⁸Mt is the longest-lived known isotope (4.5 s).', source: WIKI('Isotopes_of_meitnerium') },
+	110: { value: 281, why: 'PubChem [282]; ²⁸²Ds is unconfirmed, ²⁸¹Ds (14 s) is the longest-lived confirmed one.', source: WIKI('Isotopes_of_darmstadtium') },
+	112: { value: 285, why: 'PubChem [286]; ²⁸⁶Cn is unconfirmed, ²⁸⁵Cn (30 s) is the most stable known one.', source: WIKI('Copernicium') },
+	114: { value: 289, why: 'PubChem [290]; ²⁹⁰Fl is unconfirmed, ²⁸⁹Fl is the longest-lived known one.', source: WIKI('Isotopes_of_flerovium') },
+	118: { value: 294, why: 'PubChem [295]; ²⁹⁴Og is the only confirmed isotope.', source: WIKI('Oganesson') }
+};
+
 type Field = 'meltingPoint' | 'boilingPoint' | 'density' | 'electronegativity';
 
 /** PubChem values that are estimates or where sources disagree widely: shown as "no data". */
 export const REMOVE: Record<number, Partial<Record<Field, string>>> = {
+	61: {
+		boilingPoint: 'Estimate: Lange’s Handbook marks the 3000 °C as est.'
+	},
 	85: {
 		meltingPoint: 'Estimate; no bulk sample has been made.',
-		density: 'Estimate; no bulk sample has been made.'
+		density: 'Estimate; no bulk sample has been made.',
+		electronegativity: 'Pauling’s estimate 2.2; no weighable astatine compound has been made.'
 	},
-	87: { meltingPoint: 'Estimate; no bulk sample has been made.' },
+	87: {
+		meltingPoint: 'Estimate; no bulk sample has been made.',
+		electronegativity:
+			'Pauling’s 0.7 is an extrapolation of uncertain provenance; calculations put francium above caesium (Wikipedia, Electronegativity and its data page).'
+	},
 	88: {
 		boilingPoint: 'Sources disagree: 1413 K (PubChem) vs 2010 K (Wikidata).'
 	},
 	95: {
 		boilingPoint: 'Sources disagree: 2284 K (PubChem) vs 2880 K (Wikidata).',
-		electronegativity: 'Pauling’s estimate 1.3, not a measured value.'
+		electronegativity: 'Pauling’s estimate 1.3, not a measured value.',
+		density: 'Sources disagree: 13.69 (PubChem) vs 12 (CRC, Lange, Wikipedia).'
 	},
 	96: { electronegativity: 'Pauling’s estimate 1.3, not a measured value.' },
 	97: { electronegativity: 'Pauling’s estimate 1.3, not a measured value.' },
@@ -198,12 +417,84 @@ export const REMOVE: Record<number, Partial<Record<Field, string>>> = {
 };
 
 /**
+ * PubChem values replaced by the CRC Handbook (via the `mendeleev` package) where the two
+ * disagree and further sources side with CRC. Second audit 2026-10-14: every melting point,
+ * boiling point and density compared with CRC, Lange, WebElements and Wikipedia.
+ */
+export const VALUE: Record<
+	number,
+	Partial<Record<'meltingPoint' | 'boilingPoint' | 'density', { value: number; why: string; source: string }>>
+> = {
+	1: {
+		meltingPoint: {
+			value: 13.99,
+			why: 'PubChem 13.81 K is the triple point of para-hydrogen; ordinary hydrogen melts at 13.99 K (CRC).',
+			source: WIKI('Hydrogen')
+		}
+	},
+	6: {
+		meltingPoint: {
+			value: 4762,
+			why: 'PubChem 3823 K (3550 °C) is lower than graphite’s own sublimation point; CRC gives the triple point, 4489 °C at 10.3 MPa.',
+			source: WIKI('Melting_points_of_the_elements_(data_page)')
+		}
+	},
+	36: {
+		density: {
+			value: 0.003749,
+			why: '3.749 g/L at 0 °C and 101.325 kPa (Lange, Wikipedia); PubChem 3.733 is low.',
+			source: WIKI('Densities_of_the_elements_(data_page)')
+		}
+	},
+	54: {
+		density: {
+			value: 0.005894,
+			why: '5.894 g/L at 0 °C and 101.325 kPa (Wikipedia, van der Waals); PubChem 5.887 is low.',
+			source: WIKI('Densities_of_the_elements_(data_page)')
+		}
+	},
+	56: {
+		boilingPoint: {
+			value: 2118,
+			why: '1845 °C in CRC and Lange (WebElements 1870 °C); PubChem 1897 °C matches none of them.',
+			source: WIKI('Boiling_points_of_the_elements_(data_page)')
+		}
+	},
+	96: {
+		boilingPoint: {
+			value: 3383,
+			why: 'About 3110 °C (WebElements, Lange; CRC about 3100 °C); PubChem rounds to 3400 K.',
+			source: WIKI('Boiling_points_of_the_elements_(data_page)')
+		}
+	},
+	97: {
+		meltingPoint: {
+			value: 1259,
+			why: '986 °C in the current CRC Handbook and Wikipedia; PubChem 1050 °C is an older value.',
+			source: WIKI('Berkelium')
+		},
+		density: {
+			value: 14.78,
+			why: 'α-berkelium 14.78 g/cm³ (CRC, Lange, WebElements); PubChem rounds to 14.',
+			source: WIKI('Densities_of_the_elements_(data_page)')
+		}
+	}
+};
+
+/**
  * Melting points that hold only under pressure, and "boiling points" that are really
  * sublimation (CRC Handbook). Helium solidifies only above ~25 atm; arsenic and graphite
  * turn straight into vapour at normal pressure.
  */
 export const MELTS_UNDER_PRESSURE = new Set([2, 6, 33]);
 export const SUBLIMES = new Set([6, 33]);
+
+/**
+ * Pauling electronegativities published with one decimal (Pauling's 1960 values that
+ * Allred did not recalculate in 1961), per Wikipedia's "Electronegativities of the elements
+ * (data page)". All others have two: hydrogen is 2.20, not 2.2, and radium 0.9, not 0.90.
+ */
+export const ELECTRONEGATIVITY_ONE_DECIMAL = new Set([41, 43, 44, 52, 54, 72, 73, 75, 76, 84, 88, 89, 90, 91]);
 
 /**
  * Main oxidation states missing from PubChem's short list (Greenwood & Earnshaw, as
@@ -342,10 +633,13 @@ export const ELECTRON_AFFINITY: Record<number, number | 'unstable'> = {
  * Dalton Trans. 2008, 2832–2838, doi:10.1039/b801115j. Carbon is sp³; manganese, iron and
  * cobalt are the low-spin values. Replaces PubChem's radius, which mixed van der Waals
  * radii from different sources (copper 140 pm next to iron 194 pm).
+ *
+ * Left out: the radii Cordero et al. interpolated "for elements for which structural data
+ * is lacking, notably the noble gases" (abstract, PubMed 18478144), the ones the paper gives
+ * without a standard deviation: He 28, Ne 58, Pm 199, At 150, Rn 150, Fr 260, Ac 215, Pa 200.
  */
 export const COVALENT_RADIUS: Record<number, number> = {
 	1: 31,
-	2: 28,
 	3: 128,
 	4: 96,
 	5: 84,
@@ -353,7 +647,6 @@ export const COVALENT_RADIUS: Record<number, number> = {
 	7: 71,
 	8: 66,
 	9: 57,
-	10: 58,
 	11: 166,
 	12: 141,
 	13: 121,
@@ -404,7 +697,6 @@ export const COVALENT_RADIUS: Record<number, number> = {
 	58: 204,
 	59: 203,
 	60: 201,
-	61: 199,
 	62: 198,
 	63: 198,
 	64: 196,
@@ -428,13 +720,8 @@ export const COVALENT_RADIUS: Record<number, number> = {
 	82: 146,
 	83: 148,
 	84: 140,
-	85: 150,
-	86: 150,
-	87: 260,
 	88: 221,
-	89: 215,
 	90: 206,
-	91: 200,
 	92: 196,
 	93: 190,
 	94: 187,

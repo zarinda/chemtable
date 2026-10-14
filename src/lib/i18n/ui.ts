@@ -245,6 +245,8 @@ export type Dict = {
 			/** Receives the unknown symbol as typed. */
 			symbol: (symbol: string) => string;
 			case: string;
+			/** A number before the whole formula (2H2O) is a reaction coefficient, not part of it. */
+			coefficient: string;
 			/** Around a corrected formula to click: ["Did you mean", "?"] H2SO4. */
 			suggest: [string, string];
 			weight: (name: string, symbol: string) => string;

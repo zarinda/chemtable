@@ -23,7 +23,7 @@ export function facts(e: Element) {
 		'Melting point': temp(e.meltingPoint, e.meltsUnderPressure ? 'only under pressure' : ''),
 		'Boiling point': temp(e.boilingPoint, e.sublimes ? 'sublimes' : ''),
 		'Density (g/cm³)': e.density,
-		'Electronegativity (Pauling)': e.electronegativity,
+		'Electronegativity (Pauling)': e.electronegativityText,
 		'First ionization energy (eV)': e.ionizationEnergy,
 		'Electron affinity (eV)':
 			e.electronAffinity === 'unstable' ? 'no stable anion' : e.electronAffinity,

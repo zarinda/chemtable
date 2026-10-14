@@ -1,7 +1,14 @@
 <script lang="ts">
 	import { app } from '#lib/state.svelte.ts';
 	import { elements, type Element } from '#lib/elements.ts';
-	import { formatConfig, formatMass, formatNames, formatNumber, kelvinToCelsius } from '#lib/format.ts';
+	import {
+		formatConfig,
+		formatElectronegativity,
+		formatMass,
+		formatNames,
+		formatNumber,
+		kelvinToCelsius
+	} from '#lib/format.ts';
 	import { elementPath, homePath, summaryFacts } from '#lib/seo.ts';
 
 	/**
@@ -33,7 +40,12 @@
 		[t.property.meltingPoint, celsius(e.meltingPoint, e.meltsUnderPressure, t.underPressure)],
 		[t.boilingPoint, celsius(e.boilingPoint, e.sublimes, t.sublimes)],
 		[t.property.density, num(e.density, t.unit.density, e.density !== null && e.density < 0.1 ? 6 : 3)],
-		[t.property.electronegativity, num(e.electronegativity, t.unit.electronegativity, 2)],
+		[
+			t.property.electronegativity,
+			e.electronegativityText === null
+				? t.noData
+				: `${formatElectronegativity(e.electronegativityText, lang)} ${t.unit.electronegativity}`
+		],
 		[t.property.ionizationEnergy, num(e.ionizationEnergy, t.unit.ionizationEnergy)],
 		[t.electronAffinity, affinity(e.electronAffinity)],
 		[t.property.atomicRadius, num(e.atomicRadius, t.unit.atomicRadius, 0)],

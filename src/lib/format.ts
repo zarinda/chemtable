@@ -18,6 +18,9 @@ export function formatMass(text: string, lang: Lang): string {
 	return text.replace('.', decimalSeparator(lang));
 }
 
+/** Pauling electronegativity with the decimals its source gives: 2.20 for hydrogen, 0.9 for radium. */
+export const formatElectronegativity = formatMass;
+
 /** "Lockyer, Janssen and Ramsay", joined the way the language joins lists. */
 export function formatNames(items: Named[], lang: Lang): string {
 	return new Intl.ListFormat(locale(lang), { type: 'conjunction' }).format(items.map((x) => x.name[lang]));

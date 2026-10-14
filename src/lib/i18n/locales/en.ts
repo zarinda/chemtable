@@ -72,12 +72,12 @@ export const en: Dict = {
 		period:
 			'Number of the horizontal row. Usually equal to the number of electron shells in the atom; palladium is the exception, with four shells in period 5.',
 		block:
-			'The subshell (s, p, d or f) that receives electrons last. Each block forms a rectangular area of the table.',
+			'The subshell (s, p, d or f) that receives the last electrons in the usual filling order; it divides the table into four blocks. Real atoms sometimes differ: lanthanum starts the f-block but has no f electrons.',
 		config:
 			'How electrons are arranged in subshells. The bracket stands for the previous noble gas; the superscript is the number of electrons in a subshell.',
 		shells: 'Number of electrons in each shell, from the nucleus outwards.',
 		electronegativity:
-			'How strongly an atom pulls electrons towards itself in a chemical bond. On the Pauling scale it runs from 0.7 for francium to 3.98 for fluorine.',
+			'How strongly an atom pulls electrons towards itself in a chemical bond. On the Pauling scale it runs from 0.79 for caesium to 3.98 for fluorine.',
 		atomicRadius:
 			'Half the length of a single covalent bond between two atoms of the element. It shows the size of an atom inside a molecule or crystal: 76 pm for carbon, 132 pm for iron.',
 		density: 'Mass of one cubic centimetre of the substance. For gases, at 0 °C and standard pressure.',
@@ -92,13 +92,13 @@ export const en: Dict = {
 		oxidationStates: 'Main formal charges the atom takes in its compounds.'
 	},
 	trend: {
-		mass: 'Grows with atomic number, with a few exceptions: argon is heavier than potassium, cobalt than nickel, tellurium than iodine.',
+		mass: 'Grows with atomic number, with a few exceptions: argon is heavier than potassium, cobalt than nickel, tellurium than iodine, thorium than protactinium.',
 		electronegativity:
 			'Rises left to right across a period and falls down a group. Fluorine has the highest value.',
 		atomicRadius: 'Generally shrinks left to right across a period and grows down a group.',
 		density:
 			'The densest are metals in the middle of period 6: osmium and iridium. The scale is logarithmic because gases are thousands of times lighter than metals.',
-		meltingPoint: 'Highest for carbon and the transition metals, lowest for the noble gases.',
+		meltingPoint: 'Highest for carbon and the transition metals, lowest for helium and hydrogen.',
 		ionizationEnergy:
 			'Rises left to right across a period, peaking at the noble gases. Falls down a group.'
 	},
@@ -269,7 +269,7 @@ export const en: Dict = {
 		},
 		seoTitle: (title) => `${title}: Chart and List of Values | ChemTable`,
 		description: {
-			mass: 'Atomic masses of all 118 elements from IUPAC: a list from the heaviest to the lightest and a periodic table coloured by atomic mass.',
+			mass: 'IUPAC standard atomic weights of 84 elements, for the rest the mass number of the most stable isotope: a list from heaviest to lightest and a coloured table.',
 			electronegativity: 'Pauling electronegativity of every element, as a ranked list and a colour-coded periodic table. Fluorine has the highest value, 3.98.',
 			atomicRadius: 'Covalent radii of the elements in picometres (Cordero 2008): a list by atom size and a periodic table coloured by radius.',
 			density: 'Density of the elements in g/cm³: a list from the densest, osmium and iridium, to the lightest, and a periodic table coloured by density.',
@@ -321,6 +321,8 @@ export const en: Dict = {
 			symbol: (symbol) =>
 				`There is no element “${symbol}”. A symbol starts with a capital letter, and a second letter is lower case: Na, Cl.`,
 			case: 'Element symbols start with a capital letter.',
+			coefficient:
+				'A number in front of the whole formula is a coefficient from an equation: it counts moles, and the molar mass does not depend on it.',
 			suggest: ['Did you mean', '?'],
 			weight: (name, symbol) =>
 				`${name} (${symbol}) has no stable isotopes and no constant natural composition, so IUPAC gives it no standard atomic weight.`

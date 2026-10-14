@@ -35,6 +35,8 @@ export type Element = {
 	state: 'solid' | 'liquid' | 'gas';
 	statePredicted: boolean;
 	electronegativity: number | null;
+	/** Pauling value as published: '2.20', or '0.9' where only one decimal is known. */
+	electronegativityText: string | null;
 	/** Single-bond covalent radius, pm (Cordero 2008). */
 	atomicRadius: number | null;
 	ionizationEnergy: number | null;

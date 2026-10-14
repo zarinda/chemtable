@@ -3,7 +3,7 @@ import { join } from 'node:path';
 import { elements, CATEGORIES, fetchedAt, type Category, type Element } from '../elements';
 import { UI } from '../i18n/ui';
 import { LANG_INFO, type Lang } from '../i18n/langs';
-import { formatMass } from '../format';
+import { formatElectronegativity, formatMass } from '../format';
 import { PAPER_MM, type Paper, type Variant } from '../print';
 import { C, FILL } from './palette';
 
@@ -90,15 +90,9 @@ function fontFaces(): string {
 	].join('\n');
 }
 
-/** Pauling electronegativity always with two decimals, as tables print it: 1.00, not 1. */
-const pauling = (value: number, lang: Lang) =>
-	new Intl.NumberFormat(LANG_INFO[lang].tag, {
-		minimumFractionDigits: 2,
-		maximumFractionDigits: 2
-	}).format(value);
-
 function cell(e: Element, lang: Lang, attrs = '') {
-	const chi = e.electronegativity === null ? '' : pauling(e.electronegativity, lang);
+	// As published: 1.00 for calcium, 0.9 for radium (known to one decimal only).
+	const chi = e.electronegativityText === null ? '' : formatElectronegativity(e.electronegativityText, lang);
 	const mass = e.mass.text ? formatMass(e.mass.text, lang) : '';
 	return `<div class="cell cat-${e.category}"${attrs}>
 	<div class="top"><b>${e.z}</b><span>${chi}</span></div>

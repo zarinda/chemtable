@@ -73,12 +73,12 @@ export const pt: Dict = {
 		period:
 			'Número da linha horizontal. Em geral é igual ao número de camadas eletrônicas do átomo; a exceção é o paládio, com quatro camadas no período 5.',
 		block:
-			'O subnível (s, p, d ou f) preenchido por último pelos elétrons. Cada bloco forma uma área retangular da tabela.',
+			'O subnível (s, p, d ou f) que recebe os últimos elétrons na ordem habitual de preenchimento; ele divide a tabela em quatro blocos. Alguns átomos fogem à regra: o lantânio abre o bloco f, mas não tem elétrons f.',
 		config:
 			'Como os elétrons se distribuem nos subníveis. Os colchetes representam o gás nobre anterior; o expoente, o número de elétrons no subnível.',
 		shells: 'Número de elétrons em cada camada, do núcleo para fora.',
 		electronegativity:
-			'Com que força um átomo atrai elétrons em uma ligação química. Na escala de Pauling, vai de 0,7 no frâncio a 3,98 no flúor.',
+			'Com que força um átomo atrai elétrons em uma ligação química. Na escala de Pauling, vai de 0,79 no césio a 3,98 no flúor.',
 		atomicRadius:
 			'Metade do comprimento de uma ligação covalente simples entre dois átomos do elemento. Indica o tamanho do átomo em uma molécula ou cristal: 76 pm no carbono, 132 pm no ferro.',
 		density: 'Massa de um centímetro cúbico da substância. Para gases, a 0 °C e pressão normal.',
@@ -93,14 +93,14 @@ export const pt: Dict = {
 		oxidationStates: 'Principais cargas formais que o átomo assume em seus compostos.'
 	},
 	trend: {
-		mass: 'Cresce com o número atômico, com poucas exceções: o argônio é mais pesado que o potássio, o cobalto que o níquel e o telúrio que o iodo.',
+		mass: 'Cresce com o número atômico, com poucas exceções: o argônio é mais pesado que o potássio, o cobalto que o níquel, o telúrio que o iodo e o tório que o protactínio.',
 		electronegativity:
 			'Aumenta da esquerda para a direita em um período e diminui de cima para baixo em um grupo. O flúor tem o maior valor.',
 		atomicRadius:
 			'Em geral diminui da esquerda para a direita em um período e aumenta de cima para baixo em um grupo.',
 		density:
 			'Os mais densos são os metais no meio do 6º período: ósmio e irídio. A escala é logarítmica porque os gases são milhares de vezes mais leves que os metais.',
-		meltingPoint: 'É mais alto no carbono e nos metais de transição e mais baixo nos gases nobres.',
+		meltingPoint: 'É mais alto no carbono e nos metais de transição e mais baixo no hélio e no hidrogênio.',
 		ionizationEnergy:
 			'Aumenta da esquerda para a direita em um período, com o máximo nos gases nobres. Diminui de cima para baixo em um grupo.'
 	},
@@ -269,7 +269,7 @@ export const pt: Dict = {
 		},
 		seoTitle: (title) => `${title}: tabela de valores | ChemTable`,
 		description: {
-			mass: 'Massas atômicas dos 118 elementos segundo a IUPAC: lista do mais pesado ao mais leve e tabela periódica colorida por massa atômica.',
+			mass: 'Massas atômicas padrão da IUPAC de 84 elementos e, para os demais, número de massa do isótopo mais estável: lista do mais pesado ao mais leve e tabela colorida.',
 			electronegativity: 'Eletronegatividade de Pauling de todos os elementos: lista ordenada e tabela periódica em cores. O flúor tem a maior, 3,98.',
 			atomicRadius: 'Raios covalentes dos elementos em picômetros (Cordero, 2008): lista por tamanho do átomo e tabela periódica colorida por raio.',
 			density: 'Densidade dos elementos em g/cm³: lista dos mais densos, ósmio e irídio, aos mais leves e tabela periódica colorida por densidade.',
@@ -321,6 +321,8 @@ export const pt: Dict = {
 			symbol: (symbol) =>
 				`Não existe o elemento “${symbol}”. Um símbolo começa com letra maiúscula, e a segunda letra é minúscula: Na, Cl.`,
 			case: 'Os símbolos dos elementos começam com letra maiúscula.',
+			coefficient:
+				'Um número antes de toda a fórmula é um coeficiente de equação: ele conta mols, e a massa molar não depende dele.',
 			suggest: ['Você quis dizer', '?'],
 			weight: (name, symbol) =>
 				`${name} (${symbol}) não tem isótopos estáveis nem composição natural constante, por isso a IUPAC não lhe atribui massa atômica padrão.`

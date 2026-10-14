@@ -3,7 +3,14 @@
 	import { cubicInOut } from 'svelte/easing';
 	import { app } from '#lib/state.svelte.ts';
 	import { elements, sources, type Element } from '#lib/elements.ts';
-	import { formatConfig, formatMass, formatNames, formatNumber, kelvinToCelsius } from '#lib/format.ts';
+	import {
+		formatConfig,
+		formatElectronegativity,
+		formatMass,
+		formatNames,
+		formatNumber,
+		kelvinToCelsius
+	} from '#lib/format.ts';
 	import type { Term } from '#lib/i18n/ui.ts';
 	import Shells from './Shells.svelte';
 	import { dev } from '$app/env';
@@ -85,7 +92,9 @@
 			[
 				'electronegativity',
 				t.property.electronegativity,
-				num(e.electronegativity, t.unit.electronegativity, 2)
+				e.electronegativityText === null
+					? t.noData
+					: `${formatElectronegativity(e.electronegativityText, app.lang)} ${t.unit.electronegativity}`
 			],
 			[
 				'ionizationEnergy',
