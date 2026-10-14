@@ -1,0 +1,82 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><style>
+@font-face{font-family:Oswald;font-weight:600;src:url(file:///D:/ChemTable/node_modules/@fontsource/oswald/files/oswald-latin-600-normal.woff2)}
+@font-face{font-family:Oswald;font-weight:600;src:url(file:///D:/ChemTable/node_modules/@fontsource/oswald/files/oswald-cyrillic-600-normal.woff2);unicode-range:U+0400-04FF}
+@font-face{font-family:Bebas;src:url(file:///D:/ChemTable/node_modules/@fontsource/bebas-neue/files/bebas-neue-latin-400-normal.woff2)}
+@font-face{font-family:Golos;font-weight:400 900;src:url(file:///D:/ChemTable/node_modules/@fontsource-variable/golos-text/files/golos-text-latin-wght-normal.woff2)}
+@font-face{font-family:Golos;font-weight:400 900;src:url(file:///D:/ChemTable/node_modules/@fontsource-variable/golos-text/files/golos-text-cyrillic-wght-normal.woff2);unicode-range:U+0400-04FF}
+
+:root{--mustard:#e3a83a;--paper:#e6e3da;--ink:#000;--teal:#126f60;--orange:#ee7430;--raspberry:#df3b57;--green:#1d7442;--peach:#f4b48a;
+--bg:var(--mustard);--fg:var(--ink);--surface:var(--paper);--on-surface:var(--ink);--rule:var(--ink);--line:color-mix(in srgb,var(--fg) 45%,transparent)}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--fg);font-family:Golos,system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.45}
+body{position:relative}
+body::after{content:'';position:absolute;inset:0;pointer-events:none;z-index:100;opacity:.32;mix-blend-mode:multiply;
+background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1.4 1'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.cat-alkali-metal{--fill:var(--orange);--on:var(--ink);--tex:none}
+.cat-alkaline-earth-metal{--fill:var(--orange);--on:var(--ink);--tex:radial-gradient(circle,rgb(0 0 0/.24) 1px,transparent 1.3px) 0 0/5px 5px}
+.cat-transition-metal{--fill:var(--paper);--on:var(--ink);--tex:radial-gradient(circle,rgb(0 0 0/.22) .7px,transparent 1px) 0 0/3.5px 3.5px}
+.cat-post-transition-metal{--fill:var(--paper);--on:var(--ink);--tex:repeating-linear-gradient(135deg,rgb(0 0 0/.18) 0 1px,transparent 1px 4px)}
+.cat-metalloid{--fill:var(--green);--on:var(--paper);--tex:radial-gradient(circle,rgb(255 255 255/.25) .9px,transparent 1.2px) 0 0/4px 4px}
+.cat-nonmetal{--fill:var(--teal);--on:var(--paper);--tex:none}
+.cat-halogen{--fill:var(--teal);--on:var(--paper);--tex:repeating-linear-gradient(0deg,rgb(0 0 0/.25) 0 1px,transparent 1px 3.5px)}
+.cat-noble-gas{--fill:var(--raspberry);--on:var(--ink);--tex:none}
+.cat-lanthanide{--fill:var(--peach);--on:var(--ink);--tex:radial-gradient(circle,rgb(0 0 0/.2) 1.2px,transparent 1.5px) 0 0/6px 6px}
+.cat-actinide{--fill:var(--ink);--on:var(--paper);--tex:radial-gradient(circle,rgb(255 255 255/.3) 1px,transparent 1.3px) 0 0/4px 4px}
+.sw{background:var(--tex),var(--fill);color:var(--on)}
+.display{font-family:Oswald,'Arial Narrow',sans-serif;font-weight:600;line-height:1.05;letter-spacing:-.2px}
+.num{font-family:Bebas,Oswald,sans-serif;line-height:1}
+.unknown{background:repeating-linear-gradient(135deg,color-mix(in srgb,var(--fg) 22%,transparent) 0 1px,transparent 1px 6px);color:color-mix(in srgb,var(--fg) 45%,transparent)}
+a{color:inherit;text-underline-offset:3px}
+.pill,.chip{display:inline-flex;align-items:center;gap:.4em;border:1.5px solid var(--fg);border-radius:99px;padding:.35em .85em;font-size:14px;white-space:nowrap}
+.chip.on{background:var(--fg);color:var(--bg)}
+.round{display:inline-grid;place-items:center;width:34px;height:34px;border:1.5px solid var(--fg);border-radius:50%;font-size:15px}
+.new{display:inline-block;margin-left:10px;padding:2px 8px;border-radius:99px;background:var(--raspberry);color:#fff;font:600 12px/1.4 Golos,sans-serif;letter-spacing:0;vertical-align:middle}
+.lead{font-size:var(--lead,17px);max-width:68ch;margin:0}
+.card{background:var(--surface);color:var(--on-surface);box-shadow:6px 6px 0 var(--rule)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;background:var(--fg);color:var(--bg);border-radius:99px;padding:13px 24px;font-weight:600;font-size:16px}
+.seg{display:inline-flex;border:1.5px solid var(--fg);border-radius:99px;overflow:hidden;font-size:14px}
+.seg span{padding:.45em 1em}
+.seg span.on{background:var(--fg);color:var(--bg)}
+.note{font-size:13px;opacity:.85}
+h2.display{font-size:28px;margin:0 0 14px}
+
+.qa{padding:18px 20px 8px;margin:22px 0 10px}
+.qa h2{font-size:26px;margin:0 0 6px}
+.qr{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline;padding:10px 0;border-bottom:1px solid color-mix(in srgb,var(--on-surface) 35%,transparent)}
+.qr:last-child{border:0}
+.q{font-size:15px}
+.a{text-align:right}
+.a b{font-family:Oswald;font-weight:600;font-size:24px;line-height:1}
+.a small{display:block;font-size:12px;opacity:.75}
+.key{display:grid;gap:0 24px}
+.key div{border-top:2px solid var(--rule);padding-top:8px}
+.lb2{font-size:13px;text-decoration:underline dotted;text-underline-offset:3px}
+.key .num{display:block;font-size:40px;margin-top:4px}
+.key .blk{font-family:Oswald;font-weight:600;font-size:34px}
+dl{margin:10px 0 0}
+dl div{display:grid;grid-template-columns:var(--dlcols,1fr);padding:10px 0;border-top:1px solid var(--line)}
+dt{font-size:14px;text-decoration:underline dotted;text-underline-offset:3px}
+dd{margin:0;font-size:16px}
+
+body{width:1440px;height:1100px;overflow:hidden}
+.top{display:flex;align-items:flex-end;justify-content:space-between;margin:0 56px;padding:26px 0 12px;border-bottom:2px solid var(--rule)}
+.top h1{font-size:72px;margin:0;line-height:1}
+.nav{display:flex;gap:8px;align-items:center}
+.layout{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:56px;padding:30px 56px}
+.fig{position:relative}
+.bigz{position:absolute;left:420px;top:390px;background:var(--paper);color:var(--raspberry);font-size:120px;padding:10px 18px 0}
+.data{max-width:640px}
+</style></head><body><div class="top"><div><h1 class="display">Железо</h1><span>Iron</span></div><span class="nav"><span class="round">←</span><span class="round">→</span><span class="btn" style="padding:8px 16px;font-size:14px">Закрыть</span></span></div>
+<div class="layout">
+  <div class="fig"><svg viewBox="0 0 600 600" width="520" height="520"><circle cx="300" cy="300" r="70" fill="var(--paper)" stroke="var(--fg)" stroke-width="1.5"/>
+<text x="300" y="336" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="110" fill="#000">Fe</text><circle cx="300" cy="300" r="92" fill="none" stroke="var(--fg)" stroke-width="1.2" opacity=".75"/><circle cx="300" cy="208" r="7" fill="var(--fg)"/><circle cx="300" cy="392" r="7" fill="var(--fg)"/><circle cx="300" cy="300" r="132" fill="none" stroke="var(--fg)" stroke-width="1.2" opacity=".75"/><circle cx="351.4032211847419" cy="178.41994879161916" r="7" fill="var(--fg)"/><circle cx="422.31764494101674" cy="250.3774876081092" r="7" fill="var(--fg)"/><circle cx="421.58005120838084" cy="351.4032211847419" r="7" fill="var(--fg)"/><circle cx="349.62251239189084" cy="422.31764494101674" r="7" fill="var(--fg)"/><circle cx="248.59677881525815" cy="421.58005120838084" r="7" fill="var(--fg)"/><circle cx="177.68235505898326" cy="349.62251239189084" r="7" fill="var(--fg)"/><circle cx="178.41994879161916" cy="248.59677881525818" r="7" fill="var(--fg)"/><circle cx="250.37748760810922" cy="177.68235505898323" r="7" fill="var(--fg)"/><circle cx="300" cy="300" r="172" fill="none" stroke="var(--fg)" stroke-width="1.2" opacity=".75"/><circle cx="423.3852476347179" cy="180.16644599228755" r="7" fill="var(--fg)"/><circle cx="463.1600973619236" cy="245.56855110464517" r="7" fill="var(--fg)"/><circle cx="470.6190887793236" cy="321.75147222864" r="7" fill="var(--fg)"/><circle cx="444.28487715817545" cy="393.6262475134522" r="7" fill="var(--fg)"/><circle cx="389.37327607795834" cy="446.9571962276534" r="7" fill="var(--fg)"/><circle cx="316.7602015792015" cy="471.18146991723296" r="7" fill="var(--fg)"/><circle cx="240.82756360730068" cy="461.50115408674935" r="7" fill="var(--fg)"/><circle cx="176.61475236528213" cy="419.83355400771245" r="7" fill="var(--fg)"/><circle cx="136.83990263807647" cy="354.4314488953549" r="7" fill="var(--fg)"/><circle cx="129.3809112206764" cy="278.24852777136005" r="7" fill="var(--fg)"/><circle cx="155.7151228418245" cy="206.37375248654783" r="7" fill="var(--fg)"/><circle cx="210.6267239220416" cy="153.0428037723466" r="7" fill="var(--fg)"/><circle cx="283.2397984207984" cy="128.81853008276704" r="7" fill="var(--fg)"/><circle cx="359.17243639269924" cy="138.49884591325062" r="7" fill="var(--fg)"/><circle cx="300" cy="300" r="212" fill="none" stroke="var(--fg)" stroke-width="1.2" opacity=".75"/><circle cx="497.592286225052" cy="223.18015605094524" r="7" fill="var(--fg)"/><circle cx="102.40771377494801" cy="376.81984394905476" r="7" fill="var(--fg)"/></svg><span class="bigz num">26</span></div>
+  <div class="data">
+    <p style="font-size:19px;margin:0 0 18px">Переходные металлы. Твёрдое.</p>
+    <div class="key" style="grid-template-columns:repeat(4,1fr)"><div><span class="lb2">Атомная масса</span><span class="num">55,845</span></div><div><span class="lb2">Группа</span><span class="num">8</span></div><div><span class="lb2">Период</span><span class="num">4</span></div><div><span class="lb2">Блок</span><span class="num blk">d</span></div></div>
+    <section class="qa card">
+  <h2 class="display">Коротко о железе<span class="new">новое</span></h2>
+  <div class="qr"><span class="q">Сколько протонов в атоме железа?</span><span class="a"><b>26</b></span></div><div class="qr"><span class="q">Сколько электронов в атоме железа?</span><span class="a"><b>26</b><small>в нейтральном атоме</small></span></div><div class="qr"><span class="q">Какая молярная масса железа?</span><span class="a"><b>55,845 г/моль</b></span></div><div class="qr"><span class="q">Железо — металл или неметалл?</span><span class="a"><b>Металл</b><small>переходный металл</small></span></div><div class="qr"><span class="q">Агрегатное состояние</span><span class="a"><b>Твёрдое</b><small>при комнатной температуре</small></span></div>
+</section>
+    <div style="--dlcols:280px 1fr"><dl><div><dt>Электронная конфигурация</dt><dd>[Ar] 4s² 3d⁶</dd></div><div><dt>Электроны по оболочкам</dt><dd>2, 8, 14, 2</dd></div><div><dt>Температура плавления</dt><dd>1 538 °C (1 811 K)</dd></div><div><dt>Температура кипения</dt><dd>2 861 °C (3 134 K)</dd></div><div><dt>Плотность</dt><dd>7,874 г/см³</dd></div></dl></div>
+  </div>
+</div></body></html>

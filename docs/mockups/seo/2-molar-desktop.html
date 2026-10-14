@@ -1,0 +1,108 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><style>
+@font-face{font-family:Oswald;font-weight:600;src:url(file:///D:/ChemTable/node_modules/@fontsource/oswald/files/oswald-latin-600-normal.woff2)}
+@font-face{font-family:Oswald;font-weight:600;src:url(file:///D:/ChemTable/node_modules/@fontsource/oswald/files/oswald-cyrillic-600-normal.woff2);unicode-range:U+0400-04FF}
+@font-face{font-family:Bebas;src:url(file:///D:/ChemTable/node_modules/@fontsource/bebas-neue/files/bebas-neue-latin-400-normal.woff2)}
+@font-face{font-family:Golos;font-weight:400 900;src:url(file:///D:/ChemTable/node_modules/@fontsource-variable/golos-text/files/golos-text-latin-wght-normal.woff2)}
+@font-face{font-family:Golos;font-weight:400 900;src:url(file:///D:/ChemTable/node_modules/@fontsource-variable/golos-text/files/golos-text-cyrillic-wght-normal.woff2);unicode-range:U+0400-04FF}
+
+:root{--mustard:#e3a83a;--paper:#e6e3da;--ink:#000;--teal:#126f60;--orange:#ee7430;--raspberry:#df3b57;--green:#1d7442;--peach:#f4b48a;
+--bg:var(--mustard);--fg:var(--ink);--surface:var(--paper);--on-surface:var(--ink);--rule:var(--ink);--line:color-mix(in srgb,var(--fg) 45%,transparent)}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--fg);font-family:Golos,system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.45}
+body{position:relative}
+body::after{content:'';position:absolute;inset:0;pointer-events:none;z-index:100;opacity:.32;mix-blend-mode:multiply;
+background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1.4 1'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.cat-alkali-metal{--fill:var(--orange);--on:var(--ink);--tex:none}
+.cat-alkaline-earth-metal{--fill:var(--orange);--on:var(--ink);--tex:radial-gradient(circle,rgb(0 0 0/.24) 1px,transparent 1.3px) 0 0/5px 5px}
+.cat-transition-metal{--fill:var(--paper);--on:var(--ink);--tex:radial-gradient(circle,rgb(0 0 0/.22) .7px,transparent 1px) 0 0/3.5px 3.5px}
+.cat-post-transition-metal{--fill:var(--paper);--on:var(--ink);--tex:repeating-linear-gradient(135deg,rgb(0 0 0/.18) 0 1px,transparent 1px 4px)}
+.cat-metalloid{--fill:var(--green);--on:var(--paper);--tex:radial-gradient(circle,rgb(255 255 255/.25) .9px,transparent 1.2px) 0 0/4px 4px}
+.cat-nonmetal{--fill:var(--teal);--on:var(--paper);--tex:none}
+.cat-halogen{--fill:var(--teal);--on:var(--paper);--tex:repeating-linear-gradient(0deg,rgb(0 0 0/.25) 0 1px,transparent 1px 3.5px)}
+.cat-noble-gas{--fill:var(--raspberry);--on:var(--ink);--tex:none}
+.cat-lanthanide{--fill:var(--peach);--on:var(--ink);--tex:radial-gradient(circle,rgb(0 0 0/.2) 1.2px,transparent 1.5px) 0 0/6px 6px}
+.cat-actinide{--fill:var(--ink);--on:var(--paper);--tex:radial-gradient(circle,rgb(255 255 255/.3) 1px,transparent 1.3px) 0 0/4px 4px}
+.sw{background:var(--tex),var(--fill);color:var(--on)}
+.display{font-family:Oswald,'Arial Narrow',sans-serif;font-weight:600;line-height:1.05;letter-spacing:-.2px}
+.num{font-family:Bebas,Oswald,sans-serif;line-height:1}
+.unknown{background:repeating-linear-gradient(135deg,color-mix(in srgb,var(--fg) 22%,transparent) 0 1px,transparent 1px 6px);color:color-mix(in srgb,var(--fg) 45%,transparent)}
+a{color:inherit;text-underline-offset:3px}
+.pill,.chip{display:inline-flex;align-items:center;gap:.4em;border:1.5px solid var(--fg);border-radius:99px;padding:.35em .85em;font-size:14px;white-space:nowrap}
+.chip.on{background:var(--fg);color:var(--bg)}
+.round{display:inline-grid;place-items:center;width:34px;height:34px;border:1.5px solid var(--fg);border-radius:50%;font-size:15px}
+.new{display:inline-block;margin-left:10px;padding:2px 8px;border-radius:99px;background:var(--raspberry);color:#fff;font:600 12px/1.4 Golos,sans-serif;letter-spacing:0;vertical-align:middle}
+.lead{font-size:var(--lead,17px);max-width:68ch;margin:0}
+.card{background:var(--surface);color:var(--on-surface);box-shadow:6px 6px 0 var(--rule)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;background:var(--fg);color:var(--bg);border-radius:99px;padding:13px 24px;font-weight:600;font-size:16px}
+.seg{display:inline-flex;border:1.5px solid var(--fg);border-radius:99px;overflow:hidden;font-size:14px}
+.seg span{padding:.45em 1em}
+.seg span.on{background:var(--fg);color:var(--bg)}
+.note{font-size:13px;opacity:.85}
+h2.display{font-size:28px;margin:0 0 14px}
+
+body{width:1440px}
+.dbar{display:flex;align-items:center;gap:10px;padding:14px 48px;border-bottom:2px solid var(--rule)}
+.dbar>a{font-size:15px;margin-right:auto}
+.dbar nav{display:flex;gap:6px;margin-right:18px}
+.wrap{padding:0 48px}
+.footer{margin:48px 48px 0;padding:22px 0 40px;border-top:2px solid var(--rule);display:flex;gap:28px;font-size:14px;flex-wrap:wrap}
+
+.input{display:flex;align-items:center;gap:12px;border:2px solid var(--on-surface);border-radius:12px;padding:12px 16px;font-size:26px;background:color-mix(in srgb,#fff 35%,var(--surface))}
+.input .caret{width:2px;height:30px;background:var(--on-surface);margin-left:-8px}
+.input .clear{margin-left:auto;font-size:18px;opacity:.6}
+.lbl{font-size:13px;margin:0 0 6px}
+.formula{font-family:Oswald;font-weight:600;font-size:40px;line-height:1;margin:18px 0 0}
+sub{font-size:.6em;vertical-align:-.25em;line-height:0}
+.result{margin-top:18px;padding-top:14px;border-top:1.5px solid var(--on-surface)}
+.result .num{font-size:96px;display:inline-block}
+.result .unit{font-size:22px;margin-left:8px}
+.school{font-size:14px;margin-top:6px}
+.stack{display:flex;gap:3px;height:34px;margin:4px 0 12px}
+.stack span{display:grid;place-items:center;font-family:Oswald;font-weight:600;font-size:15px;min-width:22px}
+.br{display:grid;grid-template-columns:40px 1fr auto 64px;gap:12px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line)}
+.bt{width:40px;height:40px;display:grid;place-items:center;font-family:Oswald;font-weight:600;font-size:19px}
+.bn{font-size:16px}
+.bn small{display:block;font-size:13px;opacity:.75;font-variant-numeric:tabular-nums}
+.bs{font-size:17px;font-variant-numeric:tabular-nums}
+.bp{font-size:14px;text-align:right;opacity:.8;font-variant-numeric:tabular-nums}
+.calc{font-size:15px;margin-top:14px;font-variant-numeric:tabular-nums}
+.pc{display:grid;padding:12px 14px;border:1.5px solid var(--fg);gap:2px}
+.pf{font-size:26px}
+.pn{font-size:13px}
+.pm{font-size:28px;margin-top:6px}
+.keys{display:flex;gap:6px;margin-top:10px}
+.keys span{flex:1;display:grid;place-items:center;height:42px;border:1.5px solid var(--on-surface);border-radius:10px;font-size:18px}
+
+.grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:56px;margin-top:30px;align-items:start}
+.calcard{padding:24px}
+.fname{font-family:Golos;font-weight:400;font-size:16px;margin-left:14px;vertical-align:middle}
+.pop{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+</style></head><body><div class="dbar"><a>← Таблица Менделеева</a><nav><span class="chip">Свойства элементов</span><span class="chip on">Молярная масса</span><span class="chip">Распечатать</span></nav>
+<span class="pill">Русский ▾</span><span class="round">◐</span></div>
+<div class="wrap">
+  <h1 class="display" style="font-size:50px;margin:30px 0 12px">Калькулятор молярной массы</h1>
+  <p class="lead">Введите формулу вещества — например, H2SO4, Ca(OH)2 или CuSO4·5H2O. Калькулятор покажет молярную массу и вклад каждого элемента. Атомные массы — IUPAC (CIAAW), как в таблице.</p>
+  <div class="grid">
+    <div class="card calcard">
+      <p class="lbl">Формула</p>
+      <div class="input">KMnO4<span class="caret"></span><span class="clear">✕</span></div>
+      <p class="formula">KMnO<sub>4</sub><span class="fname">перманганат калия</span></p>
+      <div class="result"><p class="lbl">Молярная масса</p><span class="num">158,032</span><span class="unit">г/моль</span>
+      <p class="school">Для школьных задач (округлённые массы K = 39, Mn = 55, O = 16): <b>158 г/моль</b></p></div>
+    </div>
+    <div>
+      <h2 class="display">Из чего складывается</h2>
+      <div class="stack"><span class="sw cat-alkali-metal" style="flex:39.098"><b>K</b></span><span class="sw cat-transition-metal" style="flex:54.938"><b>Mn</b></span><span class="sw cat-nonmetal" style="flex:63.996"><b>O</b></span></div><div class="br"><span class="bt sw cat-alkali-metal">K</span>
+<span class="bn">Калий<small>1 × 39,098</small></span>
+<span class="bs">39,098</span><span class="bp">24,7 %</span></div><div class="br"><span class="bt sw cat-transition-metal">Mn</span>
+<span class="bn">Марганец<small>1 × 54,938</small></span>
+<span class="bs">54,938</span><span class="bp">34,8 %</span></div><div class="br"><span class="bt sw cat-nonmetal">O</span>
+<span class="bn">Кислород<small>4 × 15,999</small></span>
+<span class="bs">63,996</span><span class="bp">40,5 %</span></div>
+      <p class="calc">M(KMnO<sub>4</sub>) = 39,098 + 54,938 + 4 × 15,999 = <b>158,032 г/моль</b></p>
+      <p class="note">Результат округлён до точности наименее точной атомной массы.</p>
+    </div>
+  </div>
+  <h2 class="display" style="margin-top:52px;padding-top:22px;border-top:2px solid var(--rule)">Популярные вещества</h2>
+  <div class="pop"><div class="pc"><span class="display pf">H<sub>2</sub>O</span><span class="pn">Вода</span><span class="num pm">18,015</span></div><div class="pc"><span class="display pf">NaCl</span><span class="pn">Хлорид натрия</span><span class="num pm">58,44</span></div><div class="pc"><span class="display pf">CO<sub>2</sub></span><span class="pn">Углекислый газ</span><span class="num pm">44,009</span></div><div class="pc"><span class="display pf">H<sub>2</sub>SO<sub>4</sub></span><span class="pn">Серная кислота</span><span class="num pm">98,07</span></div><div class="pc"><span class="display pf">HCl</span><span class="pn">Хлороводород</span><span class="num pm">36,46</span></div><div class="pc"><span class="display pf">NaOH</span><span class="pn">Гидроксид натрия</span><span class="num pm">39,997</span></div><div class="pc"><span class="display pf">C<sub>6</sub>H<sub>12</sub>O<sub>6</sub></span><span class="pn">Глюкоза</span><span class="num pm">180,156</span></div><div class="pc"><span class="display pf">CaCO<sub>3</sub></span><span class="pn">Карбонат кальция</span><span class="num pm">100,086</span></div><div class="pc"><span class="display pf">NH<sub>3</sub></span><span class="pn">Аммиак</span><span class="num pm">17,031</span></div><div class="pc"><span class="display pf">KMnO<sub>4</sub></span><span class="pn">Перманганат калия</span><span class="num pm">158,032</span></div><div class="pc"><span class="display pf">C<sub>2</sub>H<sub>5</sub>OH</span><span class="pn">Этанол</span><span class="num pm">46,069</span></div><div class="pc"><span class="display pf">O<sub>2</sub></span><span class="pn">Кислород</span><span class="num pm">31,998</span></div></div>
+</div><div class="footer"><b>Ещё на сайте:</b><a>Таблица Менделеева</a><a>Свойства элементов</a><a>Калькулятор молярной массы</a><a>Распечатать PDF</a><span style="margin-left:auto">English · Русский · Français · Deutsch · Italiano · Español · 简体中文 · Português</span></div></body></html>

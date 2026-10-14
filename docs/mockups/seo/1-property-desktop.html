@@ -1,0 +1,563 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><style>
+@font-face{font-family:Oswald;font-weight:600;src:url(file:///D:/ChemTable/node_modules/@fontsource/oswald/files/oswald-latin-600-normal.woff2)}
+@font-face{font-family:Oswald;font-weight:600;src:url(file:///D:/ChemTable/node_modules/@fontsource/oswald/files/oswald-cyrillic-600-normal.woff2);unicode-range:U+0400-04FF}
+@font-face{font-family:Bebas;src:url(file:///D:/ChemTable/node_modules/@fontsource/bebas-neue/files/bebas-neue-latin-400-normal.woff2)}
+@font-face{font-family:Golos;font-weight:400 900;src:url(file:///D:/ChemTable/node_modules/@fontsource-variable/golos-text/files/golos-text-latin-wght-normal.woff2)}
+@font-face{font-family:Golos;font-weight:400 900;src:url(file:///D:/ChemTable/node_modules/@fontsource-variable/golos-text/files/golos-text-cyrillic-wght-normal.woff2);unicode-range:U+0400-04FF}
+
+:root{--mustard:#e3a83a;--paper:#e6e3da;--ink:#000;--teal:#126f60;--orange:#ee7430;--raspberry:#df3b57;--green:#1d7442;--peach:#f4b48a;
+--bg:var(--mustard);--fg:var(--ink);--surface:var(--paper);--on-surface:var(--ink);--rule:var(--ink);--line:color-mix(in srgb,var(--fg) 45%,transparent)}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--fg);font-family:Golos,system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.45}
+body{position:relative}
+body::after{content:'';position:absolute;inset:0;pointer-events:none;z-index:100;opacity:.32;mix-blend-mode:multiply;
+background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1.4 1'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.cat-alkali-metal{--fill:var(--orange);--on:var(--ink);--tex:none}
+.cat-alkaline-earth-metal{--fill:var(--orange);--on:var(--ink);--tex:radial-gradient(circle,rgb(0 0 0/.24) 1px,transparent 1.3px) 0 0/5px 5px}
+.cat-transition-metal{--fill:var(--paper);--on:var(--ink);--tex:radial-gradient(circle,rgb(0 0 0/.22) .7px,transparent 1px) 0 0/3.5px 3.5px}
+.cat-post-transition-metal{--fill:var(--paper);--on:var(--ink);--tex:repeating-linear-gradient(135deg,rgb(0 0 0/.18) 0 1px,transparent 1px 4px)}
+.cat-metalloid{--fill:var(--green);--on:var(--paper);--tex:radial-gradient(circle,rgb(255 255 255/.25) .9px,transparent 1.2px) 0 0/4px 4px}
+.cat-nonmetal{--fill:var(--teal);--on:var(--paper);--tex:none}
+.cat-halogen{--fill:var(--teal);--on:var(--paper);--tex:repeating-linear-gradient(0deg,rgb(0 0 0/.25) 0 1px,transparent 1px 3.5px)}
+.cat-noble-gas{--fill:var(--raspberry);--on:var(--ink);--tex:none}
+.cat-lanthanide{--fill:var(--peach);--on:var(--ink);--tex:radial-gradient(circle,rgb(0 0 0/.2) 1.2px,transparent 1.5px) 0 0/6px 6px}
+.cat-actinide{--fill:var(--ink);--on:var(--paper);--tex:radial-gradient(circle,rgb(255 255 255/.3) 1px,transparent 1.3px) 0 0/4px 4px}
+.sw{background:var(--tex),var(--fill);color:var(--on)}
+.display{font-family:Oswald,'Arial Narrow',sans-serif;font-weight:600;line-height:1.05;letter-spacing:-.2px}
+.num{font-family:Bebas,Oswald,sans-serif;line-height:1}
+.unknown{background:repeating-linear-gradient(135deg,color-mix(in srgb,var(--fg) 22%,transparent) 0 1px,transparent 1px 6px);color:color-mix(in srgb,var(--fg) 45%,transparent)}
+a{color:inherit;text-underline-offset:3px}
+.pill,.chip{display:inline-flex;align-items:center;gap:.4em;border:1.5px solid var(--fg);border-radius:99px;padding:.35em .85em;font-size:14px;white-space:nowrap}
+.chip.on{background:var(--fg);color:var(--bg)}
+.round{display:inline-grid;place-items:center;width:34px;height:34px;border:1.5px solid var(--fg);border-radius:50%;font-size:15px}
+.new{display:inline-block;margin-left:10px;padding:2px 8px;border-radius:99px;background:var(--raspberry);color:#fff;font:600 12px/1.4 Golos,sans-serif;letter-spacing:0;vertical-align:middle}
+.lead{font-size:var(--lead,17px);max-width:68ch;margin:0}
+.card{background:var(--surface);color:var(--on-surface);box-shadow:6px 6px 0 var(--rule)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;background:var(--fg);color:var(--bg);border-radius:99px;padding:13px 24px;font-weight:600;font-size:16px}
+.seg{display:inline-flex;border:1.5px solid var(--fg);border-radius:99px;overflow:hidden;font-size:14px}
+.seg span{padding:.45em 1em}
+.seg span.on{background:var(--fg);color:var(--bg)}
+.note{font-size:13px;opacity:.85}
+h2.display{font-size:28px;margin:0 0 14px}
+
+body{width:1440px}
+.dbar{display:flex;align-items:center;gap:10px;padding:14px 48px;border-bottom:2px solid var(--rule)}
+.dbar>a{font-size:15px;margin-right:auto}
+.dbar nav{display:flex;gap:6px;margin-right:18px}
+.wrap{padding:0 48px}
+.footer{margin:48px 48px 0;padding:22px 0 40px;border-top:2px solid var(--rule);display:flex;gap:28px;font-size:14px;flex-wrap:wrap}
+
+.heat{position:relative}
+.hc{position:absolute;display:grid;grid-template-rows:auto 1fr auto;padding:3px 5px;overflow:hidden}
+.hc .z{font-size:10px;line-height:1}
+.hc b{font-family:Oswald;font-weight:600;font-size:22px;line-height:1;align-self:center}
+.hc .v{font-size:10px;line-height:1;font-variant-numeric:tabular-nums}
+.fline{position:absolute;height:1.5px;background:var(--fg)}
+.scale{display:flex;align-items:center;gap:10px;font-size:13px}
+.scale i{display:block;width:260px;height:12px;background:linear-gradient(90deg, var(--paper), var(--teal), color-mix(in oklab, var(--ink) 80%, var(--teal)))}
+.scale .nd{display:inline-block;width:16px;height:12px;vertical-align:-1px;margin-right:4px}
+
+.lr{display:grid;grid-template-columns:28px 34px 1fr auto;grid-template-areas:'rk lt ln lv' 'rk lt lb lb';column-gap:10px;align-items:center;padding:7px 0;border-bottom:1px solid var(--line)}
+.rk{grid-area:rk;font-size:12px;opacity:.7;text-align:right;font-variant-numeric:tabular-nums}
+.lt{grid-area:lt;width:34px;height:34px;display:grid;place-items:center;font-family:Oswald;font-weight:600;font-size:16px}
+.ln{grid-area:ln;font-size:15px}
+.ln small{font-size:12px;opacity:.7;margin-left:6px}
+.lv{grid-area:lv;font-family:Bebas;font-size:24px;line-height:1}
+.lv .nd{font-family:Golos;font-size:13px;opacity:.75}
+.lb{grid-area:lb;height:3px;background:color-mix(in srgb,var(--fg) 12%,transparent)}
+.lb i{display:block;height:100%;background:var(--fg)}
+
+.props{display:flex;gap:6px;margin:22px 0 0}
+.hero{margin:26px 0 22px}
+h1.display{font-size:50px;margin:0 0 14px;max-width:20ch}
+.tbl{display:grid;justify-content:center;margin-top:8px}
+.listhead{display:flex;align-items:center;justify-content:space-between;margin:52px 0 10px;border-top:2px solid var(--rule);padding-top:22px}
+.listhead h2{margin:0}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:0 40px}
+</style></head><body><div class="dbar"><a>← Таблица Менделеева</a><nav><span class="chip on">Свойства элементов</span><span class="chip">Молярная масса</span><span class="chip">Распечатать</span></nav>
+<span class="pill">Русский ▾</span><span class="round">◐</span></div>
+<div class="wrap">
+  <div class="props"><span class="chip">Атомная масса</span><span class="chip on">Электроотрицательность</span><span class="chip">Ковалентный радиус</span><span class="chip">Плотность</span><span class="chip">Температура плавления</span><span class="chip">Энергия ионизации</span></div>
+  <div class="hero">
+    <div><h1 class="display">Электроотрицательность химических элементов</h1><p class="lead">Электроотрицательность — способность атома притягивать к себе электроны химической связи. Значения по шкале Полинга, безразмерные. Растёт слева направо по периоду и уменьшается сверху вниз по группе: максимум у фтора (3,98), минимум у франция (0,7).</p>
+    <p class="note" style="margin-top:14px">Источник: PubChem (NIH). У благородных газов He, Ne, Ar и у тяжёлых элементов значения не измерены — показываем «нет данных».</p></div>
+  </div>
+  <div class="tbl"><div class="heat" style="width:1152px;height:592px"><div class="hc " style="left:0px;top:0px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 91%, var(--paper));color:#fff"><span class="z">1</span><b>H</b><span class="v">2,20</span></div><div class="hc unknown" style="left:1088px;top:0px;width:60px;height:60px;"><span class="z">2</span><b>He</b><span class="v">—</span></div><div class="hc " style="left:0px;top:64px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 17%, var(--paper));color:var(--ink)"><span class="z">3</span><b>Li</b><span class="v">0,98</span></div><div class="hc " style="left:64px;top:64px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 53%, var(--paper));color:var(--ink)"><span class="z">4</span><b>Be</b><span class="v">1,57</span></div><div class="hc " style="left:768px;top:64px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 82%, var(--paper));color:var(--ink)"><span class="z">5</span><b>B</b><span class="v">2,04</span></div><div class="hc " style="left:832px;top:64px;width:60px;height:60px;background:color-mix(in oklab, var(--ink) 10%, var(--teal));color:#fff"><span class="z">6</span><b>C</b><span class="v">2,55</span></div><div class="hc " style="left:896px;top:64px;width:60px;height:60px;background:color-mix(in oklab, var(--ink) 34%, var(--teal));color:#fff"><span class="z">7</span><b>N</b><span class="v">3,04</span></div><div class="hc " style="left:960px;top:64px;width:60px;height:60px;background:color-mix(in oklab, var(--ink) 54%, var(--teal));color:#fff"><span class="z">8</span><b>O</b><span class="v">3,44</span></div><div class="hc " style="left:1024px;top:64px;width:60px;height:60px;background:color-mix(in oklab, var(--ink) 80%, var(--teal));color:#fff"><span class="z">9</span><b>F</b><span class="v">3,98</span></div><div class="hc unknown" style="left:1088px;top:64px;width:60px;height:60px;"><span class="z">10</span><b>Ne</b><span class="v">—</span></div><div class="hc " style="left:0px;top:128px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 14%, var(--paper));color:var(--ink)"><span class="z">11</span><b>Na</b><span class="v">0,93</span></div><div class="hc " style="left:64px;top:128px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 37%, var(--paper));color:var(--ink)"><span class="z">12</span><b>Mg</b><span class="v">1,31</span></div><div class="hc " style="left:768px;top:128px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 55%, var(--paper));color:var(--ink)"><span class="z">13</span><b>Al</b><span class="v">1,61</span></div><div class="hc " style="left:832px;top:128px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 73%, var(--paper));color:var(--ink)"><span class="z">14</span><b>Si</b><span class="v">1,9</span></div><div class="hc " style="left:896px;top:128px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 91%, var(--paper));color:#fff"><span class="z">15</span><b>P</b><span class="v">2,19</span></div><div class="hc " style="left:960px;top:128px;width:60px;height:60px;background:color-mix(in oklab, var(--ink) 12%, var(--teal));color:#fff"><span class="z">16</span><b>S</b><span class="v">2,58</span></div><div class="hc " style="left:1024px;top:128px;width:60px;height:60px;background:color-mix(in oklab, var(--ink) 40%, var(--teal));color:#fff"><span class="z">17</span><b>Cl</b><span class="v">3,16</span></div><div class="hc unknown" style="left:1088px;top:128px;width:60px;height:60px;"><span class="z">18</span><b>Ar</b><span class="v">—</span></div><div class="hc " style="left:0px;top:192px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 7%, var(--paper));color:var(--ink)"><span class="z">19</span><b>K</b><span class="v">0,82</span></div><div class="hc " style="left:64px;top:192px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 18%, var(--paper));color:var(--ink)"><span class="z">20</span><b>Ca</b><span class="v">1</span></div><div class="hc " style="left:128px;top:192px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 40%, var(--paper));color:var(--ink)"><span class="z">21</span><b>Sc</b><span class="v">1,36</span></div><div class="hc " style="left:192px;top:192px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 51%, var(--paper));color:var(--ink)"><span class="z">22</span><b>Ti</b><span class="v">1,54</span></div><div class="hc " style="left:256px;top:192px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 57%, var(--paper));color:var(--ink)"><span class="z">23</span><b>V</b><span class="v">1,63</span></div><div class="hc " style="left:320px;top:192px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 59%, var(--paper));color:var(--ink)"><span class="z">24</span><b>Cr</b><span class="v">1,66</span></div><div class="hc " style="left:384px;top:192px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 52%, var(--paper));color:var(--ink)"><span class="z">25</span><b>Mn</b><span class="v">1,55</span></div><div class="hc " style="left:448px;top:192px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 69%, var(--paper));color:var(--ink)"><span class="z">26</span><b>Fe</b><span class="v">1,83</span></div><div class="hc " style="left:512px;top:192px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 72%, var(--paper));color:var(--ink)"><span class="z">27</span><b>Co</b><span class="v">1,88</span></div><div class="hc " style="left:576px;top:192px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 74%, var(--paper));color:var(--ink)"><span class="z">28</span><b>Ni</b><span class="v">1,91</span></div><div class="hc " style="left:640px;top:192px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 73%, var(--paper));color:var(--ink)"><span class="z">29</span><b>Cu</b><span class="v">1,9</span></div><div class="hc " style="left:704px;top:192px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 58%, var(--paper));color:var(--ink)"><span class="z">30</span><b>Zn</b><span class="v">1,65</span></div><div class="hc " style="left:768px;top:192px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 68%, var(--paper));color:var(--ink)"><span class="z">31</span><b>Ga</b><span class="v">1,81</span></div><div class="hc " style="left:832px;top:192px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 80%, var(--paper));color:var(--ink)"><span class="z">32</span><b>Ge</b><span class="v">2,01</span></div><div class="hc " style="left:896px;top:192px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 90%, var(--paper));color:#fff"><span class="z">33</span><b>As</b><span class="v">2,18</span></div><div class="hc " style="left:960px;top:192px;width:60px;height:60px;background:color-mix(in oklab, var(--ink) 10%, var(--teal));color:#fff"><span class="z">34</span><b>Se</b><span class="v">2,55</span></div><div class="hc " style="left:1024px;top:192px;width:60px;height:60px;background:color-mix(in oklab, var(--ink) 30%, var(--teal));color:#fff"><span class="z">35</span><b>Br</b><span class="v">2,96</span></div><div class="hc " style="left:1088px;top:192px;width:60px;height:60px;background:color-mix(in oklab, var(--ink) 32%, var(--teal));color:#fff"><span class="z">36</span><b>Kr</b><span class="v">3</span></div><div class="hc " style="left:0px;top:256px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 7%, var(--paper));color:var(--ink)"><span class="z">37</span><b>Rb</b><span class="v">0,82</span></div><div class="hc " style="left:64px;top:256px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 15%, var(--paper));color:var(--ink)"><span class="z">38</span><b>Sr</b><span class="v">0,95</span></div><div class="hc " style="left:128px;top:256px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 32%, var(--paper));color:var(--ink)"><span class="z">39</span><b>Y</b><span class="v">1,22</span></div><div class="hc " style="left:192px;top:256px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 38%, var(--paper));color:var(--ink)"><span class="z">40</span><b>Zr</b><span class="v">1,33</span></div><div class="hc " style="left:256px;top:256px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 55%, var(--paper));color:var(--ink)"><span class="z">41</span><b>Nb</b><span class="v">1,6</span></div><div class="hc " style="left:320px;top:256px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 89%, var(--paper));color:#fff"><span class="z">42</span><b>Mo</b><span class="v">2,16</span></div><div class="hc " style="left:384px;top:256px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 73%, var(--paper));color:var(--ink)"><span class="z">43</span><b>Tc</b><span class="v">1,9</span></div><div class="hc " style="left:448px;top:256px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 91%, var(--paper));color:#fff"><span class="z">44</span><b>Ru</b><span class="v">2,20</span></div><div class="hc " style="left:512px;top:256px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 96%, var(--paper));color:#fff"><span class="z">45</span><b>Rh</b><span class="v">2,28</span></div><div class="hc " style="left:576px;top:256px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 91%, var(--paper));color:#fff"><span class="z">46</span><b>Pd</b><span class="v">2,20</span></div><div class="hc " style="left:640px;top:256px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 75%, var(--paper));color:var(--ink)"><span class="z">47</span><b>Ag</b><span class="v">1,93</span></div><div class="hc " style="left:704px;top:256px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 60%, var(--paper));color:var(--ink)"><span class="z">48</span><b>Cd</b><span class="v">1,69</span></div><div class="hc " style="left:768px;top:256px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 66%, var(--paper));color:var(--ink)"><span class="z">49</span><b>In</b><span class="v">1,78</span></div><div class="hc " style="left:832px;top:256px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 77%, var(--paper));color:var(--ink)"><span class="z">50</span><b>Sn</b><span class="v">1,96</span></div><div class="hc " style="left:896px;top:256px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 82%, var(--paper));color:var(--ink)"><span class="z">51</span><b>Sb</b><span class="v">2,05</span></div><div class="hc " style="left:960px;top:256px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 85%, var(--paper));color:#fff"><span class="z">52</span><b>Te</b><span class="v">2,1</span></div><div class="hc " style="left:1024px;top:256px;width:60px;height:60px;background:color-mix(in oklab, var(--ink) 16%, var(--teal));color:#fff"><span class="z">53</span><b>I</b><span class="v">2,66</span></div><div class="hc " style="left:1088px;top:256px;width:60px;height:60px;background:color-mix(in oklab, var(--ink) 13%, var(--teal));color:#fff"><span class="z">54</span><b>Xe</b><span class="v">2,6</span></div><div class="hc " style="left:0px;top:320px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 5%, var(--paper));color:var(--ink)"><span class="z">55</span><b>Cs</b><span class="v">0,79</span></div><div class="hc " style="left:64px;top:320px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 12%, var(--paper));color:var(--ink)"><span class="z">56</span><b>Ba</b><span class="v">0,89</span></div><div class="hc " style="left:128px;top:464px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 24%, var(--paper));color:var(--ink)"><span class="z">57</span><b>La</b><span class="v">1,10</span></div><div class="hc " style="left:192px;top:464px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 26%, var(--paper));color:var(--ink)"><span class="z">58</span><b>Ce</b><span class="v">1,12</span></div><div class="hc " style="left:256px;top:464px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 26%, var(--paper));color:var(--ink)"><span class="z">59</span><b>Pr</b><span class="v">1,13</span></div><div class="hc " style="left:320px;top:464px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 27%, var(--paper));color:var(--ink)"><span class="z">60</span><b>Nd</b><span class="v">1,14</span></div><div class="hc unknown" style="left:384px;top:464px;width:60px;height:60px;"><span class="z">61</span><b>Pm</b><span class="v">—</span></div><div class="hc " style="left:448px;top:464px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 29%, var(--paper));color:var(--ink)"><span class="z">62</span><b>Sm</b><span class="v">1,17</span></div><div class="hc unknown" style="left:512px;top:464px;width:60px;height:60px;"><span class="z">63</span><b>Eu</b><span class="v">—</span></div><div class="hc " style="left:576px;top:464px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 30%, var(--paper));color:var(--ink)"><span class="z">64</span><b>Gd</b><span class="v">1,2</span></div><div class="hc unknown" style="left:640px;top:464px;width:60px;height:60px;"><span class="z">65</span><b>Tb</b><span class="v">—</span></div><div class="hc " style="left:704px;top:464px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 32%, var(--paper));color:var(--ink)"><span class="z">66</span><b>Dy</b><span class="v">1,22</span></div><div class="hc " style="left:768px;top:464px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 32%, var(--paper));color:var(--ink)"><span class="z">67</span><b>Ho</b><span class="v">1,23</span></div><div class="hc " style="left:832px;top:464px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 33%, var(--paper));color:var(--ink)"><span class="z">68</span><b>Er</b><span class="v">1,24</span></div><div class="hc " style="left:896px;top:464px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 34%, var(--paper));color:var(--ink)"><span class="z">69</span><b>Tm</b><span class="v">1,25</span></div><div class="hc unknown" style="left:960px;top:464px;width:60px;height:60px;"><span class="z">70</span><b>Yb</b><span class="v">—</span></div><div class="hc " style="left:1024px;top:464px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 35%, var(--paper));color:var(--ink)"><span class="z">71</span><b>Lu</b><span class="v">1,27</span></div><div class="hc " style="left:192px;top:320px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 37%, var(--paper));color:var(--ink)"><span class="z">72</span><b>Hf</b><span class="v">1,3</span></div><div class="hc " style="left:256px;top:320px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 49%, var(--paper));color:var(--ink)"><span class="z">73</span><b>Ta</b><span class="v">1,5</span></div><div class="hc " style="left:320px;top:320px;width:60px;height:60px;background:color-mix(in oklab, var(--ink) 1%, var(--teal));color:#fff"><span class="z">74</span><b>W</b><span class="v">2,36</span></div><div class="hc " style="left:384px;top:320px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 73%, var(--paper));color:var(--ink)"><span class="z">75</span><b>Re</b><span class="v">1,9</span></div><div class="hc " style="left:448px;top:320px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 91%, var(--paper));color:#fff"><span class="z">76</span><b>Os</b><span class="v">2,20</span></div><div class="hc " style="left:512px;top:320px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 91%, var(--paper));color:#fff"><span class="z">77</span><b>Ir</b><span class="v">2,20</span></div><div class="hc " style="left:576px;top:320px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 96%, var(--paper));color:#fff"><span class="z">78</span><b>Pt</b><span class="v">2,28</span></div><div class="hc " style="left:640px;top:320px;width:60px;height:60px;background:color-mix(in oklab, var(--ink) 10%, var(--teal));color:#fff"><span class="z">79</span><b>Au</b><span class="v">2,54</span></div><div class="hc " style="left:704px;top:320px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 79%, var(--paper));color:var(--ink)"><span class="z">80</span><b>Hg</b><span class="v">2</span></div><div class="hc " style="left:768px;top:320px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 56%, var(--paper));color:var(--ink)"><span class="z">81</span><b>Tl</b><span class="v">1,62</span></div><div class="hc " style="left:832px;top:320px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 99%, var(--paper));color:#fff"><span class="z">82</span><b>Pb</b><span class="v">2,33</span></div><div class="hc " style="left:896px;top:320px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 80%, var(--paper));color:var(--ink)"><span class="z">83</span><b>Bi</b><span class="v">2,02</span></div><div class="hc " style="left:960px;top:320px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 79%, var(--paper));color:var(--ink)"><span class="z">84</span><b>Po</b><span class="v">2</span></div><div class="hc " style="left:1024px;top:320px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 91%, var(--paper));color:#fff"><span class="z">85</span><b>At</b><span class="v">2,20</span></div><div class="hc unknown" style="left:1088px;top:320px;width:60px;height:60px;"><span class="z">86</span><b>Rn</b><span class="v">—</span></div><div class="hc " style="left:0px;top:384px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 0%, var(--paper));color:var(--ink)"><span class="z">87</span><b>Fr</b><span class="v">0,7</span></div><div class="hc " style="left:64px;top:384px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 12%, var(--paper));color:var(--ink)"><span class="z">88</span><b>Ra</b><span class="v">0,9</span></div><div class="hc " style="left:128px;top:528px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 24%, var(--paper));color:var(--ink)"><span class="z">89</span><b>Ac</b><span class="v">1,10</span></div><div class="hc " style="left:192px;top:528px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 37%, var(--paper));color:var(--ink)"><span class="z">90</span><b>Th</b><span class="v">1,3</span></div><div class="hc " style="left:256px;top:528px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 49%, var(--paper));color:var(--ink)"><span class="z">91</span><b>Pa</b><span class="v">1,5</span></div><div class="hc " style="left:320px;top:528px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 41%, var(--paper));color:var(--ink)"><span class="z">92</span><b>U</b><span class="v">1,38</span></div><div class="hc " style="left:384px;top:528px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 40%, var(--paper));color:var(--ink)"><span class="z">93</span><b>Np</b><span class="v">1,36</span></div><div class="hc " style="left:448px;top:528px;width:60px;height:60px;background:color-mix(in oklab, var(--teal) 35%, var(--paper));color:var(--ink)"><span class="z">94</span><b>Pu</b><span class="v">1,28</span></div><div class="hc unknown" style="left:512px;top:528px;width:60px;height:60px;"><span class="z">95</span><b>Am</b><span class="v">—</span></div><div class="hc unknown" style="left:576px;top:528px;width:60px;height:60px;"><span class="z">96</span><b>Cm</b><span class="v">—</span></div><div class="hc unknown" style="left:640px;top:528px;width:60px;height:60px;"><span class="z">97</span><b>Bk</b><span class="v">—</span></div><div class="hc unknown" style="left:704px;top:528px;width:60px;height:60px;"><span class="z">98</span><b>Cf</b><span class="v">—</span></div><div class="hc unknown" style="left:768px;top:528px;width:60px;height:60px;"><span class="z">99</span><b>Es</b><span class="v">—</span></div><div class="hc unknown" style="left:832px;top:528px;width:60px;height:60px;"><span class="z">100</span><b>Fm</b><span class="v">—</span></div><div class="hc unknown" style="left:896px;top:528px;width:60px;height:60px;"><span class="z">101</span><b>Md</b><span class="v">—</span></div><div class="hc unknown" style="left:960px;top:528px;width:60px;height:60px;"><span class="z">102</span><b>No</b><span class="v">—</span></div><div class="hc unknown" style="left:1024px;top:528px;width:60px;height:60px;"><span class="z">103</span><b>Lr</b><span class="v">—</span></div><div class="hc unknown" style="left:192px;top:384px;width:60px;height:60px;"><span class="z">104</span><b>Rf</b><span class="v">—</span></div><div class="hc unknown" style="left:256px;top:384px;width:60px;height:60px;"><span class="z">105</span><b>Db</b><span class="v">—</span></div><div class="hc unknown" style="left:320px;top:384px;width:60px;height:60px;"><span class="z">106</span><b>Sg</b><span class="v">—</span></div><div class="hc unknown" style="left:384px;top:384px;width:60px;height:60px;"><span class="z">107</span><b>Bh</b><span class="v">—</span></div><div class="hc unknown" style="left:448px;top:384px;width:60px;height:60px;"><span class="z">108</span><b>Hs</b><span class="v">—</span></div><div class="hc unknown" style="left:512px;top:384px;width:60px;height:60px;"><span class="z">109</span><b>Mt</b><span class="v">—</span></div><div class="hc unknown" style="left:576px;top:384px;width:60px;height:60px;"><span class="z">110</span><b>Ds</b><span class="v">—</span></div><div class="hc unknown" style="left:640px;top:384px;width:60px;height:60px;"><span class="z">111</span><b>Rg</b><span class="v">—</span></div><div class="hc unknown" style="left:704px;top:384px;width:60px;height:60px;"><span class="z">112</span><b>Cn</b><span class="v">—</span></div><div class="hc unknown" style="left:768px;top:384px;width:60px;height:60px;"><span class="z">113</span><b>Nh</b><span class="v">—</span></div><div class="hc unknown" style="left:832px;top:384px;width:60px;height:60px;"><span class="z">114</span><b>Fl</b><span class="v">—</span></div><div class="hc unknown" style="left:896px;top:384px;width:60px;height:60px;"><span class="z">115</span><b>Mc</b><span class="v">—</span></div><div class="hc unknown" style="left:960px;top:384px;width:60px;height:60px;"><span class="z">116</span><b>Lv</b><span class="v">—</span></div><div class="hc unknown" style="left:1024px;top:384px;width:60px;height:60px;"><span class="z">117</span><b>Ts</b><span class="v">—</span></div><div class="hc unknown" style="left:1088px;top:384px;width:60px;height:60px;"><span class="z">118</span><b>Og</b><span class="v">—</span></div>
+<div class="fline" style="left:128px;top:455px;width:956px"></div></div>
+  <div class="scale" style="margin-top:16px"><b>Электроотрицательность, по Полингу</b> 0,7 <i></i> 3,98 <span><span class="nd unknown"></span>нет данных</span></div></div>
+  <div class="listhead"><h2 class="display">Все элементы по электроотрицательности</h2>
+    <span class="seg"><span class="on">По убыванию</span><span>По возрастанию</span><span>По номеру</span></span></div>
+  <div class="cols"><div><div class="lr"><span class="rk">1</span>
+<span class="lt " style="background:color-mix(in oklab, var(--ink) 80%, var(--teal));color:#fff">F</span>
+<span class="ln">Фтор <small>№ 9</small></span>
+<span class="lv">3,98</span>
+<span class="lb"><i style="width:100%"></i></span></div><div class="lr"><span class="rk">2</span>
+<span class="lt " style="background:color-mix(in oklab, var(--ink) 54%, var(--teal));color:#fff">O</span>
+<span class="ln">Кислород <small>№ 8</small></span>
+<span class="lv">3,44</span>
+<span class="lb"><i style="width:86.4321608040201%"></i></span></div><div class="lr"><span class="rk">3</span>
+<span class="lt " style="background:color-mix(in oklab, var(--ink) 40%, var(--teal));color:#fff">Cl</span>
+<span class="ln">Хлор <small>№ 17</small></span>
+<span class="lv">3,16</span>
+<span class="lb"><i style="width:79.39698492462311%"></i></span></div><div class="lr"><span class="rk">4</span>
+<span class="lt " style="background:color-mix(in oklab, var(--ink) 34%, var(--teal));color:#fff">N</span>
+<span class="ln">Азот <small>№ 7</small></span>
+<span class="lv">3,04</span>
+<span class="lb"><i style="width:76.38190954773869%"></i></span></div><div class="lr"><span class="rk">5</span>
+<span class="lt " style="background:color-mix(in oklab, var(--ink) 32%, var(--teal));color:#fff">Kr</span>
+<span class="ln">Криптон <small>№ 36</small></span>
+<span class="lv">3,00</span>
+<span class="lb"><i style="width:75.37688442211056%"></i></span></div><div class="lr"><span class="rk">6</span>
+<span class="lt " style="background:color-mix(in oklab, var(--ink) 30%, var(--teal));color:#fff">Br</span>
+<span class="ln">Бром <small>№ 35</small></span>
+<span class="lv">2,96</span>
+<span class="lb"><i style="width:74.37185929648241%"></i></span></div><div class="lr"><span class="rk">7</span>
+<span class="lt " style="background:color-mix(in oklab, var(--ink) 16%, var(--teal));color:#fff">I</span>
+<span class="ln">Иод <small>№ 53</small></span>
+<span class="lv">2,66</span>
+<span class="lb"><i style="width:66.83417085427136%"></i></span></div><div class="lr"><span class="rk">8</span>
+<span class="lt " style="background:color-mix(in oklab, var(--ink) 13%, var(--teal));color:#fff">Xe</span>
+<span class="ln">Ксенон <small>№ 54</small></span>
+<span class="lv">2,60</span>
+<span class="lb"><i style="width:65.32663316582915%"></i></span></div><div class="lr"><span class="rk">9</span>
+<span class="lt " style="background:color-mix(in oklab, var(--ink) 12%, var(--teal));color:#fff">S</span>
+<span class="ln">Сера <small>№ 16</small></span>
+<span class="lv">2,58</span>
+<span class="lb"><i style="width:64.82412060301507%"></i></span></div><div class="lr"><span class="rk">10</span>
+<span class="lt " style="background:color-mix(in oklab, var(--ink) 10%, var(--teal));color:#fff">C</span>
+<span class="ln">Углерод <small>№ 6</small></span>
+<span class="lv">2,55</span>
+<span class="lb"><i style="width:64.07035175879396%"></i></span></div><div class="lr"><span class="rk">11</span>
+<span class="lt " style="background:color-mix(in oklab, var(--ink) 10%, var(--teal));color:#fff">Se</span>
+<span class="ln">Селен <small>№ 34</small></span>
+<span class="lv">2,55</span>
+<span class="lb"><i style="width:64.07035175879396%"></i></span></div><div class="lr"><span class="rk">12</span>
+<span class="lt " style="background:color-mix(in oklab, var(--ink) 10%, var(--teal));color:#fff">Au</span>
+<span class="ln">Золото <small>№ 79</small></span>
+<span class="lv">2,54</span>
+<span class="lb"><i style="width:63.81909547738693%"></i></span></div><div class="lr"><span class="rk">13</span>
+<span class="lt " style="background:color-mix(in oklab, var(--ink) 1%, var(--teal));color:#fff">W</span>
+<span class="ln">Вольфрам <small>№ 74</small></span>
+<span class="lv">2,36</span>
+<span class="lb"><i style="width:59.2964824120603%"></i></span></div><div class="lr"><span class="rk">14</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 99%, var(--paper));color:#fff">Pb</span>
+<span class="ln">Свинец <small>№ 82</small></span>
+<span class="lv">2,33</span>
+<span class="lb"><i style="width:58.5427135678392%"></i></span></div><div class="lr"><span class="rk">15</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 96%, var(--paper));color:#fff">Rh</span>
+<span class="ln">Родий <small>№ 45</small></span>
+<span class="lv">2,28</span>
+<span class="lb"><i style="width:57.28643216080401%"></i></span></div><div class="lr"><span class="rk">16</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 96%, var(--paper));color:#fff">Pt</span>
+<span class="ln">Платина <small>№ 78</small></span>
+<span class="lv">2,28</span>
+<span class="lb"><i style="width:57.28643216080401%"></i></span></div><div class="lr"><span class="rk">17</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 91%, var(--paper));color:#fff">H</span>
+<span class="ln">Водород <small>№ 1</small></span>
+<span class="lv">2,20</span>
+<span class="lb"><i style="width:55.276381909547744%"></i></span></div><div class="lr"><span class="rk">18</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 91%, var(--paper));color:#fff">Ru</span>
+<span class="ln">Рутений <small>№ 44</small></span>
+<span class="lv">2,20</span>
+<span class="lb"><i style="width:55.276381909547744%"></i></span></div><div class="lr"><span class="rk">19</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 91%, var(--paper));color:#fff">Pd</span>
+<span class="ln">Палладий <small>№ 46</small></span>
+<span class="lv">2,20</span>
+<span class="lb"><i style="width:55.276381909547744%"></i></span></div><div class="lr"><span class="rk">20</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 91%, var(--paper));color:#fff">Os</span>
+<span class="ln">Осмий <small>№ 76</small></span>
+<span class="lv">2,20</span>
+<span class="lb"><i style="width:55.276381909547744%"></i></span></div><div class="lr"><span class="rk">21</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 91%, var(--paper));color:#fff">Ir</span>
+<span class="ln">Иридий <small>№ 77</small></span>
+<span class="lv">2,20</span>
+<span class="lb"><i style="width:55.276381909547744%"></i></span></div><div class="lr"><span class="rk">22</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 91%, var(--paper));color:#fff">At</span>
+<span class="ln">Астат <small>№ 85</small></span>
+<span class="lv">2,20</span>
+<span class="lb"><i style="width:55.276381909547744%"></i></span></div><div class="lr"><span class="rk">23</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 91%, var(--paper));color:#fff">P</span>
+<span class="ln">Фосфор <small>№ 15</small></span>
+<span class="lv">2,19</span>
+<span class="lb"><i style="width:55.0251256281407%"></i></span></div><div class="lr"><span class="rk">24</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 90%, var(--paper));color:#fff">As</span>
+<span class="ln">Мышьяк <small>№ 33</small></span>
+<span class="lv">2,18</span>
+<span class="lb"><i style="width:54.773869346733676%"></i></span></div><div class="lr"><span class="rk">25</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 89%, var(--paper));color:#fff">Mo</span>
+<span class="ln">Молибден <small>№ 42</small></span>
+<span class="lv">2,16</span>
+<span class="lb"><i style="width:54.2713567839196%"></i></span></div><div class="lr"><span class="rk">26</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 85%, var(--paper));color:#fff">Te</span>
+<span class="ln">Теллур <small>№ 52</small></span>
+<span class="lv">2,10</span>
+<span class="lb"><i style="width:52.763819095477395%"></i></span></div><div class="lr"><span class="rk">27</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 82%, var(--paper));color:var(--ink)">Sb</span>
+<span class="ln">Сурьма <small>№ 51</small></span>
+<span class="lv">2,05</span>
+<span class="lb"><i style="width:51.507537688442206%"></i></span></div><div class="lr"><span class="rk">28</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 82%, var(--paper));color:var(--ink)">B</span>
+<span class="ln">Бор <small>№ 5</small></span>
+<span class="lv">2,04</span>
+<span class="lb"><i style="width:51.256281407035175%"></i></span></div><div class="lr"><span class="rk">29</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 80%, var(--paper));color:var(--ink)">Bi</span>
+<span class="ln">Висмут <small>№ 83</small></span>
+<span class="lv">2,02</span>
+<span class="lb"><i style="width:50.753768844221106%"></i></span></div><div class="lr"><span class="rk">30</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 80%, var(--paper));color:var(--ink)">Ge</span>
+<span class="ln">Германий <small>№ 32</small></span>
+<span class="lv">2,01</span>
+<span class="lb"><i style="width:50.50251256281406%"></i></span></div><div class="lr"><span class="rk">31</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 79%, var(--paper));color:var(--ink)">Hg</span>
+<span class="ln">Ртуть <small>№ 80</small></span>
+<span class="lv">2,00</span>
+<span class="lb"><i style="width:50.25125628140703%"></i></span></div><div class="lr"><span class="rk">32</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 79%, var(--paper));color:var(--ink)">Po</span>
+<span class="ln">Полоний <small>№ 84</small></span>
+<span class="lv">2,00</span>
+<span class="lb"><i style="width:50.25125628140703%"></i></span></div><div class="lr"><span class="rk">33</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 77%, var(--paper));color:var(--ink)">Sn</span>
+<span class="ln">Олово <small>№ 50</small></span>
+<span class="lv">1,96</span>
+<span class="lb"><i style="width:49.246231155778894%"></i></span></div><div class="lr"><span class="rk">34</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 75%, var(--paper));color:var(--ink)">Ag</span>
+<span class="ln">Серебро <small>№ 47</small></span>
+<span class="lv">1,93</span>
+<span class="lb"><i style="width:48.49246231155779%"></i></span></div><div class="lr"><span class="rk">35</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 74%, var(--paper));color:var(--ink)">Ni</span>
+<span class="ln">Никель <small>№ 28</small></span>
+<span class="lv">1,91</span>
+<span class="lb"><i style="width:47.98994974874372%"></i></span></div><div class="lr"><span class="rk">36</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 73%, var(--paper));color:var(--ink)">Si</span>
+<span class="ln">Кремний <small>№ 14</small></span>
+<span class="lv">1,90</span>
+<span class="lb"><i style="width:47.73869346733668%"></i></span></div><div class="lr"><span class="rk">37</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 73%, var(--paper));color:var(--ink)">Cu</span>
+<span class="ln">Медь <small>№ 29</small></span>
+<span class="lv">1,90</span>
+<span class="lb"><i style="width:47.73869346733668%"></i></span></div><div class="lr"><span class="rk">38</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 73%, var(--paper));color:var(--ink)">Tc</span>
+<span class="ln">Технеций <small>№ 43</small></span>
+<span class="lv">1,90</span>
+<span class="lb"><i style="width:47.73869346733668%"></i></span></div><div class="lr"><span class="rk">39</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 73%, var(--paper));color:var(--ink)">Re</span>
+<span class="ln">Рений <small>№ 75</small></span>
+<span class="lv">1,90</span>
+<span class="lb"><i style="width:47.73869346733668%"></i></span></div><div class="lr"><span class="rk">40</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 72%, var(--paper));color:var(--ink)">Co</span>
+<span class="ln">Кобальт <small>№ 27</small></span>
+<span class="lv">1,88</span>
+<span class="lb"><i style="width:47.23618090452261%"></i></span></div></div><div><div class="lr"><span class="rk">41</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 69%, var(--paper));color:var(--ink)">Fe</span>
+<span class="ln">Железо <small>№ 26</small></span>
+<span class="lv">1,83</span>
+<span class="lb"><i style="width:45.97989949748744%"></i></span></div><div class="lr"><span class="rk">42</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 68%, var(--paper));color:var(--ink)">Ga</span>
+<span class="ln">Галлий <small>№ 31</small></span>
+<span class="lv">1,81</span>
+<span class="lb"><i style="width:45.47738693467337%"></i></span></div><div class="lr"><span class="rk">43</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 66%, var(--paper));color:var(--ink)">In</span>
+<span class="ln">Индий <small>№ 49</small></span>
+<span class="lv">1,78</span>
+<span class="lb"><i style="width:44.72361809045226%"></i></span></div><div class="lr"><span class="rk">44</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 60%, var(--paper));color:var(--ink)">Cd</span>
+<span class="ln">Кадмий <small>№ 48</small></span>
+<span class="lv">1,69</span>
+<span class="lb"><i style="width:42.462311557788944%"></i></span></div><div class="lr"><span class="rk">45</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 59%, var(--paper));color:var(--ink)">Cr</span>
+<span class="ln">Хром <small>№ 24</small></span>
+<span class="lv">1,66</span>
+<span class="lb"><i style="width:41.70854271356784%"></i></span></div><div class="lr"><span class="rk">46</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 58%, var(--paper));color:var(--ink)">Zn</span>
+<span class="ln">Цинк <small>№ 30</small></span>
+<span class="lv">1,65</span>
+<span class="lb"><i style="width:41.4572864321608%"></i></span></div><div class="lr"><span class="rk">47</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 57%, var(--paper));color:var(--ink)">V</span>
+<span class="ln">Ванадий <small>№ 23</small></span>
+<span class="lv">1,63</span>
+<span class="lb"><i style="width:40.95477386934673%"></i></span></div><div class="lr"><span class="rk">48</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 56%, var(--paper));color:var(--ink)">Tl</span>
+<span class="ln">Таллий <small>№ 81</small></span>
+<span class="lv">1,62</span>
+<span class="lb"><i style="width:40.7035175879397%"></i></span></div><div class="lr"><span class="rk">49</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 55%, var(--paper));color:var(--ink)">Al</span>
+<span class="ln">Алюминий <small>№ 13</small></span>
+<span class="lv">1,61</span>
+<span class="lb"><i style="width:40.45226130653267%"></i></span></div><div class="lr"><span class="rk">50</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 55%, var(--paper));color:var(--ink)">Nb</span>
+<span class="ln">Ниобий <small>№ 41</small></span>
+<span class="lv">1,60</span>
+<span class="lb"><i style="width:40.20100502512563%"></i></span></div><div class="lr"><span class="rk">51</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 53%, var(--paper));color:var(--ink)">Be</span>
+<span class="ln">Бериллий <small>№ 4</small></span>
+<span class="lv">1,57</span>
+<span class="lb"><i style="width:39.447236180904525%"></i></span></div><div class="lr"><span class="rk">52</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 52%, var(--paper));color:var(--ink)">Mn</span>
+<span class="ln">Марганец <small>№ 25</small></span>
+<span class="lv">1,55</span>
+<span class="lb"><i style="width:38.94472361809046%"></i></span></div><div class="lr"><span class="rk">53</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 51%, var(--paper));color:var(--ink)">Ti</span>
+<span class="ln">Титан <small>№ 22</small></span>
+<span class="lv">1,54</span>
+<span class="lb"><i style="width:38.69346733668342%"></i></span></div><div class="lr"><span class="rk">54</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 49%, var(--paper));color:var(--ink)">Ta</span>
+<span class="ln">Тантал <small>№ 73</small></span>
+<span class="lv">1,50</span>
+<span class="lb"><i style="width:37.68844221105528%"></i></span></div><div class="lr"><span class="rk">55</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 49%, var(--paper));color:var(--ink)">Pa</span>
+<span class="ln">Протактиний <small>№ 91</small></span>
+<span class="lv">1,50</span>
+<span class="lb"><i style="width:37.68844221105528%"></i></span></div><div class="lr"><span class="rk">56</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 41%, var(--paper));color:var(--ink)">U</span>
+<span class="ln">Уран <small>№ 92</small></span>
+<span class="lv">1,38</span>
+<span class="lb"><i style="width:34.67336683417086%"></i></span></div><div class="lr"><span class="rk">57</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 40%, var(--paper));color:var(--ink)">Sc</span>
+<span class="ln">Скандий <small>№ 21</small></span>
+<span class="lv">1,36</span>
+<span class="lb"><i style="width:34.17085427135679%"></i></span></div><div class="lr"><span class="rk">58</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 40%, var(--paper));color:var(--ink)">Np</span>
+<span class="ln">Нептуний <small>№ 93</small></span>
+<span class="lv">1,36</span>
+<span class="lb"><i style="width:34.17085427135679%"></i></span></div><div class="lr"><span class="rk">59</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 38%, var(--paper));color:var(--ink)">Zr</span>
+<span class="ln">Цирконий <small>№ 40</small></span>
+<span class="lv">1,33</span>
+<span class="lb"><i style="width:33.41708542713568%"></i></span></div><div class="lr"><span class="rk">60</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 37%, var(--paper));color:var(--ink)">Mg</span>
+<span class="ln">Магний <small>№ 12</small></span>
+<span class="lv">1,31</span>
+<span class="lb"><i style="width:32.91457286432161%"></i></span></div><div class="lr"><span class="rk">61</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 37%, var(--paper));color:var(--ink)">Hf</span>
+<span class="ln">Гафний <small>№ 72</small></span>
+<span class="lv">1,30</span>
+<span class="lb"><i style="width:32.663316582914575%"></i></span></div><div class="lr"><span class="rk">62</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 37%, var(--paper));color:var(--ink)">Th</span>
+<span class="ln">Торий <small>№ 90</small></span>
+<span class="lv">1,30</span>
+<span class="lb"><i style="width:32.663316582914575%"></i></span></div><div class="lr"><span class="rk">63</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 35%, var(--paper));color:var(--ink)">Pu</span>
+<span class="ln">Плутоний <small>№ 94</small></span>
+<span class="lv">1,28</span>
+<span class="lb"><i style="width:32.1608040201005%"></i></span></div><div class="lr"><span class="rk">64</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 35%, var(--paper));color:var(--ink)">Lu</span>
+<span class="ln">Лютеций <small>№ 71</small></span>
+<span class="lv">1,27</span>
+<span class="lb"><i style="width:31.909547738693465%"></i></span></div><div class="lr"><span class="rk">65</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 34%, var(--paper));color:var(--ink)">Tm</span>
+<span class="ln">Тулий <small>№ 69</small></span>
+<span class="lv">1,25</span>
+<span class="lb"><i style="width:31.4070351758794%"></i></span></div><div class="lr"><span class="rk">66</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 33%, var(--paper));color:var(--ink)">Er</span>
+<span class="ln">Эрбий <small>№ 68</small></span>
+<span class="lv">1,24</span>
+<span class="lb"><i style="width:31.155778894472363%"></i></span></div><div class="lr"><span class="rk">67</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 32%, var(--paper));color:var(--ink)">Ho</span>
+<span class="ln">Гольмий <small>№ 67</small></span>
+<span class="lv">1,23</span>
+<span class="lb"><i style="width:30.90452261306533%"></i></span></div><div class="lr"><span class="rk">68</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 32%, var(--paper));color:var(--ink)">Y</span>
+<span class="ln">Иттрий <small>№ 39</small></span>
+<span class="lv">1,22</span>
+<span class="lb"><i style="width:30.65326633165829%"></i></span></div><div class="lr"><span class="rk">69</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 32%, var(--paper));color:var(--ink)">Dy</span>
+<span class="ln">Диспрозий <small>№ 66</small></span>
+<span class="lv">1,22</span>
+<span class="lb"><i style="width:30.65326633165829%"></i></span></div><div class="lr"><span class="rk">70</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 30%, var(--paper));color:var(--ink)">Gd</span>
+<span class="ln">Гадолиний <small>№ 64</small></span>
+<span class="lv">1,20</span>
+<span class="lb"><i style="width:30.15075376884422%"></i></span></div><div class="lr"><span class="rk">71</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 29%, var(--paper));color:var(--ink)">Sm</span>
+<span class="ln">Самарий <small>№ 62</small></span>
+<span class="lv">1,17</span>
+<span class="lb"><i style="width:29.396984924623116%"></i></span></div><div class="lr"><span class="rk">72</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 27%, var(--paper));color:var(--ink)">Nd</span>
+<span class="ln">Неодим <small>№ 60</small></span>
+<span class="lv">1,14</span>
+<span class="lb"><i style="width:28.643216080402006%"></i></span></div><div class="lr"><span class="rk">73</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 26%, var(--paper));color:var(--ink)">Pr</span>
+<span class="ln">Празеодим <small>№ 59</small></span>
+<span class="lv">1,13</span>
+<span class="lb"><i style="width:28.39195979899497%"></i></span></div><div class="lr"><span class="rk">74</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 26%, var(--paper));color:var(--ink)">Ce</span>
+<span class="ln">Церий <small>№ 58</small></span>
+<span class="lv">1,12</span>
+<span class="lb"><i style="width:28.140703517587944%"></i></span></div><div class="lr"><span class="rk">75</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 24%, var(--paper));color:var(--ink)">La</span>
+<span class="ln">Лантан <small>№ 57</small></span>
+<span class="lv">1,10</span>
+<span class="lb"><i style="width:27.638190954773872%"></i></span></div><div class="lr"><span class="rk">76</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 24%, var(--paper));color:var(--ink)">Ac</span>
+<span class="ln">Актиний <small>№ 89</small></span>
+<span class="lv">1,10</span>
+<span class="lb"><i style="width:27.638190954773872%"></i></span></div><div class="lr"><span class="rk">77</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 18%, var(--paper));color:var(--ink)">Ca</span>
+<span class="ln">Кальций <small>№ 20</small></span>
+<span class="lv">1,00</span>
+<span class="lb"><i style="width:25.125628140703515%"></i></span></div><div class="lr"><span class="rk">78</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 17%, var(--paper));color:var(--ink)">Li</span>
+<span class="ln">Литий <small>№ 3</small></span>
+<span class="lv">0,98</span>
+<span class="lb"><i style="width:24.623115577889447%"></i></span></div><div class="lr"><span class="rk">79</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 15%, var(--paper));color:var(--ink)">Sr</span>
+<span class="ln">Стронций <small>№ 38</small></span>
+<span class="lv">0,95</span>
+<span class="lb"><i style="width:23.86934673366834%"></i></span></div><div class="lr"><span class="rk">80</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 14%, var(--paper));color:var(--ink)">Na</span>
+<span class="ln">Натрий <small>№ 11</small></span>
+<span class="lv">0,93</span>
+<span class="lb"><i style="width:23.366834170854272%"></i></span></div></div><div><div class="lr"><span class="rk">81</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 12%, var(--paper));color:var(--ink)">Ra</span>
+<span class="ln">Радий <small>№ 88</small></span>
+<span class="lv">0,90</span>
+<span class="lb"><i style="width:22.613065326633166%"></i></span></div><div class="lr"><span class="rk">82</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 12%, var(--paper));color:var(--ink)">Ba</span>
+<span class="ln">Барий <small>№ 56</small></span>
+<span class="lv">0,89</span>
+<span class="lb"><i style="width:22.36180904522613%"></i></span></div><div class="lr"><span class="rk">83</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 7%, var(--paper));color:var(--ink)">K</span>
+<span class="ln">Калий <small>№ 19</small></span>
+<span class="lv">0,82</span>
+<span class="lb"><i style="width:20.60301507537688%"></i></span></div><div class="lr"><span class="rk">84</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 7%, var(--paper));color:var(--ink)">Rb</span>
+<span class="ln">Рубидий <small>№ 37</small></span>
+<span class="lv">0,82</span>
+<span class="lb"><i style="width:20.60301507537688%"></i></span></div><div class="lr"><span class="rk">85</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 5%, var(--paper));color:var(--ink)">Cs</span>
+<span class="ln">Цезий <small>№ 55</small></span>
+<span class="lv">0,79</span>
+<span class="lb"><i style="width:19.849246231155778%"></i></span></div><div class="lr"><span class="rk">86</span>
+<span class="lt " style="background:color-mix(in oklab, var(--teal) 0%, var(--paper));color:var(--ink)">Fr</span>
+<span class="ln">Франций <small>№ 87</small></span>
+<span class="lv">0,70</span>
+<span class="lb"><i style="width:17.587939698492463%"></i></span></div><div class="lr"><span class="rk"></span>
+<span class="lt unknown" style="">He</span>
+<span class="ln">Гелий <small>№ 2</small></span>
+<span class="lv"><span class="nd">нет данных</span></span>
+<span class="lb"><i style="width:0%"></i></span></div><div class="lr"><span class="rk"></span>
+<span class="lt unknown" style="">Ne</span>
+<span class="ln">Неон <small>№ 10</small></span>
+<span class="lv"><span class="nd">нет данных</span></span>
+<span class="lb"><i style="width:0%"></i></span></div><div class="lr"><span class="rk"></span>
+<span class="lt unknown" style="">Ar</span>
+<span class="ln">Аргон <small>№ 18</small></span>
+<span class="lv"><span class="nd">нет данных</span></span>
+<span class="lb"><i style="width:0%"></i></span></div><div class="lr"><span class="rk"></span>
+<span class="lt unknown" style="">Pm</span>
+<span class="ln">Прометий <small>№ 61</small></span>
+<span class="lv"><span class="nd">нет данных</span></span>
+<span class="lb"><i style="width:0%"></i></span></div><div class="lr"><span class="rk"></span>
+<span class="lt unknown" style="">Eu</span>
+<span class="ln">Европий <small>№ 63</small></span>
+<span class="lv"><span class="nd">нет данных</span></span>
+<span class="lb"><i style="width:0%"></i></span></div><div class="lr"><span class="rk"></span>
+<span class="lt unknown" style="">Tb</span>
+<span class="ln">Тербий <small>№ 65</small></span>
+<span class="lv"><span class="nd">нет данных</span></span>
+<span class="lb"><i style="width:0%"></i></span></div><div class="lr"><span class="rk"></span>
+<span class="lt unknown" style="">Yb</span>
+<span class="ln">Иттербий <small>№ 70</small></span>
+<span class="lv"><span class="nd">нет данных</span></span>
+<span class="lb"><i style="width:0%"></i></span></div><div class="lr"><span class="rk"></span>
+<span class="lt unknown" style="">Rn</span>
+<span class="ln">Радон <small>№ 86</small></span>
+<span class="lv"><span class="nd">нет данных</span></span>
+<span class="lb"><i style="width:0%"></i></span></div><div class="lr"><span class="rk"></span>
+<span class="lt unknown" style="">Am</span>
+<span class="ln">Америций <small>№ 95</small></span>
+<span class="lv"><span class="nd">нет данных</span></span>
+<span class="lb"><i style="width:0%"></i></span></div><div class="lr"><span class="rk"></span>
+<span class="lt unknown" style="">Cm</span>
+<span class="ln">Кюрий <small>№ 96</small></span>
+<span class="lv"><span class="nd">нет данных</span></span>
+<span class="lb"><i style="width:0%"></i></span></div><div class="lr"><span class="rk"></span>
+<span class="lt unknown" style="">Bk</span>
+<span class="ln">Берклий <small>№ 97</small></span>
+<span class="lv"><span class="nd">нет данных</span></span>
+<span class="lb"><i style="width:0%"></i></span></div><div class="lr"><span class="rk"></span>
+<span class="lt unknown" style="">Cf</span>
+<span class="ln">Калифорний <small>№ 98</small></span>
+<span class="lv"><span class="nd">нет данных</span></span>
+<span class="lb"><i style="width:0%"></i></span></div><div class="lr"><span class="rk"></span>
+<span class="lt unknown" style="">Es</span>
+<span class="ln">Эйнштейний <small>№ 99</small></span>
+<span class="lv"><span class="nd">нет данных</span></span>
+<span class="lb"><i style="width:0%"></i></span></div><div class="lr"><span class="rk"></span>
+<span class="lt unknown" style="">Fm</span>
+<span class="ln">Фермий <small>№ 100</small></span>
+<span class="lv"><span class="nd">нет данных</span></span>
+<span class="lb"><i style="width:0%"></i></span></div><div class="lr"><span class="rk"></span>
+<span class="lt unknown" style="">Md</span>
+<span class="ln">Менделевий <small>№ 101</small></span>
+<span class="lv"><span class="nd">нет данных</span></span>
+<span class="lb"><i style="width:0%"></i></span></div><div class="lr"><span class="rk"></span>
+<span class="lt unknown" style="">No</span>
+<span class="ln">Нобелий <small>№ 102</small></span>
+<span class="lv"><span class="nd">нет данных</span></span>
+<span class="lb"><i style="width:0%"></i></span></div><div class="lr"><span class="rk"></span>
+<span class="lt unknown" style="">Lr</span>
+<span class="ln">Лоуренсий <small>№ 103</small></span>
+<span class="lv"><span class="nd">нет данных</span></span>
+<span class="lb"><i style="width:0%"></i></span></div><div class="lr"><span class="rk"></span>
+<span class="lt unknown" style="">Rf</span>
+<span class="ln">Резерфордий <small>№ 104</small></span>
+<span class="lv"><span class="nd">нет данных</span></span>
+<span class="lb"><i style="width:0%"></i></span></div><div class="lr"><span class="rk"></span>
+<span class="lt unknown" style="">Db</span>
+<span class="ln">Дубний <small>№ 105</small></span>
+<span class="lv"><span class="nd">нет данных</span></span>
+<span class="lb"><i style="width:0%"></i></span></div><div class="lr"><span class="rk"></span>
+<span class="lt unknown" style="">Sg</span>
+<span class="ln">Сиборгий <small>№ 106</small></span>
+<span class="lv"><span class="nd">нет данных</span></span>
+<span class="lb"><i style="width:0%"></i></span></div><div class="lr"><span class="rk"></span>
+<span class="lt unknown" style="">Bh</span>
+<span class="ln">Борий <small>№ 107</small></span>
+<span class="lv"><span class="nd">нет данных</span></span>
+<span class="lb"><i style="width:0%"></i></span></div><div class="lr"><span class="rk"></span>
+<span class="lt unknown" style="">Hs</span>
+<span class="ln">Хассий <small>№ 108</small></span>
+<span class="lv"><span class="nd">нет данных</span></span>
+<span class="lb"><i style="width:0%"></i></span></div><div class="lr"><span class="rk"></span>
+<span class="lt unknown" style="">Mt</span>
+<span class="ln">Мейтнерий <small>№ 109</small></span>
+<span class="lv"><span class="nd">нет данных</span></span>
+<span class="lb"><i style="width:0%"></i></span></div><div class="lr"><span class="rk"></span>
+<span class="lt unknown" style="">Ds</span>
+<span class="ln">Дармштадтий <small>№ 110</small></span>
+<span class="lv"><span class="nd">нет данных</span></span>
+<span class="lb"><i style="width:0%"></i></span></div><div class="lr"><span class="rk"></span>
+<span class="lt unknown" style="">Rg</span>
+<span class="ln">Рентгений <small>№ 111</small></span>
+<span class="lv"><span class="nd">нет данных</span></span>
+<span class="lb"><i style="width:0%"></i></span></div><div class="lr"><span class="rk"></span>
+<span class="lt unknown" style="">Cn</span>
+<span class="ln">Коперниций <small>№ 112</small></span>
+<span class="lv"><span class="nd">нет данных</span></span>
+<span class="lb"><i style="width:0%"></i></span></div><div class="lr"><span class="rk"></span>
+<span class="lt unknown" style="">Nh</span>
+<span class="ln">Нихоний <small>№ 113</small></span>
+<span class="lv"><span class="nd">нет данных</span></span>
+<span class="lb"><i style="width:0%"></i></span></div><div class="lr"><span class="rk"></span>
+<span class="lt unknown" style="">Fl</span>
+<span class="ln">Флеровий <small>№ 114</small></span>
+<span class="lv"><span class="nd">нет данных</span></span>
+<span class="lb"><i style="width:0%"></i></span></div><div class="lr"><span class="rk"></span>
+<span class="lt unknown" style="">Mc</span>
+<span class="ln">Московий <small>№ 115</small></span>
+<span class="lv"><span class="nd">нет данных</span></span>
+<span class="lb"><i style="width:0%"></i></span></div><div class="lr"><span class="rk"></span>
+<span class="lt unknown" style="">Lv</span>
+<span class="ln">Ливерморий <small>№ 116</small></span>
+<span class="lv"><span class="nd">нет данных</span></span>
+<span class="lb"><i style="width:0%"></i></span></div><div class="lr"><span class="rk"></span>
+<span class="lt unknown" style="">Ts</span>
+<span class="ln">Теннессин <small>№ 117</small></span>
+<span class="lv"><span class="nd">нет данных</span></span>
+<span class="lb"><i style="width:0%"></i></span></div><div class="lr"><span class="rk"></span>
+<span class="lt unknown" style="">Og</span>
+<span class="ln">Оганесон <small>№ 118</small></span>
+<span class="lv"><span class="nd">нет данных</span></span>
+<span class="lb"><i style="width:0%"></i></span></div></div></div>
+</div><div class="footer"><b>Ещё на сайте:</b><a>Таблица Менделеева</a><a>Свойства элементов</a><a>Калькулятор молярной массы</a><a>Распечатать PDF</a><span style="margin-left:auto">English · Русский · Français · Deutsch · Italiano · Español · 简体中文 · Português</span></div></body></html>

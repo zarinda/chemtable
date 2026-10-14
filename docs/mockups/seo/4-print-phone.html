@@ -1,0 +1,66 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><style>
+@font-face{font-family:Oswald;font-weight:600;src:url(file:///D:/ChemTable/node_modules/@fontsource/oswald/files/oswald-latin-600-normal.woff2)}
+@font-face{font-family:Oswald;font-weight:600;src:url(file:///D:/ChemTable/node_modules/@fontsource/oswald/files/oswald-cyrillic-600-normal.woff2);unicode-range:U+0400-04FF}
+@font-face{font-family:Bebas;src:url(file:///D:/ChemTable/node_modules/@fontsource/bebas-neue/files/bebas-neue-latin-400-normal.woff2)}
+@font-face{font-family:Golos;font-weight:400 900;src:url(file:///D:/ChemTable/node_modules/@fontsource-variable/golos-text/files/golos-text-latin-wght-normal.woff2)}
+@font-face{font-family:Golos;font-weight:400 900;src:url(file:///D:/ChemTable/node_modules/@fontsource-variable/golos-text/files/golos-text-cyrillic-wght-normal.woff2);unicode-range:U+0400-04FF}
+
+:root{--mustard:#e3a83a;--paper:#e6e3da;--ink:#000;--teal:#126f60;--orange:#ee7430;--raspberry:#df3b57;--green:#1d7442;--peach:#f4b48a;
+--bg:var(--mustard);--fg:var(--ink);--surface:var(--paper);--on-surface:var(--ink);--rule:var(--ink);--line:color-mix(in srgb,var(--fg) 45%,transparent)}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--fg);font-family:Golos,system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.45}
+body{position:relative}
+body::after{content:'';position:absolute;inset:0;pointer-events:none;z-index:100;opacity:.32;mix-blend-mode:multiply;
+background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1.4 1'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.cat-alkali-metal{--fill:var(--orange);--on:var(--ink);--tex:none}
+.cat-alkaline-earth-metal{--fill:var(--orange);--on:var(--ink);--tex:radial-gradient(circle,rgb(0 0 0/.24) 1px,transparent 1.3px) 0 0/5px 5px}
+.cat-transition-metal{--fill:var(--paper);--on:var(--ink);--tex:radial-gradient(circle,rgb(0 0 0/.22) .7px,transparent 1px) 0 0/3.5px 3.5px}
+.cat-post-transition-metal{--fill:var(--paper);--on:var(--ink);--tex:repeating-linear-gradient(135deg,rgb(0 0 0/.18) 0 1px,transparent 1px 4px)}
+.cat-metalloid{--fill:var(--green);--on:var(--paper);--tex:radial-gradient(circle,rgb(255 255 255/.25) .9px,transparent 1.2px) 0 0/4px 4px}
+.cat-nonmetal{--fill:var(--teal);--on:var(--paper);--tex:none}
+.cat-halogen{--fill:var(--teal);--on:var(--paper);--tex:repeating-linear-gradient(0deg,rgb(0 0 0/.25) 0 1px,transparent 1px 3.5px)}
+.cat-noble-gas{--fill:var(--raspberry);--on:var(--ink);--tex:none}
+.cat-lanthanide{--fill:var(--peach);--on:var(--ink);--tex:radial-gradient(circle,rgb(0 0 0/.2) 1.2px,transparent 1.5px) 0 0/6px 6px}
+.cat-actinide{--fill:var(--ink);--on:var(--paper);--tex:radial-gradient(circle,rgb(255 255 255/.3) 1px,transparent 1.3px) 0 0/4px 4px}
+.sw{background:var(--tex),var(--fill);color:var(--on)}
+.display{font-family:Oswald,'Arial Narrow',sans-serif;font-weight:600;line-height:1.05;letter-spacing:-.2px}
+.num{font-family:Bebas,Oswald,sans-serif;line-height:1}
+.unknown{background:repeating-linear-gradient(135deg,color-mix(in srgb,var(--fg) 22%,transparent) 0 1px,transparent 1px 6px);color:color-mix(in srgb,var(--fg) 45%,transparent)}
+a{color:inherit;text-underline-offset:3px}
+.pill,.chip{display:inline-flex;align-items:center;gap:.4em;border:1.5px solid var(--fg);border-radius:99px;padding:.35em .85em;font-size:14px;white-space:nowrap}
+.chip.on{background:var(--fg);color:var(--bg)}
+.round{display:inline-grid;place-items:center;width:34px;height:34px;border:1.5px solid var(--fg);border-radius:50%;font-size:15px}
+.new{display:inline-block;margin-left:10px;padding:2px 8px;border-radius:99px;background:var(--raspberry);color:#fff;font:600 12px/1.4 Golos,sans-serif;letter-spacing:0;vertical-align:middle}
+.lead{font-size:var(--lead,17px);max-width:68ch;margin:0}
+.card{background:var(--surface);color:var(--on-surface);box-shadow:6px 6px 0 var(--rule)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;background:var(--fg);color:var(--bg);border-radius:99px;padding:13px 24px;font-weight:600;font-size:16px}
+.seg{display:inline-flex;border:1.5px solid var(--fg);border-radius:99px;overflow:hidden;font-size:14px}
+.seg span{padding:.45em 1em}
+.seg span.on{background:var(--fg);color:var(--bg)}
+.note{font-size:13px;opacity:.85}
+h2.display{font-size:28px;margin:0 0 14px}
+
+body{width:390px}
+.pbar{display:flex;align-items:center;gap:8px;padding:12px 12px 14px}
+.pbar>a{font-size:15px;margin-right:auto}
+.wrap{padding:0 12px}
+h1.display{font-size:34px;margin:8px 0 8px}
+.lead{--lead:15px}
+.chips{display:flex;gap:8px;overflow:hidden;white-space:nowrap;mask-image:linear-gradient(90deg,#000 82%,transparent)}
+.pfoot{margin:36px 12px 0;padding:18px 0 40px;border-top:2px solid var(--rule);font-size:14px;display:grid;gap:8px}
+
+.sheet{position:relative;z-index:101;margin:18px 0 6px;background:#fff;box-shadow:5px 5px 0 var(--rule);line-height:0}
+.sheet img{width:100%}
+.lbl{font-size:14px;margin:16px 0 8px}
+ul{margin:22px 0 0;padding-left:1.1em;font-size:14px;display:grid;gap:8px}
+</style></head><body><div class="pbar"><a>← Таблица</a><span class="pill">Русский ▾</span><span class="round">◐</span></div>
+<div class="wrap">
+  <h1 class="display">Таблица Менделеева для печати</h1>
+  <p class="lead">Бесплатные PDF: A4 и US Letter, цветная и чёрно-белая.</p>
+  <div class="sheet"><img src="file:///D:/ChemTable/docs/mockups/seo/print-a4-color.png"></div>
+  <p class="lbl">Формат бумаги</p><span class="seg"><span class="on">A4</span><span>US Letter</span></span>
+  <p class="lbl">Цвет</p><span class="seg"><span class="on">Цветная</span><span>Чёрно-белая</span></span>
+  <div class="btn" style="display:flex;margin-top:22px;padding:15px">↓ Скачать PDF · 510 КБ</div>
+  <ul><li>Векторный PDF: текст чёткий при любом масштабе, его можно искать и копировать.</li><li>Чёрно-белая версия — для обычного принтера: категории различаются фактурой, а не только цветом.</li><li>Печатайте в масштабе 100 % («Фактический размер»), ориентация альбомная.</li><li>Данные IUPAC (CIAAW), NIST, PubChem; обновлены 12 октября 2026.</li></ul>
+  <p style="font-size:14px;margin-top:18px">На других языках: English · Français · Deutsch · Italiano · Español · 简体中文 · Português</p>
+</div><div class="pfoot"><b>Ещё на сайте</b><a>Таблица Менделеева</a><a>Свойства элементов</a><a>Калькулятор молярной массы</a><a>Распечатать PDF</a></div></body></html>
