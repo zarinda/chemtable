@@ -302,12 +302,8 @@ export const fr: Dict = {
 		unit: 'g/mol',
 		school: (masses) => `Pour les exercices scolaires (${masses})`,
 		parts: 'Répartition par élément',
-		howCalculated: 'Le calcul',
 		rounding: 'Le résultat est arrondi à la précision de la masse atomique la moins précise.',
-		more: 'Page de la substance',
 		popular: 'Substances courantes',
-		another: 'Calculer une autre substance',
-		calculate: 'Calculer',
 		whatIs: `Qu’est-ce que la masse molaire${_}?`,
 		whatIsText: (example) => [
 			'La masse molaire M est la masse d’une mole de substance, soit environ 6,022 × 10²³ de ses particules. Elle s’exprime en grammes par mole (g/mol).',
@@ -333,8 +329,7 @@ export const fr: Dict = {
 			sources: 'Masses atomiques de l’IUPAC (CIAAW).',
 			pubchemSame: (value) => `Identique à PubChem${_}: ${value} g/mol.`,
 			pubchemDiff: (value) =>
-				`PubChem donne ${value} g/mol${_}: le dernier chiffre diffère, car les masses atomiques y sont arrondies autrement.`,
-			back: 'Masse molaire'
+				`PubChem donne ${value} g/mol${_}: le dernier chiffre diffère, car les masses atomiques y sont arrondies autrement.`
 		}
 	},
 	moreOnSite: 'Aussi sur ChemTable',

@@ -304,12 +304,8 @@ export const pt: Dict = {
 		unit: 'g/mol',
 		school: (masses) => `Para exercícios escolares (${masses})`,
 		parts: 'Contribuição de cada elemento',
-		howCalculated: 'Como é calculado',
 		rounding: 'O resultado é arredondado à precisão da massa atômica menos precisa.',
-		more: 'Página da substância',
 		popular: 'Substâncias comuns',
-		another: 'Calcular outra substância',
-		calculate: 'Calcular',
 		whatIs: 'O que é massa molar?',
 		whatIsText: (example) => [
 			'A massa molar M é a massa de um mol de uma substância, ou seja, de cerca de 6,022 · 10²³ de suas partículas. É medida em gramas por mol (g/mol).',
@@ -336,8 +332,7 @@ export const pt: Dict = {
 			sources: 'Massas atômicas da IUPAC (CIAAW).',
 			pubchemSame: (value) => `Coincide com o PubChem: ${value} g/mol.`,
 			pubchemDiff: (value) =>
-				`O PubChem dá ${value} g/mol: o último algarismo difere porque as massas atômicas são arredondadas de outro jeito.`,
-			back: 'Massa molar'
+				`O PubChem dá ${value} g/mol: o último algarismo difere porque as massas atômicas são arredondadas de outro jeito.`
 		}
 	},
 	moreOnSite: 'Mais no ChemTable',

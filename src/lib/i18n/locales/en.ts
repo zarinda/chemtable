@@ -304,12 +304,8 @@ export const en: Dict = {
 		unit: 'g/mol',
 		school: (masses) => `For school problems (${masses})`,
 		parts: 'Breakdown by element',
-		howCalculated: 'How it’s calculated',
 		rounding: 'The result is rounded to the precision of the least precise atomic weight.',
-		more: 'Substance page',
 		popular: 'Common substances',
-		another: 'Calculate another substance',
-		calculate: 'Calculate',
 		whatIs: 'What is molar mass?',
 		whatIsText: (example) => [
 			'Molar mass M is the mass of one mole of a substance, about 6.022 × 10²³ of its particles. It is measured in grams per mole (g/mol).',
@@ -336,8 +332,7 @@ export const en: Dict = {
 			sources: 'Atomic weights from IUPAC (CIAAW).',
 			pubchemSame: (value) => `Agrees with PubChem: ${value} g/mol.`,
 			pubchemDiff: (value) =>
-				`PubChem gives ${value} g/mol: the last digit differs because the atomic weights are rounded differently.`,
-			back: 'Molar mass'
+				`PubChem gives ${value} g/mol: the last digit differs because the atomic weights are rounded differently.`
 		}
 	},
 	moreOnSite: 'More on ChemTable',

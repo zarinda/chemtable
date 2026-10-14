@@ -303,12 +303,8 @@ export const de: Dict = {
 		unit: 'g/mol',
 		school: (masses) => `Für Schulaufgaben (${masses})`,
 		parts: 'Anteile der Elemente',
-		howCalculated: 'So wird gerechnet',
 		rounding: 'Das Ergebnis ist auf die Genauigkeit der ungenauesten Atommasse gerundet.',
-		more: 'Seite des Stoffes',
 		popular: 'Häufige Stoffe',
-		another: 'Einen anderen Stoff berechnen',
-		calculate: 'Berechnen',
 		whatIs: 'Was ist die molare Masse?',
 		whatIsText: (example) => [
 			'Die molare Masse M ist die Masse von einem Mol eines Stoffes, also von etwa 6,022 · 10²³ seiner Teilchen. Sie wird in Gramm pro Mol (g/mol) angegeben.',
@@ -335,8 +331,7 @@ export const de: Dict = {
 			sources: 'Atommassen von der IUPAC (CIAAW).',
 			pubchemSame: (value) => `Stimmt mit PubChem überein: ${value} g/mol.`,
 			pubchemDiff: (value) =>
-				`PubChem gibt ${value} g/mol an: Die letzte Stelle weicht ab, weil die Atommassen anders gerundet sind.`,
-			back: 'Molare Masse'
+				`PubChem gibt ${value} g/mol an: Die letzte Stelle weicht ab, weil die Atommassen anders gerundet sind.`
 		}
 	},
 	moreOnSite: 'Mehr auf ChemTable',

@@ -295,12 +295,8 @@ export const zh: Dict = {
 		unit: 'g/mol',
 		school: (masses) => `习题常用近似值（${masses}）`,
 		parts: '各元素的贡献',
-		howCalculated: '计算过程',
 		rounding: '结果按精度最低的原子量修约。',
-		more: '物质页面',
 		popular: '常见物质',
-		another: '计算其他物质',
-		calculate: '计算',
 		whatIs: '什么是摩尔质量？',
 		whatIsText: (example) => [
 			'摩尔质量 M 是 1 摩尔物质（约 6.022 × 10²³ 个粒子）的质量，单位是克每摩尔（g/mol）。',
@@ -324,8 +320,7 @@ export const zh: Dict = {
 			aka: '又称',
 			sources: '原子量来自 IUPAC（CIAAW）。',
 			pubchemSame: (value) => `与 PubChem 一致：${value} g/mol。`,
-			pubchemDiff: (value) => `PubChem 给出 ${value} g/mol：最后一位不同，是因为原子量的修约方式不同。`,
-			back: '摩尔质量'
+			pubchemDiff: (value) => `PubChem 给出 ${value} g/mol：最后一位不同，是因为原子量的修约方式不同。`
 		}
 	},
 	moreOnSite: '更多内容',

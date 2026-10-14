@@ -228,15 +228,8 @@ export type Dict = {
 		school: (masses: string) => string;
 		/** Heading of the breakdown by element on the calculator. */
 		parts: string;
-		/** The same heading on a substance page. */
-		howCalculated: string;
 		rounding: string;
-		/** Link from the calculator to the page of the substance typed. */
-		more: string;
 		popular: string;
-		/** Heading of the formula field on a substance page. */
-		another: string;
-		calculate: string;
 		whatIs: string;
 		/** Paragraphs; the last one receives the worked example for water. */
 		whatIsText: (example: string) => string[];
@@ -263,8 +256,6 @@ export type Dict = {
 			/** PubChem's value when it agrees to the last digit, and when it does not. */
 			pubchemSame: (value: string) => string;
 			pubchemDiff: (value: string) => string;
-			/** Link back to the calculator. */
-			back: string;
 		};
 	};
 	/** Footer heading over links to the other pages of the site. */

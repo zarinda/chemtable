@@ -1,14 +1,15 @@
 <script lang="ts">
-	import { onMount, tick } from 'svelte';
-	import { goto } from '$app/navigation';
+	import { onMount, tick, untrack } from 'svelte';
+	import { afterNavigate, goto } from '$app/navigation';
 	import { app } from '#lib/state.svelte.ts';
-	import { LANG_INFO } from '#lib/i18n/langs.ts';
-	import { COMPOUNDS, byFormula, capitalize } from '#lib/compounds.ts';
+	import { LANG_INFO, type Lang } from '#lib/i18n/langs.ts';
+	import { COMPOUNDS, byCompoundSlug, byFormula, capitalize, type Compound } from '#lib/compounds.ts';
 	import {
 		calculate,
 		formatUnits,
 		isError,
 		normalize,
+		school,
 		working,
 		type FormulaError,
 		type MolarMass
@@ -21,6 +22,13 @@
 	import PageHead from './PageHead.svelte';
 	import PageHeader from './PageHeader.svelte';
 
+	/**
+	 * The calculator, on /molar-mass and on every substance page (/molar-mass/water): one page
+	 * whose address follows the formula. A substance page is the calculator with its formula
+	 * typed in, its own title and description for search engines.
+	 */
+	let { compound: substance }: { compound?: Compound } = $props();
+
 	const EXAMPLE = 'H2SO4';
 	const KEYS = ['(', ')', '·', '2', '3', '4'];
 
@@ -28,22 +36,36 @@
 	let t = $derived(app.t);
 	let m = $derived(t.molar);
 
-	let input = $state(EXAMPLE);
-	/** The example is selected on first focus, so typing replaces it. */
+	const start = untrack(() => substance?.formula ?? EXAMPLE);
+	let input = $state(start);
+	/** The starting formula is selected on first focus, so typing replaces it. */
 	let edited = false;
 	let field: HTMLInputElement | undefined = $state();
+	let card: HTMLElement | undefined = $state();
 
 	let result = $derived(input.trim() ? calculate(input) : null);
 	let error = $derived(result && isError(result) ? result : null);
 
 	// While a formula is half-typed, the last good result stays on screen, faded.
-	let last = { mass: calculate(EXAMPLE) as MolarMass, formula: EXAMPLE };
+	let last = { mass: calculate(start) as MolarMass, formula: start };
 	let shown = $derived.by(() => {
 		if (result && !isError(result)) last = { mass: result, formula: normalize(input) };
 		return last;
 	});
 	let stale = $derived(!result || !!error);
+	/** The substance on screen, if it has a page: its name, other name and PubChem check. */
 	let compound = $derived(byFormula.get(shown.formula));
+
+	// PubChem's value, rounded as PubChem rounds it, decides whether the two agree.
+	let pubchem = $derived.by(() => {
+		if (!compound) return null;
+		const digits = compound.pubchem.split('.')[1]?.length ?? 0;
+		const value = new Intl.NumberFormat(LANG_INFO[lang].tag, { minimumFractionDigits: digits }).format(
+			Number(compound.pubchem)
+		);
+		const agrees = formatUnits(shown.mass.units, digits, 'en') === compound.pubchem;
+		return agrees ? m.compound.pubchemSame(value) : m.compound.pubchemDiff(value);
+	});
 
 	// Errors wait for a pause in typing: "Ca(" is not a mistake yet.
 	let showError = $state(false);
@@ -54,29 +76,60 @@
 		return () => clearTimeout(id);
 	});
 
-	// The formula goes into the address (?f=), so a result can be shared.
+	/** A substance with a page has that address; any other formula is the calculator with ?f=. */
+	function address(formula: string): URL {
+		const known = byFormula.get(formula);
+		const url = new URL(known ? compoundPath(known, lang) : molarPath(lang), location.origin);
+		if (!known) url.searchParams.set('f', formula);
+		return url;
+	}
+
+	// The address follows the formula, so a result can be shared and Back leaves the calculator.
+	// The page stays: the calculator lives in the molar-mass layout, and focus and scroll are kept.
 	$effect(() => {
 		const formula = shown.formula;
+		if (!edited) return;
 		const id = setTimeout(() => {
-			const url = new URL(location.href);
-			if ((url.searchParams.get('f') ?? EXAMPLE) === formula) return;
-			if (formula === EXAMPLE) url.searchParams.delete('f');
-			else url.searchParams.set('f', formula);
-			goto(url, { state: {}, shallow: true, replace: true });
+			const url = address(formula);
+			if (url.pathname + url.search !== location.pathname + location.search)
+				goto(url, { replace: true, reset: false });
 		}, 400);
 		return () => clearTimeout(id);
 	});
 
 	onMount(() => {
 		const f = new URL(location.href).searchParams.get('f');
-		if (f) {
+		if (f && !substance) {
 			input = f;
 			edited = true;
 		}
 	});
 
-	function selectExample() {
-		if (!edited && input === EXAMPLE) field?.select();
+	// Back and Forward between substances bring their formula back into the field.
+	afterNavigate(({ type, to }) => {
+		if (type !== 'popstate' || !to) return;
+		const known = byCompoundSlug.get(to.params?.compound ?? '');
+		input = known?.formula ?? to.url.searchParams.get('f') ?? EXAMPLE;
+		// The address is already the formula's: the example on /molar-mass must not turn into its page.
+		edited = false;
+	});
+
+	/** A substance from the list goes into the field; its page address comes with it. */
+	function pick(event: MouseEvent, c: Compound) {
+		if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+		event.preventDefault();
+		input = c.formula;
+		edited = true;
+		goto(compoundPath(c, lang), { reset: false });
+		// The list is below the fold: bring the result back into view.
+		if (card && card.getBoundingClientRect().top < 0) {
+			const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+			card.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
+		}
+	}
+
+	function selectStart() {
+		if (!edited && input === start) field?.select();
 	}
 
 	async function insert(text: string) {
@@ -105,36 +158,65 @@
 		`M(H₂O) = ${working(water, lang)} = ${formatUnits(water.units, water.digits, lang)} ${m.unit}`
 	);
 
-	let graph = $derived([
-		{
-			'@type': 'WebApplication',
-			name: m.title,
-			url: absolute(molarPath(lang)),
-			applicationCategory: 'EducationalApplication',
-			operatingSystem: 'Any',
-			inLanguage: LANG_INFO[lang].tag,
-			isAccessibleForFree: true,
-			offers: { '@type': 'Offer', price: 0, priceCurrency: 'USD' }
-		}
+	// Search engines see the page of the address: the calculator, or one substance.
+	let pathFor = $derived(substance ? (l: Lang) => compoundPath(substance, l) : molarPath);
+	let head = $derived.by(() => {
+		if (!substance) return { title: m.seoTitle, description: m.description, heading: m.title };
+		const mass = calculate(substance.formula) as MolarMass;
+		const value = formatUnits(mass.units, mass.digits, lang);
+		const of = substance.of[lang];
+		return {
+			title: m.compound.seoTitle(of, substance.formula, value),
+			description: m.compound.description(of, substance.formula, value, working(mass, lang), school(mass, lang).total),
+			heading: m.compound.title(of)
+		};
+	});
+	let crumbs = $derived([
+		{ name: m.title, path: molarPath(lang) },
+		...(substance ? [{ name: head.heading, path: compoundPath(substance, lang) }] : [])
 	]);
+	let graph = $derived(
+		substance
+			? [
+					{
+						'@type': 'ChemicalSubstance',
+						'@id': `${absolute(compoundPath(substance, lang))}#substance`,
+						name: capitalize(substance.name[lang]),
+						alternateName: [substance.formula, ...(substance.aka ? [substance.aka[lang]] : [])],
+						chemicalComposition: substance.formula,
+						url: absolute(compoundPath(substance, lang)),
+						sameAs: [
+							`https://pubchem.ncbi.nlm.nih.gov/compound/${substance.cid}`,
+							`https://www.wikidata.org/wiki/${substance.wikidata}`
+						]
+					}
+				]
+			: [
+					{
+						'@type': 'WebApplication',
+						name: m.title,
+						url: absolute(molarPath(lang)),
+						applicationCategory: 'EducationalApplication',
+						operatingSystem: 'Any',
+						inLanguage: LANG_INFO[lang].tag,
+						isAccessibleForFree: true,
+						offers: { '@type': 'Offer', price: 0, priceCurrency: 'USD' }
+					}
+				]
+	);
 </script>
 
-<PageHead
-	title={m.seoTitle}
-	description={m.description}
-	pathFor={molarPath}
-	crumbs={[{ name: m.title, path: molarPath(lang) }]}
-	{graph}
-/>
+<PageHead title={head.title} description={head.description} {pathFor} {crumbs} {graph} />
 
-<PageHeader href={homePath(lang)} label={t.privacy.back} pathFor={molarPath} />
+<PageHeader href={homePath(lang)} label={t.privacy.back} {pathFor} />
 
 <main class="page">
-	<h1>{m.title}</h1>
+	<h1>{head.heading}</h1>
 	<p class="lead">{m.lead}</p>
 
 	<div class="grid">
 		<form
+			bind:this={card}
 			class="card"
 			action={molarPath(lang)}
 			method="get"
@@ -151,8 +233,8 @@
 					bind:this={field}
 					bind:value={input}
 					oninput={() => (edited = true)}
-					onfocus={selectExample}
-					onpointerup={selectExample}
+					onfocus={selectStart}
+					onpointerup={selectStart}
 					placeholder={m.placeholder}
 					autocomplete="off"
 					autocapitalize="off"
@@ -204,6 +286,12 @@
 					<span class="formula"><Formula formula={shown.formula} /></span>
 					{#if compound}<span class="what">{compound.name[lang]}</span>{/if}
 				</p>
+				{#if compound?.aka}
+					<p class="aside">{m.compound.aka} {compound.aka[lang]}</p>
+				{/if}
+				{#if compound?.note}
+					<p class="aside">{compound.note[lang]}</p>
+				{/if}
 				<MolarValue mass={shown.mass} />
 			</div>
 		</form>
@@ -211,12 +299,14 @@
 		<section class="parts" class:stale aria-labelledby="parts-heading">
 			<h2 id="parts-heading">{m.parts}</h2>
 			<MolarBreakdown mass={shown.mass} formula={shown.formula} />
-			<p class="note">{m.rounding}</p>
-			{#if compound}
-				<p class="more">
-					<a href={compoundPath(compound, lang)}>{m.more}: {compound.name[lang]} →</a>
-				</p>
-			{/if}
+			<p class="note">
+				{m.rounding}
+				{m.compound.sources}
+				{#if compound}
+					{pubchem}
+					<a href="https://pubchem.ncbi.nlm.nih.gov/compound/{compound.cid}">PubChem CID {compound.cid}</a>
+				{/if}
+			</p>
 		</section>
 	</div>
 
@@ -225,7 +315,11 @@
 		<ul>
 			{#each popular as { c, mass } (c.slug)}
 				<li>
-					<a href={compoundPath(c, lang)}>
+					<a
+						href={compoundPath(c, lang)}
+						aria-current={c === compound ? 'true' : undefined}
+						onclick={(event) => pick(event, c)}
+					>
 						<span class="formula"><Formula formula={c.formula} /></span>
 						<span class="name">{capitalize(c.name[lang])}</span>
 						<span class="number">{formatUnits(mass.units, mass.digits, lang)}</span>
@@ -243,7 +337,7 @@
 	</section>
 </main>
 
-<PageFooter pathFor={molarPath} />
+<PageFooter {pathFor} />
 
 <style>
 	.page {
@@ -285,6 +379,8 @@
 		background: var(--surface);
 		color: var(--on-surface);
 		box-shadow: 6px 6px 0 var(--rule);
+		/* Room above it when a substance picked from the list scrolls it back into view. */
+		scroll-margin-top: 16px;
 	}
 
 	label {
@@ -405,8 +501,9 @@
 		opacity: 0.85;
 	}
 
-	.more {
-		margin: 14px 0 0;
+	.aside {
+		margin: -6px 0 14px;
+		font-size: var(--step--1);
 	}
 
 	.popular,
@@ -436,6 +533,11 @@
 
 	.popular a:hover {
 		background: color-mix(in srgb, var(--fg) 8%, transparent);
+	}
+
+	/* The substance in the field: framed like the current page in the cells below. */
+	.popular a[aria-current] {
+		box-shadow: inset 0 0 0 1.5px var(--fg);
 	}
 
 	.popular .formula {
