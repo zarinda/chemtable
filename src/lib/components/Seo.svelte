@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { app } from '#lib/state.svelte.ts';
-	import { fetchedAt, sources, PROPERTIES, type Element } from '#lib/elements.ts';
+	import { fetchedAt, sources, PROPERTIES, type Element, type PropertyKey } from '#lib/elements.ts';
 	import { LANGS, LANG_INFO } from '#lib/i18n/langs.ts';
 	import {
 		SITE_URL,
@@ -11,22 +11,40 @@
 		elementPath,
 		homePath,
 		ogImagePath,
+		propertyPath,
 		summaryFacts
 	} from '#lib/seo.ts';
 
-	/** Element whose page this is, or null for the home page. */
-	let { element }: { element: Element | null } = $props();
+	/**
+	 * Element whose page this is, else the property of a property page, else the home page.
+	 * An element opened over a property page takes over, as the URL does.
+	 */
+	let { element, property = null }: { element: Element | null; property?: PropertyKey | null } =
+		$props();
 
 	let lang = $derived(app.lang);
 	let t = $derived(app.t);
 	let facts = $derived(element ? summaryFacts(element, lang) : null);
 
-	let title = $derived(
-		element ? t.seo.elementTitle(element.name[lang], element.symbol) : t.seo.homeTitle
+	let pathFor = $derived((l: typeof lang) =>
+		element ? elementPath(element, l) : property ? propertyPath(property, l) : homePath(l)
 	);
-	let description = $derived(facts ? t.seo.elementDescription(facts) : t.seo.homeDescription);
-	let url = $derived(absolute(element ? elementPath(element, lang) : homePath(lang)));
-	let links = $derived(alternates((l) => (element ? elementPath(element, l) : homePath(l))));
+	let title = $derived(
+		element
+			? t.seo.elementTitle(element.name[lang], element.symbol)
+			: property
+				? t.propertyPage.seoTitle(t.propertyPage.title[property])
+				: t.seo.homeTitle
+	);
+	let description = $derived(
+		facts
+			? t.seo.elementDescription(facts)
+			: property
+				? t.propertyPage.description[property]
+				: t.seo.homeDescription
+	);
+	let url = $derived(absolute(pathFor(lang)));
+	let links = $derived(alternates(pathFor));
 	let image = $derived(absolute(ogImagePath(lang, element)));
 
 	const WEBSITE_ID = `${SITE_URL}/#website`;
@@ -43,6 +61,34 @@
 			description: t.seo.homeDescription,
 			publisher: { '@id': AUTHOR_ID }
 		};
+
+		if (!element && property) {
+			const heading = t.propertyPage.title[property];
+			return [
+				website,
+				author,
+				{
+					'@type': 'WebPage',
+					'@id': url,
+					url,
+					name: title,
+					description,
+					inLanguage: LANG_INFO[lang].tag,
+					isPartOf: { '@id': WEBSITE_ID },
+					breadcrumb: { '@id': `${url}#breadcrumb` },
+					primaryImageOfPage: image,
+					dateModified: fetchedAt
+				},
+				{
+					'@type': 'BreadcrumbList',
+					'@id': `${url}#breadcrumb`,
+					itemListElement: [
+						{ '@type': 'ListItem', position: 1, name: t.title, item: absolute(homePath(lang)) },
+						{ '@type': 'ListItem', position: 2, name: heading, item: url }
+					]
+				}
+			];
+		}
 
 		if (!element || !facts) {
 			return [

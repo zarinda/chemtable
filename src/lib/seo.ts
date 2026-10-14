@@ -1,5 +1,5 @@
 import { PUBLIC_SITE_URL } from '$app/env/public';
-import type { Element } from './elements';
+import { PROPERTY_SLUG, type Element, type PropertyKey } from './elements';
 import { LANGS, LANG_INFO, DEFAULT_LANG, localize, type Lang } from './i18n/langs';
 
 export const SITE_URL = PUBLIC_SITE_URL;
@@ -65,6 +65,7 @@ export const DATA_CREDITS = [
 export const homePath = (lang: Lang) => localize('/', lang);
 export const elementPath = (e: Element, lang: Lang) => localize(`/${e.slug}`, lang);
 export const privacyPath = (lang: Lang) => localize('/privacy', lang);
+export const propertyPath = (key: PropertyKey, lang: Lang) => localize(`/${PROPERTY_SLUG[key]}`, lang);
 
 /** Shown on the privacy policy and used as its sitemap date: change it with the policy. */
 export const PRIVACY_UPDATED = '2026-10-12';

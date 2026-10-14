@@ -1,4 +1,4 @@
-import { elements, fetchedAt, type Element } from '#lib/elements.ts';
+import { PROPERTIES, elements, fetchedAt, type Element } from '#lib/elements.ts';
 import { LANGS, type Lang } from '#lib/i18n/langs.ts';
 import {
 	absolute,
@@ -7,6 +7,7 @@ import {
 	homePath,
 	ogImagePath,
 	privacyPath,
+	propertyPath,
 	PRIVACY_UPDATED
 } from '#lib/seo.ts';
 import type { RequestHandler } from './$types';
@@ -44,6 +45,7 @@ export const GET: RequestHandler = () => {
 	const body = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 ${[null, ...elements].map(page).join('\n')}
+${PROPERTIES.map((p) => urls((l) => propertyPath(p, l), fetchedAt, (l) => ogImagePath(l, null))).join('\n')}
 ${urls(privacyPath, PRIVACY_UPDATED)}
 </urlset>
 `;

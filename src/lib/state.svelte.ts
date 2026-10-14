@@ -40,7 +40,8 @@ export const cellOf = (z: number) => document.querySelector<HTMLElement>(`.cell[
 
 class AppState {
 	theme = $state<Theme>('system');
-	mode = $state<Mode>('category');
+	/** Colouring chosen with the buttons on the home page. */
+	#mode = $state<Mode>('category');
 	/** Category highlighted from the legend; others are dimmed. */
 	focusCategory = $state<Category | null>(null);
 	/** Element under the pointer or keyboard focus. */
@@ -59,6 +60,15 @@ class AppState {
 
 	get t() {
 		return UI[this.lang];
+	}
+
+	/** A property page always shows its own property; elsewhere the visitor's choice. */
+	get mode(): Mode {
+		return page.data.property ?? this.#mode;
+	}
+
+	set mode(mode: Mode) {
+		this.#mode = mode;
 	}
 
 	/** Element open in the poster: from shallow routing, else the element page itself. */

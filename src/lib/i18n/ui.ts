@@ -169,6 +169,26 @@ export type Dict = {
 		symbol: string;
 		name: string;
 	};
+	/** Page per property (/electronegativity): the table coloured by it and every value in a list. */
+	propertyPage: {
+		/** Page heading. */
+		title: Record<PropertyKey, string>;
+		/** <title>, built from the heading. */
+		seoTitle: (title: string) => string;
+		description: Record<PropertyKey, string>;
+		/** Heading of the list of values. */
+		list: Record<PropertyKey, string>;
+		/** Label of the sort buttons. */
+		sortBy: string;
+		sort: Record<'desc' | 'asc' | 'z', string>;
+		/** Heading over the elements without a value. */
+		missing: string;
+		source: string;
+		/** Link from the colour scale to the list. */
+		allValues: string;
+		/** Footer heading over the links to every property page. */
+		all: string;
+	};
 };
 
 export const UI: Record<Lang, Dict> = { en, ru, fr, de, it, es, zh, pt };

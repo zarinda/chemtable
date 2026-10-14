@@ -91,6 +91,18 @@ export const PROPERTIES: PropertyKey[] = [
 	'ionizationEnergy'
 ];
 
+/** URL segment of each property's page: /electronegativity, /ru/covalent-radius. */
+export const PROPERTY_SLUG: Record<PropertyKey, string> = {
+	mass: 'atomic-mass',
+	electronegativity: 'electronegativity',
+	atomicRadius: 'covalent-radius',
+	density: 'density',
+	meltingPoint: 'melting-point',
+	ionizationEnergy: 'ionization-energy'
+};
+
+export const byPropertySlug = new Map(PROPERTIES.map((key) => [PROPERTY_SLUG[key], key]));
+
 export function propertyValue(e: Element, key: PropertyKey): number | null {
 	return key === 'mass' ? e.mass.value : e[key];
 }

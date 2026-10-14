@@ -238,5 +238,38 @@ export const it: Dict = {
 		atomicNumber: 'Numero atomico',
 		symbol: 'Simbolo',
 		name: 'Nome'
+	},
+	propertyPage: {
+		title: {
+			mass: 'Massa atomica degli elementi',
+			electronegativity: 'Elettronegatività degli elementi',
+			atomicRadius: 'Raggio covalente degli elementi',
+			density: 'Densità degli elementi',
+			meltingPoint: 'Punto di fusione degli elementi',
+			ionizationEnergy: 'Energia di ionizzazione degli elementi'
+		},
+		seoTitle: (title) => `${title}: tabella dei valori | ChemTable`,
+		description: {
+			mass: 'Masse atomiche di tutti i 118 elementi secondo la IUPAC: elenco dal più pesante al più leggero e tavola periodica colorata per massa atomica.',
+			electronegativity: 'Elettronegatività di Pauling di tutti gli elementi: elenco ordinato e tavola periodica a colori. Il valore più alto è del fluoro, 3,98.',
+			atomicRadius: 'Raggi covalenti degli elementi in picometri (Cordero, 2008): elenco per dimensione dell’atomo e tavola periodica colorata per raggio.',
+			density: 'Densità degli elementi in g/cm³: elenco dai più densi, osmio e iridio, ai più leggeri e tavola periodica colorata per densità.',
+			meltingPoint: 'Punti di fusione degli elementi in °C e K: elenco dal più alto al più basso e tavola periodica colorata per punto di fusione.',
+			ionizationEnergy: 'Prima energia di ionizzazione degli elementi in eV (NIST): elenco ordinato e tavola periodica. Massima per l’elio, minima per il cesio.'
+		},
+		list: {
+			mass: 'Tutti gli elementi per massa atomica',
+			electronegativity: 'Tutti gli elementi per elettronegatività',
+			atomicRadius: 'Tutti gli elementi per raggio covalente',
+			density: 'Tutti gli elementi per densità',
+			meltingPoint: 'Tutti gli elementi per punto di fusione',
+			ionizationEnergy: 'Tutti gli elementi per energia di ionizzazione'
+		},
+		sortBy: 'Ordine',
+		sort: { desc: 'Decrescente', asc: 'Crescente', z: 'Per numero atomico' },
+		missing: 'Nessun dato',
+		source: 'Fonte',
+		allValues: 'Tutti i valori in elenco',
+		all: 'Proprietà degli elementi'
 	}
 };

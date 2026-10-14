@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { ToggleGroup } from 'bits-ui';
+	import { page } from '$app/state';
 	import { app } from '#lib/state.svelte.ts';
+	import { propertyPath } from '#lib/seo.ts';
 	import { CATEGORIES, propertyRange, type Category } from '#lib/elements.ts';
 	import { HEAT_GRADIENT } from '#lib/heat.ts';
 	import { formatNumber, kelvinToCelsius } from '#lib/format.ts';
@@ -37,7 +39,13 @@
 			<span class="bar" style:background={HEAT_GRADIENT} aria-hidden="true"></span>
 			<span class="end">{range[1]}</span>
 			<span class="nodata"><span class="hatch" aria-hidden="true"></span>{app.t.noData}</span>
-			<p class="trend">{app.t.trend[app.mode]}</p>
+			<p class="trend">
+				{app.t.trend[app.mode]}
+				<!-- On the property page the list is just below; elsewhere it is that page. -->
+				<a class="all" href={page.data.property ? '#values' : propertyPath(app.mode, app.lang)}
+					>{app.t.propertyPage.allValues}&nbsp;{page.data.property ? '↓' : '→'}</a
+				>
+			</p>
 		</div>
 	{/if}
 </footer>
@@ -113,6 +121,11 @@
 		max-width: 80ch;
 	}
 
+	.all {
+		margin-left: 0.4em;
+		white-space: nowrap;
+	}
+
 	.nodata {
 		display: inline-flex;
 		align-items: center;
@@ -165,6 +178,11 @@
 			width: 16px;
 			height: 16px;
 			background: var(--texture-sm), var(--fill);
+		}
+
+		/* The label on its own line leaves the colour bar the width of the screen. */
+		.label {
+			flex-basis: 100%;
 		}
 
 		.bar {

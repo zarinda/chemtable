@@ -230,5 +230,38 @@ export const zh: Dict = {
 		atomicNumber: '原子序数',
 		symbol: '元素符号',
 		name: '名称'
+	},
+	propertyPage: {
+		title: {
+			mass: '化学元素的相对原子质量',
+			electronegativity: '化学元素的电负性',
+			atomicRadius: '化学元素的共价半径',
+			density: '化学元素的密度',
+			meltingPoint: '化学元素的熔点',
+			ionizationEnergy: '化学元素的电离能'
+		},
+		seoTitle: (title) => `${title}：数值表 | ChemTable`,
+		description: {
+			mass: '依据 IUPAC 的全部 118 种元素的相对原子质量：从重到轻的列表，以及按相对原子质量着色的元素周期表。',
+			electronegativity: '全部元素的鲍林电负性：排序列表和彩色元素周期表。氟的电负性最高，为 3.98。',
+			atomicRadius: '元素的共价半径（皮米，Cordero 2008）：按原子大小排序的列表，以及按半径着色的元素周期表。',
+			density: '元素的密度（g/cm³）：从密度最大的锇和铱到最轻的元素的列表，以及按密度着色的元素周期表。',
+			meltingPoint: '元素的熔点（°C 和 K）：从高到低的列表，以及按熔点着色的元素周期表。',
+			ionizationEnergy: '元素的第一电离能（eV，NIST 数据）：排序列表和元素周期表。氦最高，铯最低。'
+		},
+		list: {
+			mass: '按相对原子质量排列的全部元素',
+			electronegativity: '按电负性排列的全部元素',
+			atomicRadius: '按共价半径排列的全部元素',
+			density: '按密度排列的全部元素',
+			meltingPoint: '按熔点排列的全部元素',
+			ionizationEnergy: '按电离能排列的全部元素'
+		},
+		sortBy: '顺序',
+		sort: { desc: '从高到低', asc: '从低到高', z: '按原子序数' },
+		missing: '暂无数据',
+		source: '来源',
+		allValues: '查看全部数值列表',
+		all: '元素性质'
 	}
 };

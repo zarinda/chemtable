@@ -239,5 +239,38 @@ export const en: Dict = {
 		atomicNumber: 'Atomic number',
 		symbol: 'Symbol',
 		name: 'Name'
+	},
+	propertyPage: {
+		title: {
+			mass: 'Atomic Mass of the Elements',
+			electronegativity: 'Electronegativity of the Elements',
+			atomicRadius: 'Covalent Radius of the Elements',
+			density: 'Density of the Elements',
+			meltingPoint: 'Melting Point of the Elements',
+			ionizationEnergy: 'Ionization Energy of the Elements'
+		},
+		seoTitle: (title) => `${title}: Chart and List of Values | ChemTable`,
+		description: {
+			mass: 'Atomic masses of all 118 elements from IUPAC: a list from the heaviest to the lightest and a periodic table coloured by atomic mass.',
+			electronegativity: 'Pauling electronegativity of every element, as a ranked list and a colour-coded periodic table. Fluorine has the highest value, 3.98.',
+			atomicRadius: 'Covalent radii of the elements in picometres (Cordero 2008): a list by atom size and a periodic table coloured by radius.',
+			density: 'Density of the elements in g/cm³: a list from the densest, osmium and iridium, to the lightest, and a periodic table coloured by density.',
+			meltingPoint: 'Melting points of the elements in °C and K: a list from the highest to the lowest and a periodic table coloured by melting point.',
+			ionizationEnergy: 'First ionization energies of the elements in eV from NIST: a ranked list and a periodic table. Highest for helium, lowest for caesium.'
+		},
+		list: {
+			mass: 'All elements by atomic mass',
+			electronegativity: 'All elements by electronegativity',
+			atomicRadius: 'All elements by covalent radius',
+			density: 'All elements by density',
+			meltingPoint: 'All elements by melting point',
+			ionizationEnergy: 'All elements by ionization energy'
+		},
+		sortBy: 'Order',
+		sort: { desc: 'Highest first', asc: 'Lowest first', z: 'By atomic number' },
+		missing: 'No data',
+		source: 'Source',
+		allValues: 'All values as a list',
+		all: 'Properties of the elements'
 	}
 };

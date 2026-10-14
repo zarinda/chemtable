@@ -237,5 +237,38 @@ export const fr: Dict = {
 		atomicNumber: 'Numéro atomique',
 		symbol: 'Symbole',
 		name: 'Nom'
+	},
+	propertyPage: {
+		title: {
+			mass: 'Masse atomique des éléments',
+			electronegativity: 'Électronégativité des éléments',
+			atomicRadius: 'Rayon covalent des éléments',
+			density: 'Masse volumique des éléments',
+			meltingPoint: 'Température de fusion des éléments',
+			ionizationEnergy: 'Énergie d’ionisation des éléments'
+		},
+		seoTitle: (title) => `${title}${_}: tableau des valeurs | ChemTable`,
+		description: {
+			mass: `Masses atomiques des 118 éléments selon l’IUPAC${_}: liste du plus lourd au plus léger et tableau périodique coloré selon la masse atomique.`,
+			electronegativity: `Électronégativité de Pauling de tous les éléments${_}: liste classée et tableau périodique en couleurs. Le fluor a la plus élevée, 3,98.`,
+			atomicRadius: `Rayons covalents des éléments en picomètres (Cordero, 2008)${_}: liste selon la taille de l’atome et tableau périodique coloré selon le rayon.`,
+			density: `Masse volumique des éléments en g/cm³${_}: liste du plus dense, l’osmium et l’iridium, au plus léger, et tableau périodique coloré.`,
+			meltingPoint: `Températures de fusion des éléments en °C et K${_}: liste de la plus haute à la plus basse et tableau périodique coloré selon la température.`,
+			ionizationEnergy: `Première énergie d’ionisation des éléments en eV (NIST)${_}: liste classée et tableau périodique. Maximale pour l’hélium, minimale pour le césium.`
+		},
+		list: {
+			mass: 'Tous les éléments par masse atomique',
+			electronegativity: 'Tous les éléments par électronégativité',
+			atomicRadius: 'Tous les éléments par rayon covalent',
+			density: 'Tous les éléments par masse volumique',
+			meltingPoint: 'Tous les éléments par température de fusion',
+			ionizationEnergy: 'Tous les éléments par énergie d’ionisation'
+		},
+		sortBy: 'Ordre',
+		sort: { desc: 'Décroissant', asc: 'Croissant', z: 'Par numéro atomique' },
+		missing: 'Pas de données',
+		source: 'Source',
+		allValues: 'Toutes les valeurs en liste',
+		all: 'Propriétés des éléments'
 	}
 };

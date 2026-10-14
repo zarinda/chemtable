@@ -238,5 +238,38 @@ export const de: Dict = {
 		atomicNumber: 'Ordnungszahl',
 		symbol: 'Symbol',
 		name: 'Name'
+	},
+	propertyPage: {
+		title: {
+			mass: 'Atommasse der Elemente',
+			electronegativity: 'Elektronegativität der Elemente',
+			atomicRadius: 'Kovalenter Radius der Elemente',
+			density: 'Dichte der Elemente',
+			meltingPoint: 'Schmelzpunkt der Elemente',
+			ionizationEnergy: 'Ionisierungsenergie der Elemente'
+		},
+		seoTitle: (title) => `${title}: Tabelle aller Werte | ChemTable`,
+		description: {
+			mass: 'Atommassen aller 118 Elemente nach IUPAC: Liste vom schwersten bis zum leichtesten Element und ein nach Atommasse eingefärbtes Periodensystem.',
+			electronegativity: 'Elektronegativität nach Pauling für alle Elemente: sortierte Liste und farbiges Periodensystem. Den höchsten Wert hat Fluor, 3,98.',
+			atomicRadius: 'Kovalente Radien der Elemente in Pikometern (Cordero 2008): Liste nach Atomgröße und ein nach Radius eingefärbtes Periodensystem.',
+			density: 'Dichte der Elemente in g/cm³: Liste von den dichtesten, Osmium und Iridium, bis zu den leichtesten und ein farbiges Periodensystem.',
+			meltingPoint: 'Schmelzpunkte der Elemente in °C und K: Liste vom höchsten bis zum niedrigsten und ein nach Schmelzpunkt eingefärbtes Periodensystem.',
+			ionizationEnergy: 'Erste Ionisierungsenergie der Elemente in eV (NIST): sortierte Liste und Periodensystem. Am höchsten bei Helium, am niedrigsten bei Caesium.'
+		},
+		list: {
+			mass: 'Alle Elemente nach Atommasse',
+			electronegativity: 'Alle Elemente nach Elektronegativität',
+			atomicRadius: 'Alle Elemente nach kovalentem Radius',
+			density: 'Alle Elemente nach Dichte',
+			meltingPoint: 'Alle Elemente nach Schmelzpunkt',
+			ionizationEnergy: 'Alle Elemente nach Ionisierungsenergie'
+		},
+		sortBy: 'Reihenfolge',
+		sort: { desc: 'Absteigend', asc: 'Aufsteigend', z: 'Nach Ordnungszahl' },
+		missing: 'Keine Daten',
+		source: 'Quelle',
+		allValues: 'Alle Werte als Liste',
+		all: 'Eigenschaften der Elemente'
 	}
 };

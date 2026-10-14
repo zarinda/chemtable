@@ -238,5 +238,38 @@ export const es: Dict = {
 		atomicNumber: 'Número atómico',
 		symbol: 'Símbolo',
 		name: 'Nombre'
+	},
+	propertyPage: {
+		title: {
+			mass: 'Masa atómica de los elementos',
+			electronegativity: 'Electronegatividad de los elementos',
+			atomicRadius: 'Radio covalente de los elementos',
+			density: 'Densidad de los elementos',
+			meltingPoint: 'Punto de fusión de los elementos',
+			ionizationEnergy: 'Energía de ionización de los elementos'
+		},
+		seoTitle: (title) => `${title}: tabla de valores | ChemTable`,
+		description: {
+			mass: 'Masas atómicas de los 118 elementos según la IUPAC: lista del más pesado al más ligero y tabla periódica coloreada por masa atómica.',
+			electronegativity: 'Electronegatividad de Pauling de todos los elementos: lista ordenada y tabla periódica en colores. El flúor tiene la más alta, 3,98.',
+			atomicRadius: 'Radios covalentes de los elementos en picómetros (Cordero, 2008): lista por tamaño del átomo y tabla periódica coloreada por radio.',
+			density: 'Densidad de los elementos en g/cm³: lista de los más densos, osmio e iridio, a los más ligeros y tabla periódica coloreada por densidad.',
+			meltingPoint: 'Puntos de fusión de los elementos en °C y K: lista del más alto al más bajo y tabla periódica coloreada por punto de fusión.',
+			ionizationEnergy: 'Primera energía de ionización de los elementos en eV (NIST): lista ordenada y tabla periódica. Máxima en el helio, mínima en el cesio.'
+		},
+		list: {
+			mass: 'Todos los elementos por masa atómica',
+			electronegativity: 'Todos los elementos por electronegatividad',
+			atomicRadius: 'Todos los elementos por radio covalente',
+			density: 'Todos los elementos por densidad',
+			meltingPoint: 'Todos los elementos por punto de fusión',
+			ionizationEnergy: 'Todos los elementos por energía de ionización'
+		},
+		sortBy: 'Orden',
+		sort: { desc: 'De mayor a menor', asc: 'De menor a mayor', z: 'Por número atómico' },
+		missing: 'Sin datos',
+		source: 'Fuente',
+		allValues: 'Todos los valores en una lista',
+		all: 'Propiedades de los elementos'
 	}
 };

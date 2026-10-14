@@ -1,8 +1,16 @@
 <script lang="ts">
+	import { page } from '$app/state';
 	import { app } from '#lib/state.svelte.ts';
-	import { elements, fetchedAt, sources } from '#lib/elements.ts';
+	import { PROPERTIES, elements, fetchedAt, sources } from '#lib/elements.ts';
 	import { LANGS, LANG_INFO } from '#lib/i18n/langs.ts';
-	import { elementPath, homePath, privacyPath, AUTHOR, DATA_LICENSE } from '#lib/seo.ts';
+	import {
+		elementPath,
+		homePath,
+		privacyPath,
+		propertyPath,
+		AUTHOR,
+		DATA_LICENSE
+	} from '#lib/seo.ts';
 	import { PAPERS, PAPER_LABEL, printPath } from '#lib/print.ts';
 	import Seo from './Seo.svelte';
 	import Controls from './Controls.svelte';
@@ -11,10 +19,13 @@
 	import PickCard from './PickCard.svelte';
 	import Poster from './Poster.svelte';
 	import ElementArticle from './ElementArticle.svelte';
+	import PropertyValues from './PropertyValues.svelte';
 	import { dev } from '$app/env';
 	import { showAds } from '#lib/ads.ts';
 
 	let opened = $derived(app.openedZ ? elements[app.openedZ - 1] : null);
+	/** Property of a property page; its list stays under a poster opened from it. */
+	let property = $derived(page.data.property ?? null);
 
 	let t = $derived(app.t);
 
@@ -24,7 +35,7 @@
 	});
 </script>
 
-<Seo element={opened} />
+<Seo element={opened} {property} />
 
 <!-- Inside <main>, the header and the legend's footer stop being page-wide landmarks. -->
 <main>
@@ -44,7 +55,12 @@
 		{/if}
 	</div>
 
-	{#if opened}
+	{#if property}
+		<!-- A new property starts from the server's order, highest first. -->
+		{#key property}
+			<PropertyValues {property} />
+		{/key}
+	{:else if opened}
 		<ElementArticle element={opened} />
 	{:else}
 		<section class="prose about">
@@ -100,12 +116,29 @@
 </main>
 
 <footer class="prose langs">
+	<nav class="properties" aria-labelledby="properties-heading">
+		<h2 id="properties-heading">{t.propertyPage.all}</h2>
+		<ul>
+			{#each PROPERTIES as key (key)}
+				<li>
+					<a
+						href={propertyPath(key, app.lang)}
+						aria-current={key === property ? 'page' : undefined}>{t.propertyPage.title[key]}</a
+					>
+				</li>
+			{/each}
+		</ul>
+	</nav>
 	<h2 class="visually-hidden">{t.language}</h2>
 	<ul>
 		{#each LANGS as l (l)}
 			<li>
 				<a
-					href={opened ? elementPath(opened, l) : homePath(l)}
+					href={opened
+						? elementPath(opened, l)
+						: property
+							? propertyPath(property, l)
+							: homePath(l)}
 					hreflang={LANG_INFO[l].tag}
 					lang={LANG_INFO[l].tag}
 					aria-current={l === app.lang ? 'page' : undefined}>{LANG_INFO[l].native}</a
@@ -209,6 +242,14 @@
 
 	.langs li + li {
 		margin-top: 0;
+	}
+
+	.properties h2 {
+		font-size: var(--step-1);
+	}
+
+	.properties ul {
+		margin: 0 0 28px;
 	}
 
 	.langs [aria-current='page'] {

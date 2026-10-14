@@ -105,7 +105,9 @@
 		<!-- The page heading stays in the document while an element is previewed. -->
 		<div class="intro" class:previewing={!!app.active}>
 			<!-- On element pages the element name is the page heading, so the title is not an h1. -->
-			<svelte:element this={page.data.z ? 'p' : 'h1'} class="title">{app.t.title}</svelte:element>
+			<svelte:element this={page.data.z ? 'p' : 'h1'} class="title"
+				>{page.data.property ? app.t.propertyPage.title[page.data.property] : app.t.title}</svelte:element
+			>
 			<p class="hint">{app.t.hint}</p>
 			<p class="hint touch">{app.t.hintTouch}</p>
 		</div>

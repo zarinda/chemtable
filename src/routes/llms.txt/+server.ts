@@ -1,7 +1,15 @@
-import { elements, fetchedAt } from '#lib/elements.ts';
+import { PROPERTIES, elements, fetchedAt } from '#lib/elements.ts';
 import { LANGS, LANG_INFO } from '#lib/i18n/langs.ts';
 import { UI } from '#lib/i18n/ui.ts';
-import { absolute, elementPath, homePath, AUTHOR, DATA_CREDITS, DATA_LICENSE } from '#lib/seo.ts';
+import {
+	absolute,
+	elementPath,
+	homePath,
+	propertyPath,
+	AUTHOR,
+	DATA_CREDITS,
+	DATA_LICENSE
+} from '#lib/seo.ts';
 import { printPath } from '#lib/print.ts';
 import type { RequestHandler } from './$types';
 
@@ -30,6 +38,12 @@ ${DATA_CREDITS.map((c) => `  - ${c.data}: ${c.source}, ${c.url} (${c.terms})`).j
 - [All elements as CSV](${absolute('/data/elements.csv')}): one row per element
 - [Printable periodic table, PDF](${absolute(printPath('en', 'a4', 'color'))}): A4 and US Letter (\`letter\` in the file name), colour and black-and-white (\`bw\`); for other languages replace \`/en/\` with ${LANGS.filter((l) => l !== 'en').map((l) => `\`/${l}/\``).join(', ')}
 - [Full text of every element](${absolute('/llms-full.txt')}): all properties in Markdown
+
+## Properties
+
+Each page colours the table by one property and lists every element's value, highest first.
+
+${PROPERTIES.map((p) => `- [${en.propertyPage.title[p]}](${absolute(propertyPath(p, 'en'))}): ${en.propertyPage.description[p]}`).join('\n')}
 
 ## Elements
 

@@ -239,5 +239,38 @@ export const pt: Dict = {
 		atomicNumber: 'Número atômico',
 		symbol: 'Símbolo',
 		name: 'Nome'
+	},
+	propertyPage: {
+		title: {
+			mass: 'Massa atômica dos elementos',
+			electronegativity: 'Eletronegatividade dos elementos',
+			atomicRadius: 'Raio covalente dos elementos',
+			density: 'Densidade dos elementos',
+			meltingPoint: 'Ponto de fusão dos elementos',
+			ionizationEnergy: 'Energia de ionização dos elementos'
+		},
+		seoTitle: (title) => `${title}: tabela de valores | ChemTable`,
+		description: {
+			mass: 'Massas atômicas dos 118 elementos segundo a IUPAC: lista do mais pesado ao mais leve e tabela periódica colorida por massa atômica.',
+			electronegativity: 'Eletronegatividade de Pauling de todos os elementos: lista ordenada e tabela periódica em cores. O flúor tem a maior, 3,98.',
+			atomicRadius: 'Raios covalentes dos elementos em picômetros (Cordero, 2008): lista por tamanho do átomo e tabela periódica colorida por raio.',
+			density: 'Densidade dos elementos em g/cm³: lista dos mais densos, ósmio e irídio, aos mais leves e tabela periódica colorida por densidade.',
+			meltingPoint: 'Pontos de fusão dos elementos em °C e K: lista do mais alto ao mais baixo e tabela periódica colorida por ponto de fusão.',
+			ionizationEnergy: 'Primeira energia de ionização dos elementos em eV (NIST): lista ordenada e tabela periódica. Máxima no hélio, mínima no césio.'
+		},
+		list: {
+			mass: 'Todos os elementos por massa atômica',
+			electronegativity: 'Todos os elementos por eletronegatividade',
+			atomicRadius: 'Todos os elementos por raio covalente',
+			density: 'Todos os elementos por densidade',
+			meltingPoint: 'Todos os elementos por ponto de fusão',
+			ionizationEnergy: 'Todos os elementos por energia de ionização'
+		},
+		sortBy: 'Ordem',
+		sort: { desc: 'Do maior ao menor', asc: 'Do menor ao maior', z: 'Por número atômico' },
+		missing: 'Sem dados',
+		source: 'Fonte',
+		allValues: 'Todos os valores em lista',
+		all: 'Propriedades dos elementos'
 	}
 };
