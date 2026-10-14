@@ -5,6 +5,7 @@ import {
 	absolute,
 	elementPath,
 	homePath,
+	printPagePath,
 	propertyPath,
 	AUTHOR,
 	DATA_CREDITS,
@@ -36,6 +37,7 @@ ${DATA_CREDITS.map((c) => `  - ${c.data}: ${c.source}, ${c.url} (${c.terms})`).j
 
 - [All elements as JSON](${absolute('/data/elements.json')}): every property, names in ${LANGS.length} languages, Wikidata IDs and page URLs
 - [All elements as CSV](${absolute('/data/elements.csv')}): one row per element
+- [Printable periodic table](${absolute(printPagePath('en'))}): a preview of every sheet and its PDF, in each language (${absolute(printPagePath('ru'))} and so on)
 - [Printable periodic table, PDF](${absolute(printPath('en', 'a4', 'color'))}): A4 and US Letter (\`letter\` in the file name), colour and black-and-white (\`bw\`); for other languages replace \`/en/\` with ${LANGS.filter((l) => l !== 'en').map((l) => `\`/${l}/\``).join(', ')}
 - [Full text of every element](${absolute('/llms-full.txt')}): all properties in Markdown
 

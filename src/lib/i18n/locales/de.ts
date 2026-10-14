@@ -239,6 +239,25 @@ export const de: Dict = {
 		symbol: 'Symbol',
 		name: 'Name'
 	},
+	printPage: {
+		title: 'Periodensystem zum Ausdrucken',
+		seoTitle: 'Periodensystem zum Ausdrucken: kostenloses PDF, A4 und Letter | ChemTable',
+		description: 'Periodensystem zum Ausdrucken auf Deutsch: kostenloses Vektor-PDF in A4 und US Letter, farbig oder schwarz-weiß. Atommassen, Elektronegativität, Elektronen.',
+		lead: 'Kostenlose PDFs auf Deutsch: A4 und US Letter, farbig und schwarz-weiß. Herunterladen und ausdrucken – ohne Anmeldung.',
+		paper: 'Papierformat',
+		color: 'Farbe',
+		download: 'PDF herunterladen',
+		preview: 'Vorschau des Blatts',
+		notes: (date) => [
+			'Vektor-PDF: Der Text bleibt in jeder Größe scharf und lässt sich durchsuchen und kopieren.',
+			'Die Schwarz-Weiß-Version ist für normale Drucker: Die Kategorien unterscheiden sich am Muster, nicht nur an der Farbe.',
+			'In Originalgröße (100 %) und im Querformat drucken.',
+			`Daten von IUPAC (CIAAW), NIST, PubChem; aktualisiert am ${date}.`
+		],
+		variants: 'Alle Varianten',
+		otherLangs: 'In anderen Sprachen',
+		link: 'Vorschau und alle Varianten'
+	},
 	propertyPage: {
 		title: {
 			mass: 'Atommasse der Elemente',

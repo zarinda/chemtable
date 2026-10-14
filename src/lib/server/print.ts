@@ -4,13 +4,13 @@ import { elements, CATEGORIES, fetchedAt, type Category, type Element } from '..
 import { UI } from '../i18n/ui';
 import { LANG_INFO, type Lang } from '../i18n/langs';
 import { formatMass } from '../format';
-import type { Paper, Variant } from '../print';
+import { PAPER_MM, type Paper, type Variant } from '../print';
 import { C, FILL } from './palette';
 
 /** Sheet sizes in millimetres, landscape. */
 const SHEET: Record<Paper, { size: string; width: number; height: number }> = {
-	a4: { size: 'A4 landscape', width: 297, height: 210 },
-	letter: { size: 'letter landscape', width: 279.4, height: 215.9 }
+	a4: { size: 'A4 landscape', ...PAPER_MM.a4 },
+	letter: { size: 'letter landscape', ...PAPER_MM.letter }
 };
 
 /** Layout in millimetres. Home printers can't print the outer ~5 mm, hence the margin. */

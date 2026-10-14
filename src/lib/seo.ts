@@ -65,6 +65,8 @@ export const DATA_CREDITS = [
 export const homePath = (lang: Lang) => localize('/', lang);
 export const elementPath = (e: Element, lang: Lang) => localize(`/${e.slug}`, lang);
 export const privacyPath = (lang: Lang) => localize('/privacy', lang);
+/** The print page; the PDFs themselves are at printPath (#lib/print.ts). */
+export const printPagePath = (lang: Lang) => localize('/print', lang);
 export const propertyPath = (key: PropertyKey, lang: Lang) => localize(`/${PROPERTY_SLUG[key]}`, lang);
 
 /** Shown on the privacy policy and used as its sitemap date: change it with the policy. */

@@ -239,6 +239,25 @@ export const it: Dict = {
 		symbol: 'Simbolo',
 		name: 'Nome'
 	},
+	printPage: {
+		title: 'Tavola periodica da stampare',
+		seoTitle: 'Tavola periodica da stampare: PDF gratuito, A4 e Letter | ChemTable',
+		description: 'Tavola periodica da stampare in italiano: PDF vettoriale gratuito, A4 e US Letter, a colori o in bianco e nero. Masse atomiche, elettronegatività, elettroni.',
+		lead: 'PDF gratuiti in italiano: A4 e US Letter, a colori e in bianco e nero. Scarica e stampa, senza registrazione.',
+		paper: 'Formato carta',
+		color: 'Colore',
+		download: 'Scarica il PDF',
+		preview: 'Anteprima del foglio',
+		notes: (date) => [
+			'PDF vettoriale: il testo resta nitido a qualsiasi dimensione e si può cercare e copiare.',
+			'La versione in bianco e nero è per una stampante normale: le categorie si distinguono dalla trama, non solo dal colore.',
+			'Stampa al 100% («Dimensioni effettive»), in orizzontale.',
+			`Dati IUPAC (CIAAW), NIST, PubChem; aggiornati il ${date}.`
+		],
+		variants: 'Tutte le versioni',
+		otherLangs: 'In altre lingue',
+		link: 'Anteprima e tutte le versioni'
+	},
 	propertyPage: {
 		title: {
 			mass: 'Massa atomica degli elementi',

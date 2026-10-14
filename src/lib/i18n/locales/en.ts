@@ -240,6 +240,25 @@ export const en: Dict = {
 		symbol: 'Symbol',
 		name: 'Name'
 	},
+	printPage: {
+		title: 'Printable periodic table',
+		seoTitle: 'Printable periodic table: free PDF, A4 and US Letter | ChemTable',
+		description: 'Free printable periodic table in English: a vector PDF for A4 and US Letter, in colour or black and white. Atomic numbers, masses, electronegativity.',
+		lead: 'Free PDFs in English: A4 and US Letter, colour and black and white. Download and print, no sign-up.',
+		paper: 'Paper size',
+		color: 'Colour',
+		download: 'Download PDF',
+		preview: 'Sheet preview',
+		notes: (date) => [
+			'Vector PDF: the text stays sharp at any size, and you can search and copy it.',
+			'The black-and-white version is for an ordinary printer: categories differ by texture, not only by colour.',
+			'Print at 100% (“Actual size”), in landscape.',
+			`Data from IUPAC (CIAAW), NIST and PubChem; updated ${date}.`
+		],
+		variants: 'All versions',
+		otherLangs: 'In other languages',
+		link: 'Preview and all versions'
+	},
 	propertyPage: {
 		title: {
 			mass: 'Atomic Mass of the Elements',

@@ -6,6 +6,7 @@
 	import {
 		elementPath,
 		homePath,
+		printPagePath,
 		privacyPath,
 		propertyPath,
 		AUTHOR,
@@ -84,6 +85,7 @@
 				</li>
 			{/each}
 		</ul>
+		<p><a href={printPagePath(app.lang)}>{t.printPage.link} →</a></p>
 	</section>
 
 	<section class="prose" id="sources">
@@ -128,6 +130,7 @@
 				</li>
 			{/each}
 		</ul>
+		<p class="print"><a href={printPagePath(app.lang)}>{t.printPage.title}</a></p>
 	</nav>
 	<h2 class="visually-hidden">{t.language}</h2>
 	<ul>
@@ -249,7 +252,11 @@
 	}
 
 	.properties ul {
-		margin: 0 0 28px;
+		margin: 0;
+	}
+
+	.properties .print {
+		margin: 12px 0 28px;
 	}
 
 	.langs [aria-current='page'] {

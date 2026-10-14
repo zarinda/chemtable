@@ -169,6 +169,25 @@ export type Dict = {
 		symbol: string;
 		name: string;
 	};
+	/** The print page (/print): a preview of each sheet and its PDF. */
+	printPage: {
+		title: string;
+		/** <title> */
+		seoTitle: string;
+		description: string;
+		lead: string;
+		paper: string;
+		color: string;
+		download: string;
+		/** Alt text of a sheet preview, before its paper and colour. */
+		preview: string;
+		/** Receives the data date. */
+		notes: (date: string) => string[];
+		variants: string;
+		otherLangs: string;
+		/** Link to this page from the home page and the footer. */
+		link: string;
+	};
 	/** Page per property (/electronegativity): the table coloured by it and every value in a list. */
 	propertyPage: {
 		/** Page heading. */

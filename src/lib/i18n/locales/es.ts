@@ -239,6 +239,25 @@ export const es: Dict = {
 		symbol: 'Símbolo',
 		name: 'Nombre'
 	},
+	printPage: {
+		title: 'Tabla periódica para imprimir',
+		seoTitle: 'Tabla periódica para imprimir: PDF gratis, A4 y Letter | ChemTable',
+		description: 'Tabla periódica para imprimir en español: PDF vectorial gratis en A4 y US Letter, en color o en blanco y negro. Masas atómicas, electronegatividad, electrones.',
+		lead: 'PDF gratuitos en español: A4 y US Letter, en color y en blanco y negro. Descarga e imprime, sin registrarte.',
+		paper: 'Tamaño del papel',
+		color: 'Color',
+		download: 'Descargar PDF',
+		preview: 'Vista previa de la hoja',
+		notes: (date) => [
+			'PDF vectorial: el texto se ve nítido a cualquier tamaño y se puede buscar y copiar.',
+			'La versión en blanco y negro es para una impresora normal: las categorías se distinguen por la trama, no solo por el color.',
+			'Imprime al 100 % («Tamaño real»), en horizontal.',
+			`Datos de IUPAC (CIAAW), NIST, PubChem; actualizados el ${date}.`
+		],
+		variants: 'Todas las versiones',
+		otherLangs: 'En otros idiomas',
+		link: 'Vista previa y todas las versiones'
+	},
 	propertyPage: {
 		title: {
 			mass: 'Masa atómica de los elementos',

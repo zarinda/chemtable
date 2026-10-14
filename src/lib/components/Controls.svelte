@@ -3,12 +3,11 @@
 	import { page } from '$app/state';
 	import { app, type Mode } from '#lib/state.svelte.ts';
 	import { PROPERTIES, elements } from '#lib/elements.ts';
-	import { LANGS, LANG_INFO, type Lang } from '#lib/i18n/langs.ts';
+	import type { Lang } from '#lib/i18n/langs.ts';
 	import { elementPath, homePath, propertyPath } from '#lib/seo.ts';
+	import Prefs from './Prefs.svelte';
 
 	const modes: Mode[] = ['category', ...PROPERTIES];
-
-	let themeIcon = $derived(app.theme === 'dark' ? '●' : app.theme === 'light' ? '○' : '◐');
 
 	/** The same page in another language: the open element, the property page or the home page. */
 	const pathIn = (l: Lang) =>
@@ -17,8 +16,6 @@
 			: page.data.property
 				? propertyPath(page.data.property, l)
 				: homePath(l);
-
-	let menu: HTMLDetailsElement | undefined = $state();
 
 	/** Phones scroll the buttons sideways: bring the current property's button into view. */
 	function showCurrent(nav: HTMLElement) {
@@ -30,21 +27,7 @@
 		if (current.getBoundingClientRect().right > nav.getBoundingClientRect().right)
 			nav.scrollLeft += gap - 12;
 	}
-
-	function closeOnOutside(event: PointerEvent) {
-		if (menu?.open && !menu.contains(event.target as Node)) menu.open = false;
-	}
 </script>
-
-<svelte:window
-	onpointerdown={closeOnOutside}
-	onkeydown={(e) => {
-		if (e.key === 'Escape' && menu?.open) {
-			menu.open = false;
-			menu.querySelector('summary')?.focus();
-		}
-	}}
-/>
 
 <header>
 	{#if page.data.property}
@@ -82,34 +65,7 @@
 	{/if}
 
 	<div class="prefs">
-		<!-- Plain links, so each language version is reachable without JavaScript. -->
-		<details class="lang" bind:this={menu}>
-			<summary aria-label="{app.t.language}: {LANG_INFO[app.lang].native}">
-				{LANG_INFO[app.lang].native}<span aria-hidden="true">▾</span>
-			</summary>
-			<ul>
-				{#each LANGS as l (l)}
-					<li>
-						<a
-							href={pathIn(l)}
-							hreflang={LANG_INFO[l].tag}
-							lang={LANG_INFO[l].tag}
-							aria-current={l === app.lang ? 'page' : undefined}
-							onclick={() => menu && (menu.open = false)}>{LANG_INFO[l].native}</a
-						>
-					</li>
-				{/each}
-			</ul>
-		</details>
-		<button
-			type="button"
-			class="theme"
-			onclick={() => app.cycleTheme()}
-			aria-label={app.t.theme[app.theme]}
-			title={app.t.theme[app.theme]}
-		>
-			<span aria-hidden="true">{themeIcon}</span>
-		</button>
+		<Prefs pathFor={pathIn} />
 	</div>
 </header>
 
@@ -165,72 +121,6 @@
 		align-items: center;
 	}
 
-	.lang {
-		position: relative;
-	}
-
-	summary {
-		display: flex;
-		gap: 0.4em;
-		align-items: center;
-		padding: 0.35em 0.8em;
-		border: 1.5px solid var(--rule);
-		border-radius: 999px;
-		cursor: pointer;
-		font-size: var(--step--1);
-		list-style: none;
-		white-space: nowrap;
-	}
-
-	summary::-webkit-details-marker {
-		display: none;
-	}
-
-	.lang[open] summary {
-		background: var(--fg);
-		color: var(--bg);
-	}
-
-	.lang ul {
-		position: absolute;
-		top: calc(100% + 6px);
-		right: 0;
-		z-index: 60;
-		min-width: 11em;
-		margin: 0;
-		padding: 6px;
-		list-style: none;
-		background: var(--surface);
-		color: var(--on-surface);
-		border: 1.5px solid var(--rule);
-		border-radius: 12px;
-		animation: menu-in 0.16s var(--ease-out);
-	}
-
-	.lang a {
-		display: block;
-		padding: 0.4em 0.7em;
-		border-radius: 8px;
-		color: inherit;
-		font-size: var(--step--1);
-		text-decoration: none;
-	}
-
-	.lang a:hover {
-		background: color-mix(in srgb, var(--on-surface) 10%, transparent);
-	}
-
-	.lang a[aria-current='page'] {
-		font-weight: 600;
-	}
-
-	@keyframes menu-in {
-		from {
-			opacity: 0;
-			transform: translateY(-4px);
-		}
-	}
-
 	/* Phones: language and theme on top; the colour modes go under the map's card (see Home). */
 	@media (max-width: 760px) and (orientation: portrait) {
 		header {
@@ -244,9 +134,9 @@
 		}
 
 		/* The language button is on the left here, so the menu opens to the right. */
-		.lang ul {
-			right: auto;
-			left: 0;
+		.prefs {
+			--menu-left: 0;
+			--menu-right: auto;
 		}
 
 		header :global(.modes) {
@@ -261,16 +151,4 @@
 		}
 	}
 
-	.theme {
-		display: grid;
-		place-items: center;
-		width: 2.1em;
-		height: 2.1em;
-		border: 1.5px solid var(--rule);
-		border-radius: 50%;
-		background: transparent;
-		cursor: pointer;
-		font-size: var(--step--1);
-		line-height: 1;
-	}
 </style>

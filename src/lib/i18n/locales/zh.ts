@@ -231,6 +231,25 @@ export const zh: Dict = {
 		symbol: '元素符号',
 		name: '名称'
 	},
+	printPage: {
+		title: '打印版元素周期表',
+		seoTitle: '元素周期表打印版：免费 PDF，A4 和 Letter | ChemTable',
+		description: '可打印的中文元素周期表：免费矢量 PDF，A4 和 US Letter 纸张，彩色或黑白。包含原子序数、原子量、电负性和电子排布。',
+		lead: '免费中文 PDF：A4 和 US Letter，彩色和黑白两种。下载即可打印，无需注册。',
+		paper: '纸张尺寸',
+		color: '颜色',
+		download: '下载 PDF',
+		preview: '页面预览',
+		notes: (date) => [
+			'矢量 PDF：任意缩放文字都清晰，可搜索、可复制。',
+			'黑白版适合普通打印机：各类元素以纹理区分，而不只靠颜色。',
+			'请按 100% 比例（“实际大小”）横向打印。',
+			`数据来源：IUPAC（CIAAW）、NIST、PubChem；更新于 ${date}。`
+		],
+		variants: '全部版本',
+		otherLangs: '其他语言',
+		link: '预览和全部版本'
+	},
 	propertyPage: {
 		title: {
 			mass: '化学元素的相对原子质量',

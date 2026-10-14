@@ -238,6 +238,25 @@ export const fr: Dict = {
 		symbol: 'Symbole',
 		name: 'Nom'
 	},
+	printPage: {
+		title: 'Tableau périodique à imprimer',
+		seoTitle: 'Tableau périodique à imprimer : PDF gratuit, A4 et Letter | ChemTable',
+		description: 'Tableau périodique à imprimer en français : PDF vectoriel gratuit, A4 et US Letter, couleur ou noir et blanc. Masses atomiques, électronégativité, électrons.',
+		lead: 'PDF gratuits en français : A4 et US Letter, couleur et noir et blanc. Téléchargez et imprimez, sans inscription.',
+		paper: 'Format du papier',
+		color: 'Couleur',
+		download: 'Télécharger le PDF',
+		preview: 'Aperçu de la feuille',
+		notes: (date) => [
+			'PDF vectoriel : le texte reste net à toutes les tailles, on peut le rechercher et le copier.',
+			'La version noir et blanc convient à une imprimante ordinaire : les familles se distinguent par leur trame, pas seulement par la couleur.',
+			'Imprimez à 100 % (« Taille réelle »), en paysage.',
+			`Données IUPAC (CIAAW), NIST, PubChem ; mises à jour le ${date}.`
+		],
+		variants: 'Toutes les versions',
+		otherLangs: 'Dans d’autres langues',
+		link: 'Aperçu et toutes les versions'
+	},
 	propertyPage: {
 		title: {
 			mass: 'Masse atomique des éléments',

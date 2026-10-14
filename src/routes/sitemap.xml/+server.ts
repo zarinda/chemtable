@@ -6,10 +6,12 @@ import {
 	elementPath,
 	homePath,
 	ogImagePath,
+	printPagePath,
 	privacyPath,
 	propertyPath,
 	PRIVACY_UPDATED
 } from '#lib/seo.ts';
+import { previewPath } from '#lib/print.ts';
 import type { RequestHandler } from './$types';
 
 export const prerender = true;
@@ -46,6 +48,7 @@ export const GET: RequestHandler = () => {
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 ${[null, ...elements].map(page).join('\n')}
 ${PROPERTIES.map((p) => urls((l) => propertyPath(p, l), fetchedAt, (l) => ogImagePath(l, null))).join('\n')}
+${urls(printPagePath, fetchedAt, (l) => previewPath(l, 'a4', 'color', 1600))}
 ${urls(privacyPath, PRIVACY_UPDATED)}
 </urlset>
 `;
