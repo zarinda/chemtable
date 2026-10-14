@@ -7,8 +7,11 @@ export function formatNumber(value: number, lang: Lang, maxDigits = 3): string {
 	return new Intl.NumberFormat(locale(lang), { maximumFractionDigits: maxDigits }).format(value);
 }
 
-const decimalSeparator = (lang: Lang) =>
+export const decimalSeparator = (lang: Lang) =>
 	new Intl.NumberFormat(locale(lang)).formatToParts(1.5).find((p) => p.type === 'decimal')?.value ?? '.';
+
+/** A colon before a value, as the language sets it: French puts a thin space before it. */
+export const colon = (lang: Lang) => (lang === 'zh' ? '：' : lang === 'fr' ? ' : ' : ': ');
 
 /** Atomic masses keep the significant digits CIAAW publishes (1.0080 stays 1.0080). */
 export function formatMass(text: string, lang: Lang): string {

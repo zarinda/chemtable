@@ -208,6 +208,65 @@ export type Dict = {
 		/** Footer heading over the links to every property page. */
 		all: string;
 	};
+	/** Molar mass calculator (/molar-mass) and a page per common substance (/molar-mass/water). */
+	molar: {
+		/** Calculator heading, also the link to it. */
+		title: string;
+		/** <title> */
+		seoTitle: string;
+		description: string;
+		lead: string;
+		/** Label of the formula field. */
+		formula: string;
+		placeholder: string;
+		clear: string;
+		/** Label of the buttons that type brackets and digits on phones, before the character. */
+		insert: string;
+		result: string;
+		unit: string;
+		/** Receives the rounded masses: "H = 1, S = 32, O = 16". */
+		school: (masses: string) => string;
+		/** Heading of the breakdown by element on the calculator. */
+		parts: string;
+		/** The same heading on a substance page. */
+		howCalculated: string;
+		rounding: string;
+		/** Link from the calculator to the page of the substance typed. */
+		more: string;
+		popular: string;
+		/** Heading of the formula field on a substance page. */
+		another: string;
+		calculate: string;
+		whatIs: string;
+		/** Paragraphs; the last one receives the worked example for water. */
+		whatIsText: (example: string) => string[];
+		errors: {
+			syntax: string;
+			/** Receives the unknown symbol as typed. */
+			symbol: (symbol: string) => string;
+			case: string;
+			/** Around a corrected formula to click: ["Did you mean", "?"] H2SO4. */
+			suggest: [string, string];
+			weight: (name: string, symbol: string) => string;
+		};
+		compound: {
+			/** Receives the name as it follows "molar mass" (Compound.of). */
+			title: (of: string) => string;
+			/** <title>: the plain formula and the formatted value. */
+			seoTitle: (of: string, formula: string, value: string) => string;
+			description: (of: string, formula: string, value: string, calc: string, school: string) => string;
+			/** Before another common name: "Also called" table salt. */
+			aka: string;
+			sources: string;
+			/** PubChem's value when it agrees to the last digit, and when it does not. */
+			pubchemSame: (value: string) => string;
+			pubchemDiff: (value: string) => string;
+			/** Link back to the calculator. */
+			back: string;
+		};
+	};
+	/** Footer heading over links to the other pages of the site. */
+	moreOnSite: string;
 };
 
 export const UI: Record<Lang, Dict> = { en, ru, fr, de, it, es, zh, pt };

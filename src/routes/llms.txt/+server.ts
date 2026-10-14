@@ -1,10 +1,14 @@
 import { PROPERTIES, elements, fetchedAt } from '#lib/elements.ts';
+import { COMPOUNDS } from '#lib/compounds.ts';
+import { calculate, formatUnits, type MolarMass } from '#lib/molar.ts';
 import { LANGS, LANG_INFO } from '#lib/i18n/langs.ts';
 import { UI } from '#lib/i18n/ui.ts';
 import {
 	absolute,
+	compoundPath,
 	elementPath,
 	homePath,
+	molarPath,
 	printPagePath,
 	propertyPath,
 	AUTHOR,
@@ -46,6 +50,14 @@ ${DATA_CREDITS.map((c) => `  - ${c.data}: ${c.source}, ${c.url} (${c.terms})`).j
 Each page colours the table by one property and lists every element's value, highest first.
 
 ${PROPERTIES.map((p) => `- [${en.propertyPage.title[p]}](${absolute(propertyPath(p, 'en'))}): ${en.propertyPage.description[p]}`).join('\n')}
+
+## Molar mass
+
+- [${en.molar.title}](${absolute(molarPath('en'))}): ${en.molar.description} A formula can be passed in the address: ${absolute(molarPath('en'))}?f=Ca(OH)2
+${COMPOUNDS.map((c) => {
+	const m = calculate(c.formula) as MolarMass;
+	return `- [${en.molar.compound.title(c.of.en)} (${c.formula})](${absolute(compoundPath(c, 'en'))}): ${formatUnits(m.units, m.digits, 'en')} g/mol`;
+}).join('\n')}
 
 ## Elements
 

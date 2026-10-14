@@ -291,5 +291,53 @@ export const pt: Dict = {
 		source: 'Fonte',
 		allValues: 'Todos os valores em lista',
 		all: 'Propriedades dos elementos'
-	}
+	},
+	molar: {
+		title: 'Calculadora de massa molar',
+		seoTitle: 'Calculadora de massa molar: g/mol a partir da fórmula | ChemTable',
+		description: 'Calculadora de massa molar grátis: digite uma fórmula (H2SO4, Ca(OH)2, CuSO4·5H2O) e veja os g/mol, a contribuição de cada elemento e o cálculo.',
+		lead: 'Digite a fórmula de uma substância, por exemplo H2SO4, Ca(OH)2 ou CuSO4·5H2O. A calculadora mostra a massa molar e a contribuição de cada elemento. Massas atômicas da IUPAC (CIAAW), como na tabela.',
+		formula: 'Fórmula',
+		placeholder: 'Por exemplo, Ca(OH)2',
+		clear: 'Limpar',
+		insert: 'Inserir',
+		result: 'Massa molar',
+		unit: 'g/mol',
+		school: (masses) => `Para exercícios escolares (${masses})`,
+		parts: 'Contribuição de cada elemento',
+		howCalculated: 'Como é calculado',
+		rounding: 'O resultado é arredondado à precisão da massa atômica menos precisa.',
+		more: 'Página da substância',
+		popular: 'Substâncias comuns',
+		another: 'Calcular outra substância',
+		calculate: 'Calcular',
+		whatIs: 'O que é massa molar?',
+		whatIsText: (example) => [
+			'A massa molar M é a massa de um mol de uma substância, ou seja, de cerca de 6,022 · 10²³ de suas partículas. É medida em gramas por mol (g/mol).',
+			'Para encontrá-la, some as massas atômicas de todos os átomos da fórmula: multiplique a massa de cada elemento pelo seu índice, o número de seus átomos. Em g/mol, a massa molar é numericamente igual à massa molecular relativa Mr.',
+			`Por exemplo, para a água: ${example}.`
+		],
+		errors: {
+			syntax: 'Não foi possível ler a fórmula. Confira os parênteses e os sinais, como em Ca(OH)2.',
+			symbol: (symbol) =>
+				`Não existe o elemento “${symbol}”. Um símbolo começa com letra maiúscula, e a segunda letra é minúscula: Na, Cl.`,
+			case: 'Os símbolos dos elementos começam com letra maiúscula.',
+			suggest: ['Você quis dizer', '?'],
+			weight: (name, symbol) =>
+				`${name} (${symbol}) não tem isótopos estáveis nem composição natural constante, por isso a IUPAC não lhe atribui massa atômica padrão.`
+		},
+		compound: {
+			title: (of) => `Massa molar ${of}`,
+			seoTitle: (of, formula, value) => `Massa molar ${of} (${formula}): ${value} g/mol | ChemTable`,
+			description: (of, formula, value, calc, school) =>
+				`A massa molar ${of} (${formula}) é ${value} g/mol. Cálculo: ${calc}. Para exercícios escolares: ${school} g/mol.`,
+			aka: 'Outro nome:',
+			sources: 'Massas atômicas da IUPAC (CIAAW).',
+			pubchemSame: (value) => `Coincide com o PubChem: ${value} g/mol.`,
+			pubchemDiff: (value) =>
+				`O PubChem dá ${value} g/mol: o último algarismo difere porque as massas atômicas são arredondadas de outro jeito.`,
+			back: 'Massa molar'
+		}
+	},
+	moreOnSite: 'Mais no ChemTable'
 };

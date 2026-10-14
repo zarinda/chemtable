@@ -1,5 +1,6 @@
 import { PUBLIC_SITE_URL } from '$app/env/public';
 import { PROPERTY_SLUG, type Element, type PropertyKey } from './elements';
+import type { Compound } from './compounds';
 import { LANGS, LANG_INFO, DEFAULT_LANG, localize, type Lang } from './i18n/langs';
 
 export const SITE_URL = PUBLIC_SITE_URL;
@@ -68,6 +69,8 @@ export const privacyPath = (lang: Lang) => localize('/privacy', lang);
 /** The print page; the PDFs themselves are at printPath (#lib/print.ts). */
 export const printPagePath = (lang: Lang) => localize('/print', lang);
 export const propertyPath = (key: PropertyKey, lang: Lang) => localize(`/${PROPERTY_SLUG[key]}`, lang);
+export const molarPath = (lang: Lang) => localize('/molar-mass', lang);
+export const compoundPath = (c: Compound, lang: Lang) => localize(`/molar-mass/${c.slug}`, lang);
 
 /** Shown on the privacy policy and used as its sitemap date: change it with the policy. */
 export const PRIVACY_UPDATED = '2026-10-12';

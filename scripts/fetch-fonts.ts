@@ -1,6 +1,6 @@
 /**
  * Downloads a subset of Noto Sans SC (SIL Open Font License) covering every CJK
- * character the site uses: the Chinese UI strings and all element names, including
+ * character the site uses: the Chinese UI strings, substance names and all element names, including
  * the new element characters (鿫, 鿬, 鿭, 𬬻…) that many system fonts lack.
  *
  * - static/fonts/noto-sans-sc-{400,700}.woff2: web fallback for Chinese text
@@ -15,6 +15,7 @@ const CJK = /[⺀-鿿豈-﫿＀-￯]|[\u{20000}-\u{3FFFF}]/gu;
 
 const sources = [
 	readFileSync(new URL('src/lib/i18n/locales/zh.ts', root), 'utf8'),
+	readFileSync(new URL('src/lib/compounds.ts', root), 'utf8'),
 	readFileSync(new URL('src/lib/data/elements.json', root), 'utf8')
 ];
 const text = [...new Set(sources.join('').match(CJK) ?? [])].join('');

@@ -31,6 +31,8 @@
 	--bg: var(--mustard);
 	--fg: var(--ink);
 	--surface: var(--paper);
+	/* Text fields on a surface. */
+	--field: color-mix(in srgb, #fff 35%, var(--paper));
 	--on-surface: var(--ink);
 	--rule: var(--ink);
 	--grain-opacity: 0.32;
@@ -60,6 +62,7 @@
 		--bg: var(--ink);
 		--fg: var(--paper);
 		--surface: #1f1f1f;
+		--field: #121212;
 		--on-surface: var(--paper);
 		--rule: var(--paper);
 		--grain-opacity: 0.12;
@@ -72,6 +75,7 @@
 	--bg: var(--ink);
 	--fg: var(--paper);
 	--surface: #1f1f1f;
+	--field: #121212;
 	--on-surface: var(--paper);
 	--rule: var(--paper);
 	--grain-opacity: 0.12;

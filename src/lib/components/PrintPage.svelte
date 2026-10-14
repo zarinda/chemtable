@@ -1,18 +1,8 @@
 <script lang="ts">
 	import { app } from '#lib/state.svelte.ts';
-	import { PROPERTIES, fetchedAt } from '#lib/elements.ts';
+	import { fetchedAt } from '#lib/elements.ts';
 	import { LANGS, LANG_INFO } from '#lib/i18n/langs.ts';
-	import {
-		AUTHOR,
-		SITE_URL,
-		absolute,
-		alternates,
-		homePath,
-		ogImagePath,
-		printPagePath,
-		privacyPath,
-		propertyPath
-	} from '#lib/seo.ts';
+	import { SITE_URL, absolute, alternates, homePath, ogImagePath, printPagePath } from '#lib/seo.ts';
 	import {
 		PAPERS,
 		PAPER_LABEL,
@@ -23,7 +13,8 @@
 		type Paper,
 		type Variant
 	} from '#lib/print.ts';
-	import Prefs from './Prefs.svelte';
+	import PageHeader from './PageHeader.svelte';
+	import PageFooter from './PageFooter.svelte';
 
 	/** Size in bytes of each PDF, keyed `a4-color`, read at prerender. */
 	let { sizes }: { sizes: Record<string, number> } = $props();
@@ -121,12 +112,7 @@
 	{@html `<script type="application/ld+json">${jsonLd}</script>`}
 </svelte:head>
 
-<header class="bar">
-	<a class="back" href={homePath(lang)}>← {t.privacy.back}</a>
-	<div class="prefs">
-		<Prefs pathFor={printPagePath} />
-	</div>
-</header>
+<PageHeader href={homePath(lang)} label={t.privacy.back} pathFor={printPagePath} />
 
 <main class="page">
 	<h1>{p.title}</h1>
@@ -213,48 +199,9 @@
 	</p>
 </main>
 
-<footer class="page">
-	<nav aria-labelledby="properties-heading">
-		<h2 id="properties-heading">{t.propertyPage.all}</h2>
-		<ul>
-			<li><a href={homePath(lang)}>{t.title}</a></li>
-			{#each PROPERTIES as key (key)}
-				<li><a href={propertyPath(key, lang)}>{t.propertyPage.title[key]}</a></li>
-			{/each}
-		</ul>
-	</nav>
-	<p class="credit">{t.madeBy}<a href={AUTHOR.url} rel="author" target="_blank">{AUTHOR.name}</a></p>
-	<p class="legal">
-		<a href={privacyPath(lang)}>{t.privacy.title}</a> ·
-		<a href="/third-party-licenses.txt" type="text/plain">{t.licenses}</a>
-	</p>
-</footer>
+<PageFooter />
 
 <style>
-	.bar {
-		display: flex;
-		align-items: center;
-		gap: var(--gutter);
-		padding: 12px var(--gutter);
-		border-bottom: 2px solid var(--rule);
-	}
-
-	.back {
-		margin-right: auto;
-		font-size: var(--step--1);
-		text-decoration: none;
-	}
-
-	.back:hover {
-		text-decoration: underline;
-	}
-
-	.prefs {
-		display: flex;
-		gap: 8px;
-		align-items: center;
-	}
-
 	.page {
 		width: min(100% - 2 * var(--gutter), 1344px);
 		margin-inline: auto;
@@ -414,37 +361,7 @@
 		font-size: var(--step--1);
 	}
 
-	footer {
-		margin-top: 48px;
-		padding-top: 22px;
-		padding-bottom: 56px;
-		border-top: 2px solid var(--rule);
-		font-size: var(--step--1);
-	}
-
-	footer h2 {
-		margin-bottom: 0.6em;
-		font-size: var(--step-1);
-	}
-
-	footer ul {
-		margin: 0 0 24px;
-		padding-left: 1.1em;
-	}
-
-	footer li + li {
-		margin-top: 0.25em;
-	}
-
-	.legal {
-		margin-top: 4px;
-	}
-
 	@media (min-width: 900px) {
-		.bar {
-			padding: 14px 48px;
-		}
-
 		.page {
 			width: min(100% - 96px, 1344px);
 		}

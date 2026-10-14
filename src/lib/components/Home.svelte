@@ -6,6 +6,7 @@
 	import {
 		elementPath,
 		homePath,
+		molarPath,
 		printPagePath,
 		privacyPath,
 		propertyPath,
@@ -130,7 +131,10 @@
 				</li>
 			{/each}
 		</ul>
-		<p class="print"><a href={printPagePath(app.lang)}>{t.printPage.title}</a></p>
+		<p class="print">
+			<a href={printPagePath(app.lang)}>{t.printPage.title}</a><br />
+			<a href={molarPath(app.lang)}>{t.molar.title}</a>
+		</p>
 	</nav>
 	<h2 class="visually-hidden">{t.language}</h2>
 	<ul>

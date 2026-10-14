@@ -289,5 +289,53 @@ export const fr: Dict = {
 		source: 'Source',
 		allValues: 'Toutes les valeurs en liste',
 		all: 'Propriétés des éléments'
-	}
+	},
+	molar: {
+		title: 'Calculateur de masse molaire',
+		seoTitle: `Calculateur de masse molaire${_}: g/mol à partir de la formule | ChemTable`,
+		description: `Calculateur de masse molaire gratuit${_}: entrez une formule (H2SO4, Ca(OH)2, CuSO4·5H2O) et obtenez les g/mol, la part de chaque élément et le calcul.`,
+		lead: 'Entrez la formule d’une substance, par exemple H2SO4, Ca(OH)2 ou CuSO4·5H2O. Le calculateur affiche la masse molaire et la part de chaque élément. Masses atomiques de l’IUPAC (CIAAW), comme dans le tableau.',
+		formula: 'Formule',
+		placeholder: 'Par exemple, Ca(OH)2',
+		clear: 'Effacer',
+		insert: 'Insérer',
+		result: 'Masse molaire',
+		unit: 'g/mol',
+		school: (masses) => `Pour les exercices scolaires (${masses})`,
+		parts: 'Répartition par élément',
+		howCalculated: 'Le calcul',
+		rounding: 'Le résultat est arrondi à la précision de la masse atomique la moins précise.',
+		more: 'Page de la substance',
+		popular: 'Substances courantes',
+		another: 'Calculer une autre substance',
+		calculate: 'Calculer',
+		whatIs: `Qu’est-ce que la masse molaire${_}?`,
+		whatIsText: (example) => [
+			'La masse molaire M est la masse d’une mole de substance, soit environ 6,022 × 10²³ de ses particules. Elle s’exprime en grammes par mole (g/mol).',
+			`Pour la trouver, additionnez les masses atomiques de tous les atomes de la formule${_}: multipliez la masse de chaque élément par son indice, le nombre de ses atomes. En g/mol, la masse molaire est égale à la masse moléculaire relative Mr.`,
+			`Pour l’eau${_}: ${example}.`
+		],
+		errors: {
+			syntax: 'Impossible de lire la formule. Vérifiez les parenthèses et les signes, comme dans Ca(OH)2.',
+			symbol: (symbol) =>
+				`L’élément «${_}${symbol}${_}» n’existe pas. Un symbole commence par une majuscule, la deuxième lettre est en minuscule${_}: Na, Cl.`,
+			case: 'Les symboles des éléments commencent par une majuscule.',
+			suggest: ['Vouliez-vous dire', `${_}?`],
+			weight: (name, symbol) =>
+				`${name} (${symbol}) n’a ni isotope stable ni composition naturelle constante${_}: l’IUPAC ne lui attribue pas de masse atomique standard.`
+		},
+		compound: {
+			title: (of) => `Masse molaire ${of}`,
+			seoTitle: (of, formula, value) => `Masse molaire ${of} (${formula})${_}: ${value} g/mol | ChemTable`,
+			description: (of, formula, value, calc, school) =>
+				`La masse molaire ${of} (${formula}) est de ${value} g/mol. Calcul${_}: ${calc}. Pour les exercices${_}: ${school} g/mol.`,
+			aka: `Autre nom${_}:`,
+			sources: 'Masses atomiques de l’IUPAC (CIAAW).',
+			pubchemSame: (value) => `Identique à PubChem${_}: ${value} g/mol.`,
+			pubchemDiff: (value) =>
+				`PubChem donne ${value} g/mol${_}: le dernier chiffre diffère, car les masses atomiques y sont arrondies autrement.`,
+			back: 'Masse molaire'
+		}
+	},
+	moreOnSite: 'Aussi sur ChemTable'
 };

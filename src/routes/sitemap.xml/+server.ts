@@ -1,10 +1,13 @@
 import { PROPERTIES, elements, fetchedAt, type Element } from '#lib/elements.ts';
+import { COMPOUNDS } from '#lib/compounds.ts';
 import { LANGS, type Lang } from '#lib/i18n/langs.ts';
 import {
 	absolute,
 	alternates,
+	compoundPath,
 	elementPath,
 	homePath,
+	molarPath,
 	ogImagePath,
 	printPagePath,
 	privacyPath,
@@ -49,6 +52,8 @@ export const GET: RequestHandler = () => {
 ${[null, ...elements].map(page).join('\n')}
 ${PROPERTIES.map((p) => urls((l) => propertyPath(p, l), fetchedAt, (l) => ogImagePath(l, null))).join('\n')}
 ${urls(printPagePath, fetchedAt, (l) => previewPath(l, 'a4', 'color', 1600))}
+${urls(molarPath, fetchedAt)}
+${COMPOUNDS.map((c) => urls((l) => compoundPath(c, l), fetchedAt)).join('\n')}
 ${urls(privacyPath, PRIVACY_UPDATED)}
 </urlset>
 `;

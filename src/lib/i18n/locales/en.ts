@@ -291,5 +291,53 @@ export const en: Dict = {
 		source: 'Source',
 		allValues: 'All values as a list',
 		all: 'Properties of the elements'
-	}
+	},
+	molar: {
+		title: 'Molar mass calculator',
+		seoTitle: 'Molar mass calculator: g/mol from a chemical formula | ChemTable',
+		description: 'Free molar mass calculator: type a formula such as H2SO4, Ca(OH)2 or CuSO4·5H2O to get g/mol, each element’s share and the working. IUPAC atomic weights.',
+		lead: 'Type a chemical formula, for example H2SO4, Ca(OH)2 or CuSO4·5H2O. The calculator shows the molar mass and what each element adds to it. Atomic weights are from IUPAC (CIAAW), as in the table.',
+		formula: 'Formula',
+		placeholder: 'For example, Ca(OH)2',
+		clear: 'Clear',
+		insert: 'Insert',
+		result: 'Molar mass',
+		unit: 'g/mol',
+		school: (masses) => `For school problems (${masses})`,
+		parts: 'Breakdown by element',
+		howCalculated: 'How it’s calculated',
+		rounding: 'The result is rounded to the precision of the least precise atomic weight.',
+		more: 'Substance page',
+		popular: 'Common substances',
+		another: 'Calculate another substance',
+		calculate: 'Calculate',
+		whatIs: 'What is molar mass?',
+		whatIsText: (example) => [
+			'Molar mass M is the mass of one mole of a substance, about 6.022 × 10²³ of its particles. It is measured in grams per mole (g/mol).',
+			'To find it, add up the atomic weights of all the atoms in the formula: multiply each element’s atomic weight by its subscript, the number of its atoms. In g/mol, the molar mass equals the relative molecular mass Mr.',
+			`For water: ${example}.`
+		],
+		errors: {
+			syntax: 'The formula can’t be read. Check the brackets and signs, as in Ca(OH)2.',
+			symbol: (symbol) =>
+				`There is no element “${symbol}”. A symbol starts with a capital letter, and a second letter is lower case: Na, Cl.`,
+			case: 'Element symbols start with a capital letter.',
+			suggest: ['Did you mean', '?'],
+			weight: (name, symbol) =>
+				`${name} (${symbol}) has no stable isotopes and no constant natural composition, so IUPAC gives it no standard atomic weight.`
+		},
+		compound: {
+			title: (of) => `Molar mass of ${of}`,
+			seoTitle: (of, formula, value) => `Molar mass of ${of} (${formula}): ${value} g/mol | ChemTable`,
+			description: (of, formula, value, calc, school) =>
+				`The molar mass of ${of}, ${formula}, is ${value} g/mol. Working: ${calc}. For school problems, ${school} g/mol.`,
+			aka: 'Also called',
+			sources: 'Atomic weights from IUPAC (CIAAW).',
+			pubchemSame: (value) => `Agrees with PubChem: ${value} g/mol.`,
+			pubchemDiff: (value) =>
+				`PubChem gives ${value} g/mol: the last digit differs because the atomic weights are rounded differently.`,
+			back: 'Molar mass'
+		}
+	},
+	moreOnSite: 'More on ChemTable'
 };

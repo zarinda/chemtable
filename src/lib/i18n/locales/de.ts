@@ -290,5 +290,53 @@ export const de: Dict = {
 		source: 'Quelle',
 		allValues: 'Alle Werte als Liste',
 		all: 'Eigenschaften der Elemente'
-	}
+	},
+	molar: {
+		title: 'Molare-Masse-Rechner',
+		seoTitle: 'Molare-Masse-Rechner: g/mol aus der Summenformel | ChemTable',
+		description: 'Kostenloser Rechner für die molare Masse: Formel wie H2SO4, Ca(OH)2 oder CuSO4·5H2O eingeben – g/mol, Anteil jedes Elements und Rechenweg. IUPAC-Atommassen.',
+		lead: 'Geben Sie eine Summenformel ein, zum Beispiel H2SO4, Ca(OH)2 oder CuSO4·5H2O. Der Rechner zeigt die molare Masse und den Anteil jedes Elements. Atommassen von der IUPAC (CIAAW), wie in der Tabelle.',
+		formula: 'Formel',
+		placeholder: 'Zum Beispiel Ca(OH)2',
+		clear: 'Löschen',
+		insert: 'Einfügen',
+		result: 'Molare Masse',
+		unit: 'g/mol',
+		school: (masses) => `Für Schulaufgaben (${masses})`,
+		parts: 'Anteile der Elemente',
+		howCalculated: 'So wird gerechnet',
+		rounding: 'Das Ergebnis ist auf die Genauigkeit der ungenauesten Atommasse gerundet.',
+		more: 'Seite des Stoffes',
+		popular: 'Häufige Stoffe',
+		another: 'Einen anderen Stoff berechnen',
+		calculate: 'Berechnen',
+		whatIs: 'Was ist die molare Masse?',
+		whatIsText: (example) => [
+			'Die molare Masse M ist die Masse von einem Mol eines Stoffes, also von etwa 6,022 · 10²³ seiner Teilchen. Sie wird in Gramm pro Mol (g/mol) angegeben.',
+			'Um sie zu berechnen, addiert man die Atommassen aller Atome der Formel: Die Atommasse jedes Elements wird mit seinem Index, der Zahl seiner Atome, multipliziert. In g/mol ist die molare Masse zahlenmäßig gleich der relativen Molekülmasse Mr.',
+			`Zum Beispiel für Wasser: ${example}.`
+		],
+		errors: {
+			syntax: 'Die Formel lässt sich nicht lesen. Prüfen Sie Klammern und Zeichen, etwa Ca(OH)2.',
+			symbol: (symbol) =>
+				`Es gibt kein Element „${symbol}“. Ein Symbol beginnt mit einem Großbuchstaben, der zweite Buchstabe ist klein: Na, Cl.`,
+			case: 'Elementsymbole beginnen mit einem Großbuchstaben.',
+			suggest: ['Meinten Sie', '?'],
+			weight: (name, symbol) =>
+				`${name} (${symbol}) hat keine stabilen Isotope und keine feste natürliche Zusammensetzung, daher gibt die IUPAC keine Standard-Atommasse an.`
+		},
+		compound: {
+			title: (of) => `Molare Masse ${of}`,
+			seoTitle: (of, formula, value) => `Molare Masse ${of} (${formula}): ${value} g/mol | ChemTable`,
+			description: (of, formula, value, calc, school) =>
+				`Die molare Masse ${of} (${formula}) beträgt ${value} g/mol. Rechnung: ${calc}. Für Schulaufgaben: ${school} g/mol.`,
+			aka: 'Andere Bezeichnung:',
+			sources: 'Atommassen von der IUPAC (CIAAW).',
+			pubchemSame: (value) => `Stimmt mit PubChem überein: ${value} g/mol.`,
+			pubchemDiff: (value) =>
+				`PubChem gibt ${value} g/mol an: Die letzte Stelle weicht ab, weil die Atommassen anders gerundet sind.`,
+			back: 'Molare Masse'
+		}
+	},
+	moreOnSite: 'Mehr auf ChemTable'
 };

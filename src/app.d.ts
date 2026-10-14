@@ -14,6 +14,8 @@ declare global {
 			z: number | null;
 			/** Property of a property page (/electronegativity): the table opens coloured by it. */
 			property?: PropertyKey;
+			/** Substance of a molar mass page (/molar-mass/water), by slug. */
+			compound?: string;
 		}
 		interface PageState {
 			/** Element whose poster is open; null when it was closed on an element URL. */

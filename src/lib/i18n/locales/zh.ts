@@ -282,5 +282,51 @@ export const zh: Dict = {
 		source: '来源',
 		allValues: '查看全部数值列表',
 		all: '元素性质'
-	}
+	},
+	molar: {
+		title: '摩尔质量计算器',
+		seoTitle: '摩尔质量计算器：由化学式计算 g/mol | ChemTable',
+		description: '免费摩尔质量计算器：输入化学式（H2SO4、Ca(OH)2、CuSO4·5H2O），即可得到 g/mol、各元素所占比例和计算过程。原子量采用 IUPAC 数据。',
+		lead: '输入物质的化学式，例如 H2SO4、Ca(OH)2 或 CuSO4·5H2O。计算器会给出摩尔质量和各元素的贡献。原子量采用 IUPAC（CIAAW）数据，与周期表一致。',
+		formula: '化学式',
+		placeholder: '例如 Ca(OH)2',
+		clear: '清除',
+		insert: '插入',
+		result: '摩尔质量',
+		unit: 'g/mol',
+		school: (masses) => `习题常用近似值（${masses}）`,
+		parts: '各元素的贡献',
+		howCalculated: '计算过程',
+		rounding: '结果按精度最低的原子量修约。',
+		more: '物质页面',
+		popular: '常见物质',
+		another: '计算其他物质',
+		calculate: '计算',
+		whatIs: '什么是摩尔质量？',
+		whatIsText: (example) => [
+			'摩尔质量 M 是 1 摩尔物质（约 6.022 × 10²³ 个粒子）的质量，单位是克每摩尔（g/mol）。',
+			'计算方法：把化学式中所有原子的原子量相加——每种元素的原子量乘以它的下标（原子个数）。以 g/mol 为单位时，摩尔质量在数值上等于相对分子质量 Mr。',
+			`例如水：${example}。`
+		],
+		errors: {
+			syntax: '无法识别该化学式。请检查括号和符号，例如 Ca(OH)2。',
+			symbol: (symbol) => `没有元素“${symbol}”。元素符号以大写字母开头，第二个字母小写：Na、Cl。`,
+			case: '元素符号以大写字母开头。',
+			suggest: ['是不是', '？'],
+			weight: (name, symbol) =>
+				`${name}（${symbol}）没有稳定同位素，也没有固定的天然组成，因此 IUPAC 没有给出它的标准原子量。`
+		},
+		compound: {
+			title: (of) => `${of}的摩尔质量`,
+			seoTitle: (of, formula, value) => `${of}（${formula}）的摩尔质量：${value} g/mol | ChemTable`,
+			description: (of, formula, value, calc, school) =>
+				`${of}（${formula}）的摩尔质量为 ${value} g/mol。计算：${calc}。习题常用近似值：${school} g/mol。`,
+			aka: '又称',
+			sources: '原子量来自 IUPAC（CIAAW）。',
+			pubchemSame: (value) => `与 PubChem 一致：${value} g/mol。`,
+			pubchemDiff: (value) => `PubChem 给出 ${value} g/mol：最后一位不同，是因为原子量的修约方式不同。`,
+			back: '摩尔质量'
+		}
+	},
+	moreOnSite: '更多内容'
 };
