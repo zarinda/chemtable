@@ -28,7 +28,7 @@
 
 <!-- Inside <main>, the header and the legend's footer stop being page-wide landmarks. -->
 <main>
-	<div class="stage">
+	<div class="stage" class:behind={opened}>
 		<div class="frame">
 			<div class="app">
 				<Controls />
@@ -125,6 +125,16 @@
 <style>
 	.stage {
 		display: flex;
+	}
+
+	/*
+	 * Safari on iOS 26 draws no fixed layer under its see-through status bar and toolbar, so the
+	 * table showed above and below the open poster. Hide it once the poster has grown over it
+	 * (the delay is the opening animation); on closing it comes back at once.
+	 */
+	.stage.behind {
+		visibility: hidden;
+		transition: visibility 0s 0.56s;
 	}
 
 	/* The table sizes itself from this width, which excludes the page scrollbar and any side column. */

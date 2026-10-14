@@ -204,6 +204,12 @@
 			padding: 12px var(--gutter) 14px;
 		}
 
+		/* The language button is on the left here, so the menu opens to the right. */
+		.lang ul {
+			right: auto;
+			left: 0;
+		}
+
 		header :global(.modes) {
 			order: 3;
 			flex: none;
