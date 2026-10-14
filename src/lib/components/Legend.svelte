@@ -1,8 +1,6 @@
 <script lang="ts">
 	import { ToggleGroup } from 'bits-ui';
-	import { page } from '$app/state';
 	import { app } from '#lib/state.svelte.ts';
-	import { propertyPath } from '#lib/seo.ts';
 	import { CATEGORIES, propertyRange, type Category } from '#lib/elements.ts';
 	import { HEAT_GRADIENT } from '#lib/heat.ts';
 	import { formatNumber, kelvinToCelsius } from '#lib/format.ts';
@@ -41,10 +39,8 @@
 			<span class="nodata"><span class="hatch" aria-hidden="true"></span>{app.t.noData}</span>
 			<p class="trend">
 				{app.t.trend[app.mode]}
-				<!-- On the property page the list is just below; elsewhere it is that page. -->
-				<a class="all" href={page.data.property ? '#values' : propertyPath(app.mode, app.lang)}
-					>{app.t.propertyPage.allValues}&nbsp;{page.data.property ? '↓' : '→'}</a
-				>
+				<!-- Only property pages colour by a property, and their list is just below. -->
+				<a class="all" href="#values">{app.t.propertyPage.allValues}&nbsp;↓</a>
 			</p>
 		</div>
 	{/if}
