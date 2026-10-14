@@ -61,17 +61,44 @@ for (const lang of only ?? LANGS) {
 	for (const paper of PAPERS) {
 		for (const variant of VARIANTS) {
 			await page.setContent(printHtml(lang, paper, variant, site), { waitUntil: 'load' });
-			await page.evaluate(async () => {
+			const squeezed = await page.evaluate(async () => {
+				// tsx wraps named functions in __name(), which the page doesn't have.
+				(globalThis as { __name?: unknown }).__name ??= (f: unknown) => f;
 				await document.fonts.ready;
+				const squeezed: string[] = [];
+				// scrollWidth rounds to whole pixels and misses text a fraction of a pixel too wide,
+				// which still loses half a glyph in print: compare the text's own box, with a margin.
+				const overflows = (el: HTMLElement) => {
+					const range = document.createRange();
+					range.selectNodeContents(el);
+					return range.getBoundingClientRect().right > el.getBoundingClientRect().right - 0.5;
+				};
 				// Shrink long names, masses and shell lists until they fit their cell.
 				for (const el of document.querySelectorAll<HTMLElement>('.fit')) {
 					let size = parseFloat(getComputedStyle(el).fontSize);
-					while (el.scrollWidth > el.clientWidth && size > 3.5) {
+					while (overflows(el) && size > 3.5) {
 						size -= 0.2;
 						el.style.fontSize = `${size}px`;
 					}
+					// Below 3.5 px print gets illegible: tighten the letters instead, then narrow them.
+					let spacing = parseFloat(getComputedStyle(el).letterSpacing) / size || 0;
+					while (overflows(el) && spacing > -0.06) {
+						spacing -= 0.01;
+						el.style.letterSpacing = `${spacing}em`;
+					}
+					if (overflows(el)) {
+						el.style.transformOrigin = 'left';
+						const range = document.createRange();
+						range.selectNodeContents(el);
+						const box = el.getBoundingClientRect();
+						el.style.transform = `scaleX(${(box.width - 0.5) / (range.getBoundingClientRect().right - box.left)})`;
+						el.style.overflow = 'visible';
+						squeezed.push(el.textContent ?? '');
+					}
 				}
+				return squeezed;
 			});
+			if (squeezed.length) console.log(`${lang} ${paper} ${variant}: narrowed ${squeezed.join(', ')}`);
 			if (!previewsOnly) {
 				write(printPath(lang, paper, variant), await page.pdf({ preferCSSPageSize: true, printBackground: true }));
 				pdfs++;
