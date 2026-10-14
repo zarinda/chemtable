@@ -352,5 +352,16 @@ export const de: Dict = {
 			wikidata: 'Namen in 8 Sprachen'
 		},
 		updated: (date) => `Daten aktualisiert am ${date}`
+	},
+	quick: {
+		heading: (name) => `${name} auf einen Blick`,
+		protons: (name) => `Wie viele Protonen hat ${name}?`,
+		electrons: (name) => `Wie viele Elektronen hat ${name}?`,
+		neutral: 'im neutralen Atom',
+		molarMass: (name) => `Welche molare Masse hat ${name}?`,
+		metal: (name) => `Ist ${name} ein Metall oder ein Nichtmetall?`,
+		kind: { metal: 'Metall', nonmetal: 'Nichtmetall', metalloid: 'Halbmetall' },
+		state: 'Aggregatzustand',
+		roomTemperature: 'bei Raumtemperatur'
 	}
 };

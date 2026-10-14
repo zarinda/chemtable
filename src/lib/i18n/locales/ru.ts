@@ -1,5 +1,31 @@
 import type { Dict } from '../ui';
 
+/** Element names that the endings below decline wrongly: genitive and prepositional. */
+const IRREGULAR: Record<string, [string, string]> = {
+	Марганец: ['марганца', 'марганце'],
+	Свинец: ['свинца', 'свинце'],
+	Никель: ['никеля', 'никеле']
+};
+
+/** «железа», «железе»: every element name, checked one by one. */
+function decline(name: string): [string, string] {
+	if (IRREGULAR[name]) return IRREGULAR[name];
+	const w = name.toLowerCase();
+	if (w.endsWith('ий')) return [w.slice(0, -2) + 'ия', w.slice(0, -2) + 'ии'];
+	if (w.endsWith('о')) return [w.slice(0, -1) + 'а', w.slice(0, -1) + 'е'];
+	if (w.endsWith('а')) return [w.slice(0, -1) + 'ы', w.slice(0, -1) + 'е'];
+	// Медь, ртуть.
+	if (w.endsWith('ь')) return [w.slice(0, -1) + 'и', w.slice(0, -1) + 'и'];
+	return [w + 'а', w + 'е'];
+}
+
+const genitive = (name: string) => decline(name)[0];
+/** «о железе», «об азоте». */
+const about = (name: string) => {
+	const w = decline(name)[1];
+	return /^[аоуэиы]/.test(w) ? `об ${w}` : `о ${w}`;
+};
+
 export const ru: Dict = {
 	reviewed: true,
 	siteName: 'ChemTable',
@@ -351,5 +377,16 @@ export const ru: Dict = {
 			wikidata: 'названия на 8 языках'
 		},
 		updated: (date) => `Данные обновлены ${date}`
+	},
+	quick: {
+		heading: (name) => `Коротко ${about(name)}`,
+		protons: (name) => `Сколько протонов в атоме ${genitive(name)}?`,
+		electrons: (name) => `Сколько электронов в атоме ${genitive(name)}?`,
+		neutral: 'в нейтральном атоме',
+		molarMass: (name) => `Какая молярная масса ${genitive(name)}?`,
+		metal: (name) => `${name} — металл или неметалл?`,
+		kind: { metal: 'Металл', nonmetal: 'Неметалл', metalloid: 'Полуметалл' },
+		state: 'Агрегатное состояние',
+		roomTemperature: 'при комнатной температуре'
 	}
 };

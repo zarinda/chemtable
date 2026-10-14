@@ -280,6 +280,23 @@ export type Dict = {
 		/** Receives the formatted data date. */
 		updated: (date: string) => string;
 	};
+	/**
+	 * "Iron at a glance" on the poster: what students ask about an element, phrased as they ask it.
+	 * Each function receives the element's name as the table shows it and declines it itself.
+	 */
+	quick: {
+		heading: (name: string) => string;
+		protons: (name: string) => string;
+		electrons: (name: string) => string;
+		/** Under the electron count. */
+		neutral: string;
+		molarMass: (name: string) => string;
+		metal: (name: string) => string;
+		kind: Record<'metal' | 'nonmetal' | 'metalloid', string>;
+		state: string;
+		/** Under the state. */
+		roomTemperature: string;
+	};
 };
 
 export const UI: Record<Lang, Dict> = { en, ru, fr, de, it, es, zh, pt };

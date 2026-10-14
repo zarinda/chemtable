@@ -1,5 +1,12 @@
 import type { Dict } from '../ui';
 
+/** Every element name is masculine except «a prata» and «a platina». */
+const feminine = (name: string) => name === 'Prata' || name === 'Platina';
+/** «O ferro», «A prata». */
+const The = (name: string) => (feminine(name) ? 'A ' : 'O ') + name.toLowerCase();
+/** «do ferro», «da prata». */
+const ofThe = (name: string) => (feminine(name) ? 'da ' : 'do ') + name.toLowerCase();
+
 /** Brazilian Portuguese. */
 export const pt: Dict = {
 	reviewed: false,
@@ -353,5 +360,16 @@ export const pt: Dict = {
 			wikidata: 'nomes em 8 idiomas'
 		},
 		updated: (date) => `Dados atualizados em ${date}`
+	},
+	quick: {
+		heading: (name) => `${The(name)} em resumo`,
+		protons: (name) => `Quantos prótons tem um átomo de ${name.toLowerCase()}?`,
+		electrons: (name) => `Quantos elétrons tem um átomo de ${name.toLowerCase()}?`,
+		neutral: 'no átomo neutro',
+		molarMass: (name) => `Qual é a massa molar ${ofThe(name)}?`,
+		metal: (name) => `${The(name)} é um metal ou um não metal?`,
+		kind: { metal: 'Metal', nonmetal: 'Não metal', metalloid: 'Semimetal' },
+		state: 'Estado físico',
+		roomTemperature: 'à temperatura ambiente'
 	}
 };
