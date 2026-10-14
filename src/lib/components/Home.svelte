@@ -1,19 +1,9 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import { app } from '#lib/state.svelte.ts';
-	import { PROPERTIES, elements, fetchedAt, sources } from '#lib/elements.ts';
-	import { LANGS, LANG_INFO } from '#lib/i18n/langs.ts';
-	import {
-		elementPath,
-		homePath,
-		molarPath,
-		printPagePath,
-		privacyPath,
-		propertyPath,
-		AUTHOR,
-		DATA_LICENSE
-	} from '#lib/seo.ts';
-	import { PAPERS, PAPER_LABEL, printPath } from '#lib/print.ts';
+	import { elements } from '#lib/elements.ts';
+	import type { Lang } from '#lib/i18n/langs.ts';
+	import { elementPath, homePath, propertyPath } from '#lib/seo.ts';
 	import Seo from './Seo.svelte';
 	import Controls from './Controls.svelte';
 	import Table from './Table.svelte';
@@ -22,6 +12,8 @@
 	import Poster from './Poster.svelte';
 	import ElementArticle from './ElementArticle.svelte';
 	import PropertyValues from './PropertyValues.svelte';
+	import PageFooter from './PageFooter.svelte';
+	import DataCard from './DataCard.svelte';
 	import { dev } from '$app/env';
 	import { showAds } from '#lib/ads.ts';
 
@@ -30,6 +22,10 @@
 	let property = $derived(page.data.property ?? null);
 
 	let t = $derived(app.t);
+
+	/** This page in another language. */
+	const languagePath = (l: Lang) =>
+		opened ? elementPath(opened, l) : property ? propertyPath(property, l) : homePath(l);
 
 	// The map's card follows the poster, so closing it leaves the last element viewed picked.
 	$effect(() => {
@@ -64,101 +60,24 @@
 		{/key}
 	{:else if opened}
 		<ElementArticle element={opened} />
-	{:else}
-		<section class="prose about">
-			<h2>{t.about.heading}</h2>
-			{#each t.about.paragraphs as paragraph, i (i)}
-				<p>{paragraph}</p>
-			{/each}
-		</section>
 	{/if}
-
-	<section class="prose" id="print">
-		<h2>{t.print.heading}</h2>
-		<p>{t.print.text}</p>
-		<ul>
-			{#each PAPERS as paper (paper)}
-				<li>
-					{PAPER_LABEL[paper]}:
-					<a href={printPath(app.lang, paper, 'color')} type="application/pdf" target="_blank">{t.print.color}</a> ·
-					<a href={printPath(app.lang, paper, 'bw')} type="application/pdf" target="_blank">{t.print.bw}</a>
-					<span class="format">PDF</span>
-				</li>
-			{/each}
-		</ul>
-		<p><a href={printPagePath(app.lang)}>{t.printPage.link} →</a></p>
-	</section>
-
-	<section class="prose" id="sources">
-		<h2>{t.sources}</h2>
-		<p>{t.sourcesNote}</p>
-		<ul>
-			<li><a href="https://pubchem.ncbi.nlm.nih.gov/periodic-table/">PubChem Periodic Table</a> (NIH)</li>
-			<li><a href={sources.atomicWeights}>IUPAC CIAAW, Abridged Standard Atomic Weights</a></li>
-			<li>
-				<a href={sources.ionizationEnergies}>NIST Atomic Spectra Database, Ionization Energies</a>
-				(NIST Standard Reference Database 78, © U.S. Secretary of Commerce)
-			</li>
-			<li><a href={sources.electronAffinities}>Electron affinity (data page)</a>, Wikipedia (CC BY-SA 4.0)</li>
-			<li><a href={sources.covalentRadii}>Cordero et al., Covalent radii revisited (2008)</a></li>
-			<li><a href="https://www.wikidata.org/">Wikidata</a></li>
-		</ul>
-
-		<h2>{t.data.heading}</h2>
-		<p>{t.data.text}</p>
-		<ul>
-			<li><a href="/data/elements.json" type="application/json">elements.json</a></li>
-			<li><a href="/data/elements.csv" type="text/csv">elements.csv</a></li>
-			<li><a href="/llms.txt" type="text/plain">llms.txt</a></li>
-		</ul>
-		<p class="date">
-			<time datetime={fetchedAt}>{fetchedAt}</time> ·
-			<a rel="license" href={DATA_LICENSE.url}>{DATA_LICENSE.name}</a>
-		</p>
-	</section>
 </main>
 
-<footer class="prose langs">
-	<nav class="properties" aria-labelledby="properties-heading">
-		<h2 id="properties-heading">{t.propertyPage.all}</h2>
-		<ul>
-			{#each PROPERTIES as key (key)}
-				<li>
-					<a
-						href={propertyPath(key, app.lang)}
-						aria-current={key === property ? 'page' : undefined}>{t.propertyPage.title[key]}</a
-					>
-				</li>
-			{/each}
-		</ul>
-		<p class="print">
-			<a href={printPagePath(app.lang)}>{t.printPage.title}</a><br />
-			<a href={molarPath(app.lang)}>{t.molar.title}</a>
-		</p>
-	</nav>
-	<h2 class="visually-hidden">{t.language}</h2>
-	<ul>
-		{#each LANGS as l (l)}
-			<li>
-				<a
-					href={opened
-						? elementPath(opened, l)
-						: property
-							? propertyPath(property, l)
-							: homePath(l)}
-					hreflang={LANG_INFO[l].tag}
-					lang={LANG_INFO[l].tag}
-					aria-current={l === app.lang ? 'page' : undefined}>{LANG_INFO[l].native}</a
-				>
-			</li>
-		{/each}
-	</ul>
-	<p class="credit">{t.madeBy}<a href={AUTHOR.url} rel="author" target="_blank">{AUTHOR.name}</a></p>
-	<p class="legal">
-		<a href={privacyPath(app.lang)}>{t.privacy.title}</a> ·
-		<a href="/third-party-licenses.txt" type="text/plain">{t.licenses}</a>
-	</p>
-</footer>
+<PageFooter pathFor={languagePath}>
+	{#if property || opened}
+		<div class="lower-sources"><DataCard wide /></div>
+	{:else}
+		<div class="about">
+			<section aria-labelledby="about-heading">
+				<h2 id="about-heading">{t.about.heading}</h2>
+				{#each t.about.paragraphs as paragraph, i (i)}
+					<p>{paragraph}</p>
+				{/each}
+			</section>
+			<DataCard />
+		</div>
+	{/if}
+</PageFooter>
 
 <Poster element={opened} />
 
@@ -211,79 +130,41 @@
 		}
 	}
 
-	.prose {
-		max-width: 68ch;
-		padding: 40px var(--gutter) 24px;
-		margin: 0 auto;
-		font-size: var(--step--1);
+	/* Home page: "About" beside the data sources card. */
+	.about {
+		display: grid;
+		gap: 32px;
+		padding: 28px 0 40px;
+		border-top: 2px solid var(--rule);
 	}
 
-	h2 {
-		margin: 0 0 0.6em;
+	.about h2 {
+		margin: 0 0 14px;
 		font-family: var(--font-display);
-		font-weight: 600;
 		font-size: var(--step-2);
+		font-weight: 600;
 		line-height: 1.1;
 	}
 
-	ul {
-		padding-left: 1.1em;
-		overflow-wrap: anywhere;
+	.about p {
+		max-width: 68ch;
+		margin: 0 0 0.8em;
 	}
 
-	.prose li + li {
-		margin-top: 0.25em;
-	}
-
-	.langs {
-		padding-bottom: 56px;
-	}
-
-	.langs ul {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 6px 16px;
-		padding: 0;
-		list-style: none;
-	}
-
-	.langs li + li {
-		margin-top: 0;
-	}
-
-	.properties h2 {
+	.about p:first-of-type {
 		font-size: var(--step-1);
+		line-height: 1.45;
 	}
 
-	.properties ul {
-		margin: 0;
+	.lower-sources {
+		padding: 28px 0 40px;
+		border-top: 2px solid var(--rule);
 	}
 
-	.properties .print {
-		margin: 12px 0 28px;
-	}
-
-	.langs [aria-current='page'] {
-		font-weight: 600;
-		text-decoration: none;
-	}
-
-	.credit {
-		margin-top: 12px;
-	}
-
-	.legal {
-		margin-top: 4px;
-	}
-
-	.format {
-		margin-left: 0.4em;
-		font-size: var(--step--2);
-		opacity: 0.75;
-	}
-
-	.date {
-		font-variant-numeric: tabular-nums;
-		opacity: 0.75;
+	@media (min-width: 900px) {
+		.about {
+			grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+			gap: 64px;
+		}
 	}
 </style>

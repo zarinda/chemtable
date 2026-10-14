@@ -141,8 +141,7 @@ export const zh: Dict = {
 		heading: '关于本元素周期表',
 		paragraphs: [
 			'这是一张面向学生的交互式元素周期表，收录全部 118 种化学元素。打开任意元素即可查看其相对原子质量、电子排布、熔点和沸点、密度、电负性、电离能和氧化态，每一项都附有简短说明。',
-			'可以按分类或按某项性质为表格着色，观察元素周期律：例如电负性如何向氟逐渐增大，原子半径如何沿族自上而下增大。',
-			'相对原子质量来自 IUPAC CIAAW，电离能来自 NIST，共价半径来自 Cordero 等（2008），其他性质来自 PubChem（美国国立卫生研究院）并已与 CRC 手册核对。八种语言的元素名称来自 Wikidata。'
+			'可以按分类或按某项性质为表格着色，观察元素周期律：例如电负性如何向氟逐渐增大，原子半径如何沿族自上而下增大。'
 		]
 	},
 	data: {
@@ -328,5 +327,20 @@ export const zh: Dict = {
 			back: '摩尔质量'
 		}
 	},
-	moreOnSite: '更多内容'
+	moreOnSite: '更多内容',
+	footer: {
+		tools: '工具',
+		properties: '元素性质：按性质着色的周期表及全部数值',
+		molar: '摩尔质量',
+		sources: '数据来源',
+		sourceFor: {
+			ciaaw: '原子量',
+			nist: '电离能',
+			pubchem: '其他性质，已与 CRC 手册核对',
+			cordero: '共价半径',
+			wikipedia: '电子亲和能',
+			wikidata: '8 种语言的名称'
+		},
+		updated: (date) => `数据更新于 ${date}`
+	}
 };

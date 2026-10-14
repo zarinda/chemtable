@@ -147,8 +147,7 @@ export const fr: Dict = {
 		heading: 'À propos de ce tableau périodique',
 		paragraphs: [
 			'Un tableau périodique interactif des 118 éléments chimiques, conçu pour les élèves et les étudiants. Ouvrez un élément pour voir sa masse atomique, sa configuration électronique, ses températures de fusion et d’ébullition, sa masse volumique, son électronégativité, son énergie d’ionisation et ses états d’oxydation, chacun avec une courte explication.',
-			`Colorez le tableau par catégorie ou par propriété pour voir les tendances périodiques${_}: l’électronégativité qui augmente vers le fluor, ou les atomes qui grossissent en descendant chaque groupe.`,
-			'Les masses atomiques proviennent de l’IUPAC CIAAW, les énergies d’ionisation du NIST, les rayons covalents de Cordero et al. (2008) et les autres propriétés de PubChem (National Institutes of Health des États-Unis), vérifiées avec le CRC Handbook. Les noms des éléments en huit langues viennent de Wikidata.'
+			`Colorez le tableau par catégorie ou par propriété pour voir les tendances périodiques${_}: l’électronégativité qui augmente vers le fluor, ou les atomes qui grossissent en descendant chaque groupe.`
 		]
 	},
 	data: {
@@ -337,5 +336,20 @@ export const fr: Dict = {
 			back: 'Masse molaire'
 		}
 	},
-	moreOnSite: 'Aussi sur ChemTable'
+	moreOnSite: 'Aussi sur ChemTable',
+	footer: {
+		tools: 'Outils',
+		properties: `Propriétés des éléments${_}: le tableau coloré par propriété et toutes les valeurs`,
+		molar: 'Masse molaire',
+		sources: 'Sources des données',
+		sourceFor: {
+			ciaaw: 'masses atomiques',
+			nist: 'énergies d’ionisation',
+			pubchem: 'autres propriétés, vérifiées avec le CRC Handbook',
+			cordero: 'rayons covalents',
+			wikipedia: 'affinités électroniques',
+			wikidata: 'noms en 8 langues'
+		},
+		updated: (date) => `Données mises à jour le ${date}`
+	}
 };

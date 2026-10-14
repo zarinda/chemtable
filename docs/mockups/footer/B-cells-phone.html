@@ -1,0 +1,59 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><style>
+@font-face{font-family:Oswald;font-weight:600;src:url(file:///D:/ChemTable/node_modules/@fontsource/oswald/files/oswald-latin-600-normal.woff2)}
+@font-face{font-family:Oswald;font-weight:600;src:url(file:///D:/ChemTable/node_modules/@fontsource/oswald/files/oswald-cyrillic-600-normal.woff2);unicode-range:U+0400-04FF}
+@font-face{font-family:Bebas;src:url(file:///D:/ChemTable/node_modules/@fontsource/bebas-neue/files/bebas-neue-latin-400-normal.woff2)}
+@font-face{font-family:Golos;font-weight:400 900;src:url(file:///D:/ChemTable/node_modules/@fontsource-variable/golos-text/files/golos-text-latin-wght-normal.woff2)}
+@font-face{font-family:Golos;font-weight:400 900;src:url(file:///D:/ChemTable/node_modules/@fontsource-variable/golos-text/files/golos-text-cyrillic-wght-normal.woff2);unicode-range:U+0400-04FF}
+
+:root{--mustard:#e3a83a;--paper:#e6e3da;--ink:#000;--teal:#126f60;--orange:#ee7430;--raspberry:#df3b57;--green:#1d7442;--peach:#f4b48a;
+--bg:var(--mustard);--fg:var(--ink);--surface:var(--paper);--on-surface:var(--ink);--rule:var(--ink);--line:color-mix(in srgb,var(--fg) 40%,transparent)}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--fg);font-family:Golos,system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5;font-size:15px}
+body{position:relative}
+body::after{content:'';position:absolute;inset:0;pointer-events:none;z-index:100;opacity:.32;mix-blend-mode:multiply;
+background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1.4 1'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.display{font-family:Oswald,'Arial Narrow',sans-serif;font-weight:600;line-height:1.1;letter-spacing:-.2px}
+.num{font-family:Bebas,Oswald,sans-serif;line-height:1}
+a{color:inherit;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+sub{font-size:.62em;vertical-align:-.25em;line-height:0}
+h2{margin:0}
+.dots{background:radial-gradient(circle,rgb(0 0 0/.22) .9px,transparent 1.2px) 0 0/5px 5px,var(--paper)}
+.pill{display:inline-flex;align-items:center;border:1.5px solid var(--fg);border-radius:99px;padding:.3em .9em;font-size:14px;text-decoration:none}
+.legend{display:flex;flex-wrap:wrap;gap:6px 22px;font-size:14px}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:6px;vertical-align:-1px;border:1px solid rgb(0 0 0/.3)}
+.note{font-size:13px;opacity:.8}
+body{width:390px}:root{--pad:16px}
+.ctx{padding:0 var(--pad) 8px}
+.tablefade{height:70px;margin-bottom:18px;background:repeating-linear-gradient(90deg,var(--paper) 0 calc((100% - 17*4px)/18),transparent 0 calc((100% - 17*4px)/18 + 4px));opacity:.55;mask-image:linear-gradient(transparent,#000)}
+
+.legend{font-size:12px;gap:4px 12px}
+.cl{padding:0 var(--pad)}
+.band{padding:22px 0 28px;border-top:2px solid var(--rule)}
+.k{font-size:13px;margin-bottom:8px}
+.row{display:grid;gap:5px}.two{grid-template-columns:repeat(2,minmax(0,1fr))}.three{grid-template-columns:repeat(2,minmax(0,1fr))}.three .cell{aspect-ratio:1.6}
+.cell{display:grid;grid-template-rows:auto 1fr auto;aspect-ratio:1;padding:6px 8px 7px;text-decoration:none}
+.two .cell{aspect-ratio:1.6}
+.cell .z{font-size:10px;opacity:.75}.cell .s{font-size:30px;line-height:1;align-self:center}.cell .n{font-size:11px;line-height:1.15}
+.c-ink{background:radial-gradient(circle,rgb(255 255 255/.3) 1px,transparent 1.3px) 0 0/4px 4px,var(--ink);color:var(--paper)}
+.c-rasp{background:var(--raspberry)}
+.about{padding:22px 0 26px;border-top:2px solid var(--rule);display:grid;gap:10px}
+h2{font-size:26px}
+.lead{font-size:16px}
+.card{background:var(--paper);box-shadow:5px 5px 0 var(--rule);padding:16px}
+.card h2{font-size:21px;margin-bottom:8px}
+.src li{display:grid;grid-template-columns:118px 1fr;gap:10px;padding:6px 0;border-bottom:1px solid rgb(0 0 0/.18);font-size:13px}
+.files{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.ft{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;margin:34px var(--pad) 0;padding:18px 0 40px;border-top:2px solid var(--rule);font-size:14px}
+.langs i{font-style:normal;margin:0 2px;opacity:.5}
+</style></head><body><div class="ctx"><div class="tablefade"></div><div class="legend"><span><i style="background:#ee7430"></i>Щелочные металлы</span><span><i style="background:#ee7430"></i>Щёлочноземельные</span><span><i style="background:#e6e3da"></i>Переходные металлы</span><span><i style="background:#e6e3da"></i>Постпереходные</span><span><i style="background:#1d7442"></i>Полуметаллы</span><span><i style="background:#126f60"></i>Неметаллы</span><span><i style="background:#126f60"></i>Галогены</span><span><i style="background:#df3b57"></i>Благородные газы</span><span><i style="background:#f4b48a"></i>Лантаноиды</span><span><i style="background:#000"></i>Актиноиды</span></div></div>
+<main class="cl">
+  <section class="band"><p class="k">Инструменты</p><div class="row two"><a class="cell c-ink"><span class="z">A4 · Letter</span><span class="display s">PDF</span><span class="n">Таблица для печати</span></a><a class="cell c-rasp"><span class="z">г/моль</span><span class="display s">M</span><span class="n">Молярная масса</span></a></div>
+    <p class="k" style="margin-top:18px">Свойства элементов</p><div class="row three"><a class="cell c-paper dots"><span class="z"></span><span class="display s">A<sub>r</sub></span><span class="n">Атомная масса</span></a><a class="cell c-paper dots"><span class="z"></span><span class="display s">χ</span><span class="n">Электроотрицательность</span></a><a class="cell c-paper dots"><span class="z"></span><span class="display s">r</span><span class="n">Ковалентный радиус</span></a><a class="cell c-paper dots"><span class="z"></span><span class="display s">ρ</span><span class="n">Плотность</span></a><a class="cell c-paper dots"><span class="z"></span><span class="display s">t°</span><span class="n">Температура плавления</span></a><a class="cell c-paper dots"><span class="z"></span><span class="display s">E<sub>i</sub></span><span class="n">Энергия ионизации</span></a></div></section>
+  <section class="about"><h2 class="display">Об этой таблице</h2><p class="lead">Интерактивная периодическая таблица всех 118 химических элементов для школьников и студентов. У каждого элемента есть карточка: атомная масса, электронная конфигурация, температуры плавления и кипения, плотность, электроотрицательность, энергия ионизации и степени окисления — с короткими пояснениями.</p><p>Таблицу можно окрасить по категориям или по любому свойству и увидеть периодические закономерности: как электроотрицательность растёт к фтору и как атомы становятся крупнее сверху вниз по группе.</p></section>
+  <aside class="card"><h2 class="display">Источники данных</h2>
+    <ul class="src"><li><b>IUPAC CIAAW</b><span>атомные массы</span></li><li><b>NIST</b><span>энергии ионизации</span></li><li><b>PubChem (NIH)</b><span>остальные свойства, сверка с CRC</span></li><li><b>Cordero и др., 2008</b><span>ковалентные радиусы</span></li><li><b>Википедия</b><span>сродство к электрону</span></li><li><b>Wikidata</b><span>названия на 8 языках</span></li></ul>
+    <p class="files"><a class="pill">elements.json</a><a class="pill">elements.csv</a><a class="pill">llms.txt</a></p><p class="note" style="margin-top:10px">Данные обновлены 12.10.2026 · <a>CC BY 4.0</a></p></aside>
+</main>
+<footer class="ft"><p class="langs">English <i>·</i> <b>Русский</b> <i>·</i> Français <i>·</i> Deutsch <i>·</i> Italiano <i>·</i> Español <i>·</i> 简体中文 <i>·</i> Português</p><p>Создано <a>Zarinda</a> · <a>Политика конфиденциальности</a> · <a>Лицензии</a></p></footer></body></html>

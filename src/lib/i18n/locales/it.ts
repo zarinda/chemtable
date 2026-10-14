@@ -148,8 +148,7 @@ export const it: Dict = {
 		heading: 'Informazioni su questa tavola periodica',
 		paragraphs: [
 			'Una tavola periodica interattiva di tutti i 118 elementi chimici, pensata per gli studenti. Apri un elemento per vedere massa atomica, configurazione elettronica, punti di fusione e di ebollizione, densità, elettronegatività, energia di ionizzazione e stati di ossidazione, ciascuno con una breve spiegazione.',
-			'Colora la tavola per categoria o per proprietà per vedere le tendenze periodiche: come l’elettronegatività cresce verso il fluoro, o come gli atomi diventano più grandi scendendo lungo ogni gruppo.',
-			'Le masse atomiche provengono dalla IUPAC CIAAW, le energie di ionizzazione dal NIST, i raggi covalenti da Cordero et al. (2008) e le altre proprietà da PubChem (National Institutes of Health degli Stati Uniti), verificate con il CRC Handbook. I nomi degli elementi in otto lingue provengono da Wikidata.'
+			'Colora la tavola per categoria o per proprietà per vedere le tendenze periodiche: come l’elettronegatività cresce verso il fluoro, o come gli atomi diventano più grandi scendendo lungo ogni gruppo.'
 		]
 	},
 	data: {
@@ -338,5 +337,20 @@ export const it: Dict = {
 			back: 'Massa molare'
 		}
 	},
-	moreOnSite: 'Altro su ChemTable'
+	moreOnSite: 'Altro su ChemTable',
+	footer: {
+		tools: 'Strumenti',
+		properties: 'Proprietà degli elementi: la tavola colorata per proprietà e tutti i valori',
+		molar: 'Massa molare',
+		sources: 'Fonti dei dati',
+		sourceFor: {
+			ciaaw: 'masse atomiche',
+			nist: 'energie di ionizzazione',
+			pubchem: 'altre proprietà, verificate con il CRC Handbook',
+			cordero: 'raggi covalenti',
+			wikipedia: 'affinità elettroniche',
+			wikidata: 'nomi in 8 lingue'
+		},
+		updated: (date) => `Dati aggiornati il ${date}`
+	}
 };

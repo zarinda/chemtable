@@ -267,6 +267,19 @@ export type Dict = {
 	};
 	/** Footer heading over links to the other pages of the site. */
 	moreOnSite: string;
+	/** Lower part of every page: links drawn as cells, and the data sources card. */
+	footer: {
+		tools: string;
+		/** Heading over the property cells. */
+		properties: string;
+		/** Name on the molar mass cell. */
+		molar: string;
+		sources: string;
+		/** What each source gives. */
+		sourceFor: Record<'ciaaw' | 'nist' | 'pubchem' | 'cordero' | 'wikipedia' | 'wikidata', string>;
+		/** Receives the formatted data date. */
+		updated: (date: string) => string;
+	};
 };
 
 export const UI: Record<Lang, Dict> = { en, ru, fr, de, it, es, zh, pt };

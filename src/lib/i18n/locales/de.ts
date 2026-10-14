@@ -148,8 +148,7 @@ export const de: Dict = {
 		heading: 'Über dieses Periodensystem',
 		paragraphs: [
 			'Ein interaktives Periodensystem aller 118 chemischen Elemente für Schüler und Studierende. Öffnen Sie ein Element, um Atommasse, Elektronenkonfiguration, Schmelz- und Siedepunkt, Dichte, Elektronegativität, Ionisierungsenergie und Oxidationsstufen zu sehen, jeweils mit einer kurzen Erklärung.',
-			'Färben Sie die Tabelle nach Kategorie oder Eigenschaft ein, um die Trends im Periodensystem zu sehen: wie die Elektronegativität zum Fluor hin steigt oder wie die Atome in jeder Gruppe nach unten größer werden.',
-			'Die Atommassen stammen von der IUPAC CIAAW, die Ionisierungsenergien vom NIST, die kovalenten Radien von Cordero et al. (2008) und die übrigen Eigenschaften von PubChem (National Institutes of Health der USA), abgeglichen mit dem CRC Handbook. Die Elementnamen in acht Sprachen stammen von Wikidata.'
+			'Färben Sie die Tabelle nach Kategorie oder Eigenschaft ein, um die Trends im Periodensystem zu sehen: wie die Elektronegativität zum Fluor hin steigt oder wie die Atome in jeder Gruppe nach unten größer werden.'
 		]
 	},
 	data: {
@@ -338,5 +337,20 @@ export const de: Dict = {
 			back: 'Molare Masse'
 		}
 	},
-	moreOnSite: 'Mehr auf ChemTable'
+	moreOnSite: 'Mehr auf ChemTable',
+	footer: {
+		tools: 'Werkzeuge',
+		properties: 'Eigenschaften der Elemente – das Periodensystem nach Eigenschaft eingefärbt, mit allen Werten',
+		molar: 'Molare Masse',
+		sources: 'Datenquellen',
+		sourceFor: {
+			ciaaw: 'Atommassen',
+			nist: 'Ionisierungsenergien',
+			pubchem: 'übrige Eigenschaften, abgeglichen mit dem CRC Handbook',
+			cordero: 'Kovalenzradien',
+			wikipedia: 'Elektronenaffinitäten',
+			wikidata: 'Namen in 8 Sprachen'
+		},
+		updated: (date) => `Daten aktualisiert am ${date}`
+	}
 };

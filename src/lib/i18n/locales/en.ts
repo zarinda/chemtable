@@ -149,8 +149,7 @@ export const en: Dict = {
 		heading: 'About this periodic table',
 		paragraphs: [
 			'An interactive periodic table of all 118 chemical elements, made for students. Open any element to see its atomic mass, electron configuration, melting and boiling points, density, electronegativity, ionization energy and oxidation states, each with a short explanation.',
-			'Colour the table by category or by a property to see the periodic trends: how electronegativity rises towards fluorine, or how atoms grow larger down each group.',
-			'Atomic masses come from IUPAC CIAAW, ionization energies from NIST, covalent radii from Cordero et al. (2008) and other properties from PubChem (US National Institutes of Health), checked against the CRC Handbook. Element names in eight languages come from Wikidata.'
+			'Colour the table by category or by a property to see the periodic trends: how electronegativity rises towards fluorine, or how atoms grow larger down each group.'
 		]
 	},
 	data: {
@@ -339,5 +338,20 @@ export const en: Dict = {
 			back: 'Molar mass'
 		}
 	},
-	moreOnSite: 'More on ChemTable'
+	moreOnSite: 'More on ChemTable',
+	footer: {
+		tools: 'Tools',
+		properties: 'Properties of the elements: the table coloured by each, and every value',
+		molar: 'Molar mass',
+		sources: 'Data sources',
+		sourceFor: {
+			ciaaw: 'atomic masses',
+			nist: 'ionization energies',
+			pubchem: 'other properties, checked against the CRC Handbook',
+			cordero: 'covalent radii',
+			wikipedia: 'electron affinities',
+			wikidata: 'names in 8 languages'
+		},
+		updated: (date) => `Data updated ${date}`
+	}
 };

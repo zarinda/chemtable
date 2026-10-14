@@ -148,8 +148,7 @@ export const es: Dict = {
 		heading: 'Sobre esta tabla periódica',
 		paragraphs: [
 			'Una tabla periódica interactiva de los 118 elementos químicos, pensada para estudiantes. Abre cualquier elemento para ver su masa atómica, configuración electrónica, puntos de fusión y ebullición, densidad, electronegatividad, energía de ionización y estados de oxidación, cada uno con una breve explicación.',
-			'Colorea la tabla por categoría o por propiedad para ver las tendencias periódicas: cómo la electronegatividad aumenta hacia el flúor o cómo los átomos crecen al bajar por cada grupo.',
-			'Las masas atómicas proceden de la IUPAC CIAAW, las energías de ionización del NIST, los radios covalentes de Cordero et al. (2008) y las demás propiedades de PubChem (Institutos Nacionales de Salud de EE. UU.), cotejadas con el CRC Handbook. Los nombres de los elementos en ocho idiomas proceden de Wikidata.'
+			'Colorea la tabla por categoría o por propiedad para ver las tendencias periódicas: cómo la electronegatividad aumenta hacia el flúor o cómo los átomos crecen al bajar por cada grupo.'
 		]
 	},
 	data: {
@@ -338,5 +337,20 @@ export const es: Dict = {
 			back: 'Masa molar'
 		}
 	},
-	moreOnSite: 'Más en ChemTable'
+	moreOnSite: 'Más en ChemTable',
+	footer: {
+		tools: 'Herramientas',
+		properties: 'Propiedades de los elementos: la tabla coloreada por propiedad y todos los valores',
+		molar: 'Masa molar',
+		sources: 'Fuentes de datos',
+		sourceFor: {
+			ciaaw: 'masas atómicas',
+			nist: 'energías de ionización',
+			pubchem: 'demás propiedades, cotejadas con el CRC Handbook',
+			cordero: 'radios covalentes',
+			wikipedia: 'afinidades electrónicas',
+			wikidata: 'nombres en 8 idiomas'
+		},
+		updated: (date) => `Datos actualizados el ${date}`
+	}
 };
